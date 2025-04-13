@@ -1,0 +1,19 @@
+LTspice 24.1.6 for Windows
+Circuit: D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\EIT_2\Labor2\Messprojekt2\MessprojektVersion2.net
+Start Time: Fri Apr 11 14:41:54 2025
+solver = Normal
+Maximum thread count: 6
+tnom = 27
+temp = 27
+method = modified trap
+WARNING: Node n004 is floating.
+
+Direct Newton iteration for .op point succeeded.
+Singular matrix:  Check node m1#source
+   Iteration No. 3
+Total elapsed time: 0.000 seconds.
+Singular matrix:  check node m1#source
+   Iteration No. 3
+
+This circuit has floating nodes.
+Try menu command View=>SPICE Error Log.

@@ -1,0 +1,16 @@
+LTspice 24.1.6 for Windows
+Circuit: D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\EIT_2\Labor2\Mosfet\Mosfet.net
+Start Time: Fri Apr 11 15:44:27 2025
+solver = Normal
+Maximum thread count: 6
+tnom = 27
+temp = 27
+method = modified trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.114 seconds.
+
+Files loaded:
+D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\EIT_2\Labor2\Mosfet\Mosfet.net
+C:\Users\Mathias Lampert\AppData\Local\LTspice\lib\cmp\standard.mos
+D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\EIT_2\Labor2\Mosfet\Infineon-IRLB8721PBF.spi
+

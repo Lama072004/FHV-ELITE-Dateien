@@ -1,0 +1,25 @@
+LTspice 24.0.12 for Windows
+Circuit: * D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\EIT_2\Labor2\Messprojekt1\Messprojekt.asc
+Start Time: Fri Apr 11 16:41:24 2025
+Error on line 1227 : .model irf840a nmos(level=3  vto=3.0 kp=45 rd=0.5 rs=0.5  lambda=0.02  cgdmax=0.6n cgdmin=0.05n cgs=1.2n  rg=3.7 rds=1e6 is=1e-12  tt=65n  qg=38n qgs=9n qgd=18n  vdsmax=500
+	* Unrecognized parameter "lambda" -- ignored
+Error on line 1227 : .model irf840a nmos(level=3  vto=3.0 kp=45 rd=0.5 rs=0.5  lambda=0.02  cgdmax=0.6n cgdmin=0.05n cgs=1.2n  rg=3.7 rds=1e6 is=1e-12  tt=65n  qg=38n qgs=9n qgd=18n  vdsmax=500
+	* Unrecognized parameter "cgdmax" -- ignored
+Error on line 1227 : .model irf840a nmos(level=3  vto=3.0 kp=45 rd=0.5 rs=0.5  lambda=0.02  cgdmax=0.6n cgdmin=0.05n cgs=1.2n  rg=3.7 rds=1e6 is=1e-12  tt=65n  qg=38n qgs=9n qgd=18n  vdsmax=500
+	* Unrecognized parameter "cgdmin" -- ignored
+Error on line 1227 : .model irf840a nmos(level=3  vto=3.0 kp=45 rd=0.5 rs=0.5  lambda=0.02  cgdmax=0.6n cgdmin=0.05n cgs=1.2n  rg=3.7 rds=1e6 is=1e-12  tt=65n  qg=38n qgs=9n qgd=18n  vdsmax=500
+	* Unrecognized parameter "cgs" -- ignored
+Error on line 1227 : .model irf840a nmos(level=3  vto=3.0 kp=45 rd=0.5 rs=0.5  lambda=0.02  cgdmax=0.6n cgdmin=0.05n cgs=1.2n  rg=3.7 rds=1e6 is=1e-12  tt=65n  qg=38n qgs=9n qgd=18n  vdsmax=500
+	* Unrecognized parameter "qgs" -- ignored
+Error on line 1227 : .model irf840a nmos(level=3  vto=3.0 kp=45 rd=0.5 rs=0.5  lambda=0.02  cgdmax=0.6n cgdmin=0.05n cgs=1.2n  rg=3.7 rds=1e6 is=1e-12  tt=65n  qg=38n qgs=9n qgd=18n  vdsmax=500
+	* Unrecognized parameter "qgd" -- ignored
+Error on line 1227 : .model irf840a nmos(level=3  vto=3.0 kp=45 rd=0.5 rs=0.5  lambda=0.02  cgdmax=0.6n cgdmin=0.05n cgs=1.2n  rg=3.7 rds=1e6 is=1e-12  tt=65n  qg=38n qgs=9n qgd=18n  vdsmax=500
+	* Unrecognized parameter "vdsmax" -- ignored
+solver = Normal
+Maximum thread count: 6
+tnom = 27
+temp = 27
+method = modified trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.150 seconds.
+

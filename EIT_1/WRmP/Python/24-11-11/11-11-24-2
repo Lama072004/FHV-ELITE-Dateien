@@ -1,0 +1,20 @@
+import os
+from time import time as now
+import math
+import matplotlib.pyplot as plt
+
+x_min, x_max = -2 * math.pi, 2 * math.pi
+n = 1000
+xx = [0.] * n
+yy = [0.] * n
+dx = (x_max - x_min) / (n - 1)
+
+dt=now()
+for i in range(n):
+    xx[i] = x_min + i * dx
+    yy[i] = math.sin(xx[i]) ** 2
+
+plt.grid(True)
+plt.plot(xx, yy)
+plt.show()
+print(f"It took me {dt*1000:.3f} ms to cal and plot this")

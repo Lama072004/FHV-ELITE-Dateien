@@ -1,0 +1,16 @@
+# Python venv and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# System / OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+**/x64/
+
