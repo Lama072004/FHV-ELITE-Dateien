@@ -1,14 +1,7 @@
-* Nexperia PHP79NQ08LT - Datasheet-Accurate Model
-.SUBCKT PHP79NQ08LT D G S
-M1 D G S S NXP_NMOS L=1u W=2000u
-.MODEL NXP_NMOS NMOS LEVEL=3
-+ VTO=1.5      KP=120       THETA=0.05
-+ LAMBDA=0.015 RD=0.005     RS=0.005
-+ CBD=300p     CBS=300p     CGSO=0.8n
-+ CGDO=0.3n    CGBO=1p      RDS=500k
-+ IS=1e-12     PB=0.8       TT=90n
-+ RG=2.0       RDSON=0.014  QG=30n
-+ QGS=6n       QGD=14n      VDSMAX=75
-D1 S D Dbody
-.MODEL Dbody D (IS=1e-9 RS=0.01 N=1 TT=90n CJO=300p VJ=0.8)
-.ENDS PHP79NQ08LT
+.model PHP79NQ08LT NMOS (
++ Level=3
++ Vto=1.500
++ Kp=50.000
++ Rs=0.05 Rd=0.05 Rg=1.0
++ Rds=0.014
+)

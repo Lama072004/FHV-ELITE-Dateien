@@ -57,11 +57,11 @@ void led_number(int number) {
 
     switch (number) {
     case 1:
-        led_strip_set_pixel(led_strip, 3, 255, 0, 0); // Segment A (oben horizontal)
-        led_strip_set_pixel(led_strip, 8, 255, 0, 0); // Segment B (rechts oben vertikal)
-        led_strip_set_pixel(led_strip, 13, 255, 0, 0); // Segment F (links oben vertikal)
-        led_strip_set_pixel(led_strip, 18, 255, 0, 0); // Segment C (rechts unten vertikal)
-        led_strip_set_pixel(led_strip, 23, 255, 0, 0); // Segment G (Mitte horizontal)
+        led_strip_set_pixel(led_strip, 3, 255, 0, 0);
+        led_strip_set_pixel(led_strip, 8, 255, 0, 0);
+        led_strip_set_pixel(led_strip, 13, 255, 0, 0);
+        led_strip_set_pixel(led_strip, 18, 255, 0, 0);
+        led_strip_set_pixel(led_strip, 23, 255, 0, 0);
         break;
     case 2:
         // Segment A (oben horizontal)

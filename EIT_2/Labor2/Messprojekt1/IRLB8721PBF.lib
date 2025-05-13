@@ -1,13 +1,14 @@
-* Infineon IRLB8721PBF - Enhanced Model
-.SUBCKT IRLB8721PBF D G S
-M1 D G S S INFINEON_NMOS L=1u W=1000u
-.MODEL INFINEON_NMOS NMOS LEVEL=3
-+ VTO=2.65     Kp=66.2     GAMMA=0.6
-+ PHI=0.7      LAMBDA=0.01  RD=0.004
-+ RS=0.004     CBD=1.8n     CBS=1.8n
-+ IS=1e-9      PB=0.8       CGSO=9.8n
-+ CGDO=0.032n  CGBO=1p      RDS=5e7
-+ RG=9.5       RDSON=0.008  TT=100n
-D1 S D Dbody
-.MODEL Dbody D (IS=1.96e-7 RS=0.00267 N=1.5 BV=30 IBV=0.25m CJO=604p VJ=5 M=0.636)
-.ENDS IRLB8721PBF
+.model IRLB8721PBF NMOS (LEVEL=3
++ VTO=2.65           ; Threshold Voltage (aus .SUBCKT)
++ KP=66.2            ; Transkonduktanz (aus .SUBCKT)
++ CGSO=9.78e-06      ; Source-Kapazität (aus .SUBCKT)
++ CGDO=3.25e-08      ; Drain-Kapazität (aus .SUBCKT)
++ RS=0.0042          ; Source-Widerstand (aus RS)
++ RD=0.0001          ; Drain-Widerstand (aus RD)
++ Rg=9.5             ; Gate-Widerstand (aus RG)
++ TOX=1e-7           ; Oxid-Dicke (angenommen Standardwert)
++ PHI=0.6            ; Bulk junction potential (angenommen)
++ GAMMA=0.4          ; Body-Effekt (angenommen)
++ ETA=0              ; Subthreshold-Modulation (nicht genutzt)
++ THETA=0            ; Mobility degradation (angenommen)
+)

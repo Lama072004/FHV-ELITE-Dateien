@@ -1,14 +1,7 @@
-* Vishay IRF840A - Datasheet-Based Model
-.SUBCKT IRF840A D G S
-M1 D G S S VISHAY_NMOS L=1u W=300u
-.MODEL VISHAY_NMOS NMOS LEVEL=3
-+ VTO=3.0      KP=45        THETA=0.1
-+ LAMBDA=0.02  RD=0.5       RS=0.5
-+ CBD=155p     CBS=155p     CGSO=1.2n
-+ CGDO=0.6n    CGBO=1p      RDS=1e6
-+ IS=1e-12     PB=0.8       TT=422n
-+ RG=3.7       RDSON=0.85   QG=38n
-+ QGS=9n       QGD=18n      VDSMAX=500
-D1 S D Dbody
-.MODEL Dbody D (IS=1e-9 RS=0.02 N=1 TT=422n CJO=155p VJ=0.8)
-.ENDS IRF840A
+.model IRF840A NMOS (
++ Level=3
++ Vto=3.000
++ Kp=3.700
++ Rs=0.05 Rd=0.05 Rg=2.0
++ Rds=0.85
+)

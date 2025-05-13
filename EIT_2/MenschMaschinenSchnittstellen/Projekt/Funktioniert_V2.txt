@@ -1,0 +1,197 @@
+#include "Arduino_SensorKit.h"
+
+// Pin-Belegung
+const int BTN_UP = 5;
+const int BTN_DOWN = 6;
+const int BTN_MENU = 4;
+const int BTN_BOOK = 9;
+const int BTN_EXTRA = 10;
+
+// Raumverwaltung
+const char* rooms[] = {"Meetingraum", "Buero 1", "Buero 2", "Labor", "Lounge"};
+const int roomCount = 5;
+int favoriteRoom = 0;
+int selectedRoom = 0;
+bool roomOccupied = false;
+int bookingDuration = 30; // Minuten
+unsigned long currentTime = 8 * 60; // 08:00 Uhr
+unsigned long occupiedUntil = 0;
+
+// Menüzustand
+enum AppState { MAIN_VIEW, ROOM_SELECTION, CONFIRM_BOOKING };
+AppState currentState = MAIN_VIEW;
+
+void setup() {
+  // Button-Pins initialisieren
+  pinMode(BTN_UP, INPUT_PULLUP);
+  pinMode(BTN_DOWN, INPUT_PULLUP);
+  pinMode(BTN_MENU, INPUT_PULLUP);
+  pinMode(BTN_BOOK, INPUT_PULLUP);
+  pinMode(BTN_EXTRA, INPUT_PULLUP);
+
+  // Display initialisieren
+  Oled.begin();
+  Oled.setFlipMode(true);
+  Oled.setFont(u8x8_font_chroma48medium8_r);
+  
+  drawMainView();
+}
+
+void loop() {
+  checkButtons();
+}
+
+void checkButtons() {
+  static unsigned long lastDebounce = 0;
+  if (millis() - lastDebounce < 150) return;
+  lastDebounce = millis();
+
+  // Button-Handling
+  if (!digitalRead(BTN_MENU)) {
+    if (currentState == MAIN_VIEW) {
+      currentState = ROOM_SELECTION;
+    } else {
+      currentState = MAIN_VIEW;
+    }
+    drawCurrentView();
+  }
+
+  if (!digitalRead(BTN_EXTRA) && currentState == ROOM_SELECTION) {
+    favoriteRoom = selectedRoom;
+    drawRoomSelection();
+  }
+
+  if (currentState == MAIN_VIEW) {
+    if (!digitalRead(BTN_UP)) {
+      bookingDuration = min(180, bookingDuration + 10);
+      drawMainView();
+    }
+    if (!digitalRead(BTN_DOWN)) {
+      bookingDuration = max(10, bookingDuration - 10);
+      drawMainView();
+    }
+    if (!digitalRead(BTN_BOOK) && !roomOccupied) {
+      currentState = CONFIRM_BOOKING;
+      drawConfirmation();
+    }
+  } 
+  else if (currentState == ROOM_SELECTION) {
+    if (!digitalRead(BTN_UP)) {
+      selectedRoom = (selectedRoom - 1 + roomCount) % roomCount;
+      drawRoomSelection();
+    }
+    if (!digitalRead(BTN_DOWN)) {
+      selectedRoom = (selectedRoom + 1) % roomCount;
+      drawRoomSelection();
+    }
+  }
+  else if (currentState == CONFIRM_BOOKING) {
+    if (!digitalRead(BTN_BOOK)) {
+      roomOccupied = true;
+      occupiedUntil = currentTime + bookingDuration;
+      currentState = MAIN_VIEW;
+      drawMainView();
+    }
+  }
+}
+
+void drawCurrentView() {
+  Oled.clear();
+  switch(currentState) {
+    case MAIN_VIEW: drawMainView(); break;
+    case ROOM_SELECTION: drawRoomSelection(); break;
+    case CONFIRM_BOOKING: drawConfirmation(); break;
+  }
+  Oled.refreshDisplay();
+}
+
+String formatTime(unsigned long minutes) {
+  char buffer[6];
+  sprintf(buffer, "%02d:%02d", minutes / 60, minutes % 60);
+  return String(buffer);
+}
+
+void drawMainView() {
+  Oled.clear();
+  
+  // Raumname links und Status rechts
+  Oled.setCursor(0, 0);
+  if (selectedRoom == favoriteRoom) {
+    Oled.print("<3 ");
+  }
+  Oled.print(rooms[selectedRoom]);
+  
+  // Status rechtsbündig (16 Zeichen pro Zeile)
+  int statusPos = 16 - (roomOccupied ? 8 : 5);
+  Oled.setCursor(statusPos, 0);
+  Oled.print(roomOccupied ? "besetzt" : "frei");
+
+  // Trennlinie
+  Oled.setCursor(0, 1);
+  Oled.print("----------------");
+
+  // Frei/Besetzt bis
+  Oled.setCursor(0, 2);
+  if (roomOccupied) {
+    Oled.print("frei bis: ");
+    // Uhrzeit rechtsbündig
+    String timeStr = formatTime(occupiedUntil);
+    Oled.setCursor(16 - timeStr.length(), 2);
+    Oled.print(timeStr);
+  } else {
+    Oled.print("jetzt frei");
+  }
+
+  // Buchungsende
+  Oled.setCursor(0, 3);
+  Oled.print("bis: ");
+  String timeStr = formatTime(currentTime + bookingDuration);
+  Oled.setCursor(16 - timeStr.length(), 3);
+  Oled.print(timeStr);
+  
+  Oled.refreshDisplay();
+}
+
+void drawRoomSelection() {
+  Oled.clear();
+  Oled.setCursor(0, 0);
+  Oled.print("Raumauswahl:");
+  Oled.setCursor(0, 1);
+  Oled.print("----------------");
+
+  for (int i = 0; i < min(roomCount, 6); i++) {
+    Oled.setCursor(0, 2 + i);
+    if (i == selectedRoom) {
+      Oled.setInverseFont(1);
+    }
+    if (i == favoriteRoom) {
+      Oled.print("<3");
+    } else {
+      Oled.print("  ");
+    }
+    Oled.print(rooms[i]);
+    Oled.setInverseFont(0);
+  }
+
+  Oled.refreshDisplay();
+}
+
+void drawConfirmation() {
+  Oled.clear();
+  Oled.setCursor(0, 0);
+  Oled.print("Buchung bestaetigen");
+  Oled.setCursor(0, 1);
+  Oled.print("----------------");
+
+  Oled.setCursor(0, 3);
+  Oled.print("Raum: ");
+  Oled.print(rooms[selectedRoom]);
+
+  Oled.setCursor(0, 4);
+  Oled.print("Bis: ");
+  String timeStr = formatTime(currentTime + bookingDuration);
+  Oled.setCursor(16 - timeStr.length(), 4);
+  Oled.print(timeStr);
+
+  Oled.refreshDisplay();
+}
