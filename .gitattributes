@@ -3,3 +3,15 @@
 
 # Explicitly set line endings for Python files
 *.py text eol=lf
+/EIT_2/Labor2/Messprojekt1/15V/C2Infineon.txt filter=lfs diff=lfs merge=lfs -text
+/EIT_2/Labor2/Messprojekt1/15V/C2Nexperia.txt filter=lfs diff=lfs merge=lfs -text
+/EIT_2/Labor2/Messprojekt1/15V/C2Vishay.txt filter=lfs diff=lfs merge=lfs -text
+/EIT_2/Labor2/Messprojekt1/25V/C2Infineon.txt filter=lfs diff=lfs merge=lfs -text
+/EIT_2/Labor2/Messprojekt1/25V/C2Nexperia.txt filter=lfs diff=lfs merge=lfs -text
+/EIT_2/Labor2/Messprojekt1/25V/C2Vishay.txt filter=lfs diff=lfs merge=lfs -text
+/EIT_2/Labor2/Messprojekt1/5V/C2Infineon.txt filter=lfs diff=lfs merge=lfs -text
+/EIT_2/Labor2/Messprojekt1/5V/C2Nexperia.txt filter=lfs diff=lfs merge=lfs -text
+/EIT_2/Labor2/Messprojekt1/5V/C2Vishay.txt filter=lfs diff=lfs merge=lfs -text
+/EIT_2/Labor2/Messprojekt1/Messwerte[[:space:]]Alt/Messwerte100R/C2Infineon.txt filter=lfs diff=lfs merge=lfs -text
+/EIT_2/Labor2/Messprojekt1/Messwerte[[:space:]]Alt/Messwerte1kR_old/C2Infineon.txt filter=lfs diff=lfs merge=lfs -text
+/EIT_2/Labor2/Messprojekt1/Messwerte[[:space:]]Alt/Messwerte1kR_old/C2Nexperia.txt filter=lfs diff=lfs merge=lfs -text

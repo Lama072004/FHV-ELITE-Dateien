@@ -28,7 +28,7 @@ void app_main(void) {
         int rounded_pulse = (int)(pulse_rate + 0.5f);
         int rounded_spo2 = (int)(spo2 + 0.5f);
 
-        detect_heart_condition(rounded_pulse);
+        // detect_heart_condition(rounded_pulse);
         // send_data_over_bluetooth(rounded_pulse, rounded_spo2); // Noch nicht aktiv
 
         vTaskDelay(pdMS_TO_TICKS(500)); // 500ms Delay

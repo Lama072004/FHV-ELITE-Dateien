@@ -2,6 +2,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include <stdint.h>
+#include <stdio.h>
 
 #define I2C_SDA_GPIO    5
 #define I2C_SCL_GPIO    6
@@ -58,4 +59,23 @@ void max30102_read_fifo(uint32_t *red, uint32_t *ir) {
 
     *red = ((uint32_t)data[0] << 16) | ((uint32_t)data[1] << 8) | data[2];
     *ir  = ((uint32_t)data[3] << 16) | ((uint32_t)data[4] << 8) | data[5];
+}
+
+// Task zur kontinuierlichen Messung
+void max30102_task(void *pvParameters) {
+    uint32_t red, ir;
+
+    while (1) {
+        max30102_read_fifo(&red, &ir);
+        printf("RED: %lu, IR: %lu\n", red, ir);
+
+        vTaskDelay(pdMS_TO_TICKS(100));  // Alle 100 ms ein Sample
+    }
+}
+
+void app_main(void) {
+    initI2C();
+    max30102_init();
+
+    xTaskCreate(max30102_task, "max30102_task", 2048, NULL, 5, NULL);
 }
