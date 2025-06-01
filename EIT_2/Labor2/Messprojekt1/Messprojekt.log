@@ -1,298 +1,1278 @@
 LTspice 24.0.12 for Windows
 Circuit: * D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Labor2\Messprojekt1\Messprojekt.asc
-Start Time: Mon May  5 15:19:06 2025
+Start Time: Sat May 31 09:38:17 2025
 solver = Normal
 Maximum thread count: 6
 
 
 
 Direct Newton iteration for .op point succeeded.
-.step v_sw_infineon=5 v_sw_vishay=100 v_sw_nexperia=10
+.step v_sw_infineon=5 v_sw_vishay=5 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=8 v_sw_vishay=100 v_sw_nexperia=10
+.step v_sw_infineon=15 v_sw_vishay=5 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=11 v_sw_vishay=100 v_sw_nexperia=10
+.step v_sw_infineon=25 v_sw_vishay=5 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=5 v_sw_vishay=250 v_sw_nexperia=10
+.step v_sw_infineon=35 v_sw_vishay=5 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=8 v_sw_vishay=250 v_sw_nexperia=10
+.step v_sw_infineon=40 v_sw_vishay=5 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=11 v_sw_vishay=250 v_sw_nexperia=10
+.step v_sw_infineon=5 v_sw_vishay=15 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=5 v_sw_vishay=400 v_sw_nexperia=10
+.step v_sw_infineon=15 v_sw_vishay=15 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=8 v_sw_vishay=400 v_sw_nexperia=10
+.step v_sw_infineon=25 v_sw_vishay=15 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=11 v_sw_vishay=400 v_sw_nexperia=10
+.step v_sw_infineon=35 v_sw_vishay=15 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=5 v_sw_vishay=100 v_sw_nexperia=20
+.step v_sw_infineon=40 v_sw_vishay=15 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=8 v_sw_vishay=100 v_sw_nexperia=20
+.step v_sw_infineon=5 v_sw_vishay=25 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=11 v_sw_vishay=100 v_sw_nexperia=20
+.step v_sw_infineon=15 v_sw_vishay=25 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=5 v_sw_vishay=250 v_sw_nexperia=20
+.step v_sw_infineon=25 v_sw_vishay=25 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=8 v_sw_vishay=250 v_sw_nexperia=20
+.step v_sw_infineon=35 v_sw_vishay=25 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=11 v_sw_vishay=250 v_sw_nexperia=20
+.step v_sw_infineon=40 v_sw_vishay=25 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=5 v_sw_vishay=400 v_sw_nexperia=20
+.step v_sw_infineon=5 v_sw_vishay=35 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=8 v_sw_vishay=400 v_sw_nexperia=20
+.step v_sw_infineon=15 v_sw_vishay=35 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=11 v_sw_vishay=400 v_sw_nexperia=20
+.step v_sw_infineon=25 v_sw_vishay=35 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=5 v_sw_vishay=100 v_sw_nexperia=40
+.step v_sw_infineon=35 v_sw_vishay=35 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=8 v_sw_vishay=100 v_sw_nexperia=40
+.step v_sw_infineon=40 v_sw_vishay=35 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=11 v_sw_vishay=100 v_sw_nexperia=40
+.step v_sw_infineon=5 v_sw_vishay=40 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=5 v_sw_vishay=250 v_sw_nexperia=40
+.step v_sw_infineon=15 v_sw_vishay=40 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=8 v_sw_vishay=250 v_sw_nexperia=40
+.step v_sw_infineon=25 v_sw_vishay=40 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=11 v_sw_vishay=250 v_sw_nexperia=40
+.step v_sw_infineon=35 v_sw_vishay=40 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=5 v_sw_vishay=400 v_sw_nexperia=40
+.step v_sw_infineon=40 v_sw_vishay=40 v_sw_nexperia=5
 
 
 
-.step v_sw_infineon=8 v_sw_vishay=400 v_sw_nexperia=40
+.step v_sw_infineon=5 v_sw_vishay=5 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=5 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=5 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=5 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=5 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=15 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=15 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=15 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=15 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=15 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=25 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=25 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=25 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=25 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=25 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=35 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=35 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=35 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=35 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=35 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=40 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=40 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=40 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=40 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=40 v_sw_nexperia=15
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=5 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=5 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=5 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=5 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=5 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=15 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=15 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=15 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=15 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=15 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=25 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=25 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=25 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=25 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=25 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=35 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=35 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=35 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=35 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=35 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=40 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=40 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=40 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=40 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=40 v_sw_nexperia=25
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=5 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=5 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=5 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=5 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=5 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=15 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=15 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=15 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=15 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=15 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=25 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=25 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=25 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=25 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=25 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=35 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=35 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=35 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=35 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=35 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=40 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=40 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=40 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=40 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=40 v_sw_nexperia=35
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=5 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=5 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=5 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=5 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=5 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=15 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=15 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=15 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=15 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=15 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=25 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=25 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=25 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=25 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=25 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=35 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=35 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=35 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=35 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=40 v_sw_vishay=35 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=5 v_sw_vishay=40 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=15 v_sw_vishay=40 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=25 v_sw_vishay=40 v_sw_nexperia=40
+
+
+
+.step v_sw_infineon=35 v_sw_vishay=40 v_sw_nexperia=40
 tnom = 27
 temp = 27
 method = modified trap
-.step v_sw_infineon=11 v_sw_vishay=400 v_sw_nexperia=40
+.step v_sw_infineon=40 v_sw_vishay=40 v_sw_nexperia=40
 
 
 Measurement: psw_m1
   step	AVG(v(n002)*id(m1))	FROM	TO
-     1	0.206571	0	0.003
-     2	0.785722	0	0.003
-     3	1.19868	0	0.003
-     4	0.199653	0	0.003
-     5	0.540877	0	0.003
-     6	1.12055	0	0.003
-     7	0.207405	0	0.003
-     8	0.546063	0	0.003
-     9	1.06838	0	0.003
-    10	0.202722	0	0.003
-    11	0.552224	0	0.003
-    12	1.06114	0	0.003
-    13	0.206249	0	0.003
-    14	0.55106	0	0.003
-    15	1.22646	0	0.003
-    16	0.226519	0	0.003
-    17	0.5747	0	0.003
-    18	1.02688	0	0.003
-    19	0.209154	0	0.003
-    20	0.54744	0	0.003
-    21	1.07018	0	0.003
-    22	0.213083	0	0.003
-    23	0.563345	0	0.003
-    24	1.09197	0	0.003
-    25	0.218447	0	0.003
-    26	0.526057	0	0.003
-    27	1.02533	0	0.003
+     1	0.00530918	0	0.003
+     2	0.0460654	0	0.003
+     3	0.12711	0	0.003
+     4	0.257866	0	0.003
+     5	0.331528	0	0.003
+     6	0.00493987	0	0.003
+     7	0.0324097	0	0.003
+     8	0.0826052	0	0.003
+     9	0.165959	0	0.003
+    10	0.211454	0	0.003
+    11	0.00604655	0	0.003
+    12	0.0215598	0	0.003
+    13	0.0766994	0	0.003
+    14	0.177862	0	0.003
+    15	0.229868	0	0.003
+    16	0.00442723	0	0.003
+    17	0.0417054	0	0.003
+    18	0.113953	0	0.003
+    19	0.21444	0	0.003
+    20	0.273813	0	0.003
+    21	0.00212729	0	0.003
+    22	0.0348053	0	0.003
+    23	0.0964273	0	0.003
+    24	0.178017	0	0.003
+    25	0.224716	0	0.003
+    26	0.00530918	0	0.003
+    27	0.0460654	0	0.003
+    28	0.12711	0	0.003
+    29	0.257866	0	0.003
+    30	0.331528	0	0.003
+    31	0.00493987	0	0.003
+    32	0.0324097	0	0.003
+    33	0.0826052	0	0.003
+    34	0.165959	0	0.003
+    35	0.211454	0	0.003
+    36	0.00604655	0	0.003
+    37	0.0215598	0	0.003
+    38	0.0766994	0	0.003
+    39	0.177862	0	0.003
+    40	0.229868	0	0.003
+    41	0.00442723	0	0.003
+    42	0.0417054	0	0.003
+    43	0.113953	0	0.003
+    44	0.21444	0	0.003
+    45	0.273813	0	0.003
+    46	0.00212729	0	0.003
+    47	0.0348053	0	0.003
+    48	0.0964273	0	0.003
+    49	0.178017	0	0.003
+    50	0.224716	0	0.003
+    51	0.00530918	0	0.003
+    52	0.0460654	0	0.003
+    53	0.12711	0	0.003
+    54	0.257866	0	0.003
+    55	0.331528	0	0.003
+    56	0.00493987	0	0.003
+    57	0.0324097	0	0.003
+    58	0.0826052	0	0.003
+    59	0.165959	0	0.003
+    60	0.211454	0	0.003
+    61	0.00604655	0	0.003
+    62	0.0215598	0	0.003
+    63	0.0766994	0	0.003
+    64	0.177862	0	0.003
+    65	0.229868	0	0.003
+    66	0.00442723	0	0.003
+    67	0.0417054	0	0.003
+    68	0.113953	0	0.003
+    69	0.21444	0	0.003
+    70	0.273813	0	0.003
+    71	0.00212729	0	0.003
+    72	0.0348053	0	0.003
+    73	0.0964273	0	0.003
+    74	0.178017	0	0.003
+    75	0.224716	0	0.003
+    76	0.00530918	0	0.003
+    77	0.0460654	0	0.003
+    78	0.12711	0	0.003
+    79	0.257866	0	0.003
+    80	0.331528	0	0.003
+    81	0.00493987	0	0.003
+    82	0.0324097	0	0.003
+    83	0.0826052	0	0.003
+    84	0.165959	0	0.003
+    85	0.211454	0	0.003
+    86	0.00604655	0	0.003
+    87	0.0215598	0	0.003
+    88	0.0766994	0	0.003
+    89	0.177862	0	0.003
+    90	0.229868	0	0.003
+    91	0.00442723	0	0.003
+    92	0.0417054	0	0.003
+    93	0.113953	0	0.003
+    94	0.21444	0	0.003
+    95	0.273813	0	0.003
+    96	0.00212729	0	0.003
+    97	0.0348053	0	0.003
+    98	0.0964273	0	0.003
+    99	0.178017	0	0.003
+   100	0.224716	0	0.003
+   101	0.00530918	0	0.003
+   102	0.0460654	0	0.003
+   103	0.12711	0	0.003
+   104	0.257866	0	0.003
+   105	0.331528	0	0.003
+   106	0.00493987	0	0.003
+   107	0.0324097	0	0.003
+   108	0.0826052	0	0.003
+   109	0.165959	0	0.003
+   110	0.211454	0	0.003
+   111	0.00604655	0	0.003
+   112	0.0215598	0	0.003
+   113	0.0766994	0	0.003
+   114	0.177862	0	0.003
+   115	0.229868	0	0.003
+   116	0.00442723	0	0.003
+   117	0.0417054	0	0.003
+   118	0.113953	0	0.003
+   119	0.21444	0	0.003
+   120	0.273813	0	0.003
+   121	0.00212729	0	0.003
+   122	0.0348053	0	0.003
+   123	0.0964273	0	0.003
+   124	0.178017	0	0.003
+   125	0.224716	0	0.003
 
 Measurement: psw_m2
   step	AVG(v(n004)*id(m2))	FROM	TO
-     1	5.00335	0	0.003
-     2	5.00189	0	0.003
-     3	5.00364	0	0.003
-     4	33.4245	0	0.003
-     5	33.4628	0	0.003
-     6	33.5426	0	0.003
-     7	90.7001	0	0.003
-     8	90.8744	0	0.003
-     9	90.7465	0	0.003
-    10	4.99843	0	0.003
-    11	4.99882	0	0.003
-    12	4.99957	0	0.003
-    13	33.3767	0	0.003
-    14	33.4523	0	0.003
-    15	33.4907	0	0.003
-    16	90.3213	0	0.003
-    17	90.5909	0	0.003
-    18	90.7212	0	0.003
-    19	4.99899	0	0.003
-    20	5.00467	0	0.003
-    21	4.99976	0	0.003
-    22	33.3665	0	0.003
-    23	33.4688	0	0.003
-    24	33.4703	0	0.003
-    25	90.522	0	0.003
-    26	90.5778	0	0.003
-    27	90.3904	0	0.003
+     1	0.0144588	0	0.003
+     2	0.0144323	0	0.003
+     3	0.0144345	0	0.003
+     4	0.0144004	0	0.003
+     5	0.0144485	0	0.003
+     6	0.130745	0	0.003
+     7	0.130867	0	0.003
+     8	0.131104	0	0.003
+     9	0.131062	0	0.003
+    10	0.130911	0	0.003
+    11	0.36687	0	0.003
+    12	0.366364	0	0.003
+    13	0.366356	0	0.003
+    14	0.36642	0	0.003
+    15	0.366417	0	0.003
+    16	0.724901	0	0.003
+    17	0.724703	0	0.003
+    18	0.724798	0	0.003
+    19	0.724703	0	0.003
+    20	0.724658	0	0.003
+    21	0.950635	0	0.003
+    22	0.950291	0	0.003
+    23	0.95096	0	0.003
+    24	0.950639	0	0.003
+    25	0.950665	0	0.003
+    26	0.0144588	0	0.003
+    27	0.0144323	0	0.003
+    28	0.0144345	0	0.003
+    29	0.0144004	0	0.003
+    30	0.0144485	0	0.003
+    31	0.130745	0	0.003
+    32	0.130867	0	0.003
+    33	0.131104	0	0.003
+    34	0.131062	0	0.003
+    35	0.130911	0	0.003
+    36	0.36687	0	0.003
+    37	0.366364	0	0.003
+    38	0.366356	0	0.003
+    39	0.36642	0	0.003
+    40	0.366417	0	0.003
+    41	0.724901	0	0.003
+    42	0.724703	0	0.003
+    43	0.724798	0	0.003
+    44	0.724703	0	0.003
+    45	0.724658	0	0.003
+    46	0.950635	0	0.003
+    47	0.950291	0	0.003
+    48	0.95096	0	0.003
+    49	0.950639	0	0.003
+    50	0.950665	0	0.003
+    51	0.0144588	0	0.003
+    52	0.0144323	0	0.003
+    53	0.0144345	0	0.003
+    54	0.0144004	0	0.003
+    55	0.0144485	0	0.003
+    56	0.130745	0	0.003
+    57	0.130867	0	0.003
+    58	0.131104	0	0.003
+    59	0.131062	0	0.003
+    60	0.130911	0	0.003
+    61	0.36687	0	0.003
+    62	0.366364	0	0.003
+    63	0.366356	0	0.003
+    64	0.36642	0	0.003
+    65	0.366417	0	0.003
+    66	0.724901	0	0.003
+    67	0.724703	0	0.003
+    68	0.724798	0	0.003
+    69	0.724703	0	0.003
+    70	0.724658	0	0.003
+    71	0.950635	0	0.003
+    72	0.950291	0	0.003
+    73	0.95096	0	0.003
+    74	0.950639	0	0.003
+    75	0.950665	0	0.003
+    76	0.0144588	0	0.003
+    77	0.0144323	0	0.003
+    78	0.0144345	0	0.003
+    79	0.0144004	0	0.003
+    80	0.0144485	0	0.003
+    81	0.130745	0	0.003
+    82	0.130867	0	0.003
+    83	0.131104	0	0.003
+    84	0.131062	0	0.003
+    85	0.130911	0	0.003
+    86	0.36687	0	0.003
+    87	0.366364	0	0.003
+    88	0.366356	0	0.003
+    89	0.36642	0	0.003
+    90	0.366417	0	0.003
+    91	0.724901	0	0.003
+    92	0.724703	0	0.003
+    93	0.724798	0	0.003
+    94	0.724703	0	0.003
+    95	0.724658	0	0.003
+    96	0.950635	0	0.003
+    97	0.950291	0	0.003
+    98	0.95096	0	0.003
+    99	0.950639	0	0.003
+   100	0.950665	0	0.003
+   101	0.0144588	0	0.003
+   102	0.0144323	0	0.003
+   103	0.0144345	0	0.003
+   104	0.0144004	0	0.003
+   105	0.0144485	0	0.003
+   106	0.130745	0	0.003
+   107	0.130867	0	0.003
+   108	0.131104	0	0.003
+   109	0.131062	0	0.003
+   110	0.130911	0	0.003
+   111	0.36687	0	0.003
+   112	0.366364	0	0.003
+   113	0.366356	0	0.003
+   114	0.36642	0	0.003
+   115	0.366417	0	0.003
+   116	0.724901	0	0.003
+   117	0.724703	0	0.003
+   118	0.724798	0	0.003
+   119	0.724703	0	0.003
+   120	0.724658	0	0.003
+   121	0.950635	0	0.003
+   122	0.950291	0	0.003
+   123	0.95096	0	0.003
+   124	0.950639	0	0.003
+   125	0.950665	0	0.003
 
 Measurement: psw_m3
   step	AVG(v(n006)*id(m3))	FROM	TO
-     1	2.3184	0	0.003
-     2	2.31817	0	0.003
-     3	2.31834	0	0.003
-     4	2.31839	0	0.003
-     5	2.31832	0	0.003
-     6	2.31841	0	0.003
-     7	2.3185	0	0.003
-     8	2.31845	0	0.003
-     9	2.31844	0	0.003
-    10	9.27995	0	0.003
-    11	9.27908	0	0.003
-    12	9.28031	0	0.003
-    13	9.27996	0	0.003
-    14	9.28046	0	0.003
-    15	9.27915	0	0.003
-    16	9.28043	0	0.003
-    17	9.28017	0	0.003
-    18	9.28069	0	0.003
-    19	37.1793	0	0.003
-    20	37.1824	0	0.003
-    21	37.1795	0	0.003
-    22	37.1796	0	0.003
-    23	37.1792	0	0.003
-    24	37.1783	0	0.003
-    25	37.1807	0	0.003
-    26	37.1814	0	0.003
-    27	37.1829	0	0.003
+     1	0.00639234	0	0.003
+     2	0.0063918	0	0.003
+     3	0.00639194	0	0.003
+     4	0.00639149	0	0.003
+     5	0.0063922	0	0.003
+     6	0.0063934	0	0.003
+     7	0.00639344	0	0.003
+     8	0.00639345	0	0.003
+     9	0.00639356	0	0.003
+    10	0.00639347	0	0.003
+    11	0.00639386	0	0.003
+    12	0.00639351	0	0.003
+    13	0.00639312	0	0.003
+    14	0.00639317	0	0.003
+    15	0.00639317	0	0.003
+    16	0.00639303	0	0.003
+    17	0.0063927	0	0.003
+    18	0.00639284	0	0.003
+    19	0.0063929	0	0.003
+    20	0.00639285	0	0.003
+    21	0.00639255	0	0.003
+    22	0.00639216	0	0.003
+    23	0.0063921	0	0.003
+    24	0.00639221	0	0.003
+    25	0.00639233	0	0.003
+    26	0.0575383	0	0.003
+    27	0.0575338	0	0.003
+    28	0.0575334	0	0.003
+    29	0.0575299	0	0.003
+    30	0.0575364	0	0.003
+    31	0.0575488	0	0.003
+    32	0.057547	0	0.003
+    33	0.0575485	0	0.003
+    34	0.057549	0	0.003
+    35	0.0575474	0	0.003
+    36	0.0575528	0	0.003
+    37	0.0575514	0	0.003
+    38	0.0575478	0	0.003
+    39	0.0575483	0	0.003
+    40	0.0575483	0	0.003
+    41	0.0575464	0	0.003
+    42	0.0575434	0	0.003
+    43	0.0575447	0	0.003
+    44	0.0575452	0	0.003
+    45	0.0575448	0	0.003
+    46	0.0575378	0	0.003
+    47	0.0575381	0	0.003
+    48	0.0575375	0	0.003
+    49	0.0575385	0	0.003
+    50	0.0575397	0	0.003
+    51	0.159849	0	0.003
+    52	0.159836	0	0.003
+    53	0.159835	0	0.003
+    54	0.159824	0	0.003
+    55	0.159843	0	0.003
+    56	0.159881	0	0.003
+    57	0.159873	0	0.003
+    58	0.159877	0	0.003
+    59	0.159877	0	0.003
+    60	0.159874	0	0.003
+    61	0.159891	0	0.003
+    62	0.159884	0	0.003
+    63	0.159874	0	0.003
+    64	0.159876	0	0.003
+    65	0.159876	0	0.003
+    66	0.159872	0	0.003
+    67	0.159869	0	0.003
+    68	0.159872	0	0.003
+    69	0.159874	0	0.003
+    70	0.159873	0	0.003
+    71	0.159851	0	0.003
+    72	0.159852	0	0.003
+    73	0.159851	0	0.003
+    74	0.159854	0	0.003
+    75	0.159857	0	0.003
+    76	0.313344	0	0.003
+    77	0.313316	0	0.003
+    78	0.313315	0	0.003
+    79	0.313293	0	0.003
+    80	0.313329	0	0.003
+    81	0.313407	0	0.003
+    82	0.31339	0	0.003
+    83	0.313397	0	0.003
+    84	0.313398	0	0.003
+    85	0.313392	0	0.003
+    86	0.313429	0	0.003
+    87	0.31341	0	0.003
+    88	0.31339	0	0.003
+    89	0.313393	0	0.003
+    90	0.313393	0	0.003
+    91	0.313392	0	0.003
+    92	0.313394	0	0.003
+    93	0.313401	0	0.003
+    94	0.313404	0	0.003
+    95	0.313402	0	0.003
+    96	0.313365	0	0.003
+    97	0.31336	0	0.003
+    98	0.313357	0	0.003
+    99	0.313362	0	0.003
+   100	0.313369	0	0.003
+   101	0.409293	0	0.003
+   102	0.409255	0	0.003
+   103	0.409253	0	0.003
+   104	0.409224	0	0.003
+   105	0.409272	0	0.003
+   106	0.40937	0	0.003
+   107	0.409351	0	0.003
+   108	0.40936	0	0.003
+   109	0.409362	0	0.003
+   110	0.409354	0	0.003
+   111	0.409405	0	0.003
+   112	0.409377	0	0.003
+   113	0.409351	0	0.003
+   114	0.409354	0	0.003
+   115	0.409354	0	0.003
+   116	0.409357	0	0.003
+   117	0.409363	0	0.003
+   118	0.409372	0	0.003
+   119	0.409376	0	0.003
+   120	0.409373	0	0.003
+   121	0.409324	0	0.003
+   122	0.409319	0	0.003
+   123	0.409315	0	0.003
+   124	0.409322	0	0.003
+   125	0.40933	0	0.003
 
 Measurement: vds_m1
   step	v_sw_infineon
      1	5
-     2	8
-     3	11
-     4	5
-     5	8
-     6	11
-     7	5
-     8	8
-     9	11
-    10	5
-    11	8
-    12	11
-    13	5
-    14	8
-    15	11
+     2	15
+     3	25
+     4	35
+     5	40
+     6	5
+     7	15
+     8	25
+     9	35
+    10	40
+    11	5
+    12	15
+    13	25
+    14	35
+    15	40
     16	5
-    17	8
-    18	11
-    19	5
-    20	8
-    21	11
-    22	5
-    23	8
-    24	11
-    25	5
-    26	8
-    27	11
+    17	15
+    18	25
+    19	35
+    20	40
+    21	5
+    22	15
+    23	25
+    24	35
+    25	40
+    26	5
+    27	15
+    28	25
+    29	35
+    30	40
+    31	5
+    32	15
+    33	25
+    34	35
+    35	40
+    36	5
+    37	15
+    38	25
+    39	35
+    40	40
+    41	5
+    42	15
+    43	25
+    44	35
+    45	40
+    46	5
+    47	15
+    48	25
+    49	35
+    50	40
+    51	5
+    52	15
+    53	25
+    54	35
+    55	40
+    56	5
+    57	15
+    58	25
+    59	35
+    60	40
+    61	5
+    62	15
+    63	25
+    64	35
+    65	40
+    66	5
+    67	15
+    68	25
+    69	35
+    70	40
+    71	5
+    72	15
+    73	25
+    74	35
+    75	40
+    76	5
+    77	15
+    78	25
+    79	35
+    80	40
+    81	5
+    82	15
+    83	25
+    84	35
+    85	40
+    86	5
+    87	15
+    88	25
+    89	35
+    90	40
+    91	5
+    92	15
+    93	25
+    94	35
+    95	40
+    96	5
+    97	15
+    98	25
+    99	35
+   100	40
+   101	5
+   102	15
+   103	25
+   104	35
+   105	40
+   106	5
+   107	15
+   108	25
+   109	35
+   110	40
+   111	5
+   112	15
+   113	25
+   114	35
+   115	40
+   116	5
+   117	15
+   118	25
+   119	35
+   120	40
+   121	5
+   122	15
+   123	25
+   124	35
+   125	40
 
 Measurement: vds_m2
   step	v_sw_vishay
-     1	100
-     2	100
-     3	100
-     4	250
-     5	250
-     6	250
-     7	400
-     8	400
-     9	400
-    10	100
-    11	100
-    12	100
-    13	250
-    14	250
-    15	250
-    16	400
-    17	400
-    18	400
-    19	100
-    20	100
-    21	100
-    22	250
-    23	250
-    24	250
-    25	400
-    26	400
-    27	400
-
-Measurement: vds_m3
-  step	v_sw_nexperia
-     1	10
-     2	10
-     3	10
-     4	10
-     5	10
-     6	10
-     7	10
-     8	10
-     9	10
-    10	20
-    11	20
-    12	20
-    13	20
-    14	20
-    15	20
-    16	20
-    17	20
-    18	20
-    19	40
-    20	40
+     1	5
+     2	5
+     3	5
+     4	5
+     5	5
+     6	15
+     7	15
+     8	15
+     9	15
+    10	15
+    11	25
+    12	25
+    13	25
+    14	25
+    15	25
+    16	35
+    17	35
+    18	35
+    19	35
+    20	35
     21	40
     22	40
     23	40
     24	40
     25	40
-    26	40
-    27	40
+    26	5
+    27	5
+    28	5
+    29	5
+    30	5
+    31	15
+    32	15
+    33	15
+    34	15
+    35	15
+    36	25
+    37	25
+    38	25
+    39	25
+    40	25
+    41	35
+    42	35
+    43	35
+    44	35
+    45	35
+    46	40
+    47	40
+    48	40
+    49	40
+    50	40
+    51	5
+    52	5
+    53	5
+    54	5
+    55	5
+    56	15
+    57	15
+    58	15
+    59	15
+    60	15
+    61	25
+    62	25
+    63	25
+    64	25
+    65	25
+    66	35
+    67	35
+    68	35
+    69	35
+    70	35
+    71	40
+    72	40
+    73	40
+    74	40
+    75	40
+    76	5
+    77	5
+    78	5
+    79	5
+    80	5
+    81	15
+    82	15
+    83	15
+    84	15
+    85	15
+    86	25
+    87	25
+    88	25
+    89	25
+    90	25
+    91	35
+    92	35
+    93	35
+    94	35
+    95	35
+    96	40
+    97	40
+    98	40
+    99	40
+   100	40
+   101	5
+   102	5
+   103	5
+   104	5
+   105	5
+   106	15
+   107	15
+   108	15
+   109	15
+   110	15
+   111	25
+   112	25
+   113	25
+   114	25
+   115	25
+   116	35
+   117	35
+   118	35
+   119	35
+   120	35
+   121	40
+   122	40
+   123	40
+   124	40
+   125	40
 
-Total elapsed time: 2.744 seconds.
+Measurement: vds_m3
+  step	v_sw_nexperia
+     1	5
+     2	5
+     3	5
+     4	5
+     5	5
+     6	5
+     7	5
+     8	5
+     9	5
+    10	5
+    11	5
+    12	5
+    13	5
+    14	5
+    15	5
+    16	5
+    17	5
+    18	5
+    19	5
+    20	5
+    21	5
+    22	5
+    23	5
+    24	5
+    25	5
+    26	15
+    27	15
+    28	15
+    29	15
+    30	15
+    31	15
+    32	15
+    33	15
+    34	15
+    35	15
+    36	15
+    37	15
+    38	15
+    39	15
+    40	15
+    41	15
+    42	15
+    43	15
+    44	15
+    45	15
+    46	15
+    47	15
+    48	15
+    49	15
+    50	15
+    51	25
+    52	25
+    53	25
+    54	25
+    55	25
+    56	25
+    57	25
+    58	25
+    59	25
+    60	25
+    61	25
+    62	25
+    63	25
+    64	25
+    65	25
+    66	25
+    67	25
+    68	25
+    69	25
+    70	25
+    71	25
+    72	25
+    73	25
+    74	25
+    75	25
+    76	35
+    77	35
+    78	35
+    79	35
+    80	35
+    81	35
+    82	35
+    83	35
+    84	35
+    85	35
+    86	35
+    87	35
+    88	35
+    89	35
+    90	35
+    91	35
+    92	35
+    93	35
+    94	35
+    95	35
+    96	35
+    97	35
+    98	35
+    99	35
+   100	35
+   101	40
+   102	40
+   103	40
+   104	40
+   105	40
+   106	40
+   107	40
+   108	40
+   109	40
+   110	40
+   111	40
+   112	40
+   113	40
+   114	40
+   115	40
+   116	40
+   117	40
+   118	40
+   119	40
+   120	40
+   121	40
+   122	40
+   123	40
+   124	40
+   125	40
+
+Total elapsed time: 5.582 seconds.
 

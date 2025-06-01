@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="QuadratzahlenBereich.c">
+    <ClCompile Include="051ÜberprüfungUsername.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
