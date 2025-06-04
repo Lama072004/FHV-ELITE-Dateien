@@ -1,28 +1,29 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdbool.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
 
-int count_square_numbers(int A, int B) 
-{
-	int j = 0;
-	for (int i = A; i < B; i++) 
-	{
-		if ((i * i) <= B) 
-		{
-			j += 1;
-		}
-	}
-	return j;
+int Quadratzahl(int A, int B){
+    
+    int anzahl;
+    for(int i = 1; i<B; i++){
+        if((i*i)<=B && (i*i)>=A){
+            anzahl +=1;
+        }
+    }
+    return anzahl;
 }
 
-int main() 
+int main()
 {
-	int A, B;
-	scanf_s("%d", &A);
-	scanf_s("%d", &B);
-
-	int result = count_square_numbers(A, B);
-	printf("%d\n", result);
-
-	return 0;
-
+    int A;
+    int B;
+    int Anzahl;
+    
+    scanf("%d %d",&A,&B);
+    Anzahl = Quadratzahl(A,B);
+    printf("%d", Anzahl);
+    return 0;
 }
