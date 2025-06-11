@@ -1,0 +1,61 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+// LCD-Display mit Adresse 0x27 (für PCF8574-basiertes Modul)
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// Pin-Belegung
+const int BTN_UP    = 2;
+const int BTN_DOWN  = 5;
+const int BTN_MENU  = 4;
+const int BTN_BOOK  = 3;
+const int BTN_EXTRA = 6;
+
+String lastMessage = "";
+
+void setup() {
+  lcd.init();
+  lcd.backlight();
+
+  // Pins als Eingang mit Pullup definieren
+  pinMode(BTN_UP,    INPUT_PULLUP);
+  pinMode(BTN_DOWN,  INPUT_PULLUP);
+  pinMode(BTN_MENU,  INPUT_PULLUP);
+  pinMode(BTN_BOOK,  INPUT_PULLUP);
+  pinMode(BTN_EXTRA, INPUT_PULLUP);
+
+  lcd.setCursor(0, 0);
+  lcd.print("Bereit...");
+}
+
+void loop() {
+  String message = "";
+
+  if (digitalRead(BTN_UP) == LOW) {
+    message = "UP gedrueckt";
+  } else if (digitalRead(BTN_DOWN) == LOW) {
+    message = "DOWN gedrueckt";
+  } else if (digitalRead(BTN_MENU) == LOW) {
+    message = "MENU gedrueckt";
+  } else if (digitalRead(BTN_BOOK) == LOW) {
+    message = "BUCHEN gedrueckt";
+  } else if (digitalRead(BTN_EXTRA) == LOW) {
+    message = "EXTRA gedrueckt";
+  }
+
+  if (message != "" && message != lastMessage) {
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print(message);
+    lastMessage = message;
+  }
+
+  if (message == "" && lastMessage != "") {
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Bereit...");
+    lastMessage = "";
+  }
+
+  delay(100); // einfache Entprellung
+}
