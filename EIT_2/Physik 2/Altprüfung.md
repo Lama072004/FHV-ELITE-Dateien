@@ -1,5 +1,3 @@
----
-
 ### **Frage 4: LC-Schwingkreis (5 Punkte)**
 
 **a)** Die elektromagnetische Energie besteht aus
