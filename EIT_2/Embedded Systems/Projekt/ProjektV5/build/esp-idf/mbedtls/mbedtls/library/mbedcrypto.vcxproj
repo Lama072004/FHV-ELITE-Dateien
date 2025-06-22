@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E7F4BAEE-C6CA-3D4C-BA01-D22F490CA9ED}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>mbedcrypto</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mbedcrypto.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">libmbedcrypto</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.a</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mbedcrypto.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">libmbedcrypto</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.a</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">mbedcrypto.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">libmbedcrypto</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.a</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">mbedcrypto.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">libmbedcrypto</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.a</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\config;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\esp_crt_bundle\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library;D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\include;C:\idf3\v5.4.1\esp-idf\components\newlib\platform_include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\config\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\esp_additions\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\dma\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\ldo\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\debug_probe\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\.;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\heap\include;C:\idf3\v5.4.1\esp-idf\components\heap\tlsf;C:\idf3\v5.4.1\esp-idf\components\log\include;C:\idf3\v5.4.1\esp-idf\components\soc\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\register;C:\idf3\v5.4.1\esp-idf\components\hal\platform_port\include;C:\idf3\v5.4.1\esp-idf\components\hal\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\hal\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_common\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\soc;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\riscv;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\private;C:\idf3\v5.4.1\esp-idf\components\riscv\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps\sntp;C:\idf3\v5.4.1\esp-idf\components\lwip\lwip\src\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\freertos\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\arch;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\sys;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\everest\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m\p256-m;C:\idf3\v5.4.1\esp-idf\components\esp_security\include;C:\idf3\v5.4.1\esp-idf\components\esp_mm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -march=rv32imc_zicsr_zifencei -ffunction-sections -fdata-sections -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -nostartfiles -Og -fno-shrink-wrap "-fmacro-prefix-map=D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5=." -fmacro-prefix-map=C:/idf3/v5.4.1/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu++2b -fno-exceptions -fno-rtti -fuse-cxa-atexit</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary></RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;MBEDTLS_CONFIG_FILE="mbedtls/esp_config.h";_GLIBCXX_USE_POSIX_SEMAPHORE;_GLIBCXX_HAVE_POSIX_SEMAPHORE;_GNU_SOURCE;IDF_VER="v5.4.1";ESP_PLATFORM;_POSIX_READER_WRITER_LOCKS;SOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE;SOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;MBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\";_GLIBCXX_USE_POSIX_SEMAPHORE;_GLIBCXX_HAVE_POSIX_SEMAPHORE;_GNU_SOURCE;IDF_VER=\"v5.4.1\";ESP_PLATFORM;_POSIX_READER_WRITER_LOCKS;SOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE;SOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\config;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\esp_crt_bundle\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library;D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\include;C:\idf3\v5.4.1\esp-idf\components\newlib\platform_include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\config\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\esp_additions\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\dma\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\ldo\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\debug_probe\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\.;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\heap\include;C:\idf3\v5.4.1\esp-idf\components\heap\tlsf;C:\idf3\v5.4.1\esp-idf\components\log\include;C:\idf3\v5.4.1\esp-idf\components\soc\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\register;C:\idf3\v5.4.1\esp-idf\components\hal\platform_port\include;C:\idf3\v5.4.1\esp-idf\components\hal\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\hal\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_common\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\soc;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\riscv;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\private;C:\idf3\v5.4.1\esp-idf\components\riscv\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps\sntp;C:\idf3\v5.4.1\esp-idf\components\lwip\lwip\src\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\freertos\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\arch;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\sys;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\everest\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m\p256-m;C:\idf3\v5.4.1\esp-idf\components\esp_security\include;C:\idf3\v5.4.1\esp-idf\components\esp_mm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\config;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\esp_crt_bundle\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library;D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\include;C:\idf3\v5.4.1\esp-idf\components\newlib\platform_include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\config\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\esp_additions\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\dma\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\ldo\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\debug_probe\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\.;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\heap\include;C:\idf3\v5.4.1\esp-idf\components\heap\tlsf;C:\idf3\v5.4.1\esp-idf\components\log\include;C:\idf3\v5.4.1\esp-idf\components\soc\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\register;C:\idf3\v5.4.1\esp-idf\components\hal\platform_port\include;C:\idf3\v5.4.1\esp-idf\components\hal\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\hal\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_common\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\soc;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\riscv;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\private;C:\idf3\v5.4.1\esp-idf\components\riscv\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps\sntp;C:\idf3\v5.4.1\esp-idf\components\lwip\lwip\src\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\freertos\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\arch;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\sys;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\everest\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m\p256-m;C:\idf3\v5.4.1\esp-idf\components\esp_security\include;C:\idf3\v5.4.1\esp-idf\components\esp_mm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\config;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\esp_crt_bundle\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library;D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\include;C:\idf3\v5.4.1\esp-idf\components\newlib\platform_include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\config\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\esp_additions\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\dma\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\ldo\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\debug_probe\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\.;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\heap\include;C:\idf3\v5.4.1\esp-idf\components\heap\tlsf;C:\idf3\v5.4.1\esp-idf\components\log\include;C:\idf3\v5.4.1\esp-idf\components\soc\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\register;C:\idf3\v5.4.1\esp-idf\components\hal\platform_port\include;C:\idf3\v5.4.1\esp-idf\components\hal\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\hal\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_common\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\soc;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\riscv;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\private;C:\idf3\v5.4.1\esp-idf\components\riscv\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps\sntp;C:\idf3\v5.4.1\esp-idf\components\lwip\lwip\src\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\freertos\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\arch;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\sys;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\everest\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m\p256-m;C:\idf3\v5.4.1\esp-idf\components\esp_security\include;C:\idf3\v5.4.1\esp-idf\components\esp_mm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -march=rv32imc_zicsr_zifencei -ffunction-sections -fdata-sections -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -nostartfiles -Og -fno-shrink-wrap "-fmacro-prefix-map=D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5=." -fmacro-prefix-map=C:/idf3/v5.4.1/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu++2b -fno-exceptions -fno-rtti -fuse-cxa-atexit</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary></RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MBEDTLS_CONFIG_FILE="mbedtls/esp_config.h";_GLIBCXX_USE_POSIX_SEMAPHORE;_GLIBCXX_HAVE_POSIX_SEMAPHORE;_GNU_SOURCE;IDF_VER="v5.4.1";ESP_PLATFORM;_POSIX_READER_WRITER_LOCKS;SOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE;SOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\";_GLIBCXX_USE_POSIX_SEMAPHORE;_GLIBCXX_HAVE_POSIX_SEMAPHORE;_GNU_SOURCE;IDF_VER=\"v5.4.1\";ESP_PLATFORM;_POSIX_READER_WRITER_LOCKS;SOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE;SOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\config;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\esp_crt_bundle\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library;D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\include;C:\idf3\v5.4.1\esp-idf\components\newlib\platform_include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\config\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\esp_additions\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\dma\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\ldo\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\debug_probe\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\.;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\heap\include;C:\idf3\v5.4.1\esp-idf\components\heap\tlsf;C:\idf3\v5.4.1\esp-idf\components\log\include;C:\idf3\v5.4.1\esp-idf\components\soc\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\register;C:\idf3\v5.4.1\esp-idf\components\hal\platform_port\include;C:\idf3\v5.4.1\esp-idf\components\hal\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\hal\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_common\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\soc;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\riscv;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\private;C:\idf3\v5.4.1\esp-idf\components\riscv\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps\sntp;C:\idf3\v5.4.1\esp-idf\components\lwip\lwip\src\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\freertos\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\arch;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\sys;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\everest\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m\p256-m;C:\idf3\v5.4.1\esp-idf\components\esp_security\include;C:\idf3\v5.4.1\esp-idf\components\esp_mm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\config;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\esp_crt_bundle\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library;D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\include;C:\idf3\v5.4.1\esp-idf\components\newlib\platform_include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\config\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\esp_additions\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\dma\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\ldo\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\debug_probe\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\.;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\heap\include;C:\idf3\v5.4.1\esp-idf\components\heap\tlsf;C:\idf3\v5.4.1\esp-idf\components\log\include;C:\idf3\v5.4.1\esp-idf\components\soc\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\register;C:\idf3\v5.4.1\esp-idf\components\hal\platform_port\include;C:\idf3\v5.4.1\esp-idf\components\hal\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\hal\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_common\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\soc;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\riscv;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\private;C:\idf3\v5.4.1\esp-idf\components\riscv\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps\sntp;C:\idf3\v5.4.1\esp-idf\components\lwip\lwip\src\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\freertos\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\arch;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\sys;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\everest\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m\p256-m;C:\idf3\v5.4.1\esp-idf\components\esp_security\include;C:\idf3\v5.4.1\esp-idf\components\esp_mm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\config;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\esp_crt_bundle\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library;D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\include;C:\idf3\v5.4.1\esp-idf\components\newlib\platform_include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\config\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\esp_additions\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\dma\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\ldo\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\debug_probe\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\.;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\heap\include;C:\idf3\v5.4.1\esp-idf\components\heap\tlsf;C:\idf3\v5.4.1\esp-idf\components\log\include;C:\idf3\v5.4.1\esp-idf\components\soc\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\register;C:\idf3\v5.4.1\esp-idf\components\hal\platform_port\include;C:\idf3\v5.4.1\esp-idf\components\hal\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\hal\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_common\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\soc;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\riscv;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\private;C:\idf3\v5.4.1\esp-idf\components\riscv\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps\sntp;C:\idf3\v5.4.1\esp-idf\components\lwip\lwip\src\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\freertos\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\arch;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\sys;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\everest\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m\p256-m;C:\idf3\v5.4.1\esp-idf\components\esp_security\include;C:\idf3\v5.4.1\esp-idf\components\esp_mm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -march=rv32imc_zicsr_zifencei -ffunction-sections -fdata-sections -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -nostartfiles -Og -fno-shrink-wrap "-fmacro-prefix-map=D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5=." -fmacro-prefix-map=C:/idf3/v5.4.1/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu++2b -fno-exceptions -fno-rtti -fuse-cxa-atexit</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary></RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MBEDTLS_CONFIG_FILE="mbedtls/esp_config.h";_GLIBCXX_USE_POSIX_SEMAPHORE;_GLIBCXX_HAVE_POSIX_SEMAPHORE;_GNU_SOURCE;IDF_VER="v5.4.1";ESP_PLATFORM;_POSIX_READER_WRITER_LOCKS;SOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE;SOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\";_GLIBCXX_USE_POSIX_SEMAPHORE;_GLIBCXX_HAVE_POSIX_SEMAPHORE;_GNU_SOURCE;IDF_VER=\"v5.4.1\";ESP_PLATFORM;_POSIX_READER_WRITER_LOCKS;SOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE;SOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\config;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\esp_crt_bundle\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library;D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\include;C:\idf3\v5.4.1\esp-idf\components\newlib\platform_include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\config\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\esp_additions\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\dma\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\ldo\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\debug_probe\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\.;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\heap\include;C:\idf3\v5.4.1\esp-idf\components\heap\tlsf;C:\idf3\v5.4.1\esp-idf\components\log\include;C:\idf3\v5.4.1\esp-idf\components\soc\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\register;C:\idf3\v5.4.1\esp-idf\components\hal\platform_port\include;C:\idf3\v5.4.1\esp-idf\components\hal\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\hal\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_common\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\soc;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\riscv;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\private;C:\idf3\v5.4.1\esp-idf\components\riscv\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps\sntp;C:\idf3\v5.4.1\esp-idf\components\lwip\lwip\src\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\freertos\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\arch;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\sys;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\everest\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m\p256-m;C:\idf3\v5.4.1\esp-idf\components\esp_security\include;C:\idf3\v5.4.1\esp-idf\components\esp_mm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\config;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\esp_crt_bundle\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library;D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\include;C:\idf3\v5.4.1\esp-idf\components\newlib\platform_include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\config\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\esp_additions\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\dma\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\ldo\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\debug_probe\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\.;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\heap\include;C:\idf3\v5.4.1\esp-idf\components\heap\tlsf;C:\idf3\v5.4.1\esp-idf\components\log\include;C:\idf3\v5.4.1\esp-idf\components\soc\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\register;C:\idf3\v5.4.1\esp-idf\components\hal\platform_port\include;C:\idf3\v5.4.1\esp-idf\components\hal\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\hal\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_common\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\soc;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\riscv;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\private;C:\idf3\v5.4.1\esp-idf\components\riscv\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps\sntp;C:\idf3\v5.4.1\esp-idf\components\lwip\lwip\src\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\freertos\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\arch;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\sys;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\everest\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m\p256-m;C:\idf3\v5.4.1\esp-idf\components\esp_security\include;C:\idf3\v5.4.1\esp-idf\components\esp_mm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\config;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\esp_crt_bundle\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library;D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\include;C:\idf3\v5.4.1\esp-idf\components\newlib\platform_include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\config\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\esp_additions\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\dma\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\ldo\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\debug_probe\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\.;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\heap\include;C:\idf3\v5.4.1\esp-idf\components\heap\tlsf;C:\idf3\v5.4.1\esp-idf\components\log\include;C:\idf3\v5.4.1\esp-idf\components\soc\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\register;C:\idf3\v5.4.1\esp-idf\components\hal\platform_port\include;C:\idf3\v5.4.1\esp-idf\components\hal\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\hal\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_common\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\soc;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\riscv;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\private;C:\idf3\v5.4.1\esp-idf\components\riscv\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps\sntp;C:\idf3\v5.4.1\esp-idf\components\lwip\lwip\src\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\freertos\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\arch;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\sys;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\everest\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m\p256-m;C:\idf3\v5.4.1\esp-idf\components\esp_security\include;C:\idf3\v5.4.1\esp-idf\components\esp_mm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -march=rv32imc_zicsr_zifencei -ffunction-sections -fdata-sections -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -nostartfiles -Og -fno-shrink-wrap "-fmacro-prefix-map=D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5=." -fmacro-prefix-map=C:/idf3/v5.4.1/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu++2b -fno-exceptions -fno-rtti -fuse-cxa-atexit</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary></RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MBEDTLS_CONFIG_FILE="mbedtls/esp_config.h";_GLIBCXX_USE_POSIX_SEMAPHORE;_GLIBCXX_HAVE_POSIX_SEMAPHORE;_GNU_SOURCE;IDF_VER="v5.4.1";ESP_PLATFORM;_POSIX_READER_WRITER_LOCKS;SOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE;SOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;MBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\";_GLIBCXX_USE_POSIX_SEMAPHORE;_GLIBCXX_HAVE_POSIX_SEMAPHORE;_GNU_SOURCE;IDF_VER=\"v5.4.1\";ESP_PLATFORM;_POSIX_READER_WRITER_LOCKS;SOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE;SOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\config;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\esp_crt_bundle\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library;D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\include;C:\idf3\v5.4.1\esp-idf\components\newlib\platform_include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\config\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\esp_additions\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\dma\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\ldo\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\debug_probe\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\.;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\heap\include;C:\idf3\v5.4.1\esp-idf\components\heap\tlsf;C:\idf3\v5.4.1\esp-idf\components\log\include;C:\idf3\v5.4.1\esp-idf\components\soc\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\register;C:\idf3\v5.4.1\esp-idf\components\hal\platform_port\include;C:\idf3\v5.4.1\esp-idf\components\hal\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\hal\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_common\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\soc;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\riscv;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\private;C:\idf3\v5.4.1\esp-idf\components\riscv\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps\sntp;C:\idf3\v5.4.1\esp-idf\components\lwip\lwip\src\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\freertos\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\arch;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\sys;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\everest\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m\p256-m;C:\idf3\v5.4.1\esp-idf\components\esp_security\include;C:\idf3\v5.4.1\esp-idf\components\esp_mm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\config;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\esp_crt_bundle\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library;D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\include;C:\idf3\v5.4.1\esp-idf\components\newlib\platform_include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include;C:\idf3\v5.4.1\esp-idf\components\freertos\config\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\config\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include;C:\idf3\v5.4.1\esp-idf\components\freertos\FreeRTOS-Kernel\portable\riscv\include\freertos;C:\idf3\v5.4.1\esp-idf\components\freertos\esp_additions\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\include\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\dma\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\ldo\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\debug_probe\include;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\.;C:\idf3\v5.4.1\esp-idf\components\esp_hw_support\port\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\heap\include;C:\idf3\v5.4.1\esp-idf\components\heap\tlsf;C:\idf3\v5.4.1\esp-idf\components\log\include;C:\idf3\v5.4.1\esp-idf\components\soc\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\soc\esp32c3\register;C:\idf3\v5.4.1\esp-idf\components\hal\platform_port\include;C:\idf3\v5.4.1\esp-idf\components\hal\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\hal\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3\include\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_rom\esp32c3;C:\idf3\v5.4.1\esp-idf\components\esp_common\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\include;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\soc;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\riscv;C:\idf3\v5.4.1\esp-idf\components\esp_system\port\include\private;C:\idf3\v5.4.1\esp-idf\components\riscv\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps;C:\idf3\v5.4.1\esp-idf\components\lwip\include\apps\sntp;C:\idf3\v5.4.1\esp-idf\components\lwip\lwip\src\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\freertos\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\arch;C:\idf3\v5.4.1\esp-idf\components\lwip\port\esp32xx\include\sys;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\everest\include;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m;C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\3rdparty\p256-m\p256-m;C:\idf3\v5.4.1\esp-idf\components\esp_security\include;C:\idf3\v5.4.1\esp-idf\components\esp_mm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/idf3/v5.4.1/esp-idf/components/mbedtls/mbedtls/library/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\idf3tools\tools\cmake\3.30.2\bin\cmake.exe "-SD:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5" "-BD:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build" --check-stamp-file "D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build/esp-idf/mbedtls/mbedtls/library/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/idf3/v5.4.1/esp-idf/components/mbedtls/mbedtls/library/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\idf3tools\tools\cmake\3.30.2\bin\cmake.exe "-SD:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5" "-BD:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build" --check-stamp-file "D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build/esp-idf/mbedtls/mbedtls/library/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/idf3/v5.4.1/esp-idf/components/mbedtls/mbedtls/library/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\idf3tools\tools\cmake\3.30.2\bin\cmake.exe "-SD:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5" "-BD:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build" --check-stamp-file "D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build/esp-idf/mbedtls/mbedtls/library/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/idf3/v5.4.1/esp-idf/components/mbedtls/mbedtls/library/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\idf3tools\tools\cmake\3.30.2\bin\cmake.exe "-SD:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5" "-BD:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build" --check-stamp-file "D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build/esp-idf/mbedtls/mbedtls/library/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\aes.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\aesni.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\aesce.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\aria.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\asn1parse.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\asn1write.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\base64.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\bignum.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\bignum_core.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\bignum_mod.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\bignum_mod_raw.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\block_cipher.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\camellia.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ccm.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\chacha20.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\chachapoly.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\cipher.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\cipher_wrap.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\constant_time.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\cmac.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ctr_drbg.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\des.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\dhm.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ecdh.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ecdsa.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ecjpake.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ecp.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ecp_curves.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ecp_curves_new.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\entropy.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\entropy_poll.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\error.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\gcm.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\hkdf.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\hmac_drbg.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\lmots.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\lms.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\md.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\md5.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\memory_buffer_alloc.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\nist_kw.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\oid.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\padlock.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pem.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pk.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pk_ecc.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pk_wrap.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pkcs12.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pkcs5.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pkparse.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pkwrite.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\platform.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\platform_util.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\poly1305.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_aead.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_cipher.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_client.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_driver_wrappers_no_static.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_ecp.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_ffdh.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_hash.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_mac.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_pake.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_rsa.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_se.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_slot_management.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_storage.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_its_file.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_util.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ripemd160.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\rsa.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\rsa_alt_helpers.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\sha1.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\sha256.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\sha512.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\sha3.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\threading.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\timing.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\version.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\version_features.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\esp_sha_gdma_impl.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\esp_aes_gdma_impl.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\esp_aes_dma_core.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\crypto_shared_gdma\esp_crypto_shared_gdma.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\esp_hardware.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\esp_mem.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\esp_timing.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\esp_aes_xts.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\esp_aes_common.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\esp_aes.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\esp_sha.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\sha.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\esp_ds\esp_rsa_sign_alt.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\bignum\esp_bignum.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\bignum\bignum_alt.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\esp_sha1.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\esp_sha256.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\esp_sha512.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\esp_aes_gcm.c" />
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\md\esp_md.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\mbedtls\library\mbedx509.vcxproj">
+      <Project>{85C69D0F-1E69-38F2-BCED-13FA4E556BDB}</Project>
+      <Name>mbedx509</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

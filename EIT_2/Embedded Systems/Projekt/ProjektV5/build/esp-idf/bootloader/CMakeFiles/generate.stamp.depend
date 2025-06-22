@@ -1,0 +1,4 @@
+# CMake generation dependency list for this directory.
+C:/idf3/v5.4.1/esp-idf/components/bootloader/CMakeLists.txt
+D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build/bootloader-flash_args
+D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build/esp-idf/bootloader/bootloader-flash_args.in

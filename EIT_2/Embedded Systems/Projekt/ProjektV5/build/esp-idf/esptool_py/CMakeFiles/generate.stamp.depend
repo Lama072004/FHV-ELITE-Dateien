@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+C:/idf3/v5.4.1/esp-idf/components/esptool_py/CMakeLists.txt
+D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build/app-flash_args
+D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build/esp-idf/esptool_py/app-flash_args.in
+D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build/esp-idf/esptool_py/flasher_args.json.in
