@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+C:/idf3/v5.4.1/esp-idf/CMakeLists.txt
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/CMakeASMInformation.cmake
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/Compiler/GNU-ASM.cmake
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/Compiler/GNU.cmake

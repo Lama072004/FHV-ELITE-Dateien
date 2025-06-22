@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\flash_brownout_hook.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\spi_flash_chip_drivers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\spi_flash_chip_generic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\spi_flash_chip_issi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\spi_flash_chip_mxic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\spi_flash_chip_gd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\spi_flash_chip_winbond.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\spi_flash_chip_boya.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\spi_flash_chip_mxic_opi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\spi_flash_chip_th.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\memspi_host_driver.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\cache_utils.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\flash_mmap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\flash_ops.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\spi_flash_wrap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\esp_flash_api.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\esp_flash_spi_init.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\spi_flash_os_func_app.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\spi_flash_os_func_noos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\idf3\v5.4.1\esp-idf\components\spi_flash\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{DF8B11CB-E57E-3B54-BA8D-09ED617C6E27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

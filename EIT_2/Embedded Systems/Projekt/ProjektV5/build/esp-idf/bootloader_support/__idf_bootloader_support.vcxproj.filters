@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\src\bootloader_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\src\bootloader_common_loader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\src\bootloader_clock_init.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\src\bootloader_mem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\src\bootloader_random.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\src\bootloader_efuse.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\src\flash_encrypt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\src\secure_boot.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\src\bootloader_random_esp32c3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\bootloader_flash\src\bootloader_flash.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\bootloader_flash\src\flash_qio_mode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\bootloader_flash\src\bootloader_flash_config_esp32c3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\src\bootloader_utility.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\src\flash_partitions.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\src\esp_image_format.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\src\idf\bootloader_sha.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\src\esp32c3\secure_boot_secure_features.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\idf3\v5.4.1\esp-idf\components\bootloader_support\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{DF8B11CB-E57E-3B54-BA8D-09ED617C6E27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

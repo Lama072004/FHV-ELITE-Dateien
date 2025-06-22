@@ -1,0 +1,3 @@
+# CMake generation dependency list for this directory.
+C:/idf3/v5.4.1/esp-idf/components/mqtt/CMakeLists.txt
+C:/idf3/v5.4.1/esp-idf/components/mqtt/esp-mqtt/CMakeLists.txt

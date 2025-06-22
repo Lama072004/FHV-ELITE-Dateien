@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\driver\deprecated\adc_legacy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\driver\deprecated\adc_dma_legacy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\driver\deprecated\timer_legacy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\driver\i2c\i2c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\driver\deprecated\i2s_legacy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\driver\deprecated\rmt_legacy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\driver\deprecated\sigma_delta_legacy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\driver\deprecated\rtc_temperature_legacy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\driver\twai\twai.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\idf3\v5.4.1\esp-idf\components\driver\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{DF8B11CB-E57E-3B54-BA8D-09ED617C6E27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

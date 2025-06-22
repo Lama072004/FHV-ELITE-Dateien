@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\esp_crt_bundle\esp_crt_bundle.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\CMakeFiles\a4de7132d93dd10f2505b51d85dd30ce\x509_crt_bundle.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\mbedtls\x509_crt_bundle" />
+    <CustomBuild Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\x509_crt_bundle.S" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E2278C43-CBD6-3596-A562-7A522D4D6E37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{DF8B11CB-E57E-3B54-BA8D-09ED617C6E27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

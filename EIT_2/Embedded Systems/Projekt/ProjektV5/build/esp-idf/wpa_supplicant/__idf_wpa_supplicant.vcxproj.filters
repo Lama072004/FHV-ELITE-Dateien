@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\port\os_xtensa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\port\eloop.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\ap\ap_config.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\ap\ieee802_1x.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\ap\wpa_auth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\ap\wpa_auth_ie.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\ap\pmksa_cache_auth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\ap\sta_info.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\ap\ieee802_11.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\ap\comeback_token.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\common\sae.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\common\dragonfly.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\common\wpa_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\utils\bitfield.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\aes-siv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\sha256-kdf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\ccmp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\aes-gcm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\crypto_ops.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\dh_group5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\dh_groups.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\ms_funcs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\sha1-tlsprf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\sha256-tlsprf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\sha384-tlsprf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\sha256-prf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\sha1-prf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\sha384-prf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\md4-internal.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\sha1-tprf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\eap_common\eap_wsc_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\common\ieee802_11_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\eap_peer\chap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\eap_peer\eap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\eap_peer\eap_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\eap_peer\eap_mschapv2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\eap_peer\eap_peap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\eap_peer\eap_peap_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\eap_peer\eap_tls.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\eap_peer\eap_tls_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\eap_peer\eap_ttls.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\eap_peer\mschapv2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\eap_peer\eap_fast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\eap_peer\eap_fast_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\eap_peer\eap_fast_pac.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\rsn_supp\pmksa_cache.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\rsn_supp\wpa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\rsn_supp\wpa_ie.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\utils\base64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\utils\common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\utils\ext_password.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\utils\uuid.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\utils\wpabuf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\utils\wpa_debug.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\utils\json.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\wps\wps.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\wps\wps_attr_build.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\wps\wps_attr_parse.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\wps\wps_attr_process.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\wps\wps_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\wps\wps_dev_attr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\wps\wps_enrollee.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\common\sae_pk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\esp_eap_client.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\esp_wpa2_api_port.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\esp_wpa_main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\esp_wpas_glue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\esp_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\esp_wps.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\esp_wpa3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\esp_owe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\esp_hostap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\crypto\tls_mbedtls.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\crypto\fastpbkdf2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\crypto\crypto_mbedtls.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\crypto\crypto_mbedtls-bignum.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\crypto\crypto_mbedtls-rsa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\esp_supplicant\src\crypto\crypto_mbedtls-ec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\rc4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\des-internal.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\aes-wrap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\aes-unwrap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\src\crypto\aes-ccm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\idf3\v5.4.1\esp-idf\components\wpa_supplicant\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{DF8B11CB-E57E-3B54-BA8D-09ED617C6E27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

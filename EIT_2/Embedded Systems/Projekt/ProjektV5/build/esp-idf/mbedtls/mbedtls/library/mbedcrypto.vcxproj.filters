@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\aes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\aesni.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\aesce.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\aria.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\asn1parse.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\asn1write.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\base64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\bignum.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\bignum_core.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\bignum_mod.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\bignum_mod_raw.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\block_cipher.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\camellia.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ccm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\chacha20.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\chachapoly.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\cipher.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\cipher_wrap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\constant_time.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\cmac.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ctr_drbg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\des.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\dhm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ecdh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ecdsa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ecjpake.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ecp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ecp_curves.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ecp_curves_new.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\entropy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\entropy_poll.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\error.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\gcm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\hkdf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\hmac_drbg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\lmots.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\lms.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\md.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\md5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\memory_buffer_alloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\nist_kw.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\oid.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\padlock.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pk_ecc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pk_wrap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pkcs12.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pkcs5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pkparse.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\pkwrite.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\platform.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\platform_util.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\poly1305.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_aead.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_cipher.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_client.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_driver_wrappers_no_static.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_ecp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_ffdh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_hash.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_mac.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_pake.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_rsa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_se.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_slot_management.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_crypto_storage.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_its_file.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\psa_util.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\ripemd160.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\rsa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\rsa_alt_helpers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\sha1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\sha256.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\sha512.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\sha3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\threading.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\timing.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\version.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\version_features.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\esp_sha_gdma_impl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\esp_aes_gdma_impl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\esp_aes_dma_core.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\crypto_shared_gdma\esp_crypto_shared_gdma.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\esp_hardware.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\esp_mem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\esp_timing.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\esp_aes_xts.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\esp_aes_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\dma\esp_aes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\esp_sha.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\sha.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\esp_ds\esp_rsa_sign_alt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\bignum\esp_bignum.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\bignum\bignum_alt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\esp_sha1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\esp_sha256.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\sha\dma\esp_sha512.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\aes\esp_aes_gcm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\port\md\esp_md.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\idf3\v5.4.1\esp-idf\components\mbedtls\mbedtls\library\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{DF8B11CB-E57E-3B54-BA8D-09ED617C6E27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

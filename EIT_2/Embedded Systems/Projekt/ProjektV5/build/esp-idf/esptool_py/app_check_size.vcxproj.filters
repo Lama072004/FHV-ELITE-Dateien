@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\CMakeFiles\22d28881d7c05a40c1668dfff08d0040\app_check_size.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\idf3\v5.4.1\esp-idf\components\esptool_py\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\esptool_py\CMakeFiles\app_check_size" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E2278C43-CBD6-3596-A562-7A522D4D6E37}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

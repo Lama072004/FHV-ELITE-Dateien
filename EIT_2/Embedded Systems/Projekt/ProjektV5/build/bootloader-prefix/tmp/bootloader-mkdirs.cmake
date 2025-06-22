@@ -18,7 +18,7 @@ file(MAKE_DIRECTORY
   "D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build/bootloader-prefix/src/bootloader-stamp"
 )
 
-set(configSubDirs )
+set(configSubDirs Debug;Release;MinSizeRel;RelWithDebInfo)
 foreach(subDir IN LISTS configSubDirs)
     file(MAKE_DIRECTORY "D:/Mathias Lampert/Documents/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/Projekt/ProjektV5/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()

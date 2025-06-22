@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\idf3\v5.4.1\esp-idf\components\esp_system\ld\esp32c3\sections.ld.in">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\CMakeFiles\37e8546c0c31bdd8aacb797e0215f0ae\sections.ld.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\CMakeFiles\f1e0fd549553caed7e98e1ed60b39607\__ldgen_output_sections.ld.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\idf3\v5.4.1\esp-idf\components\esp_system\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\esp-idf\esp_system\CMakeFiles\__ldgen_output_sections.ld" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E2278C43-CBD6-3596-A562-7A522D4D6E37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4488246F-69DE-3CAD-87C9-357C2E6AB682}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

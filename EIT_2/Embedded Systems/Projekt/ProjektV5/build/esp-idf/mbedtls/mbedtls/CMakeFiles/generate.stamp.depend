@@ -1,0 +1,15 @@
+# CMake generation dependency list for this directory.
+C:/idf3/v5.4.1/esp-idf/components/mbedtls/mbedtls/CMakeLists.txt
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/CMakePackageConfigHelpers.cmake
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/CMakePrintHelpers.cmake
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/CheckIncludeFile.cmake
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/CheckLibraryExists.cmake
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/FindPackageMessage.cmake
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/FindPython/Support.cmake
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/FindPython3.cmake
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/FindThreads.cmake
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/GNUInstallDirs.cmake
+C:/idf3tools/tools/cmake/3.30.2/share/cmake-3.30/Modules/WriteBasicConfigVersionFile.cmake

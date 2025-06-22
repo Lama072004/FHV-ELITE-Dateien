@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\CMakeFiles\220699d3e6b2526b7f6dd0955e0c9a14\bootloader-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\CMakeFiles\220699d3e6b2526b7f6dd0955e0c9a14\bootloader-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\CMakeFiles\220699d3e6b2526b7f6dd0955e0c9a14\bootloader-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\CMakeFiles\220699d3e6b2526b7f6dd0955e0c9a14\bootloader-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\CMakeFiles\220699d3e6b2526b7f6dd0955e0c9a14\bootloader-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\CMakeFiles\220699d3e6b2526b7f6dd0955e0c9a14\bootloader-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\CMakeFiles\220699d3e6b2526b7f6dd0955e0c9a14\bootloader-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\CMakeFiles\da1985b0376d7a7b14b3a4f8f188dd9d\bootloader-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\CMakeFiles\0921340e4904bc7a87eb0ea5ba21239f\bootloader.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Embedded Systems\Projekt\ProjektV5\build\CMakeFiles\bootloader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E2278C43-CBD6-3596-A562-7A522D4D6E37}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
