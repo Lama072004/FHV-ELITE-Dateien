@@ -1,5 +1,3 @@
-Natürlich – hier sind die **Lösungen zu den Prüfungsfragen aus den beiden Bildern**, basierend auf dem bereitgestellten Skript *Physik II – Wellenlehre*:
-
 ---
 
 ### **Frage 4: LC-Schwingkreis (5 Punkte)**
@@ -151,3 +149,9 @@ $$
 $$
 
 **b)** Die Linse bündelt Lichtstrahlen so, dass die optische Weglänge minimal ist (Fermat’sches Prinzip).
+
+---
+
+Wenn du möchtest, kann ich dir diese Antworten auch als `.txt`-Datei exportieren. Sag einfach Bescheid!
+
+füge hier noch die Fragen die sich bei den einzelnen Punkten befinden hinzu und sortiere die Aufgaben nach Frage (nummer) 
