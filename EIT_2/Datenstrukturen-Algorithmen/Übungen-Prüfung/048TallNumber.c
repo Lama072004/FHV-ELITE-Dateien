@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
@@ -29,4 +30,37 @@ int main() {
     else printf("false");
 
     return 0;
+=======
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <ctype.h>
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+#define MAX 10000000
+
+int main() {
+    int n = MAX;
+    int letzteZiffer;
+    int ZifferCount = 0;
+    int count = 0;
+    scanf("%d", &n);
+
+    while (n > 0) {
+        letzteZiffer = (n % 10);
+        n /= 10;
+        ZifferCount++;
+        if (letzteZiffer >= n % 10)
+            count++;
+    }
+
+    if (count == ZifferCount)
+        printf("true");
+    else printf("false");
+
+    return 0;
+>>>>>>> 23d3c8addaa54cb260e9830e82515419590b70cc
 }

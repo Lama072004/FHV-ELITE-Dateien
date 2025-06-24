@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
@@ -20,4 +21,28 @@ int main() {
     }
     
     return 0;
+=======
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <ctype.h>
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+int main() {
+    int randomNumber = (rand() % 100) + 1;
+    int Input = -1;
+    while (Input != randomNumber) {
+        scanf("%d", &Input);
+        if (Input > randomNumber)
+            printf("Zu hoch!\n");
+        else if(Input< randomNumber)
+            printf("Zu niedrig!\n");
+        else printf("Herzlichen Glueckwunsch! Sie haben die Zahl erraten.\n");
+    }
+    
+    return 0;
+>>>>>>> 23d3c8addaa54cb260e9830e82515419590b70cc
 }
