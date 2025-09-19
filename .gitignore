@@ -19,3 +19,4 @@ Thumbs.db
 *.obj
 EIT_2/Embedded Systems/ChiQuadratTest/ChiQuadratTest-esp32/build/bootloader/esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash_config_esp32c3.c.obj
 EIT_2/Embedded Systems/Projekt/SPO2_Pulse_ESP32C3_MAX30102/build/bootloader/esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/bootloader_flash/src/bootloader_flash_config_esp32c3.c.obj
+/EIT_2/Embedded Systems/ChiQuadratTest/ChiQuadratTest-esp32/build/bootloader/esp-idf/bootloader_support/CMakeFiles
