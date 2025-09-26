@@ -1,0 +1,42 @@
+LTspice 24.0.12 for Windows
+Circuit: * D:\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_2\Halbleitertechnik\Schaltverstärker_Transistor_Simulation.asc
+Start Time: Wed May 28 17:48:48 2025
+Warning: Multiple definitions of model "2scr375p" Type: BJT
+Warning: Multiple definitions of model "bc857b" Type: BJT
+Warning: Multiple definitions of model "bc847c" Type: BJT
+Warning: Multiple definitions of model "bc847b" Type: BJT
+solver = Normal
+Maximum thread count: 6
+tnom = 27
+temp = 27
+method = modified trap
+Direct Newton iteration for .op point succeeded.
+Semiconductor Device Operating Points:
+                        --- Bipolar Transistors ---
+Name:       q1          q2
+Model:    bc547b      bc547b
+Ib:       1.33e-05    3.52e-03
+Ic:       3.99e-03    9.80e-02
+Vbe:      6.75e-01    8.30e-01
+Vbc:     -5.33e+00    6.33e-01
+Vce:      6.01e+00    1.97e-01
+BetaDC:   3.01e+02    2.78e+01
+Gm:       1.49e-01    2.60e+00
+Rpi:      1.97e+03    3.43e+01
+Rx:       1.00e+00    1.00e+00
+Ro:       1.68e+04    2.00e+00
+Cbe:      1.27e-10    3.34e-08
+Cbc:      1.05e-12    4.00e-11
+Cjs:      0.00e+00    0.00e+00
+BetaAC:   2.94e+02    8.90e+01
+Cbx:      6.46e-13    2.48e-11
+Ft:       1.84e+08    1.24e+07
+
+
+
+vbe: v(p002) - v(0)=0.674865
+bnichsaett: i(r2) / i(r1)=301.3
+bsaett: i(r4) / i(r3)=27.8124
+
+Total elapsed time: 0.122 seconds.
+
