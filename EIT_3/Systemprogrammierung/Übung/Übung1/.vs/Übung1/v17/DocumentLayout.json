@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Mathias Lampert\\Mathias Schule_Studium\\FH\\ELITE-Semester\\EIT_3\\Systemprogrammierung\\\u00DCbung\\\u00DCbung1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{79355A76-C9A7-4150-A2BC-D1C78A88924B}|\u00DCbung1.vcxproj|D:\\Mathias Lampert\\Mathias Schule_Studium\\FH\\ELITE-Semester\\EIT_3\\Systemprogrammierung\\\u00DCbung\\\u00DCbung1\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{79355A76-C9A7-4150-A2BC-D1C78A88924B}|\u00DCbung1.vcxproj|solutionrelative:main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.c",
+              "DocumentMoniker": "D:\\Mathias Lampert\\Mathias Schule_Studium\\FH\\ELITE-Semester\\EIT_3\\Systemprogrammierung\\\u00DCbung\\\u00DCbung1\\main.c",
+              "RelativeDocumentMoniker": "main.c",
+              "ToolTip": "D:\\Mathias Lampert\\Mathias Schule_Studium\\FH\\ELITE-Semester\\EIT_3\\Systemprogrammierung\\\u00DCbung\\\u00DCbung1\\main.c",
+              "RelativeToolTip": "main.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-10-13T08:18:39.985Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
