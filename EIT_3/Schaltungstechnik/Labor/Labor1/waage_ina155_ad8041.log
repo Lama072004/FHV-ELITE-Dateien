@@ -1,0 +1,36 @@
+LTspice 24.1.9 for Windows
+Circuit: D:\Mathias Lampert\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Schaltungstechnik\Labor\Labor1\waage_ina155_ad8041.net
+Start Time: Wed Oct  8 15:29:26 2025
+solver = Normal
+Maximum thread count: 6
+tnom = 27
+temp = 27
+method = trap
+Instance "u1:xa1:M1": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa1:M2": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa1:M8": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa1:M9": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa1:M9C": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa1:M114": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa1:M3": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa1:M4": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa1:M7": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa1:M113": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa2:M1": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa2:M2": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa2:M8": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa2:M9": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa2:M9C": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa2:M114": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa2:M3": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa2:M4": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa2:M7": Length shorter than recommended for a level 1 MOSFET.
+Instance "u1:xa2:M113": Length shorter than recommended for a level 1 MOSFET.
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 22.313 seconds.
+
+Files loaded:
+D:\Mathias Lampert\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Schaltungstechnik\Labor\Labor1\waage_ina155_ad8041.net
+C:\Users\Mathias Lampert\AppData\Local\LTspice\lib\sub\ADI.lib
+D:\Mathias Lampert\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Schaltungstechnik\Labor\Labor1\INA155.LIB
+
