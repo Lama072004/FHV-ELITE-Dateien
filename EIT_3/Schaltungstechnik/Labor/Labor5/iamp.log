@@ -1,0 +1,35 @@
+LTspice 24.1.9 for Windows
+Circuit: C:\Users\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\Temp\Labor5\iamp.net
+Start Time: Mon Nov 10 16:13:58 2025
+solver = Normal
+Maximum thread count: 32
+tnom = 27
+temp = 27
+method = trap
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 8.61953
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+Gmin = 8.47038
+vernier = 0.00195312
+vernier = 0.000976562
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Total elapsed time: 0.182 seconds.
+
+Files loaded:
+C:\Users\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\Temp\Labor5\iamp.net
+C:\Users\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\Temp\Labor5\UA741.txt
+C:\Users\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\Temp\Labor5\LM324.txt
+

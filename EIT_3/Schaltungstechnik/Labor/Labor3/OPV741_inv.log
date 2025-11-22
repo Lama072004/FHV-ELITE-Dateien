@@ -1,0 +1,20 @@
+LTspice 24.1.9 for Windows
+Circuit: D:\Mathias Lampert\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Schaltungstechnik\Labor\Labor3\OPV741_inv.net
+Start Time: Mon Oct 27 14:14:46 2025
+solver = Normal
+Maximum thread count: 6
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration for .op point succeeded.
+.step a=1
+.step a=10
+.step a=100
+.step a=1000
+.step a=10000
+Total elapsed time: 6.791 seconds.
+
+Files loaded:
+D:\Mathias Lampert\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Schaltungstechnik\Labor\Labor3\OPV741_inv.net
+D:\Mathias Lampert\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Schaltungstechnik\Labor\Labor3\UA741.txt
+

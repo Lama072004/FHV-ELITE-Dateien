@@ -1,0 +1,92 @@
+LTspice 24.1.9 for Windows
+Circuit: C:\Users\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\Temp\Labor6\quelle.net
+Start Time: Sun Nov 16 12:32:56 2025
+solver = Normal
+Maximum thread count: 32
+tnom = 27
+temp = 800.0000000000001
+method = trap
+D1: Temperature adjusted diode Vj too small.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 0.995033
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+Gmin = 0.999816
+vernier = 0.00520833
+Gmin = 0.988174
+vernier = 0.00694444
+vernier = 0.00925925
+Gmin = 0.96894
+vernier = 0.0123457
+vernier = 0.0164609
+Gmin = 0.939056
+vernier = 0.0219478
+Gmin = 0.89392
+vernier = 0.0292638
+vernier = 0.0390184
+Gmin = 0.823078
+vernier = 0.0520245
+vernier = 0.0693659
+Gmin = 0.721778
+vernier = 0.034683
+vernier = 0.046244
+Gmin = 0.660284
+vernier = 0.0616586
+Gmin = 0.577502
+vernier = 0.0822114
+vernier = 0.109615
+Gmin = 0.464166
+vernier = 0.146154
+vernier = 0.194871
+Gmin = 0.329063
+vernier = 0.259828
+Gmin = 0.189376
+vernier = 0.346438
+vernier = 0.461917
+Gmin = 0.0778336
+vernier = 0.615889
+vernier = 0.821185
+Gmin = 0.0197023
+vernier = 1
+Gmin = 0.00253803
+Gmin = 0.000272519
+Gmin = 2.92615e-05
+Gmin = 3.14193e-06
+Gmin = 3.37363e-07
+Gmin = 3.6224e-08
+Gmin = 3.88953e-09
+Gmin = 4.17635e-10
+Gmin = 4.48432e-11
+Gmin = 4.815e-12
+Gmin = 5.17007e-13
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+.step temp=800°
+.step temp=900°
+.step temp=1000°
+.step temp=1100°
+.step temp=1200°
+.step temp=1300°
+.step temp=1400°
+.step temp=1500°
+.step temp=1600°
+.step temp=1700°
+
+Simulation stopped by user.
+Total elapsed time: 10.268 seconds.
+
+Files loaded:
+C:\Users\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\Temp\Labor6\quelle.net
+C:\Users\Mathias Lampert\AppData\Local\LTspice\lib\cmp\standard.dio
+C:\Users\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\Temp\Labor6\LM324.txt
+

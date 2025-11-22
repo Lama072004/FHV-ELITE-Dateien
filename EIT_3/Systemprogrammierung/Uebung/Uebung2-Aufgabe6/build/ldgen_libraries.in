@@ -1,4 +1,4 @@
-$<TARGET_FILE:idf::riscv>
+$<TARGET_FILE:idf::xtensa>
 $<TARGET_FILE:__idf_cxx>
 $<TARGET_FILE:__idf_newlib>
 $<TARGET_FILE:__idf_freertos>
@@ -10,7 +10,7 @@ $<TARGET_FILE:__idf_hal>
 $<TARGET_FILE:__idf_esp_rom>
 $<TARGET_FILE:__idf_esp_common>
 $<TARGET_FILE:__idf_esp_system>
-$<TARGET_FILE:__idf_riscv>
+$<TARGET_FILE:__idf_xtensa>
 $<TARGET_FILE:__idf_spi_flash>
 $<TARGET_FILE:__idf_bootloader_support>
 $<TARGET_FILE:__idf_mbedtls>

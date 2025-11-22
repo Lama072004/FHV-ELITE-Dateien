@@ -1,0 +1,70 @@
+LTspice 24.1.9 for Windows
+Circuit: C:\Users\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Schaltungstechnik\Labor\Labor3\Draft1.net
+Start Time: Sun Nov  9 20:08:35 2025
+solver = Normal
+Maximum thread count: 32
+tnom = 27
+temp = 27
+method = trap
+.OP point found by inspection.
+.step h=0.001 c=10
+.step h=100.00099 c=10
+.step h=200.00098 c=10
+.step h=300.00097 c=10
+.step h=400.00096 c=10
+.step h=500.00095 c=10
+.step h=600.00094 c=10
+.step h=700.00093 c=10
+.step h=800.00092 c=10
+.step h=900.00091 c=10
+.step h=1000.0009 c=10
+.step h=1100.00089 c=10
+.step h=1200.00088 c=10
+.step h=1300.00087 c=10
+.step h=1400.00086 c=10
+.step h=1500.00085 c=10
+.step h=1600.00084 c=10
+.step h=1700.00083 c=10
+.step h=1800.00082 c=10
+.step h=1900.00081 c=10
+.step h=2000.0008 c=10
+.step h=2100.00079 c=10
+.step h=2200.00078 c=10
+.step h=2300.00077 c=10
+.step h=2400.00076 c=10
+.step h=2500.00075 c=10
+.step h=2600.00074 c=10
+.step h=2700.00073 c=10
+.step h=2800.00072 c=10
+.step h=2900.00071 c=10
+.step h=3000.0007 c=10
+.step h=3100.00069 c=10
+.step h=3200.00068 c=10
+.step h=3300.00067 c=10
+.step h=3400.00066 c=10
+.step h=3500.00065 c=10
+.step h=3600.00064 c=10
+.step h=3700.00063 c=10
+.step h=3800.00062 c=10
+.step h=3900.00061 c=10
+.step h=4000.0006 c=10
+.step h=4100.00059 c=10
+.step h=4200.00058 c=10
+.step h=4300.00057 c=10
+.step h=4400.00056 c=10
+.step h=4500.00055 c=10
+.step h=4600.00054 c=10
+.step h=4700.00053 c=10
+.step h=4800.00052 c=10
+.step h=4900.00051 c=10
+.step h=5000.0005 c=10
+.step h=5100.00049 c=10
+.step h=5200.00048 c=10
+.step h=5300.00047 c=10
+
+Simulation stopped by user.
+Total elapsed time: 22.316 seconds.
+
+Files loaded:
+C:\Users\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Schaltungstechnik\Labor\Labor3\Draft1.net
+
