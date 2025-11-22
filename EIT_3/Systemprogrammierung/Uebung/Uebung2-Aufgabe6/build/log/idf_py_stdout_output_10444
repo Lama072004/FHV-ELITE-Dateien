@@ -1,0 +1,57 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=d:\Esp-IDF\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe -DESP_PLATFORM=1 -DIDF_TARGET=esp32s3 -DCCACHE_ENABLE=0 D:\Mathias Lampert\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Systemprogrammierung\Uebung\Uebung2-Aufgabe6
+-- Existing sdkconfig 'D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/sdkconfig' renamed to 'D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/sdkconfig.old'.
+-- Found Git: D:/Esp-IDF/.espressif/tools/idf-git/2.39.2/cmd/git.exe (found version "2.39.2.windows.1")
+-- Minimal build - ON
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: D:/Esp-IDF/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: D:/Esp-IDF/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: D:/Esp-IDF/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32s3
+NOTICE: Updating lock file at D:\Mathias Lampert\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Systemprogrammierung\Uebung\Uebung2-Aufgabe6\dependencies.lock
+NOTICE: Processing 2 dependencies:
+NOTICE: [1/2] espressif/led_strip (3.0.1~1)
+NOTICE: [2/2] idf (5.5.1)
+-- Project sdkconfig file D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/sdkconfig
+Loading defaults file D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/sdkconfig.defaults...
+Loading defaults file D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/sdkconfig.defaults.esp32s3...
+-- Compiler supported targets: xtensa-esp-elf
+-- Found Python3: d:/Esp-IDF/.espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe (found version "3.11.2") found components: Interpreter
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+-- USING O3
+-- App "Uebung2-Aufgabe6" version: 3a1b1b38-dirty
+-- Adding linker script D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.bt_funcs.ld
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.wdt.ld
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_master.ld
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_50.ld
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_smp.ld
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_dtm.ld
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_test.ld
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ble_scan.ld
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libc.ld
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.newlib.ld
+-- Adding linker script D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Components: app_update bootloader bootloader_support cxx efuse esp_app_format esp_bootloader_format esp_common esp_driver_bitscrambler esp_driver_gpio esp_driver_rmt esp_driver_spi esp_hw_support esp_mm esp_partition esp_pm esp_rom esp_security esp_system esp_timer espressif__led_strip esptool_py freertos hal heap log main mbedtls newlib partition_table pthread soc spi_flash xtensa
+-- Component paths: D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/app_update D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/bootloader D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/bootloader_support D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/cxx D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/efuse D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_app_format D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_bootloader_format D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_common D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_driver_bitscrambler D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_driver_gpio D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_driver_rmt D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_driver_spi D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_hw_support D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_mm D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_partition D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_pm D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_rom D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_security D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_system D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esp_timer D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/managed_components/espressif__led_strip D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/esptool_py D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/freertos D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/hal D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/heap D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/log D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/main D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/mbedtls D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/newlib D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/partition_table D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/pthread D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/soc D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/spi_flash D:/Esp-IDF/IDF/v5.5.1/esp-idf/components/xtensa
+-- Configuring done (12.2s)
+-- Generating done (0.7s)
+-- Build files have been written to: D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build

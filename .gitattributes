@@ -16,3 +16,6 @@
 /EIT_2/Labor2/Messprojekt1/Messwerte[[:space:]]Alt/Messwerte1kR_old/C2Infineon.txt filter=lfs diff=lfs merge=lfs -text
 /EIT_2/Labor2/Messprojekt1/Messwerte[[:space:]]Alt/Messwerte1kR_old/C2Nexperia.txt filter=lfs diff=lfs merge=lfs -text
 /EIT_1/Mechanik/Mechanik/EinfeuhrungWS24.pptx filter=lfs diff=lfs merge=lfs -text
+/EIT_3/Elektromagnetische[[:space:]]Felder/EMF/2025.11.12.one filter=lfs diff=lfs merge=lfs -text
+/EIT_3/Projekt[[:space:]]Embedded[[:space:]]Systems/Waage/Bluetooth-test-minimal.zip filter=lfs diff=lfs merge=lfs -text
+/EIT_3/Schaltungstechnik/Labor/Labor3/Labor3-MathiasLampert.zip filter=lfs diff=lfs merge=lfs -text

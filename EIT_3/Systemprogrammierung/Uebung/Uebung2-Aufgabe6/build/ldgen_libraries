@@ -1,4 +1,4 @@
-D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/riscv/libriscv.a
+D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/xtensa/libxtensa.a
 D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/cxx/libcxx.a
 D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/newlib/libnewlib.a
 D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/freertos/libfreertos.a
@@ -10,7 +10,7 @@ D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogramm
 D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/esp_rom/libesp_rom.a
 D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/esp_common/libesp_common.a
 D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/esp_system/libesp_system.a
-D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/riscv/libriscv.a
+D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/xtensa/libxtensa.a
 D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/spi_flash/libspi_flash.a
 D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/bootloader_support/libbootloader_support.a
 D:/Mathias Lampert/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Systemprogrammierung/Uebung/Uebung2-Aufgabe6/build/esp-idf/mbedtls/libmbedtls.a

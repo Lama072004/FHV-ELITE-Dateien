@@ -1,0 +1,15 @@
+LTspice 24.1.9 for Windows
+Circuit: C:\Users\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\Temp\Labor5\damp.net
+Start Time: Thu Nov  6 18:31:15 2025
+solver = Normal
+Maximum thread count: 32
+tnom = 27
+temp = 27
+method = trap
+.step 
+Total elapsed time: 0.106 seconds.
+
+Files loaded:
+C:\Users\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\Temp\Labor5\damp.net
+C:\Users\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\Temp\Labor5\UA741.txt
+
