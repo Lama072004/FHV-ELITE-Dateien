@@ -12,7 +12,7 @@
 // --- Einstellungen ---
 #define ADC_CHANNEL ADC_CHANNEL_2
 #define ADC_UNIT    ADC_UNIT_1
-#define TARE_PIN    GPIO_NUM_1
+#define TARE_PIN    GPIO_NUM_42
 #define TAG "APP"
 
 /////////////////////////////////////////////////////////////////////////////////////////
