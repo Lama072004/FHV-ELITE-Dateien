@@ -1,6 +1,6 @@
 LTspice 24.1.9 for Windows
 Circuit: D:\Mathias Lampert\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Schaltungstechnik\Labor\Labor1\waage_ina155_ad8041.net
-Start Time: Sun Oct 19 12:03:09 2025
+Start Time: Mon Dec  1 11:10:33 2025
 solver = Normal
 Maximum thread count: 6
 tnom = 27
@@ -27,7 +27,10 @@ Instance "u1:xa2:M4": Length shorter than recommended for a level 1 MOSFET.
 Instance "u1:xa2:M7": Length shorter than recommended for a level 1 MOSFET.
 Instance "u1:xa2:M113": Length shorter than recommended for a level 1 MOSFET.
 Direct Newton iteration for .op point succeeded.
-Total elapsed time: 247.124 seconds.
+.step dr=0
+.step dr=1
+.step dr=2
+Total elapsed time: 1.352 seconds.
 
 Files loaded:
 D:\Mathias Lampert\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Schaltungstechnik\Labor\Labor1\waage_ina155_ad8041.net
