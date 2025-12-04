@@ -10,7 +10,7 @@
 #include "esp_adc/adc_oneshot.h"
 
 // --- Einstellungen ---
-#define ADC_CHANNEL ADC_CHANNEL_2
+#define ADC_CHANNEL ADC_CHANNEL_3  // GPIO4
 #define ADC_UNIT    ADC_UNIT_1
 #define TARE_PIN    GPIO_NUM_42
 #define TAG "APP"
@@ -29,35 +29,8 @@ static int32_t tare_offset = 0;
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-// --- Kalman Filter Struct ---
-typedef struct {
-    double x_est;   // estimated value
-    double P;       // estimation error
-    double Q;       // process noise covariance
-    double R;       // measurement noise covariance
-} Kalman1D;
-
-// --- Kalman Filter Functions ---
-void kalman_init(Kalman1D *k, double init_value, double Q, double R) {
-    k->x_est = init_value;
-    k->P = 1.0;
-    k->Q = Q;
-    k->R = R;
-}
-
-double kalman_update(Kalman1D *k, double measurement) {
-    k->P = k->P + k->Q;
-    double K = k->P / (k->P + k->R);
-    k->x_est = k->x_est + K * (measurement - k->x_est);
-    k->P = (1 - K) * k->P;
-    return k->x_est;
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////
-
-// --- Kalman Filter Variablen ---
-#define KALMAN_Q 0.1     // kleiner → langsame anpassung || größer → schnellere anpassung
-#define KALMAN_R 50.0     // größer → Filter misstraut Messung || kleiner → Filter vertraut Messung
+// --- EMA Filter Einstellungen ---
+#define EMA_ALPHA 0.01  // kleiner = glatter (0.01-0.1)
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -104,25 +77,18 @@ void app_main(void){
     init_gpio();
 
     int adc_raw = 0;
-    Kalman1D kf;
-
-    adc_oneshot_read(adc1, ADC_CHANNEL, &adc_raw);
-    kalman_init(&kf, (double)adc_raw, KALMAN_Q, KALMAN_R);
-
+    
     // EMA Filter Initialisierung
+    adc_oneshot_read(adc1, ADC_CHANNEL, &adc_raw);
     double ema = (double)adc_raw;
-    const double alpha = 0.01; // kleiner = glatter
 
-   int log_counter = 0; // Zähler vor der Schleife
+    int log_counter = 0;
 
     for(;;){
         adc_oneshot_read(adc1, ADC_CHANNEL, &adc_raw);
 
-        // --- Kalman Filter ---
-        double kf_filtered = kalman_update(&kf, (double)adc_raw);
-
-        // --- EMA auf Kalman ---
-        ema = alpha * kf_filtered + (1.0 - alpha) * ema;
+        // --- EMA Filter ---
+        ema = EMA_ALPHA * (double)adc_raw + (1.0 - EMA_ALPHA) * ema;
         int adc_filtered = (int)(ema + 0.5);
 
         // --- Tare Check ---
@@ -144,9 +110,9 @@ void app_main(void){
         // --- Bluetooth senden ---
         bluetooth_send_int((int32_t)(weight*100)); // 2 Dezimalstellen
 
-        vTaskDelay(pdMS_TO_TICKS(8)); // 125 Hz
+        vTaskDelay(pdMS_TO_TICKS(20)); // 50 Hz
     }
 }
 
 
-// to do: Kalman Filter entfernen und besseren filter implementieren
+// to do: besseren filter implementieren
