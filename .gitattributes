@@ -1,5 +1,13 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-
 # Explicitly set line endings for Python files
 *.py text eol=lf
+EIT_1/Mechanik/Mechanik/EinfeuhrungWS24.pptx filter=lfs diff=lfs merge=lfs -text
+EIT_1/WRmP/Python/.venv/Lib/site-packages/cv2/cv2.pyd filter=lfs diff=lfs merge=lfs -text
+EIT_1/WRmP/Python/.venv/Lib/site-packages/imageio_ffmpeg/binaries/ffmpeg-win64-v4.2.2.exe filter=lfs diff=lfs merge=lfs -text
+EIT_3/Projekt[[:space:]]Embedded[[:space:]]Systems/flutter/waage.zip filter=lfs diff=lfs merge=lfs -text
+EIT_3/Projekt[[:space:]]Embedded[[:space:]]Systems/flutter/waage/build/app/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libflutter.so filter=lfs diff=lfs merge=lfs -text
+EIT_3/Projekt[[:space:]]Embedded[[:space:]]Systems/flutter/waage/build/app/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/armeabi-v7a/libflutter.so filter=lfs diff=lfs merge=lfs -text
+EIT_3/Projekt[[:space:]]Embedded[[:space:]]Systems/flutter/waage/build/app/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/x86_64/libflutter.so filter=lfs diff=lfs merge=lfs -text
+EIT_3/Schaltungstechnik/Labor/Labor3/Labor3-MathiasLampert.zip filter=lfs diff=lfs merge=lfs -text
+EIT_3/Schaltungstechnik/Labor/Labor3/OPV741_inv.raw filter=lfs diff=lfs merge=lfs -text
