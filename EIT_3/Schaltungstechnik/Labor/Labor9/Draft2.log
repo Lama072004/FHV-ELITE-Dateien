@@ -1,18 +1,18 @@
 LTspice 24.1.9 for Windows
 Circuit: D:\Mathias Lampert\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Schaltungstechnik\Labor\Labor9\Draft2.net
-Start Time: Fri Dec 12 14:25:28 2025
+Start Time: Fri Dec 12 14:34:40 2025
 solver = Normal
 Maximum thread count: 6
 tnom = 27
 temp = 27
 method = trap
 .OP point found by inspection.
-Total elapsed time: 0.207 seconds.
+Total elapsed time: 0.043 seconds.
 
 Files loaded:
 D:\Mathias Lampert\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Schaltungstechnik\Labor\Labor9\Draft2.net
 
-z11_mess: 1*mag(V(in1)/I(V1))=(50.1029995664dB,0°)
-z21_mess: 1*mag(V(out1)/I(V1))=(40dB,0°)
-z12_mess: 1*mag(V(in1)/I(V2))=(57.8418920538dB,0°)
-z22_mess: 1*mag(V(out1)/I(V2))=(47.7388924874dB,0°)
+z11_ohm: 10**(db(V(in1)/I(V1))/20)=(50.1029995664dB,-180°)
+z21_ohm: 10**(db(V(out1)/I(V1))/20)=(40dB,-180°)
+z12_ohm: 10**(db(V(in2)/I(V2))/20)=(40dB,-180°)
+z22_ohm: 10**(db(V(out2)/I(V2))/20)=(57.8418920538dB,-180°)
