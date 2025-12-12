@@ -20,11 +20,11 @@ R12 out4 N004 680
 * Z12 = U1/I2 when I1=0
 * Z21 = U2/I1 when I2=0
 * Z22 = U2/I2 when I1=0
-.meas AC Z11_mess PARAM V(in1)/I(V1)
-.meas AC Z21_mess PARAM V(out1)/I(V1)
-.meas AC Z12_mess PARAM V(in1)/I(V2)
-.meas AC Z22_mess PARAM V(out1)/I(V2)
+.meas AC Z11_mess PARAM 1*mag(V(in1)/I(V1))
+.meas AC Z21_mess PARAM 1*mag(V(out1)/I(V1))
+.meas AC Z12_mess PARAM 1*mag(V(in1)/I(V2))
+.meas AC Z22_mess PARAM 1*mag(V(out1)/I(V2))
 * .tran 1
-.ac dec 111111 0.00001 1000000
+.ac dec 1111 0.00001 1000000
 .backanno
 .end
