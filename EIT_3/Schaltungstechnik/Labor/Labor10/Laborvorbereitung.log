@@ -1,18 +1,17 @@
 LTspice 24.1.9 for Windows
 Circuit: C:\Users\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Schaltungstechnik\Labor\Labor10\Laborvorbereitung.net
-Start Time: Sat Dec 13 10:03:53 2025
+Start Time: Sat Dec 13 10:18:33 2025
 solver = Normal
 Maximum thread count: 32
 tnom = 27
 temp = 27
 method = trap
 .OP point found by inspection.
-Total elapsed time: 0.056 seconds.
+Total elapsed time: 0.058 seconds.
 
 Files loaded:
 C:\Users\Mathias Lampert\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_3\Schaltungstechnik\Labor\Labor10\Laborvorbereitung.net
 
-z11: V(in1)/I(V1)=(50.1029995664dB,180°)
 z21: V(out1)/I(V1)=(40dB,180°)
 z12: V(in2)/I(V2)=(40dB,180°)
 z22: V(out2)/I(V2)=(57.8418920538dB,180°)
