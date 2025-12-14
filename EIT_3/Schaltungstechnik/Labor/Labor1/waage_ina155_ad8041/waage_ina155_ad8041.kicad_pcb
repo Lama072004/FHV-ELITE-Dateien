@@ -72,7 +72,7 @@
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
-			(drillshape 1)
+			(drillshape 0)
 			(scaleselection 1)
 			(outputdirectory "")
 		)
@@ -7873,6 +7873,18 @@
 		)
 	)
 	(gr_text "GND"
+		(at 121.449677 115.091643 0)
+		(layer "F.SilkS")
+		(uuid "25a64ec3-88bb-401e-bb24-fa862ee432d7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "GND"
 		(at 118.688684 127.900963 0)
 		(layer "F.SilkS")
 		(uuid "37cf190d-96a9-40c7-bd8d-1a74ec4b7ef0")
@@ -7944,6 +7956,18 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "3V3"
+		(at 180.992908 108.63224 0)
+		(layer "F.SilkS")
+		(uuid "a077d022-76b6-4452-8f7d-fdfcbba8bbbd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "GND"
 		(at 179.408266 127.753603 0)
 		(layer "F.SilkS")
@@ -7956,6 +7980,18 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "3V3"
+		(at 121.349031 107.241294 0)
+		(layer "F.SilkS")
+		(uuid "bf0afb67-95e5-40a9-870b-3204aa7da3e8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "AD8041"
 		(at 165.216452 125.126695 0)
 		(layer "F.SilkS")
@@ -7963,6 +7999,18 @@
 		(effects
 			(font
 				(size 0.5 0.5)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "GND"
+		(at 180.841939 113.731612 0)
+		(layer "F.SilkS")
+		(uuid "d5900931-8d1e-4df5-96cd-427c8e5279f7")
+		(effects
+			(font
+				(size 1 1)
 				(thickness 0.1)
 			)
 			(justify left bottom)
