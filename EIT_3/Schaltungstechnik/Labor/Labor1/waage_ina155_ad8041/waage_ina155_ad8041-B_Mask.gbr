@@ -1,0 +1,92 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,9.0.5*%
+%TF.CreationDate,2025-12-14T14:14:54+01:00*%
+%TF.ProjectId,waage_ina155_ad8041,77616167-655f-4696-9e61-3135355f6164,rev?*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Soldermask,Bot*%
+%TF.FilePolarity,Negative*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 9.0.5) date 2025-12-14 14:14:54*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+G04 Aperture macros list*
+%AMRoundRect*
+0 Rectangle with rounded corners*
+0 $1 Rounding radius*
+0 $2 $3 $4 $5 $6 $7 $8 $9 X,Y pos of 4 corners*
+0 Add a 4 corners polygon primitive as box body*
+4,1,4,$2,$3,$4,$5,$6,$7,$8,$9,$2,$3,0*
+0 Add four circle primitives for the rounded corners*
+1,1,$1+$1,$2,$3*
+1,1,$1+$1,$4,$5*
+1,1,$1+$1,$6,$7*
+1,1,$1+$1,$8,$9*
+0 Add four rect primitives between the rounded corners*
+20,1,$1+$1,$2,$3,$4,$5,0*
+20,1,$1+$1,$4,$5,$6,$7,0*
+20,1,$1+$1,$6,$7,$8,$9,0*
+20,1,$1+$1,$8,$9,$2,$3,0*%
+G04 Aperture macros list end*
+%ADD10R,1.700000X1.700000*%
+%ADD11C,1.700000*%
+%ADD12RoundRect,0.250000X0.550000X0.550000X-0.550000X0.550000X-0.550000X-0.550000X0.550000X-0.550000X0*%
+%ADD13C,1.600000*%
+G04 APERTURE END LIST*
+D10*
+%TO.C,J2*%
+X119605400Y-106661316D03*
+D11*
+X119605400Y-109201316D03*
+X119605400Y-111741316D03*
+X119605400Y-114281316D03*
+%TD*%
+D12*
+%TO.C,C1*%
+X185376800Y-97796716D03*
+D13*
+X182876800Y-97796716D03*
+%TD*%
+D10*
+%TO.C,TP10*%
+X130806800Y-105416716D03*
+%TD*%
+%TO.C,J1*%
+X185415540Y-107878206D03*
+D11*
+X185415540Y-110418206D03*
+X185415540Y-112958206D03*
+%TD*%
+D10*
+%TO.C,TP9*%
+X179066800Y-104146716D03*
+%TD*%
+%TO.C,TP4*%
+X182876800Y-128276716D03*
+%TD*%
+%TO.C,TP5*%
+X168547980Y-104289459D03*
+%TD*%
+%TO.C,TP11*%
+X130806800Y-113036716D03*
+%TD*%
+%TO.C,TP7*%
+X158746800Y-110496716D03*
+%TD*%
+%TO.C,TP8*%
+X148907552Y-96858380D03*
+%TD*%
+%TO.C,TP6*%
+X139696800Y-120656716D03*
+%TD*%
+%TO.C,TP1*%
+X121916800Y-95256716D03*
+%TD*%
+%TO.C,TP2*%
+X121894963Y-128272938D03*
+%TD*%
+%TO.C,TP3*%
+X153666800Y-128276716D03*
+%TD*%
+M02*
