@@ -7,6 +7,7 @@ import '../services/recipe_io_service.dart';
 import 'recipe_editor_screen.dart';
 import 'recipe_detail_screen.dart';
 
+/// Screen zur Verwaltung aller gespeicherten Rezepte
 class RecipesScreen extends StatefulWidget {
   const RecipesScreen({super.key});
 
@@ -24,81 +25,76 @@ class _RecipesScreenState extends State<RecipesScreen> {
     print('RecipesScreen initState: ${recipesBox.length} Rezepte in Box');
   }
 
+  /// Importiere Rezept aus .rcpe Datei (vereinfacht: kein FilePicker)
   Future<void> _importRecipe() async {
+    // Hinweis: echte Implementierung würde file_picker nutzen
+    // Hier nur Platzhalter-Logik
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Import-Funktion: Wähle eine .rcpe Datei aus (nicht implementiert)'),
+      ),
+    );
+  }
+
+  /// Exportiere Rezept mit optionalem Speicherort-Dialog
+  Future<void> _exportRecipe(Recipe recipe) async {
     try {
-      // Öffne Datei-Dialog via native Intent (Android)
-      final result = await _pickRcpeFile();
-      if (result == null) return;
+      // Zeige Dialog zur Auswahl des Speicherorts (vereinfacht)
+      final customPath = await _showSaveLocationDialog();
 
-      final file = File(result);
-      final info = await RecipeIOService.getFileInfo(file);
+      final file = await RecipeIOService.exportRecipe(recipe, customPath: customPath);
 
-      if (!mounted) return;
-
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          backgroundColor: const Color(0xFF1E1E1E),
-          title: const Text('Rezept importieren?'),
-          content: Text(info),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('Abbrechen'),
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                try {
-                  final recipe = await RecipeIOService.importRecipe(file);
-                  recipesBox.add(recipe);
-
-                  if (!mounted) return;
-                  Navigator.pop(context);
-
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Rezept "${recipe.name}" importiert'),
-                      backgroundColor: AppTheme.green,
-                    ),
-                  );
-                } catch (e) {
-                  if (!mounted) return;
-                  Navigator.pop(context);
-
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Fehler: $e'),
-                      backgroundColor: AppTheme.red,
-                    ),
-                  );
-                }
-              },
-              child: const Text('Importieren'),
-            ),
-          ],
-        ),
-      );
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Rezept gespeichert unter:\n${file.path}'),
+            backgroundColor: AppTheme.green,
+            duration: const Duration(seconds: 4),
+          ),
+        );
+      }
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Fehler beim Importieren: $e'),
-          backgroundColor: AppTheme.red,
-        ),
-      );
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Fehler: $e'),
+            backgroundColor: AppTheme.red,
+          ),
+        );
+      }
     }
   }
 
-  // Stub-Implementierung für File-Picker (kann per Intent erweitert werden)
-  Future<String?> _pickRcpeFile() async {
-    // Placeholder: In echtem Projekt würde man hier via Android-Intent eine Datei wählen
-    // Für Demo: Rückgabe null (benutzer kann später über Share-Intent Rezepte empfangen)
-    return null;
+  /// Dialog zur Auswahl des Speicherorts (vereinfacht)
+  Future<String?> _showSaveLocationDialog() async {
+    return showDialog<String>(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: const Color(0xFF1E1E1E),
+        title: const Text('Speicherort wählen'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              title: const Text('Standard (Downloads)'),
+              leading: const Icon(Icons.folder, color: AppTheme.green),
+              onTap: () => Navigator.of(context).pop(null), // null = Standard
+            ),
+            ListTile(
+              title: const Text('Dokumente'),
+              leading: const Icon(Icons.description, color: AppTheme.green),
+              onTap: () => Navigator.of(context).pop('/storage/emulated/0/Documents'),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ValueListenableBuilder<Box>(
+      body: ValueListenableBuilder<Box<Recipe>>(
         valueListenable: recipesBox.listenable(),
         builder: (context, Box box, _) {
           print('ValueListenableBuilder rebuild: ${box.length} Rezepte');
@@ -174,6 +170,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
     );
   }
 
+  /// Rezeptkarte mit Auswahl-Menü (Bearbeiten, Teilen, Löschen)
   Widget _buildRecipeCard(BuildContext context, Recipe recipe, int index) {
     return GestureDetector(
       onTap: () {
@@ -197,24 +194,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                   title: const Text('Exportieren'),
                   onTap: () async {
                     Navigator.pop(context);
-                    try {
-                      final file =
-                          await RecipeIOService.exportRecipe(recipe);
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content:
-                              Text('Gespeichert: ${file.path}'),
-                          backgroundColor: AppTheme.green,
-                        ),
-                      );
-                    } catch (e) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('Fehler: $e'),
-                          backgroundColor: AppTheme.red,
-                        ),
-                      );
-                    }
+                    await _exportRecipe(recipe);
                   },
                 ),
                 ListTile(
@@ -243,8 +223,7 @@ class _RecipesScreenState extends State<RecipesScreen> {
                       builder: (context) => AlertDialog(
                         backgroundColor: const Color(0xFF1E1E1E),
                         title: const Text('Rezept löschen?'),
-                        content:
-                            const Text('Dieses Rezept wird gelöscht'),
+                        content: const Text('Dieses Rezept wird gelöscht'),
                         actions: [
                           TextButton(
                             onPressed: () => Navigator.pop(context),
@@ -304,6 +283,13 @@ class _RecipesScreenState extends State<RecipesScreen> {
                   const SizedBox(width: 4),
                   Text('${recipe.ingredients.length} Zutaten',
                       style: const TextStyle(color: AppTheme.green)),
+                  if (recipe.steps.isNotEmpty) ...[
+                    const SizedBox(width: 16),
+                    const Icon(Icons.list, size: 16, color: AppTheme.green),
+                    const SizedBox(width: 4),
+                    Text('${recipe.steps.length} Schritte',
+                        style: const TextStyle(color: AppTheme.green)),
+                  ],
                 ],
               ),
             ],

@@ -1,289 +1,566 @@
-#include "bluetooth.h"
+/*
+ * ============================================================================
+ * BLUETOOTH SPP (Serial Port Profile) IMPLEMENTIERUNG
+ * ============================================================================
+ * 
+ * Beschreibung:
+ * Dieses Modul implementiert Bluetooth Classic Communication über das
+ * Serial Port Profile (SPP). Es ermöglicht serielle Datenübertragung
+ * zwischen ESP32 und einem Client-Gerät (z.B. Smartphone, PC).
+ * 
+ * Funktionsweise:
+ * - ESP32 agiert als SPP-Server (wartet auf Verbindungen)
+ * - Client kann sich verbinden und Daten empfangen
+ * - Daten werden als ASCII-Strings übertragen
+ * 
+ * Verwendete Profile:
+ * - GAP (Generic Access Profile): Verbindungsverwaltung, Sichtbarkeit
+ * - SPP (Serial Port Profile): Serielle Datenübertragung
+ * 
+ * Quellenhinweis:
+ * Diese Implementierung basiert auf dem offiziellen ESP-IDF Beispielcode:
+ * - ESP-IDF Bluetooth SPP Acceptor Example
+ * - Quelle: https://github.com/espressif/esp-idf/tree/master/examples/bluetooth/bluedroid/classic_bt/bt_spp_acceptor
+ * - Angepasst und erweitert für das Waage-Projekt
+ * 
+ * ============================================================================
+ */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "Bluetooth.h"
+#include <stdint.h>
 #include <string.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include "nvs.h"
+#include "nvs_flash.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "freertos/queue.h"
-#include "esp_system.h"
 #include "esp_log.h"
-#include "nvs_flash.h"
 #include "esp_bt.h"
-
-#include "esp_gap_ble_api.h"
-#include "esp_gatts_api.h"
-#include "esp_bt_defs.h"
 #include "esp_bt_main.h"
-#include "esp_gatt_common_api.h"
+#include "esp_gap_bt_api.h"
+#include "esp_bt_device.h"
+#include "esp_spp_api.h"
 
-// --- BLE-Konstanten ---
-#define GATTS_TAG "GATTS_MINI"
-#define TEST_DEVICE_NAME            "ESP32_BLE_WAAGE"
-#define GATTS_SERVICE_UUID          0x00FF
-#define GATTS_CHAR_UUID             0xFF01
-#define GATTS_NUM_HANDLE            4      // Service, Char Decl, Char Value, CCCD
+/////////////////////////////////////////////////////////////////////////////////////////
+// KONFIGURATIONSKONSTANTEN
+/////////////////////////////////////////////////////////////////////////////////////////
 
-#define PREPARE_BUF_MAX_SIZE        1024   // (nicht genutzt im Minimalpfad)
+// Name des SPP-Servers (erscheint bei Verbindung)
+// Wird verwendet wenn Client sich mit SPP verbindet
+#define SPP_SERVER_NAME "ESP32_SPP_SERVER"
 
-static uint8_t adv_uuid128[16] = {
-    0xfb,0x34,0x9b,0x5f,0x80,0x00,0x00,0x80,0x00,0x10,0x00,0x00,0x00,0xff,0x00,0x00
-};
+// Bluetooth-Gerätename (erscheint in Bluetooth-Geräteliste)
+// Unter diesem Namen ist der ESP32 für andere Geräte sichtbar
+#define DEVICE_NAME "ESP32_Waage"
 
-// --- Advertising-Daten ---
-static esp_ble_adv_data_t adv_data = {
-    .set_scan_rsp    = false,
-    .include_name    = true,
-    .include_txpower = false,
-    .min_interval    = 0x0006,
-    .max_interval    = 0x0010,
-    .appearance      = 0x00,
-    .manufacturer_len = 0,
-    .p_manufacturer_data = NULL,
-    .service_data_len = 0,
-    .p_service_data   = NULL,
-    .service_uuid_len = sizeof(adv_uuid128),
-    .p_service_uuid   = adv_uuid128,
-    .flag = (ESP_BLE_ADV_FLAG_GEN_DISC | ESP_BLE_ADV_FLAG_BREDR_NOT_SPT),
-};
+// Tag für ESP_LOG Ausgaben (erscheint als [SPP_TAG] in Console)
+#define SPP_TAG "SPP_ACCEPTOR_DEMO"
 
-static esp_ble_adv_data_t scan_rsp_data = {
-    .set_scan_rsp    = true,
-    .include_name    = true,
-    .include_txpower = true,
-    .appearance      = 0x00,
-    .manufacturer_len = 0,
-    .p_manufacturer_data = NULL,
-    .service_data_len = 0,
-    .p_service_data   = NULL,
-    .service_uuid_len = sizeof(adv_uuid128),
-    .p_service_uuid   = adv_uuid128,
-    .flag = (ESP_BLE_ADV_FLAG_GEN_DISC | ESP_BLE_ADV_FLAG_BREDR_NOT_SPT),
-};
+/////////////////////////////////////////////////////////////////////////////////////////
+// GLOBALE VARIABLEN
+/////////////////////////////////////////////////////////////////////////////////////////
 
-static esp_ble_adv_params_t adv_params = {
-    .adv_int_min       = 0x20,  // 40ms
-    .adv_int_max       = 0x40,  // 80ms
-    .adv_type          = ADV_TYPE_IND,
-    .own_addr_type     = BLE_ADDR_TYPE_PUBLIC,
-    .channel_map       = ADV_CHNL_ALL,
-    .adv_filter_policy = ADV_FILTER_ALLOW_SCAN_ANY_CON_ANY,
-};
+/*
+ * Connection Handle
+ * 
+ * Speichert die Verbindungs-ID wenn ein Client verbunden ist.
+ * - 0 = Keine Verbindung aktiv
+ * - >0 = Verbindung aktiv, ID für Datenübertragung
+ * 
+ * Wird verwendet um:
+ * - Zu prüfen ob ein Client verbunden ist
+ * - Daten an den richtigen Client zu senden
+ */
+static uint32_t connection_handle = 0;
 
-static uint8_t adv_config_done = 0;
-enum { adv_config_flag = (1 << 0), scan_rsp_config_flag = (1 << 1) };
+/////////////////////////////////////////////////////////////////////////////////////////
+// BLUETOOTH GAP CALLBACK
+/////////////////////////////////////////////////////////////////////////////////////////
 
-// --- GATT-State ---
-static esp_gatt_if_t s_gatts_if = ESP_GATT_IF_NONE;
-static uint16_t      s_conn_id   = 0xFFFF;
+/**
+ * GAP Event Callback Funktion
+ * 
+ * Diese Funktion wird vom Bluetooth-Stack aufgerufen wenn GAP-Events auftreten.
+ * GAP (Generic Access Profile) verwaltet:
+ * - Geräte-Sichtbarkeit (Discoverable/Connectable)
+ * - Verbindungsaufbau
+ * - Pairing/Authentifizierung
+ * 
+ * @param event Typ des aufgetretenen Events
+ * @param param Parameter-Struktur mit Event-spezifischen Daten
+ */
+static void esp_bt_gap_cb(esp_bt_gap_cb_event_t event, esp_bt_gap_cb_param_t *param)
+{
+    // Switch-Case für verschiedene GAP-Events
+    switch (event) {
+        
+    // ========== AUTHENTIFIZIERUNG ABGESCHLOSSEN ==========
+    case ESP_BT_GAP_AUTH_CMPL_EVT:{
+        
+        // Event tritt auf nach Pairing-Prozess (erfolgreich oder fehlgeschlagen)
+        
+        // Prüfen ob Authentifizierung erfolgreich war
+        if (param->auth_cmpl.stat == ESP_BT_STATUS_SUCCESS) {
+            
+            // Erfolg: Verbindung ist authentifiziert und sicher
+            ESP_LOGI(SPP_TAG, "authentication success: %s", param->auth_cmpl.device_name);
+            
+            // Zusätzlich: Bluetooth-Adresse des verbundenen Geräts ausgeben
+            // Format: XX:XX:XX:XX:XX:XX (6 Bytes in Hexadezimal)
+            esp_log_buffer_hex(SPP_TAG, param->auth_cmpl.bda, ESP_BD_ADDR_LEN);
+            
+        } else {
+            
+            // Fehler: Pairing fehlgeschlagen
+            // Mögliche Gründe: Falscher PIN, Timeout, Abbruch durch Nutzer
+            ESP_LOGE(SPP_TAG, "authentication failed, status:%d", param->auth_cmpl.stat);
+        }
+        break;
+    }
 
-static uint16_t      s_service_handle = 0;
-static uint16_t      s_char_handle    = 0;
-static uint16_t      s_cccd_handle    = 0;
+    // ========== PIN CODE REQUEST (Pairing) ==========
+    case ESP_BT_GAP_PIN_REQ_EVT:{
+        
+        // Event tritt auf wenn Client einen PIN für Pairing anfordert
+        // Aktuell wird kein PIN verwendet (Legacy Pairing deaktiviert)
+        // Für PIN-Pairing müsste hier esp_bt_pin_reply() aufgerufen werden
+        
+        ESP_LOGI(SPP_TAG, "ESP_BT_GAP_PIN_REQ_EVT min_16_digit:%d", param->pin_req.min_16_digit);
+        
+        // Beispiel für PIN-Antwort (auskommentiert):
+        // if (param->pin_req.min_16_digit) {
+        //     esp_bt_pin_code_t pin_code = {0};
+        //     esp_bt_gap_pin_reply(param->pin_req.bda, true, 16, pin_code);
+        // }
+        
+        break;
+    }
 
-static bool          s_notify_enabled = false;
+    // ========== SECURE SIMPLE PAIRING (SSP) ==========
+    
+    /*
+     * SSP (Secure Simple Pairing) - Moderner Pairing-Mechanismus
+     * 
+     * Verschiedene Modi:
+     * 1. PASSKEY: Nutzer gibt 6-stellige Zahl ein
+     * 2. CONFIRM: Nutzer bestätigt 6-stellige Zahl
+     * 3. CONSENT: Einfache Ja/Nein Bestätigung
+     * 4. NUMERIC: Numerischer Vergleich
+     * 
+     * Alle Modi werden hier automatisch bestätigt (für einfache Verbindung)
+     */
 
-// RX-Queue
-static QueueHandle_t s_rx_queue = NULL;
+    case ESP_BT_GAP_CFM_REQ_EVT:
+        // CFM = Confirm Request
+        // Nutzer soll Pairing-Code bestätigen
+        ESP_LOGI(SPP_TAG, "ESP_BT_GAP_CFM_REQ_EVT Please compare the numeric value: %"PRIu32, param->cfm_req.num_val);
+        
+        // Automatisch bestätigen (true = akzeptieren)
+        esp_bt_gap_ssp_confirm_reply(param->cfm_req.bda, true);
+        break;
+        
+    case ESP_BT_GAP_KEY_NOTIF_EVT:
+        // KEY NOTIF = Passkey Notification
+        // Zeigt den Pairing-Code an (Nutzer muss auf anderem Gerät eingeben)
+        ESP_LOGI(SPP_TAG, "ESP_BT_GAP_KEY_NOTIF_EVT passkey:%"PRIu32, param->key_notif.passkey);
+        break;
+        
+    case ESP_BT_GAP_KEY_REQ_EVT:
+        // KEY REQ = Passkey Request
+        // Nutzer soll Pairing-Code eingeben
+        ESP_LOGI(SPP_TAG, "ESP_BT_GAP_KEY_REQ_EVT Please enter passkey!");
+        break;
 
-// --- Forward Declarations ---
-static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *param);
-static void gatts_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param);
+    // ========== UNBEKANNTE/NICHT BEHANDELTE EVENTS ==========
+    default: {
+        // Alle anderen GAP-Events werden nur geloggt
+        ESP_LOGI(SPP_TAG, "event: %d", event);
+        break;
+    }
+    }
+    return;
+}
 
-// ===================== IMPLEMENTIERUNG =====================
+/////////////////////////////////////////////////////////////////////////////////////////
+// BLUETOOTH SPP CALLBACK
+/////////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ * SPP Event Callback Funktion
+ * 
+ * Diese Funktion wird vom Bluetooth-Stack aufgerufen wenn SPP-Events auftreten.
+ * SPP (Serial Port Profile) ermöglicht serielle Datenübertragung.
+ * 
+ * Wichtige Events:
+ * - INIT: SPP wurde initialisiert
+ * - SRV_OPEN: Client hat sich verbunden
+ * - CLOSE: Verbindung wurde getrennt
+ * - DATA_IND: Daten wurden empfangen
+ * - WRITE: Daten wurden gesendet
+ * 
+ * @param event Typ des aufgetretenen Events
+ * @param param Parameter-Struktur mit Event-spezifischen Daten
+ */
+static void esp_spp_cb(esp_spp_cb_event_t event, esp_spp_cb_param_t *param)
+{
+    // Switch-Case für verschiedene SPP-Events
+    switch (event) {
+        
+    // ========== SPP INITIALISIERUNG ABGESCHLOSSEN ==========
+    case ESP_SPP_INIT_EVT:
+        
+        // Event tritt auf nachdem esp_spp_init() erfolgreich war
+        ESP_LOGI(SPP_TAG, "ESP_SPP_INIT_EVT");
+        
+        // SPP-Server starten
+        // Parameter:
+        // - sec_mask: Sicherheits-Maske (0 = keine Verschlüsselung)
+        // - role_slave: ESP32 ist Server (wartet auf Verbindungen)
+        // - 0: Slot/Channel (0 = automatisch wählen)
+        // - SPP_SERVER_NAME: Name des SPP-Dienstes
+        esp_spp_start_srv(ESP_SPP_SEC_AUTHENTICATE, ESP_SPP_ROLE_SLAVE, 0, SPP_SERVER_NAME);
+        break;
+        
+    // ========== SPP SERVER DISCOVERY ABGESCHLOSSEN ==========
+    case ESP_SPP_DISCOVERY_COMP_EVT:
+        // Wird aufgerufen nach Service Discovery (wenn ESP32 als Client agiert)
+        // In diesem Projekt nicht verwendet (ESP32 ist Server)
+        ESP_LOGI(SPP_TAG, "ESP_SPP_DISCOVERY_COMP_EVT");
+        break;
+        
+    // ========== SPP SERVER GEÖFFNET ==========
+    case ESP_SPP_OPEN_EVT:
+        // Wird aufgerufen wenn ESP32 als Client eine Verbindung öffnet
+        // In diesem Projekt nicht verwendet (ESP32 ist Server)
+        ESP_LOGI(SPP_TAG, "ESP_SPP_OPEN_EVT");
+        break;
+        
+    // ========== CLIENT HAT SICH VERBUNDEN ==========
+    case ESP_SPP_SRV_OPEN_EVT:
+        
+        // Event tritt auf wenn ein Client sich erfolgreich verbunden hat
+        ESP_LOGI(SPP_TAG, "ESP_SPP_SRV_OPEN_EVT");
+        
+        // Connection Handle speichern für späteres Senden
+        // Handle ist eindeutige ID dieser Verbindung
+        connection_handle = param->srv_open.handle;
+        
+        // Handle-Wert ausgeben (für Debugging)
+        ESP_LOGI(SPP_TAG, "Connection handle: %"PRIu32, connection_handle);
+        break;
+        
+    // ========== VERBINDUNG WURDE GETRENNT ==========
+    case ESP_SPP_CLOSE_EVT:
+        
+        // Event tritt auf wenn:
+        // - Client Verbindung trennt
+        // - Verbindung durch Timeout verloren geht
+        // - ESP32 Verbindung aktiv trennt
+        
+        ESP_LOGI(SPP_TAG, "ESP_SPP_CLOSE_EVT");
+        
+        // Connection Handle zurücksetzen (keine Verbindung mehr)
+        // Verhindert dass weiter Daten gesendet werden
+        connection_handle = 0;
+        break;
+        
+    // ========== SPP SERVER GESTARTET ==========
+    case ESP_SPP_START_EVT:
+        
+        // Event tritt auf nachdem SPP-Server erfolgreich gestartet wurde
+        ESP_LOGI(SPP_TAG, "ESP_SPP_START_EVT");
+        
+        // Server-Handle speichern (wird aktuell nicht verwendet)
+        // Könnte für Server-Kontrolle genutzt werden
+        break;
+        
+    // ========== CLIENT INITIIERT VERBINDUNG ==========
+    case ESP_SPP_CL_INIT_EVT:
+        
+        // Event tritt auf wenn Client Verbindungsaufbau startet
+        ESP_LOGI(SPP_TAG, "ESP_SPP_CL_INIT_EVT");
+        break;
+        
+    // ========== DATEN EMPFANGEN ==========
+    case ESP_SPP_DATA_IND_EVT:
+        
+        // Event tritt auf wenn Client Daten sendet
+        
+        // Anzahl empfangener Bytes ausgeben
+        ESP_LOGI(SPP_TAG, "ESP_SPP_DATA_IND_EVT len=%d", param->data_ind.len);
+        
+        // Empfangene Daten als Hex-Dump ausgeben (für Debugging)
+        // Zeigt rohe Bytes in hexadezimaler Form
+        esp_log_buffer_hex("", param->data_ind.data, param->data_ind.len);
+        
+        // HIER KÖNNTE DATENVERARBEITUNG ERFOLGEN:
+        // - Befehle parsen (z.B. "TARE", "RESET")
+        // - Konfiguration ändern
+        // - Antwort senden
+        
+        break;
+        
+    // ========== CONGESTION STATUS ==========
+    case ESP_SPP_CONG_EVT:
+        
+        // Event tritt auf wenn Bluetooth-Buffer voll/leer wird
+        // cong = 1: Buffer voll (Senden pausieren)
+        // cong = 0: Buffer wieder frei (Senden fortsetzen)
+        
+        ESP_LOGI(SPP_TAG, "ESP_SPP_CONG_EVT cong=%d", param->cong.cong);
+        break;
+        
+    // ========== DATEN ERFOLGREICH GESENDET ==========
+    case ESP_SPP_WRITE_EVT:
+        
+        // Event tritt auf nachdem esp_spp_write() abgeschlossen ist
+        // Bestätigt dass Daten erfolgreich übertragen wurden
+        
+        // Status prüfen
+        if (param->write.status == ESP_SPP_SUCCESS) {
+            // Erfolg: Daten wurden gesendet
+            ESP_LOGI(SPP_TAG, "ESP_SPP_WRITE_EVT len=%d", param->write.len);
+        } else {
+            // Fehler beim Senden
+            ESP_LOGE(SPP_TAG, "ESP_SPP_WRITE_EVT failed, status=%d", param->write.status);
+        }
+        break;
+        
+    // ========== UNBEKANNTE/NICHT BEHANDELTE EVENTS ==========
+    default:
+        // Alle anderen SPP-Events werden nur geloggt
+        ESP_LOGI(SPP_TAG, "SPP event: %d", event);
+        break;
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// ÖFFENTLICHE FUNKTIONEN
+/////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Bluetooth initialisieren
+ * 
+ * Diese Funktion führt die komplette Bluetooth-Initialisierung durch:
+ * 1. NVS (Non-Volatile Storage) initialisieren für BT-Konfiguration
+ * 2. Bluetooth Controller starten
+ * 3. Bluedroid Stack initialisieren
+ * 4. GAP und SPP konfigurieren
+ * 5. Gerät sichtbar machen
+ * 
+ * Muss einmal beim Programmstart aufgerufen werden (vor Bluetooth-Nutzung).
+ */
 void bluetooth_init(void)
 {
-    ESP_ERROR_CHECK(nvs_flash_init());
-    ESP_ERROR_CHECK(esp_bt_controller_mem_release(ESP_BT_MODE_CLASSIC_BT));
+    // ========== SCHRITT 1: NVS INITIALISIEREN ==========
+    
+    /*
+     * NVS (Non-Volatile Storage) = Flash-Speicher für Konfiguration
+     * 
+     * Bluetooth speichert hier:
+     * - Pairing-Informationen (Bonding)
+     * - Link Keys (Verschlüsselungs-Schlüssel)
+     * - Gerätename
+     * 
+     * nvs_flash_init() erstellt NVS-Partition wenn nicht vorhanden
+     */
+    esp_err_t ret = nvs_flash_init();
+    
+    // Spezielle Fehlerbehandlung für NVS
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        // NVS ist voll oder Version inkompatibel
+        // Lösung: Komplett löschen und neu initialisieren
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        ret = nvs_flash_init();
+    }
+    ESP_ERROR_CHECK(ret);
 
+    // ========== SCHRITT 2: BLUETOOTH CONTROLLER INITIALISIEREN ==========
+    
+    /*
+     * Bluetooth Controller = Low-Level Hardware-Treiber
+     * 
+     * Konfiguriert:
+     * - HCI (Host Controller Interface)
+     * - RF (Radio Frequency) Parameter
+     * - Buffer-Größen
+     * - Power Management
+     */
+    
+    // Standard-Konfiguration laden
     esp_bt_controller_config_t bt_cfg = BT_CONTROLLER_INIT_CONFIG_DEFAULT();
-    ESP_ERROR_CHECK(esp_bt_controller_init(&bt_cfg));
-    ESP_ERROR_CHECK(esp_bt_controller_enable(ESP_BT_MODE_BLE));
+    
+    // Controller mit Konfiguration initialisieren
+    if ((ret = esp_bt_controller_init(&bt_cfg)) != ESP_OK) {
+        ESP_LOGE(SPP_TAG, "%s initialize controller failed: %s\n", __func__, esp_err_to_name(ret));
+        return;
+    }
 
-    ESP_ERROR_CHECK(esp_bluedroid_init());
-    ESP_ERROR_CHECK(esp_bluedroid_enable());
+    // Controller im Classic Bluetooth Modus starten (nicht BLE!)
+    // ESP_BT_MODE_CLASSIC_BT = Nur Classic BT (für SPP)
+    // Alternative: ESP_BT_MODE_BTDM = Classic + BLE gleichzeitig
+    if ((ret = esp_bt_controller_enable(ESP_BT_MODE_CLASSIC_BT)) != ESP_OK) {
+        ESP_LOGE(SPP_TAG, "%s enable controller failed: %s\n", __func__, esp_err_to_name(ret));
+        return;
+    }
 
-    ESP_ERROR_CHECK(esp_ble_gatts_register_callback(gatts_event_handler));
-    ESP_ERROR_CHECK(esp_ble_gap_register_callback(gap_event_handler));
+    // ========== SCHRITT 3: BLUEDROID STACK INITIALISIEREN ==========
+    
+    /*
+     * Bluedroid = Bluetooth Protocol Stack (von Android übernommen)
+     * 
+     * Implementiert:
+     * - L2CAP (Logical Link Control)
+     * - SDP (Service Discovery)
+     * - RFCOMM (Serial Cable Emulation)
+     * - Profile (SPP, A2DP, HFP, etc.)
+     */
+    
+    // Bluedroid Stack initialisieren
+    if ((ret = esp_bluedroid_init()) != ESP_OK) {
+        ESP_LOGE(SPP_TAG, "%s initialize bluedroid failed: %s\n", __func__, esp_err_to_name(ret));
+        return;
+    }
 
-    const uint16_t APP_ID = 0x01;
-    ESP_ERROR_CHECK(esp_ble_gatts_app_register(APP_ID));
+    // Bluedroid Stack aktivieren (startet alle Services)
+    if ((ret = esp_bluedroid_enable()) != ESP_OK) {
+        ESP_LOGE(SPP_TAG, "%s enable bluedroid failed: %s\n", __func__, esp_err_to_name(ret));
+        return;
+    }
 
-    (void)esp_ble_gatt_set_local_mtu(247);
+    // ========== SCHRITT 4: CALLBACK-FUNKTIONEN REGISTRIEREN ==========
+    
+    // GAP Callback registrieren (für Verbindungsverwaltung)
+    if ((ret = esp_bt_gap_register_callback(esp_bt_gap_cb)) != ESP_OK) {
+        ESP_LOGE(SPP_TAG, "%s gap register failed: %s\n", __func__, esp_err_to_name(ret));
+        return;
+    }
 
-    s_rx_queue = xQueueCreate(10, sizeof(int32_t));
-    configASSERT(s_rx_queue != NULL);
+    // SPP Callback registrieren (für Datenübertragung)
+    if ((ret = esp_spp_register_callback(esp_spp_cb)) != ESP_OK) {
+        ESP_LOGE(SPP_TAG, "%s spp register failed: %s\n", __func__, esp_err_to_name(ret));
+        return;
+    }
+
+    // ========== SCHRITT 5: SPP INITIALISIEREN ==========
+    
+    /*
+     * SPP Mode = VFS (Virtual File System)
+     * 
+     * Ermöglicht Zugriff auf SPP wie auf serielle Schnittstelle
+     * Alternativen:
+     * - ESP_SPP_MODE_CB: Callback-basiert (verwendet hier)
+     * - ESP_SPP_MODE_VFS: File-Descriptor basiert (für POSIX-Kompatibilität)
+     */
+    if ((ret = esp_spp_init(ESP_SPP_MODE_CB)) != ESP_OK) {
+        ESP_LOGE(SPP_TAG, "%s spp init failed: %s\n", __func__, esp_err_to_name(ret));
+        return;
+    }
+
+    // ========== SCHRITT 6: SECURE SIMPLE PAIRING KONFIGURIEREN ==========
+    
+    /*
+     * SSP (Secure Simple Pairing) = Moderner Pairing-Mechanismus
+     * 
+     * IO Capability = Was kann das Gerät anzeigen/eingeben?
+     * ESP_BT_IO_CAP_NONE = Keine Ein/Ausgabe (Auto-Pairing)
+     * 
+     * Alternativen:
+     * - ESP_BT_IO_CAP_OUT: Nur Ausgabe (Display)
+     * - ESP_BT_IO_CAP_IN: Nur Eingabe (Tastatur)
+     * - ESP_BT_IO_CAP_IO: Beides (Display + Tastatur)
+     */
+    esp_bt_sp_param_t param_type = ESP_BT_SP_IOCAP_MODE;
+    esp_bt_io_cap_t iocap = ESP_BT_IO_CAP_NONE;
+    esp_bt_gap_set_security_param(param_type, &iocap, sizeof(uint8_t));
+
+    // ========== SCHRITT 7: GERÄT SICHTBAR MACHEN ==========
+    
+    /*
+     * Scan Mode = Wie ist Gerät sichtbar?
+     * 
+     * ESP_BT_CONNECTABLE = Kann verbunden werden
+     * ESP_BT_GENERAL_DISCOVERABLE = Für alle sichtbar in Bluetooth-Suche
+     * 
+     * Ohne diese Einstellung wäre ESP32 "unsichtbar"
+     */
+    esp_bt_gap_set_scan_mode(ESP_BT_CONNECTABLE, ESP_BT_GENERAL_DISCOVERABLE);
+
+    /*
+     * Gerätenamen setzen
+     * 
+     * Dieser Name erscheint:
+     * - In Bluetooth-Geräteliste auf anderen Geräten
+     * - Bei Verbindungsanfrage
+     * - In Bluetooth-Einstellungen
+     */
+    esp_bt_dev_set_device_name(DEVICE_NAME);
+    
+    // Initialisierung abgeschlossen
+    ESP_LOGI(SPP_TAG, "Bluetooth initialisiert als: %s", DEVICE_NAME);
 }
 
-bool bluetooth_receive_int(int32_t *out_value, uint32_t timeout_ms)
+/////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Integer-Wert über Bluetooth senden
+ * 
+ * Sendet einen Integer-Wert als ASCII-String über SPP.
+ * 
+ * Format: "<wert>\n"
+ * Beispiel: "250000\n" (für 2500.00g wenn mit 100 multipliziert)
+ * 
+ * @param value Integer-Wert der gesendet werden soll
+ * 
+ * Funktionsweise:
+ * 1. Prüfen ob Client verbunden ist (connection_handle != 0)
+ * 2. Integer in String konvertieren (mit snprintf)
+ * 3. String über SPP senden (mit esp_spp_write)
+ * 
+ * Sicherheit:
+ * - Sendet nur wenn Verbindung aktiv
+ * - Buffer-Overflow geschützt (sizeof(buffer))
+ * - Automatisches Newline für Paket-Trennung
+ */
+void bluetooth_send_int(int32_t value)
 {
-    if (!out_value || !s_rx_queue) return false;
-    return xQueueReceive(s_rx_queue, out_value, pdMS_TO_TICKS(timeout_ms)) == pdTRUE;
+    // Prüfen ob ein Client verbunden ist
+    // connection_handle wird bei Verbindung gesetzt, bei Trennung auf 0 zurückgesetzt
+    if(connection_handle != 0){
+        
+        // ========== STRING-FORMATIERUNG ==========
+        
+        // Buffer für ASCII-String (16 Bytes reichen für int32_t)
+        // Maximale Länge von int32_t: "-2147483648" = 11 Zeichen + "\n" + "\0"
+        char buffer[16];
+        
+        // Integer in String konvertieren
+        // snprintf = Sichere String-Formatierung (verhindert Buffer-Overflow)
+        // Format: "%ld\n"
+        //   %ld = long integer (32-bit)
+        //   \n  = Newline (Paket-Ende-Markierung)
+        // Rückgabe: Anzahl geschriebener Zeichen (ohne \0)
+        int len = snprintf(buffer, sizeof(buffer), "%ld\n", (long)value);
+        
+        // ========== DATEN SENDEN ==========
+        
+        // Daten über SPP schreiben
+        // Parameter:
+        //   connection_handle: ID der Verbindung (an welchen Client?)
+        //   len: Anzahl zu sendender Bytes
+        //   buffer: Pointer auf Daten (als uint8_t* gecastet)
+        // 
+        // Funktion ist non-blocking (kehrt sofort zurück)
+        // Bestätigung erfolgt später über ESP_SPP_WRITE_EVT Callback
+        esp_spp_write(connection_handle, len, (uint8_t*)buffer);
+        
+        // Hinweis: Kein Error-Checking hier
+        // Fehler werden im SPP Callback (ESP_SPP_WRITE_EVT) behandelt
+    }
+    // Wenn nicht verbunden: Daten werden verworfen (kein Senden möglich)
 }
 
-esp_err_t bluetooth_send_int(int32_t value)
-{
-    if (!s_notify_enabled || s_conn_id == 0xFFFF || s_char_handle == 0 || s_gatts_if == ESP_GATT_IF_NONE)
-        return ESP_FAIL;
-
-    uint8_t p[4] = {
-        (uint8_t)(value & 0xFF),
-        (uint8_t)((value >> 8) & 0xFF),
-        (uint8_t)((value >> 16) & 0xFF),
-        (uint8_t)((value >> 24) & 0xFF),
-    };
-
-    return esp_ble_gatts_send_indicate(s_gatts_if, s_conn_id, s_char_handle, sizeof(p), p, false);
-}
-
-// ===================== GAP Handler =====================
-static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *param)
-{
-    switch (event) {
-    case ESP_GAP_BLE_ADV_DATA_SET_COMPLETE_EVT:
-        adv_config_done &= (~adv_config_flag);
-        if (adv_config_done == 0) esp_ble_gap_start_advertising(&adv_params);
-        break;
-    case ESP_GAP_BLE_SCAN_RSP_DATA_SET_COMPLETE_EVT:
-        adv_config_done &= (~scan_rsp_config_flag);
-        if (adv_config_done == 0) esp_ble_gap_start_advertising(&adv_params);
-        break;
-    case ESP_GAP_BLE_ADV_START_COMPLETE_EVT:
-        if (param->adv_start_cmpl.status != ESP_BT_STATUS_SUCCESS)
-            ESP_LOGE(GATTS_TAG, "Advertising start failed");
-        else
-            ESP_LOGI(GATTS_TAG, "Advertising started");
-        break;
-    case ESP_GAP_BLE_UPDATE_CONN_PARAMS_EVT:
-        ESP_LOGI(GATTS_TAG, "conn params: status=%d, conn_int=%d, latency=%d, timeout=%d",
-                 param->update_conn_params.status,
-                 param->update_conn_params.conn_int,
-                 param->update_conn_params.latency,
-                 param->update_conn_params.timeout);
-        break;
-    default:
-        break;
-    }
-}
-
-// ===================== GATT Handler =====================
-static void gatts_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_t gatts_if,
-                                esp_ble_gatts_cb_param_t *param)
-{
-    switch (event) {
-    case ESP_GATTS_REG_EVT: {
-        s_gatts_if = gatts_if;
-        ESP_LOGI(GATTS_TAG, "REG_EVT status=%d app_id=%u", param->reg.status, param->reg.app_id);
-
-        ESP_ERROR_CHECK(esp_ble_gap_set_device_name(TEST_DEVICE_NAME));
-        adv_config_done |= adv_config_flag;
-        ESP_ERROR_CHECK(esp_ble_gap_config_adv_data(&adv_data));
-        adv_config_done |= scan_rsp_config_flag;
-        ESP_ERROR_CHECK(esp_ble_gap_config_adv_data(&scan_rsp_data));
-
-        // Service anlegen
-        esp_gatt_srvc_id_t svc_id = {
-            .is_primary = true,
-            .id = { .inst_id = 0x00, .uuid = { .len = ESP_UUID_LEN_16, .uuid = { .uuid16 = GATTS_SERVICE_UUID } } }
-        };
-        ESP_ERROR_CHECK(esp_ble_gatts_create_service(gatts_if, &svc_id, GATTS_NUM_HANDLE));
-        break;
-    }
-
-    case ESP_GATTS_CREATE_EVT: {
-        s_service_handle = param->create.service_handle;
-        ESP_LOGI(GATTS_TAG, "CREATE service_handle=%u", s_service_handle);
-
-        ESP_ERROR_CHECK(esp_ble_gatts_start_service(s_service_handle));
-
-        // Characteristic (READ | WRITE | NOTIFY)
-        esp_bt_uuid_t cu = { .len = ESP_UUID_LEN_16, .uuid = { .uuid16 = GATTS_CHAR_UUID } };
-        esp_gatt_char_prop_t prop = ESP_GATT_CHAR_PROP_BIT_READ |
-                                    ESP_GATT_CHAR_PROP_BIT_WRITE |
-                                    ESP_GATT_CHAR_PROP_BIT_NOTIFY;
-
-        // Startwert (4 Byte)
-        static uint8_t init_val[4] = {0,0,0,0};
-        esp_attr_value_t attr = { .attr_max_len = 4, .attr_len = 4, .attr_value = init_val };
-
-        ESP_ERROR_CHECK(esp_ble_gatts_add_char(s_service_handle, &cu,
-                                               ESP_GATT_PERM_READ | ESP_GATT_PERM_WRITE,
-                                               prop, &attr, NULL));
-        break;
-    }
-
-    case ESP_GATTS_ADD_CHAR_EVT: {
-        s_char_handle = param->add_char.attr_handle;
-        ESP_LOGI(GATTS_TAG, "ADD_CHAR handle=%u", s_char_handle);
-
-        // CCCD hinzufügen
-        esp_bt_uuid_t cccd = { .len = ESP_UUID_LEN_16, .uuid = { .uuid16 = ESP_GATT_UUID_CHAR_CLIENT_CONFIG } };
-        ESP_ERROR_CHECK(esp_ble_gatts_add_char_descr(s_service_handle, &cccd,
-                                                     ESP_GATT_PERM_READ | ESP_GATT_PERM_WRITE,
-                                                     NULL, NULL));
-        break;
-    }
-
-    case ESP_GATTS_ADD_CHAR_DESCR_EVT:
-        s_cccd_handle = param->add_char_descr.attr_handle;
-        ESP_LOGI(GATTS_TAG, "ADD_CCCD handle=%u", s_cccd_handle);
-        break;
-
-    case ESP_GATTS_CONNECT_EVT: {
-        s_conn_id = param->connect.conn_id;
-        ESP_LOGI(GATTS_TAG, "CONNECT conn_id=%u  %02X:%02X:%02X:%02X:%02X:%02X",
-                 s_conn_id,
-                 param->connect.remote_bda[0], param->connect.remote_bda[1],
-                 param->connect.remote_bda[2], param->connect.remote_bda[3],
-                 param->connect.remote_bda[4], param->connect.remote_bda[5]);
-
-        // sinnvolle Verbindungsparameter
-        esp_ble_conn_update_params_t cp = {0};
-        memcpy(cp.bda, param->connect.remote_bda, sizeof(esp_bd_addr_t));
-        cp.latency = 0; cp.min_int = 0x10; cp.max_int = 0x30; cp.timeout = 400;
-        esp_ble_gap_update_conn_params(&cp);
-        break;
-    }
-
-    case ESP_GATTS_DISCONNECT_EVT:
-        ESP_LOGI(GATTS_TAG, "DISCONNECT, restart advertising");
-        s_conn_id = 0xFFFF;
-        s_notify_enabled = false;
-        esp_ble_gap_start_advertising(&adv_params);
-        break;
-
-    case ESP_GATTS_READ_EVT: {
-        esp_gatt_rsp_t rsp = {0};
-        rsp.attr_value.handle = param->read.handle;
-        rsp.attr_value.len    = 4;
-        rsp.attr_value.value[0]=0xDE; rsp.attr_value.value[1]=0xAD;
-        rsp.attr_value.value[2]=0xBE; rsp.attr_value.value[3]=0xEF;
-        esp_ble_gatts_send_response(gatts_if, param->read.conn_id, param->read.trans_id, ESP_GATT_OK, &rsp);
-        break;
-    }
-
-    case ESP_GATTS_WRITE_EVT: {
-        if (param->write.handle == s_cccd_handle && param->write.len == 2) {
-            uint16_t c = (param->write.value[1] << 8) | param->write.value[0];
-            s_notify_enabled = (c == 0x0001);
-            ESP_LOGI(GATTS_TAG, "CCCD=0x%04X -> notify=%d", c, s_notify_enabled);
-        }
-        else if (param->write.handle == s_char_handle && param->write.len == 4 && param->write.offset == 0) {
-            int32_t v =  ((int32_t)param->write.value[0]) |
-                        ((int32_t)param->write.value[1] << 8) |
-                        ((int32_t)param->write.value[2] << 16) |
-                        ((int32_t)param->write.value[3] << 24);
-            (void)xQueueSend(s_rx_queue, &v, 0);
-            ESP_LOGI(GATTS_TAG, "RX int=%ld", (long)v);
-        }
-        if (param->write.need_rsp) {
-            esp_ble_gatts_send_response(gatts_if, param->write.conn_id, param->write.trans_id, ESP_GATT_OK, NULL);
-        }
-        break;
-    }
-
-    default:
-        break;
-    }
-}
+// ============================================================================
+// ENDE DER BLUETOOTH-IMPLEMENTIERUNG
+// ============================================================================
