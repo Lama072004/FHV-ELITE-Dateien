@@ -4,6 +4,7 @@ import '../models/recipe.dart';
 import '../services/weight_service.dart';
 import '../widgets/weight_gauge.dart';
 
+/// Screen zum schrittweisen Nachkochen eines Rezepts mit Gewichtskontrolle
 class RecipeFollowerScreen extends StatefulWidget {
   final Recipe recipe;
 
@@ -20,7 +21,7 @@ class _RecipeFollowerScreenState extends State<RecipeFollowerScreen> {
   int? selectedIngredientIndex;
   bool _completedShown = false;
 
-  // track which ingredient indices the user marked as done
+  // Verfolge abgeschlossene Zutaten
   final Set<int> completedIndices = {};
 
   @override
@@ -44,6 +45,7 @@ class _RecipeFollowerScreenState extends State<RecipeFollowerScreen> {
     super.dispose();
   }
 
+  /// Skaliere Zutaten entsprechend der Portionen
   void _updateScaledIngredients() {
     final scale = servings / widget.recipe.servings;
     scaledIngredients = widget.recipe.ingredients
@@ -56,27 +58,28 @@ class _RecipeFollowerScreenState extends State<RecipeFollowerScreen> {
     setState(() {});
   }
 
+  /// Prüfe, ob aktuelles Gewicht in Toleranz der ausgewählten Zutat liegt
   Future<void> _onWeightChanged(double? weight, Ingredient? target) async {
     if (target == null) return;
     if (weight == null) {
       _completedShown = false;
       return;
     }
-    final tol = 5.0; // gramm
+    final tol = 5.0; // Toleranz in Gramm
     final minW = target.amount - tol;
     final maxW = target.amount + tol;
 
     if (weight >= minW && weight <= maxW) {
       if (!_completedShown) {
         _completedShown = true;
-        // only show congrats automatically if desired; we now let user confirm
-        // await showDialog(...); // removed automatic dialog
+        // Automatische Glückwunsch-Meldung entfernt; Nutzer muss manuell markieren
       }
     } else {
       _completedShown = false;
     }
   }
 
+  /// Markiere Zutat als erledigt
   void _markIngredientDone(int index) {
     setState(() {
       completedIndices.add(index);
@@ -89,13 +92,12 @@ class _RecipeFollowerScreenState extends State<RecipeFollowerScreen> {
     );
   }
 
-  // Units that may be marked without exact weight: counts, volume spoons, and common mass/volume units
+  /// Prüfe, ob Einheit ohne Gewicht markiert werden darf (Stück, EL, TL, g, ml etc.)
   bool isMarkAllowedWithoutWeight(String u) {
     final norm = u.toLowerCase().replaceAll(RegExp(r'[^a-z0-9]'), '');
     const allowed = {
       'stk', 'stuck', 'stück', 'stücke', 'pcs', 'piece', 'tasse', 'cup',
       'el', 'esslffel', 'essloffel', 'el.', 'tl', 'teelffel', 'teelloefel', 'tl.',
-      // mass/volume units
       'g', 'gram', 'gramm', 'kg', 'ml', 'milliliter', 'l', 'liter'
     };
     return allowed.contains(norm);
@@ -115,6 +117,7 @@ class _RecipeFollowerScreenState extends State<RecipeFollowerScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            // Rezeptname
             Text(
               widget.recipe.name,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
@@ -124,26 +127,25 @@ class _RecipeFollowerScreenState extends State<RecipeFollowerScreen> {
             ),
             const SizedBox(height: 24),
 
-            // Gauge with live weight
+            // Gauge mit Live-Gewicht
             Center(
               child: ValueListenableBuilder<double?>(
                 valueListenable: WeightService.currentWeight,
                 builder: (context, weight, _) {
-                  // notify completion check (keeps internal flag)
                   _onWeightChanged(weight, selectedIng);
                   return WeightGauge(
                     currentWeight: weight,
                     maxWeight: (selectedIng?.amount ?? 500),
                     isRecipeMode: true,
                     targetWeight: selectedIng?.amount,
-                    tolerance: 5.0, // percent mode kept as before or could be grams
+                    tolerance: 5.0,
                   );
                 },
               ),
             ),
             const SizedBox(height: 12),
 
-            // Live weight text
+            // Live-Gewichtsanzeige
             Center(
               child: ValueListenableBuilder<double?>(
                 valueListenable: WeightService.currentWeight,
@@ -162,7 +164,7 @@ class _RecipeFollowerScreenState extends State<RecipeFollowerScreen> {
             ),
             const SizedBox(height: 20),
 
-            // Portionen (unchanged)
+            // Portionen-Rechner
             Container(
               decoration: BoxDecoration(
                 color: const Color(0xFF2A2A2A),
@@ -216,7 +218,57 @@ class _RecipeFollowerScreenState extends State<RecipeFollowerScreen> {
             ),
             const SizedBox(height: 24),
 
-            // Zutatenliste: jedes Item reagiert auf aktuelles Gewicht
+            // Zubereitungsschritte (falls vorhanden)
+            if (widget.recipe.steps.isNotEmpty) ...[
+              Text(
+                'Zubereitungsschritte',
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      color: AppTheme.lightGreen,
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+              const SizedBox(height: 12),
+              ...widget.recipe.steps.asMap().entries.map((e) {
+                final idx = e.key;
+                final step = e.value;
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 12),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF2A2A2A),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    padding: const EdgeInsets.all(12),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: AppTheme.cream,
+                          radius: 16,
+                          child: Text(
+                            '${idx + 1}',
+                            style: const TextStyle(
+                              color: AppTheme.darkGreen,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Text(
+                            step,
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }),
+              const SizedBox(height: 24),
+            ],
+
+            // Zutaten mit Markierungsfunktion
             Text(
               'Zutaten',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -239,7 +291,7 @@ class _RecipeFollowerScreenState extends State<RecipeFollowerScreen> {
                       weight <= (ing.amount + tol);
                   final isDone = completedIndices.contains(idx);
 
-                  // allow immediate marking if unit is in allowed list (counts, EL/TL, g/ml etc.)
+                  // Erlaube sofortiges Markieren für bestimmte Einheiten
                   final allowWithoutWeight = isMarkAllowedWithoutWeight(ing.unit);
 
                   return GestureDetector(
@@ -250,7 +302,7 @@ class _RecipeFollowerScreenState extends State<RecipeFollowerScreen> {
                         decoration: BoxDecoration(
                           color: const Color(0xFF2A2A2A),
                           borderRadius: BorderRadius.circular(8),
-                          // only green frame when selected
+                          // Grüner Rahmen nur bei Auswahl
                           border: isSelected ? Border.all(color: AppTheme.lightGreen, width: 2) : null,
                         ),
                         padding: const EdgeInsets.all(12),
@@ -279,7 +331,7 @@ class _RecipeFollowerScreenState extends State<RecipeFollowerScreen> {
                                 ],
                               ),
                             ),
-                            // Trailing: show done check or mark button when within tolerance or allowed by unit
+                            // Trailing: Haken wenn erledigt, sonst Button zum Markieren
                             if (isDone)
                               const Icon(Icons.check_circle, color: AppTheme.lightGreen)
                             else if (isSelected)
@@ -290,7 +342,7 @@ class _RecipeFollowerScreenState extends State<RecipeFollowerScreen> {
                                   if (withinTol || allowWithoutWeight) {
                                     _markIngredientDone(idx);
                                   } else {
-                                    // confirm manual override
+                                    // Bestätigungsdialog bei manueller Markierung außerhalb Toleranz
                                     final ok = await showDialog<bool>(
                                       context: context,
                                       builder: (context) => AlertDialog(
@@ -317,7 +369,7 @@ class _RecipeFollowerScreenState extends State<RecipeFollowerScreen> {
                                 },
                                 tooltip: (withinTol || allowWithoutWeight)
                                     ? 'Als erledigt markieren'
-                                    : 'Außerhalb der Toleranz — lang drücken zum Bestätigen',
+                                    : 'Außerhalb der Toleranz — Bestätigung nötig',
                               )
                             else
                               Icon(Icons.circle_outlined, color: AppTheme.green),

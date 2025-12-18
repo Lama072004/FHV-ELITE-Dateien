@@ -3,9 +3,10 @@ import 'package:hive/hive.dart';
 import '../theme/app_theme.dart';
 import '../models/recipe.dart';
 
+/// Screen zum Erstellen/Bearbeiten von Rezepten
 class RecipeEditorScreen extends StatefulWidget {
-  final Recipe? recipe;
-  final int? index;
+  final Recipe? recipe; // Bestehendes Rezept (null = neues Rezept)
+  final int? index; // Index in Hive-Box (für Update)
 
   const RecipeEditorScreen({super.key, this.recipe, this.index});
 
@@ -18,6 +19,7 @@ class _RecipeEditorScreenState extends State<RecipeEditorScreen> {
   late TextEditingController servingsController;
   late TextEditingController descriptionController;
   List<Ingredient> ingredients = [];
+  List<String> steps = []; // Zubereitungsschritte
 
   @override
   void initState() {
@@ -28,6 +30,7 @@ class _RecipeEditorScreenState extends State<RecipeEditorScreen> {
     descriptionController =
         TextEditingController(text: widget.recipe?.description ?? '');
     ingredients = List.from(widget.recipe?.ingredients ?? []);
+    steps = List.from(widget.recipe?.steps ?? []);
   }
 
   @override
@@ -38,6 +41,7 @@ class _RecipeEditorScreenState extends State<RecipeEditorScreen> {
     super.dispose();
   }
 
+  /// Zutat hinzufügen via Dialog
   void _addIngredient() {
     showDialog(
       context: context,
@@ -50,6 +54,39 @@ class _RecipeEditorScreenState extends State<RecipeEditorScreen> {
     );
   }
 
+  /// Zubereitungsschritt hinzufügen via Dialog
+  void _addStep() {
+    final controller = TextEditingController();
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: const Color(0xFF1E1E1E),
+        title: const Text('Schritt hinzufügen'),
+        content: TextField(
+          controller: controller,
+          decoration: const InputDecoration(labelText: 'Beschreibung'),
+          maxLines: 3,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Abbrechen'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              if (controller.text.isNotEmpty) {
+                setState(() => steps.add(controller.text));
+              }
+              Navigator.pop(context);
+            },
+            child: const Text('Hinzufügen'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Rezept in Hive speichern
   void _saveRecipe() {
     if (nameController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -63,6 +100,7 @@ class _RecipeEditorScreenState extends State<RecipeEditorScreen> {
       servings: int.tryParse(servingsController.text) ?? 1,
       ingredients: ingredients,
       description: descriptionController.text,
+      steps: steps,
     );
 
     try {
@@ -75,8 +113,8 @@ class _RecipeEditorScreenState extends State<RecipeEditorScreen> {
         print('Rezept gespeichert mit key: $key, Name: ${recipe.name}');
         print('Aktuelle Anzahl Rezepte in Box: ${box.length}');
       }
-      final count = box.length;
 
+      final count = box.length;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Rezept "${recipe.name}" gespeichert ($count insgesamt)'),
@@ -109,6 +147,7 @@ class _RecipeEditorScreenState extends State<RecipeEditorScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            // Rezeptname
             TextField(
               controller: nameController,
               decoration: const InputDecoration(
@@ -118,6 +157,8 @@ class _RecipeEditorScreenState extends State<RecipeEditorScreen> {
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
+
+            // Portionen
             Row(
               children: [
                 Expanded(
@@ -130,6 +171,8 @@ class _RecipeEditorScreenState extends State<RecipeEditorScreen> {
               ],
             ),
             const SizedBox(height: 16),
+
+            // Beschreibung
             TextField(
               controller: descriptionController,
               decoration: const InputDecoration(
@@ -139,6 +182,8 @@ class _RecipeEditorScreenState extends State<RecipeEditorScreen> {
               maxLines: 3,
             ),
             const SizedBox(height: 24),
+
+            // Zutaten
             Text(
               'Zutaten',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -190,7 +235,67 @@ class _RecipeEditorScreenState extends State<RecipeEditorScreen> {
               icon: const Icon(Icons.add),
               label: const Text('Zutat hinzufügen'),
             ),
+
             const SizedBox(height: 24),
+
+            // Zubereitungsschritte
+            Text(
+              'Zubereitungsschritte',
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: AppTheme.lightGreen,
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+            const SizedBox(height: 12),
+            ...steps.asMap().entries.map((e) {
+              final idx = e.key;
+              final step = e.value;
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF2A2A2A),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  padding: const EdgeInsets.all(12),
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: AppTheme.green,
+                        radius: 16,
+                        child: Text(
+                          '${idx + 1}',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Text(step),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.delete, color: AppTheme.red),
+                        onPressed: () {
+                          setState(() => steps.removeAt(idx));
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }),
+            const SizedBox(height: 12),
+            ElevatedButton.icon(
+              onPressed: _addStep,
+              icon: const Icon(Icons.add),
+              label: const Text('Schritt hinzufügen'),
+            ),
+
+            const SizedBox(height: 24),
+
+            // Speichern-Button
             ElevatedButton(
               onPressed: _saveRecipe,
               child: const Text('Speichern'),
@@ -202,6 +307,7 @@ class _RecipeEditorScreenState extends State<RecipeEditorScreen> {
   }
 }
 
+/// Dialog zum Hinzufügen einer Zutat
 class _IngredientDialog extends StatefulWidget {
   final Function(Ingredient) onAdd;
 
