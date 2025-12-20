@@ -523,7 +523,7 @@ void bluetooth_init(void)
  * - Buffer-Overflow geschützt (sizeof(buffer))
  * - Automatisches Newline für Paket-Trennung
  */
-void bluetooth_send_int(int32_t value)
+esp_err_t bluetooth_send_int(int32_t value)
 {
     // Prüfen ob ein Client verbunden ist
     // connection_handle wird bei Verbindung gesetzt, bei Trennung auf 0 zurückgesetzt
@@ -557,8 +557,10 @@ void bluetooth_send_int(int32_t value)
         
         // Hinweis: Kein Error-Checking hier
         // Fehler werden im SPP Callback (ESP_SPP_WRITE_EVT) behandelt
+        return ESP_OK;
     }
     // Wenn nicht verbunden: Daten werden verworfen (kein Senden möglich)
+    return ESP_ERR_INVALID_STATE;
 }
 
 // ============================================================================
