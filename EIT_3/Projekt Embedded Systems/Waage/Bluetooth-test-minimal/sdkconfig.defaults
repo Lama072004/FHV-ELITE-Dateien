@@ -1,11 +1,29 @@
 # This file was generated using idf.py save-defconfig. It can be edited manually.
 # Espressif IoT Development Framework (ESP-IDF) Project Minimal Configuration
 #
+# Bluetooth Configuration
 CONFIG_BT_ENABLED=y
+
+# Bluetooth Controller Mode: NUR Classic BT
+CONFIG_BTDM_CTRL_MODE_BLE_ONLY=y
+CONFIG_BTDM_CTRL_MODE_BR_EDR_ONLY=n
+CONFIG_BTDM_CTRL_MODE_BTDM=n
+
+# Bluedroid Stack
 CONFIG_BT_BLUEDROID_ENABLED=y
-CONFIG_BT_CLASSIC_ENABLED=y
-CONFIG_BT_SPP_ENABLED=y
-CONFIG_BT_BLE_50_FEATURES_SUPPORTED=n
-CONFIG_BT_BLE_42_FEATURES_SUPPORTED=y
-# CONFIG_BT_LE_50_FEATURE_SUPPORT is not used on ESP32, ESP32-C3 and ESP32-S3.
-# CONFIG_BT_LE_50_FEATURE_SUPPORT is not set
+CONFIG_BT_NIMBLE_ENABLED=n
+
+# BLE Features
+CONFIG_BT_BLE_ENABLED=y
+
+# Classic Bluetooth deaktivieren (nicht verfügbar auf S3)
+CONFIG_BT_CLASSIC_ENABLED=n
+CONFIG_BT_A2DP_ENABLE=n
+CONFIG_BT_SPP_ENABLED=n
+
+# BLE GATT Server
+CONFIG_BT_GATTS_ENABLE=y
+
+# Speicher optimieren
+CONFIG_BT_BLE_DYNAMIC_ENV_MEMORY=n
+CONFIG_BT_RELEASE_IRAM=y

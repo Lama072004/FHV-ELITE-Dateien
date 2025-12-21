@@ -84,7 +84,7 @@ void init_adc(adc_oneshot_unit_handle_t *adc_unit) {
 
     adc_oneshot_chan_cfg_t chan_cfg = {
         .bitwidth = ADC_BITWIDTH_DEFAULT,
-        .atten = ADC_ATTEN_DB_11
+        .atten = ADC_ATTEN_DB_12  // Ersetzt ADC_ATTEN_DB_11
     };
     adc_oneshot_config_channel(*adc_unit, ADC_CHANNEL, &chan_cfg);
 }

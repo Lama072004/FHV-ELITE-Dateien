@@ -7,7 +7,6 @@
 
 // --- Methoden ---
 void bluetooth_init(void);
-bool bluetooth_receive_int(int32_t *out_value, uint32_t timeout_ms);
-esp_err_t bluetooth_send_int(int32_t value);
+void bluetooth_send_int(int32_t value);  // void statt esp_err_t
 
 #endif // BLUETOOTH_H
