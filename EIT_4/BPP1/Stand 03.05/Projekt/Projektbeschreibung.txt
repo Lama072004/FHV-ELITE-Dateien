@@ -1,0 +1,15 @@
+Projektidee Josef: Tool zur Erleichterung von einzelnen Arbeitsschritten
+
+Es soll eine Datei, die vom Schutzgerät heruntergeladen wurde und die korrekten Spurbezeichnungen enthält, mit einer Datei verglichen werden, die auf den Server übertragen wurde und nur Dummy-Texte enthält (in Bezug auf Spurbenennung). Aus dieser Kombination sollen dann die korrekten Ausgabedateien anatext.csv und digitext.csv erstellt werden, passend für die entsprechenden Schutzgeräte.
+anatext.csv steht für die Analogspuren, während digitext.csv die Binärspuren enthält. Das Ziel ist, die Struktur der übertragenen Datei zu übernehmen, aber die Dummy-Bezeichnungen durch die korrekten Namen aus der Schutzgeräte-Datei zu ersetzen.
+Das Programm soll als Visual Basic Anwendung umgesetzt werden. Der Nutzer gibt die beiden Dateien oder den Speicherort an, und das Tool liest die Daten ein, führt die Zuordnung durch und erstellt die Ausgangsdateien im gewünschten Ordner. Vor der Generierung soll abgefragt werden, für welches Schutzgerät bzw. Umspannwerk die Dateien erstellt werden sollen – entweder über ein Popup oder, wenn möglich, automatisch.
+Je nach zeitlichen Möglichkeiten können später zusätzliche Funktionen zur weiteren Erleichterung ergänzt werden.
+Zweitbereich wird Wirtschaftskompetenz in bezug auf Zeit bzw Kostenersparnis die das Tool einspart bzw ab wann sich das Tool bin bezug auf Entwicklungskosten rentiert.
+Das tool wird in Visual Basics programmiert.
+
+
+
+Visual Basics Doku: https://learn.microsoft.com/pdf?url=https%3A%2F%2Flearn.microsoft.com%2Fde-de%2Fdotnet%2Fvisual-basic%2Freference%2Flanguage-specification%2Ftoc.json
+
+
+
