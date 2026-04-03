@@ -1,0 +1,17 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}C-Sprache}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Bytespeicher für uint8\_t* und uint16\_t*}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Einsatz von static in C}{2}{}%
+\contentsline {subsection}{\numberline {1.3}Endianness}{2}{}%
+\contentsline {section}{\numberline {2}Konfiguration}{3}{}%
+\contentsline {section}{\numberline {3}Bitmaskierung}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Aufgabe: setCtrl-Funktion}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Aufgabe: Rotate Right}{4}{}%
+\contentsline {section}{\numberline {4}Dynamische Speicherverwaltung}{5}{}%
+\contentsline {subsection}{\numberline {4.1}Aufgabe: mem\_calcStatistics}{5}{}%
+\contentsline {section}{\numberline {5}Multitasking}{6}{}%
+\contentsline {subsection}{\numberline {5.1}Semaphor}{6}{}%
+\contentsline {subsection}{\numberline {5.2}Semaphor in FreeRTOS}{6}{}%
+\contentsline {subsection}{\numberline {5.3}Producer/Consumer Implementierung}{7}{}%
+\contentsline {subsection}{\numberline {5.4}Scheduling Diagramm}{7}{}%
+\contentsline {subsection}{\numberline {5.5}Producer/Consumer Erweiterung}{8}{}%
