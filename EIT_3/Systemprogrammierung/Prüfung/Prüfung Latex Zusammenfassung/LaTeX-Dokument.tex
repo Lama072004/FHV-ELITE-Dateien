@@ -1,0 +1,195 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage[left=3cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry} 
+\usepackage{setspace}          
+\onehalfspacing                
+\usepackage{microtype}
+\usepackage[autostyle=true,german=quotes]{csquotes}         
+
+\usepackage[document]{ragged2e}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\sloppy
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{listings}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    showstringspaces=false,
+    language=C
+}
+
+\title{Systemprogrammierung Prüfung, WS25/26}
+\author{Mathias Lampert}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{C-Sprache}
+
+\subsection{Bytespeicher für uint8\_t* und uint16\_t*}
+Beide Pointer belegen den gleichen Speicherplatz. Die Größe eines Pointers hängt von der Systemarchitektur ab. Ein 32-Bit-System verwendet 4 Bytes für eine Adresse. Ein 64-Bit-System verwendet 8 Bytes. Ein Pointer speichert ausschließlich die Speicheradresse. Der Datentyp des Ziels definiert die Interpretation der Daten. Der Datentyp ändert die Größe des Pointers nicht.
+
+\subsection{Einsatz von static in C}
+\begin{itemize}
+    \item Lokale Variablen: Die Variable behält ihren Wert über das Funktionsende hinaus. Das System speichert sie im Datensegment statt auf dem Stack. Beispiel: \texttt{static int counter = 0;} in einer Funktion.
+    \item Globale Variablen: Das System beschränkt den Zugriff auf die aktuelle Quelldatei. Andere Dateien sehen diese Variable nicht. Beispiel: \texttt{static int file\_internal\_status;}
+    \item Funktionen: Die Funktion ist nur innerhalb der eigenen C-Datei aufrufbar. Das verhindert Namenskonflikte beim Linken. Beispiel: \texttt{static void helper(void);}
+\end{itemize}
+
+\subsection{Endianness}
+Endianness definiert die Byte-Reihenfolge im Speicher. Little Endian speichert das niederwertigste Byte an der kleinsten Adresse. RISC-V nutzt dieses Format. Big Endian speichert das höchstwertigste Byte zuerst. Portierungsprobleme treten auf; wenn Software Daten über Netzwerke schickt oder binäre Dateiformate zwischen Systemen austauscht. Sie müssen die Byte-Reihenfolge in diesen Fällen manuell umkehren.
+
+\newpage
+\section{Konfiguration}
+\begin{lstlisting}
+#include <stdio.h>
+#include <stdint.h>
+
+typedef struct {
+    uint8_t mode;
+    uint8_t level;
+    uint8_t threshold;
+    uint8_t flags;
+} SensorConfig;
+
+typedef union {
+    uint32_t raw;
+    SensorConfig config;
+} SensorData;
+
+void printSensorData(SensorData *data) {
+    printf("Raw-Wert: 0x%08X\n", data->raw);
+    printf("Mode: %u, Level: %u, Threshold: %u, Flags: %u\n", 
+            data->config.mode, 
+            data->config.level, 
+            data->config.threshold, 
+            data->config.flags);
+}
+\end{lstlisting}
+
+\newpage
+\section{Bitmaskierung}
+
+\subsection{Aufgabe: setCtrl-Funktion}
+\begin{lstlisting}
+void setCtrl(uint32_t* pCtrl, bool enableMotor, bool enableLight, bool enableSensors) {
+    uint32_t mask = (1 << 0) | (1 << 8) | (1 << 16);
+    *pCtrl &= ~mask; 
+    if (enableMotor)   *pCtrl |= (1 << 0);
+    if (enableLight)   *pCtrl |= (1 << 8);
+    if (enableSensors) *pCtrl |= (1 << 16);
+}
+\end{lstlisting}
+
+\subsection{Aufgabe: Rotate Right}
+\begin{lstlisting}
+uint16_t rotateRight(uint16_t value, uint8_t n) {
+    n %= 16;
+    return (value >> n) | (value << (16 - n));
+}
+\end{lstlisting}
+
+\newpage
+\section{Dynamische Speicherverwaltung}
+
+\subsection{Aufgabe: mem\_calcStatistics}
+\begin{lstlisting}
+void mem_calcStatistics(float* avgAlloc, float* avgFree) {
+    uint32_t sumAlloc = 0, countAlloc = 0;
+    uint32_t sumFree = 0, countFree = 0;
+    uint32_t offset = 0;
+
+    while (offset < HEAPSIZE) {
+        struct Header* h = (struct Header*)&gHeap[offset];
+        if (h->flags & 0x01) {
+            sumAlloc += h->length;
+            countAlloc++;
+        } else {
+            sumFree += h->length;
+            countFree++;
+        }
+        offset += sizeof(struct Header) + h->length;
+    }
+    *avgAlloc = countAlloc ? (float)sumAlloc / countAlloc : 0;
+    *avgFree = countFree ? (float)sumFree / countFree : 0;
+}
+\end{lstlisting}
+
+\newpage
+\section{Multitasking}
+
+\subsection{Semaphor}
+Ein Semaphor steuert den Zugriff auf Ressourcen. Er nutzt einen Zähler.
+\begin{itemize}
+    \item P() (Take): Verringert den Zähler. Ist der Zähler Null; wartet der Task.
+    \item V() (Give): Erhöht den Zähler. Das System weckt einen wartenden Task auf.
+\end{itemize}
+
+\subsection{Semaphor in FreeRTOS}
+\begin{itemize}
+    \item xSemaphoreCreateCounting: Erstellt einen zählenden Semaphor. uxMaxCount legt den maximalen Zählerstand fest. uxInitialCount definiert den Startwert.
+    \item xSemaphorGive: Gibt den Semaphor frei; erhöht den Zähler. Rückgabe ist pdTRUE bei Erfolg.
+    \item xSemaphoreTake: Reserviert den Semaphor; verringert den Zähler. xTicksToWait definiert die maximale Wartezeit.
+\end{itemize}
+\newpage
+\subsection{Producer/Consumer Implementierung}
+\begin{lstlisting}
+SemaphoreHandle_t xSem;
+
+void producerTaskFunc(void * pvParameters) {
+    for (;;) {
+        xSemaphoreGive(xSem);
+        vTaskDelay(pdMS_TO_TICKS(30));
+        xSemaphoreGive(xSem);
+        vTaskDelay(pdMS_TO_TICKS(50));
+    }
+}
+
+void consumerTaskFunc(void * pvParameters) {
+    for (;;) {
+        if (xSemaphoreTake(xSem, portMAX_DELAY)) {
+            printf("Event verarbeitet\n");
+        }
+    }
+}
+
+void setupAndStartTasks(void) {
+    xSem = xSemaphoreCreateCounting(10, 0);
+    xTaskCreate(producerTaskFunc, "Prod", 2048, NULL, 2, NULL);
+    xTaskCreate(consumerTaskFunc, "Cons", 2048, NULL, 1, NULL);
+}
+\end{lstlisting}
+
+\subsection{Scheduling Diagramm}
+Ein Tick entspricht 10 ms. Der Idle-Task nutzt die Zeit; wenn Producer und Consumer auf ihre Delays oder Semaphore warten.
+\begin{itemize}
+    \item 0-10ms: Producer läuft; Consumer läuft; beide blockieren. Idle übernimmt.
+    \item 30ms: Producer wacht auf; gibt Semaphor; blockiert. Consumer wacht auf; arbeitet; blockiert.
+\end{itemize}
+
+\newpage
+\subsection{Producer/Consumer Erweiterung}
+Sie können folgende Strukturen nutzen:
+\begin{itemize}
+    \item Message Queues für den Datenaustausch.
+    \item Stream Buffer für kontinuierliche Daten.
+    \item Task Notifications für einfache Signale.
+\end{itemize}
+
+\end{document}
