@@ -22,6 +22,8 @@
 \usepackage{booktabs}
 \usepackage{caption}
 \usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
 
 \lstset{
     basicstyle=\ttfamily\small,
@@ -43,9 +45,12 @@
 \section{C-Sprache}
 
 \subsection{Bytespeicher für uint8\_t* und uint16\_t*}
+Wie viele Bytes werden zur Speicherung eines uint8\_t* verwendet, wie viele für einen uint16\_t*? Begründen Sie die Antwort:
+
 Beide Pointer belegen den gleichen Speicherplatz. Die Größe eines Pointers hängt von der Systemarchitektur ab. Ein 32-Bit-System verwendet 4 Bytes für eine Adresse. Ein 64-Bit-System verwendet 8 Bytes. Ein Pointer speichert ausschließlich die Speicheradresse. Der Datentyp des Ziels definiert die Interpretation der Daten. Der Datentyp ändert die Größe des Pointers nicht.
 
 \subsection{Einsatz von static in C}
+Wo kommt das Schlüsselwort static in C überall zum Einsatz? Geben sie Beispiele und erklären Sie die jeweilige Bedeutung:
 \begin{itemize}
     \item Lokale Variablen: Die Variable behält ihren Wert über das Funktionsende hinaus. Das System speichert sie im Datensegment statt auf dem Stack. Beispiel: \texttt{static int counter = 0;} in einer Funktion.
     \item Globale Variablen: Das System beschränkt den Zugriff auf die aktuelle Quelldatei. Andere Dateien sehen diese Variable nicht. Beispiel: \texttt{static int file\_internal\_status;}
@@ -53,10 +58,23 @@ Beide Pointer belegen den gleichen Speicherplatz. Die Größe eines Pointers hä
 \end{itemize}
 
 \subsection{Endianness}
-Endianness definiert die Byte-Reihenfolge im Speicher. Little Endian speichert das niederwertigste Byte an der kleinsten Adresse. RISC-V nutzt dieses Format. Big Endian speichert das höchstwertigste Byte zuerst. Portierungsprobleme treten auf; wenn Software Daten über Netzwerke schickt oder binäre Dateiformate zwischen Systemen austauscht. Sie müssen die Byte-Reihenfolge in diesen Fällen manuell umkehren.
+Erleutern Sie den Begriff Endianness (Little Endian vs. Big Endian). Inwiefern kann die Endianness bei der Entwicklung und Portierung von Software in C eine Rolle Spielen?
+
+Endianness definiert die Byte-Reihenfolge im Speicher. Little Endian speichert das niederwertigste Byte an der kleinsten Adresse. 
+RISC-V nutzt dieses Format. Big Endian speichert das höchstwertigste Byte zuerst. Portierungsprobleme treten auf, 
+wenn Software Daten über Netzwerke schickt oder binäre Dateiformate zwischen Systemen austauscht. 
+Sie müssen die Byte-Reihenfolge in diesen Fällen manuell umkehren.
 
 \newpage
 \section{Konfiguration}
+Ein Sensor-Modul liefert einen 32-Bit-Konfigurationswert, in meherere Parameter (Mode, level, threshold, flags) jeweil in 8 Bit codiert sind.
+
+Definieren sie eine struct SensorConfig, die vier Komponenten beinhaltet. Ebenso soll über die union SensorData auf die Komponenten oder den gesamten
+32-Bit raw-Wert zugegriffen werden können.
+
+Schreiben sie eine Funktion printSensorData() in C, welche einen Pointer auf eine SensorData erhält und sowohl den raw-Wert als auch die einzelnen
+Strukturkomponenten per printf() ausgibt.
+
 \begin{lstlisting}
 #include <stdio.h>
 #include <stdint.h>
@@ -87,8 +105,11 @@ void printSensorData(SensorData *data) {
 \section{Bitmaskierung}
 
 \subsection{Aufgabe: setCtrl-Funktion}
+Schreiben sie eine C-Funktion void setCtrl, die an den über pCtrl adressierten Bereich die gegebenen Flags schreibt, ohne die restlichen Bits zu beeinflussen.
+enableMotor ist Bit 0, enableLight ist Bit 8, enable Sensors ist Bit 16.
 \begin{lstlisting}
-void setCtrl(uint32_t* pCtrl, bool enableMotor, bool enableLight, bool enableSensors) {
+void setCtrl(uint32_t* pCtrl, bool enableMotor, bool enableLight, 
+            bool enableSensors) {
     uint32_t mask = (1 << 0) | (1 << 8) | (1 << 16);
     *pCtrl &= ~mask; 
     if (enableMotor)   *pCtrl |= (1 << 0);
@@ -98,6 +119,9 @@ void setCtrl(uint32_t* pCtrl, bool enableMotor, bool enableLight, bool enableSen
 \end{lstlisting}
 
 \subsection{Aufgabe: Rotate Right}
+Implementieren sie in C eine Funktion, die einen 16-Bit-Wort um n Bit nach rechts rotiert (rotate Right). Die unteren n Bit sollen oben wieder eingefügt werden.
+Der Orginalwert und n sind Parameter, der rotierte WErt ist Rückgabe.
+Beispielt mit 8 Bit: 01100101 -> rot 2 bit -> 01011001
 \begin{lstlisting}
 uint16_t rotateRight(uint16_t value, uint8_t n) {
     n %= 16;
@@ -109,6 +133,9 @@ uint16_t rotateRight(uint16_t value, uint8_t n) {
 \section{Dynamische Speicherverwaltung}
 
 \subsection{Aufgabe: mem\_calcStatistics}
+In der dynamischen Speicherverwaltung der Übungen zur Lehrveranstaltung fehlt eine Funktion \texttt{mem\_calcStatistics()}. Diese Fukntion soll die durchschnittliche Größe
+(arithmetisches Mittel) der allokierten und freien Speicherblöcke zurückgeben. Dazu müssen alle Speicherblöcke durchwandert werden. Der Speicher, den die Header verbrauchen, soll
+nicht mitgezählt werden. Die Checksumme kann beim Durchlaufen ignoriert werden.
 \begin{lstlisting}
 void mem_calcStatistics(float* avgAlloc, float* avgFree) {
     uint32_t sumAlloc = 0, countAlloc = 0;
@@ -135,6 +162,8 @@ void mem_calcStatistics(float* avgAlloc, float* avgFree) {
 \section{Multitasking}
 
 \subsection{Semaphor}
+Was ist ein Semaphor? wie funktioniert er? Was bedeuten die Aufrufe P() und V()?
+
 Ein Semaphor steuert den Zugriff auf Ressourcen. Er nutzt einen Zähler.
 \begin{itemize}
     \item P() (Take): Verringert den Zähler. Ist der Zähler Null; wartet der Task.
@@ -142,6 +171,7 @@ Ein Semaphor steuert den Zugriff auf Ressourcen. Er nutzt einen Zähler.
 \end{itemize}
 
 \subsection{Semaphor in FreeRTOS}
+Erklären Sie folgende FreeRtos Semaphor-Funktionen: Was bedeuten die Parameter, was die Rückgabetypen?
 \begin{itemize}
     \item xSemaphoreCreateCounting: Erstellt einen zählenden Semaphor. uxMaxCount legt den maximalen Zählerstand fest. uxInitialCount definiert den Startwert.
     \item xSemaphorGive: Gibt den Semaphor frei; erhöht den Zähler. Rückgabe ist pdTRUE bei Erfolg.
@@ -149,6 +179,9 @@ Ein Semaphor steuert den Zugriff auf Ressourcen. Er nutzt einen Zähler.
 \end{itemize}
 \newpage
 \subsection{Producer/Consumer Implementierung}
+Gegeben sind zwei Taskfunktionen, eine für einen Producer und eine für einen Consumer. Der Producer soll abwechselnd alle 30ms bzw 50 ms ein Ereignis 
+"produzieren" und an den Consumer per Semaphor senden. Der Consumer soll eignetroffene Ereignisse per printf() auf die Konsole ausgeben.
+Implementieren sie auch SetupAndStartTasks() zum Initialisieren und Starten der benötigten Datenstruckturen/Tasks.
 \begin{lstlisting}
 SemaphoreHandle_t xSem;
 
@@ -175,21 +208,163 @@ void setupAndStartTasks(void) {
     xTaskCreate(consumerTaskFunc, "Cons", 2048, NULL, 1, NULL);
 }
 \end{lstlisting}
-
-\subsection{Scheduling Diagramm}
-Ein Tick entspricht 10 ms. Der Idle-Task nutzt die Zeit; wenn Producer und Consumer auf ihre Delays oder Semaphore warten.
-\begin{itemize}
-    \item 0-10ms: Producer läuft; Consumer läuft; beide blockieren. Idle übernimmt.
-    \item 30ms: Producer wacht auf; gibt Semaphor; blockiert. Consumer wacht auf; arbeitet; blockiert.
-\end{itemize}
-
 \newpage
+\subsection{Scheduling Diagramm}
+Skizzieren Sie das Scheduling in einem Diagramm. Nehmen Sie an, dass eine Zeitscheibe (System Tick) 10ms beträgt und ein "Idle"-Task mit niedrigster Priorität dann Prozessorzeit
+konsumiert, wenn alle anderen Tasks blockiert sind.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{TaskScheduler}
+    \caption{Task Scheduling}
+\end{figure}
+
 \subsection{Producer/Consumer Erweiterung}
+Welche anderen (zusätzlich zum Semaphor) Datenstrukturen/Methoden kennen Sie zur Implementierung des Producer/Consumer-Systems?
+
 Sie können folgende Strukturen nutzen:
 \begin{itemize}
     \item Message Queues für den Datenaustausch.
     \item Stream Buffer für kontinuierliche Daten.
     \item Task Notifications für einfache Signale.
 \end{itemize}
+
+\newpage
+\section{Probeklausur Systemprogrammierung 2024/2025}
+
+\subsection{Aufgabe 1: Datentypen}
+
+\textbf{1.1 Verwendung von stdint.h} \\
+Diese Header definieren Datentypen mit festen Breiten (z. B. \texttt{uint32\_t}). Standard-Typen wie \texttt{int} oder \texttt{long} variieren je nach Architektur. Fest definierte Breiten garantieren die Portierbarkeit und verhindern Überläufe bei Hardware-naher Programmierung.
+
+\textbf{1.2 Padding} \\
+Padding fügt ungenutzte Füll-Bytes zwischen Strukturkomponenten ein. Der Compiler erzwingt damit das Alignment. Es hat Einfluss auf die Speichergröße einer \texttt{struct}. Programmierer müssen Padding beachten, wenn sie Strukturen direkt über Netzwerke senden oder binär speichern.
+
+\textbf{1.3 Alignment} \\
+Alignment ist die Ausrichtung von Daten an Speicheradressen, die durch ihre Größe teilbar sind (z. B. 4-Byte-Werte an Adressen wie 0x04, 0x08). Padding ist das Werkzeug, um dieses Alignment innerhalb von Strukturen sicherzustellen.
+
+\subsection{Aufgabe 2: RGB-Farbe und Union}
+
+\begin{lstlisting}
+typedef struct {
+    uint8_t r;
+    uint8_t g;
+    uint8_t b;
+    uint8_t a; 
+} RGBColor;
+
+typedef union {
+    RGBColor color;
+    uint32_t raw;
+} ColorUnion;
+
+void printColor(const ColorUnion *c) {
+    printf("R=%u G=%u B=%u A=%u, raw=0x%08X\n",
+           c->color.r, c->color.g, c->color.b, c->color.a, c->raw);
+}
+\end{lstlisting}
+\newpage
+\subsection{Aufgabe 3: Bitmaskierung}
+
+\textbf{3.1 Bitmaskierung vs. Bitfields} \\
+Bitmaskierung nutzt logische Operatoren (\texttt{\&, |, \textasciitilde}). Sie ist explizit und portabel. Bitfields nutzen die Syntax des Compilers (\texttt{int a : 1;}). Bitfields sind lesbarer, aber die Bit-Reihenfolge ist implementierungsabhängig.
+
+\begin{lstlisting}
+// Maskierung
+status |= (1 << 3); 
+// Bitfield
+struct { uint8_t flag : 1; } s; s.flag = 1;
+\end{lstlisting}
+
+\textbf{3.2 Paritätsbit Funktion}
+\begin{lstlisting}
+bool even_parity_bit(uint8_t byte) {
+    uint8_t v = byte;
+    v ^= v >> 4;
+    v ^= v >> 2;
+    v ^= v >> 1;
+    return (v & 1); 
+}
+\end{lstlisting}
+
+\subsection{Aufgabe 4: Dynamische Speicherverwaltung}
+
+\begin{lstlisting}
+void mem_get_Sizes(uint32_t* totalAlloc, uint32_t* totalFree) {
+    *totalAlloc = 0;
+    *totalFree = 0;
+    uint32_t offset = 0;
+
+    while (offset < HEAPSIZE) {
+        struct Header* h = (struct Header*)&gHeap[offset];
+        uint32_t blockSize = sizeof(struct Header) + h->length;
+        
+        if (h->flags & 0x01) {
+            *totalAlloc += blockSize;
+        } else {
+            *totalFree += h->length;
+            *totalAlloc += sizeof(struct Header); 
+        }
+        offset += blockSize;
+    }
+}
+\end{lstlisting}
+
+\subsection{Aufgabe 5: Multitasking}
+
+\textbf{5.1 Semaphor} \\
+Ein Semaphor ist ein Synchronisationsobjekt mit einem Zähler. Er regelt den Zugriff auf Ressourcen oder signalisiert Ereignisse. 
+\begin{itemize}
+    \item P() (Passeren/Take): Wartet, bis der Zähler > 0 ist, und dekrementiert ihn.
+    \item V() (Vrijgeven/Give): Inkrementiert den Zähler und weckt wartende Tasks.
+\end{itemize}
+
+\textbf{5.2 FreeRTOS Funktionen} \\
+\begin{itemize}
+    \item \texttt{xSemaphoreCreateCounting}: Erzeugt Semaphor. \texttt{uxMaxCount} ist das Limit, \texttt{uxInitialCount} der Startwert. Gibt Handle zurück.
+    \item \texttt{xSemaphoreGive}: Gibt Semaphor frei. Rückgabe \texttt{pdTRUE} bei Erfolg.
+    \item \texttt{xSemaphoreTake}: Belegt Semaphor. \texttt{xTicksToWait} ist die Blockierzeit.
+\end{itemize}
+
+\textbf{5.3 Producer/Consumer Implementierung}
+\begin{lstlisting}
+void ProducerTaskFunc(void * pvParameters) {
+    for (;;) {
+        xSemaphoreGive(xSem);
+        vTaskDelay(pdMS_TO_TICKS(30));
+    }
+}
+
+void ConsumerTaskFunc(void * pvParameters) {
+    for (;;) {
+        if (xSemaphoreTake(xSem, portMAX_DELAY)) {
+            printf("Ereignis empfangen\n");
+        }
+    }
+}
+\end{lstlisting}
+
+\newpage
+\textbf{5.4 Producer/Consumer mit Produkten} \\
+Für komplexe Datenstrukturen wie \texttt{struct Product} ist eine \textbf{Message Queue} geeignet. Sie kopiert Daten sicher zwischen Tasks.
+
+\begin{lstlisting}
+void ProducerTaskFunc(void * pvParameters) {
+    Product p = { .id = 1, .name = "Sensor" };
+    for (;;) {
+        xQueueSend(productQueue, &p, portMAX_DELAY);
+        vTaskDelay(pdMS_TO_TICKS(30));
+    }
+}
+
+void ConsumerTaskFunc(void * pvParameters) {
+    Product p;
+    for (;;) {
+        if (xQueueReceive(productQueue, &p, portMAX_DELAY)) {
+            printf("ID: %d, Name: %s\n", p.id, p.name);
+        }
+    }
+}
+\end{lstlisting}
 
 \end{document}
