@@ -13,5 +13,11 @@
 \contentsline {subsection}{\numberline {5.1}Semaphor}{6}{}%
 \contentsline {subsection}{\numberline {5.2}Semaphor in FreeRTOS}{6}{}%
 \contentsline {subsection}{\numberline {5.3}Producer/Consumer Implementierung}{7}{}%
-\contentsline {subsection}{\numberline {5.4}Scheduling Diagramm}{7}{}%
+\contentsline {subsection}{\numberline {5.4}Scheduling Diagramm}{8}{}%
 \contentsline {subsection}{\numberline {5.5}Producer/Consumer Erweiterung}{8}{}%
+\contentsline {section}{\numberline {6}Probeklausur Systemprogrammierung 2024/2025}{9}{}%
+\contentsline {subsection}{\numberline {6.1}Aufgabe 1: Datentypen}{9}{}%
+\contentsline {subsection}{\numberline {6.2}Aufgabe 2: RGB-Farbe und Union}{9}{}%
+\contentsline {subsection}{\numberline {6.3}Aufgabe 3: Bitmaskierung}{10}{}%
+\contentsline {subsection}{\numberline {6.4}Aufgabe 4: Dynamische Speicherverwaltung}{10}{}%
+\contentsline {subsection}{\numberline {6.5}Aufgabe 5: Multitasking}{11}{}%
