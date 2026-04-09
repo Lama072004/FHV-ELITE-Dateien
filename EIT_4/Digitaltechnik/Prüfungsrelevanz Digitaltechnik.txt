@@ -1,0 +1,20 @@
+Prüfungsrelevanz Digitaltechnik:
+Block Digital Intro:
+. Operationen boolsche Algebra
+. Gesetze boolsche Algebra nicht
+. Basic Funktions wichtig
+. Arbitrary Functions Bilden
+. Wozu open collector verwendet wird
+. cmos Inverter Schaltplan
+. cmos Transitions graph nicht
+. cmos power consumption formel (grafik nicht)
+. cmos gate nicht prüfungsrelevant
+. cmos eingangsbeschaltung folie nummer 15 relevant
+. Pegel nicht relevant aber störabstand wichtig
+. Zeitschalt wichtig
+. Datenplatt wichtig
+. dritten zustand High Impedanz (wenn biede ausgänge in sperre sind)
+. Decoder Schaltung uninteressant aber asugänge
+. multiplexer und demultiplexer Schaltung uninteressant aber was sie machen und ausgänge
+. addierer bestehen aus kominatorik
+. in Computer wird nur addiert
