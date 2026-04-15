@@ -1,0 +1,18 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Einleitung}{2}{}%
+\contentsline {section}{\numberline {2}Einordnung der SAF-Optionen}{2}{}%
+\contentsline {subsection}{\numberline {2.1}Definition und Grundidee}{2}{}%
+\contentsline {subsection}{\numberline {2.2}Biogene Flugkraftstoffe (Bio-SAF)}{2}{}%
+\contentsline {subsection}{\numberline {2.3}Synthetische Flugkraftstoffe (eFuels / PtL)}{3}{}%
+\contentsline {section}{\numberline {3}Kritische Diskussion}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Nachhaltigkeit und CO2-Bilanz}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Landnutzung und Ressourcenverbrauch}{4}{}%
+\contentsline {subsection}{\numberline {3.3}Energiebedarf und Skalierbarkeit}{4}{}%
+\contentsline {section}{\numberline {4}Gesellschaftliche und politische Perspektive}{6}{}%
+\contentsline {subsection}{\numberline {4.1}Politische Förderung und Interessen}{6}{}%
+\contentsline {subsection}{\numberline {4.2}Subventionen und Wettbewerbsverzerrung}{6}{}%
+\contentsline {subsection}{\numberline {4.3}Risiken und Greenwashing}{6}{}%
+\contentsline {section}{\numberline {5}Persönliche Einschätzung}{8}{}%
+\contentsline {subsection}{\numberline {5.1}Positionierung zur Technologie}{8}{}%
+\contentsline {subsection}{\numberline {5.2}Nachhaltige Lösungen und Verzicht}{8}{}%
+\contentsline {subsection}{\numberline {5.3}Fazit}{8}{}%
