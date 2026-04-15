@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.13)  15 APR 2026 11:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.13)  15 APR 2026 12:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -371,15 +371,15 @@ LaTeX Font Info:    ... okay on input line 30.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(85.35826pt, 441.01773pt, 71.13188pt)
-* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=441.01773pt
-* \textheight=702.78308pt
-* \oddsidemargin=13.08827pt
-* \evensidemargin=13.08827pt
-* \topmargin=-38.1381pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -458,60 +458,40 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-Underfull \hbox (badness 1314) in paragraph at lines 45--46
-\T1/cmr/m/n/12 (+20) Ka-ta-ly-sa-to-ren den Sau-er-stoff aus den Fett-mo-le-kü-len. Es ent-ste-hen sta-bi-le 
- []
-
-[2] [3]
-Underfull \hbox (badness 3158) in paragraph at lines 64--65
-\T1/cmr/m/n/12 (+20) Der Ener-gie-be-darf für die Her-stel-lung von eFuels bleibt ei-ne ge-wal-ti-ge 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2] [3] [4] [5]
+Underfull \hbox (badness 2418) in paragraph at lines 77--78
+\T1/cmr/m/n/12 (+20) Pas-sa-gier-flug-tickets sind in vie-len Län-dern von der Mehr-wert-steu-er be-freit. Auf 
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 66--67
-[]\T1/cmr/m/n/12 (+20) Die Ener-gie-bi-lanz für PtL um-fasst meh-re-re ver-lust-be-haf-te-te Schrit-te. Die 
+Underfull \hbox (badness 1199) in paragraph at lines 80--81
+\T1/cmr/m/n/12 (+20) Druck zur Re-duk-ti-on von Rei-sen. Kri-ti-ker se-hen in SAF ei-ne be-que-me Lö-sung zur 
  []
 
-
-Underfull \hbox (badness 1210) in paragraph at lines 66--67
-\T1/cmr/m/n/12 (+20) Elek-tro-ly-se ver-braucht rund 724 kJ/mol für die Spal-tung von Was-ser. Die 
+[6]
+Underfull \hbox (badness 1946) in paragraph at lines 88--89
+\T1/cmr/m/n/12 (+20) Bio-SAF fun-giert als wich-ti-ge Brück-en-tech-no-lo-gie durch die schnel-le Ver-wer-tung 
  []
 
-[4] [5]
-Underfull \hbox (badness 1721) in paragraph at lines 77--78
-\T1/cmr/m/n/12 (+20) Der Flug-ver-kehr ist im Ver-gleich zu an-de-ren Ver-kehrs-mit-teln hoch-gra-dig 
- []
-
-
-Underfull \hbox (badness 6792) in paragraph at lines 82--83
-[]\T1/cmr/m/n/12 (+20) Die Po-li-tik wählt oft das tech-nisch ein-fachs-te Sys-tem an-statt tie-fe 
- []
-
-[6] [7]
-Underfull \hbox (badness 2269) in paragraph at lines 91--92
-\T1/cmr/m/n/12 (+20) Flüssige Treib-stof-fe blei-ben für den In-ter-kon-ti-nen-tal-ver-kehr we-gen ih-rer 
- []
-
-[8] [9] (./Arbeit.aux)
+[7] [8] (./Arbeit.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 11210 strings out of 469462
- 182634 string characters out of 5468614
- 642169 words of memory out of 5000000
+ 11206 strings out of 469462
+ 182588 string characters out of 5468614
+ 643212 words of memory out of 5000000
  39678 multiletter control sequences out of 15000+600000
- 643584 words of font info for 118 fonts, out of 8000000 for 9000
+ 643466 words of font info for 116 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  57i,6n,65p,1103b,281s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Arbeit.pdf (9 pages, 157373 bytes).
+Output written on Arbeit.pdf (8 pages, 157688 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 67 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  28673 words of extra memory for PDF output out of 29859 (max. 10000000)
 
