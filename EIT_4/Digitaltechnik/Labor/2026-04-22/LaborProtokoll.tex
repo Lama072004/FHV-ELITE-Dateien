@@ -95,10 +95,15 @@ multivibrators, conducted in Digi Lab~1 at Fachhochschule Vorarlberg on
 Three circuits were assembled and analysed: a monostable multivibrator based on the
 NE555 timer IC, an astable multivibrator also using the NE555, and an astable
 oscillator built from two CMOS inverters (74C00).
-For each circuit, theoretically calculated values for pulse duration and oscillation
-period were compared against oscilloscope measurements, and deviations were discussed
-with respect to component tolerances and measurement equipment effects.
-\enter{Refine after experiments are completed -- max.\ 200 words.}
+Calculated values for pulse duration and oscillation period were compared against
+oscilloscope measurements. The monostable circuit showed a deviation of 7.3\%, 
+increasing to 8.2\% with a second IC. Direct BNC measurements proved that 
+low-impedance connections disrupt the circuit, preventing the output from returning 
+to low. The astable NE555 circuit oscillated at 495.8\,Hz, deviating 3.1\% from 
+theory. Results confirmed that component tolerances and probe loading are the 
+primary causes of error. Observations also showed that bypass capacitors are 
+essential for stable switching edges. All circuits performed according to 
+theoretical models within acceptable margins.
 \end{abstract}
 
 \newpage
@@ -277,14 +282,27 @@ The measurement was carried out on two different NE555 ICs under identical condi
     \bottomrule
   \end{tabular}
 \end{table}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Messaufbau Schaltung Task 3.1.2.jpeg}
+  \caption{Measuring setup}
+  \label{fig:MeasuringSetup}
+\end{figure}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\linewidth]{fig/3_1_2_probes.png}
-  \fbox{\rule{0pt}{5.5cm}\rule{12cm}{0pt}}
-  \caption{Output $y$ (pin~3, upper trace) and capacitor voltage $V_C$ (lower trace)
-           measured with 10:1 probes -- monostable multivibrator.}
-  \label{fig:mono_probe}
+  \includegraphics[width=0.85\linewidth]{Task3.1.2(1).png}
+  \caption{Output $y$ (C2 - red trace) and capacitor voltage $V_C$ (C1 - yellow trace)
+           measured with 10:1 probes -- monostable multivibrator - Erster NE555}
+  \label{fig:mono_probe_first_NE555}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.1.2(2).png}
+  \caption{Output $y$ (C2 - red trace) and capacitor voltage $V_C$ (C1 - yellow trace)
+           measured with 10:1 probes -- monostable multivibrator - Zweiter NE555}
+  \label{fig:mono_probe_second_NE555}
 \end{figure}
 
 % ── 3.1.3 ────────────────────────────────────────────────────────────
@@ -331,9 +349,15 @@ the circuit behaviour.
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\linewidth]{fig/3_1_4_bnc.png}
-  \fbox{\rule{0pt}{5.5cm}\rule{12cm}{0pt}}
-  \caption{Output $y$ and $V_C$ measured via BNC cable -- monostable multivibrator.
+  \includegraphics[width=0.85\linewidth]{Messaufbau Schaltung Task 3.1.4.jpeg}
+  \caption{Measuring setup}
+  \label{fig:MeasuringSetup}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.1.4.png}
+  \caption{Output $y$ (C2 - red trace) and $V_C$ (C1 - yellow trace) measured via BNC cable -- monostable multivibrator.
            The output does not return to low due to voltage divider loading.}
   \label{fig:mono_bnc}
 \end{figure}
@@ -359,9 +383,8 @@ capacitor node.
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\linewidth]{fig/3_1_5_outputonly.png}
-  \fbox{\rule{0pt}{5.5cm}\rule{12cm}{0pt}}
-  \caption{Output $y$ (pin~3) only -- monostable multivibrator, no capacitor probing.}
+  \includegraphics[width=0.85\linewidth]{Task3.1.5.png}
+  \caption{Output $y$ (C1 - yellow trace) only -- monostable multivibrator, no capacitor probing.}
   \label{fig:mono_outputonly}
 \end{figure}
 
@@ -425,9 +448,15 @@ Applying equations~\eqref{eq:astable_th_theory}--\eqref{eq:astable_T_theory}:
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\linewidth]{fig/3_2_2_astable.png}
-  \fbox{\rule{0pt}{5.5cm}\rule{12cm}{0pt}}
-  \caption{Output $y$ (pin~3) -- astable multivibrator, NE555.}
+  \includegraphics[width=0.85\linewidth]{Messaufbau Schaltung Task 3.2.2.jpeg}
+  \caption{Measuring setup}
+  \label{fig:MeasuringSetup}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.2.2.png}
+  \caption{Output $y$ (C2 - red trace) and $V_C$ (C1 - yellow trace) -- astable multivibrator, NE555.}
   \label{fig:astable_ne555}
 \end{figure}
 
@@ -452,10 +481,23 @@ Consequently, probe loading has a much smaller effect here.
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\linewidth]{fig/3_2_4_edge.png}
-  \fbox{\rule{0pt}{5cm}\rule{12cm}{0pt}}
-  \caption{Zoomed rising edge of the NE555 astable output signal.}
-  \label{fig:astable_edge}
+  \includegraphics[width=0.85\linewidth]{Messaufbau Schaltung Task 3.2.4.jpeg}
+  \caption{Measuring setup}
+  \label{fig:MeasuringSetup}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.2.4.png}
+  \caption{Zoomed rising edge of the NE555 astable output signal without a bypass (decoupling) capacitor.}
+  \label{fig:astable_edge_without_bypass_Cap}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.2.4 (2).png}
+  \caption{Zoomed rising edge of the NE555 astable output signal with a bypass (decoupling) capacitor.}
+  \label{fig:astable_edge_with_bypass_Cap}
 \end{figure}
 
 The rising edge of the NE555 output does not exhibit a perfectly steep transition.
@@ -494,9 +536,15 @@ $V_{CC} = \SI{10}{\volt}$.
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\linewidth]{fig/3_3_1_function.png}
-  \fbox{\rule{0pt}{5.5cm}\rule{12cm}{0pt}}
-  \caption{Voltage at node P (lower trace) and output $U_{\text{OUT}}$ (upper trace)
+  \includegraphics[width=0.85\linewidth]{Messaufbau Schaltung Task 3.3.1.jpeg}
+  \caption{Measuring setup}
+  \label{fig:MeasuringSetup}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.3.1.png}
+  \caption{Voltage at node P (C2 - red trace) and output $U_{\text{OUT}}$ (C1 - yellow trace)
            -- two-inverter oscillator.}
   \label{fig:inv_function}
 \end{figure}
@@ -517,29 +565,18 @@ State the observed frequency.}
 % ── 3.3.2 ────────────────────────────────────────────────────────────
 \subsubsection{Task 1.2 -- Measurement at S and P}
 
-\begin{table}[H]
+\begin{figure}[H]
   \centering
-  \caption{Measured values -- two-inverter astable oscillator.}
-  \label{tab:inv_osc}
-  \begin{tabular}{lccc}
-    \toprule
-    Quantity & Symbol & Calculated & Measured \\
-    \midrule
-    Oscillation frequency & $f$          & \SI{45.5}{\kilo\hertz}   & \val{\kilo\hertz}   \\
-    Period                & $T$          & \SI{22.0}{\micro\second} & \val{\micro\second} \\
-    Voltage swing at S    & $\Delta V_S$ & $\approx V_{CC}$         & \val{\volt}         \\
-    Voltage swing at P    & $\Delta V_P$ & $> V_{CC}$               & \val{\volt}         \\
-    Peak voltage at P     & $V_{P,\max}$ & ---                      & \val{\volt}         \\
-    Valley voltage at P   & $V_{P,\min}$ & ---                      & \val{\volt}         \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+  \includegraphics[width=0.85\linewidth]{Messaufbau Schaltung Task 3.3.2.jpeg}
+  \caption{Measuring setup}
+  \label{fig:MeasuringSetup}
+\end{figure}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\linewidth]{fig/3_3_2_SP.png}
-  \fbox{\rule{0pt}{5.5cm}\rule{12cm}{0pt}}
-  \caption{Waveforms at S (upper trace) and P (lower trace) -- two-inverter oscillator.}
+  \includegraphics[width=0.85\linewidth]{Task3.3.2.png}
+  \caption{Voltage at node P (C2 - red trace) and output $U_{\text{OUT}}$ (C1 - yellow trace) and at node S (C3 - blue trace)
+           -- two-inverter oscillator.}
   \label{fig:inv_SP}
 \end{figure}
 
@@ -559,13 +596,6 @@ in further detail.}
 Without $R_S$, the voltage at node~P would exceed the supply rails at every switching
 event. The resulting current would flow directly through the CMOS input protection
 diodes without any current limitation, potentially \textbf{destroying the IC}.
-
-$R_S = \SI{1}{\kilo\ohm}$ limits the maximum protection diode current to a safe value:
-\[
-  I_{D,\max} \approx \frac{V_{P,\max} - V_{CC}}{R_S}
-  = \frac{\val{\volt} - \SI{10}{\volt}}{\SI{1}{\kilo\ohm}}
-  = \val{\milli\ampere}
-\]
 
 Additionally, $R_S$ forms part of the total series resistance in the RC network and
 therefore has a small influence on the oscillation frequency.
@@ -608,18 +638,20 @@ instability in the rising edge without it.
 \section{Summary}
 % ─────────────────────────────────────────────────────────────────────────────
 
-\enter{3--5 sentence recap: restate the objective, briefly name the methods, state
-the key numerical results, and give the main conclusion. No new information may appear
-here. Do not copy from the Introduction -- paraphrase.}
+This laboratory exercise verified the timing characteristics of NE555 and CMOS-based switching circuits. 
+Measurements of the monostable multivibrator yielded a pulse duration of 1.18\,s, while the astable configuration produced a frequency of 495.8\,Hz. 
+These results deviate from theoretical predictions by 7.3\% and 3.1\%, respectively, primarily due to capacitor tolerances and probe loading. 
+The experiments demonstrated that high-impedance nodes require 10:1 probes to maintain circuit functionality. 
+Ultimately, the data confirms that RC timing models accurately predict behavior when considering practical measurement effects and proper decoupling.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Outlook}
 % ─────────────────────────────────────────────────────────────────────────────
 
-\enter{Suggest 2--3 possible follow-up experiments or improvements, for example:
-duty-cycle adjustment of the astable NE555 using a diode in parallel with $R_2$;
-temperature dependence of the RC-based oscillators;
-investigation of the bypass capacitor value on switching stability.}
+Future experiments could investigate methods to achieve a 50\% duty cycle in the NE555 astable mode by placing a signal diode in parallel with $R_2$. 
+This modification allows the capacitor to charge only through $R_1$, enabling independent control of high and low times. 
+Another relevant study involves testing the temperature dependence of the RC-based oscillators to quantify frequency drift under thermal stress. 
+Additionally, varying the bypass capacitor values would help determine the minimum capacitance required to maintain switching stability across different frequency ranges.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \begin{thebibliography}{9}
@@ -653,12 +685,6 @@ Texas Instruments,
 
 % ─────────────────────────────────────────────────────────────────────────────
 \appendix
-\section{Appendix A -- Raw Oscilloscope Screenshots}
-% ─────────────────────────────────────────────────────────────────────────────
-
-\enter{Insert full-resolution screenshots here, labelled with task number,
-channel settings (V/div, time/div), and trigger settings.}
-
 \section{Appendix B -- Actual Component Values}
 % ─────────────────────────────────────────────────────────────────────────────
 

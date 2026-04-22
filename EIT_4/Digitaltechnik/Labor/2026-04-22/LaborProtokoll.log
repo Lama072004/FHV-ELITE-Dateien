@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.13)  22 APR 2026 16:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.13)  22 APR 2026 17:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -665,7 +665,23 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 54.
  (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count365
-) (./LaborProtokoll.aux)
+) (./LaborProtokoll.aux
+
+LaTeX Warning: Label `fig:MeasuringSetup' multiply defined.
+
+
+LaTeX Warning: Label `fig:MeasuringSetup' multiply defined.
+
+
+LaTeX Warning: Label `fig:MeasuringSetup' multiply defined.
+
+
+LaTeX Warning: Label `fig:MeasuringSetup' multiply defined.
+
+
+LaTeX Warning: Label `fig:MeasuringSetup' multiply defined.
+
+)
 \openout1 = `LaborProtokoll.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
@@ -786,7 +802,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-Overfull \hbox (15.91652pt too wide) in paragraph at lines 92--102
+Overfull \hbox (15.91652pt too wide) in paragraph at lines 92--107
 \T1/cmr/m/n/10.95 (-20) mul-ti-vi-bra-tors, con-ducted in Digi Lab 1 at Fach-hochschule Vo-rarl-berg on 21/22 April 2026.
  []
 
@@ -801,7 +817,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.104 \newpage
+l.109 \newpage
                [1] (./LaborProtokoll.toc)
 \tf@toc=\write5
 \openout5 = `LaborProtokoll.toc'.
@@ -823,7 +839,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [3{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (65.31372pt too wide) in paragraph at lines 220--224
+Overfull \hbox (65.31372pt too wide) in paragraph at lines 225--229
 \T1/cmr/m/n/12 (-20) All ex-per-i-ments were car-ried out ac-cord-ing to the lab-o-ra-tory in-struc-tion sheet \T1/cmr/m/it/12 (-20) Lab_01_SwitchingCircuits\T1/cmr/m/n/12 (-20) ,
  []
 
@@ -835,6 +851,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [4]
+<Messaufbau Schaltung Task 3.1.2.jpeg, id=198, 1927.2pt x 1084.05pt>
+File: Messaufbau Schaltung Task 3.1.2.jpeg Graphic file (type jpg)
+<use Messaufbau Schaltung Task 3.1.2.jpeg>
+Package pdftex.def Info: Messaufbau Schaltung Task 3.1.2.jpeg  used on input line 287.
+(pdftex.def)             Requested size: 386.96027pt x 217.64977pt.
+<Task3.1.2(1).png, id=199, 963.6pt x 602.25pt>
+File: Task3.1.2(1).png Graphic file (type png)
+<use Task3.1.2(1).png>
+Package pdftex.def Info: Task3.1.2(1).png  used on input line 294.
+(pdftex.def)             Requested size: 386.96027pt x 241.84225pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -842,7 +869,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[5]
+[5 <./Messaufbau Schaltung Task 3.1.2.jpeg>]
+<Task3.1.2(2).png, id=208, 963.6pt x 602.25pt>
+File: Task3.1.2(2).png Graphic file (type png)
+<use Task3.1.2(2).png>
+Package pdftex.def Info: Task3.1.2(2).png  used on input line 302.
+(pdftex.def)             Requested size: 386.96027pt x 241.84225pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -850,7 +883,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[6]
+[6 <./Task3.1.2(1).png> <./Task3.1.2(2).png>]
+<Messaufbau Schaltung Task 3.1.4.jpeg, id=218, 1927.2pt x 1084.05pt>
+File: Messaufbau Schaltung Task 3.1.4.jpeg Graphic file (type jpg)
+<use Messaufbau Schaltung Task 3.1.4.jpeg>
+Package pdftex.def Info: Messaufbau Schaltung Task 3.1.4.jpeg  used on input line 352.
+(pdftex.def)             Requested size: 386.96027pt x 217.64977pt.
+<Task3.1.4.png, id=219, 963.6pt x 602.25pt>
+File: Task3.1.4.png Graphic file (type png)
+<use Task3.1.4.png>
+Package pdftex.def Info: Task3.1.4.png  used on input line 359.
+(pdftex.def)             Requested size: 386.96027pt x 241.84225pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -858,7 +902,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[7]
+[7 <./Messaufbau Schaltung Task 3.1.4.jpeg>]
+<Task3.1.5.png, id=225, 963.6pt x 602.25pt>
+File: Task3.1.5.png Graphic file (type png)
+<use Task3.1.5.png>
+Package pdftex.def Info: Task3.1.5.png  used on input line 386.
+(pdftex.def)             Requested size: 386.96027pt x 241.84225pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -866,7 +916,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[8]
+[8 <./Task3.1.4.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -874,7 +924,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[9]
+[9 <./Task3.1.5.png>]
+<Messaufbau Schaltung Task 3.2.2.jpeg, id=241, 1927.2pt x 1084.05pt>
+File: Messaufbau Schaltung Task 3.2.2.jpeg Graphic file (type jpg)
+<use Messaufbau Schaltung Task 3.2.2.jpeg>
+Package pdftex.def Info: Messaufbau Schaltung Task 3.2.2.jpeg  used on input line 451.
+(pdftex.def)             Requested size: 386.96027pt x 217.64977pt.
+<Task3.2.2.png, id=242, 963.6pt x 602.25pt>
+File: Task3.2.2.png Graphic file (type png)
+<use Task3.2.2.png>
+Package pdftex.def Info: Task3.2.2.png  used on input line 458.
+(pdftex.def)             Requested size: 386.96027pt x 241.84225pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -882,18 +943,98 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[10]
+[10 <./Messaufbau Schaltung Task 3.2.2.jpeg>]
+<Messaufbau Schaltung Task 3.2.4.jpeg, id=249, 1927.2pt x 1084.05pt>
+File: Messaufbau Schaltung Task 3.2.4.jpeg Graphic file (type jpg)
+<use Messaufbau Schaltung Task 3.2.4.jpeg>
+Package pdftex.def Info: Messaufbau Schaltung Task 3.2.4.jpeg  used on input line 484.
+(pdftex.def)             Requested size: 386.96027pt x 217.64977pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[11 <./Task3.2.2.png>]
+<Task3.2.4.png, id=256, 963.6pt x 602.25pt>
+File: Task3.2.4.png Graphic file (type png)
+<use Task3.2.4.png>
+Package pdftex.def Info: Task3.2.4.png  used on input line 491.
+(pdftex.def)             Requested size: 386.96027pt x 241.84225pt.
+<Task3.2.4 (2).png, id=257, 963.6pt x 602.25pt>
+File: Task3.2.4 (2).png Graphic file (type png)
+<use Task3.2.4 (2).png>
+Package pdftex.def Info: Task3.2.4 (2).png  used on input line 498.
+(pdftex.def)             Requested size: 386.96027pt x 241.84225pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[12 <./Messaufbau Schaltung Task 3.2.4.jpeg> <./Task3.2.4.png>]
+<Messaufbau Schaltung Task 3.3.1.jpeg, id=267, 1927.2pt x 1084.05pt>
+File: Messaufbau Schaltung Task 3.3.1.jpeg Graphic file (type jpg)
+<use Messaufbau Schaltung Task 3.3.1.jpeg>
+Package pdftex.def Info: Messaufbau Schaltung Task 3.3.1.jpeg  used on input line 539.
+(pdftex.def)             Requested size: 386.96027pt x 217.64977pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[13 <./Task3.2.4 (2).png>]
+<Task3.3.1.png, id=274, 963.6pt x 602.25pt>
+File: Task3.3.1.png Graphic file (type png)
+<use Task3.3.1.png>
+Package pdftex.def Info: Task3.3.1.png  used on input line 546.
+(pdftex.def)             Requested size: 386.96027pt x 241.84225pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[14 <./Messaufbau Schaltung Task 3.3.1.jpeg> <./Task3.3.1.png>]
+<Messaufbau Schaltung Task 3.3.2.jpeg, id=282, 1927.2pt x 1084.05pt>
+File: Messaufbau Schaltung Task 3.3.2.jpeg Graphic file (type jpg)
+<use Messaufbau Schaltung Task 3.3.2.jpeg>
+Package pdftex.def Info: Messaufbau Schaltung Task 3.3.2.jpeg  used on input line 570.
+(pdftex.def)             Requested size: 386.96027pt x 217.64977pt.
+<Task3.3.2.png, id=283, 963.6pt x 602.25pt>
+File: Task3.3.2.png Graphic file (type png)
+<use Task3.3.2.png>
+Package pdftex.def Info: Task3.3.2.png  used on input line 577.
+(pdftex.def)             Requested size: 386.96027pt x 241.84225pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[15 <./Messaufbau Schaltung Task 3.3.2.jpeg> <./Task3.3.2.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 557.
+(hyperref)                removing `math shift' on input line 594.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 557.
+(hyperref)                removing `subscript' on input line 594.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 557.
+(hyperref)                removing `math shift' on input line 594.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -902,7 +1043,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[11]
+[16]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -915,35 +1056,31 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[12]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[13] (./LaborProtokoll.aux)
+[17] (./LaborProtokoll.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `LaborProtokoll.out' has not changed.
-(rerunfilecheck)             Checksum: 1FE708DB8A81F185B873C6F59BCF2B86;6437.
+(rerunfilecheck)             Checksum: 7A57011082A522A3D40BE801023D0699;6169.
  ) 
 Here is how much of TeX's memory you used:
- 33722 strings out of 469462
- 693919 string characters out of 5468614
- 1121151 words of memory out of 5000000
- 61616 multiletter control sequences out of 15000+600000
- 661648 words of font info for 214 fonts, out of 8000000 for 9000
+ 33756 strings out of 469462
+ 696212 string characters out of 5468614
+ 1122680 words of memory out of 5000000
+ 61691 multiletter control sequences out of 15000+600000
+ 653902 words of font info for 181 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  98i,13n,108p,1116b,1091s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on LaborProtokoll.pdf (14 pages, 368279 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on LaborProtokoll.pdf (18 pages, 2876457 bytes).
 PDF statistics:
- 375 PDF objects out of 1000 (max. 8388607)
- 315 compressed objects within 4 object streams
- 71 named destinations out of 1000 (max. 500000)
- 70389 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 413 PDF objects out of 1000 (max. 8388607)
+ 328 compressed objects within 4 object streams
+ 81 named destinations out of 1000 (max. 500000)
+ 49976 words of extra memory for PDF output out of 51595 (max. 10000000)
 
