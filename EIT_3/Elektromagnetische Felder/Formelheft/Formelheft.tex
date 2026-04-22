@@ -44,7 +44,7 @@
 \section*{1. Mathematische Grundlagen}
 %=============================================================
 
-\begin{tcolorbox}[title=Maxwell-Gleichungen -- Differentiell \& Integral]
+\begin{tcolorbox}[title={Maxwell-Gleichungen -- Differentiell \& Integral}]
 \textbf{Differentialform:}\\
 $\text{rot}\,\vec{E} = -\dfrac{\partial \vec{B}}{\partial t}$\quad
 $\text{div}\,\vec{B} = 0$\\[2pt]
@@ -66,7 +66,7 @@ $c = 1/\sqrt{\mu_0\varepsilon_0} = 2{,}998\cdot10^8$ \;\text{\textcolor{boxtitle
 $Z_0 = \sqrt{\mu_0/\varepsilon_0} = 377$ \;\text{\textcolor{boxtitle}{[\(\Omega\)]}}
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Koordinatensysteme \& Volumenelemente]
+\begin{tcolorbox}[title={Koordinatensysteme \& Volumenelemente}]
 \begin{center}
 \begin{tikzpicture}[scale=0.78]
   % Kartesisch
@@ -99,7 +99,7 @@ $z=r\cos\theta$;\quad $dV = r^2\sin\theta\,dr\,d\theta\,d\varphi$\\
 $d\vec{A}_r = r^2\sin\theta\,d\theta\,d\varphi\,\vec{e}_r$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Differentialoperatoren -- alle Koordinatensysteme]
+\begin{tcolorbox}[title={Differentialoperatoren -- alle Koordinatensysteme}]
 \textbf{Gradient} $\nabla\phi$ \;\text{\textcolor{boxtitle}{[\(V/m\)]}} \quad(Skalar $\to$ Vektor, zeigt in Richtung stärksten Anstiegs):
 $$\nabla\phi\big|_{\text{kart}} = \partial_x\phi\,\vec{e}_x + \partial_y\phi\,\vec{e}_y + \partial_z\phi\,\vec{e}_z$$
 $$\nabla\phi\big|_{\text{zyl}} = \partial_\rho\phi\,\vec{e}_\rho + \tfrac{1}{\rho}\partial_\varphi\phi\,\vec{e}_\varphi + \partial_z\phi\,\vec{e}_z$$
@@ -118,7 +118,7 @@ $$\Delta\phi\big|_{\text{zyl}} = \tfrac{1}{\rho}\partial_\rho(\rho\,\partial_\rh
 $$\Delta\phi\big|_{\text{kug}} = \tfrac{1}{r^2}\partial_r(r^2\partial_r\phi) + \tfrac{1}{r^2\sin\theta}\partial_\theta(\sin\theta\,\partial_\theta\phi) + \tfrac{1}{r^2\sin^2\theta}\partial_\varphi^2\phi$$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Integralsätze \& Vektoridentitäten]
+\begin{tcolorbox}[title={Integralsätze \& Vektoridentitäten}]
 \textbf{Gaußscher Satz} (Volumen $V$, Hülle $\partial V$):
 $$\oint_{\partial V}\vec{F}\cdot d\vec{A} = \int_V \nabla\cdot\vec{F}\,dV$$
 \textbf{Stokesscher Satz} (Fläche $A$, Rand $\partial A$):
@@ -132,7 +132,7 @@ $\text{div}\,\vec{r} = 3$;\quad $\text{div}(\vec{r}/r^3) = 0$ (für $r\neq0$)\\
 $\text{rot}\,\vec{r} = \vec{0}$;\quad $\text{div}(\vec{r}/r) = 2/r$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Delta-Funktion $\delta(\vec{r})$ -- Punktquelle]
+\begin{tcolorbox}[title={Delta-Funktion $\delta(\vec{r})$ -- Punktquelle}]
 \textbf{Definition:} $\delta(x)=0$ für $x\neq0$;\quad $\int_{-\infty}^{+\infty}\delta(x)\,dx=1$\\
 \textbf{3D:} $\delta(\vec{r}) = \delta(x)\delta(y)\delta(z)$ \;\text{\textcolor{boxtitle}{[\(1/m^3\)]}}\\
 \textbf{Ausblendeigenschaft:}
@@ -141,14 +141,14 @@ $$\int_{-\infty}^{+\infty} f(x)\,\delta(x-x_0)\,dx = f(x_0)$$
 $\rho_V(\vec{r}) = Q\,\delta(\vec{r}-\vec{r}_0)$ \;\text{\textcolor{boxtitle}{[\(C/m^3\)]}}
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Helmholtz-Theorem \& Eindeutigkeit]
+\begin{tcolorbox}[title={Helmholtz-Theorem \& Eindeutigkeit}]
 Jedes Vektorfeld $\vec{F}$ ist durch Divergenz + Rotation \textbf{eindeutig} bestimmt:
 $$\vec{F} = \underbrace{-\text{grad}\,\phi}_{\text{quellbehaftet}} + \underbrace{\text{rot}\,\vec{A}}_{\text{wirbelbehaftet}}$$
 $\phi$ = Skalarpotential \;\text{\textcolor{boxtitle}{[\(V\)]}};\quad $\vec{A}$ = Vektorpotential \;\text{\textcolor{boxtitle}{[\(Vs/m\)]}}\\[3pt]
 \textbf{Eindeutigkeit der Lösung:} Wenn auf dem Rand $\partial V$ überall $\phi$ (Dirichlet) \textit{oder} $\partial\phi/\partial n$ (Neumann) vorgegeben ist $\Rightarrow$ \textbf{eindeutige} Lösung.
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Einteilung elektromagnetischer Felder]
+\begin{tcolorbox}[title={Einteilung elektromagnetischer Felder}]
 \begin{tabular}{@{}lll@{}}
 \toprule
 Feldtyp & Bedingung & Hauptgleichung\\
@@ -167,7 +167,7 @@ Volle Maxwell & allgemein & Wellengleichung\\
 \section*{2. Elektrostatik}
 %=============================================================
 
-\begin{tcolorbox}[title=Grundgleichungen Elektrostatik]
+\begin{tcolorbox}[title={Grundgleichungen Elektrostatik}]
 $\text{rot}\,\vec{E} = 0 \Rightarrow \oint\vec{E}\cdot d\vec{s} = 0$\quad (wirbelfrei)\\
 $\vec{E} = -\text{grad}\,\phi$\quad \;\text{\textcolor{boxtitle}{[\(V/m\)]}}\\
 $\text{div}\,\vec{D} = \rho_V \Rightarrow \oint\vec{D}\cdot d\vec{A} = Q_{enc}$\\
@@ -177,7 +177,7 @@ Coulombkraft: $\vec{F} = q\vec{E}$ \;\text{\textcolor{boxtitle}{[\(N\)]}}\\
 Spannung: $U_{21} = \phi_2-\phi_1 = -\int_1^2\vec{E}\cdot d\vec{s}$ \;\text{\textcolor{boxtitle}{[\(V\)]}}
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Potentialberechnung -- 3 Methoden]
+\begin{tcolorbox}[title={Potentialberechnung -- 3 Methoden}]
 \textbf{Methode 1: Wegintegral} (wenn $\vec{E}$ bekannt):
 $$\phi(\vec{r}) = -\int_{\vec{r}_0}^{\vec{r}}\vec{E}\cdot d\vec{s} + \phi(\vec{r}_0)$$
 \textbf{Methode 2: Laplace/Poisson lösen:}\\
@@ -188,7 +188,7 @@ $$\phi(\vec{r}) = -\int_{\vec{r}_0}^{\vec{r}}\vec{E}\cdot d\vec{s} + \phi(\vec{r
 $$\phi(\vec{r}) = \frac{1}{4\pi\varepsilon_0}\int_{V'}\frac{\rho_V(\vec{r}')}{|\vec{r}-\vec{r}'|}\,dV'$$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Punktladung]
+\begin{tcolorbox}[title={Punktladung}]
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
   \fill[red] (0,0) circle (3pt) node[above right]{\tiny$Q$};
@@ -207,7 +207,7 @@ $\varepsilon = \varepsilon_0\varepsilon_r$ \;\text{\textcolor{boxtitle}{[\(As/(V
 $\vec{e}_r$: Einheitsvektor von $Q$ nach $P$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Unendliche Linienladung]
+\begin{tcolorbox}[title={Unendliche Linienladung}]
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
   \draw[very thick, red] (0,-1) -- (0,1) node[right]{\tiny$\rho_L$};
@@ -224,7 +224,7 @@ $\rho$ \;\text{\textcolor{boxtitle}{[\(m\)]}}: radialer Abstand von der Achse\\
 $\rho_0$: Bezugsabstand mit $\phi(\rho_0)=0$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Unendliche Flächenladung]
+\begin{tcolorbox}[title={Unendliche Flächenladung}]
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
   \fill[red!20] (-1.2,-0.1) rectangle (1.2,0.1);
@@ -241,7 +241,7 @@ $\vec{n}$: Normalenvektor von der Fläche weg\\
 $P$ liegt im Abstand $|z|$ von der Fläche
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Raumladungskugel (homogen)]
+\begin{tcolorbox}[title={Raumladungskugel (homogen)}]
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
   \fill[red!15] (0,0) circle (1cm);
@@ -263,7 +263,7 @@ $$\vec{E} = \frac{\rho_V R^3}{3\varepsilon r^2}\vec{e}_r,\quad \phi = \frac{\rho
 $\rho_V$ \;\text{\textcolor{boxtitle}{[\(C/m^3\)]}}: Volumenladungsdichte;\quad $R$ \;\text{\textcolor{boxtitle}{[\(m\)]}}: Kugelradius
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Geladener Kreisring \& Kreisscheibe (z-Achse)]
+\begin{tcolorbox}[title={Geladener Kreisring \& Kreisscheibe (z-Achse)}]
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
   \draw[red,thick] (0,0) ellipse (0.9cm and 0.2cm);
@@ -283,7 +283,7 @@ $$\vec{E}(z) = \frac{\rho_F}{2\varepsilon}\!\left(1-\frac{z}{\sqrt{R^2+z^2}}\rig
 $z$ \;\text{\textcolor{boxtitle}{[\(m\)]}}: Abstand des Aufpunkts vom Mittelpunkt entlang der z-Achse
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Elektrischer Dipol (Fernfeld)]
+\begin{tcolorbox}[title={Elektrischer Dipol (Fernfeld)}]
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
   \fill[blue] (0,-0.3) circle (3pt) node[right]{\tiny$-Q$};
@@ -301,7 +301,7 @@ $$\phi(r,\theta) = \frac{p\cos\theta}{4\pi\varepsilon r^2},\quad E_r = \frac{2p\
 $r$ \;\text{\textcolor{boxtitle}{[\(m\)]}}: Abstand vom Dipolmittelpunkt;\quad $\theta$: Winkel zur Dipolachse
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Grenzbedingungen Elektrostatik]
+\begin{tcolorbox}[title={Grenzbedingungen Elektrostatik}]
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
   \fill[blue!10] (-1.5,0) rectangle (1.5,1);
@@ -323,7 +323,7 @@ Ohne freie Ladung ($\rho_F=0$): $\varepsilon_1 E_{1n} = \varepsilon_2 E_{2n}$\\[
 \textbf{An Leiteroberfläche} ($\kappa\to\infty$): $E_t = 0$, $D_n = \rho_F$, $\phi=\text{const}$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Kapazitäten -- alle Geometrien]
+\begin{tcolorbox}[title={Kapazitäten -- alle Geometrien}]
 $C = Q/U$ \;\text{\textcolor{boxtitle}{[\(F = As/V\)]}};\quad Energie: $W_e = \tfrac{1}{2}CU^2$ \;\text{\textcolor{boxtitle}{[\(J\)]}}
 $$W_e = \frac{1}{2}\int_V\varepsilon E^2\,dV = \frac{Q^2}{2C}$$
 \textbf{Plattenkondensator:}\quad $C = \varepsilon A/d$\\
@@ -338,7 +338,7 @@ $\;1/C_{ges} = \sum 1/C_i$\\
 $\;C_{ges} = \sum C_i$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Spiegelungsmethode]
+\begin{tcolorbox}[title={Spiegelungsmethode}]
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
   \fill[gray!30] (-1.5,-0.5) rectangle (1.5,0);
@@ -360,7 +360,7 @@ Kraft auf $Q$ im Abstand $h$: $F = Q^2/[4\pi\varepsilon(2h)^2]$ (anziehend)
 \section*{3. Stationäres Strömungsfeld}
 %=============================================================
 
-\begin{tcolorbox}[title=Grundgleichungen \& Einheiten]
+\begin{tcolorbox}[title={Grundgleichungen \& Einheiten}]
 $\vec{J} = \kappa\vec{E}$ \;\text{\textcolor{boxtitle}{[\(A/m^2\)]}}\quad (Ohmsches Gesetz, differentiell)\\
 $\text{div}\,\vec{J} = 0 \Rightarrow \oint\vec{J}\cdot d\vec{A} = 0$ \quad (Kontinuität)\\
 $\text{rot}\,\vec{E} = 0 \Rightarrow \Delta\phi = 0$ \quad (Laplace)\\
@@ -370,7 +370,7 @@ Leistung: $P = UI = I^2R$ \;\text{\textcolor{boxtitle}{[\(W\)]}}\\[2pt]
 $\kappa$ \;\text{\textcolor{boxtitle}{[\(S/m\)]}}: Leitfähigkeit;\quad $\rho=1/\kappa$ \;\text{\textcolor{boxtitle}{[\(\Omega m\)]}}: spez. Widerstand
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Widerstände -- alle Geometrien]
+\begin{tcolorbox}[title={Widerstände -- alle Geometrien}]
 \begin{center}
 \begin{tikzpicture}[scale=0.75]
   % Quader
@@ -405,7 +405,7 @@ $$R = \frac{h}{\kappa\pi R_1 R_2}$$
 $$R = \frac{l}{\kappa A_0(\alpha-1)}\ln(\alpha)$$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Geschichtete Medien (Strömungsfeld)]
+\begin{tcolorbox}[title={Geschichtete Medien (Strömungsfeld)}]
 \begin{center}
 \begin{tikzpicture}[scale=0.75]
   % Reihe
@@ -446,7 +446,7 @@ $$R = \frac{\ln(\rho_a/\rho_i)}{2\pi(l_1\kappa_1+l_2\kappa_2)}$$
 \section*{4. Magnetostatik}
 %=============================================================
 
-\begin{tcolorbox}[title=Grundgleichungen Magnetostatik]
+\begin{tcolorbox}[title={Grundgleichungen Magnetostatik}]
 $\text{div}\,\vec{B} = 0 \Rightarrow \oint\vec{B}\cdot d\vec{A} = 0$ \;\text{\textcolor{boxtitle}{[\(T = Vs/m^2\)]}}\\
 $\text{rot}\,\vec{H} = \vec{J} \Rightarrow \oint\vec{H}\cdot d\vec{s} = I_{enc}$ \;\text{\textcolor{boxtitle}{[\(A/m\)]}}\\
 $\vec{B} = \mu_0\mu_r\vec{H}$;\quad $\vec{B} = \text{rot}\,\vec{A}$ \;\text{\textcolor{boxtitle}{[\(T\)]}}\\
@@ -455,7 +455,7 @@ Lorentzkraft: $\vec{F} = q(\vec{v}\times\vec{B})$ \;\text{\textcolor{boxtitle}{[
 Auf Leiter: $\vec{F} = \int I(d\vec{s}\times\vec{B})$ \;\text{\textcolor{boxtitle}{[\(N\)]}}
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Biot-Savart -- Gesetz \& Vorgehen]
+\begin{tcolorbox}[title={Biot-Savart -- Gesetz \& Vorgehen}]
 $$\vec{H}(\vec{r}) = \frac{I}{4\pi}\int_C\frac{d\vec{s}'\times(\vec{r}-\vec{r}')}{|\vec{r}-\vec{r}'|^3} \;\text{\textcolor{boxtitle}{[\(A/m\)]}}$$
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -473,7 +473,7 @@ $$\vec{H}(\vec{r}) = \frac{I}{4\pi}\int_C\frac{d\vec{s}'\times(\vec{r}-\vec{r}')
 $$H = \frac{I}{4\pi\rho}(\sin\alpha_1+\sin\alpha_2) \;\text{\textcolor{boxtitle}{[\(A/m\)]}}$$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Unendlicher Linienleiter]
+\begin{tcolorbox}[title={Unendlicher Linienleiter}]
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
   \draw[very thick, red, ->] (0,-1) -- (0,1.3) node[right]{\tiny$I$};
@@ -489,7 +489,7 @@ $\rho$ \;\text{\textcolor{boxtitle}{[\(m\)]}}: Abstand des Aufpunkts $P$ von der
 Ampèrescher Integrationsweg: Kreis mit Radius $\rho$ um Leiter
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Kreisschleife (z-Achse)]
+\begin{tcolorbox}[title={Kreisschleife (z-Achse)}]
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
   \draw[red,very thick,->] (0,0) ellipse (1cm and 0.22cm);
@@ -508,7 +508,7 @@ $z$ \;\text{\textcolor{boxtitle}{[\(m\)]}}: Abstand des Aufpunkts $P$ vom Schlei
 $R$ \;\text{\textcolor{boxtitle}{[\(m\)]}}: Schleifenradius
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Magnetfelder weiterer Strukturen]
+\begin{tcolorbox}[title={Magnetfelder weiterer Strukturen}]
 \textbf{Quadratische Schleife} (Seite $a$, Zentrum $z=0$):
 $$H = \frac{2\sqrt{2}\,I}{\pi a} \;\text{\textcolor{boxtitle}{[\(A/m\)]}}$$
 \textbf{Quadratische Schleife auf z-Achse:}
@@ -521,7 +521,7 @@ $$H_{innen} = \frac{NI}{l} \;\text{\textcolor{boxtitle}{[\(A/m\)]}}\quad \text{(
 $$H(\rho) = \frac{NI}{2\pi\rho} \;\text{\textcolor{boxtitle}{[\(A/m\)]}}$$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Koaxialkabel -- Magnetfeld (Ampère)]
+\begin{tcolorbox}[title={Koaxialkabel -- Magnetfeld (Ampère)}]
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
   \fill[orange!20] (0,0) circle (1.2cm);
@@ -547,7 +547,7 @@ $$H(\rho) = \begin{cases}
 $\vec{H}$ immer in $\vec{e}_\varphi$-Richtung (Rechte-Hand-Regel)
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Stromschiene]
+\begin{tcolorbox}[title={Stromschiene}]
 \begin{center}
 \begin{tikzpicture}[scale=0.75]
   \fill[orange!20] (-0.1,-0.8) rectangle (0.1,0.8);
@@ -565,7 +565,7 @@ Grenzwert $x\ll h$ (nah, wirkt wie $\infty$-Fläche): $\vec{H}=\dfrac{I}{2h}\vec
 Grenzwert $h\to0$ (wirkt wie Linienleiter): $\vec{H}=\dfrac{I}{2\pi x}\vec{e}_y$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Grenzbedingungen Magnetostatik]
+\begin{tcolorbox}[title={Grenzbedingungen Magnetostatik}]
 \begin{center}
 \begin{tikzpicture}[scale=0.75]
   \fill[blue!10] (-1.5,0) rectangle (1.5,0.8);
@@ -585,7 +585,7 @@ Ohne Flächenstrom: $H_{1t} = H_{2t}$\\[2pt]
 \textbf{Brechungsgesetz:} $\dfrac{\tan\alpha_1}{\tan\alpha_2} = \dfrac{\mu_1}{\mu_2}$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Induktivitäten -- alle Geometrien]
+\begin{tcolorbox}[title={Induktivitäten -- alle Geometrien}]
 $L = N\Phi/I = \Psi/I$ \;\text{\textcolor{boxtitle}{[\(H = Vs/A\)]}};\quad $W_m = \tfrac{1}{2}LI^2$ \;\text{\textcolor{boxtitle}{[\(J\)]}}\\[3pt]
 \textbf{Zylinderspule:} $L = \mu_0\mu_r N^2 A/l$\\
 \textbf{Toroid (Rechteckquerschnitt, Höhe $h$):}
@@ -596,7 +596,7 @@ $$L = \frac{\mu_0\mu_r N^2 h}{2\pi}\ln\!\left(\frac{r_a}{r_i}\right)$$
 $$L \approx \mu_0 R\!\left(\ln\frac{8R}{r}-2\right)$$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Gegeninduktivität \& magnetische Kopplung]
+\begin{tcolorbox}[title={Gegeninduktivität \& magnetische Kopplung}]
 $$M = \frac{\Phi_{21}}{I_1} = \frac{\mu_0}{4\pi}\oint_{C_1}\oint_{C_2}\frac{d\vec{s}_1\cdot d\vec{s}_2}{|\vec{r}_1-\vec{r}_2|} \;\text{\textcolor{boxtitle}{[\(H\)]}}$$
 $M_{12}=M_{21}=M$ (Reziprozität)\\
 Kopplungskoeffizient: $k = M/\sqrt{L_1 L_2}$;\quad $0\leq k\leq1$\\
@@ -608,7 +608,7 @@ Fluss durch Schleife 2: $\Phi_{21} = \iint_{A_2}\vec{B}_1\cdot d\vec{A}_2$
 \section*{5. Induktion \& Quasistationäre Felder}
 %=============================================================
 
-\begin{tcolorbox}[title=Faradaysches Induktionsgesetz]
+\begin{tcolorbox}[title={Faradaysches Induktionsgesetz}]
 $$U_{ind} = \oint\vec{E}\cdot d\vec{s} = -\frac{d\Phi}{dt} \;\text{\textcolor{boxtitle}{[\(V\)]}}$$
 $\Phi = \iint\vec{B}\cdot d\vec{A}$ \;\text{\textcolor{boxtitle}{[\(Wb = Vs\)]}}: magnetischer Fluss\\[4pt]
 \begin{center}
@@ -632,7 +632,7 @@ $$U_{ind} = \int_C(\vec{v}\times\vec{B})\cdot d\vec{s}$$
 3. $U_{ind} = -d\Phi/dt$; Vorzeichen prüfen!
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Induktionsspannungen typischer Aufgaben]
+\begin{tcolorbox}[title={Induktionsspannungen typischer Aufgaben}]
 \textbf{Ruhende Schleife nahe $\infty$-Linienleiter} $i(t)$:
 $$U_{ind} = -\frac{\mu_0 h}{2\pi}\frac{di}{dt}\ln\!\left(\frac{y_0+b}{y_0}\right)$$
 $h$: Schleifenhöhe;\quad $b$: Breite;\quad $y_0$: nächster Abstand\\[2pt]
@@ -647,7 +647,7 @@ $$\vec{B}_{ges} = \frac{\mu_0 i(t)}{2\pi}\!\left(\frac{\vec{e}_z}{y} - \frac{\ve
 Daraus $\Phi$ durch Rechteckrahmen integrieren, dann ableiten.
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=EQS vs. MQS -- Vergleich]
+\begin{tcolorbox}[title={EQS vs. MQS -- Vergleich}]
 \begin{tabular}{@{}lll@{}}
 \toprule
 Aspekt & \textbf{EQS} & \textbf{MQS}\\
@@ -661,7 +661,7 @@ Beispiel & Kondensator & Trafo, Skin\\
 \end{tabular}
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Skin-Effekt \& Eindringtiefe]
+\begin{tcolorbox}[title={Skin-Effekt \& Eindringtiefe}]
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
   \fill[orange!20] (0,-0.5) rectangle (2.5,0.5);
@@ -681,7 +681,7 @@ $R_{AC}\approx R_{DC}\cdot d/(4\delta)$ \quad für $d\gg\delta$\\
 Kupfer: $\delta\approx 66/\sqrt{f\,[\text{Hz}]}$ mm
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Diffusionsgleichung (MQS)]
+\begin{tcolorbox}[title={Diffusionsgleichung (MQS)}]
 $\partial_t\vec{D}\approx0$ eingesetzt in Maxwell $\Rightarrow$:
 $$\Delta\vec{H} = \kappa\mu\frac{\partial\vec{H}}{\partial t} \;\text{\textcolor{boxtitle}{[\(A/m^3\)]}}$$
 \textbf{Harmonisch} ($e^{j\omega t}$): $\Delta\vec{H} = j\omega\kappa\mu\,\vec{H}$\\
@@ -689,7 +689,7 @@ Komplexe Wellenzahl: $\underline{k}^2 = j\omega\mu\kappa$;\\
 Lösung (1D, Halbraum): $H(x) = H_0\,e^{-(1+j)x/\delta}$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Komplexe Zeiger / Phasoren]
+\begin{tcolorbox}[title={Komplexe Zeiger / Phasoren}]
 Zeitharmonisch: $f(t) = \hat{F}\cos(\omega t+\varphi_0) = \text{Re}\{\underline{F}\,e^{j\omega t}\}$\\
 Phasor: $\underline{F} = \hat{F}e^{j\varphi_0}$ \quad (komplex, zeitunabhängig)\\
 Zeitableitung: $\partial/\partial t \longrightarrow j\omega$\\[3pt]
@@ -702,7 +702,7 @@ Komplexe Permittivität: $\underline{\varepsilon} = \varepsilon\!\left(1 - j\dfr
 \section*{6. Energien, Kräfte \& Poynting}
 %=============================================================
 
-\begin{tcolorbox}[title=Elektromagnetische Energiedichten]
+\begin{tcolorbox}[title={Elektromagnetische Energiedichten}]
 Elektrisch: $w_e = \tfrac{1}{2}\vec{E}\cdot\vec{D} = \tfrac{1}{2}\varepsilon E^2$ \;\text{\textcolor{boxtitle}{[\(J/m^3\)]}}\\
 Magnetisch: $w_m = \tfrac{1}{2}\vec{H}\cdot\vec{B} = \tfrac{1}{2}\mu H^2 = B^2/(2\mu)$ \;\text{\textcolor{boxtitle}{[\(J/m^3\)]}}\\[3pt]
 Gesamtenergie: $W_e = \tfrac{1}{2}CU^2 = Q^2/(2C)$ \;\text{\textcolor{boxtitle}{[\(J\)]}}\\
@@ -718,7 +718,7 @@ $$-\frac{\partial}{\partial t}(w_e+w_m) = \nabla\cdot\vec{S} + \underbrace{\vec{
 \section*{7. Elektromagnetische Wellen}
 %=============================================================
 
-\begin{tcolorbox}[title=Wellengleichung \& ebene Welle]
+\begin{tcolorbox}[title={Wellengleichung \& ebene Welle}]
 \textbf{Wellengleichung} (Vakuum, $\rho_V=0$, $\vec{J}=0$):
 $$\Delta\vec{E} - \mu_0\varepsilon_0\frac{\partial^2\vec{E}}{\partial t^2} = 0,\quad c = \frac{1}{\sqrt{\mu_0\varepsilon_0}}$$
 \begin{center}
@@ -745,7 +745,7 @@ $\alpha$ \;\text{\textcolor{boxtitle}{[\(Np/m\)]}}: Dämpfung;\quad $\beta$ \;\t
 Guter Leiter ($\kappa\gg\omega\varepsilon$): $\alpha\approx\beta\approx 1/\delta$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Reflexion \& Brechung an Grenzflächen]
+\begin{tcolorbox}[title={Reflexion \& Brechung an Grenzflächen}]
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
   \fill[blue!10] (-1.5,0) rectangle (1.5,1.2);
@@ -770,7 +770,7 @@ $$E(z,t) = 2E_0\sin(kz)\sin(\omega t)$$
 \section*{8. Wichtige Konstanten \& Hilfsmittel}
 %=============================================================
 
-\begin{tcolorbox}[title=Konstanten \& Materialdaten]
+\begin{tcolorbox}[title={Konstanten \& Materialdaten}]
 $\varepsilon_0 = 8{,}854\cdot10^{-12}$ \;\text{\textcolor{boxtitle}{[\(F/m\)]}};\quad $\mu_0 = 4\pi\cdot10^{-7}$ \;\text{\textcolor{boxtitle}{[\(H/m\)]}}\\
 $c = 2{,}998\cdot10^8$ \;\text{\textcolor{boxtitle}{[\(m/s\)]}};\quad $Z_0 = 376{,}7$ \;\text{\textcolor{boxtitle}{[\(\Omega\)]}}\\
 $e = 1{,}602\cdot10^{-19}$ \;\text{\textcolor{boxtitle}{[\(C\)]}}\\[3pt]
@@ -781,7 +781,7 @@ Eisen: $\approx10^7$ S/m;\quad Silizium: $\approx10^{-4}$ S/m\\[3pt]
 Vakuum/Luft: 1;\quad Glas: 4--8;\quad Wasser: 80
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Nützliche Integrale]
+\begin{tcolorbox}[title={Nützliche Integrale}]
 $\displaystyle\int\frac{dz}{(a^2+z^2)^{3/2}} = \frac{z}{a^2\sqrt{a^2+z^2}} + C$\\[3pt]
 $\displaystyle\int\frac{z\,dz}{(a^2+z^2)^{3/2}} = -\frac{1}{\sqrt{a^2+z^2}} + C$\\[3pt]
 $\displaystyle\int\frac{dz}{a^2+z^2} = \frac{1}{a}\arctan\!\left(\frac{z}{a}\right)+C$\\[3pt]
@@ -792,14 +792,14 @@ $\int_0^\pi\sin\theta\,d\theta = 2$;\quad $\int_0^\pi\sin^2\theta\,d\theta = \pi
 $\int_0^{2\pi}d\varphi = 2\pi$;\quad $\int_0^{2\pi}\cos^2\varphi\,d\varphi = \pi$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Kreuzprodukt \& Vektorregeln]
+\begin{tcolorbox}[title={Kreuzprodukt \& Vektorregeln}]
 \textbf{Kartesisch:} $\vec{e}_x\times\vec{e}_y=\vec{e}_z$;\; $\vec{e}_y\times\vec{e}_z=\vec{e}_x$;\; $\vec{e}_z\times\vec{e}_x=\vec{e}_y$\\
 \textbf{Zylinder:} $\vec{e}_\rho\times\vec{e}_\varphi=\vec{e}_z$;\; $\vec{e}_\varphi\times\vec{e}_z=\vec{e}_\rho$;\; $\vec{e}_z\times\vec{e}_\rho=\vec{e}_\varphi$\\[3pt]
 $|\vec{a}\times\vec{b}| = |\vec{a}||\vec{b}|\sin\angle(\vec{a},\vec{b})$;\quad $\vec{a}\times\vec{b} = -\vec{b}\times\vec{a}$\\
 \textbf{BAC-CAB:} $\vec{a}\times(\vec{b}\times\vec{c}) = \vec{b}(\vec{a}\cdot\vec{c})-\vec{c}(\vec{a}\cdot\vec{b})$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Analogietabelle der Feldtypen]
+\begin{tcolorbox}[title={Analogietabelle der Feldtypen}]
 \begin{tabular}{@{}p{2cm}p{2cm}p{2cm}@{}}
 \toprule
 \textbf{Elektrostatik} & \textbf{Magnetostatik} & \textbf{Strömungsfeld}\\
@@ -815,7 +815,7 @@ Laplace & Poisson & Laplace\\
 \end{tabular}
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Materialeigenschaften -- Definitionen]
+\begin{tcolorbox}[title={Materialeigenschaften -- Definitionen}]
 \textbf{Homogen:} $\varepsilon, \mu, \kappa$ unabhängig vom \textit{Ort}\\
 \textbf{Isotrop:} $\varepsilon, \mu, \kappa$ unabhängig von der \textit{Richtung} (Skalar, kein Tensor)\\
 \textbf{Linear:} $\vec{D}\propto\vec{E}$ (keine Sättigung, kein Hystereseeffekt)\\
@@ -824,7 +824,7 @@ Laplace & Poisson & Laplace\\
 \textbf{Diamagnetikum:} $\mu_r$ leicht $<1$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Lösungsstrategien -- Schnellübersicht]
+\begin{tcolorbox}[title={Lösungsstrategien -- Schnellübersicht}]
 \begin{tabular}{@{}ll@{}}
 \toprule
 Symmetrie & Methode\\
@@ -842,6 +842,114 @@ Wechselfeld & Faraday + Phasoren\\
 $R = \dfrac{\int\vec{E}\cdot d\vec{s}}{\int\kappa\vec{E}\cdot d\vec{A}}$\\[3pt]
 \textbf{$C$ aus Feldern:}
 $C = \dfrac{\varepsilon\oint\vec{E}\cdot d\vec{A}}{\int\vec{E}\cdot d\vec{s}}$
+\end{tcolorbox}
+
+%=============================================================
+\section*{Ergänzungen aus weiteren Unterlagen}
+%=============================================================
+
+\begin{tcolorbox}[title={Reflexion, Transmission und Brewster-Winkel}]
+\textbf{k-Reflexionsfaktor:}\\
+$r_k = \frac{\vec{n}\circ(\vec{k}_{in}-\vec{k}_{tr})}{\vec{n}\circ(\vec{k}_{in}+\vec{k}_{tr})}$\\
+\textbf{Dielektrisch / Magnetisch:}\\
+$r_\epsilon = \frac{\epsilon_{in}-\epsilon_{tr}}{\epsilon_{in}+\epsilon_{tr}}$,\quad $r_\mu = \frac{\mu_{in}-\mu_{tr}}{\mu_{in}+\mu_{tr}}$\\[3pt]
+\textbf{Brewster-Winkel Bedingungen:}\\
+TE-Welle: $r_k = r_\mu$\\
+TM-Welle: $r_k = r_\epsilon$\\[3pt]
+\textbf{Intensitätsfaktoren (Poynting):}\\
+$R = -\frac{\vec{n}\circ\vec{S}_{ref}}{\vec{n}\circ\vec{S}_{in}}$,\quad $T = \frac{\vec{n}\circ\vec{S}_{tr}}{\vec{n}\circ\vec{S}_{in}}$
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Wechselstrom \& Drehstrom (Leistung)}]
+\textbf{Leistungsarten:}\\
+Scheinleistung: $S = U \cdot I$ \unitbox{VA}\\
+Wirkleistung: $P = U \cdot I \cdot \cos\varphi$ \unitbox{W}\\
+Blindleistung: $Q = U \cdot I \cdot \sin\varphi$ \unitbox{var}\\[3pt]
+\textbf{Drehstrom (Transformator):}\\
+$P = \sqrt{3} \cdot U_p \cdot I_p \cdot \cos\varphi_p = \sqrt{3} \cdot U_s \cdot I_s \cdot \cos\varphi_s + P_v$\\
+$Q = \sqrt{3} \cdot U_p \cdot I_p \cdot \sin\varphi_p = \sqrt{3} \cdot U_s \cdot I_s \cdot \sin\varphi_s + P_v$\\
+$S = \sqrt{3} \cdot U_p \cdot I_p = \sqrt{3} \cdot U_s \cdot I_s + P_v$
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Kugelfunktionen (Additionstheorem)}]
+\textbf{Kugelflächenfunktionen:}\\
+$g(\vartheta, \varphi) = Y_{lm}(\vartheta, \varphi)$\\
+Entwicklung für Legendre-Polynome:\\
+$P_l(\cos \alpha) = \sum_{m=-l}^{l} b_{lm} Y_{lm}(\vartheta, \varphi)$\\[3pt]
+\textbf{Integration über Raumwinkel:}\\
+$\int Y_{lm}(\vartheta, \varphi) Y_{l0}^*(\alpha, \beta) d\Omega = a_{l0}$
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Ergänzende Modelle (aus Bildreferenzen)}]
+\textbf{Leitungstheorie (Telegraphengleichung):}\\
+$\frac{\partial U}{\partial x} = -R' I - L' \frac{\partial I}{\partial t}$\\
+$\frac{\partial I}{\partial x} = -G' U - C' \frac{\partial U}{\partial t}$\\[3pt]
+\textbf{Hertzscher Dipol (Fernfeld):}\\
+$\underline{E}_\vartheta = j \omega \mu \frac{\underline{I} l}{4 \pi r} \sin\vartheta e^{-jkr}$\\
+$\underline{H}_\varphi = \frac{\underline{E}_\vartheta}{Z_0}$\\[3pt]
+\textbf{Wellenleiter (Rechteckhohlleiter):}\\
+Grenzfrequenz: $f_c = \frac{c}{2} \sqrt{(\frac{m}{a})^2 + (\frac{n}{b})^2}$
+\end{tcolorbox}
+
+%=============================================================
+\section*{9. Ergänzende Skizzen \& Beziehungen (aus Vorlesungsskript)}
+%=============================================================
+
+\begin{tcolorbox}[title={Vergleich: Elektrostatik und Strömungsfeld}]
+\begin{tabular}{@{}p{3.5cm}p{3.5cm}@{}}
+\toprule
+\textbf{Elektrostatik} & \textbf{Strömungsfeld} \\
+\midrule
+$\vec{D} = \epsilon \cdot \vec{E}$ & $\vec{J} = \kappa \cdot \vec{E}$ \\
+$\text{div}\,\vec{D} = \rho_V$ & $\text{div}\,\vec{J} = 0$ \\
+$D_{2n} - D_{1n} = 0$ & $J_{2n} - J_{1n} = 0$ \\
+$\frac{D_{2t}}{\epsilon_2} = \frac{D_{1t}}{\epsilon_1}$ & $\frac{J_{2t}}{\kappa_2} = \frac{J_{1t}}{\kappa_1}$ \\
+$C = \frac{Q}{U}$ & $G = \frac{I}{U}$ \\
+$\vec{E} = -\text{grad}\,\phi$ & $\vec{E} = -\text{grad}\,\phi$ \\
+$\Delta\phi = -\frac{\rho_V}{\epsilon}$ & $\Delta\phi = 0$ \\
+$E_{2t} - E_{1t} = 0$ & $E_{2t} - E_{1t} = 0$ \\
+\bottomrule
+\end{tabular}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Skizzen: Induktion, Gegeninduktivität \& Skin-Effekt}]
+\textbf{Skin-Effekt (Wirbelströme):}\\
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+  \draw[thick] (-2, 1) -- (2, 1);
+  \draw[thick] (-2, -1) -- (2, -1);
+  \draw[->, red, thick] (-1.5, 0) -- (1.5, 0) node[right]{\tiny $\vec{B}$};
+  \draw[->, blue, thick] (0, 0) ellipse (0.4 and 0.8);
+  \node[blue] at (0, -1.2) {\tiny $\vec{J}$ (Wirbelstrom)};
+\end{tikzpicture}
+\end{center}
+\vspace{3mm}
+
+\textbf{Gegeninduktivität (Zwei Leiterschleifen):}\\
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+  \draw[thick] (0,0) ellipse (1 and 0.3);
+  \draw[thick] (0,2) ellipse (0.8 and 0.25);
+  \node at (0, -0.6) {\tiny Schleife 1 ($I_1, A_1$)};
+  \node at (0, 2.5) {\tiny Schleife 2 ($A_2$)};
+  \draw[->, red, thick] (-0.5, 0) .. controls (-0.5, 1) and (-0.3, 1.5) .. (-0.3, 2.2);
+  \draw[->, red, thick] (0.5, 0) .. controls (0.5, 1) and (0.3, 1.5) .. (0.3, 2.2);
+  \node[red] at (0.8, 1) {\tiny $\vec{B}_1$};
+\end{tikzpicture}
+\end{center}
+\vspace{3mm}
+
+\textbf{Induktion durch Relativbewegung:}\\
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+  \draw[thick] (0,0) rectangle (2,1);
+  \draw[->, thick] (2, 0.5) -- (3, 0.5) node[right]{\tiny $\vec{v}$};
+  \foreach \x in {0.5, 1.0, 1.5} {
+    \node[red] at (\x, 0.5) {$\times$};
+  }
+  \node[red] at (1, 1.3) {\tiny $\vec{B}$ (konstant)};
+\end{tikzpicture}
+\end{center}
 \end{tcolorbox}
 
 \end{multicols*}
