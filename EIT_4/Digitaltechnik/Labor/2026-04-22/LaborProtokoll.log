@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.13)  22 APR 2026 17:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.13)  26 APR 2026 08:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -996,6 +996,11 @@ File: Task3.3.1.png Graphic file (type png)
 <use Task3.3.1.png>
 Package pdftex.def Info: Task3.3.1.png  used on input line 546.
 (pdftex.def)             Requested size: 386.96027pt x 241.84225pt.
+<Messaufbau Schaltung Task 3.3.2.jpeg, id=275, 1927.2pt x 1084.05pt>
+File: Messaufbau Schaltung Task 3.3.2.jpeg Graphic file (type jpg)
+<use Messaufbau Schaltung Task 3.3.2.jpeg>
+Package pdftex.def Info: Messaufbau Schaltung Task 3.3.2.jpeg  used on input line 567.
+(pdftex.def)             Requested size: 386.96027pt x 217.64977pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1005,16 +1010,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [14 <./Messaufbau Schaltung Task 3.3.1.jpeg> <./Task3.3.1.png>]
-<Messaufbau Schaltung Task 3.3.2.jpeg, id=282, 1927.2pt x 1084.05pt>
-File: Messaufbau Schaltung Task 3.3.2.jpeg Graphic file (type jpg)
-<use Messaufbau Schaltung Task 3.3.2.jpeg>
-Package pdftex.def Info: Messaufbau Schaltung Task 3.3.2.jpeg  used on input line 570.
-(pdftex.def)             Requested size: 386.96027pt x 217.64977pt.
 <Task3.3.2.png, id=283, 963.6pt x 602.25pt>
 File: Task3.3.2.png Graphic file (type png)
 <use Task3.3.2.png>
-Package pdftex.def Info: Task3.3.2.png  used on input line 577.
+Package pdftex.def Info: Task3.3.2.png  used on input line 574.
 (pdftex.def)             Requested size: 386.96027pt x 241.84225pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 588.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 588.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 588.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1024,18 +1036,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [15 <./Messaufbau Schaltung Task 3.3.2.jpeg> <./Task3.3.2.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 594.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 594.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 594.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1069,18 +1069,18 @@ Package rerunfilecheck Info: File `LaborProtokoll.out' has not changed.
 (rerunfilecheck)             Checksum: 7A57011082A522A3D40BE801023D0699;6169.
  ) 
 Here is how much of TeX's memory you used:
- 33756 strings out of 469462
- 696212 string characters out of 5468614
- 1122680 words of memory out of 5000000
- 61691 multiletter control sequences out of 15000+600000
- 653902 words of font info for 181 fonts, out of 8000000 for 9000
+ 33703 strings out of 469462
+ 695545 string characters out of 5468614
+ 1121680 words of memory out of 5000000
+ 61669 multiletter control sequences out of 15000+600000
+ 648914 words of font info for 160 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  98i,13n,108p,1116b,1091s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on LaborProtokoll.pdf (18 pages, 2876457 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on LaborProtokoll.pdf (18 pages, 2858042 bytes).
 PDF statistics:
- 413 PDF objects out of 1000 (max. 8388607)
- 328 compressed objects within 4 object streams
+ 403 PDF objects out of 1000 (max. 8388607)
+ 322 compressed objects within 4 object streams
  81 named destinations out of 1000 (max. 500000)
- 49976 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 39736 words of extra memory for PDF output out of 42996 (max. 10000000)
 
