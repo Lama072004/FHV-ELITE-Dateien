@@ -25,5 +25,5 @@
 \contentsline {subsubsection}{\numberline {5.3.3}Task 1.3 -- Purpose of $R_S$}{16}{subsubsection.5.3.3}%
 \contentsline {section}{\numberline {6}Conclusions}{16}{section.6}%
 \contentsline {section}{\numberline {7}Summary}{16}{section.7}%
-\contentsline {section}{\numberline {8}Outlook}{17}{section.8}%
+\contentsline {section}{\numberline {8}Outlook}{16}{section.8}%
 \contentsline {section}{\numberline {A}Appendix B -- Actual Component Values}{17}{appendix.A}%
