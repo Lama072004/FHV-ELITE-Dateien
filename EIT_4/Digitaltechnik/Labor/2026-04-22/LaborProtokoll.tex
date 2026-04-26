@@ -162,17 +162,17 @@ Table~\ref{tab:equipment} lists the equipment used.
   \label{tab:equipment}
   \begin{tabular}{llc}
     \toprule
-    Item & Specification / Part No. & Asset / S/N \\
+    Item & Specification / Part No.\\
     \midrule
-    Digital oscilloscope        & Teledyne LeCroy HD 4096        & --- \\
-    Oscilloscope probe (10:1)   & ---                            & --- \\
-    BNC cable                   & ---                            & --- \\
-    DC power supply             & \SI{10}{\volt}                 & --- \\
-    Experimentation board       & ---                            & --- \\
-    NE555 timer IC              & NE555                          & --- \\
-    CMOS NAND IC                & 74C00                          & --- \\
-    Resistors                   & see individual tasks           & --- \\
-    Capacitors                  & see individual tasks           & --- \\
+    Digital oscilloscope        & Teledyne LeCroy HD 4096\\
+    Oscilloscope probe (10:1)   & ---\\
+    BNC cable                   & ---\\
+    DC power supply             & \SI{10}{\volt}\\
+    Experimentation board       & ---\\
+    NE555 timer IC              & NE555\\
+    CMOS NAND IC                & 74C00\\
+    Resistors                   & see individual tasks\\
+    Capacitors                  & see individual tasks\\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -559,9 +559,6 @@ go high via the second inverter.
 The capacitor then discharges in the opposite direction, and the cycle repeats,
 producing a continuous square wave at the output.
 
-\enter{Describe what is observed on the oscilloscope at $U_{\text{OUT}}$ and P.
-State the observed frequency.}
-
 % ── 3.3.2 ────────────────────────────────────────────────────────────
 \subsubsection{Task 1.2 -- Measurement at S and P}
 
@@ -586,9 +583,6 @@ Due to the RC feedback, the voltage at P swings beyond the supply rails during e
 transition; it is clamped to approximately $-0.7$\,V and $V_{CC} + 0.7$\,V by the
 internal ESD protection diodes of the CMOS input.
 This clipping is clearly visible in the oscilloscope trace.
-
-\enter{Fill in the measured values in the table above and describe the waveforms
-in further detail.}
 
 % ── 3.3.3 ────────────────────────────────────────────────────────────
 \subsubsection{Task 1.3 -- Purpose of $R_S$}
@@ -619,7 +613,7 @@ for all tasks:
     3.1 & $t_H$ (monostable, \#2) & \SI{1.100}{\second}       & \SI{1.19}{\second}        & \SI{8.2}{\percent}  \\
     3.2 & $T$ (astable NE555)     & \SI{2.079}{\milli\second} & \SI{2.017}{\milli\second} & \SI{3.0}{\percent}  \\
     3.2 & $f$ (astable NE555)     & \SI{481}{\hertz}          & \SI{495.8}{\hertz}        & \SI{3.1}{\percent}  \\
-    3.3 & $f$ (inverter osc.)     & \SI{45.5}{\kilo\hertz}    & \val{\kilo\hertz}         & \val{\percent}      \\
+    3.3 & $f$ (inverter osc.)     & \SI{45.5}{\kilo\hertz}    & \SI{48.81}{\kilo\hertz}   & \SI{7.27}{\percent} \\
     \bottomrule
   \end{tabular}
 \end{table}
