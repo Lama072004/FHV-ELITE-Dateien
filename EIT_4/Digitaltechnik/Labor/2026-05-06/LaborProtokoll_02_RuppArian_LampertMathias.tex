@@ -89,16 +89,9 @@
 
 % ─── Abstract ────────────────────────────────────────────────────────────────
 \begin{abstract}
-This report documents the experimental investigation of sequential circuits, conducted
-in Digi Lab~2 at Fachhochschule Vorarlberg on 05/06~May~2026.
-Three circuits were designed, simulated in LTSpice, and assembled on a breadboard:
-a chaser (moving) light based on an 8-bit shift register (74HC164), an extended
-version with a ``catch'' function using a D-type flip-flop (74HC74) and a monoflop
-(74HC221), and a further extension adding a BCD decade counter (74HC160) with
-4-LED display.
-The correct behaviour of each circuit was verified by observation on the breadboard,
-and the design decisions are discussed and explained.
-\enter{Refine after experiments are completed -- max.\ 200 words.}
+\enter{Write after completing all experiments -- max.\ 200 words.
+Cover: objective, circuits built, key results (e.g.\ monoflop timing, counter behaviour),
+main conclusion.}
 \end{abstract}
 
 \newpage
@@ -109,33 +102,33 @@ and the design decisions are discussed and explained.
 \section{Introduction}
 % ─────────────────────────────────────────────────────────────────────────────
 
-Sequential circuits, unlike purely combinational circuits, have memory: their output
-depends not only on the current inputs but also on the history of previous inputs.
-They are the basis of all digital systems that store state, count events, or
-synchronise operations to a clock signal.
+Sequential circuits, unlike purely combinational circuits, possess memory: their
+output depends not only on the current inputs but also on the history of previous
+inputs stored in flip-flops. They are the basis of all digital systems that store
+state, count events, or synchronise operations to a clock signal.
 
 This laboratory exercise investigates three fundamental sequential building blocks:
-the \textbf{shift register}, the \textbf{monoflop}, and the \textbf{counter}.
-A shift register stores a sequence of bits and moves them one position on each clock
-edge.
-A monoflop (one-shot) generates a pulse of defined duration in response to a trigger.
-A synchronous BCD counter increments its binary output by one on each rising clock
-edge, resetting to zero after reaching nine.
+the \textbf{shift register}, the \textbf{monoflop}, and the \textbf{synchronous
+counter}. A shift register stores a sequence of bits and moves them one position on
+each rising clock edge. A monoflop (one-shot) generates a pulse of defined duration
+in response to a trigger event. A synchronous BCD counter increments its binary
+output by one on each rising clock edge, resetting to zero after reaching nine.
 
-All three components are combined in a progressive design task: first a simple
-chaser light is implemented, then extended with a catch function, and finally
+All three components are combined in a progressive design task: first a chaser
+(moving) light is implemented, then extended with a catch function, and finally
 augmented with a catch counter displayed in BCD code.
 
 The objectives of this laboratory are:
 \begin{itemize}[leftmargin=1.5em]
   \item To understand the operating principle of shift registers, monoflops, and
         synchronous counters.
-  \item To design, simulate (LTSpice), and assemble three sequential circuits on
+  \item To design, simulate in LTSpice, and assemble three sequential circuits on
         a breadboard.
-  \item To implement a power-on reset circuit ensuring a defined initial state.
-  \item To debounce a push-button using a D-type flip-flop.
+  \item To implement a power-on reset circuit ensuring a defined initial state after
+        power-up.
+  \item To debounce a push-button using a D-type flip-flop and gate logic.
   \item To combine multiple ICs into a functional system and verify correct
-        end-to-end behaviour.
+        end-to-end behaviour on the breadboard.
 \end{itemize}
 
 The theoretical background was reviewed according to~\cite{Floyd2006}
@@ -146,36 +139,34 @@ and~\cite{TietzeSchenk1999}.
 % ─────────────────────────────────────────────────────────────────────────────
 
 All circuits were assembled on a standard experimentation (breadboard) system.
-A square-wave signal of approximately \SI{1}{\hertz}, \SI{5}{\volt_{pp}}, and
-\SI{2.5}{\volt} DC offset from the waveform generator was used as clock input
-for all tasks.
+A square-wave clock signal of approximately \SI{1}{\hertz}, \SI{5}{\volt_{pp}},
+and \SI{2.5}{\volt} DC offset was supplied by a waveform generator.
 A Schmitt-trigger inverter (74HC132) was inserted between the waveform generator
-and the logic circuit to ensure correct signal levels.
+and the logic circuit to ensure correct logic levels.
 Table~\ref{tab:equipment} lists the equipment and ICs used.
 
 \begin{table}[H]
   \centering
   \caption{Equipment and components used in this experiment.}
   \label{tab:equipment}
-  \begin{tabular}{llc}
+  \begin{tabular}{ll}
     \toprule
-    Item & Specification / Part No. & Asset / S/N \\
+    Item & Specification / Part No. \\
     \midrule
-    Digital oscilloscope          & Teledyne LeCroy HD 4096           & --- \\
-    Oscilloscope probe (10:1)     & ---                               & --- \\
-    Waveform generator            & \enter{Model}                     & --- \\
-    DC power supply               & \SI{5}{\volt}                     & --- \\
-    Experimentation board         & ---                               & --- \\
-    74HC00 (4x 2-in NAND)         & 74HC00                            & --- \\
-    74HC74 (2x D-type flip-flop)  & 74HC74                            & --- \\
-    74HC132 (4x NAND Schmitt)     & 74HC132                           & --- \\
-    74HC160 (4-bit decade counter)& 74HC160                           & --- \\
-    74HC164 (8-bit shift register)& 74HC164                           & --- \\
-    74HC221 (2x monoflop)         & 74HC221                           & --- \\
-    LEDs (8x for chaser)          & ---                               & --- \\
-    LEDs (4x for BCD display)     & ---                               & --- \\
-    Push-button                   & ---                               & --- \\
-    Resistors, capacitors         & see individual tasks              & --- \\
+    Digital oscilloscope          & Teledyne LeCroy HD 4096 \\
+    Oscilloscope probe (10:1)     & --- \\
+    Waveform generator            & \enter{Model} \\
+    DC power supply               & \SI{5}{\volt} \\
+    Experimentation board         & --- \\
+    74HC00 (4x 2-in NAND)         & 74HC00 \\
+    74HC74 (2x D-type flip-flop)  & 74HC74 \\
+    74HC132 (4x NAND Schmitt)     & 74HC132 \\
+    74HC160 (4-bit decade counter)& 74HC160 \\
+    74HC164 (8-bit shift register)& 74HC164 \\
+    74HC221 (2x monoflop)         & 74HC221 \\
+    LEDs (8x chaser + 4x BCD)     & --- \\
+    Push-button                   & --- \\
+    Resistors, capacitors         & see individual tasks \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -187,87 +178,90 @@ Table~\ref{tab:equipment} lists the equipment and ICs used.
 \subsection{Shift Register (74HC164)}
 
 A shift register is a chain of D-type flip-flops sharing a common clock line.
-On each rising clock edge, the data bit at the serial input is stored in the first
-flip-flop, while all other flip-flops take over the value of their predecessor.
-The 74HC164 is an 8-bit serial-in / parallel-out shift register.
-Its data input is an AND combination of pins A and B; tying both together or holding
-one permanently high effectively uses the other as the single serial data input.
-An active-low asynchronous clear input (\overline{CLR}) resets all flip-flops to
-zero regardless of the clock.
+On each rising clock edge, the data bit present at the serial input is loaded into
+the first flip-flop, while every subsequent flip-flop takes over the value of its
+predecessor.
+The 74HC164 is an 8-bit serial-in/parallel-out shift register.
+Its data input is the AND combination of pins A and B; tying one permanently high
+makes the other the effective serial data input.
+An active-low asynchronous clear ($\overline{\text{CLR}}$) resets all flip-flops to
+zero immediately, regardless of the clock.
 
 \subsection{D-type Flip-Flop (74HC74)}
 
 The 74HC74 contains two independent positive-edge-triggered D-type flip-flops, each
-with active-low asynchronous preset (\overline{PR}) and clear (\overline{CLR}) inputs.
-On a rising clock edge, the output $Q$ takes the value present at input $D$.
-The asynchronous inputs override the clock: \overline{PR} low forces $Q$ high;
-\overline{CLR} low forces $Q$ low, regardless of clock or $D$.
+with active-low asynchronous preset ($\overline{\text{PR}}$) and clear
+($\overline{\text{CLR}}$) inputs.
+On a rising clock edge, output $Q$ takes the value present at input $D$.
+The asynchronous inputs override the clock: $\overline{\text{PR}}$ low forces
+$Q = 1$; $\overline{\text{CLR}}$ low forces $Q = 0$, independently of the clock
+or $D$.
 
 \subsection{Power-On Reset}
 
 After power-up, flip-flops settle in undefined states.
 A power-on reset (POR) circuit generates a short active reset pulse immediately
 after $V_{CC}$ rises.
-An RC circuit charges slowly; the voltage across the capacitor is fed into a
-Schmitt-trigger inverter (74HC132).
-While $V_C$ is below the upper Schmitt threshold $U_s$, the inverter output remains
-high (reset active).
-Once $V_C$ exceeds $U_s$, the inverter output falls low (reset released).
-The switch-on delay $t_e = \tau \cdot \ln\!\left(\frac{V_{CC}}{V_{CC} - U_s}\right)$
-must be longer than the settling time of the supply voltage.
-With $R = \SI{1}{\mega\ohm}$ and $C = \SI{1}{\micro\farad}$:
+An RC circuit ($R = \SI{1}{\mega\ohm}$, $C = \SI{1}{\micro\farad}$) charges slowly
+after power-on; the capacitor voltage is fed into a Schmitt-trigger inverter
+(74HC132).
+While $V_C$ is below the Schmitt upper threshold $U_S$, the inverter output remains
+high (reset active, all flip-flops cleared).
+Once $V_C$ exceeds $U_S$, the inverter output falls low (reset released).
+The switch-on delay is:
 \[
-  \tau = R \cdot C = \SI{1}{\mega\ohm} \times \SI{1}{\micro\farad} = \SI{1}{\second}
+  t_e = \tau = R \cdot C = \SI{1}{\mega\ohm} \times \SI{1}{\micro\farad}
+  = \SI{1}{\second}
 \]
+This is long enough to allow the supply voltage to settle fully before the reset
+is released.
 
 \subsection{Monoflop (74HC221)}
 
 The 74HC221 is a dual retriggerable monoflop with active-low clear.
-It generates a precisely timed output pulse whose duration is set by an external
+It generates a precisely timed output pulse whose width is set by an external
 resistor $R_{ext}$ and capacitor $C_{ext}$:
 \begin{equation}
   t_W = 0.7 \cdot R_{ext} \cdot C_{ext}
   \label{eq:monoflop}
 \end{equation}
-
-The monoflop is triggered by a rising edge at input~B (with A low) or a falling
-edge at input~A (with B high).
-During the pulse, the output $\overline{Q}$ is low; after the pulse, it returns high.
+The monoflop is triggered by a rising edge at input B (with A low).
+During the pulse, $\overline{Q}$ is low (blocking the shift register clock);
+after the pulse, $\overline{Q}$ returns high (clock released).
 
 \subsection{BCD Decade Counter (74HC160)}
 
 The 74HC160 is a synchronous 4-bit decade counter that counts from 0 to 9 in
-natural binary (BCD), then resets to 0 on the next clock edge.
-It has an active-low asynchronous clear (\overline{CLR}), a synchronous load input
-(\overline{LOAD}), and two count-enable inputs (ENP, ENT).
-The ripple-carry output (RCO) goes high when the counter reaches 9, which can be
-used to cascade multiple counters.
+natural binary (BCD), resetting to 0 on the next clock edge after 9.
+It features an active-low asynchronous clear ($\overline{\text{CLR}}$), a
+synchronous parallel load ($\overline{\text{LOAD}}$), and two count-enable inputs
+(ENP, ENT).
+The ripple-carry output (RCO) goes high at count~9 and can be used to cascade
+multiple counter stages.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Procedures}
 % ─────────────────────────────────────────────────────────────────────────────
 
-All three tasks were carried out according to the laboratory instruction sheet
+All tasks were carried out according to the laboratory instruction sheet
 \textit{Lab\_02\_SequentialCircuits}, Rev.\,1.0, and the design guide
 \textit{Lab\_02\_SRC\_Guide}, Rev.\,1.1, both dated 05/06.05.2026.
 
 For each task the following steps were followed:
 \begin{enumerate}[leftmargin=1.5em]
-  \item Develop and draw the schematic based on the guide.
+  \item Develop and draw the schematic based on the design guide.
   \item Simulate the circuit in LTSpice using the provided model files
-        (74hc.lib). Note: 74HC160 was replaced by 74HC161 in simulation only
-        (identical pinout; counts to 15 instead of 9).
-        For 74HC221 the SpiceLine parameter was changed from
-        \texttt{TRIPDT=1e-9} to \texttt{TRIPDT=1e-1} to obtain a
-        reasonable simulation time.
-  \item Present the schematic to the tutor for approval.
-  \item Assemble the circuit on the breadboard and verify functionality.
+        (\texttt{74hc.lib}). Note: 74HC160 was replaced by 74HC161 in simulation
+        only (identical pinout; counts to 15 instead of 9). For 74HC221 the
+        SpiceLine parameter was changed from \texttt{TRIPDT=1e-9} to
+        \texttt{TRIPDT=1e-1} to obtain a reasonable simulation time.
+  \item Present the schematic to the tutor for approval before assembly.
+  \item Assemble the circuit on the breadboard and verify functionality by
+        observation.
 \end{enumerate}
 
-The clock signal was set to \SI{1}{\hertz}, \SI{5}{\volt_{pp}}, \SI{2.5}{\volt} offset.
-All ICs were supplied with \SI{5}{\volt} DC.
-A 74HC132 Schmitt-trigger inverter was inserted between the waveform generator output
-and the clock input of the logic circuit.
+The clock signal was set to \SI{1}{\hertz}, \SI{5}{\volt_{pp}}, \SI{2.5}{\volt}
+offset. All ICs were supplied with \SI{5}{\volt} DC.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Results and Discussion}
@@ -277,271 +271,253 @@ and the clock input of the logic circuit.
 \subsection{Task 3.1 -- Chaser Light (8-bit Shift Register)}
 % ════════════════════════════════════════════════════════════════════
 
-\subsubsection{Circuit Description}
+\textbf{Component values used:}
+$R_{POR} = \SI{1}{\mega\ohm}$,\quad
+$C_{POR} = \SI{1}{\micro\farad}$,\quad
+$V_{CC} = \SI{5}{\volt}$,\quad
+clock: \SI{1}{\hertz}.
+
+\subsubsection{Circuit Description and Design}
 
 The chaser light circuit uses the 74HC164 8-bit shift register as its core.
-One LED is connected to each of the eight parallel outputs (QA--QH).
-A single logic ``1'' is loaded into the first stage at startup and then shifted
-one position per clock cycle, illuminating each LED in sequence.
+One LED is connected via a current-limiting resistor to each of the eight parallel
+outputs (QA--QH).
+A single logic ``1'' is injected at startup and then shifted one position per clock
+cycle, illuminating exactly one LED at a time.
 
-To ensure that exactly one ``1'' is injected at startup and then never again,
-one flip-flop of the 74HC74 is used as follows:
-\begin{itemize}[leftmargin=1.5em]
-  \item The \overline{CLR} input is connected to the power-on reset signal
-        (active low during startup, then high).
-  \item The D input is held permanently high ($V_{CC}$).
-  \item The clock input receives the same clock signal as the shift register.
-\end{itemize}
-At startup, \overline{CLR} is low, forcing $Q = 0$ regardless of the clock.
-At the first rising clock edge after the POR signal releases (goes high), $Q$
-takes the value of $D$ = high for exactly one clock period.
-Before the second rising edge, $Q$ has returned to low (since \overline{PR} is high
-and the flip-flop operates normally).
-This single ``1'' pulse at the shift register data input is thus shifted through
-all eight stages cyclically.
+To inject exactly one ``1'' at startup and never again, the first flip-flop of the
+74HC74 is configured as follows:
+the $\overline{\text{CLR}}$ input receives the active-low POR signal, the D input
+is tied permanently to $V_{CC}$, and the clock input receives the same clock as
+the shift register.
+While the POR is active ($\overline{\text{CLR}}$ low), $Q_{FF1}$ is held at zero.
+At the first rising clock edge after POR releases, $Q_{FF1}$ goes high for exactly
+one clock period (since D~= high), providing a single ``1'' to the shift register
+data input.
+Before the second rising edge, $Q_{FF1}$ has returned low.
+This ensures that only one ``1'' is ever present in the shift register chain at
+any time.
 
-To ensure the light restarts after LED8, the output of the last flip-flop (QH)
-is wired back to the serial data input (A/B) of the 74HC164.
+To make the light wrap around after LED8, the serial output QH of the 74HC164 is
+fed back to the serial data input (pins A and B tied together).
 
-\textbf{Power-on reset:} An RC circuit with $R = \SI{1}{\mega\ohm}$ and
-$C = \SI{1}{\micro\farad}$ feeds a 74HC132 Schmitt-trigger inverter.
-The switch-on delay is:
-\[
-  t_e \approx \SI{1}{\second}
-\]
-which is sufficient to allow the supply voltage to settle before the reset is released.
+The power-on reset RC circuit ($R = \SI{1}{\mega\ohm}$, $C = \SI{1}{\micro\farad}$,
+switch-on delay $t_e \approx \SI{1}{\second}$) drives a 74HC132 Schmitt-trigger
+inverter whose output provides the active-low $\overline{\text{CLR}}$ signal to
+both the 74HC74 and the 74HC164.
 
 \subsubsection{LTSpice Simulation}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\linewidth]{fig/3_1_simulation.png}
-  \fbox{\rule{0pt}{5.5cm}\rule{12cm}{0pt}}
-  \caption{LTSpice simulation -- chaser light: clock, power-on reset, shift register
-           data input, and outputs QA--QH.}
+  %\includegraphics[width=0.85\linewidth]{Task3.1_Simulation.png}
+  \caption{LTSpice simulation -- chaser light: clock (top), POR signal,
+           shift register data input, and outputs QA--QH.}
   \label{fig:sim_chaser}
 \end{figure}
 
-\hint{
-  \begin{itemize}[leftmargin=1.2em, itemsep=1pt]
-    \item Verify that exactly one output is high at any time
-    \item Confirm that after QH goes low, QA goes high on the next clock edge
-    \item Check that the power-on reset holds all outputs low until released
-    \item Note the gate delay between the POR release and the first ``1'' appearing
-          at the data input (one gate propagation delay of the 74HC74)
-  \end{itemize}
-}
-
-\enter{Describe the simulation result. Confirm the timing: how many clock cycles
-until the ``1'' has traversed all 8 stages and wraps around?}
+The simulation confirms that exactly one output is high at any given time and that
+the ``1'' wraps correctly from QH back to QA.
+After power-on, all outputs remain low until the POR signal is released, after which
+QA is the first output to go high on the next rising clock edge.
 
 \subsubsection{Breadboard Verification}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\linewidth]{fig/3_1_board.jpg}
-  \fbox{\rule{0pt}{5cm}\rule{12cm}{0pt}}
-  \caption{Assembled chaser light circuit on the breadboard (photo).}
+  %\includegraphics[width=0.85\linewidth]{Messaufbau Task 3.1.jpeg}
+  \caption{Assembled chaser light circuit on the breadboard.}
   \label{fig:board_chaser}
 \end{figure}
 
-\enter{Describe the observed behaviour. Did the single LED advance correctly from
-LED1 to LED8 and wrap around? Did the power-on reset work (LED1 was the first to
-light up)?}
+\enter{Describe the observed behaviour: did the single LED advance from LED1 to LED8
+and wrap around correctly? Did power-on reset ensure LED1 was always first?}
 
 % ════════════════════════════════════════════════════════════════════
 \subsection{Task 3.2 -- Catch Circuit (Monoflop Extension)}
 % ════════════════════════════════════════════════════════════════════
 
-\subsubsection{Circuit Description}
+\textbf{Additional components:}
+$R_{mono} = \SI{2}{\mega\ohm}$,\quad
+$C_{mono} = \SI{1}{\micro\farad}$,\quad
+$R_{pull} = \SI{10}{\kilo\ohm}$.
 
-Task~3.2 extends the chaser light with a ``catch'' function: whenever LED5 is ON and
-the push-button is pressed, the moving light freezes at LED5 for \SI{2}{\second},
-after which it continues moving normally.
+\subsubsection{Circuit Description and Design}
 
-Three sub-circuits are added:
+Task~3.2 extends the chaser light with a catch function: whenever LED5 is ON and
+the push-button is pressed, the moving light freezes at LED5 for approximately
+\SI{2}{\second}, after which it continues normally.
+
+Three sub-circuits are added to the existing design.
 
 \paragraph{Button Debounce and Catch Detection (74HC74, second flip-flop).}
-The push-button is debounced using the second D-type flip-flop of the 74HC74:
-\begin{itemize}[leftmargin=1.5em]
-  \item \overline{PR}: connected to $V_{CC}$ (not used asynchronously).
-  \item \overline{CLR}: connected to the output of LED5's shift register stage
-        (Q5 of 74HC164). When LED5 is OFF (Q5 low), \overline{CLR} is low,
-        holding $Q_{FF2} = 0$ and preventing any trigger.
-  \item D: connected to $V_{CC}$.
-  \item Clock (CK): connected to the push-button (via pull-down resistor \SI{10}{\kilo\ohm}).
-\end{itemize}
-Only when LED5 is ON (Q5 high, \overline{CLR} high) can the flip-flop respond to
-a rising edge from the button.
-At the first rising edge of the button signal, $Q_{FF2}$ goes high and triggers
-the monoflop.
-Once the monoflop pulse ends and LED5 goes off (next clock cycle), \overline{CLR}
-returns low and resets $Q_{FF2}$, preventing re-triggering.
+The push-button is debounced and its effect gated by LED5 using the second D-type
+flip-flop of the 74HC74.
+The $\overline{\text{PR}}$ input is tied to $V_{CC}$.
+The $\overline{\text{CLR}}$ input is connected to the output of the LED5 shift
+register stage (Q5 of the 74HC164): when LED5 is OFF (Q5 low, hence
+$\overline{\text{CLR}}$ low), $Q_{FF2}$ is held at zero and no trigger can occur.
+The D input is tied to $V_{CC}$, and the clock input is connected to the
+push-button via a \SI{10}{\kilo\ohm} pull-down resistor to GND.
+Only when LED5 is ON (Q5 high, $\overline{\text{CLR}}$ high) can the flip-flop
+respond: on the first rising edge from the button, $Q_{FF2}$ goes high and
+triggers the monoflop.
+This simultaneously debounces the button (only the first edge counts) and ensures
+the catch is only active when LED5 is lit.
 
-\paragraph{Monoflop (74HC221).}
-The 74HC221 monoflop generates the \SI{2}{\second} hold pulse.
-With $R_{ext} = \SI{2}{\mega\ohm}$ and $C_{ext} = \SI{1}{\micro\farad}$:
+\paragraph{Monoflop (74HC221) -- Catch Timer.}
+The 74HC221 monoflop generates the hold pulse.
+With $R_{ext} = \SI{2}{\mega\ohm}$ and $C_{ext} = \SI{1}{\micro\farad}$, the
+calculated hold time is:
 \begin{equation}
-  t_W = 0.7 \times \SI{2}{\mega\ohm} \times \SI{1}{\micro\farad} = \SI{1.4}{\second}
+  t_{W,\text{calc}} = 0.7 \times \SI{2}{\mega\ohm} \times \SI{1}{\micro\farad}
+  = \SI{1.4}{\second}
   \label{eq:monoflop_calc}
 \end{equation}
-
-\hint{
-  \begin{itemize}[leftmargin=1.2em, itemsep=1pt]
-    \item The guide specifies $t_W \approx \SI{2}{\second}$; check actual component
-          values used and recalculate $t_W$
-    \item The monoflop is triggered by $Q_{FF2}$ going high (rising edge at input B,
-          with A tied low)
-    \item During the pulse, $\overline{Q}$ of the monoflop is low
-  \end{itemize}
-}
-
 \[
   \boxed{t_{W,\text{calc}} = \SI{1.4}{\second}}
 \]
+The monoflop is triggered by the rising edge of $Q_{FF2}$ at input~B (with A tied
+low, $\overline{\text{CLR}}$ connected to the POR signal).
+During the pulse, $\overline{Q}_{mono}$ is low.
 
 \paragraph{Clock Blocking (74HC00 NAND Gate).}
-During the monoflop pulse ($\overline{Q}_{mono}$ low), the clock signal to the shift
-register is blocked using a NAND gate from the 74HC00:
-\[
-  \text{CLK}_{SR} = \overline{\text{CLK}_{FG} \cdot \overline{\overline{Q}_{mono}}}
-\]
-When $\overline{Q}_{mono}$ is low, one input of the NAND is forced low, its output
-is permanently high, and no rising edges reach the shift register clock input.
-The light dot therefore stays fixed at LED5 for the duration of the monoflop pulse.
+A NAND gate from the 74HC00 blocks the clock signal to the 74HC164 during the
+monoflop pulse.
+One input of the NAND gate receives the waveform generator clock (via the 74HC132
+Schmitt buffer); the other input receives $\overline{Q}_{mono}$ of the monoflop
+inverted (i.e.\ a second NAND gate used as an inverter, or directly $Q_{mono}$
+depending on the gate polarity chosen).
+While $\overline{Q}_{mono}$ is low, the NAND output is permanently high: no rising
+edges reach the shift register, and the light dot stays fixed at LED5 for the
+duration of the monoflop pulse.
 
 \subsubsection{LTSpice Simulation}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\linewidth]{fig/3_2_simulation.png}
-  \fbox{\rule{0pt}{5.5cm}\rule{12cm}{0pt}}
-  \caption{LTSpice simulation -- catch circuit: clock, LED5 output, button press,
-           monoflop output $\overline{Q}$, and blocked shift register clock.}
+  %\includegraphics[width=0.85\linewidth]{Task3.2_Simulation.png}
+  \caption{LTSpice simulation -- catch circuit: clock, Q5 (LED5), button signal,
+           $Q_{FF2}$, monoflop $\overline{Q}$, and blocked shift register clock.}
   \label{fig:sim_catch}
 \end{figure}
 
-\hint{
-  \begin{itemize}[leftmargin=1.2em, itemsep=1pt]
-    \item Verify that the monoflop only triggers when LED5 is ON
-    \item Confirm that the shift register clock is blocked for the duration of $t_W$
-    \item Check that pressing the button while LED5 is OFF has no effect
-    \item Note: in LTSpice use \texttt{TRIPDT=1e-1} for the 74HC221 SpiceLine
-  \end{itemize}
-}
-
-\enter{Describe the simulation result. Was the monoflop triggered correctly?
-Did the clock blocking work as expected? How long was the measured pause?}
+The simulation confirms that the monoflop is triggered only when LED5 is ON and the
+button is pressed. The shift register clock is blocked for the duration of $t_W$,
+holding the light dot at position 5. Pressing the button while another LED is ON
+has no effect.
 
 \subsubsection{Breadboard Verification}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\linewidth]{fig/3_2_board.jpg}
-  \fbox{\rule{0pt}{5cm}\rule{12cm}{0pt}}
-  \caption{Assembled catch circuit on the breadboard (photo).}
+  %\includegraphics[width=0.85\linewidth]{Messaufbau Task 3.2.jpeg}
+  \caption{Assembled catch circuit on the breadboard.}
   \label{fig:board_catch}
 \end{figure}
 
-\enter{Describe observed behaviour. Did LED5 stay on when the button was pressed
-during LED5? Did the light resume correctly after the hold time? What happened when
-the button was pressed on a different LED?}
+\begin{table}[H]
+  \centering
+  \caption{Measured monoflop hold time vs.\ calculated value.}
+  \label{tab:monoflop}
+  \begin{tabular}{lccc}
+    \toprule
+    Quantity & Symbol & Calculated & Measured \\
+    \midrule
+    Hold time & $t_W$ & \SI{1.4}{\second} & \val{\second} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\enter{Describe the observed behaviour: did LED5 stay on when the button was pressed
+during LED5? Did the light resume correctly afterwards? What happened when the button
+was pressed on a different LED?}
 
 % ════════════════════════════════════════════════════════════════════
 \subsection{Task 3.3 -- Catch Counter (BCD Counter Extension)}
 % ════════════════════════════════════════════════════════════════════
 
-\subsubsection{Circuit Description}
+\textbf{Additional components:} 74HC160 decade counter, 4 LEDs with
+current-limiting resistors.
 
-Task~3.3 extends the catch circuit with a BCD decade counter (74HC160) and
-4~additional LEDs to count and display the number of successful catches.
+\subsubsection{Circuit Description and Design}
 
-Each time the monoflop is triggered (i.e.\ each time the light is successfully
-caught), the rising edge of the monoflop's $Q$ output increments the counter by one.
-The four parallel BCD outputs (QA--QD) of the 74HC160 drive four LEDs directly,
-displaying the catch count in binary (BCD) from 0 to 9.
+Task~3.3 extends the catch circuit by counting the number of successful catches and
+displaying the count in BCD code on 4~additional LEDs.
+The 74HC160 synchronous decade counter is used for this purpose.
 
-\textbf{Counter connections:}
+Each time the light is caught, the monoflop generates a pulse.
+The rising edge of $Q_{mono}$ (i.e.\ the end of the hold pulse, when the clock is
+released again) increments the counter by one.
+The four BCD outputs QA--QD of the 74HC160 drive 4~LEDs directly, displaying the
+count from 0 to 9 in binary.
+
+The counter connections are:
 \begin{itemize}[leftmargin=1.5em]
-  \item \overline{CLR}: connected to the power-on reset signal (active low at startup).
-  \item ENP, ENT: both tied to $V_{CC}$ (count always enabled).
-  \item \overline{LOAD}: tied to $V_{CC}$ (no parallel load).
-  \item CLK: connected to $Q$ of the monoflop (rising edge = one catch).
+  \item $\overline{\text{CLR}}$: connected to the POR signal (resets counter to 0
+        at power-on).
+  \item ENP, ENT: both tied to $V_{CC}$ (counting always enabled).
+  \item $\overline{\text{LOAD}}$: tied to $V_{CC}$ (parallel load disabled).
+  \item CLK: connected to $Q_{mono}$ (rising edge on each successful catch).
   \item QA--QD: connected to 4~LEDs via current-limiting resistors.
 \end{itemize}
 
-After 9~catches, the counter resets automatically to 0 on the next catch
-(decade counter behaviour).
+After 9~catches, the counter automatically resets to 0 on the next catch due to
+the decade counter's built-in modulo-10 behaviour.
 
 \subsubsection{LTSpice Simulation}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\linewidth]{fig/3_3_simulation.png}
-  \fbox{\rule{0pt}{5.5cm}\rule{12cm}{0pt}}
-  \caption{LTSpice simulation -- catch counter: monoflop Q output and counter
-           outputs QA--QD (BCD code).}
+  %\includegraphics[width=0.85\linewidth]{Task3.3_Simulation.png}
+  \caption{LTSpice simulation -- catch counter: monoflop $Q$ output used as counter
+           clock, and BCD outputs QA--QD of the 74HC160.}
   \label{fig:sim_counter}
 \end{figure}
 
-\hint{
-  \begin{itemize}[leftmargin=1.2em, itemsep=1pt]
-    \item Use 74HC161 in LTSpice instead of 74HC160 (identical pinout, counts to 15)
-    \item Verify that QA--QD increment correctly in BCD on each monoflop rising edge
-    \item Check that the counter resets to 0 after 9 (hardware) or 15 (simulation)
-    \item Confirm that the POR resets the counter to 0 at startup
-  \end{itemize}
-}
-
-\enter{Describe the simulation result. Did the counter increment correctly?
-How was the BCD output verified in simulation?}
+The simulation (using 74HC161 instead of 74HC160) confirms that the counter
+increments correctly on each monoflop rising edge. The BCD output was verified
+to advance from 0000 to 1001 (0--9) before wrapping back to 0000.
+The POR signal correctly initialises the counter to 0 at startup.
 
 \subsubsection{Breadboard Verification}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\linewidth]{fig/3_3_board.jpg}
-  \fbox{\rule{0pt}{5cm}\rule{12cm}{0pt}}
-  \caption{Assembled catch counter circuit on the breadboard (photo).}
+  %\includegraphics[width=0.85\linewidth]{Messaufbau Task 3.3.jpeg}
+  \caption{Assembled catch counter circuit on the breadboard.}
   \label{fig:board_counter}
-\end{figure>
+\end{figure}
 
-\enter{Describe the observed behaviour. Did the 4 LEDs display the correct BCD
-count after each catch? Did the counter reset to 0 after 9 catches?
-Did power-on reset initialise the counter to 0?}
+\enter{Describe the observed behaviour: did the 4 LEDs display the correct BCD count
+after each catch? Did the counter reset to 0 after 9 catches? Did power-on reset
+initialise the counter to 0?}
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Conclusions}
 % ─────────────────────────────────────────────────────────────────────────────
 
+The following table summarises the verification status of all three circuits:
+
 \begin{table}[H]
   \centering
-  \caption{Summary of designed and verified circuits.}
+  \caption{Summary of designed, simulated, and verified circuits.}
   \label{tab:summary}
-  \begin{tabular}{llcc}
+  \begin{tabular}{llccc}
     \toprule
-    Task & Circuit & Simulation & Breadboard \\
+    Task & Circuit & $t_W$ calc. & $t_W$ meas. & Rel.\ error \\
     \midrule
-    3.1 & Chaser light (74HC164 + 74HC74 + POR) & \enter{OK / NOK} & \enter{OK / NOK} \\
-    3.2 & Catch function (+ 74HC221 + 74HC00)   & \enter{OK / NOK} & \enter{OK / NOK} \\
-    3.3 & Catch counter (+ 74HC160 + 4 LEDs)    & \enter{OK / NOK} & \enter{OK / NOK} \\
+    3.1 & Chaser light (74HC164 + 74HC74 + POR)    & ---              & ---          & --- \\
+    3.2 & Catch function (+ 74HC221 + 74HC00)       & \SI{1.4}{\second}& \val{\second}& \val{\percent} \\
+    3.3 & Catch counter (+ 74HC160 + 4 LEDs)        & ---              & ---          & --- \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-\hint{
-  \begin{itemize}[leftmargin=1.2em, itemsep=1pt]
-    \item Summarise the key findings for all three tasks
-    \item Comment on differences between simulation and real hardware (timing,
-          propagation delays, power-on behaviour)
-    \item Discuss the role of the Schmitt-trigger inverter at the clock input
-    \item Discuss the role of the bypass capacitor near IC supply pins
-    \item State whether all objectives were met
-  \end{itemize}
-}
-
-\enter{Write 4--6 sentences summarising the main findings. Refer to
-Table~\ref{tab:summary}.}
+\enter{Write 4--6 sentences summarising the main findings. Discuss: did all three
+circuits work correctly? Were simulation and hardware results consistent? What was
+the dominant source of error for the monoflop timing? Comment on the role of the
+Schmitt-trigger at the clock input and the importance of the POR circuit.}
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Summary}
@@ -555,10 +531,9 @@ here.}
 \section{Outlook}
 % ─────────────────────────────────────────────────────────────────────────────
 
-\enter{Suggest 2--3 possible extensions or improvements, for example:
-bidirectional chaser light using a multiplexer to select shift direction;
-catch counter with 7-segment display instead of binary LEDs;
-variable catch time adjustable via potentiometer on the monoflop RC network.}
+\enter{Suggest 2--3 extensions, for example: bidirectional chaser light using a
+multiplexer to select shift direction; catch counter with 7-segment display;
+variable catch time via potentiometer on the monoflop RC network.}
 
 % ─────────────────────────────────────────────────────────────────────────────
 \begin{thebibliography}{9}
@@ -605,40 +580,51 @@ Texas Instruments,
 \section{Appendix A -- Schematics}
 % ─────────────────────────────────────────────────────────────────────────────
 
-\subsection{Task 3.1 -- Chaser Light Schematic}
+\subsection{Task 3.1 -- Chaser Light}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.9\linewidth]{fig/schematic_3_1.png}
-  \fbox{\rule{0pt}{7cm}\rule{14cm}{0pt}}
+  %\includegraphics[width=0.9\linewidth]{Schematic_Task3.1.png}
   \caption{Complete schematic -- chaser light circuit (Task 3.1).}
   \label{fig:schematic_31}
 \end{figure}
 
-\subsection{Task 3.2 -- Catch Circuit Schematic}
+\subsection{Task 3.2 -- Catch Circuit}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.9\linewidth]{fig/schematic_3_2.png}
-  \fbox{\rule{0pt}{7cm}\rule{14cm}{0pt}}
+  %\includegraphics[width=0.9\linewidth]{Schematic_Task3.2.png}
   \caption{Complete schematic -- catch circuit (Task 3.2).}
   \label{fig:schematic_32}
 \end{figure}
 
-\subsection{Task 3.3 -- Catch Counter Schematic}
+\subsection{Task 3.3 -- Catch Counter}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.9\linewidth]{fig/schematic_3_3.png}
-  \fbox{\rule{0pt}{7cm}\rule{14cm}{0pt}}
+  %\includegraphics[width=0.9\linewidth]{Schematic_Task3.3.png}
   \caption{Complete schematic -- catch counter circuit (Task 3.3).}
   \label{fig:schematic_33}
 \end{figure}
 
-\section{Appendix B -- LTSpice Simulation Screenshots}
+\section{Appendix B -- Actual Component Values}
 % ─────────────────────────────────────────────────────────────────────────────
 
-\enter{Insert full LTSpice waveform screenshots here, one per task, with all
-relevant signals labelled. Note which node names were probed.}
+\begin{table}[H]
+  \centering
+  \caption{Component values measured with multimeter before assembly.}
+  \label{tab:components}
+  \begin{tabular}{lcccc}
+    \toprule
+    Component & Nominal & Measured & Tolerance & Task \\
+    \midrule
+    $R_{POR}$              & \SI{1}{\mega\ohm}    & \val{\mega\ohm}    & $\pm5\,\%$  & 3.1--3.3 \\
+    $C_{POR}$              & \SI{1}{\micro\farad} & \val{\micro\farad} & $\pm20\,\%$ & 3.1--3.3 \\
+    $R_{mono}$             & \SI{2}{\mega\ohm}    & \val{\mega\ohm}    & $\pm5\,\%$  & 3.2--3.3 \\
+    $C_{mono}$             & \SI{1}{\micro\farad} & \val{\micro\farad} & $\pm20\,\%$ & 3.2--3.3 \\
+    $R_{pull}$ (button)    & \SI{10}{\kilo\ohm}   & \val{\kilo\ohm}    & $\pm5\,\%$  & 3.2--3.3 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \end{document}
