@@ -196,6 +196,9 @@ INPUT /usr/share/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/share/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 INPUT /usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/dvipsnam.def
+INPUT /usr/share/texmf-dist/tex/latex/graphics/dvipsnam.def
+INPUT /usr/share/texmf-dist/tex/latex/graphics/dvipsnam.def
 INPUT /usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT ./Formelheft.aux
@@ -262,6 +265,26 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm
 OUTPUT Formelheft.pdf
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
+INPUT ./Bild 1.png
+INPUT ./Bild 1.png
+INPUT ./Bild 1.png
+INPUT ./Bild 1.png
+INPUT ./Bild 1.png
+INPUT ./Bild 2.png
+INPUT ./Bild 2.png
+INPUT ./Bild 2.png
+INPUT ./Bild 2.png
+INPUT ./Bild 2.png
+INPUT ./Bild 3.png
+INPUT ./Bild 3.png
+INPUT ./Bild 3.png
+INPUT ./Bild 3.png
+INPUT ./Bild 3.png
+INPUT ./Bild 4.png
+INPUT ./Bild 4.png
+INPUT ./Bild 4.png
+INPUT ./Bild 4.png
+INPUT ./Bild 4.png
 INPUT Formelheft.aux
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
