@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1776798943.83279 "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Elektromagnetische Felder/Formelheft/Formelheft.tex" "Formelheft.pdf" "Formelheft" 1776798945.04395 0
-  "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Elektromagnetische Felder/Formelheft/Formelheft.tex" 1776798943.56442 50014 ed99d31873a5c8f2fde8bd93f1327c70 ""
+["pdflatex"] 1777282033.35156 "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Elektromagnetische Felder/Formelheft/Formelheft.tex" "Formelheft.pdf" "Formelheft" 1777282034.64084 0
+  "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_3/Elektromagnetische Felder/Formelheft/Formelheft.tex" 1777282033.00463 51056 1b06c326f3aa95e522a2c047cf7fc31d ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1775415801 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1775415801 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm" 1775415801 3584 1a7de6c99457381c64abc1a7c545505f ""
@@ -150,6 +150,7 @@
   "/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1775415801 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1775415801 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def" 1775415801 19626 23e2822b9b2b5005f4c549ca98b9334d ""
+  "/usr/share/texmf-dist/tex/latex/graphics/dvipsnam.def" 1775415801 5009 f48e1006c67ca6c50094e2f41e884d72 ""
   "/usr/share/texmf-dist/tex/latex/graphics/graphics.sty" 1775415801 18363 69bb4f5538964bfea50d1e6d89cbe69f ""
   "/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty" 1775415801 8118 43b99e52946c33a23f5f43b52d5cc5ec ""
   "/usr/share/texmf-dist/tex/latex/graphics/keyval.sty" 1775415801 2671 d9941f4bf4750e9b0603c9a2ec54693b ""
@@ -178,8 +179,12 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1775415801 43569 fd570f2fa160877d211e859f687312ba ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1776104242 5385779 47c0c393a77fd4a098bacfd57d66b88a ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1776104216 3734532 6994706420b5e63496153d563fea82f6 ""
-  "Formelheft.aux" 1776798944.96841 32 f852561997c05a7d986acd1deeb530ec "pdflatex"
-  "Formelheft.tex" 1776798943.56442 50014 ed99d31873a5c8f2fde8bd93f1327c70 ""
+  "Bild 1.png" 1777280958.54516 50417 37a3727306afc140bc7d06eedaf41c67 ""
+  "Bild 2.png" 1777281032.68362 55944 431881d61a1d91beb2cf507de1fc0b48 ""
+  "Bild 3.png" 1777281090.94619 45097 a27b789795eba39d02d7a45768ed9cfd ""
+  "Bild 4.png" 1777281123.25195 41094 f7ed40c5d09b258a8ca652f57e55c733 ""
+  "Formelheft.aux" 1777282034.56663 32 1b174032087fb90900fa6203d3bb0a7e "pdflatex"
+  "Formelheft.tex" 1777282033.00463 51056 1b06c326f3aa95e522a2c047cf7fc31d ""
   (generated)
   "Formelheft.aux"
   "Formelheft.log"
