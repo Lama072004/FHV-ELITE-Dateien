@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath, amssymb, bm}
 \usepackage{geometry}
-\geometry{left=9mm, right=9mm, top=10mm, bottom=10mm}
+\geometry{left=9mm, right=9mm, top=10mm, bottom=15mm}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning, calc, patterns, decorations.pathmorphing, decorations.markings}
 \usepackage{tcolorbox}
@@ -17,6 +17,15 @@
 \definecolor{boxblue}{RGB}{220,235,250}
 \definecolor{boxtitle}{RGB}{30,80,150}
 \definecolor{sketchgray}{RGB}{230,230,230}
+
+\definecolor{boxtitle}{RGB}{30,80,150}
+\definecolor{col1}{RGB}{220,235,250}   % blau – Maxwell/Mathe
+\definecolor{col2}{RGB}{210,240,215}   % grün – Elektrostatik
+\definecolor{col3}{RGB}{255,235,200}   % orange – Strömungsfeld
+\definecolor{col4}{RGB}{245,220,240}   % lila – Magnetostatik
+\definecolor{col5}{RGB}{255,225,215}   % rot – Induktion/QS
+\definecolor{col6}{RGB}{230,245,255}   % hellblau – Wellen
+\definecolor{col7}{RGB}{240,255,230}   % hellgrün – Tabellen
 
 \tcbset{
   colback=white, colframe=boxtitle, boxrule=0.6pt, arc=1pt,
@@ -480,9 +489,9 @@ $$\vec{H}(\vec{r}) = \frac{I}{4\pi}\int_C\frac{d\vec{s}'\times(\vec{r}-\vec{r}')
   \draw[->,green!60!black,thick] (0,0.2) -- (0.45,0.35) node[right]{\tiny$d\vec{s}'$};
 \end{tikzpicture}
 \end{center}
-\textbf{Schritte:} (1) Aufpunkt $\vec{r}$ \& Quellpunkt $\vec{r}'$ wählen\\
+\textbf{Schritte:} (1) Betrachungspunkt $\vec{r}$ \& Quellpunkt $\vec{r}'$ wählen\\
 (2) Abstandsvektor $\vec{r}-\vec{r}'$ und Betrag berechnen\\
-(3) $d\vec{s}'$ in Stromrichtung; (4) Kreuzprodukt; (5) Integrieren\\[2pt]
+(3) $d\vec{s}'$ (Ableiten von $\vec{r}'$) in Stromrichtung; (4) Kreuzprodukt; (5) Integrieren\\[2pt]
 \textbf{Endlicher gerader Leiter} (Abstand $\rho$ von Leiter, Winkel $\alpha_1, \alpha_2$ zu den Enden):
 $$H = \frac{I}{4\pi\rho}(\sin\alpha_1+\sin\alpha_2) \;\text{\textcolor{boxtitle}{[\(A/m\)]}}$$
 \end{tcolorbox}
@@ -795,15 +804,39 @@ Eisen: $\approx10^7$ S/m;\quad Silizium: $\approx10^{-4}$ S/m\\[3pt]
 Vakuum/Luft: 1;\quad Glas: 4--8;\quad Wasser: 80
 \end{tcolorbox}
 
-\begin{tcolorbox}[title={Nützliche Integrale}]
-$\displaystyle\int\frac{dz}{(a^2+z^2)^{3/2}} = \frac{z}{a^2\sqrt{a^2+z^2}} + C$\\[3pt]
-$\displaystyle\int\frac{z\,dz}{(a^2+z^2)^{3/2}} = -\frac{1}{\sqrt{a^2+z^2}} + C$\\[3pt]
-$\displaystyle\int\frac{dz}{a^2+z^2} = \frac{1}{a}\arctan\!\left(\frac{z}{a}\right)+C$\\[3pt]
-$\displaystyle\int\frac{z\,dz}{a^2+z^2} = \frac{1}{2}\ln(a^2+z^2)+C$\\[3pt]
-$\displaystyle\int\frac{dz}{\sqrt{a^2+z^2}} = \ln(z+\sqrt{a^2+z^2})+C$\\[3pt]
-$\displaystyle\int\frac{dz}{az+b} = \frac{1}{a}\ln|az+b|+C$\\[3pt]
-$\int_0^\pi\sin\theta\,d\theta = 2$;\quad $\int_0^\pi\sin^2\theta\,d\theta = \pi/2$\\[2pt]
-$\int_0^{2\pi}d\varphi = 2\pi$;\quad $\int_0^{2\pi}\cos^2\varphi\,d\varphi = \pi$
+\begin{tcolorbox}[title={Nützliche Integrale \& Geometrie (Maximalfassung)}]
+\textbf{Grundintegrale:}\\
+$\int z^n dz = \frac{z^{n+1}}{n+1} \ (n \neq -1)$; \quad $\int \frac{1}{z} dz = \ln|z|$; \quad $\int e^{az} dz = \frac{1}{a}e^{az}$\\[3pt]
+$\int \ln z \, dz = z \ln z - z$; \quad $\int z e^{az} dz = \frac{1}{a^2}e^{az}(az-1)$\\[3pt]
+$\int \sin(az) dz = -\frac{1}{a}\cos(az)$; \quad $\int \cos(az) dz = \frac{1}{a}\sin(az)$\\[3pt]
+$\int \sin^2(az) dz = \frac{z}{2} - \frac{\sin(2az)}{4a}$; \quad $\int \cos^2(az) dz = \frac{z}{2} + \frac{\sin(2az)}{4a}$
+
+\smallskip
+\textbf{Rationale \& Irrationale Brüche[cite: 2]:}\\
+$\int \frac{dz}{(a^2+z^2)^{3/2}} = \frac{z}{a^2\sqrt{a^2+z^2}}$; \quad $\int \frac{z \, dz}{(a^2+z^2)^{3/2}} = -\frac{1}{\sqrt{a^2+z^2}}$\\[3pt]
+$\int \frac{dz}{a^2+z^2} = \frac{1}{a}\arctan(\frac{z}{a})$; \quad $\int \frac{dz}{\sqrt{a^2 \pm z^2}} = \ln|z + \sqrt{z^2 \pm a^2}|$\\[3pt]
+$\int \frac{1}{x\sqrt{a^2+x^2}}dx = -\frac{1}{a}\ln|\frac{a+\sqrt{a^2+x^2}}{x}|$; \quad $\int \frac{x}{\sqrt{a^2-x^2}}dx = -\sqrt{a^2-x^2}$
+
+\smallskip
+\textbf{Trigonometrische Sätze \& Winkel:}\\
+$\sin^2\alpha + \cos^2\alpha = 1$; \quad $\sin(2\alpha) = 2\sin\alpha\cos\alpha$\\[2pt]
+$\sin^2\alpha = \frac{1}{2}(1-\cos 2\alpha)$; \quad $\cos^2\alpha = \frac{1}{2}(1+\cos 2\alpha)$\\[2pt]
+$e^{ix} = \cos x + i\sin x$; \quad $\tan\alpha = \frac{\sin\alpha}{\cos\alpha} = \frac{\text{Gegenkathete}}{\text{Ankathete}}$\\[2pt]
+$360^\circ = 2\pi$\,rad; \quad $180^\circ = \pi$; \quad $90^\circ = \pi/2$; \quad $60^\circ = \pi/3$; \quad $45^\circ = \pi/4$
+
+\smallskip
+\textbf{Körper: Volumen (V) \& Oberfläche (O):}\\
+\textbf{Kreis:} $A = \pi r^2$; \quad $U = 2\pi r$\\[2pt]
+\textbf{Kugel:} $V = \frac{4}{3}\pi r^3$; \quad $O = 4\pi r^2$\\[2pt]
+\textbf{Zylinder:} $V = \pi r^2 h$; \quad $O = 2\pi r^2 + 2\pi rh$ (Mantel: $2\pi rh$)\\[2pt]
+\textbf{Hohlzylinder:} $V = \pi h (r_a^2 - r_i^2)$\\[2pt]
+\textbf{Kegel:} $V = \frac{1}{3}\pi r^2 h$; \quad $O = \pi r^2 + \pi r \sqrt{r^2+h^2}$
+
+\smallskip
+\textbf{Koordinatenelemente ($dA, dV$):}\\
+Kartesisch: $dA = dx dy$; \quad $dV = dx dy dz$\\[2pt]
+Zylindrisch: $dA = \rho d\varphi d\rho$; \quad $dV = \rho d\rho d\varphi dz$\\[2pt]
+Kugel: $dA = r^2 \sin\theta d\theta d\varphi$; \quad $dV = r^2 \sin\theta dr d\theta d\varphi$
 \end{tcolorbox}
 
 \begin{tcolorbox}[title={Kreuzprodukt \& Vektorregeln}]
@@ -857,10 +890,6 @@ $R = \dfrac{\int\vec{E}\cdot d\vec{s}}{\int\kappa\vec{E}\cdot d\vec{A}}$\\[3pt]
 \textbf{$C$ aus Feldern:}
 $C = \dfrac{\varepsilon\oint\vec{E}\cdot d\vec{A}}{\int\vec{E}\cdot d\vec{s}}$
 \end{tcolorbox}
-
-%=============================================================
-\section*{Ergänzungen aus weiteren Unterlagen}
-%=============================================================
 
 \begin{tcolorbox}[title={Reflexion, Transmission und Brewster-Winkel}]
 \textbf{k-Reflexionsfaktor:}\\
@@ -989,6 +1018,128 @@ $E_{2t} - E_{1t} = 0$ & $E_{2t} - E_{1t} = 0$ \\
     \includegraphics[width=1\linewidth]{Bild 4.png}
 \end{center}
 \end{tcolorbox}
+%──────────────────────────────────────────────
+\begin{tcolorbox}[title={Analogietabelle + Lösungsstrategien}, colback=white, colframe=boxtitle]
+\begin{tabular}{@{}p{1.5cm}p{1.7cm}p{1.7cm}@{}}
+\toprule
+\textbf{Elektro.} & \textbf{Magneto.} & \textbf{Strömung}\\
+\midrule
+$\vec{D}=\varepsilon\vec{E}$ & $\vec{B}=\mu\vec{H}$ & $\vec{J}=\kappa\vec{E}$\\
+$\text{div}\vec{D}=\rho_V$ & $\text{div}\vec{B}=0$ & $\text{div}\vec{J}=0$\\
+$C=Q/U$ & $L=\Psi/I$ & $G=I/U$\\
+$W_e=\frac{1}{2}CU^2$ & $W_m=\frac{1}{2}LI^2$ & $P=UI$\\
+Laplace/Poisson & Ampère/BS & Laplace\\
+\bottomrule
+\end{tabular}
 
+\textbf{Symmetrie $\to$ Methode:}\\
+Kugel: Gauß mit Kugelschale\\
+Zylinder: Gauß/Ampère mit Zylindermantel\\
+Platte: Gauß mit Box\\
+Keine Symm.: Superposition oder Laplace\\
+Leiter in Nähe: Spiegelungsmethode\\
+Wechselfeld: Faraday + Phasoren
+
+\textbf{R aus Feldern:} $R=\dfrac{\int\vec{E}\cdot d\vec{s}}{\kappa\int\vec{E}\cdot d\vec{A}}$\quad
+\textbf{C aus Feldern:} $C=\dfrac{\varepsilon\oint\vec{E}\cdot d\vec{A}}{\int\vec{E}\cdot d\vec{s}}$
+\end{tcolorbox}
+
+%──────────────────────────────────────────────
+\begin{tcolorbox}[title={Weitere Körper}, colback=white, colframe=boxtitle]
+\textbf{Koaxialkabel – H-Feld (3 Bereiche):}\\
+$H(\rho)=\begin{cases}\tfrac{I}{2\pi a^2}\rho & \rho\leq a\\[2pt]\tfrac{I}{2\pi\rho} & a<\rho\leq b\\[2pt]\tfrac{1}{2\pi}\!\left(1-\tfrac{\rho^2-b^2}{c^2-b^2}\right)\tfrac{I}{\rho} & b<\rho\leq c\end{cases}$
+
+\textbf{Stromschiene} (Breite $h$, Aufpunkt $x$):
+\[H(x)=\frac{I}{\pi h}\arctan\!\frac{h}{2x};\quad x\ll h:\; H\approx\frac{I}{2h}\]
+
+\textbf{Kreisscheibe (Coulomb-Integral), z-Achse:}\\
+$\phi(z)=\dfrac{\rho_F}{2\varepsilon_0}(\sqrt{R^2+z^2}-|z|)$
+
+\textbf{Leitungstheorie (Telegraphengl.):}\\
+$\partial_x U=-R'I-L'\partial_t I$;\quad $\partial_x I=-G'U-C'\partial_t U$
+
+\textbf{Hertzscher Dipol (Fernfeld):}\\
+$\underline{E}_\vartheta=j\omega\mu\dfrac{\underline{I}l}{4\pi r}\sin\vartheta\cdot e^{-jkr}$;\quad $\underline{H}_\varphi=\underline{E}_\vartheta/Z_0$
+
+\textbf{Hohlleiter (Grenzfreq.):} $f_c=\dfrac{c}{2}\sqrt{(m/a)^2+(n/b)^2}$
+
+\textbf{Poisson-Lösung (Raumladungskugel):}\\
+$r^2\dfrac{d\phi}{dr}=C_1$;\; für $\rho_V=0$: $\phi=C_1/r+C_2$\\
+für $\rho_V\neq0$: $\phi=\dfrac{\rho_V}{6\varepsilon}(3R^2-r^2)$ innen;\; $\phi=\dfrac{\rho_V R^3}{3\varepsilon r}$ außen
+
+\textbf{Superpositionsprinzip (Punktladung):}\\
+$\phi(\vec{r})=\dfrac{1}{4\pi\varepsilon_0}\displaystyle\iint\displaystyle\int\dfrac{\rho_V(\vec{r}')}{|\vec{r}-\vec{r}'|}dV'$
+
+\textbf{Spiegelung Linienladung:}\\
+$\phi(\vec{r})=\dfrac{\rho_L}{2\pi\varepsilon}\ln\!\dfrac{|r-r_2'|}{|r-r_1'|}$
+\end{tcolorbox}
+
+
+% --- Grundlagen & Konstanten ---
+\begin{tcolorbox}[title={Grundlagen \& Konstanten (Erg\"anzung)}, colback=white, colframe=boxtitle]
+\textbf{Grundgedanken:}\\
+$\vec{D}=\varepsilon\vec{E}$\quad $\vec{B}=\mu\vec{H}$\quad $\vec{J}=\kappa\vec{E}$\\
+-- Gau\ss{}: Ladungen sind Quellen von $\vec{D}$\\
+-- Faraday: \"Anderndes Magnetfeld erzeugt E-Feld: $\mathrm{rot}\,\vec{E}=-\dot{\vec{B}}$\\
+-- Elektrostatik: keine Str\"ome, $\oint\vec{D}\cdot d\vec{A}=Q$\\
+-- Magnetostatik: zeitl.\ konst.\ Str\"ome, $\oint\vec{H}\cdot d\vec{s}=I$
+
+\textbf{Winkelwerte:}
+$2\pi{=}360^\circ$;\; $\pi{=}180^\circ$;\; $\frac{\pi}{2}{=}90^\circ$;\; $\frac{\pi}{3}{=}60^\circ$;\; $\frac{\pi}{4}{=}45^\circ$;\; $\frac{\pi}{6}{=}30^\circ$\\
+$\sin\to(0{,}1)$;\; $\cos\to(1{,}0)$;\; $\ln1=0$;\; $\ln0=-\infty$
+\end{tcolorbox}
+
+% --- Potential homogen geladene Kugel ---
+\begin{tcolorbox}[title={Potential: homogen geladene Kugel}, colback=white, colframe=boxtitle]
+Poisson/Laplace-L\"osung (Kugelkoord., nur $r$-Abh\"angigkeit):\\
+$\dfrac{d}{dr}\!\left(r^2\dfrac{d\phi}{dr}\right)=0\;\Rightarrow\; r^2\phi'=C_1\;\Rightarrow\;\phi=-\dfrac{C_1}{r}+C_2$
+
+Laplace-Ansatz f\"ur $\rho_V=0$: $\phi(r)=\dfrac{A}{r}+B$
+
+Poisson innen ($r\leq R$): $\phi(r)=\dfrac{\rho_V}{6\varepsilon}(3R^2-r^2)$\\
+Au\ss{}en ($r>R$): $\phi(r)=\dfrac{\rho_V R^3}{3\varepsilon r}$
+
+\textbf{Kugelkondensator} ($a$=Innen-, $b$=Au\ss{}enradius):\\
+$\phi(r)=\dfrac{A}{r}+B$;\; $A=\dfrac{(\phi_a-\phi_b)ab}{b-a}$;\; $B=\phi_b-\dfrac{A}{b}$\\
+$\vec{E}=\dfrac{A}{r^2}\vec{e}_r$;\; $C=4\pi\varepsilon\dfrac{ab}{b-a}$;\; $C\cdot R=\dfrac{\varepsilon}{\kappa}$
+\end{tcolorbox}
+
+% --- Geschichtete Medien (Erg\"anzung) ---
+\begin{tcolorbox}[title={Geschichtete Medien -- Erg\"anzung}, colback=white, colframe=boxtitle]
+\textbf{Reihenschaltung} (Schichten hintereinander, $\vec{J}$ gleich):\\
+$E_k=\rho_{A,k}/\varepsilon_k$;\; $\phi_1(x)=-\dfrac{\rho_A}{\varepsilon_1}x+C_1$;\; je Schicht andere Steigung\\
+H\"ohere $\kappa$ $\Rightarrow$ kleineres $E$-Feld im Teilleiter
+
+\textbf{Parallelschaltung} (Schichten nebeneinander, $\vec{E}$ gleich):\\
+$E=\dfrac{\rho_A\cdot A}{\varepsilon_1 A_1+\varepsilon_2 A_2}$;\; $C=\dfrac{\varepsilon_1 A_1+\varepsilon_2 A_2}{a}$
+
+\textbf{Kreisbogen 60$^\circ$} ($\alpha=\pi/3$, Breite $b$):
+\[R=\int_{r_i}^{r_a}\frac{dr}{\kappa\cdot b\cdot\frac{\pi}{3}\cdot r}=\frac{\ln(r_a/r_i)}{\kappa\cdot b\cdot\frac{\pi}{3}}\]
+\end{tcolorbox}
+
+% --- Zylindersymmetrie (Koaxialkabel 3 Bereiche) ---
+\begin{tcolorbox}[title={Zylindersymmetrie -- Koaxialkabel (3 Bereiche)}, colback=white, colframe=boxtitle]
+$\oint\vec{H}\cdot d\vec{s}=H\cdot2\pi\rho=I_\mathrm{enc}$
+
+$H(\rho)=\begin{cases}
+\dfrac{I}{2\pi a^2}\rho & 0<\rho\leq a\;\text{(Innenleiter)}\\[4pt]
+\dfrac{I}{2\pi\rho} & a<\rho\leq b\;\text{(Spalt)}\\[4pt]
+\dfrac{I}{2\pi\rho}\!\left(1-\dfrac{\rho^2-b^2}{c^2-b^2}\right) & b<\rho\leq c\;\text{(Mantel)}
+\end{cases}$
+
+Ampere-Weg: Kreis mit Radius $\rho$ um die Achse.
+\end{tcolorbox}
+
+% --- Spiegelung Linienladung ---
+\begin{tcolorbox}[title={Spiegelung Linienladung \& Ladungsformeln}, colback=white, colframe=boxtitle]
+\textbf{Spiegelung Linienladung:}\\
+$\phi(\vec{r})=\dfrac{\rho_L}{2\pi\varepsilon}\ln\!\dfrac{|\vec{r}-\vec{r}_2'|}{|\vec{r}-\vec{r}_1'|}$
+
+\textbf{Punktladung (Superposition):}\\
+$\phi(\vec{r})=\dfrac{1}{4\pi\varepsilon_0}\iiint\dfrac{\rho_V(\vec{r}')}{|\vec{r}-\vec{r}'|}dV'$
+
+\textbf{Linienladung (Integral):}\\
+$\int d\phi=-\dfrac{\rho_L}{2\pi\varepsilon}\int\dfrac{1}{r}dr\;\Rightarrow\;\phi=-\dfrac{\rho_L}{2\pi\varepsilon}\ln r+C$
+\end{tcolorbox}
 \end{multicols*}
 \end{document}

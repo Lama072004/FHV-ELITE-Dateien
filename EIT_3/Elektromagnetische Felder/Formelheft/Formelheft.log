@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.13)  27 APR 2026 11:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.13)  2 MAY 2026 14:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -523,20 +523,20 @@ LaTeX Warning: Unused global option(s):
 (./Formelheft.aux)
 \openout1 = `Formelheft.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -547,11 +547,11 @@ LaTeX Font Info:    ... okay on input line 35.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(25.60747pt, 546.29294pt, 25.60747pt)
-* v-part:(T,H,B)=(28.45274pt, 788.14136pt, 28.45274pt)
+* v-part:(T,H,B)=(28.45274pt, 773.91498pt, 42.67912pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=546.29294pt
-* \textheight=788.14136pt
+* \textheight=773.91498pt
 * \oddsidemargin=-46.66252pt
 * \evensidemargin=-46.66252pt
 * \topmargin=-80.81725pt
@@ -591,90 +591,119 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 626--628
+Underfull \hbox (badness 10000) in paragraph at lines 635--637
 
  []
 
 [5] [6]
-Overfull \hbox (8.46187pt too wide) in paragraph at lines 819--819
+Overfull \hbox (8.46187pt too wide) in paragraph at lines 852--852
 []|\T1/cmr/bx/n/10 Elektrostatik| 
  []
 
 
-Overfull \hbox (15.55042pt too wide) in paragraph at lines 819--819
+Overfull \hbox (15.55042pt too wide) in paragraph at lines 852--852
 []|\T1/cmr/bx/n/10 Magnetostatik| 
  []
 
 
-Overfull \hbox (15.11996pt too wide) in paragraph at lines 819--820
+Overfull \hbox (15.11996pt too wide) in paragraph at lines 852--853
 []|\T1/cmr/bx/n/10 Strömungsfeld| 
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 930--931
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 959--960
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 942--943
+Underfull \hbox (badness 10000) in paragraph at lines 971--972
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 956--957
+Underfull \hbox (badness 10000) in paragraph at lines 985--986
 
  []
 
-<Bild 1.png, id=49, 609.02531pt x 309.40594pt>
+<Bild 1.png, id=52, 609.02531pt x 309.40594pt>
 File: Bild 1.png Graphic file (type png)
 <use Bild 1.png>
-Package pdftex.def Info: Bild 1.png  used on input line 971.
+Package pdftex.def Info: Bild 1.png  used on input line 1000.
 (pdftex.def)             Requested size: 254.56538pt x 129.32642pt.
-<Bild 2.png, id=51, 609.02531pt x 320.69812pt>
+<Bild 2.png, id=54, 609.02531pt x 320.69812pt>
 File: Bild 2.png Graphic file (type png)
 <use Bild 2.png>
-Package pdftex.def Info: Bild 2.png  used on input line 977.
+Package pdftex.def Info: Bild 2.png  used on input line 1006.
 (pdftex.def)             Requested size: 254.56538pt x 134.04634pt.
-[8 <./Bild 1.png>]
-<Bild 3.png, id=56, 519.44063pt x 314.67563pt>
+<Bild 3.png, id=55, 519.44063pt x 314.67563pt>
 File: Bild 3.png Graphic file (type png)
 <use Bild 3.png>
-Package pdftex.def Info: Bild 3.png  used on input line 983.
+Package pdftex.def Info: Bild 3.png  used on input line 1012.
 (pdftex.def)             Requested size: 254.56538pt x 154.21161pt.
-<Bild 4.png, id=57, 630.85687pt x 336.50719pt>
+<Bild 4.png, id=56, 630.85687pt x 336.50719pt>
 File: Bild 4.png Graphic file (type png)
 <use Bild 4.png>
-Package pdftex.def Info: Bild 4.png  used on input line 989.
+Package pdftex.def Info: Bild 4.png  used on input line 1018.
 (pdftex.def)             Requested size: 254.56538pt x 135.78659pt.
- [9 <./Bild 2.png> <./Bild 3.png> <./Bild 4.png>] (./Formelheft.aux)
+
+Overfull \hbox (0.91699pt too wide) in paragraph at lines 1025--1026
+[]|\T1/cmr/bx/n/10 Strömung| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1030--1030
+[]|$\OML/cmm/m/it/10 W[] \OT1/cmr/m/n/10 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1030--1030
+[]|$\OML/cmm/m/it/10 W[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (28.52571pt too wide) in paragraph at lines 1031--1031
+[]|\T1/cmr/m/n/10 Laplace/Poisson| 
+ []
+
+
+Overfull \hbox (3.7288pt too wide) in paragraph at lines 1031--1031
+[]|\T1/cmr/m/n/10 Ampère/BS| 
+ []
+
+[9 <./Bild 1.png> <./Bild 2.png> <./Bild 3.png> <./Bild 4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1094--1096
+[]\T1/cmr/m/n/10 Poisson/Laplace-Lösung (Kugelko-ord., nur $\OML/cmm/m/it/10 r$\T1/cmr/m/n/10 -
+ []
+
+[10] [11] (./Formelheft.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 18378 strings out of 469462
- 384393 string characters out of 5468614
- 814056 words of memory out of 5000000
- 46723 multiletter control sequences out of 15000+600000
+ 18392 strings out of 469462
+ 384582 string characters out of 5468614
+ 820180 words of memory out of 5000000
+ 46737 multiletter control sequences out of 15000+600000
  643968 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  102i,14n,107p,606b,1027s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on Formelheft.pdf (9 pages, 552428 bytes).
+Output written on Formelheft.pdf (11 pages, 567341 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 158 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
