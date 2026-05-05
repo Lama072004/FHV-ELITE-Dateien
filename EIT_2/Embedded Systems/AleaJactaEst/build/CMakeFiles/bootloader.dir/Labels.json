@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/AleaJactaEst/build/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/AleaJactaEst/build/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/AleaJactaEst/build/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/AleaJactaEst/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		},
+		{
+			"file" : "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/AleaJactaEst/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/AleaJactaEst/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/AleaJactaEst/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/AleaJactaEst/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/AleaJactaEst/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/AleaJactaEst/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}
