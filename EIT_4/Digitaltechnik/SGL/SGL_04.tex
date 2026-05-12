@@ -8,6 +8,7 @@
 \usetikzlibrary{automata, positioning, arrows.meta, shapes.geometric}
 
 \geometry{margin=2.5cm}
+
 \title{All About State Machines: The Smart Traffic Light}
 \date{2026/05/11}
 
@@ -22,7 +23,7 @@ Imagine a toy that has different "moods." A robot dog, for example, can "Sleep,"
     \item \textbf{State} means: What the machine is doing right now.
 \end{itemize}
 
-\subsection{Describing Machines: State Chart Diagrams}
+\section{Describing Machines: State Chart Diagrams}
 To understand how the robot thinks, we draw a \textbf{State Chart Diagram}. It is like a map with cities and roads.
 \begin{itemize}
     \item \textbf{Circles (Nodes):} These are the \textbf{states} (e.g., "Light is Red"). They are the basic elements representing a specific condition.
@@ -40,24 +41,36 @@ There are two main ways machines handle their tasks:
 \section{The Traffic Light Example}
 Here, our machine controls a traffic light for cars that reacts to a pedestrian button ($X$).
 
-\subsection{The State Chart Diagram}
+\subsection{State Chart Diagram}
 \begin{figure}[h]
 \centering
-\begin{tikzpicture}[->, >=Stealth, node distance=5cm, every node/.style={circle, draw, minimum size=2.8cm, align=center, line width=1pt}]
+\begin{tikzpicture}[->, >=Stealth, node distance=5cm, 
+    every node/.style={
+        circle, 
+        draw, 
+        minimum size=2.5cm, 
+        inner sep=0pt, 
+        align=center, 
+        line width=1.5pt, 
+        font=\small
+    }]
 
-    \node[fill=green!10] (S0) {$S_0$ \\ \textbf{GREEN} \\ $Y=001$};
-    \node[fill=yellow!10] (S1) [right of=S0] {$S_1$ \\ \textbf{YELLOW} \\ $Y=010$};
-    \node[fill=red!10] (S3) [below of=S1] {$S_3$ \\ \textbf{RED} \\ $Y=100$};
-    \node[fill=orange!10] (S2) [below of=S0] {$S_2$ \\ \textbf{RED-YELLOW} \\ $Y=110$};
+    % States with uniform diameter and traffic light colors
+    \node[fill=green!30, draw=green!60!black] (S0) {$S_0$ \\ \textbf{GREEN} \\ $Y=001$};
+    \node[fill=yellow!40, draw=yellow!60!black] (S1) [right of=S0] {$S_1$ \\ \textbf{YELLOW} \\ $Y=010$};
+    \node[fill=red!30, draw=red!60!black] (S3) [below of=S1] {$S_3$ \\ \textbf{RED} \\ $Y=100$};
+    \node[fill=orange!40, draw=orange!60!black] (S2) [below of=S0] {$S_2$ \\ \textbf{RED-YELLOW} \\ $Y=110$};
 
-    \path[line width=1pt]
-        (S0) edge [loop above] node {Button not \\ pressed ($X=0$)} (S0)
-        (S0) edge node [above] {Button pressed \\ ($X=1$)} (S1)
-        (S1) edge node [right] {Timer done \\ (always)} (S3)
-        (S3) edge [loop below] node {Button still \\ active ($X=1$)} (S3)
+    % Transitions
+    \path[line width=1.2pt]
+        (S0) edge [loop left] node {No press \\ ($X=0$)} (S0)
+        (S0) edge node [above] {Pressed \\ ($X=1$)} (S1)
+        (S1) edge node [right] {Always} (S3)
+        (S3) edge [loop right] node {Still active \\ ($X=1$)} (S3)
         (S3) edge node [below] {Released \\ ($X=0$)} (S2)
-        (S2) edge node [left] {Ready \\ (always)} (S0);
+        (S2) edge node [left] {Always} (S0);
 \end{tikzpicture}
+\caption{Moore state machine for traffic light control[cite: 30, 36].}
 \end{figure}
 
 \newpage
