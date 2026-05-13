@@ -27,7 +27,7 @@
 \usepackage{lmodern}
 
 \pgfplotsset{compat=1.18}
-\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm, headheight=25pt}
 
 % ============================================================
 % Farben (FH Vorarlberg Corporate Design)
@@ -211,7 +211,7 @@ $R_1$. Die Rückkopplungsimpedanz $Z_2$ besteht aus der Parallelschaltung von
     % Summierpunkt
     \draw (3,0) to[short, -*] (4,0) node[below]{$-$};
     % OP-Amp
-    \node[op amp, anchor=minus] (op) at (5.5, 0.5) {};
+    \node[op amp, anchor=-] (op) at (5.5, 0.5) {};
     \draw (op.+) to[short] (4.5, -0.3) to[short] (4.5, -1.5) node[ground]{};
     % Rückkopplungsimpedanz Z2
     \draw (op.out) to[short, -*] (7.5, 0.5);
@@ -357,7 +357,7 @@ Durch Division des Bruchs (Zähler durch Nenner):
          \cdot \frac{1 + sC_1(R_1 + R_2)}{1 + sC_1 R_2}
 \]
 
-\begin{tcolorbox}[ergebnis, title=Übertragungsfunktion des PID-Reglers]
+\begin{tcolorbox}[ergebnis, title={\"Ubertragungsfunktion des PID-Reglers}]
 \[
   \boxed{T(s) = \frac{R_3}{R_1}
          \cdot \frac{1 + sC_2 R_4}{1 + sC_2(R_3 + R_4)}
@@ -440,8 +440,7 @@ Die vier Eckfrequenzen liefern vier Gleichungen:
   \frac{1}{C_2(R_3 + R_4)}  &= \omega_4 = 62000 \label{eq:omega4}
 \end{align}
 
-\subsection{Berechnung von $C_1$, $R_1$, $R_2$ aus den Gleichungen~\ref{eq:omega1}
-und~\ref{eq:omega2}}
+\subsection{Berechnung von $C_1$, $R_1$, $R_2$ aus Gleichungen (1) und (2)}
 
 \subsubsection*{Schritt 1: Berechnung von $R_2$ aus Gleichung~\ref{eq:omega2}}
 
@@ -520,7 +519,7 @@ Verifikation von $\omega_1$:
            \approx 62{,}0\,\frac{\text{rad}}{\text{s}} \checkmark
 \]
 
-\begin{tcolorbox}[ergebnis, title=Ergebnis für $C_1$, $R_1$, $R_2$]
+\begin{tcolorbox}[ergebnis, title={Ergebnis f\"{u}r $C_1$, $R_1$, $R_2$}]
 \[
   C_1 = 100\,\text{nF}, \quad
   R_2 \approx 16{,}1\,\text{k}\Omega, \quad
@@ -528,8 +527,7 @@ Verifikation von $\omega_1$:
 \]
 \end{tcolorbox}
 
-\subsection{Berechnung von $R_3$, $R_4$ aus den Gleichungen~\ref{eq:omega3}
-und~\ref{eq:omega4}}
+\subsection{Berechnung von $R_3$, $R_4$ aus Gleichungen (3) und (4)}
 
 Gegeben: $C_2 = 0{,}1\,\mu\text{F} = 100\,\text{nF}$
 
@@ -668,7 +666,7 @@ wählen (was $R_4 = 1{,}6\,\text{k}\Omega$ ergibt), sofern eine entsprechende An
 möglich ist. Da $C_2 = 0{,}1\,\mu\text{F}$ fest ist, sind folgende Standardwerte
 realisierbar (mit einem Spannungsteiler oder durch Akzeptanz der leichten Abweichung):
 
-\begin{tcolorbox}[ergebnis, title=Ergebnis für $R_3$, $R_4$ (mit $C_2 = 0{,}1\,\mu\text{F}$)]
+\begin{tcolorbox}[ergebnis, title={Ergebnis f\"{u}r $R_3$, $R_4$ (mit $C_2 = 0{,}1\,\mu\text{F}$)}]
 Für exakte Eckfrequenzen bei $\omega_3 = 6200$ und $\omega_4 = 62000$:
 \[
   R_4 = \frac{1}{\omega_4 \cdot C_2} = \frac{1}{62000 \cdot 0{,}1 \times 10^{-6}}
