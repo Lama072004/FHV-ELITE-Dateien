@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1778699492.4559 "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Projekt/Projekt_MathiasLampert.tex" "Projekt_MathiasLampert.pdf" "Projekt_MathiasLampert" 1778699493.86197 0
-  "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Projekt/Projekt_MathiasLampert.tex" 1778699490.8545 32567 cb6b359b32f9bb7a67fcce2d5e90bd11 ""
+["pdflatex"] 1778746410.37166 "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Projekt/Projekt_MathiasLampert.tex" "Projekt_MathiasLampert.pdf" "Projekt_MathiasLampert" 1778746411.77466 0
+  "/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Projekt/Projekt_MathiasLampert.tex" 1778746410.12564 34073 1844e9d74b1738a83e534126e7c694dc ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1775415801 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1775415801 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1775415801 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -281,10 +281,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1775415801 43569 fd570f2fa160877d211e859f687312ba ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1778325256 5385779 47c0c393a77fd4a098bacfd57d66b88a ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1778325194 3734528 73f83d8c15b0050a723596e1419464d9 ""
-  "Projekt_MathiasLampert.aux" 1778699493.77252 6039 333e12588fff79a83b079d156012e0e9 "pdflatex"
-  "Projekt_MathiasLampert.out" 1778699493.77352 6954 3cea5a09a4afbbedeceb7179c0612cd9 "pdflatex"
-  "Projekt_MathiasLampert.tex" 1778699490.8545 32567 cb6b359b32f9bb7a67fcce2d5e90bd11 ""
-  "Projekt_MathiasLampert.toc" 1778699493.77352 3001 7eb2af3d9a92ccaa8b5e594db41d65b9 "pdflatex"
+  "Projekt_MathiasLampert.aux" 1778746411.68741 6091 ee406c17b7bab3f7f014e84240bff046 "pdflatex"
+  "Projekt_MathiasLampert.out" 1778746411.68741 6954 3cea5a09a4afbbedeceb7179c0612cd9 "pdflatex"
+  "Projekt_MathiasLampert.tex" 1778746410.12564 34073 1844e9d74b1738a83e534126e7c694dc ""
+  "Projekt_MathiasLampert.toc" 1778746411.68886 3001 5b70bace3df9a074e47eaa86795a35a9 "pdflatex"
   (generated)
   "Projekt_MathiasLampert.aux"
   "Projekt_MathiasLampert.log"
