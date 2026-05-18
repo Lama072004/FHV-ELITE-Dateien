@@ -16,6 +16,7 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{circuitikz}
+\usetikzlibrary{decorations.pathreplacing, calc}
 \usepackage{pgfplots}
 \usepackage{siunitx}
 \usepackage{tcolorbox}
@@ -195,42 +196,73 @@ Die Schaltung ist eine invertierende OP-Schaltung. Die Impedanz $Z_1$ im
 Eingangsast besteht aus der Reihenschaltung von $C_1$ und $R_2$, parallel dazu liegt
 $R_1$. Die Rückkopplungsimpedanz $Z_2$ besteht aus der Parallelschaltung von
 ($C_2$ in Reihe mit $R_4$) und $R_3$.
-%Schaltung nicht richtig muss angepasst werden
+
 \begin{figure}[H]
   \centering
   \begin{circuitikz}[scale=1.0, transform shape]
-    % Eingangsimpedanz Z1
-    \draw (0,0) node[left]{$u_e$}
-      to[R, l=$R_1$] (2,0)
-      to[short] (3,0);
-    \draw (0,0)
-      to[short] (0,-1.5)
-      to[C, l=$C_1$] (1.5,-1.5)
-      to[R, l=$R_2$] (3,-1.5)
-      to[short] (3,0);
-    % Summierpunkt
-    \draw (3,0) to[short, -*] (4,0) node[below]{$-$};
-    % OP-Amp
-    \node[op amp, anchor=-] (op) at (5.5, 0.5) {};
-    \draw (op.+) to[short] (4.5, -0.3) to[short] (4.5, -1.5) node[ground]{};
-    % Rückkopplungsimpedanz Z2
-    \draw (op.out) to[short, -*] (7.5, 0.5);
-    \draw (7.5,0.5) to[short] (7.5, 2.5)
-      to[R, l=$R_3$] (4, 2.5)
-      to[short] (4, 0);
-    \draw (7.5, 2.5) to[short] (7.5, 3.5)
-      to[C, l=$C_2$] (5.5, 3.5)
-      to[R, l=$R_4$] (4, 3.5)
-      to[short] (4, 2.5);
-    % Ausgang
-    \draw (7.5, 0.5) to[short] (8.5, 0.5) node[right]{$u_a$};
-    % Labels
+
+    % ── Koordinaten ─────────────────────────────────────────────
+    \coordinate (uestart) at (-1.5, 0);   % langer Eingangspin
+    \coordinate (ue)      at (0,    0);   % Verzweigungspunkt Z1
+    \coordinate (vm)      at (3.5,  0);   % virtueller Massepunkt = neg. OP-Eingang
+
+    % ── Eingangsleitung (lang) ───────────────────────────────────
+    \draw (uestart) node[left]{$u_e$} to[short] (ue);
+
+    % ── Z1: oberer Zweig R1 (ue --> vm) ─────────────────────────
+    \draw (ue) to[R, l=$R_1$] (vm);
+
+    % ── Z1: unterer Zweig C1--R2 in Serie (ue --> vm) ───────────
+    \draw (ue)
+      to[short] (0,-1.8)
+      to[C, l=$C_1$] (1.75,-1.8)
+      to[R, l=$R_2$] (3.5,-1.8)
+      to[short] (vm);
+
+    % Klammer Z1
+    \draw[decorate, decoration={brace, mirror, amplitude=6pt}, color=fhblau]
+      (0,-2.5) -- (3.5,-2.5) node[midway, below=8pt]{$Z_1$};
+
+    % ── OP-Amp  (inv input up → „−" oben, „+" unten) ─────────────
+    % Mit noinv input up ist „+" oben und „−" unten → wir wollen
+    % aber „−" oben. Daher verwenden wir den Standard-OP (inv unten)
+    % und spiegeln ihn vertikal mit yscale=-1:
+    \node[op amp, yscale=1, anchor=-] (op) at (5.5, 0) {};
+
+    % Verbindung vm --> neg. Eingang (oben)
+    \draw (vm) to[short, -*] (op.-);
+
+    % pos. Eingang (unten) --> GND
+    \draw (op.+) to[short] ++(0,-0.1) node[ground]{};
+
+    % ── Z2: Rückkopplung (Ausgang --> neg. Eingang) ───────────────
+    \coordinate (outR) at ($(op.out) + (0.5,0)$);
+
+    % Ausgangs-Stub + Ausgangspin
+    \draw (op.out) to[short, -*] (outR);
+    \draw (outR)   to[short]     ++(0.8,0) node[right]{$u_a$};
+
+    % Unterer Rückkopplungsast: R3 allein, über y=2.0
+    \draw (outR)
+      to[short] (outR |- 0,2.0)
+      to[R, l=$R_3$] (vm |- 0,2.0)
+      to[short] (vm);
+
+    % Oberer Rückkopplungsast: R4--C2 in Serie (R4 links, C2 rechts), über y=3.4
+    \draw (outR |- 0,2.0)
+      to[short] (outR |- 0,3.4)
+      to[R, l=$R_4$] ($(vm |- 0,3.4)!0.5!(outR |- 0,3.4)$)
+      to[C, l=$C_2$] (vm |- 0,3.4)
+      to[short] (vm |- 0,2.0);
+
+    % Klammer Z2
     \draw[decorate, decoration={brace, amplitude=6pt}, color=fhblau]
-      (0, -2.2) -- (3, -2.2) node[midway, below=8pt]{$Z_1$};
-    \draw[decorate, decoration={brace, amplitude=6pt}, color=fhblau]
-      (4, 4.2) -- (7.5, 4.2) node[midway, above=8pt]{$Z_2$};
+      (vm |- 0,4.1) -- (outR |- 0,4.1)
+      node[midway, above=8pt]{$Z_2$};
+
   \end{circuitikz}
-  \caption{Invertierende OP-Schaltung mit frequenzabhängigen Impedanzen $Z_1$ und $Z_2$}
+  \caption{Invertierende OP-Schaltung: $Z_1 = R_1 \parallel (C_1 + R_2)$,\;
+           $Z_2 = R_3 \parallel (R_4 + C_2)$}
 \end{figure}
 
 % ============================================================
