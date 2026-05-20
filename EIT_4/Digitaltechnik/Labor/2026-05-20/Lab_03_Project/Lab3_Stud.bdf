@@ -1115,10 +1115,6 @@ on the Quartus Prime software download page.
 	(pt 488 32)
 )
 (connector
-	(pt 504 48)
-	(pt 488 48)
-)
-(connector
 	(pt 488 32)
 	(pt 488 48)
 )
@@ -1296,10 +1292,6 @@ on the Quartus Prime software download page.
 	(pt 504 64)
 )
 (connector
-	(pt 368 272)
-	(pt 720 272)
-)
-(connector
 	(pt 720 272)
 	(pt 720 464)
 )
@@ -1368,10 +1360,6 @@ on the Quartus Prime software download page.
 	(pt 488 96)
 )
 (connector
-	(pt 488 48)
-	(pt 488 96)
-)
-(connector
 	(pt 488 96)
 	(pt 488 112)
 )
@@ -1403,11 +1391,30 @@ on the Quartus Prime software download page.
 	(pt 960 288)
 	(pt 1008 288)
 )
+(connector
+	(pt 448 48)
+	(pt 488 48)
+)
+(connector
+	(pt 488 48)
+	(pt 504 48)
+)
+(connector
+	(pt 448 48)
+	(pt 448 272)
+)
+(connector
+	(pt 368 272)
+	(pt 448 272)
+)
+(connector
+	(pt 448 272)
+	(pt 720 272)
+)
 (junction (pt -24 112))
 (junction (pt -24 80))
 (junction (pt 976 72))
 (junction (pt 912 136))
-(junction (pt 488 48))
 (junction (pt 488 16))
 (junction (pt 744 432))
 (junction (pt 760 384))
@@ -1418,7 +1425,8 @@ on the Quartus Prime software download page.
 (junction (pt 720 272))
 (junction (pt 488 112))
 (junction (pt 960 96))
-(junction (pt 488 96))
+(junction (pt 488 48))
+(junction (pt 448 272))
 (text "RESET" (rect 288 248 330 261)(font "Arial" (font_size 8)))
 (text "CATCH" (rect 288 304 332 317)(font "Arial" (font_size 8)))
 (text "NE555-OUT" (rect 288 368 363 381)(font "Arial" (font_size 8)))
