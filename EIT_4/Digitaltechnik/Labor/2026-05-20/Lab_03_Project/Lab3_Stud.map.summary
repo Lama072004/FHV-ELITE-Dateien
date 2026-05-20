@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon May 18 16:16:16 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Revision Name : Lab3_Stud
+Top-level Entity Name : Lab3_Stud
+Family : Cyclone IV E
+Total logic elements : 40
+    Total combinational functions : 31
+    Dedicated logic registers : 40
+Total registers : 40
+Total pins : 17
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

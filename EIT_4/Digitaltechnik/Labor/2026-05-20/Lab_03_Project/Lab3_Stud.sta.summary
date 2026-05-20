@@ -1,0 +1,173 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -1.836
+TNS   : -25.760
+
+Type  : Slow 1200mV 85C Model Setup 'MIO1'
+Slack : 0.003
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : 0.083
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'MIO1'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : 0.392
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.469
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'KEY[1]'
+Slack : -0.746
+TNS   : -0.746
+
+Type  : Slow 1200mV 85C Model Recovery 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : -0.340
+TNS   : -0.340
+
+Type  : Slow 1200mV 85C Model Removal 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : 0.914
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'KEY[1]'
+Slack : 1.215
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -29.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MIO1'
+Slack : -3.000
+TNS   : -7.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KEY[1]'
+Slack : -3.000
+TNS   : -4.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : -1.000
+TNS   : -9.000
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.485
+TNS   : -19.583
+
+Type  : Slow 1200mV 0C Model Setup 'MIO1'
+Slack : 0.117
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'MIO1'
+Slack : 0.333
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.413
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'KEY[1]'
+Slack : -0.526
+TNS   : -0.526
+
+Type  : Slow 1200mV 0C Model Recovery 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : -0.194
+TNS   : -0.194
+
+Type  : Slow 1200mV 0C Model Removal 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : 0.823
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'KEY[1]'
+Slack : 1.071
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -29.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MIO1'
+Slack : -3.000
+TNS   : -7.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KEY[1]'
+Slack : -3.000
+TNS   : -4.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : -1.000
+TNS   : -9.000
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -0.625
+TNS   : -4.440
+
+Type  : Fast 1200mV 0C Model Setup 'MIO1'
+Slack : 0.450
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : 0.492
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'MIO1'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : 0.206
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.254
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'KEY[1]'
+Slack : -0.123
+TNS   : -0.123
+
+Type  : Fast 1200mV 0C Model Recovery 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : 0.237
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : 0.503
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'KEY[1]'
+Slack : 0.764
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -36.717
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MIO1'
+Slack : -3.000
+TNS   : -8.459
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KEY[1]'
+Slack : -3.000
+TNS   : -4.206
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lpm_counter:inst6|cntr_f3g:auto_generated|counter_reg_bit[25]'
+Slack : -1.000
+TNS   : -9.000
+
+------------------------------------------------------------
