@@ -1,6 +1,6 @@
 LTspice 26.0.1 for Windows
 Circuit: C:\users\mathias\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_4\Sensorik und Messchaltungen\Projekt\LT-Spice\Simulation.net
-Start Time: Tue May 26 12:13:49 2026
+Start Time: Tue May 26 14:44:52 2026
 solver = Normal
 Maximum thread count: 32
 tnom = 27
@@ -607,7 +607,7 @@ Direct Newton iteration succeeded in finding operating point.
 Direct Newton iteration succeeded in finding operating point.
 Direct Newton iteration succeeded in finding operating point.
 Direct Newton iteration succeeded in finding operating point.
-Total elapsed time: 5.858 seconds.
+Total elapsed time: 5.944 seconds.
 
 Files loaded:
 C:\users\mathias\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_4\Sensorik und Messchaltungen\Projekt\LT-Spice\Simulation.net
