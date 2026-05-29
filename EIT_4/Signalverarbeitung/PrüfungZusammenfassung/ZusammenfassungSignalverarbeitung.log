@@ -1,0 +1,189 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.9)  29 MAY 2026 16:33
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Signalverarbeitung/PrüfungZusammenfassung/ZusammenfassungSignalverarbeitung.tex"
+(/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Signalverarbeitung/PrüfungZusammenfassung/ZusammenfassungSignalverarbeitung.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+) (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
+\babel@savecnt=\count283
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
+\U@D=\dimen149
+\l@unhyphenated=\language8
+ (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count284
+ (/usr/share/texmf-dist/tex/generic/babel/locale/de/babel-german.tex)
+
+Package babel Warning: The name 'german' with the 'ldf' mechanism is
+(babel)                currently assigned to the old 1901 variant of German.
+(babel)                For modern post-1996 German, use the name 'ngerman'.
+(babel)                Reported on input line 4330.
+
+Package babel Info: Importing font and identification data for german
+(babel)             from babel-de-1901.ini. Reported on input line 4330.
+(/usr/share/texmf-dist/tex/generic/babel-german/german.ldf
+Language: german 
+ (/usr/share/texmf-dist/tex/generic/babel-german/babel-german.def
+Package babel Info: Making " an active character on input line 470.
+))) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+) (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+) (/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count285
+\Gm@cntv=\count286
+\c@Gm@tempcnt=\count287
+\Gm@bindingoffset=\dimen150
+\Gm@wd@mp=\dimen151
+\Gm@odd@mp=\dimen152
+\Gm@even@mp=\dimen153
+\Gm@layoutwidth=\dimen154
+\Gm@layoutheight=\dimen155
+\Gm@layouthoffset=\dimen156
+\Gm@layoutvoffset=\dimen157
+\Gm@dimlist=\toks20
+) (/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip51
+\enit@outerparindent=\dimen158
+\enit@toks=\toks21
+\enit@inbox=\box53
+\enit@count@id=\count288
+\enitdp@description=\count289
+) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count290
+) (./ZusammenfassungSignalverarbeitung.aux
+Package babel Info: 'german' activates 'german' shorthands.
+(babel)             Reported on input line 5.
+)
+\openout1 = `ZusammenfassungSignalverarbeitung.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 15.
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./ZusammenfassungSignalverarbeitung.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 3.
+)
+\tf@toc=\write3
+\openout3 = `ZusammenfassungSignalverarbeitung.toc'.
+
+ [2] [3] [4{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [5]
+Overfull \hbox (5.39944pt too wide) in paragraph at lines 90--91
+[]\T1/cmr/bx/n/10.95 Das Au-then-ti-sie-rungs-zen-trum: \T1/cmr/m/n/10.95 Die-se Si-cher-heits-da-ten-bank ver-wal-tet die ge-hei-men kryp-
+ []
+
+[6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] (./ZusammenfassungSignalverarbeitung.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 2933 strings out of 469462
+ 49914 string characters out of 5468615
+ 475642 words of memory out of 5000000
+ 31617 multiletter control sequences out of 15000+600000
+ 637806 words of font info for 61 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 57i,6n,65p,1049b,240s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
+Output written on ZusammenfassungSignalverarbeitung.pdf (16 pages, 199689 bytes).
+PDF statistics:
+ 96 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

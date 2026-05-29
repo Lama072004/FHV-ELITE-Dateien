@@ -1,0 +1,352 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.9)  29 MAY 2026 08:47
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/PrüfungZusammenfassung/Zusammenfassung.tex"
+(/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/PrüfungZusammenfassung/Zusammenfassung.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+) (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
+\babel@savecnt=\count283
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
+\U@D=\dimen149
+\l@unhyphenated=\language8
+ (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count284
+ (/usr/share/texmf-dist/tex/generic/babel/locale/invalid/babel-ngerman.tex)
+Package babel Info: Importing font and identification data for ngerman
+(babel)             from babel-de.ini. Reported on input line 4330.
+ (/usr/share/texmf-dist/tex/generic/babel-german/ngerman.ldf
+Language: ngerman 
+ (/usr/share/texmf-dist/tex/generic/babel-german/babel-german.def
+Package babel Info: Making " an active character on input line 470.
+))) (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+ (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen150
+)) (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen151
+) (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count285
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count286
+\leftroot@=\count287
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count288
+\DOTSCASE@=\count289
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen152
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count290
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count291
+\dotsspace@=\muskip17
+\c@parentequation=\count292
+\dspbrk@lvl=\count293
+\tag@help=\toks20
+\row@=\count294
+\column@=\count295
+\maxfields@=\count296
+\andhelp@=\toks21
+\eqnshift@=\dimen153
+\alignsep@=\dimen154
+\tagshift@=\dimen155
+\tagwidth@=\dimen156
+\totwidth@=\dimen157
+\lineht@=\dimen158
+\@envbody=\toks22
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+) (/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks24
+) (/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count297
+\Gm@cntv=\count298
+\c@Gm@tempcnt=\count299
+\Gm@bindingoffset=\dimen159
+\Gm@wd@mp=\dimen160
+\Gm@odd@mp=\dimen161
+\Gm@even@mp=\dimen162
+\Gm@layoutwidth=\dimen163
+\Gm@layoutheight=\dimen164
+\Gm@layouthoffset=\dimen165
+\Gm@layoutvoffset=\dimen166
+\Gm@dimlist=\toks25
+) (/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen167
+\lightrulewidth=\dimen168
+\cmidrulewidth=\dimen169
+\belowrulesep=\dimen170
+\belowbottomsep=\dimen171
+\aboverulesep=\dimen172
+\abovetopsep=\dimen173
+\cmidrulesep=\dimen174
+\cmidrulekern=\dimen175
+\defaultaddspace=\dimen176
+\@cmidla=\count300
+\@cmidlb=\count301
+\@aboverulesep=\dimen177
+\@belowrulesep=\dimen178
+\@thisruleclass=\count302
+\@lastruleclass=\count303
+\@thisrulewidth=\dimen179
+) (/usr/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen180
+\ar@mcellbox=\box55
+\extrarowheight=\dimen181
+\NC@list=\toks26
+\extratabsurround=\skip54
+\backup@length=\skip55
+\ar@cellbox=\box56
+) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count304
+) (./Zusammenfassung.aux
+Package babel Info: 'ngerman' activates 'german' shorthands.
+(babel)             Reported on input line 5.
+)
+\openout1 = `Zusammenfassung.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (./Zusammenfassung.toc
+Overfull \hbox (46.27684pt too wide) in paragraph at lines 2--2
+  []\OT1/cmr/bx/n/10.95 Allgemeines ma-the-ma-ti-sches Fra-me-work zur Her-lei-tung von OPV-[]Ubertragungsfunktionen []  
+ []
+
+
+Overfull \hbox (5.05806pt too wide) in paragraph at lines 27--27
+ [] []\OT1/cmr/bx/n/10.95 Frequenzabh[]angige Ope-ra-ti-ons-verst[]arkerschaltungen am Bei-spiel des ana-lo-gen PID- 
+ []
+
+)
+\tf@toc=\write3
+\openout3 = `Zusammenfassung.toc'.
+
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (2.34766pt too wide) in paragraph at lines 26--26
+[]\OT1/cmr/bx/n/14.4 Allgemeines ma-the-ma-ti-sches Fra-me-work zur Her-lei-tung von OPV-
+ []
+
+
+Overfull \hbox (0.38106pt too wide) in paragraph at lines 47--48
+[]\OT1/cmr/bx/n/10.95 Schritt 1: Re-fe-renz-po-ten-zi-al be-stim-men. \OT1/cmr/m/n/10.95 Er-mit-teln Sie das elek-tri-sche Po-ten-zi-al am nichtin-
+ []
+
+
+Overfull \hbox (19.5217pt too wide) in paragraph at lines 60--61
+[]\OT1/cmr/bx/n/10.95 Schritt 5: Ma-the-ma-ti-sche Eli-mi-na-ti-on und Aufl[]osung. \OT1/cmr/m/n/10.95 Set-zen Sie die Bauelement-Gleichungen
+ []
+
+[2{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [3]
+Overfull \hbox (9.3309pt too wide) in paragraph at lines 68--68
+[]\OT1/cmr/bx/n/14.4 Detaillierte Her-lei-tun-gen li-nea-rer Ope-ra-ti-ons-verst[]arkerschaltungen 
+ []
+
+[4] [5]
+Overfull \hbox (10.36166pt too wide) in paragraph at lines 191--192
+[]\OT1/cmr/m/n/10.95 Diese Dif-fe-renz-span-nung wird nach-fol-gend ei-nem Standard-Differenzverst[]arker mit der Verst[]arkung
+ []
+
+[6]
+Overfull \hbox (74.8325pt too wide) in paragraph at lines 252--253
+[]\OT1/cmr/m/n/10.95 Knotengleichung: Der La-de-strom des Ein-gangs-kon-den-sa-tors $\OML/cmm/m/it/10.95 C[]$ \OT1/cmr/m/n/10.95 flie^^Yt vollst[]andig []uber den R[]uckkoppelwiderstand
+ []
+
+[7]
+Overfull \hbox (44.43082pt too wide) in paragraph at lines 284--284
+[]\OT1/cmr/bx/n/14.4 Detaillierte Her-lei-tun-gen nicht-li-nea-rer Ope-ra-ti-ons-verst[]arkerschaltungen 
+ []
+
+[8] [9]
+Overfull \hbox (15.7943pt too wide) in paragraph at lines 383--383
+[]\OT1/cmr/bx/n/14.4 Ausf[]uhrlicher ma-the-ma-ti-scher Be-rech-nungs-al-go-rith-mus zur Rausch-
+ []
+
+
+Overfull \hbox (27.55449pt too wide) detected at line 419
+[]\OML/cmm/m/it/10.95 U[] \OT1/cmr/m/n/10.95 = [] = [] = [] \OMS/cmsy/m/n/10.95 ^^Y \OT1/cmr/m/n/10.95 12[]455 \OML/cmm/m/it/10.95 ^^V[][]
+ []
+
+[10]
+Overfull \hbox (16.17247pt too wide) in paragraph at lines 441--442
+\OT1/cmr/m/n/10.95 Da al-le be-rech-ne-ten Ein-zel-kom-po-nen-ten phy-si-ka-lisch un-kor-re-liert sind, er-folgt die fi-na-le Zu-sam-menf[]uhrung
+ []
+
+[11] [12]
+Overfull \hbox (7.65456pt too wide) in paragraph at lines 531--532
+[]\OT1/cmr/m/n/10.95 Einsetzen des K-Faktors lie-fert das streng li-nea-re End-er-geb-nis oh-ne jeg-li-che Taylor-Approximation: 
+ []
+
+[13]
+Overfull \hbox (26.34569pt too wide) in paragraph at lines 544--545
+\OT1/cmr/m/n/10.95 Gem[]a^^Y den Pro-jekt-s-pe-zi-fi-ka-tio-nen aus dem Leit-fa-den las-sen sich fre-quenz-abh[]angige []Ubertragungsfunktionen
+ []
+
+
+Overfull \hbox (40.36743pt too wide) in paragraph at lines 553--554
+[]\OT1/cmr/bx/n/10.95 R[]uckkoppelnetzwerk (Zwei-pol $\OML/cmm/m/it/10.95 Z[]$\OT1/cmr/bx/n/10.95 ): \OT1/cmr/m/n/10.95 Ei-ne Par-al-lel-schal-tung aus dem ohm-schen R[]uckkoppelwiderstand
+ []
+
+
+Overfull \hbox (11.99023pt too wide) in paragraph at lines 560--562
+\OT1/cmr/m/n/10.95 lel-schal-tung von $\OML/cmm/m/it/10.95 R[]$ \OT1/cmr/m/n/10.95 und der Se-ri-en-schal-tung $(\OML/cmm/m/it/10.95 R[] \OT1/cmr/m/n/10.95 + [])$. Die Be-rech-nung er-folgt am []ubersichtlichsten
+ []
+
+[14]
+Overfull \hbox (10.93515pt too wide) in paragraph at lines 603--603
+[]\OT1/cmr/bx/n/12 Methodik zur schal-tungs-tech-ni-schen Di-men-sio-nie-rung aus dem Bode-Diagramm 
+ []
+
+[15] (./Zusammenfassung.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 3764 strings out of 469462
+ 59497 string characters out of 5468615
+ 490359 words of memory out of 5000000
+ 32418 multiletter control sequences out of 15000+600000
+ 636081 words of font info for 71 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 57i,8n,65p,611b,237s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on Zusammenfassung.pdf (15 pages, 244629 bytes).
+PDF statistics:
+ 129 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

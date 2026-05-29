@@ -1,0 +1,262 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+\geometry{a4paper, margin=25mm}
+
+\begin{document}
+
+\title{Umfassendes und detailliertes Skriptum: Signalverarbeitung und Mobilfunk\\-- Systematisches Lehr- und Verständnisdokument --}
+\author{Fachhochschule Vorarlberg\\Studiengang: Elektronik und Informationstechnologie}
+\date{\today}
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Modul 1: Grundlagen der Signalverarbeitung und des Mobilfunks}
+
+Das erste Modul befasst sich mit den globalen Grundlagen der modernen Kommunikationstechnik. Im Zentrum steht das Verständnis, wie physikalische Medien genutzt werden, um Daten für eine unüberschaubare Anzahl an weltweiten Teilnehmern gleichzeitig bereitzustellen.
+
+\subsection{Die Herausforderung des gemeinsamen Mediums}
+
+In der Kommunikationstheorie ist das grundlegende Problem stets identisch: Ein Übertragungsmedium besitzt physikalische Grenzen. Im Fall des Mobilfunks ist dieses Medium der freie Raum, durch den sich elektromagnetische Wellen ausbreiten. Da sich Wellen im selben Frequenzbereich bei gleichzeitiger Übertragung gegenseitig überlagern und damit die Information zerstören, müssen strikte Regeln definiert werden. Ohne diese Strukturierung würde jedes Signal im Gesamtrauschen untergehen.
+
+\subsection{Detaillierte Analyse der Vielfachzugriffsverfahren}
+
+Die fundamentale Frage der Prüfung lautet: \emph{Wie ist es möglich, dass mehrere Nutzer gleichzeitig auf das Netz zugreifen können?} Die Nachrichtentechnik löst dieses Problem durch die mathematische und physikalische Trennung der Signale in vier Dimensionen.
+
+\subsubsection{Frequenzmultiplex (Frequency Division Multiple Access)}
+Beim Frequenzmultiplexverfahren wird das gesamte dem Mobilfunknetz zur Verfügung stehende Frequenzband in viele kleine, separate Kanäle unterteilt. Jeder Kanal erhält eine exakt definierte Trägerfrequenz und eine feste Bandbreite. Wenn ein Mobiltelefon eine Verbindung aufbaut, weist die Basisstation diesem Telefon für die gesamte Dauer des Gesprächs oder Datenaustauschs einen spezifischen Frequenzkanal zu. 
+
+Andere Nutzer im selben Gebiet erhalten andere Frequenzen. Da die Filter in den Empfängern die Nachbarkanäle sauber trennen können, telefonieren alle Nutzer ungestört nebeneinander. Ein anschauliches Analogon ist das klassische Radio: Jeder Sender strahlt auf einer eigenen Frequenz ab, und der Hörer wählt durch die Frequenzeinstellung gezielt einen einzigen Sender aus, während die anderen unbemerkt ebenfalls in der Luft existieren.
+
+\subsubsection{Zeitmultiplex (Time Division Multiple Access)}
+Das Zeitmultiplexverfahren nutzt das Prinzip, dass digitale Daten nicht kontinuierlich fließen müssen, sondern in extrem gestauchten Datenpaketen versendet werden können. Hier teilen sich mehrere Nutzer exakt dieselbe Frequenz. Die Trennung erfolgt über die Zeitachse. Das System definiert einen sich ständig wiederholenden Zeitrahmen, der in mehrere kurze Zeitslots unterteilt ist.
+
+Nutzer Eins sendet ausschließlich in Zeitslot Eins, Nutzer Zwei in Zeitslot Zwei und so weiter. Sobald alle Nutzer einmal an der Reihe waren, beginnt der Zyklus von vorn. Da diese Wechsel im Bereich von Millisekunden stattfinden, bemerkt der Mensch keine Unterbrechung. Die kritische Herausforderung hierbei ist die präzise zeitliche Synchronisation. Da die Signale der Mobiltelefone aufgrund unterschiedlicher Entfernungen zur Basisstation unterschiedlich lange durch den Raum unterwegs sind, müssen die Sendezeitpunkte atomgenau nachgeregelt werden, damit die Datenpakete nicht kollidieren.
+
+\subsubsection{Codemultiplex (Code Division Multiple Access)}
+Das Codemultiplexverfahren bricht mit der klassischen Aufteilung in feste Frequenzen oder Zeiten. Hier senden alle Teilnehmer permanent gleichzeitig und auf exakt demselben Frequenzband. Die Trennung der Signale erfolgt über eine mathematische Codierung. Jedes Mobiltelefon erhält einen eindeutigen, orthogonalen Pseudorauschcode. Das zu übertragende Nutzsignal wird vor dem Absenden mit diesem Code multipliziert. Dadurch wird das Signal künstlich in die Breite gezogen und sieht für jeden unbeteiligten Empfänger aus wie gewöhnliches Hintergrundrauschen.
+
+Der rechtmäßige Empfänger besitzt den exakt identischen Code. Durch eine mathematische Operation, die als Korrelation bezeichnet wird, multipliziert der Empfänger das empfangene Gesamtsignal mit seinem Code. Nur das Signal, das mit dem passenden Code verschlüsselt wurde, zieht sich wieder auf seine ursprüngliche, schmale Bandbreite zusammen und wird sichtbar. Die Signale aller anderen Nutzer bleiben als minimales Hintergrundrauschen bestehen. Ein praktisches Beispiel ist eine Party, auf der alle Menschen gleichzeitig reden. Wenn zwei Personen spanisch sprechen und alle anderen chinesisch, können sich die beiden spanischsprechenden Personen perfekt verstehen, weil ihr Gehirn das chinesische Sprachmuster als reines Hintergrundgeräusch herausfiltert.
+
+\subsubsection{Raummultiplex (Spatial Division Multiple Access)}
+Das Raummultiplexverfahren nutzt die geografische Trennung und die Richtcharakteristik von Antennensystemen. Moderne Basisstationen verwenden keine Rundstrahlantennen mehr, die das Signal ungezielt in alle Richtungen verteilen. Stattdessen kommen hochkomplexe Antennenarrays zum Einsatz. Durch gezielte Phasenverschiebung der Signale an den einzelnen Antennenelementen lässt sich die elektromagnetische Welle bündeln. 
+
+Das System formt eine schmale Keule, die exakt auf den aktuellen Aufenthaltsort eines Nutzers nachgeführt wird. Dadurch kann ein anderer Nutzer, der sich in einer völlig anderen Richtung zur Basisstation befindet, exakt dieselbe Frequenz zur selben Zeit nutzen, ohne dass es zu Interferenzen kommt.
+
+\subsection{Die zellulare Netzwerkarchitektur}
+
+Das fundamentale Prinzip des modernen Mobilfunks beruht auf einer zellularen Struktur. Da die Sendeleistung von Mobiltelefonen und Basisstationen aus gesundheitlichen, rechtlichen und physikalischen Gründen streng limitiert ist, kann ein einzelner Sender kein ganzes Land versorgen. Das Versorgungsgebiet wird daher in Millionen kleiner, aneinandergrenzender Funkzellen aufgeteilt.
+
+In der theoretischen Modellierung wird eine Funkzelle meist als perfektes Sechseck dargestellt. Dieses Wabenmodell hat einen einfachen mathematischen Grund: Sechsecke lassen sich lückenlos aneinanderreihen, ohne dass unversorgte Lücken oder riesige Überlappungsbereiche entstehen. Zudem kommt die hexagonale Form der realen, kreisförmigen Funkwellenausbreitung physikalisch am nächsten.
+
+In der Realität ist eine Funkzelle jedoch niemals perfekt geometrisch. Die realen Zellgrenzen werden durch topografische Gegebenheiten wie Berge, Täler, Gebäude, Bäume und sogar durch das Wetter bestimmt. Man unterscheidet je nach Größe und Einsatzzweck verschiedene Zelltypen:
+
+\begin{itemize}
+    \item \textbf{Makrozellen:} Sie stellen das Grundgerüst des Netzes dar. Ihre Antennen befinden sich auf hohen Masten oder Hausdächern. Sie decken einen Radius von mehreren Kilometern ab und dienen der großflächigen Grundversorgung, insbesondere in ländlichen Regionen oder entlang von Verkehrswegen.
+    \item \textbf{Mikrozellen:} Diese Zellen haben einen Radius von wenigen hundert Metern. Die Antennen werden unterhalb der Dachlinie installiert, beispielsweise an Straßenlaternen oder Hauswänden. Sie kommen in dicht besiedelten Innenstädten zum Einsatz, um das dort enorm hohe Verkehrsaufkommen zu bewältigen.
+    \item \textbf{Pikozellen und Femtozellen:} Dies sind extrem kleine Funkzellen mit einer Reichweite von nur wenigen Metern. Sie werden innerhalb von Gebäuden, Einkaufszentren, Bahnhöfen oder in privaten Wohnungen installiert, um lokale Versorgungslücken zu schließen und die Gebäudedämpfung zu überwinden.
+\end{itemize}
+
+Das Prinzip der Frequenzwiederholung löst das größte Problem des Mobilfunks: die extreme Knappheit an Frequenzen. Würde man im ganzen Land dieselbe Frequenz für ein einziges Gespräch nutzen, könnte landesweit immer nur ein Mensch telefonieren. Da die Reichweite der Signale einer Basisstation begrenzt ist, kann man dieselbe Frequenz in einer gewissen Entfernung wiederverwenden, ohne dass sich die Signale gegenseitig stören. 
+
+Das Netz wird dafür in sogenannte Cluster unterteilt. Ein Cluster ist eine Gruppe von direkt aneinandergrenzenden Zellen, von denen jede eine völlig andere Frequenz zugewiesen bekommt. Erst im nächsten Cluster, das geografisch ein Stück weiter entfernt liegt, wiederholt sich das exakt gleiche Frequenzmuster. Je größer der Abstand zwischen zwei Zellen mit derselben Frequenz ist, desto geringer sind die gegenseitigen Gleichkanalinterferenzen, aber desto weniger Frequenzen stehen pro einzelner Zelle zur Verfügung.
+
+\subsection{Der hierarchische Aufbau des Mobilfunknetzes}
+
+Ein Mobilfunknetz ist keine lose Ansammlung von Antennen, sondern ein streng hierarchisch organisiertes, globales Computernetzwerk. Man kann das Gesamtnetz logisch in drei Hauptbereiche unterteilen: das mobile Endgerät, das Funkzugangsnetz und das Kernnetz.
+
+\subsubsection{Das mobile Endgerät}
+Das Endgerät ist die Schnittstelle zum Nutzer. Es besteht im Wesentlichen aus der Hochfrequenz-Sende- und Empfangseinheit, dem Basisbandprozessor, der die digitalen Signale verarbeitet, und der Identifikationskarte des Teilnehmers. Diese Karte ist der Schlüssel zum Netz: Sie enthält eine weltweit einzigartige Identifikationsnummer und kryptografische Schlüssel. Nur über diese Schlüssel kann sich das Gerät gegenüber dem Netz authentifizieren und die Verbindung verschlüsseln.
+
+\subsubsection{Das Funkzugangsnetz}
+Das Zugangsnetzwerk stellt die unmittelbare Funkverbindung zu den Endgeräten her. Die wichtigste Komponente ist die Basisstation. Sie enthält die physischen Hochfrequenzsender, Empfänger und die Antennensysteme. Sie wandelt die elektrischen Signale aus dem Festnetz in elektromagnetische Wellen um und umgekehrt. Eine moderne Basisstation versorgt meist drei unterschiedliche Funkzellen gleichzeitig über Sektorantennen, von denen jede einen Winkel von einhundertzwanzig Grad abdeckt.
+
+Mehrere Basisstationen sind über Glasfaserkabel oder Richtfunk mit einer übergeordneten Steuerungseinheit verbunden. Diese Einheit ist das Gehirn des Zugangsnetzwerks. Sie überwacht die Funkverbindungen, verwaltet die Frequenzen innerhalb der Zellen und trifft die Entscheidung, wann ein Mobiltelefon von einer Funkzelle in die nächste übergeben werden muss.
+
+\subsubsection{Das Kernnetz}
+Das Kernnetzwerk ist das logische Rückgrat des Mobilfunkbetreibers. Es transportiert keine Funksignale, sondern ist ein reines Hochleistungs-Datennetzwerk, das für die Vermittlung, die Sicherheit und die Benutzerverwaltung zuständig ist. Es besteht aus gigantischen Datenbanken und Vermittlungsrechnern:
+
+\begin{itemize}
+    \item \textbf{Die zentrale Mobilvermittlungsstelle:} Sie verbindet das Mobilfunknetz mit dem weltweiten Festnetz und den Netzen anderer Betreiber. Sie steuert den gesamten Verbindungsaufbau und die Abrechnung.
+    \item \textbf{Das Heimatregister:} Dies ist die wichtigste zentrale Datenbank des Betreibers. Hier ist jeder Kunde dauerhaft registriert. Die Datenbank speichert, welche Dienste der Nutzer gebucht hat, welche Identifikationsnummer seine Karte besitzt und in welchem Bereich des Landes sich das Mobiltelefon aktuell befindet.
+    \item \textbf{Das Besucherregister:} Jede Mobilvermittlungsstelle besitzt ein lokales Besucherregister. Sobald ein Mobiltelefon den Bereich einer Vermittlungsstelle betritt, werden seine Daten temporär aus dem Heimatregister in dieses Besucherregister kopiert. Das System weiß dadurch sofort, welche Rechte der Nutzer hat, ohne bei jedem Anruf die zentrale Hauptdatenbank abfragen zu müssen.
+    \item \textbf{Das Authentisierungszentrum:} Diese Sicherheitsdatenbank verwaltet die geheimen kryptografischen Schlüssel. Sie prüft bei jedem Einbuchungsvorgang, ob die Identifikationskarte echt ist, und generiert die Schlüssel für die Verschlüsselung der Funkstrecke.
+\end{itemize}
+
+\subsection{Dynamische Prozesse im Netzbetrieb}
+
+Ein Mobilfunknetz ist permanent in Bewegung. Die Geräte wechseln ihren Standort, schalten sich ein und aus oder fordern unvorhersehbar Datenmengen an. Das System muss diese Dynamik vollautomatisch im Hintergrund regeln.
+
+\subsubsection{Das Orts-Update und Paging}
+Damit ein Nutzer einen Anruf oder eine Nachricht empfangen kann, muss das Netz zu jedem Zeitpunkt wissen, wo sich das Telefon befindet. Es wäre jedoch reine Verschwendung von Akkuleistung und Funkkapazität, wenn das Telefon bei jedem Schritt der Basisstation seinen exakten Standort mitteilen würde.
+
+Deshalb fasst das Netz mehrere Dutzend Funkzellen zu einem sogenannten Aufenthaltsbereich zusammen. Solange sich das Mobiltelefon innerhalb dieser Gruppe von Zellen bewegt, schweigt es komplett. Erst wenn es die Grenze zu einem neuen Aufenthaltsbereich überschreitet, bemerkt es dies anhand der Kontrollsignale der neuen Basisstation und führt ein Orts-Update durch, wodurch das Besucherregister aktualisiert wird.
+
+Kommt nun ein Anruf für diesen Nutzer an, prüft das Netz im Heimatregister, in welchem Aufenthaltsbereich das Gerät eingebucht ist. Nun sendet das Kernnetz an alle Basisstationen innerhalb dieses spezifischen Bereichs einen Suchruf, das sogenannte Paging. Das Mobiltelefon hört diesen Ruf, antwortet exakt über jene Basisstation, an der es gerade den besten Empfang hat, und die Verbindung wird aufgebaut.
+
+\subsubsection{Die Zellübergabe}
+Wenn sich ein Nutzer während einer aktiven Verbindung fortbewegt, verlässt er irgendwann den Bereich seiner aktuellen Funkzelle. Das Signal zur alten Basisstation wird schwächer, während das Signal einer benachbarten Basisstation stärker wird. Damit die Verbindung nicht abreißt, wird eine Zellübergabe durchgeführt.
+
+Das Mobiltelefon misst dafür permanent die Signalqualität aller benachbarten Basisstationen und schickt diese Messberichte laufend an die aktuelle Basisstation. Die übergeordnete Steuerungseinheit analysiert diese Daten. Sinkt die Qualität unter einen kritischen Schwellenwert und ist eine Nachbarzelle dauerhaft besser, leitet sie den Wechsel ein. Das System reserviert in der neuen Funkzelle einen freien Kanal und befehligt dem Mobiltelefon, auf die neuen Parameter umzuschalten. Man unterscheidet zwei Arten:
+
+\begin{itemize}
+    \item \textbf{Harte Zellübergabe:} Die Verbindung zur alten Basisstation wird komplett getrennt, bevor die Verbindung zur neuen Basisstation aufgebaut wird. Dies ist typisch für Frequenz- und Zeitmultiplexverfahren.
+    \item \textbf{Weiche Zellübergabe:} Das Mobiltelefon ist für eine kurze Übergangszeit mit der alten und der neuen Basisstation gleichzeitig verbunden. Dies ist eine Besonderheit des Codemultiplexverfahrens, da hier ohnehin alle Stationen auf derselben Frequenz arbeiten. Es verhindert Verbindungsabbrüche in Grenzbereichen extrem effektiv.
+\end{itemize}
+
+\subsubsection{Leistungsregelung}
+Die Leistungsregelung ist ein technisch kritischer Prozess im Mobilfunk, besonders beim Codemultiplexverfahren. Da sich alle Nutzer dasselbe Frequenzband teilen, würde ein Mobiltelefon, das sich ganz nah an der Basisstation befindet und mit maximaler Leistung sendet, die schwachen Signale aller weit entfernten Mobiltelefone komplett übertönen (Nah-Fern-Problem).
+
+Um dies zu verhindern, misst die Basisstation die empfangene Signalstärke jedes einzelnen Telefons mehrere tausend Mal pro Sekunde. Ist das Signal eines Telefons auch nur minimal stärker als nötig, sendet die Basisstation sofort den Befehl, die Leistung zu senken. Ist es zu schwach, folgt der Befehl zur Leistungserhöhung. Das Ziel ist es, dass die Signale aller Mobiltelefone, völlig unabhängig von ihrer realen Entfernung, mit dem exakt identischen Leistungspegel an der Antenne der Basisstation eintreffen. Dies minimiert das Gesamtrauschen im Äther dramatisch und erhöht direkt die Gesamtkapazität der Funkzelle.
+
+\subsection{Frequenzauktionen und elektromagnetische Ausbreitung}
+
+Da Frequenzen physikalisch begrenzt sind, werden sie von staatlichen Behörden streng reguliert und in Auktionsverfahren an Netzbetreiber versteigert. Die Wahl des Frequenzbandes bestimmt die wirtschaftliche und technische Nutzbarkeit des Netzes.
+
+Niedrige Frequenzbänder, wie sie historisch für ältere Mobilfunkgenerationen oder ländliche Gebiete genutzt werden, besitzen eine große Wellenlänge. Diese Wellen haben die Eigenschaft, atmosphärische Störungen gut zu überwinden, sich weit über die Erdoberfläche auszubreiten und feste Hindernisse wie Betonwände oder Wälder gut zu durchdringen. Mit wenigen Basisstationen lässt sich eine riesige Fläche versorgen. Allerdings ist im niedrigen Frequenzbereich die verfügbare Gesamtbandbreite gering, weshalb die Datenraten limitiert sind.
+
+Hohe Frequenzbänder, wie sie bei modernen Technologien im Millimeterwellenbereich eingesetzt werden, bieten gigantische Bandbreiten. Hier können extrem viele Daten parallel übertragen werden. Der Nachteil ist jedoch die physikalische Ausbreitung: Die Wellen verhalten sich zunehmend wie Licht, werden von Wänden reflektiert oder absorbiert und besitzen eine extrem geringe Reichweite. Für ein flächendeckendes Netz in einer Stadt werden daher sehr viele kleine Funkzellen benötigt.
+
+\subsection{Logik der Datenratenberechnung im Mobilfunk}
+
+Um die Datenrate eines Mobilfunkkanals rein textuell zu ergründen, müssen wir das Zusammenspiel aus Bandbreite und Signalqualität verstehen. Die physikalische Bandbreite, gemessen in Hertz, definiert das zeitliche Fenster: Je breiter der Kanal ist, desto mehr Symbole können pro Sekunde durch die Luft geschickt werden. 
+
+Das Symbol selbst ist die kleinste physikalische Einheit der Übertragung. Wie viel Information, also wie viele Bits, in einem einzigen Symbol stecken, entscheidet das Modulationsverfahren und die vorherrschende Signalqualität. Die Signalqualität wird durch das Verhältnis von Nutzsignal zu Störsignal bestimmt. Ist die Verbindung hervorragend, weil der Nutzer nah an der Antenne steht, kann ein Symbol sehr komplex gestaltet werden und beispielsweise viele verschiedene Zustände annehmen. Jeder Zustand repräsentiert eine spezifische Bitkombination. Ist das Signal schlecht und verrauscht, muss das Symbol einfach gehalten werden (wenige Zustände), damit der Empfänger es überhaupt noch fehlerfrei interpretieren kann.
+
+Die Datenrate errechnet sich somit gedanklich wie folgt: Man ermittelt die Anzahl der Symbole, die aufgrund der Bandbreite pro Sekunde übertragen werden können. Diesen Wert multipliziert man mit der Anzahl der Bits, die ein einzelnes Symbol aufgrund der aktuellen Signalqualität sicher transportieren kann. Abschließend müssen noch Korrekturfaktoren für den Protokoll-Overhead abgezogen werden, da ein Teil der Datenrate für Kontrollseiten und Fehlerkorrekturcodes verbraucht wird.
+
+\newpage
+
+\section{Modul 2: Analoge Signalverarbeitung -- Theoretischer Teil 1}
+
+Bevor Signale in die digitale Welt überführt werden können, müssen sie in der analogen Domäne aufbereitet werden. Rohsignale von Antennen oder Sensoren sind meist extrem schwach und von erheblichem Rauschen überlagert. Das wichtigste Werkzeug der analogen Aufbereitung ist der Operationsverstärker.
+
+\subsection{Das Idealmodell des Operationsverstärkers}
+
+In der signaltheoretischen Betrachtung arbeitet man zunächst mit einem Idealmodell, um die grundlegende Schaltungslogik ohne mathematische Komplexität zu verstehen. Der ideale Operationsverstärker besitzt Eigenschaften, die in der Realität unerreicht sind, aber das Design von Schaltungen massiv vereinfachen.
+
+\begin{itemize}
+    \item \textbf{Unendlicher Eingangswiderstand:} Der ideale Operationsverstärker besitzt an seinen beiden Eingängen (dem invertierenden und dem nicht-invertierenden Eingang) einen unendlich hohen elektrischen Widerstand. Das bedeutet, dass kein noch so minimaler elektrischer Strom in die Eingänge hineinfließen oder aus ihnen herausfließen kann. Für eine vorgeschaltete Sensor- oder Signalquelle ist der Verstärker somit unsichtbar. Er entzieht der Quelle keine Energie und verfälscht die zu messende Spannung nicht.
+    \item \textbf{Unendliche Verstärkung:} Die fundamentale Aufgabe des Operationsverstärkers ist es, die Differenzspannung zwischen seinen beiden Eingängen zu verstärken. Beim idealen Modell ist dieser Verstärkungsfaktor unendlich groß. Sobald sich die Spannungen an den beiden Eingängen auch nur um einen winzigen Bruchteil unterscheiden, würde der Ausgang theoretisch sofort eine unendliche Spannung annehmen.
+    \item \textbf{Ausgang ohne Innenwiderstand:} Der Ausgang des idealen Verstärkers verhält sich wie eine perfekte Spannungsquelle. Der Ausgangswiderstand ist exakt null. Das bedeutet, dass der Verstärker am Ausgang jeden beliebigen elektrischen Strom treiben kann, ohne dass die Ausgangsspannung einbricht. Es können beliebig viele nachfolgende Schaltungsstufen angeschlossen werden.
+\end{itemize}
+
+Das Prinzip des virtuellen Kurzschlusses ist die direkte Folge dieser Eigenschaften, wenn der Verstärker mit einer negativen Rückkopplung betrieben wird. Eine Rückkopplung bedeutet, dass un ein Teil des Ausgangssignals zurück auf den negativen Eingang geleitet wird. Da der Verstärker eine unendliche Verstärkung besitzt, versucht er permanent, den Ausgang so auszusteuern, dass die Differenzspannung zwischen dem positiv und dem negativen Eingang exakt null Volt beträgt. Die beiden Eingänge liegen somit virtuell auf dem exakt gleichen elektrischen Potenzial, obwohl sie keine physikalische Verbindung miteinander haben.
+
+\subsection{Die realen physikalischen Grenzen}
+
+In der realen Ingenieurspraxis müssen die idealen Annahmen revidiert werden, da Halbleiter physikalischen Grenzen unterliegen.
+
+Der Eingangswiderstand ist zwar extrem hochohmig, aber nicht unendlich. Es fließt immer ein winziger Strom, der als Eingangsruhestrom bezeichnet wird. Bei hochempfindlichen Messschaltungen kann dieser Strom Kondensatoren ungewollt aufladen und zu Messfehlern führen. Zudem ist die Verstärkung real begrenzt und sinkt mit steigender Frequenz des Signals drastisch ab.
+
+Die wichtigste dynamische Grenze für die Signalverarbeitung ist jedoch die Slew-Rate. Sie beschreibt die maximale Ausgangsspannungsänderung pro Zeiteinheit. Wenn ein steiles Rechtecksignal am Eingang anliegt, müsste der Ausgang theoretisch sofort von null auf den Maximalwert springen. Die Slew-Rate limitiert dies: Der Ausgang steigt nur mit einer rampenförmigen Steilheit an. Wenn sich ein analoges Eingangssignal schneller verändert, als es die Slew-Rate des Operationsverstärkers erlaubt, kann der Ausgang dem Signal nicht mehr folgen. Es kommt zu massiven, großsignaltypischen Verzerrungen, bei denen sinusförmige Signale zu dreieckigen Signalformen degenerieren.
+
+\newpage
+
+\section{Modul 3: Analoge Signalverarbeitung -- Theoretischer Teil 2}
+
+Dieses Modul widmet sich der analogen Filtertechnik. Filter sind selektive Netzwerke, die das Frequenzspektrum eines Signals formen, indem sie bestimmte Frequenzbänder passieren lassen und andere blockieren.
+
+\subsection{Passive versus aktive Filtersysteme}
+
+Filter lassen sich anhand der verwendeten Bauelemente und ihres energetischen Verhaltens in zwei Hauptkategorien unterteilen.
+
+Passive Filter bestehen ausschließlich aus passiven Bauelementen, namentlich Widerständen, Kondensatoren und Spulen. Sie benötigen keine externe Spannungsversorgung, um ihre Filterwirkung zu entfalten. Der größte theoretische Nachteil passiver Filter ist, dass sie dem Signal Energie entziehen. Die Amplitude des Ausgangssignals ist im Durchlassbereich immer geringer oder bestenfalls gleich der Amplitude des Eingangssignals. Eine Verstärkung ist ausgeschlossen. Zudem neigen passive Filter dazu, bei niedrigen Frequenzen extrem große und schwere Spulen zu benötigen. Sie reagieren zudem empfindlich auf die elektrische Last, die an ihren Ausgang angeschlossen wird; eine nachfolgende Schaltung verändert die Filtereigenschaften fundamental.
+
+Aktive Filter integrieren aktive Komponenten, primär Operationsverstärker, in Kombination mit Widerständen und Kondensatoren. Auf den Einsatz von unhandlichen Spulen kann hier komplett verzichtet werden, da die Eigenschaften einer Spule durch geschickte Operationsverstärkerschaltungen elektronisch simuliert werden können. Aktive Filter benötigen zwingend eine externe Energieversorgung. Sie bieten den immensen Vorteil, dass sie das Signal im Durchlassbereich nicht nur passieren lassen, sondern bei Bedarf auch direkt verstärken können. Da der Operationsverstärker als Puffer wirkt, isoliert er das Filternetzwerk: Der hohe Eingangswiderstand belastet die Signalquelle nicht, und der niedrige Ausgangswiderstand sorgt dafür, dass die Filterkurve stabil bleibt, völlig unabhängig davon, welche Last am Ausgang angeschlossen wird.
+
+\subsection{Systematischer Vergleich der klassischen Filtercharakteristiken}
+
+Beim Entwurf eines Analogfilters steht der Ingenieur vor einem mathematischen Optimierungsproblem. Es ist physikalisch unmöglich, ein Filter zu bauen, das einen perfekt flachen Durchlassbereich, eine unendlich steile Trennung zum Sperrbereich und eine perfekt lineare Phase gleichzeitig besitzt. Man muss zwischen verschiedenen Charakteristiken abwägen.
+
+\begin{itemize}
+    \item \textbf{Butterworth-Filter:} Dieses Filter wird als maximal flach bezeichnet. Im Durchlassbereich weist die Übertragungskurve keinerlei Schwankungen auf; das Signal wird bis kurz vor der Grenzfrequenz absolut gleichmäßig übertragen. Der Übergang in den Sperrbereich erfolgt mittelschwer. Die Phasenverschiebung ist nicht linear, was bedeutet, dass unterschiedliche Frequenzen unterschiedlich stark verzögert werden.
+    \item \textbf{Chebyshev-Filter:} Wenn das Hauptziel eine extrem steile Filterflanke ist, um unerwünschte Frequenzen knapp außerhalb des Nutzbandes radikal abzuschneiden, wählt man das Chebyshev-Filter. Diese Steilheit wird jedoch durch einen systematischen Nachteil erkauft: Es tritt eine Welligkeit auf. Die Verstärkung im Durchlassbereich schwankt periodisch um einen bestimmten Dezibelwert. Das Signal wird also je nach exakter Frequenz leicht unterschiedlich stark gedämpft.
+    \item \textbf{Bessel-Filter:} Das Bessel-Filter optimiert das Verhalten im Zeitbereich auf Kosten des Frequenzbereichs. Es besitzt eine exakt lineare Phasenverschiebung im gesamten Durchlassbereich. Das bedeutet, dass alle Frequenzanteile des Signals exakt die gleiche zeitliche Verzögerung erfahren. Wenn man ein Rechtecksignal oder einen Puls durch ein Bessel-Filter schickt, bleibt die Signalform perfekt erhalten, und es kommt zu keinem Überschwingen an den Flanken. Der Nachteil ist ein extrem langsamer, flacher Abfall der Verstärkung zum Sperrbereich hin; es trennt Frequenzen nur sehr ungenau.
+    \item \textbf{Elliptisches Filter (Cauer-Filter):} Dieses Filter erzielt die absolut steilste Flanke aller klassischen Filtertypen. Es schneidet unerwünste Frequenzen fast augenblicklich ab. Dafür zeigt es jedoch das unruhigste Verhalten: Sowohl im Durchlassbereich als auch im Sperrbereich treten deutliche Welligkeiten auf. Zudem ist das Phasenverhalten extrem nichtlinear.
+\end{itemize}
+
+\subsection{Einführung in die Welt der digitalen Filter}
+
+Im Gegensatz zu analogen Filtern, die Spannungen mittels physikalischer Bauteile verändern, arbeiten digitale Filter rein mathematisch auf diskreten Zahlenwerten im Computer. Man unterscheidet zwei fundamentale Klassen.
+
+Digitale Filter mit endlicher Impulsantwort besitzen keine internen Rückkopplungsschleifen. Der aktuelle Ausgangswert berechnet sich ausschließlich durch die Multiplikation und Aufsummierung der aktuellen und einer begrenzten Anzahl vergangener Eingangswerte. Wenn man einen kurzen Impuls in dieses Filter einspeist, ist die Antwort nach einer exakt definierbaren Anzahl von Schritten komplett abgeklungen; sie ist endlich. Diese Filter sind aufgrund der fehlenden Rückkopplung absolut garantiert stabil; sie können niemals unkontrolliert anfangen zu schwingen. Ein weiterer massiver Vorteil ist, dass sie so konstruiert werden können, dass sie eine exakt lineare Phase besitzen. Der Nachteil ist der hohe Rechenaufwand: Um eine steile Filterflanke zu erzielen, müssen extrem viele vergangene Werte gespeichert und verrechnet werden, was viel Prozessorleistung kostet.
+
+Digitale Filter mit unendlicher Impulsantwort arbeiten mit internen Rückkopplungen. Das bedeutet, dass in die Berechnung des aktuellen Ausgangswertes nicht nur die Eingangswerte, sondern auch die zuvor berechneten Ausgangswerte einfließen. Speist man hier einen Impuls ein, kreist das Signal theoretisch unendlich lange in der Rückkopplungsschleife weiter; die Impulsantwort ist unendlich. Der große Vorteil dieser Architektur ist die immense Effizienz: Mit minimalem Rechenaufwand und sehr wenigen Speicherplätzen lassen sich extrem steile Filterflanken realisieren, die einem analogen Filter in nichts nachstehen. Allerdings bringt die Rückkopplung Gefahren mit sich: Wenn die Filterkoeffizienten ungenau gewählt sind, kann das System instabil werden und sich zu einer unendlichen Schwingung aufschaukeln. Zudem weisen diese Filter starke Phasenverzerrungen auf.
+
+\newpage
+
+\section{Modul 4: Analog-Digital- und Digital-Analog-Wandlung}
+
+Die Schnittstelle zwischen der kontinuierlichen physikalischen Welt und der wertdiskreten digitalen Computerwelt wird durch Wandler realisiert. Die Qualität dieser Wandlung bestimmt maßgeblich die Informationserhaltung.
+
+\subsection{Das Nyquist-Shannon-Abtasttheorem}
+
+Die mathematische Grundlage jeder Digitalisierung besagt, dass ein kontinuierliches analoges Signal nur dann fehlerfrei in eine Folge von diskreten Zeitwerten überführt und später wieder lückenlos rekonstruiert werden kann, wenn die Abtastfrequenz strikt mehr als doppelt so hoch ist wie die höchste im analogen Signal vorkommende Frequenzkomponente.
+
+Wird dieses fundamentale Naturgesetz missachtet, tritt der irreversible Effekt des Aliasing (Überfaltung) auf. Frequenzen, die höher sind als die halbe Abtastrate, werden durch den Abtastprozess mathematisch nach unten gespiegelt. Sie erscheinen im digitalen Datensatz fälschlicherweise als völlig andere, niedrigfrequente Signale. Da sich diese künstlichen Frequenzen mit den echten niedrigen Frequenzen des Nutzsignals vermischen, ist die Information zerstört; kein Algorithmus der Welt kann sie nachträglich wieder trennen. 
+
+Um Aliasing absolut sicher zu verhindern, muss jedem Analog-Digital-Wandler ein analoger Tiefpassfilter vorgeschaltet werden, der alle Frequenzanteile oberhalb der halben Abtastrate radikal abschneidet, bevor die Abtastung stattfindet.
+
+\subsection{Logik der Datenratenberechnung bei der Digitalisierung}
+
+Die Berechnung der ungepackten Datenrate eines digitalen Datenstroms folgt einer klaren physikalischen Logik und basiert auf zwei Parametern: der zeitlichen Abtastrate und der wertmäßigen Auflösung.
+
+Die Abtastrate, ausgedrückt in Hertz, gibt an, wie viele einzelne Momentanaufnahmen der analogen Spannung pro Sekunde gemacht werden. Die Auflösung, ausgedrückt in Bit, bestimmt das Raster für die Quantisierung. Ein System mit einer bestimmten Bit-Auflösung teilt den gesamten messbaren Spannungsbereich in eine feste Anzahl von diskreten Stufen auf. Jedes Bit mehr verdoppelt die Anzahl der verfügbaren Stufen, wodurch die Rundungsfehler (das Quantisierungsrauschen) halbiert werden.
+
+Die Datenrate pro Kanal berechnet sich rein logisch wie folgt: Man nimmt die Anzahl der Messungen pro Sekunde und multipliziert diese mit der Anzahl der Bits, die für das Abspeichern einer einzelnen Messung benötigt werden. Das Ergebnis ist die Anzahl der Bits, die pro Sekunde generiert werden. Liegen mehrere unabhängige Kanäle vor, wie es beispielsweise bei einer Stereo-Audioaufnahme mit einem linken und einem rechten Kanal der Fall ist, muss diese Bitrate folgerichtig mit der Anzahl der Kanäle multipliziert werden.
+
+\subsection{Detaillierte Analyse der Wandlerarchitekturen}
+
+Wandler lassen sich fundamental nach der Geschwindigkeit ihrer Abtastung im Verhältnis zur Signalbandbreite kategorisieren.
+
+\subsubsection{Nyquist-Wandler}
+Nyquist-Wandler tasten das Signal relativ langsam ab, typischerweise knapp oberhalb der theoretischen Mindestgrenze des Abtasttheorems. Ein klassischer Vertreter ist das Verfahren mit einem sukzessiven Approximationsregister. Dieses arbeitet nach dem Prinzip der Waagschale oder der binären Suche. 
+
+Wenn eine unbekannte analoge Spannung anliegt, vergleicht der Wandler diese im ersten Schritt mit der exakten Hälfte des maximalen Messbereichs. Ist die Signalspannung größer, wird das höchste Bit auf Eins gesetzt, andernfalls auf Null. Im nächsten Schritt wird die verbleibende Hälfte wiederum halbiert und der Vergleich wiederholt. Der Wandler tastet sich so Bit für Bit von der wichtigsten zur unwichtigsten Stelle an den realen Spannungswert heran. Dieses Verfahren benötigt für eine Auflösung von sechzehn Bit exakt sechzehn aufeinanderfolgende Taktschritte, ist also präzise und deterministisch, erfordert aber hochpräzise interne Bauteile.
+
+\subsubsection{Oversampling-Wandler (Delta-Sigma-Wandler)}
+Oversampling-Wandler gehen einen völlig entgegengesetzten Weg. Sie tasten das analoge Signal mit einer extrem hohen Frequenz ab, die oft das Hundertfache oder Tausendfache der eigentlich benötigten Nyquist-Frequenz beträgt. Dafür nutzen sie intern eine extrem grobe wertmäßige Auflösung, im Extremfall einen einfachen Vergleicher, der lediglich ein einziges Bit (höher oder niedriger) ausgibt.
+
+Das Geheimnis des Delta-Sigma-Verfahrens liegt in einer internen Rückkopplungsschleife, dem Modulator. Dieser misst permanent den Fehler, der durch die grobe Ein-Bit-Quantisierung entsteht, integriert diesen Fehler über die Zeit und führt ihn wieder an den Eingang zurück. Diese Operation bewirkt ein sogenanntes Noise Shaping (Rauschformung): Das unvermeidbare, massive Quantisierungsrauschen wird mathematisch aus dem niedrigen Frequenzbereich des eigentlichen Nutzsignals in extrem hohe Frequenzbereiche verschoben, die weit außerhalb der menschlichen Wahrnehmung oder der technischen Nutzung liegen.
+
+Dem Modulator ist ein komplexer digitaler Filter nachgeschaltet. Dieser schneidet das hochfrequente Rauschen, das dorthin verschoben wurde, komplett weg. Gleichzeitig führt er eine Dezimierung durch: Er fasst die riesige Menge an schnellen Ein-Bit-Werten mathematisch zusammen und berechnet daraus einen hochpräzisen, langsameren Datenstrom mit einer exzellenten Auflösung von beispielsweise vierundzwanzig Bit. Dieses Verfahren ist die Basis für moderne Hi-Fi-Audiosysteme, da es keine hochpräzisen analogen Bauteile erfordert, sondern die Präzision rein rechnerisch durch digitale Logik erzeugt.
+
+\newpage
+
+\section{Modul 5: Elektrische Schaltungen signaltheoretisch modellieren}
+
+Um das Verhalten komplexer elektrischer Schaltungen vorhersagbar zu machen, nutzt die Ingenieurwissenschaft die signaltheoretische Modellierung. Schaltungen werden dabei als mathematische Systeme betrachtet, die Eingangssignale in Ausgangssignale transformieren. Dies kann in zwei unterschiedlichen mathematischen Welten geschehen.
+
+\subsection{Die Modellierung im Zeitbereich}
+
+Im Zeitbereich betrachten wir die Schaltung in ihrer direkten physikalischen Realität. Die Bauelemente werden über ihre zeitabhängigen Eigenschaften beschrieben: Ein Widerstand folgt dem ohmschen Gesetz, ein Kondensator speichert Ladung in Abhängigkeit vom fließenden Strom über die Zeit, und eine Spule baut ein Magnetfeld auf.
+
+Verknüpft man diese Bauelemente über die Kirchhoffschen Regeln (Knoten- und Maschenregel), entsteht ein System von Differentialgleichungen. Diese Gleichungen beschreiben mathematisch exakt, wie sich eine Spannungsänderung am Eingang zu jedem exakten Zeitpunkt auf die Ströme und Spannungen im Inneren und am Ausgang der Schaltung auswirkt. Die Lösung solcher Differentialgleichungen im Zeitbereich ist für komplexe Schaltungen extrem mühsam und unübersichtlich, weshalb man diesen Raum meist nur für numerische Computersimulationen nutzt.
+
+\subsection{Die Modellierung im Frequenzbereich}
+
+Der Frequenzbereich nutzt mathematische Integraltransformationen, um die Analyse von Schaltungen radikal zu vereinfachen. Bei kontinuierlichen analogen Systemen verwendet man die Laplace-Transformation; bei diskreten digitalen Systemen kommt die Z-Transformation zum Einsatz.
+
+Diese Transformationen vollbringen ein mathematisches Kunststück: Sie wandeln die komplizierten Differentialgleichungen des Zeitbereichs in einfache, rein algebraische Brüche im Frequenzbereich um. Aus Ableitungen und Integralen werden einfache Multiplikationen und Divisionen. Das Verhältnis von Ausgangssignal zu Eingangssignal in diesem transformierten Raum wird als Übertragungsfunktion bezeichnet.
+
+Anhand dieser Übertragungsfunktion lässt sich das Systemverhalten perfekt analysieren. Setzt man rein gedanklich die Frequenz in diese Funktion ein, erhält man sofort den Amplitudengang und den Phasengang des Systems. Diese Werte lassen sich im Bode-Diagramm grafisch darstellen. Das Bode-Diagramm zeigt auf einen Blick, welche Frequenzen die Schaltung wie stark dämpft oder verstärkt und welche Phasenverschiebung sie verursacht.
+
+\subsection{Stabilitätskriterien in rückgekoppelten Systemen}
+
+Ein zentraler Aspekt der signaltheoretischen Modellierung ist die Beurteilung der Systemstabilität. Wenn eine Schaltung, beispielsweise ein Verstärker, eine Rückkopplung besitzt, besteht immer die fundamentale Gefahr, dass das System instabil wird. Ein instabiles System reagiert auf eine minimale Störung am Eingang mit einer sich extrem aufschaukelnden, unkontrollierten Eigenschwingung und wird für die Signalverarbeitung unbrauchbar.
+
+Um die Stabilität im Vorfeld zu prüfen, nutzt man das Bode-Diagramm der offenen Schleife und analysiert zwei Sicherheitsabstände:
+
+Die Amplitudenreserve misst den Abstand der Systemverstärkung zur kritischen Null-Linie an jenem Punkt, an dem die Phasenverschiebung des Signals exakt einhundertachtzig Grad erreicht hat. Wenn ein Signal um einhundertachtzig Grad phasenverschoben ist, kehrt sich seine Polarität um; aus einer stabilisierenden Gegenkopplung wird eine destructive Mitkopplung. Ist die Verstärkung an diesem Punkt größer oder gleich null Dezibel, schaukelt sich das System unweigerlich auf. Die Amplitudenreserve zeigt also, wie viel zusätzliche Verstärkung das System vertragen könnte, bevor es instabil wird.
+
+Die Phasenreserve betritt das Problem von der anderen Seite. Sie misst den Abstand der aktuellen Phase zu der kritischen Einhundertachtzig-Grad-Linie an exakt jenem Punkt, an dem die Verstärkung des Systems auf null Dezibel abgefallen ist. Ist die Phasenreserve zu gering (typischerweise fordert man in der Praxis einen Sicherheitsabstand von mehr als fünfundvierzig Grad), neigt die Schaltung bei schnellen Signaländerungen zu langem, unangenehmen Nachschwingen oder wird gänzlich instabil.
+
+\end{document}
