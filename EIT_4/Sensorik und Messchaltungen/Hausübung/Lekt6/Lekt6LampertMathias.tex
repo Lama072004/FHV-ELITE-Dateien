@@ -1,0 +1,140 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm, headheight=15pt, top=3cm}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Lampert Mathias}
+\fancyhead[C]{Sensorik und Messchaltungen}
+\fancyhead[R]{Lektion 6}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+
+\section*{Aufgabe 1}
+Das elektrische Ersatzschaltbild besteht aus einer Stromquelle, einem parallelen Kondensator und einem parallelen Widerstand. Die Stromquelle repräsentiert die ladungserzeugende Eigenschaft des Piezosensors.
+
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) to[I, l=$i_q$] (0,3) -- (2,3) to[C, l=$C_p$] (2,0) -- (0,0);
+\draw (2,3) -- (4,3) to[R, l=$R_p$] (4,0) -- (2,0);
+\draw (4,3) -- (5,3) node[anchor=west] {$+$};
+\draw (4,0) -- (5,0) node[anchor=west] {$-$};
+\node at (5,1.5) {$U_q$};
+\end{circuitikz}
+\end{center}
+
+Berechnung der Ersatzgrößen.
+Fläche $A = 10 \cdot 10^{-4} \, \text{m}^2$.
+Dicke $d = 0.885 \cdot 10^{-3} \, \text{m}$.
+Kapazität $C_p = \epsilon_0 \epsilon_r \frac{A}{d}$.
+Setze die Werte ein.
+$C_p = 8.852 \cdot 10^{-12} \, \text{F/m} \cdot 5 \cdot \frac{10^{-3} \, \text{m}^2}{0.885 \cdot 10^{-3} \, \text{m}}$.
+$C_p = 50 \cdot 10^{-12} \, \text{F} = 50 \, \text{pF}$.
+
+Widerstand $R_p = \rho \frac{d}{A}$.
+Setze die Werte ein.
+$\rho = 10^{14} \, \Omega\text{cm} = 10^{12} \, \Omega\text{m}$.
+$R_p = 10^{12} \, \Omega\text{m} \cdot \frac{0.885 \cdot 10^{-3} \, \text{m}}{10^{-3} \, \text{m}^2}$.
+$R_p = 0.885 \cdot 10^{12} \, \Omega = 885 \, \text{G}\Omega$.
+
+\section*{Aufgabe 2}
+Berechnung der Sensorspannung und Empfindlichkeit.
+Kraft $F_0 = 1000 \, \text{N}$.
+Ladung $Q = k \cdot F_0$.
+$Q = 2.3 \cdot 10^{-12} \, \text{C/N} \cdot 1000 \, \text{N} = 2.3 \cdot 10^{-9} \, \text{C}$.
+
+Die Spannung am Kondensator zum Zeitpunkt $t=0 \, \text{s}$ lautet $U_0 = \frac{Q}{C_p}$.
+$U_0 = \frac{2.3 \cdot 10^{-9} \, \text{C}}{50 \cdot 10^{-12} \, \text{F}} = 46 \, \text{V}$.
+
+Die Empfindlichkeit $E_0$ beschreibt das Verhältnis von Spannung zu Kraft.
+$E_0 = \frac{U_0}{F_0}$.
+$E_0 = \frac{46 \, \text{V}}{1000 \, \text{N}} = 0.046 \, \text{V/N} = 46 \, \text{mV/N}$.
+
+\section*{Aufgabe 3}
+Herleitung des zeitlichen Verlaufs $U_q(t)$.
+Der Sensor entlädt sich über den Eigenwiderstand. Das System folgt der Differentialgleichung für einen parallelen RC-Kreis.
+$C_p \frac{dU_q}{dt} + \frac{U_q}{R_p} = 0$.
+
+Die Lösung dieser Gleichung lautet $U_q(t) = U_0 \cdot e^{-\frac{t}{\tau}}$.
+Die Zeitkonstante ist $\tau = R_p C_p$.
+Allgemeine Form des Verlaufs.
+$U_q(t) = \frac{k F_0}{C_p} e^{-\frac{t}{R_p C_p}}$.
+
+Zahlenmäßige Form.
+$\tau = 885 \cdot 10^9 \, \Omega \cdot 50 \cdot 10^{-12} \, \text{F} = 44.25 \, \text{s}$.
+$U_q(t) = 46 \, \text{V} \cdot e^{-\frac{t}{44.25 \, \text{s}}}$.
+
+Grafische Darstellung.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = {Zeit $t$ in s},
+    ylabel = {Spannung $U_q(t)$ in V},
+    ymin = 0, ymax = 50,
+    xmin = 0, xmax = 200,
+    domain=0:200,
+    samples=100,
+    grid = major,
+    width=10cm,
+    height=6cm
+]
+\addplot [blue, thick] {46*exp(-x/44.25)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\section*{Aufgabe 4}
+Berechnung der Zeit $t_1$.
+Die Spannung sinkt um ein Prozent abs. Der verbleibende Wert beträgt 99 Prozent der Anfangsspannung.
+$U_q(t_1) = 0.99 \cdot U_0$.
+$0.99 = e^{-\frac{t_1}{\tau}}$.
+
+Logarithmieren der Gleichung liefert den Zeitpunkt.
+$t_1 = -\tau \cdot \ln(0.99)$.
+$t_1 = -44.25 \, \text{s} \cdot \ln(0.99)$.
+$t_1 = 0.4447 \, \text{s}$.
+
+\section*{Aufgabe 5}
+Aufbau und Verschaltung eines Doppelelementes.
+Zwei Piezoscheiben werden mechanisch in Reihe und elektrisch parallel geschaltet. Die inneren Elektroden werden verbunden und liefern das Signal. Die äußeren Elektroden liegen auf Masse. Diese Anordnung schirmt das Signal ab.
+
+\begin{center}
+\begin{tikzpicture}
+\draw[fill=yellow!30] (0, 0.5) rectangle (4, 1.5) node[midway] {Piezo 1};
+\draw[fill=yellow!30] (0, -0.5) rectangle (4, 0.5) node[midway] {Piezo 2};
+
+\draw[ultra thick] (0, 1.5) -- (4, 1.5); 
+\draw[ultra thick, blue] (0, 0.5) -- (4, 0.5); 
+\draw[ultra thick] (0, -0.5) -- (4, -0.5); 
+
+\draw[thick, blue] (0, 0.5) -- (-1, 0.5) node[left] {Signal ($U_q$)};
+
+\draw[thick] (4, 1.5) -- (4.5, 1.5) -- (4.5, -0.5) -- (4, -0.5);
+\draw[thick] (4.5, 0.5) -- (5.5, 0.5) node[right] {Masse};
+\end{tikzpicture}
+\end{center}
+
+Elektrisches Ersatzschaltbild des Doppelelementes.
+Die Parallelschaltung verdoppelt die Kapazität und halbiert den Gesamtwiderstand. Der Ladungsstrom verdoppelt sich ebenfalls.
+
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) to[I, l=$2 i_q$] (0,3) -- (2,3) to[C, l=$2 C_p$] (2,0) -- (0,0);
+\draw (2,3) -- (4,3) to[R, l=$0.5 R_p$] (4,0) -- (2,0);
+\draw (4,3) -- (5,3) node[anchor=west] {$+$};
+\draw (4,0) -- (5,0) node[anchor=west] {$-$};
+\node at (5,1.5) {$U_q$};
+\end{circuitikz}
+\end{center}
+
+\end{document}

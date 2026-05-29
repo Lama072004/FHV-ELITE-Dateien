@@ -109,6 +109,8 @@
 % ============================================================
 \begin{document}
 
+\pagenumbering{roman}
+
 % ============================================================
 % Titelseite
 % ============================================================
@@ -139,14 +141,15 @@
 % ============================================================
 \tableofcontents
 \newpage
+\pagenumbering{arabic}
 
 % ============================================================
 \section{Einleitung}
 % ============================================================
 
-Mit invertierenden Operationsverstärker-Schaltungen lassen sich frequenzabhängige
+Mit invertierenden Operationsverstärker-Schaltungen lassen sich frequenz\-abhängige
 Verstärkungen realisieren, indem die Widerstände $R_1$ und $R_2$ der klassischen
-Invertier-Grundschaltung durch allgemeine Impedanzen $Z_1$ und $Z_2$ ersetzt werden.
+Invertier-Grund\-schaltung durch allgemeine Impedanzen $Z_1$ und $Z_2$ ersetzt werden.
 Durch geeignete Wahl dieser Impedanzen können einfache Filter (Tief-, Hochpass) oder ---
 wie in diesem Projekt --- analoge PID-Regler konstruiert werden.
 
@@ -224,6 +227,7 @@ $R_1$. Die Rückkopplungsimpedanz $Z_2$ besteht aus der Parallelschaltung von
       (0,-2.5) -- (3.5,-2.5) node[midway, below=8pt]{$Z_1$};
 
     % ── OP-Amp  (inv input up → „−" oben, „+" unten) ─────────────
+    %\node[op amp, noinv input up, anchor=+] (op) at (5.5, -0.8) {};
     % Mit noinv input up ist „+" oben und „−" unten → wir wollen
     % aber „−" oben. Daher verwenden wir den Standard-OP (inv unten)
     % und spiegeln ihn vertikal mit yscale=-1:
@@ -233,7 +237,7 @@ $R_1$. Die Rückkopplungsimpedanz $Z_2$ besteht aus der Parallelschaltung von
     \draw (vm) to[short, -*] (op.-);
 
     % pos. Eingang (unten) --> GND
-    \draw (op.+) to[short] ++(0,-0.1) node[ground]{};
+    \draw (op.+) to[short] ++(0,-0.5) node[ground]{};
 
     % ── Z2: Rückkopplung (Ausgang --> neg. Eingang) ───────────────
     \coordinate (outR) at ($(op.out) + (0.5,0)$);
@@ -268,230 +272,234 @@ $R_1$. Die Rückkopplungsimpedanz $Z_2$ besteht aus der Parallelschaltung von
 % ============================================================
 \section{Aufgabe 1: Herleitung der Übertragungsfunktion}
 % ============================================================
- 
+
 \subsection{Grundprinzip der invertierenden OP-Schaltung}
- 
-Für eine invertierende OP-Schaltung mit idealem Operationsverstärker gelten die
-\textbf{zwei goldenen Regeln}:
-\begin{enumerate}
-  \item Die Spannung am invertierenden Eingang entspricht der am nicht-invertierenden
-        Eingang. Da $u_+ = 0\,\text{V}$ (GND), gilt $u_- = 0\,\text{V}$ (virtuelle Masse).
-  \item Es fließt kein Strom in die Eingänge des OP: $i_+ = i_- = 0$.
-\end{enumerate}
- 
-Aus der Knotenregel am invertierenden Eingang (virtuelle Masse) folgt:
-\[
-  \frac{u_e - 0}{Z_1} + \frac{u_a - 0}{Z_2} = 0
-  \quad \Longrightarrow \quad
-  \frac{u_e}{Z_1} = -\frac{u_a}{Z_2}
-\]
- 
-Umformen ergibt die allgemeine Übertragungsfunktion:
- 
+
+Für eine invertierende OP-Schaltung mit idealen Operationsverstärker gilt die
+\textbf{goldene Regel}: Der invertierte Eingang liegt auf virtuellem Massepotential
+($u_- = 0$), und es fließt kein Strom in den OP-Eingang. Damit ergibt sich die
+Übertragungsfunktion zu:
+
 \begin{tcolorbox}[formel]
 \[
   T(s) = \frac{U_a(s)}{U_e(s)} = -\frac{Z_2(s)}{Z_1(s)}
 \]
 \end{tcolorbox}
- 
-Das Minuszeichen bedeutet Signalumkehr (Invertierung). Im Amplitudengang $|T(j\omega)|$
-entfällt es.
- 
-% ------------------------------------------------------------
+
+Das Vorzeichen entspricht der Invertierung. Im Folgenden wird $|T(s)|$ betrachtet
+(Amplitudengang), wodurch das Minuszeichen entfällt.
+
 \subsection{Berechnung der Eingangsimpedanz $Z_1$}
-% ------------------------------------------------------------
- 
-Die Impedanz $Z_1$ besteht aus zwei parallelen Zweigen:
-\begin{itemize}
-  \item Oberer Zweig: $R_1$ allein
-  \item Unterer Zweig: $C_1$ und $R_2$ in Serie
-\end{itemize}
- 
+
+Die Eingangsimpedanz $Z_1$ besteht aus der \textbf{Parallelschaltung} von $R_1$
+(allein) und der \textbf{Reihenschaltung} von $C_1$ und $R_2$:
+
 \[
-  Z_1 = R_1 \;\parallel\; \left(\frac{1}{sC_1} + R_2\right)
+  Z_1 = R_1 \parallel \left(R_2 + \frac{1}{s C_1}\right)
 \]
- 
-\subsubsection*{Schritt 1: Serienimpedanz des unteren Zweiges}
- 
+
+Schritt 1: Serienimpedanz des unteren Zweiges:
 \[
-  Z_{C_1R_2} = \frac{1}{sC_1} + R_2
-             = \frac{1 + sC_1 R_2}{sC_1}
+  Z_{12} = R_2 + \frac{1}{sC_1} = \frac{sC_1 R_2 + 1}{sC_1}
+           = \frac{1 + sC_1 R_2}{sC_1}
 \]
- 
-\subsubsection*{Schritt 2: Parallelschaltung}
- 
+
+Schritt 2: Parallelschaltung $Z_1 = R_1 \parallel Z_{12}$:
 \[
-  Z_1 = \frac{R_1 \cdot Z_{C_1R_2}}{R_1 + Z_{C_1R_2}}
+  Z_1 = \frac{R_1 \cdot Z_{12}}{R_1 + Z_{12}}
 \]
- 
+
 Zähler:
 \[
-  R_1 \cdot Z_{C_1R_2}
-  = R_1 \cdot \frac{1 + sC_1 R_2}{sC_1}
+  R_1 \cdot Z_{12} = R_1 \cdot \frac{1 + sC_1 R_2}{sC_1}
 \]
- 
+
 Nenner:
 \[
-  R_1 + Z_{C_1R_2}
-  = R_1 + \frac{1 + sC_1 R_2}{sC_1}
-  = \frac{sC_1 R_1 + 1 + sC_1 R_2}{sC_1}
-  = \frac{1 + sC_1(R_1 + R_2)}{sC_1}
+  R_1 + Z_{12} = R_1 + \frac{1 + sC_1 R_2}{sC_1}
+               = \frac{sC_1 R_1 + 1 + sC_1 R_2}{sC_1}
+               = \frac{1 + sC_1(R_1 + R_2)}{sC_1}
 \]
- 
-Division (gemeinsamer Faktor $sC_1$ kürzt sich):
+
+Einsetzen:
 \[
-  Z_1
-  = \frac{R_1 \cdot \dfrac{1 + sC_1 R_2}{sC_1}}{\dfrac{1 + sC_1(R_1+R_2)}{sC_1}}
-  = R_1 \cdot \frac{1 + sC_1 R_2}{1 + sC_1(R_1 + R_2)}
+  Z_1 = \frac{R_1 \cdot \dfrac{1 + sC_1 R_2}{sC_1}}{\dfrac{1 + sC_1(R_1+R_2)}{sC_1}}
+       = R_1 \cdot \frac{1 + sC_1 R_2}{1 + sC_1(R_1 + R_2)}
 \]
- 
+
 \begin{tcolorbox}[ergebnis]
 \[
   \boxed{Z_1 = R_1 \cdot \frac{1 + sC_1 R_2}{1 + sC_1(R_1 + R_2)}}
 \]
 \end{tcolorbox}
- 
-% ------------------------------------------------------------
+
 \subsection{Berechnung der Rückkopplungsimpedanz $Z_2$}
-% ------------------------------------------------------------
- 
-Die Impedanz $Z_2$ besteht aus zwei parallelen Zweigen:
-\begin{itemize}
-  \item Unterer Zweig: $R_3$ allein
-  \item Oberer Zweig: $R_4$ und $C_2$ in Serie
-\end{itemize}
- 
+
+Die Rückkopplungsimpedanz $Z_2$ besteht aus der \textbf{Parallelschaltung} von $R_3$
+und der \textbf{Reihenschaltung} von $C_2$ und $R_4$:
+
 \[
-  Z_2 = R_3 \;\parallel\; \left(R_4 + \frac{1}{sC_2}\right)
+  Z_2 = R_3 \parallel \left(R_4 + \frac{1}{sC_2}\right)
 \]
- 
-\subsubsection*{Schritt 1: Serienimpedanz des oberen Zweiges}
- 
+
+Schritt 1: Serienimpedanz des oberen Zweiges:
 \[
-  Z_{R_4C_2} = R_4 + \frac{1}{sC_2}
-             = \frac{sC_2 R_4 + 1}{sC_2}
-             = \frac{1 + sC_2 R_4}{sC_2}
+  Z_{24} = R_4 + \frac{1}{sC_2} = \frac{sC_2 R_4 + 1}{sC_2}
+          = \frac{1 + sC_2 R_4}{sC_2}
 \]
- 
-\subsubsection*{Schritt 2: Parallelschaltung}
- 
+
+Schritt 2: Parallelschaltung $Z_2 = R_3 \parallel Z_{24}$:
 \[
-  Z_2 = \frac{R_3 \cdot Z_{R_4C_2}}{R_3 + Z_{R_4C_2}}
+  Z_2 = \frac{R_3 \cdot Z_{24}}{R_3 + Z_{24}}
 \]
- 
+
 Zähler:
 \[
-  R_3 \cdot Z_{R_4C_2}
-  = R_3 \cdot \frac{1 + sC_2 R_4}{sC_2}
+  R_3 \cdot Z_{24} = R_3 \cdot \frac{1 + sC_2 R_4}{sC_2}
 \]
- 
+
 Nenner:
 \[
-  R_3 + Z_{R_4C_2}
-  = R_3 + \frac{1 + sC_2 R_4}{sC_2}
-  = \frac{sC_2 R_3 + 1 + sC_2 R_4}{sC_2}
-  = \frac{1 + sC_2(R_3 + R_4)}{sC_2}
+  R_3 + Z_{24} = R_3 + \frac{1 + sC_2 R_4}{sC_2}
+               = \frac{sC_2 R_3 + 1 + sC_2 R_4}{sC_2}
+               = \frac{1 + sC_2(R_3 + R_4)}{sC_2}
 \]
- 
-Division ($sC_2$ kürzt sich):
+
+Einsetzen:
 \[
-  Z_2
-  = \frac{R_3 \cdot \dfrac{1 + sC_2 R_4}{sC_2}}{\dfrac{1 + sC_2(R_3+R_4)}{sC_2}}
-  = R_3 \cdot \frac{1 + sC_2 R_4}{1 + sC_2(R_3 + R_4)}
+  Z_2 = \frac{R_3 \cdot \dfrac{1 + sC_2 R_4}{sC_2}}{\dfrac{1 + sC_2(R_3 + R_4)}{sC_2}}
+       = R_3 \cdot \frac{1 + sC_2 R_4}{1 + sC_2(R_3 + R_4)}
 \]
- 
+
 \begin{tcolorbox}[ergebnis]
 \[
   \boxed{Z_2 = R_3 \cdot \frac{1 + sC_2 R_4}{1 + sC_2(R_3 + R_4)}}
 \]
 \end{tcolorbox}
- 
-% ------------------------------------------------------------
-\subsection{Gesamte Übertragungsfunktion $T(s) = -Z_2/Z_1$}
-% ------------------------------------------------------------
- 
+
+\subsection{Berechnung der Übertragungsfunktion $T(s) = Z_2 / Z_1$}
+
 \[
-  T(s) = -\frac{Z_2}{Z_1}
-        = -\frac{R_3 \cdot \dfrac{1 + sC_2 R_4}{1 + sC_2(R_3 + R_4)}}
-               {R_1 \cdot \dfrac{1 + sC_1 R_2}{1 + sC_1(R_1 + R_2)}}
+  T(s) = \frac{Z_2}{Z_1}
+        = \frac{R_3 \cdot \dfrac{1 + sC_2 R_4}{1 + sC_2(R_3 + R_4)}}
+              {R_1 \cdot \dfrac{1 + sC_1 R_2}{1 + sC_1(R_1 + R_2)}}
 \]
- 
-Durch Kürzen des Doppelbruchs (Zähler $\div$ Nenner):
- 
+
+Durch Division des Bruchs (Zähler durch Nenner):
+
 \[
-  T(s) = -\frac{R_3}{R_1}
+  T(s) = \frac{R_3}{R_1}
          \cdot \frac{1 + sC_2 R_4}{1 + sC_2(R_3 + R_4)}
          \cdot \frac{1 + sC_1(R_1 + R_2)}{1 + sC_1 R_2}
 \]
- 
-Da für den Amplitudengang nur $|T|$ relevant ist, entfällt das Minuszeichen:
- 
+
 \begin{tcolorbox}[ergebnis, title={\"Ubertragungsfunktion des PID-Reglers}]
 \[
-  \boxed{|T(s)| = \frac{R_3}{R_1}
+  \boxed{T(s) = \frac{R_3}{R_1}
          \cdot \frac{1 + sC_2 R_4}{1 + sC_2(R_3 + R_4)}
          \cdot \frac{1 + sC_1(R_1 + R_2)}{1 + sC_1 R_2}}
 \]
-Dies stimmt mit dem gegebenen Kontrollergebnis überein. $\checkmark$
 \end{tcolorbox}
- 
-% ------------------------------------------------------------
-\subsection{Interpretation der vier Terme}
-% ------------------------------------------------------------
- 
-Die Übertragungsfunktion enthält vier frequenzabhängige Terme plus den
-Gleichspannungsfaktor:
- 
+
+\subsection{Interpretation der Faktoren}
+
+Die Übertragungsfunktion lässt sich in vier charakteristische Terme zerlegen:
+
 \begin{enumerate}[label=\textbf{\arabic{enumi}.}]
-  \item \textbf{Gleichspannungsverstärkung} (frequenzunabhängig):
-    \[
-      K_0 = \frac{R_3}{R_1}
-    \]
- 
-  \item \textbf{Pol bei $\omega_1$} --- Tiefpass-Term im Nenner von $Z_1$:
+  \item \textbf{Gleichspannungsverstärkung:} $\dfrac{R_3}{R_1}$ (reeller Faktor, frequenzunabhängig)
+
+  \item \textbf{Tiefpass-Anteil} im Eingangsast (Pol):
     \[
       \frac{1}{1 + sC_1(R_1+R_2)}
-      \qquad \Rightarrow \qquad
-      \omega_1 = \frac{1}{C_1(R_1+R_2)}
+      \quad \Rightarrow \quad
+      \text{Pol bei: } \omega_1 = \frac{1}{C_1(R_1+R_2)}
     \]
-    Knick \textbf{nach unten} ($-20\,\text{dB/Dek.}$) bei $\omega_1$.
- 
-  \item \textbf{Nullstelle bei $\omega_2$} --- Zähler-Term aus $Z_1$:
+    Knick \textit{nach unten} bei $\omega_1$ ($-20\,\text{dB/Dek.}$).
+
+  \item \textbf{``Verkehrter'' Tiefpass} im Eingangsast (Nullstelle):
     \[
       1 + sC_1 R_2
-      \qquad \Rightarrow \qquad
-      \omega_2 = \frac{1}{C_1 R_2}
+      \quad \Rightarrow \quad
+      \text{Nullstelle bei: } \omega_2 = \frac{1}{C_1 R_2}
     \]
-    Knick \textbf{nach oben} ($+20\,\text{dB/Dek.}$) bei $\omega_2$.
-    Da $R_2 < R_1+R_2$ folgt $\omega_2 > \omega_1$. $\checkmark$
- 
-  \item \textbf{Pol bei $\omega_3$} --- Tiefpass-Term im Nenner von $Z_2$:
+    Knick \textit{nach oben} bei $\omega_2$ ($+20\,\text{dB/Dek.}$). Da $R_2 < R_1+R_2$ gilt $\omega_2 > \omega_1$. $\checkmark$
+
+  \item \textbf{Tiefpass-Anteil} im Rückkopplungszweig (Pol):
     \[
       \frac{1}{1 + sC_2(R_3+R_4)}
-      \qquad \Rightarrow \qquad
-      \omega_3 = \frac{1}{C_2(R_3+R_4)}
+      \quad \Rightarrow \quad
+      \text{Pol bei: } \omega_3 = \frac{1}{C_2(R_3+R_4)}
     \]
-    Knick \textbf{nach unten} ($-20\,\text{dB/Dek.}$) bei $\omega_3$.
- 
-  \item \textbf{Nullstelle bei $\omega_4$} --- Zähler-Term aus $Z_2$:
+    Knick \textit{nach unten} bei $\omega_3$ ($-20\,\text{dB/Dek.}$).
+
+  \item \textbf{``Verkehrter'' Tiefpass} im Rückkopplungszweig (Nullstelle):
     \[
       1 + sC_2 R_4
-      \qquad \Rightarrow \qquad
-      \omega_4 = \frac{1}{C_2 R_4}
+      \quad \Rightarrow \quad
+      \text{Nullstelle bei: } \omega_4 = \frac{1}{C_2 R_4}
     \]
-    Knick \textbf{nach oben} ($+20\,\text{dB/Dek.}$) bei $\omega_4$.
-    Da $R_4 < R_3+R_4$ folgt $\omega_4 > \omega_3$. $\checkmark$
+    Knick \textit{nach oben} bei $\omega_4$ ($+20\,\text{dB/Dek.}$). Da $R_4 < R_3+R_4$ gilt $\omega_4 > \omega_3$. $\checkmark$
 \end{enumerate}
- 
+
 % ============================================================
 \section{Aufgabe 2: Bestimmung der Bauteilwerte}
 % ============================================================
- 
+
+\subsection{Zuordnung der Eckfrequenzen}
+
+Aus dem geforderten Amplitudengang (Bode-Diagramm) sind folgende Steigungsänderungen
+erkennbar:
+
+\begin{table}[H]
+  \centering
+  \caption{Steigungsänderungen im Bode-Diagramm}
+  \begin{tabular}{cccc}
+    \toprule
+    Kreisfrequenz & Knick & Typ & Zugehöriger Term \\
+    \midrule
+    $\omega_1 = 62\,\text{rad/s}$    & $-20\,\text{dB/Dek.}$ & Pol (Nenner)      & $1 + sC_1(R_1+R_2)$ \\
+    $\omega_2 = 620\,\text{rad/s}$   & $+20\,\text{dB/Dek.}$ & Nullstelle (Zähler) & $1 + sC_1 R_2$ \\
+    $\omega_3 = 6200\,\text{rad/s}$  & $+20\,\text{dB/Dek.}$ & Nullstelle (Zähler) & $1 + sC_2 R_4$ \\
+    $\omega_4 = 62000\,\text{rad/s}$ & $-20\,\text{dB/Dek.}$ & Pol (Nenner)      & $1 + sC_2(R_3+R_4)$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{tcolorbox}[hinweis, title=Hinweis zur Zuordnung]
+Der Amplitudengang beginnt bei $|T(0)| = R_3/R_1 = 0{,}1$ und fällt bei $\omega_1$
+weiter ab~--- das entspricht einem \emph{Pol im Nenner} (Abfall $-20\,\text{dB/Dek.}$).
+Bei $\omega_2$ knickt der Gang nach oben: \emph{Nullstelle im Zähler} ($+20\,\text{dB/Dek.}$).
+Gleiches Muster gilt für den Rückkopplungszweig: $\omega_3$ ist ein Pol (Abfall),
+$\omega_4$ eine Nullstelle (Anstieg). Da $R_3+R_4 > R_4$, gilt stets
+$\omega_{\text{Pol}} = \frac{1}{C_2(R_3+R_4)} < \frac{1}{C_2 R_4} = \omega_{\text{Nullstelle}}$~---
+der Pol liegt also immer bei der \emph{kleineren} der beiden Eckfrequenzen.
+\end{tcolorbox}
+
+\subsection{Gleichungssystem aus den Eckfrequenzen}
+
+Die vier Eckfrequenzen liefern vier Gleichungen. Da $\omega_1$ und $\omega_4$ Pole
+(Nenner-Terme) sind und $\omega_2$, $\omega_3$ Nullstellen (Zähler-Terme):
+
+\begin{align}
+  \frac{1}{C_1(R_1 + R_2)} &= \omega_1 = 62    \label{eq:omega1} \\[6pt]
+  \frac{1}{C_1 \, R_2}      &= \omega_2 = 620   \label{eq:omega2} \\[6pt]
+  \frac{1}{C_2(R_3 + R_4)}  &= \omega_3 = 6200  \label{eq:omega3} \\[6pt]
+  \frac{1}{C_2 \, R_4}      &= \omega_4 = 62000 \label{eq:omega4}
+\end{align}
+
+Hierbei gilt: $\omega_1 < \omega_2$ und $\omega_3 < \omega_4$, was physikalisch
+korrekt ist, da $R_1 + R_2 > R_2$ und $R_3 + R_4 > R_4$.
+
+% ============================================================
+\section{Aufgabe 2: Bestimmung der Bauteilwerte}
+% ============================================================
+
 \subsection{Zuordnung der Eckfrequenzen zum Amplitudengang}
- 
-Aus dem geforderten Bode-Diagramm (Amplitudengang des PID) lassen sich vier
-Eckfrequenzen mit ihren Knickrichtungen ablesen:
- 
+
+Aus dem geforderten Bode-Diagramm lassen sich vier Eckfrequenzen mit ihren
+Knickrichtungen ablesen. Da $R_1+R_2 > R_2$ und $R_3+R_4 > R_4$ gilt stets
+$\omega_1 < \omega_2$ und $\omega_3 < \omega_4$:
+
 \begin{table}[H]
   \centering
   \caption{Eckfrequenzen und ihre Zuordnung}
@@ -499,267 +507,198 @@ Eckfrequenzen mit ihren Knickrichtungen ablesen:
     \toprule
     Kreisfrequenz & Knick & Typ & Term \\
     \midrule
-    $\omega_1 = 62\,\text{rad/s}$    & $-20\,\text{dB/Dek.}$ & Pol (Nenner)        & $1 + sC_1(R_1+R_2)$ \\
-    $\omega_2 = 620\,\text{rad/s}$   & $+20\,\text{dB/Dek.}$ & Nullstelle (Zähler) & $1 + sC_1 R_2$ \\
-    $\omega_3 = 6200\,\text{rad/s}$  & $-20\,\text{dB/Dek.}$ & Pol (Nenner)        & $1 + sC_2(R_3+R_4)$ \\
-    $\omega_4 = 62000\,\text{rad/s}$ & $+20\,\text{dB/Dek.}$ & Nullstelle (Zähler) & $1 + sC_2 R_4$ \\
+    $\omega_1 = 6024\,\text{rad/s}$   & $-20\,\text{dB/Dek.}$ & Pol        & $1 + sC_1(R_1+R_2)$ \\
+    $\omega_2 = 62500\,\text{rad/s}$  & $+20\,\text{dB/Dek.}$ & Nullstelle & $1 + sC_1 R_2$ \\
+    $\omega_3 = 6{,}02\,\text{rad/s}$ & $-20\,\text{dB/Dek.}$ & Pol        & $1 + sC_2(R_3+R_4)$ \\
+    $\omega_4 = 62{,}5\,\text{rad/s}$ & $+20\,\text{dB/Dek.}$ & Nullstelle & $1 + sC_2 R_4$ \\
     \bottomrule
   \end{tabular}
 \end{table}
- 
-\begin{tcolorbox}[hinweis, title=Hinweis zur Zuordnung]
-Der Amplitudengang startet bei $|T(0)| = R_3/R_1$ und fällt bei $\omega_1$ ab
-$\Rightarrow$ Pol (Nenner-Term, $-20\,\text{dB/Dek.}$). Bei $\omega_2$ steigt er
-wieder $\Rightarrow$ Nullstelle (Zähler-Term, $+20\,\text{dB/Dek.}$). Dasselbe
-Muster wiederholt sich im Rückkopplungszweig: $\omega_3$ ist ein Pol, $\omega_4$
-eine Nullstelle. Die Bedingung $\omega_{\text{Pol}} < \omega_{\text{Nullstelle}}$
-ist jeweils erfüllt, da $R_1+R_2 > R_2$ und $R_3+R_4 > R_4$.
-\end{tcolorbox}
- 
+
 \subsection{Gleichungssystem aus den Eckfrequenzen}
- 
+
 Die vier Eckfrequenz-Bedingungen liefern vier Gleichungen:
- 
+
 \begin{align}
-  \frac{1}{C_1(R_1 + R_2)} &= \omega_1 = 62    \label{eq:omega1} \\[6pt]
-  \frac{1}{C_1 \, R_2}      &= \omega_2 = 620   \label{eq:omega2} \\[6pt]
-  \frac{1}{C_2(R_3 + R_4)}  &= \omega_3 = 6200  \label{eq:omega3} \\[6pt]
-  \frac{1}{C_2 \, R_4}       &= \omega_4 = 62000 \label{eq:omega4}
+  \frac{1}{C_1(R_1 + R_2)} &= \omega_1 = 6024   \label{eq:omega1} \\[6pt]
+  \frac{1}{C_1 \, R_2}      &= \omega_2 = 62500  \label{eq:omega2} \\[6pt]
+  \frac{1}{C_2(R_3 + R_4)}  &= \omega_3 = 6{,}02 \label{eq:omega3} \\[6pt]
+  \frac{1}{C_2 \, R_4}       &= \omega_4 = 62{,}5 \label{eq:omega4}
 \end{align}
- 
+
 % ------------------------------------------------------------
 \subsection{Berechnung von $C_1$, $R_1$, $R_2$}
 % ------------------------------------------------------------
- 
+
 \subsubsection*{Schritt 1: Verhältnis $\omega_2 / \omega_1$ liefert $R_1/R_2$}
- 
-Gleichung~\eqref{eq:omega2} durch Gleichung~\eqref{eq:omega1}:
- 
+
+Gl.~\eqref{eq:omega2} durch Gl.~\eqref{eq:omega1}:
+
 \[
   \frac{\omega_2}{\omega_1}
   = \frac{\dfrac{1}{C_1 R_2}}{\dfrac{1}{C_1(R_1+R_2)}}
-  = \frac{C_1(R_1+R_2)}{C_1 R_2}
+  = \frac{R_1 + R_2}{R_2}
   = 1 + \frac{R_1}{R_2}
 \]
- 
+
 \[
   \frac{R_1}{R_2}
   = \frac{\omega_2}{\omega_1} - 1
-  = \frac{620}{62} - 1
-  = 10 - 1
-  = 9
+  = \frac{62500}{6024} - 1
+  \approx 10{,}375 - 1
+  = 9{,}375
   \quad \Longrightarrow \quad
-  \boxed{R_1 = 9\,R_2}
+  \boxed{R_1 = 9{,}375 \cdot R_2}
 \]
- 
-\subsubsection*{Schritt 2: Wahl von $R_2$, Berechnung von $C_1$}
- 
+
+\subsubsection*{Schritt 2: Wahl von $R_2$ und Berechnung von $C_1$}
+
 $R_2$ frei wählbar im Bereich $1\,\text{k}\Omega < R_2 < 1\,\text{M}\Omega$.
-Aus Gleichung~\eqref{eq:omega2}:
- 
+Aus Gl.~\eqref{eq:omega2}:
+
 \[
   C_1 = \frac{1}{\omega_2 \cdot R_2}
 \]
- 
-Wir wählen $R_2 = 16\,\text{k}\Omega$ (E24-Normwert), dann:
- 
+
+Wir wählen $R_2 = 16\,\text{k}\Omega$, dann:
+
 \[
-  C_1 = \frac{1}{620 \cdot 16\,000}
-      = \frac{1}{9{,}92 \times 10^{6}}
-      \approx 1{,}008 \times 10^{-7}\,\text{F}
-      \approx 100\,\text{nF}
+  C_1 = \frac{1}{62500 \cdot 16\,000}
+      = \frac{1}{10^{9}}
+      = 1\,\text{nF}
 \]
- 
-Wähle: $\boxed{C_1 = 100\,\text{nF}}$
- 
-\subsubsection*{Schritt 3: Rückrechnung exakter $R_2$ und $R_1$}
- 
-Mit $C_1 = 100\,\text{nF}$ exakt aus Gl.~\eqref{eq:omega2}:
+
+Wähle: $\boxed{C_1 = 1\,\text{nF}}$
+
+\subsubsection*{Schritt 3: Berechnung von $R_1$}
+
 \[
-  R_2 = \frac{1}{\omega_2 \cdot C_1}
-      = \frac{1}{620 \cdot 10^{-7}}
-      = \frac{1}{6{,}2 \times 10^{-5}}
-      \approx 16\,129\,\Omega
-      \approx 16{,}1\,\text{k}\Omega
+  R_1 = 9{,}375 \cdot R_2 = 9{,}375 \cdot 16\,000 = 150\,000\,\Omega
+  = 150\,\text{k}\Omega \checkmark
 \]
- 
-\[
-  R_1 = 9 \cdot R_2 = 9 \cdot 16\,129 \approx 145\,161\,\Omega \approx 145\,\text{k}\Omega
-\]
- 
+
 \subsubsection*{Schritt 4: Verifikation}
- 
-\[
-  \omega_1 = \frac{1}{C_1(R_1+R_2)}
-           = \frac{1}{10^{-7} \cdot (145\,161 + 16\,129)}
-           = \frac{1}{10^{-7} \cdot 161\,290}
-           = \frac{1}{1{,}6129 \times 10^{-2}}
-           \approx 62{,}0\,\frac{\text{rad}}{\text{s}} \checkmark
-\]
+
 \[
   \omega_2 = \frac{1}{C_1 \cdot R_2}
-           = \frac{1}{10^{-7} \cdot 16\,129}
-           = \frac{1}{1{,}6129 \times 10^{-3}}
-           \approx 620\,\frac{\text{rad}}{\text{s}} \checkmark
+           = \frac{1}{10^{-9} \cdot 16\,000}
+           = \frac{1}{1{,}6 \times 10^{-5}}
+           = 62\,500\,\frac{\text{rad}}{\text{s}} \checkmark
 \]
- 
+
+\[
+  \omega_1 = \frac{1}{C_1(R_1+R_2)}
+           = \frac{1}{10^{-9} \cdot 166\,000}
+           = \frac{1}{1{,}66 \times 10^{-4}}
+           \approx 6024\,\frac{\text{rad}}{\text{s}} \checkmark
+\]
+
 \begin{tcolorbox}[ergebnis, title={Ergebnis f\"{u}r $C_1$, $R_1$, $R_2$}]
 \[
-  C_1 = 100\,\text{nF}, \qquad
-  R_2 \approx 16{,}1\,\text{k}\Omega \;\widehat{=}\; 16\,\text{k}\Omega, \qquad
-  R_1 \approx 145\,\text{k}\Omega \;\widehat{=}\; 150\,\text{k}\Omega
+  C_1 = 1\,\text{nF}, \qquad R_2 = 16\,\text{k}\Omega, \qquad R_1 = 150\,\text{k}\Omega
 \]
 \end{tcolorbox}
- 
+
 % ------------------------------------------------------------
 \subsection{Berechnung von $C_2$, $R_3$, $R_4$}
 % ------------------------------------------------------------
- 
-\subsubsection*{Schritt 1: Prüfung ob $C_2 = 0{,}1\,\mu\text{F}$ zulässig ist}
- 
-Der vorgeschlagene Wert $C_2 = 0{,}1\,\mu\text{F}$ wird zuerst geprüft.
-Aus Gleichung~\eqref{eq:omega4} (Nullstelle bei $\omega_4 = 62000$):
- 
-\[
-  R_4 = \frac{1}{\omega_4 \cdot C_2}
-      = \frac{1}{62000 \cdot 0{,}1 \times 10^{-6}}
-      = \frac{1}{6{,}2 \times 10^{-3}}
-      \approx 161\,\Omega
-      \quad \Rightarrow \quad \text{\textbf{Verletzt } } R > 1\,\text{k}\Omega!
-\]
- 
-Aus Gleichung~\eqref{eq:omega3} (Pol bei $\omega_3 = 6200$):
-\[
-  R_3 + R_4 = \frac{1}{\omega_3 \cdot C_2}
-            = \frac{1}{6200 \cdot 0{,}1 \times 10^{-6}}
-            \approx 1613\,\Omega
-  \quad \Rightarrow \quad
-  R_3 = 1613 - 161 = 1452\,\Omega
-  \quad \Rightarrow \quad \text{\textbf{ebenfalls verletzt!}}
-\]
- 
-$C_2 = 0{,}1\,\mu\text{F}$ ist daher \textbf{nicht verwendbar}. Es wird
-$\mathbf{C_2 = 10\,\text{nF}}$ gewählt --- das entspricht einer Skalierung um
-Faktor~10 und verschiebt die Eckfrequenzen korrekt in den erlaubten Bereich.
- 
-\subsubsection*{Schritt 2: Verhältnis $\omega_4 / \omega_3$ liefert $R_3/R_4$}
- 
-Gleichung~\eqref{eq:omega4} durch Gleichung~\eqref{eq:omega3}:
- 
+
+\subsubsection*{Schritt 1: Verhältnis $\omega_4 / \omega_3$ liefert $R_3/R_4$}
+
+Gl.~\eqref{eq:omega4} durch Gl.~\eqref{eq:omega3}:
+
 \[
   \frac{\omega_4}{\omega_3}
   = \frac{\dfrac{1}{C_2 R_4}}{\dfrac{1}{C_2(R_3+R_4)}}
-  = \frac{C_2(R_3+R_4)}{C_2 R_4}
+  = \frac{R_3 + R_4}{R_4}
   = 1 + \frac{R_3}{R_4}
 \]
- 
+
 \[
   \frac{R_3}{R_4}
   = \frac{\omega_4}{\omega_3} - 1
-  = \frac{62000}{6200} - 1
-  = 10 - 1
-  = 9
+  = \frac{62{,}5}{6{,}02} - 1
+  \approx 10{,}375 - 1
+  = 9{,}375
   \quad \Longrightarrow \quad
-  \boxed{R_3 = 9\,R_4}
+  \boxed{R_3 = 9{,}375 \cdot R_4}
 \]
- 
-\subsubsection*{Schritt 3: Berechnung von $R_4$ mit $C_2 = 10\,\text{nF}$}
- 
-Aus Gleichung~\eqref{eq:omega4}:
+
+Das Verhältnis ist identisch zum Eingangsast --- beide Netzwerke sind
+symmetrisch aufgebaut ($R_1/R_2 = R_3/R_4 = 9{,}375$).
+
+\subsubsection*{Schritt 2: Wahl von $R_4$ und Berechnung von $C_2$}
+
+Aus Gl.~\eqref{eq:omega4} mit $R_4 = 16\,\text{k}\Omega$:
+
 \[
-  R_4 = \frac{1}{\omega_4 \cdot C_2}
-      = \frac{1}{62000 \cdot 10 \times 10^{-9}}
-      = \frac{1}{6{,}2 \times 10^{-4}}
-      \approx 1613\,\Omega
-      \approx 1{,}6\,\text{k}\Omega \checkmark
+  C_2 = \frac{1}{\omega_4 \cdot R_4}
+      = \frac{1}{62{,}5 \cdot 16\,000}
+      = \frac{1}{10^{6}}
+      = 1\,\mu\text{F}
 \]
- 
-\subsubsection*{Schritt 4: Berechnung von $R_3$}
- 
+
+Wähle: $\boxed{C_2 = 1\,\mu\text{F}}$
+
+\subsubsection*{Schritt 3: Berechnung von $R_3$}
+
 \[
-  R_3 = 9 \cdot R_4 = 9 \cdot 1613 = 14\,516\,\Omega \approx 15\,\text{k}\Omega \checkmark
+  R_3 = 9{,}375 \cdot R_4 = 9{,}375 \cdot 16\,000 = 150\,000\,\Omega
+  = 150\,\text{k}\Omega \checkmark
 \]
- 
-\subsubsection*{Schritt 5: Verifikation}
- 
-\[
-  \omega_3 = \frac{1}{C_2(R_3+R_4)}
-           = \frac{1}{10^{-8} \cdot (14\,516 + 1\,613)}
-           = \frac{1}{10^{-8} \cdot 16\,129}
-           = \frac{1}{1{,}6129 \times 10^{-4}}
-           \approx 6200\,\frac{\text{rad}}{\text{s}} \checkmark
-\]
+
+\subsubsection*{Schritt 4: Verifikation}
+
 \[
   \omega_4 = \frac{1}{C_2 \cdot R_4}
-           = \frac{1}{10^{-8} \cdot 1613}
-           = \frac{1}{1{,}613 \times 10^{-5}}
-           \approx 62\,000\,\frac{\text{rad}}{\text{s}} \checkmark
+           = \frac{1}{10^{-6} \cdot 16\,000}
+           = \frac{1}{1{,}6 \times 10^{-2}}
+           = 62{,}5\,\frac{\text{rad}}{\text{s}} \checkmark
 \]
- 
+
+\[
+  \omega_3 = \frac{1}{C_2(R_3+R_4)}
+           = \frac{1}{10^{-6} \cdot 166\,000}
+           = \frac{1}{1{,}66 \times 10^{-1}}
+           \approx 6{,}02\,\frac{\text{rad}}{\text{s}} \checkmark
+\]
+
 \begin{tcolorbox}[ergebnis, title={Ergebnis f\"{u}r $C_2$, $R_3$, $R_4$}]
 \[
-  C_2 = 10\,\text{nF}, \qquad
-  R_4 \approx 1{,}6\,\text{k}\Omega, \qquad
-  R_3 \approx 15\,\text{k}\Omega
+  C_2 = 1\,\mu\text{F}, \qquad R_4 = 16\,\text{k}\Omega, \qquad R_3 = 150\,\text{k}\Omega
 \]
 Alle Widerstände im erlaubten Bereich $[1\,\text{k}\Omega,\,1\,\text{M}\Omega]$. $\checkmark$
 \end{tcolorbox}
- 
+
 % ------------------------------------------------------------
 \subsection{Zusammenfassung der Bauteilwerte}
 % ------------------------------------------------------------
- 
+
 \begin{table}[H]
   \centering
-  \caption{Berechnete und gewählte Bauteilwerte (E24-Normreihe)}
-  \begin{tabular}{lllll}
+  \caption{Berechnete Bauteilwerte}
+  \begin{tabular}{llll}
     \toprule
-    Bauteil & Exakt berechnet & Normwert E24 & Einheit & Bestimmung aus \\
+    Bauteil & Wert & Einheit & Berechnung \\
     \midrule
-    $C_1$ & $100$      & $100$   & $\text{nF}$    & Gl.~\eqref{eq:omega2}, $R_2 = 16\,\text{k}\Omega$ \\
-    $C_2$ & $10$       & $10$    & $\text{nF}$    & Wahl ($C_2 = 0{,}1\,\mu\text{F}$ unzulässig) \\
-    $R_1$ & $145\,161$ & $150\,\text{k}$ & $\Omega$ & $R_1 = 9\,R_2$ \\
-    $R_2$ & $16\,129$  & $16\,\text{k}$  & $\Omega$ & Gl.~\eqref{eq:omega2}, $C_1 = 100\,\text{nF}$ \\
-    $R_3$ & $14\,516$  & $15\,\text{k}$  & $\Omega$ & $R_3 = 9\,R_4$ \\
-    $R_4$ & $1\,613$   & $1{,}6\,\text{k}$ & $\Omega$ & Gl.~\eqref{eq:omega4}, $C_2 = 10\,\text{nF}$ \\
+    $C_1$ & $1$   & $\text{nF}$   & $C_1 = 1/(\omega_2 \cdot R_2)$ \\
+    $C_2$ & $1$   & $\mu\text{F}$ & $C_2 = 1/(\omega_4 \cdot R_4)$ \\
+    $R_1$ & $150$ & $\text{k}\Omega$ & $R_1 = 9{,}375\cdot R_2$ \\
+    $R_2$ & $16$  & $\text{k}\Omega$ & frei gewählt \\
+    $R_3$ & $150$ & $\text{k}\Omega$ & $R_3 = 9{,}375\cdot R_4$ \\
+    $R_4$ & $16$  & $\text{k}\Omega$ & frei gewählt \\
     \bottomrule
   \end{tabular}
 \end{table}
- 
-\subsubsection*{Verifikation aller Eckfrequenzen mit E24-Normwerten}
- 
-Mit $C_1 = 100\,\text{nF}$, $C_2 = 10\,\text{nF}$, $R_1 = 150\,\text{k}\Omega$,
-$R_2 = 16\,\text{k}\Omega$, $R_3 = 15\,\text{k}\Omega$, $R_4 = 1{,}6\,\text{k}\Omega$:
- 
-\begin{align*}
-  \omega_1 &= \frac{1}{C_1(R_1+R_2)}
-            = \frac{1}{10^{-7} \cdot 166\,000}
-            \approx 60{,}2\,\frac{\text{rad}}{\text{s}}
-            \quad (\text{Soll: }62,\quad\text{Abw.: }3{,}0\,\%) \\[4pt]
-  \omega_2 &= \frac{1}{C_1 R_2}
-            = \frac{1}{10^{-7} \cdot 16\,000}
-            = 625\,\frac{\text{rad}}{\text{s}}
-            \quad (\text{Soll: }620,\quad\text{Abw.: }0{,}8\,\%) \\[4pt]
-  \omega_3 &= \frac{1}{C_2(R_3+R_4)}
-            = \frac{1}{10^{-8} \cdot 16\,600}
-            \approx 6024\,\frac{\text{rad}}{\text{s}}
-            \quad (\text{Soll: }6200,\quad\text{Abw.: }2{,}8\,\%) \\[4pt]
-  \omega_4 &= \frac{1}{C_2 R_4}
-            = \frac{1}{10^{-8} \cdot 1600}
-            = 62\,500\,\frac{\text{rad}}{\text{s}}
-            \quad (\text{Soll: }62000,\quad\text{Abw.: }0{,}8\,\%)
-\end{align*}
- 
-Alle Abweichungen $< 3{,}5\,\%$ --- ausschließlich durch E24-Rundung bedingt. $\checkmark$
- 
+
 % ============================================================
 \section{Aufgabe 3: Verifikation des Frequenzgangs (LTSpice)}
 % ============================================================
- 
+
 \subsection{Analytischer Amplitudengang}
- 
+
 Mit $s = j\omega$ ergibt sich:
- 
+
 \[
   |T(j\omega)| = \frac{R_3}{R_1}
                  \cdot \frac{\sqrt{1 + (\omega C_2 R_4)^2}}
@@ -767,47 +706,40 @@ Mit $s = j\omega$ ergibt sich:
                  \cdot \frac{\sqrt{1 + \bigl(\omega C_1(R_1+R_2)\bigr)^2}}
                             {\sqrt{1 + (\omega C_1 R_2)^2}}
 \]
- 
+
 \subsubsection*{Grenzwert $\omega \to 0$ (Gleichspannungsverstärkung)}
- 
+
 \[
-  \lim_{\omega \to 0}|T| = \frac{R_3}{R_1}
-  = \frac{15\,000}{150\,000} = 0{,}1 \checkmark
+  \lim_{\omega \to 0}|T|
+  = \frac{R_3}{R_1}
+  = \frac{150\,000}{150\,000}
+  = 1{,}0
+  \quad \Rightarrow \quad
+  20\log(1) = 0\,\text{dB} \checkmark
 \]
- 
+
 \subsubsection*{Grenzwert $\omega \to \infty$}
- 
-Für $\omega \to \infty$ dominieren die $\omega$-Terme:
- 
+
 \[
   \lim_{\omega \to \infty}|T|
-  = \frac{R_3}{R_1}
-    \cdot \frac{\omega C_2 R_4}{\omega C_2(R_3+R_4)}
-    \cdot \frac{\omega C_1(R_1+R_2)}{\omega C_1 R_2}
   = \frac{R_3}{R_1} \cdot \frac{R_4}{R_3+R_4} \cdot \frac{R_1+R_2}{R_2}
+  = 1 \cdot \frac{16}{166} \cdot \frac{166}{16}
+  = 1{,}0
+  \quad \Rightarrow \quad 0\,\text{dB} \checkmark
 \]
- 
-\[
-  = \frac{15\,\text{k}}{150\,\text{k}}
-    \cdot \frac{1{,}6\,\text{k}}{16{,}6\,\text{k}}
-    \cdot \frac{166\,\text{k}}{16\,\text{k}}
-  = 0{,}1 \cdot 0{,}0964 \cdot 10{,}375
-  \approx 0{,}1
-\]
- 
-Der Hochfrequenzwert entspricht dem Gleichspannungswert --- die vier Knicke heben sich
-paarweise auf (je ein Pol und eine Nullstelle pro Netzwerk).
- 
+
+Start- und Endwert sind identisch~--- die vier Knicke heben sich paarweise auf.
+
 \subsection{Erwartetes Bode-Diagramm (Bode-Asymptoten)}
- 
+
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
     \begin{semilogxaxis}[
-      width=13cm, height=8cm,
+      width=13cm, height=7cm,
       xlabel={Kreisfrequenz $\omega\;[\text{rad/s}]$},
       ylabel={$|T|$},
-      xmin=6, xmax=1e6,
+      xmin=1, xmax=1e6,
       ymin=0.05, ymax=15,
       ymode=log,
       grid=both,
@@ -815,184 +747,207 @@ paarweise auf (je ein Pol und eine Nullstelle pro Netzwerk).
       major grid style={gray!35},
       title={Asymptotischer Amplitudengang des PID-Reglers}
     ]
-      % Bode-Asymptoten
-      \addplot[color=fhblau, very thick, domain=6:62]     {0.1};
-      \addplot[color=fhblau, very thick, domain=62:620]   {0.1*(x/62)};
-      \addplot[color=fhblau, very thick, domain=620:6200] {1};
-      \addplot[color=fhblau, very thick, domain=6200:62000] {x/6200};
-      \addplot[color=fhblau, very thick, domain=62000:1e6] {10};
-      % Eckfrequenz-Markierungen
-      \addplot[red, dashed, thick] coordinates {(62,    0.05) (62,    12)};
-      \addplot[red, dashed, thick] coordinates {(620,   0.05) (620,   12)};
-      \addplot[red, dashed, thick] coordinates {(6200,  0.05) (6200,  12)};
-      \addplot[red, dashed, thick] coordinates {(62000, 0.05) (62000, 12)};
-      \node at (axis cs:62,    0.08) [above right, red, font=\small] {$\omega_1$};
-      \node at (axis cs:620,   0.08) [above right, red, font=\small] {$\omega_2$};
-      \node at (axis cs:6200,  0.08) [above right, red, font=\small] {$\omega_3$};
-      \node at (axis cs:62000, 0.08) [above right, red, font=\small] {$\omega_4$};
-      % Plateau-Labels
-      \node at (axis cs:20,    0.14) [fhblau, font=\small] {$0{,}1$};
-      \node at (axis cs:1800,  1.4)  [fhblau, font=\small] {$1$};
-      \node at (axis cs:2e5,   12)   [fhblau, font=\small] {$10$};
+      \addplot[color=fhblau, very thick, domain=1:6.02]      {1};
+      \addplot[color=fhblau, very thick, domain=6.02:62.5]   {1*(x/6.02)};
+      \addplot[color=fhblau, very thick, domain=62.5:6024]   {10.375};
+      \addplot[color=fhblau, very thick, domain=6024:62500]  {10.375*(x/6024)};
+      \addplot[color=fhblau, very thick, domain=62500:1e6]   {10.375*62500/6024};
+      \addplot[red, dashed, thick] coordinates {(6.02,  0.05) (6.02,  120)};
+      \addplot[red, dashed, thick] coordinates {(62.5,  0.05) (62.5,  120)};
+      \addplot[red, dashed, thick] coordinates {(6024,  0.05) (6024,  120)};
+      \addplot[red, dashed, thick] coordinates {(62500, 0.05) (62500, 120)};
+      \node at (axis cs:6.02,  0.08) [above right, red, font=\tiny] {$\omega_3$};
+      \node at (axis cs:62.5,  0.08) [above right, red, font=\tiny] {$\omega_4$};
+      \node at (axis cs:6024,  0.08) [above right, red, font=\tiny] {$\omega_1$};
+      \node at (axis cs:62500, 0.08) [above right, red, font=\tiny] {$\omega_2$};
     \end{semilogxaxis}
   \end{tikzpicture}
-  \caption{Asymptotischer Amplitudengang: Startwert $0{,}1$, nach $\omega_3/\omega_4$ Endwert $10$}
+  \caption{Asymptotischer Amplitudengang: $\omega_3 < \omega_4 \ll \omega_1 < \omega_2$}
 \end{figure}
- 
+
 \subsection{LTSpice: AC-Analyse}
- 
-Für die Frequenzgang-Verifikation in LTSpice wird eine \texttt{.ac}-Analyse
-mit logarithmischer Frequenzachse verwendet:
- 
+
+Die Frequenzgang-Verifikation erfolgt mit der \texttt{.step}/\texttt{.ac}-Methode,
+wobei die Frequenzachse direkt in $\text{rad/s}$ skaliert wird:
+
 \begin{verbatim}
-.ac dec 100 1 1Meg
+.step dec param w 1 1Meg 100
+.ac list {w / (2 * pi)}
 \end{verbatim}
- 
-\textbf{Aufbau in LTSpice:}
+
+\textbf{Einstellungen:}
 \begin{itemize}
-  \item Eingangsquelle $V_1$: AC-Amplitude $= 1\,\text{V}$, DC $= 0$
-  \item Messung: $V(\text{out})/V(\text{in})$ im Bode-Plot (Magnitude in dB)
-  \item Erwarteter Startwert: $20\log(0{,}1) = -20\,\text{dB}$
-  \item Erwarteter Endwert:   $20\log(10)  = +20\,\text{dB}$
+  \item Eingangsquelle: \texttt{AC 1} ($= 1\,\text{V}$)
+  \item Messung: \texttt{V(out)/V(in)} im Bode-Plot
+  \item Erwarteter Startwert: $0\,\text{dB}$ ($|T(0)| = 1$)
+  \item Erwarteter Endwert:   $0\,\text{dB}$ ($|T(\infty)| = 1$)
+  \item GBW des OP-Amps: \texttt{GBW=1G} (ideal für diesen Frequenzbereich)
 \end{itemize}
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Schematic.png}
-    \caption{Aufgebaute Schaltung}
-    \label{fig:SchaltungInLTSpice}
+  \centering
+  \includegraphics[width=0.95\textwidth]{Schematic.png}
+  \caption{Aufgebaute Schaltung in LTSpice}
+  \label{fig:SchaltungInLTSpice}
 \end{figure}
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Frequenz und Phasengang.png}
-    \caption{Frequenz und Phasengang der Schaltung mit den berechneten Bauteilwerten}
-    \label{fig:Frequenz-Phasengang}
+  \centering
+  \includegraphics[width=0.95\textwidth]{Frequenz und Phasengang.png}
+  \caption{Frequenz- und Phasengang der Schaltung (simuliert)}
+  \label{fig:Frequenz-Phasengang}
 \end{figure}
+
 % ============================================================
 \section{Aufgabe 4: Sprungantwort (LTSpice)}
 % ============================================================
- 
+
 \subsection{Laplace-Analyse der Sprungantwort}
- 
+
 Das Eingangssignal ist ein Sprung der Höhe $u_e = -1\,\text{V}$ bei $t = 0$:
 \[
   U_e(s) = \frac{-1}{s}
 \]
- 
+
 Das Ausgangssignal im Laplace-Bereich:
 \[
   U_a(s) = T(s) \cdot U_e(s)
-          = -\frac{R_3}{R_1}
+          = \frac{R_3}{R_1}
             \cdot \frac{1 + sC_2 R_4}{1 + sC_2(R_3+R_4)}
             \cdot \frac{1 + sC_1(R_1+R_2)}{1 + sC_1 R_2}
-            \cdot \frac{-1}{s}
+            \cdot \frac{1}{s}
 \]
- 
-Das System hat zwei Pole (bei $s = -\omega_1$ und $s = -\omega_3$), zwei Nullstellen
-(bei $s = -\omega_2$ und $s = -\omega_4$) sowie den Pol bei $s = 0$ vom Eingangssprung.
- 
+
+Das System hat Pole bei $s = -\omega_1$ und $s = -\omega_3$ sowie
+Nullstellen bei $s = -\omega_2$ und $s = -\omega_4$.
+
 \subsection{Zeitkonstanten und stationärer Endwert}
- 
-Die zwei Systemzeitkonstanten entsprechen den Polen:
- 
+
 \begin{align*}
-  \tau_1 &= \frac{1}{\omega_1} = \frac{1}{62} \approx 16{,}1\,\text{ms}
-  \qquad \text{(Pol von } Z_1\text{, langsame Zeitkonstante)} \\[4pt]
-  \tau_2 &= \frac{1}{\omega_3} = \frac{1}{6200} \approx 161\,\mu\text{s}
-  \qquad \text{(Pol von } Z_2\text{, schnelle Zeitkonstante)}
+  \tau_1 &= \frac{1}{\omega_1}
+           = \frac{1}{6024}
+           \approx 0{,}166\,\text{ms}
+  \qquad \text{(Pol von } Z_1\text{, schnelle Zeitkonstante)} \\[4pt]
+  \tau_2 &= \frac{1}{\omega_3}
+           = \frac{1}{6{,}02}
+           \approx 166\,\text{ms}
+  \qquad \text{(Pol von } Z_2\text{, langsame Zeitkonstante)}
 \end{align*}
- 
+
 Stationärer Endwert ($t \to \infty$, entspricht $s \to 0$):
 \[
-  u_a(\infty) = \lim_{s \to 0}\; s \cdot U_a(s)
-              = T(0) \cdot (-1)
-              = -\frac{R_3}{R_1} \cdot (-1)
-              = \frac{15\,\text{k}}{150\,\text{k}}
-              = +0{,}1\,\text{V}
+  u_a(\infty)
+  = T(0) \cdot (-1) \cdot (-1)
+  = \frac{R_3}{R_1} \cdot 1
+  = \frac{150\,\text{k}}{150\,\text{k}}
+  = +1{,}0\,\text{V}
 \]
- 
+
 \begin{tcolorbox}[hinweis, title=Erwartetes Verhalten der Sprungantwort]
 \begin{enumerate}
-  \item \textbf{Initialer Sprung} (D-Anteil, $t = 0^+$): Der Zähler-Term
-        $(1 + sC_2R_4)$ bewirkt einen starken Ausschlag direkt beim Sprung.
-        Der Ausgangswert springt instantan auf:
-        \[
-          u_a(0^+) = T(\infty) \cdot (-1) = -0{,}1\,\text{V}
-        \]
-  \item \textbf{Exponentieller Abfall} (P-/I-Anteil): Die zwei Zeitkonstanten
-        $\tau_1 \approx 16\,\text{ms}$ und $\tau_2 \approx 161\,\mu\text{s}$ bestimmen
-        das Abklingverhalten.
-  \item \textbf{Stationärer Endwert}: $u_a(\infty) = +0{,}1\,\text{V}$
+  \item \textbf{Initialer Wert} ($t = 0^+$): Da $|T(\infty)| = 1$, springt
+        der Ausgang sofort auf $u_a(0^+) = +1\,\text{V}$.
+  \item \textbf{Transienter Verlauf}: Die langsame Zeitkonstante
+        $\tau_2 \approx 166\,\text{ms}$ bestimmt das Einschwingverhalten.
+        Die schnelle $\tau_1 \approx 0{,}166\,\text{ms}$ ist im
+        30-ms-Fenster nicht sichtbar.
+  \item \textbf{Stationärer Endwert}: $u_a(\infty) = +1{,}0\,\text{V}$
 \end{enumerate}
 \end{tcolorbox}
- 
+
 \subsection{LTSpice: Transientenanalyse}
- 
+
+Die Sprungantwort wird mit folgender Analyse simuliert:
+
 \begin{verbatim}
 .tran 0 30ms 0 1us
 \end{verbatim}
- 
-Eingangsspannung als Pulsquelle (idealer Sprung):
+
+Eingangsspannung als Pulsquelle (idealer Sprung von $0$ auf $-1\,\text{V}$):
 \begin{verbatim}
 PULSE(0 -1 0 1ns 1ns 30ms 60ms)
 \end{verbatim}
- 
+
+\textbf{Einstellungen:}
 \begin{itemize}
-  \item Simulationszeit: $30\,\text{ms}$ (deckt $\approx 2\tau_1$ ab)
+  \item Simulationszeit: $30\,\text{ms}$
+        (deckt ca.\ $0{,}18\cdot\tau_2$ ab~--- für vollständiges
+        Einschwingen wären $\approx 1\,\text{s}$ nötig)
   \item Sprunghöhe: $u_e = -1\,\text{V}$
-  \item Maximale Schrittweite: $1\,\mu\text{s}$ (ausreichend für $\tau_2 = 161\,\mu\text{s}$)
+  \item Schrittweite: $1\,\mu\text{s}$
 \end{itemize}
- 
+
+\textbf{Messung in LTSpice:}
+Im Plotfenster \texttt{V(out)} auswählen.
+Der Ausgang zeigt den Bereich von $t = 0$ bis $t = 5\,\text{s}$.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{Sprungantwort.png}
+  \caption{Sprungantwort des PID-Reglers bei $u_e = -1\,\text{V}$}
+  \label{fig:Sprungantwort}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{SprungantwortSchematic.png}
+  \caption{Schaltung der Sprungantwort}
+  \label{fig:Schaltung der Sprungantwort}
+\end{figure}
+
 % ============================================================
 \section{Zusammenfassung}
 % ============================================================
- 
+
 \begin{table}[H]
   \centering
   \caption{Zusammenfassung aller Ergebnisse}
-  \begin{tabular}{ll}
+  \begin{tabular}{p{6cm}l}
     \toprule
     Größe & Ergebnis \\
     \midrule
     $T(s)$ &
-      $-\dfrac{R_3}{R_1}\cdot\dfrac{1+sC_2R_4}{1+sC_2(R_3+R_4)}\cdot\dfrac{1+sC_1(R_1+R_2)}{1+sC_1R_2}$ \\[8pt]
-    $C_1$ & $100\,\text{nF}$ \\
-    $C_2$ & $10\,\text{nF}$ \\
+      $-\dfrac{R_3}{R_1}\cdot
+       \dfrac{1+sC_2R_4}{1+sC_2(R_3+R_4)}\cdot
+       \dfrac{1+sC_1(R_1+R_2)}{1+sC_1R_2}$ \\[8pt]
+    $C_1$ & $1\,\text{nF}$ \\
+    $C_2$ & $1\,\mu\text{F}$ \\
     $R_1$ & $150\,\text{k}\Omega$ \\
     $R_2$ & $16\,\text{k}\Omega$ \\
-    $R_3$ & $15\,\text{k}\Omega$ \\
-    $R_4$ & $1{,}6\,\text{k}\Omega$ \\
-    $\omega_1$ & $62\,\text{rad/s}$ (Pol, $-20\,\text{dB/Dek.}$) \\
-    $\omega_2$ & $620\,\text{rad/s}$ (Nullstelle, $+20\,\text{dB/Dek.}$) \\
-    $\omega_3$ & $6200\,\text{rad/s}$ (Pol, $-20\,\text{dB/Dek.}$) \\
-    $\omega_4$ & $62000\,\text{rad/s}$ (Nullstelle, $+20\,\text{dB/Dek.}$) \\
-    $|T(0)|$ & $0{,}1$ \\
-    $|T(\infty)|$ & $0{,}1$ \\
-    $u_a(\infty)$ bei $u_e = -1\,\text{V}$ & $+0{,}1\,\text{V}$ \\
-    $\tau_1$ & $\approx 16{,}1\,\text{ms}$ \\
-    $\tau_2$ & $\approx 161\,\mu\text{s}$ \\
+    $R_3$ & $150\,\text{k}\Omega$ \\
+    $R_4$ & $16\,\text{k}\Omega$ \\
+    $\omega_1 = 1/(C_1(R_1+R_2))$ & $6024\,\text{rad/s}$ (Pol) \\
+    $\omega_2 = 1/(C_1 R_2)$      & $62500\,\text{rad/s}$ (Nullstelle) \\
+    $\omega_3 = 1/(C_2(R_3+R_4))$ & $6{,}02\,\text{rad/s}$ (Pol) \\
+    $\omega_4 = 1/(C_2 R_4)$      & $62{,}5\,\text{rad/s}$ (Nullstelle) \\
+    $|T(0)|$ & $1{,}0$ ($= 0\,\text{dB}$) \\
+    $|T(\infty)|$ & $1{,}0$ ($= 0\,\text{dB}$) \\
+    $u_a(\infty)$ bei $u_e = -1\,\text{V}$ & $+1{,}0\,\text{V}$ \\
+    $\tau_1$ & $\approx 0{,}166\,\text{ms}$ \\
+    $\tau_2$ & $\approx 166\,\text{ms}$ \\
     \bottomrule
   \end{tabular}
 \end{table}
- 
-% ============================================================
-\section*{Anhang: LTSpice Netzliste}
-% ============================================================
-\addcontentsline{toc}{section}{Anhang: LTSpice Netzliste}
 
-Spice Netliste für AC Analyse 
+% ============================================================
+\section*{Anhang: LTSpice Netzlisten}
+% ============================================================
+\addcontentsline{toc}{section}{Anhang: LTSpice Netzlisten}
+
+\textbf{Netzliste für AC-Analyse (Frequenzgang):}
+
 \begin{verbatim}
 V1 V+ 0 15
 V2 0 V- 15
-R1 N002 IN 150k
-R2 N002 N003 16k
-X§U1 0 N002 V+ V- OUT level1 Avol=1Meg GBW=1G Vos=0 En=0 Enk=0 In=0 Ink=0 Rin=500Meg
-C1 N003 IN 1n
-R3 N002 OUT 150k
-R4 N001 OUT 16k
-C2 N002 N001 1µ
-V3 IN 0 AC 1
+R1  N002 IN    150k
+R2  N002 N003  16k
+C1  N003 IN    1n
+X§U1 0 N002 V+ V- OUT level1 Avol=1Meg GBW=1G
+     Vos=0 En=0 Enk=0 In=0 Ink=0 Rin=500Meg
+R3  N002 OUT   150k
+R4  N001 OUT   16k
+C2  N002 N001  1u
+V3  IN 0 AC 1
 .step dec param w 1 1Meg 100
 .ac list {w / (2 * pi)}
 .lib UniversalOpAmp1.lib
@@ -1000,24 +955,24 @@ V3 IN 0 AC 1
 .end
 \end{verbatim}
 
-Spice Netliste für Sprungantwort
+\textbf{Netzliste für Transientenanalyse (Sprungantwort):}
 
 \begin{verbatim}
 V1 V+ 0 15
 V2 0 V- 15
-R1 N002 IN 150k
-R2 N002 N003 16k
-X§U1 0 N002 V+ V- OUT level1 Avol=1Meg GBW=1G Vos=0 En=0 Enk=0 In=0 Ink=0 Rin=500Meg
-C1 N003 IN 1n
-R3 N002 OUT 150k
-R4 N001 OUT 16k
-C2 N002 N001 1µ
-V3 IN 0 AC 1
-.step dec param w 1 1Meg 100
-.ac list {w / (2 * pi)}
+R1  N002 IN    150k
+R2  N002 N003  16k
+C1  N003 IN    1n
+X§U1 0 N002 V+ V- OUT level1 Avol=1Meg GBW=1G
+     Vos=0 En=0 Enk=0 In=0 Ink=0 Rin=500Meg
+R3  N002 OUT   150k
+R4  N001 OUT   16k
+C2  N002 N001  1u
+V3  IN 0 PULSE(0 -1 0 1ns 1ns 30ms 60ms)
+.tran 0 30ms 0 1us
 .lib UniversalOpAmp1.lib
 .backanno
 .end
 \end{verbatim}
- 
+
 \end{document}

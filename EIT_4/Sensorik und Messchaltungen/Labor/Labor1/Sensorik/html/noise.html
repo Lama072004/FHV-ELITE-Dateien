@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>noise</title>
+<meta name="generator" content="MATLAB 25.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2026-05-26">
+<meta name="DC.source" content="noise.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<pre class="codeinput">time1 = NOISE1.Time;
+voltage1 = NOISE1.Voltage;
+
+figure;
+histfit(voltage1');
+pd1=fitdist(voltage1,<span class="string">'normal'</span>);
+sigma1 = pd1.sigma;
+mu1 = pd1.mu;
+Vpp1=6*sigma;
+disp(Vpp1); <span class="comment">% Peak&minus;Peak Spannung</span>
+disp(mu1); <span class="comment">% Mittelwert</span>
+disp(sigma1); <span class="comment">% Standardabweichung</span>
+fprintf(<span class="string">'Vpp1: %e\n'</span>, Vpp1);
+fprintf(<span class="string">'mu1: %e\n'</span>, mu1);
+fprintf(<span class="string">'sigma1: %e\n'</span>, sigma1);
+
+time2 = NOISE2.Time;
+voltage2 = NOISE2.Voltage;
+
+figure;
+histfit(voltage2');
+pd2=fitdist(voltage2,<span class="string">'normal'</span>);
+sigma2 = pd2.sigma;
+mu2 = pd2.mu;
+Vpp2=6*sigma;
+disp(Vpp2); <span class="comment">% Peak&minus;Peak Spannung</span>
+disp(mu2); <span class="comment">% Mittelwert</span>
+disp(sigma2); <span class="comment">% Standardabweichung</span>
+fprintf(<span class="string">'Vpp2: %e\n'</span>, Vpp2);
+fprintf(<span class="string">'mu2: %e\n'</span>, mu2);
+fprintf(<span class="string">'sigma2: %e\n'</span>, sigma2);
+
+time3 = NOISE3.Time;
+voltage3 = NOISE3.Voltage;
+
+figure;
+histfit(voltage3');
+pd3=fitdist(voltage3,<span class="string">'normal'</span>);
+sigma3 = pd3.sigma;
+mu3 = pd3.mu;
+Vpp3=6*sigma;
+disp(Vpp3); <span class="comment">% Peak&minus;Peak Spannung</span>
+disp(mu3); <span class="comment">% Mittelwert</span>
+disp(sigma3); <span class="comment">% Standardabweichung</span>
+fprintf(<span class="string">'Vpp3: %e\n'</span>, Vpp3);
+fprintf(<span class="string">'mu3: %e\n'</span>, mu3);
+fprintf(<span class="string">'sigma3: %e\n'</span>, sigma3);
+
+
+time4 = NOISE4.Time;
+voltage4 = NOISE4.Voltage;
+
+figure;
+histfit(voltage4');
+pd4 = fitdist(voltage4,<span class="string">'normal'</span>);
+sigma4 = pd4.sigma;
+mu4 = pd4.mu;
+Vpp4 = 6*sigma4;
+
+disp(Vpp4); <span class="comment">% Peak&minus;Peak Spannung</span>
+disp(mu4); <span class="comment">% Mittelwert</span>
+disp(sigma4); <span class="comment">% Standardabweichung</span>
+
+fprintf(<span class="string">'Vpp4: %e\n'</span>, Vpp4);
+fprintf(<span class="string">'mu4: %e\n'</span>, mu4);
+fprintf(<span class="string">'sigma4: %e\n'</span>, sigma4);
+</pre>
+<pre class="codeoutput">    0.0083
+
+   -0.0625
+
+    0.0014
+
+Vpp1: 8.347306e-03
+mu1: -6.253002e-02
+sigma1: 1.391218e-03
+    0.0083
+
+   -0.0626
+
+    0.0012
+
+Vpp2: 8.347306e-03
+mu2: -6.261365e-02
+sigma2: 1.155526e-03
+    0.0083
+
+   -0.0583
+
+    0.0012
+
+Vpp3: 8.347306e-03
+mu3: -5.831676e-02
+sigma3: 1.170221e-03
+    0.2677
+
+   -0.0576
+
+    0.0446
+
+Vpp4: 2.676785e-01
+mu4: -5.761379e-02
+sigma4: 4.461309e-02
+</pre>
+<p class="footer">
+<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2025a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+time1 = NOISE1.Time;
+voltage1 = NOISE1.Voltage;
+
+figure;
+histfit(voltage1');
+pd1=fitdist(voltage1,'normal');
+sigma1 = pd1.sigma;
+mu1 = pd1.mu;
+Vpp1=6*sigma;
+disp(Vpp1); % Peak−Peak Spannung
+disp(mu1); % Mittelwert
+disp(sigma1); % Standardabweichung
+fprintf('Vpp1: %e\n', Vpp1);
+fprintf('mu1: %e\n', mu1);
+fprintf('sigma1: %e\n', sigma1);
+
+time2 = NOISE2.Time;
+voltage2 = NOISE2.Voltage;
+
+figure;
+histfit(voltage2');
+pd2=fitdist(voltage2,'normal');
+sigma2 = pd2.sigma;
+mu2 = pd2.mu;
+Vpp2=6*sigma;
+disp(Vpp2); % Peak−Peak Spannung
+disp(mu2); % Mittelwert
+disp(sigma2); % Standardabweichung
+fprintf('Vpp2: %e\n', Vpp2);
+fprintf('mu2: %e\n', mu2);
+fprintf('sigma2: %e\n', sigma2);
+
+time3 = NOISE3.Time;
+voltage3 = NOISE3.Voltage;
+
+figure;
+histfit(voltage3');
+pd3=fitdist(voltage3,'normal');
+sigma3 = pd3.sigma;
+mu3 = pd3.mu;
+Vpp3=6*sigma;
+disp(Vpp3); % Peak−Peak Spannung
+disp(mu3); % Mittelwert
+disp(sigma3); % Standardabweichung
+fprintf('Vpp3: %e\n', Vpp3);
+fprintf('mu3: %e\n', mu3);
+fprintf('sigma3: %e\n', sigma3);
+
+
+time4 = NOISE4.Time;
+voltage4 = NOISE4.Voltage;
+
+figure;
+histfit(voltage4');
+pd4 = fitdist(voltage4,'normal');
+sigma4 = pd4.sigma;
+mu4 = pd4.mu;
+Vpp4 = 6*sigma4;
+
+disp(Vpp4); % Peak−Peak Spannung
+disp(mu4); % Mittelwert
+disp(sigma4); % Standardabweichung
+
+fprintf('Vpp4: %e\n', Vpp4);
+fprintf('mu4: %e\n', mu4);
+fprintf('sigma4: %e\n', sigma4);
+##### SOURCE END #####
+-->
+</body>
+</html>
