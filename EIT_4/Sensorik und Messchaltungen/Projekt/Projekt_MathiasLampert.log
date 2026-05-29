@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.9)  22 MAY 2026 12:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.9)  28 MAY 2026 11:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -776,6 +776,19 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 ) (./Projekt_MathiasLampert.aux
 Package babel Info: 'ngerman' activates 'german' shorthands.
 (babel)             Reported on input line 8.
+
+
+LaTeX Warning: Label `eq:omega1' multiply defined.
+
+
+LaTeX Warning: Label `eq:omega2' multiply defined.
+
+
+LaTeX Warning: Label `eq:omega3' multiply defined.
+
+
+LaTeX Warning: Label `eq:omega4' multiply defined.
+
 )
 \openout1 = `Projekt_MathiasLampert.aux'.
 
@@ -902,187 +915,191 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout5 = `Projekt_MathiasLampert.toc'.
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.141 \newpage
-               [1{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-Overfull \hbox (42.34749pt too wide) in paragraph at lines 147--152
-\T1/lmr/m/n/12 stär-kun-gen rea-li-sie-ren, in-dem die Wi-der-stän-de $\OML/lmm/m/it/12 R[]$ \T1/lmr/m/n/12 und $\OML/lmm/m/it/12 R[]$ \T1/lmr/m/n/12 der klas-si-schen Invertier-Grundschaltung
- []
-
+l.143 \newpage
+               [1{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 230.
+(Font)              <10> on input line 234.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 230.
+(Font)              <7> on input line 234.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 230.
-[2]
+(Font)              <5> on input line 234.
+ [1]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 301.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 301.
+(hyperref)                removing `math shift' on input line 292.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 301.
-
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 306.
-(/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [3]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 355.
+(hyperref)                removing `subscript' on input line 292.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 355.
+(hyperref)                removing `math shift' on input line 292.
+
+[2{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 336.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 355.
-
-[4{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 410.
+(hyperref)                removing `subscript' on input line 336.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 410.
+(hyperref)                removing `math shift' on input line 336.
+
+[3]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 410.
+(hyperref)                removing `subscript' on input line 380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 410.
-
-[5] [6]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 531.
+(hyperref)                removing `subscript' on input line 380.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 531.
+(hyperref)                removing `math shift' on input line 380.
+
+[4] [5]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 530.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 531.
+(hyperref)                removing `subscript' on input line 530.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 531.
+(hyperref)                removing `math shift' on input line 530.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 531.
+(hyperref)                removing `math shift' on input line 530.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 531.
+(hyperref)                removing `subscript' on input line 530.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 531.
+(hyperref)                removing `math shift' on input line 530.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 531.
+(hyperref)                removing `math shift' on input line 530.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 531.
-
-[7]
-Overfull \hbox (25.51785pt too wide) detected at line 598
-\OML/lmm/m/it/12 ![] \OT1/lmr/m/n/12 = [] = [] = [] = [] \OMS/lmsy/m/n/12 ^^Y \OT1/lmr/m/n/12 62[]0 [][]
- []
+(hyperref)                removing `subscript' on input line 530.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 615.
+(hyperref)                removing `math shift' on input line 530.
+
+[6]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 603.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 615.
+(hyperref)                removing `subscript' on input line 603.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 615.
+(hyperref)                removing `math shift' on input line 603.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 615.
+(hyperref)                removing `math shift' on input line 603.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 615.
+(hyperref)                removing `subscript' on input line 603.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 615.
+(hyperref)                removing `math shift' on input line 603.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 615.
+(hyperref)                removing `math shift' on input line 603.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 615.
+(hyperref)                removing `subscript' on input line 603.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 615.
+(hyperref)                removing `math shift' on input line 603.
 
-
-Overfull \hbox (105.26036pt too wide) detected at line 639
-\OML/lmm/m/it/12 R[] \OT1/lmr/m/n/12 + \OML/lmm/m/it/12 R[] \OT1/lmr/m/n/12 = [] = [] \OMS/lmsy/m/n/12 ^^Y \OT1/lmr/m/n/12 1613 
-  \OMS/lmsy/m/n/12 )  \OML/lmm/m/it/12 R[] \OT1/lmr/m/n/12 = 1613 \OMS/lmsy/m/n/12 ^^@ \OT1/lmr/m/n/12 161 = 1452 
-  \OMS/lmsy/m/n/12 )  []
- []
-
-[8]
-Overfull \hbox (10.50403pt too wide) detected at line 691
-\OML/lmm/m/it/12 ![] \OT1/lmr/m/n/12 = [] = [] = [] = [] \OMS/lmsy/m/n/12 ^^Y \OT1/lmr/m/n/12 6200 [][]
- []
-
-[9]
-Package pgfplots info on input line 817: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
-Package pgfplots info on input line 817: Using 'lua backend=false' for axis: ymode=log unsupported (yet).
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 837.
- [10]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 844.
+[7] [8]
+Package pgfplots info on input line 749: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
+Package pgfplots info on input line 749: Using 'lua backend=false' for axis: ymode=log unsupported (yet).
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 770.
  (/usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [11] [12] [13] (./Projekt_MathiasLampert.aux)
+)
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 780.
+ (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<Schematic.png, id=238, 1101.36469pt x 519.44063pt>
+File: Schematic.png Graphic file (type png)
+<use Schematic.png>
+Package pdftex.def Info: Schematic.png  used on input line 789.
+(pdftex.def)             Requested size: 432.48051pt x 203.96808pt.
+<Frequenz und Phasengang.png, id=240, 1427.3325pt x 302.63063pt>
+File: Frequenz und Phasengang.png Graphic file (type png)
+<use Frequenz und Phasengang.png>
+Package pdftex.def Info: Frequenz und Phasengang.png  used on input line 796.
+(pdftex.def)             Requested size: 432.48051pt x 91.69496pt.
+ [9{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [10 <./Schematic.png> <./Frequenz und Phasengang.png>] [11]
+<Sprungantwort.png, id=266, 1915.155pt x 446.41782pt>
+File: Sprungantwort.png Graphic file (type png)
+<use Sprungantwort.png>
+Package pdftex.def Info: Sprungantwort.png  used on input line 886.
+(pdftex.def)             Requested size: 432.48051pt x 100.80751pt.
+<SprungantwortSchematic.png, id=267, 1073.51062pt x 328.97906pt>
+File: SprungantwortSchematic.png Graphic file (type png)
+<use SprungantwortSchematic.png>
+Package pdftex.def Info: SprungantwortSchematic.png  used on input line 893.
+(pdftex.def)             Requested size: 432.48051pt x 132.533pt.
+ [12 <./Sprungantwort.png> <./SprungantwortSchematic.png>] [13] [14] (./Projekt_MathiasLampert.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `Projekt_MathiasLampert.out' has not changed.
-(rerunfilecheck)             Checksum: 441CC3F4B428D7E9CEA84DED2EFEA2BE;6130.
+(rerunfilecheck)             Checksum: 2287315682524A66C3B7CE5A437FAEC9;6874.
  ) 
 Here is how much of TeX's memory you used:
- 61151 strings out of 469462
- 1570534 string characters out of 5468615
- 2333865 words of memory out of 5000000
- 89082 multiletter control sequences out of 15000+600000
- 719366 words of font info for 102 fonts, out of 8000000 for 9000
+ 61178 strings out of 469462
+ 1571364 string characters out of 5468615
+ 2331338 words of memory out of 5000000
+ 89104 multiletter control sequences out of 15000+600000
+ 694603 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,12n,108p,847b,2033s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Projekt_MathiasLampert.pdf (14 pages, 277585 bytes).
+ 99i,14n,108p,847b,2032s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on Projekt_MathiasLampert.pdf (16 pages, 360902 bytes).
 PDF statistics:
- 354 PDF objects out of 1000 (max. 8388607)
- 297 compressed objects within 3 object streams
- 60 named destinations out of 1000 (max. 500000)
- 229 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 382 PDF objects out of 1000 (max. 8388607)
+ 317 compressed objects within 4 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 273 words of extra memory for PDF output out of 10000 (max. 10000000)
 
