@@ -1,0 +1,380 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{a4paper, margin=1in}
+
+\title{Ausführliche Zusammenfassung: Digitaltechnik \& State Machines}
+\author{Studiengang EIT \& MEC Bachelor}
+\date{2026}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Block: Digital Intro (Referenzdatei: Lec\_00\_Digital-Intro.pdf)}
+
+\subsection{Operationen der Booleschen Algebra}
+Information besitzt eine Maßeinheit, das Bit[cite: 1]. Ein Bit repräsentiert die Zustände True/False, Yes/No oder $1/0$[cite: 1]. Die digitale Intro führt drei grundlegende Operationen ein[cite: 1]:
+\begin{enumerate}
+    \item \textbf{Konjunktion (UND-Verknüpfung):} Der Ausgang wird nur wahr, wenn alle Eingänge wahr sind[cite: 1]. Mathematisch lautet die Formel[cite: 1]:
+    $$y = x_{1} \wedge x_{2} = x_{1} \cdot x_{2} = x_{1}x_{2}$$
+    \item \textbf{Disjunktion (ODER-Verknüpfung):} Der Ausgang wird wahr, wenn mindestens ein Eingang wahr ist[cite: 1]. Die mathematische Darstellung lautet[cite: 1]:
+    $$y = x_{1} \vee x_{2} = x_{1} + x_{2}$$
+    \item \textbf{Negation (NICHT-Verknüpfung):} Dies ist die Inversion eines Zustands[cite: 1]. Die Formel lautet[cite: 1]:
+    $$y = \overline{x}$$
+\end{enumerate}
+
+\subsection{Basic Functions}
+Die grundlegenden logischen Funktionen besitzen eindeutige Wahrheitstabellen und mathematische Ausdrücke[cite: 1].
+
+\subsubsection{Negation}
+Die Inversion kehrt den logischen Wert um[cite: 1].
+\begin{itemize}
+    \item \textbf{Funktion:} $Y = \overline{X}$[cite: 1]
+    \item \textbf{Wahrheitstabelle:}
+    \begin{center}
+    \begin{tabular}{cc}
+        \toprule
+        X & Y \\
+        \midrule
+        0 & 1 \\
+        1 & 0 \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+\end{itemize}
+
+\subsubsection{Konjunktion (UND)}
+Der Ausgang schaltet ausschließlich bei $1$ an allen Eingängen auf $1$[cite: 1].
+\begin{itemize}
+    \item \textbf{Funktion:} $Y = X_1 \cdot X_2$[cite: 1]
+    \item \textbf{Erweiterung auf $n$ Variablen:} $Y = X1 \cdot X2 \cdot \dots \cdot Xn$[cite: 1]
+    \item \textbf{Wahrheitstabelle:}
+    \begin{center}
+    \begin{tabular}{ccc}
+        \toprule
+        X1 & X2 & Y \\
+        \midrule
+        0 & 0 & 0 \\
+        0 & 1 & 0 \\
+        1 & 0 & 0 \\
+        1 & 1 & 1 \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+\end{itemize}
+
+\subsubsection{Disjunktion (ODER)}
+Der Ausgang schaltet auf $1$, sobald ein Eingang $1$ führt[cite: 1].
+\begin{itemize}
+    \item \textbf{Funktion:} $Y = X1 \vee X2$[cite: 1]
+    \item \textbf{Erweiterung auf $n$ Variablen:} $Y = X1 \vee X2 \vee \dots \vee Xn$[cite: 1]
+    \item \textbf{Wahrheitstabelle:}
+    \begin{center}
+    \begin{tabular}{ccc}
+        \toprule
+        X1 & X2 & Y \\
+        \midrule
+        0 & 0 & 0 \\
+        0 & 1 & 1 \\
+        1 & 0 & 1 \\
+        1 & 1 & 1 \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+\end{itemize}
+
+\subsubsection{NAND-Verknüpfung}
+Der Ausgang ist invertiert zum UND-Gatter[cite: 1].
+\begin{itemize}
+    \item \textbf{Funktion:} $Y = X1 \overline{\wedge} X2 = \overline{X1 \cdot X2}$[cite: 1]
+    \item \textbf{Erweiterung auf $n$ Variablen:} $Y = \overline{X1 \cdot X2 \cdot \dots \cdot Xn}$[cite: 1]
+    \item \textbf{Wahrheitstabelle:}
+    \begin{center}
+    \begin{tabular}{ccc}
+        \toprule
+        X1 & X2 & Y \\
+        \midrule
+        0 & 0 & 1 \\
+        0 & 1 & 1 \\
+        1 & 0 & 1 \\
+        1 & 1 & 0 \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+\end{itemize}
+
+\subsubsection{NOR-Verknüpfung}
+Der Ausgang ist invertiert zum ODER-Gatter[cite: 1].
+\begin{itemize}
+    \item \textbf{Funktion:} $Y = X1 \overline{\vee} X2 = \overline{X1 \vee X2}$[cite: 1]
+    \item \textbf{Erweiterung auf $n$ Variablen:} $Y = \overline{X1 \vee X2 \vee \dots \vee Xn}$[cite: 1]
+    \item \textbf{Wahrheitstabelle:}
+    \begin{center}
+    \begin{tabular}{ccc}
+        \toprule
+        X1 & X2 & Y \\
+        \midrule
+        0 & 0 & 1 \\
+        0 & 1 & 0 \\
+        1 & 0 & 0 \\
+        1 & 1 & 0 \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+\end{itemize}
+
+\subsubsection{Antivalenz-Verknüpfung (Exklusiv-ODER / XOR)}
+Der Ausgang wird $1$, wenn die Eingänge unterschiedliche Werte besitzen[cite: 1].
+\begin{itemize}
+    \item \textbf{Funktion:} $Y = X1 \leftrightarrow X2 = \overline{X1}X2 \vee X1\overline{X2}$[cite: 1]
+    \item \textbf{Wahrheitstabelle:}
+    \begin{center}
+    \begin{tabular}{ccc}
+        \toprule
+        X1 & X2 & Y \\
+        \midrule
+        0 & 0 & 0 \\
+        0 & 1 & 1 \\
+        1 & 0 & 1 \\
+        1 & 1 & 0 \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+\end{itemize}
+
+\subsection{Bilden von beliebigen Funktionen (Arbitrary Functions)}
+Sie können jede beliebige logische Funktion über die Disjunktive Normalform (Sum of Products) aus einer Wahrheitstabelle bilden[cite: 1]. Das Dokument zeigt folgendes exaktes Beispiel[cite: 1]:
+\begin{center}
+\begin{tabular}{cccc}
+    \toprule
+    $x_1$ & $x_2$ & $x_3$ & y \\
+    \midrule
+    0 & 0 & 0 & 1 \\
+    0 & 0 & 1 & 0 \\
+    0 & 1 & 0 & 0 \\
+    0 & 1 & 1 & 1 \\
+    1 & 0 & 0 & 0 \\
+    1 & 0 & 1 & 1 \\
+    1 & 1 & 0 & 0 \\
+    1 & 1 & 1 & 0 \\
+    \bottomrule
+\end{tabular}
+\end{center}
+Daraus ergibt sich die logische Summe der Produkte für alle Zeilen mit dem Ausgang $y = 1$[cite: 1]:
+$$y = \overline{x_{1}}\cdot\overline{x_{2}}\cdot\overline{x_{3}}+\overline{x_{1}}\cdot x_{2}\cdot x_{3}+x_{1}\cdot\overline{x_{2}}\cdot x_{3}$$
+
+\subsection{Anwendung von Open-Collector-Schaltungen}
+Das Dokument zeigt Schaltungen mit Open-Collector-Ausgängen ($G_1, G_2, \dots, G_n$)[cite: 1].
+\begin{itemize}
+    \item \textbf{Zweck:} Sie verbinden die offenen Kollektoren mehrerer Ausgänge direkt mit einer gemeinsamen Leitung und einem externen Arbeitswiderstand $R_C$ gegen die Versorgungsspannung[cite: 1]. Dies spart zusätzliche Logikgatter ein.
+\end{itemize}
+
+\subsection{Schaltplan des CMOS-Inverters}
+Der CMOS-Inverter besteht aus einer Reihenschaltung von zwei komplementären Feldeffekttransistoren zwischen der Versorgungsspannung $V_{DD}$ und Masse[cite: 1]:
+\begin{itemize}
+    \item Der obere Transistor $T_2$ ist ein p-Kanal-MOSFET, dessen Source an $V_{DD}$ liegt[cite: 1].
+    \item Der untere Transistor $T_1$ ist ein n-Kanal-MOSFET, dessen Source an Masse liegt[cite: 1].
+    \item Die Gates von $T_1$ und $T_2$ verbinden sich zum gemeinsamen Eingang $U_e$[cite: 1].
+    \item Die Drains von $T_1$ und $T_2$ verbinden sich zum gemeinsamen Ausgang $U_a$[cite: 1].
+\end{itemize}
+
+\subsection{CMOS Power Consumption (Leistungsaufnahme)}
+Die Verlustleistung eines CMOS-Logikgatters berechnet sich über folgende Formel[cite: 1]:
+$$P_{V}=V_{DD}\cdot I=V_{DD}\cdot Q\cdot f=C_{P_{v}}\cdot V_{DD}^{2}\cdot f$$
+Die Parameter bedeuten[cite: 1]:
+\begin{itemize}
+    \item $V_{DD}$: Versorgungsspannung des Gatters[cite: 1].
+    \item $I$: Strom durch das Gatter[cite: 1].
+    \item $C_{P_v}$: Fiktive Verlustkapazität[cite: 1].
+    \item $f$: Schaltfrequenz[cite: 1].
+\end{itemize}
+
+\subsection{CMOS-Eingangsbeschaltung (Folie 15)}
+Die integrierte CMOS-Eingangsbeschaltung schützt das Gatter vor statischen Entladungen[cite: 1]. Laut Folie 15 besteht sie aus folgenden Elementen[cite: 1]:
+\begin{itemize}
+    \item Einem Vorwiderstand von $400\,\Omega$ in den Pfaden der Eingänge A und B[cite: 1].
+    \item Schutzdioden, die in Sperrrichtung gegen die Versorgungsspannung $V_{CC}$ und gegen Masse geschaltet sind[cite: 1]. Diese Dioden klemmen Überspannungen sicher ab.
+\end{itemize}
+
+\subsection{Störabstand (Noise Margin)}
+Das Dokument verdeutlicht die Notwendigkeit eines ausreichenden Störabstands (Noise Margin), da CMOS- und TTL-Pegel nicht direkt kompatibel sind[cite: 1]. Die Pegelbereiche für eine Versorgungsspannung von $5\,\text{V}$ lauten[cite: 1]:
+\begin{itemize}
+    \item \textbf{TTL Input:} LOW $< 0.8\,\text{V}$, HIGH $> 2.0\,\text{V}$[cite: 1].
+    \item \textbf{TTL Output:} LOW $< 0.4\,\text{V}$, HIGH $> 2.7\,\text{V}$[cite: 1].
+    \item \textbf{CMOS Input:} LOW $< 1.5\,\text{V}$, HIGH $> 3.5\,\text{V}$[cite: 1].
+    \item \textbf{CMOS Output:} LOW $< 0.1\,\text{V}$, HIGH $> 4.9\,\text{V}$[cite: 1].
+\end{itemize}
+
+\subsection{Zeitschaltverhalten (Propagation Delay)}
+Signallaufzeiten benötigen Zeit[cite: 1]. Das Dokument definiert die Parameter für die Verzögerung[cite: 1]:
+\begin{itemize}
+    \item $t_{pHL}$: Ausbreitungsverzögerung beim Wechsel von HIGH nach LOW[cite: 1].
+    \item $t_{pLH}$: Ausbreitungsverzögerung beim Wechsel von LOW nach HIGH[cite: 1].
+\end{itemize}
+
+\subsection{Datenblatt-Parameter}
+Das Datenblatt des Bausteins MM74HC00 nennt wichtige Spezifikationen[cite: 1]:
+\begin{itemize}
+    \item \textbf{Absolute Maximum Ratings:} Werte, oberhalb derer eine dauerhafte Beschädigung des Bauteils droht (z. B. Supply Voltage $-0.5\,\text{V}$ bis $+7.0\,\text{V}$)[cite: 1].
+    \item \textbf{Recommended Operating Conditions:} Empfohlene Betriebsbedingungen für den sicheren Betrieb (z. B. Spannungsbereich $2\,\text{V}$ bis $6\,\text{V}$)[cite: 1].
+    \item \textbf{Fan-Out:} Die Fähigkeit, eine bestimmte Anzahl an Lasten zu treiben (z. B. das Treiben von 10 LS-TTL Lasten)[cite: 1].
+\end{itemize}
+
+\subsection{Der dritte Zustand: High Impedance}
+Der Tri-State-Zustand (High Impedance) stellt den hochohmigen Zustand dar[cite: 1]. Dieser Zustand tritt auf, wenn beide Ausgangstransistoren der Stufe blockieren (Sperrzustand). Der Ausgang besitzt dann keine leitende Verbindung zu $V_{CC}$ oder Masse[cite: 1].
+
+\subsection{Decoder, Multiplexer und Demultiplexer}
+\begin{itemize}
+    \item \textbf{1-aus-4-Decoder Ausgänge:} Besitzt Auswahleingänge ($a_0, a_1$) und schaltet exakt einen der Ausgänge ($y_0, y_1, y_2, y_3$) auf $1$, während alle anderen $0$ bleiben[cite: 1].
+    \item \textbf{Multiplexer (MUX):} Besitzt Dateneingänge ($d_0, d_1, d_2, d_3$) und Adressleitungen ($a_0, a_1$)[cite: 1]. Er schaltet das Signal des ausgewählten Eingangs auf den einzigen gemeinsamen Ausgang $y$ durch[cite: 1].
+    \item \textbf{Demultiplexer (DEMUX):} Besitzt einen Dateneingang ($d$) und Adressleitungen ($a_0, a_1$)[cite: 1]. Er verteilt das Eingangssignal auf den angewählten Ausgang ($y_0, y_1, y_2, y_3$)[cite: 1].
+\end{itemize}
+
+\subsection{Addierer}
+\begin{itemize}
+    \item Addierer (Halbaddierer und Volladdierer) sind reine kombinatorische Schaltungen aus XOR- und UND-Gattern[cite: 1]. Sie berechnen die Summe ($s_0, s_i$) und den Übertrag ($c_1, c_{i+1}$) direkt aus den Eingängen[cite: 1].
+    \item Im Computer wird im Wesentlichen nur addiert; Subtraktionen erfolgen über die Addition des Zweierkomplements[cite: 1].
+\end{itemize}
+
+\newpage
+
+\section{Vorlesung 2: Analoge Bausteine \& Filter (Referenzdateien: Lec\_01\_Analog-Stuff.pdf, Lec\_01\_Switching-Circuits.pdf)}
+
+\subsection{Schmitt-Trigger und Oszillatoren}
+\begin{itemize}
+    \item \textbf{Schmitt-Trigger:} Dient als analoger Schwellenwertschalter mit Hysterese zur Erzeugung sauberer Rechtecksignale[cite: 4].
+    \item \textbf{Barkhausen-Kriterium:} Definiert die Schwingbedingung für Oszillatoren[cite: 4]. Die Schleifenverstärkung muss den Betrag $1$ aufweisen, und die Phase muss ein Vielfaches von $360^\circ$ betragen.
+    \item \textbf{Quartz Oscillator Pierce:} Nutzt ein invertierendes Gatter, Widerstände ($R_1, R_2$), Lastkondensatoren ($C_1, C_2$) und einen Quarz ($Q_1$)[cite: 4]. Quarze bieten eine hervorragende Frequenztoleranz ($20\,\text{ppm}$) und Temperaturstabilität ($0.05\,\text{ppm/K}$) im Vergleich zu Kondensatoren[cite: 4].
+\end{itemize}
+
+\subsection{Phase-Locked Loop (PLL)}
+\begin{itemize}
+    \item \textbf{Komponenten:} Eine PLL besteht aus einer Referenzsignalquelle, einem Phasenfrequenzdetektor (PFD), einem Schleifenfilter (Loop Filter) und einem spannungsgesteuerten Oszillator (VCO)[cite: 4].
+    \item \textbf{Funktion und Anwendung:} Sie synchronisiert die Phase des VCO mit dem Referenzsignal[cite: 4]. Über zusätzliche Frequenzteiler ($M$ und $N$) im Pfad dient sie als Taktmultiplizierer (Clock Synthesizer) zur Taktgenerierung auf Hauptplatinen[cite: 4].
+\end{itemize}
+
+\subsection{Charge Pump Details}
+Der Phasendetektor steuert über UP- und DOWN-Signale eine Ladungspumpe an[cite: 4].
+\begin{itemize}
+    \item \textbf{Funktionsweise:} Das UP-Signal schaltet den oberen Transistor $Q_1$, um Strom in das Schleifenfilter zu speisen[cite: 4]. Das DOWN-Signal aktiviert den unteren Transistor $Q_2$, um Strom gegen Masse abzuführen[cite: 4]. Dadurch verändert sich die Steuerspannung des Oszillators präzise[cite: 4].
+    \item \textbf{Schaltplan-Prinzip (Schematic):} Das System verwendet zwei in Reihe geschaltete MOSFETs ($Q_1$ an $V_{DD}$, $Q_2$ an GND) mit dem gemeinsamen Knoten als Ausgangssignal zum Filter[cite: 4].
+\end{itemize}
+
+\subsection{Bypassing und Decoupling}
+\begin{itemize}
+    \item \textbf{Prinzip:} Bypassing schaltet eine Kapazität $C_{\text{byp}}$ parallel zur Last[cite: 2]. Decoupling fügt zusätzlich eine vorgeschaltete Entkopplungsinduktivität $L_{\text{dec}}$ (oder einen Widerstand) sowie eine Glättungskapazität $C_{\text{dec}}$ ein, um hochempfindliche Schaltungsteile zu schützen[cite: 2].
+    \item \textbf{Bypassing a digital IC:} Lange Zuleitungen besitzen parasitäre Induktivitäten[cite: 2]. Jeder IC benötigt einen keramischen SMD-Kondensator ($C_B$) direkt an seinen Versorgungspins[cite: 2].
+    \item \textbf{Modern Bypassing:} Da Kondensatoren parasitäre Serienwiderstände (ESR) und Serieninduktivitäten (ESL) besitzen, sinkt ihre Wirkung bei hohen Frequenzen[cite: 2]. Modernes Layout setzt daher verschiedene Kondensatorwerte (z. B. $1\,\mu\text{F}, 0.1\,\mu\text{F}, 0.01\,\mu\text{F}, 0.001\,\mu\text{F}$) parallel ein[cite: 2].
+    \item \textbf{Multilayer Bypassing:} Nutzt die integrierte Kapazität von übereinanderliegenden Power- und Ground-Planes der Leiterplatte als schnellste Energiequelle[cite: 2].
+\end{itemize}
+
+\newpage
+
+\section{Vorlesung 3: Sequentielle Schaltungen (Referenzdatei: Lec\_02\_Sequential-Circuits.pdf)}
+
+\subsection{Speicherglieder und Unterschiede}
+\begin{itemize}
+    \item \textbf{Simple Latch:} Ein über NAND-Gatter kreuzgekoppeltes RS-Speicherglied ist prüfungsrelevant[cite: 6]. Die Eingänge wirken aktiv-low ($\overline{S}, \overline{R}$)[cite: 6]. Bei $1,1$ wird der vorherige Zustand gehalten ($Q_{-1}$)[cite: 6]. Der Zustand $0,0$ ist unzulässig, da beide Ausgänge $1$ führen[cite: 6].
+    \item \textbf{RS-Latch mit Clock:} Die Clock steuert den Zeitpunkt der Freigabe[cite: 6]. Sie verhindert, dass unruhige Signalzustände außerhalb des definierten Fensters das Speicherglied ungewollt verändern.
+    \item \textbf{Master-Slave Flipflop:} Besteht aus zwei gekoppelten Latches[cite: 6]. Der Master übernimmt die Daten während der aktiven Taktphase, der Slave gibt sie erst bei der fallenden Flanke an den Ausgang weiter[cite: 6]. Dadurch wird eine Transparenz vom Eingang zum Ausgang blockiert[cite: 6].
+    \item \textbf{Latch vs. Flipflop:} Ein Latch ist pegelgesteuert (level triggered) und während der gesamten Aktivphase transparent[cite: 6]. Ein Flipflop ist flankengesteuert (edge triggered) und übernimmt Daten nur im Moment der Flanke[cite: 6].
+    \item \textbf{Typen von Flipflops:} Das D-Flipflop speichert Daten verzögert (Einsatz in Registern)[cite: 6]. Das T-Flipflop toggelt den Zustand (Einsatz in Zählern)[cite: 6]. Das JK-Flipflop bildet die universelle Basis[cite: 6].
+\end{itemize}
+
+\subsection{JK-Flipflop Wahrheitstabelle}
+\begin{center}
+\begin{tabular}{ccc}
+    \toprule
+    J & K & Q \\
+    \midrule
+    0 & 0 & $Q_{-1}$ (unverändert)[cite: 6] \\
+    0 & 1 & 0 (Rücksetzen)[cite: 6] \\
+    1 & 0 & 1 (Setzen)[cite: 6] \\
+    1 & 1 & $\overline{Q}_{-1}$ (invertiert / Toggle)[cite: 6] \\
+    \bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Schieberegister und Binärzähler}
+\begin{itemize}
+    \item \textbf{Schieberegister:} Reiht mehrere D-Flipflops hintereinander, um Daten mit jedem Taktbit seriell weiterzuschieben[cite: 6].
+    \item \textbf{Binärzähler Zählweise:} Zählt synchron oder asynchron die anliegenden Taktflanken in binärer Codierung[cite: 6].
+    \item \textbf{Asynchroner vs. Synchroner Aufbau:} Beim asynchronen Zähler triggert der Ausgang $Q$ der vorherigen Stufe den Takteingang der nächsten Stufe[cite: 6]. Beim synchronen Zähler liegen alle Takteingänge parallel am zentralen Systemtakt CLK, und UND-Gatter berechnen die Freigabe der Folgestufen[cite: 6].
+    \item \textbf{Spezielle Zähler (z. B. Modulo-13):} Sie führen die Ausgänge der entsprechenden Bits (bei 13 die Bits für $8, 4, 1 \rightarrow 1101_2$) auf ein Logikgatter, welches beim Erreichen dieses Werts den asynchronen Reset-Eingang des Zählers sofort auf $0$ zieht.
+\end{itemize}
+
+\newpage
+
+\section{Vorlesung 4: Speicher \& Programmierbare Logik (Referenzdateien: Lec\_02\_Memories.pdf, Lec\_03\_Programmable-Logic.pdf, Lec\_03\_Analog-Stuff.pdf)}
+
+\subsection{Speicherbausteine}
+\begin{itemize}
+    \item \textbf{SRAM vs. DRAM:} SRAM nutzt kreuzgekoppelte Transistorstrukturen (statisch), ist extrem schnell, benötigt aber viel Platz[cite: 5]. DRAM nutzt eine Zelle aus nur einem Transistor und einem Kondensator[cite: 5]. DRAM verliert seine Ladung und benötigt zwingend einen zyklischen Refresh[cite: 5].
+    \item \textbf{E2PROM vs. Flash:} E2PROM erlaubt das Ändern einzelner Bytes[cite: 5]. Flash-Speicher können Daten \textbf{ausschließlich blockweise löschen}[cite: 5].
+    \item \textbf{SLC vs. MLC:} Single-Level Cells speichern 1 Bit pro Speicherzelle über zwei Spannungspegel[cite: 5]. Multi-Level Cells speichern mehrere Bits in einer physikalischen Zelle über fein abgestufte Ladungsmengen[cite: 5].
+    \item \textbf{Simple Memory Access (Folie 8):} Zum Auslesen legt das Steuerwerk die Adresse stabil an[cite: 5]. Anschließend werden Chip Select (CS) und Read (RD) auf LOW gezogen[cite: 5]. Nach der Zugriffszeit liegen die validen Daten auf dem Bus an[cite: 5].
+\end{itemize}
+
+\subsection{Programmable Logic}
+\begin{itemize}
+    \item \textbf{Simple Programmable Device (GAL):} Besitzt eine programmierbare UND-Matrix mit festen oder programmierbaren ODER-Verknüpfungen sowie Ausgangs-Makrozellen[cite: 8]. Bekannte Bausteine sind 16V8 oder 22V10[cite: 8].
+    \item \textbf{CPLD-Struktur:} Besteht aus mehreren funktionalen Makrozellen, die um eine zentrale programmierbare Verbindungsmatrix (PIA – Programmable Interconnect Array) herum angeordnet sind[cite: 8].
+    \item \textbf{FPGA-Aufbau:} Nutzt eine Matrix aus konfigurierbaren Logikblöcken (CLBs), die Look-Up-Tables (LUTs) und Register enthalten, eingebettet in ein Netz aus programmierbaren Verdrahtungskanälen (Routing Channels)[cite: 8].
+\end{itemize}
+
+\subsection{Analog Stuff und Signalleitungen}
+\begin{itemize}
+    \item \textbf{Isolationsproblem:} Entsteht durch \textbf{unterschiedliche Massepotentiale} zwischen weit entfernten Schaltungsteilen, was zu Erdschleifen führt[cite: 7]. Eine galvanische Trennung über Isolatoren bricht diese Schleife auf[cite: 7].
+    \item \textbf{Isolationstypen Vergleich:} Optokoppler bieten hohe Isolation bei geringen Kosten, sind aber langsam[cite: 7]. Kapazitive Isolatoren bieten hohe Geschwindigkeiten, sind aber anfällig gegen elektrisches Rauschen[cite: 7]. Induktive Kopplung arbeitet hochgradig schnell und stromsparend, reagiert aber empfindlich auf magnetische Störungen[cite: 7].
+    \item \textbf{Reflexion auf langen Leitungen:} Wenn die Leitungslänge im Verhältnis zur Flankenzeit groß wird, kommt es bei Fehlanpassungen ($Z_2 \neq Z_0$) zu Reflexionen[cite: 7]. Der Reflexionskoeffizient berechnet sich über[cite: 7]:
+    $$\rho = \frac{Z_2 - Z_0}{Z_2 + Z_0}$$
+    Spezialfälle sind der Kurzschluss ($\text{Z}_2 = 0 \rightarrow \rho = -1$) und das offene Leitungsende ($\text{Z}_2 = \infty \rightarrow \rho = 1$)[cite: 7].
+\end{itemize}
+
+\newpage
+
+\section{Vorlesung 5: FSM \& Interferenz (Referenzdateien: Lec\_04\_Interference.pdf, Lec\_04\_State-Machines.pdf)}
+
+\subsection{Zustandsautomaten (Sequential Logic)}
+Ein sequentielles System besitzt ein Gedächtnis; die Ausgänge hängen von den aktuellen Eingängen und der Historie ab[cite: 11].
+
+\subsubsection{Elemente eines Zustandsautomaten}
+Ein endlicher Automatenaufbau beinhaltet zwingend folgende Blöcke[cite: 11]:
+\begin{itemize}
+    \item Zustände (States)[cite: 11].
+    \item Zustandsübergänge (Transitions) und Übergangsbedingungen (Transition Conditions)[cite: 11].
+    \item Aktionen (z. B. Entry Actions)[cite: 11].
+    \item Zustandsregister (Memory), Übergangslogik (Transient Functions) und Ausgangslogik (Output Functions)[cite: 11].
+\end{itemize}
+
+\subsubsection{Unterschied zwischen Mealy- und Moore-Automat}
+\begin{itemize}
+    \item \textbf{Moore-Automat:} Die Ausgänge hängen \textbf{ausschließlich vom aktuellen Zustand} ab[cite: 11]. Er gilt als synchroner und sicherer vor Glitches[cite: 11].
+    \item \textbf{Mealy-Automat:} Die Ausgänge hängen \textbf{sowohl vom aktuellen Zustand als auch direkt von den Eingängen} ab[cite: 11]. Er besitzt oft weniger Zustände und reagiert schneller auf Eingangsänderungen[cite: 11].
+\end{itemize}
+
+\subsubsection{Praxisbeispiele: Ampel- und Garagentorsteuerung}
+\begin{itemize}
+    \item \textbf{Traffic Light Control:} Das Moore-Modell nutzt D-Flipflops als Zustandsspeicher[cite: 11]. Die Übergangs- und Ausgangsfunktionen bestimmen das sichere Umschalten der Ampelphasen (Rot, Rot-Gelb, Grün, Gelb) in Abhängigkeit eines Schalters $X$[cite: 11].
+    \item \textbf{Garage Door Control:} Realisiert eine Ablaufsteuerung über Taster-Signale ($T$), Endlagensensoren für oben ($O$) und unten ($U$), einen Kontaktschutz ($K$) sowie Ausgänge für den Motor ($M$) und dessen Richtung ($R$)[cite: 11].
+\end{itemize}
+
+\subsection{Kopplungsmechanismen (EMV)}
+Das Dokument unterscheidet vier fundamentale physikalische Einkopplungsmechanismen[cite: 10]:
+\begin{enumerate}
+    \item \textbf{Elektrisches Feld (Kapazitive Kopplung):} Wird durch Spannungsänderungen ($dv/dt$) hervorgerufen[cite: 10]. Gegenmaßnahmen sind die Verringerung paralleler Leitungsführungen, Abschirmungen oder Guard-Tracks[cite: 10].
+    \item \textbf{Magnetfeld (Induktive Kopplung):} Basiert auf Stromänderungen ($dI/dt$)[cite: 10]. Sie lässt sich durch Reduzierung der Leiterschleifenfläche (z. B. verdrillte Leitungen) verringern[cite: 10].
+    \item \textbf{Gemeinsamer Strom auf der Masse (Galvanische Kopplung):} Tritt auf, wenn zwei Stromkreise Ströme über gemeinsame Leitungen oder Erdungspfade führen[cite: 10]. Der Ohmsche und induktive Spannungsabfall koppelt direkt in das Bezugspotential ein[cite: 10]. Abhilfe schaffen separate Leitungen und eine sternförmige Erdung[cite: 10].
+    \item \textbf{Coupling by Radiation (Strahlungskopplung):} Ausbreitung über freie elektromagnetische Wellen im Raum[cite: 10]. Sie erfordert eine Minimierung von Leiterschleifen sowie Abschirmungen aus Kupfer oder Aluminium[cite: 10].
+\end{enumerate}
+
+\end{document}
