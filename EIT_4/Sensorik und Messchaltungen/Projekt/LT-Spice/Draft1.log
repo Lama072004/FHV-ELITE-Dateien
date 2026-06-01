@@ -1,0 +1,71 @@
+LTspice 26.0.1 for Windows
+Circuit: C:\users\mathias\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_4\Sensorik und Messchaltungen\Projekt\LT-Spice\Draft1.net
+Start Time: Sat May 30 11:20:05 2026
+
+.step t=0.1
+solver = Normal
+Maximum thread count: 32
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+
+.step t=0.2
+Direct Newton iteration succeeded in finding operating point.
+
+.step t=0.3
+Direct Newton iteration succeeded in finding operating point.
+
+.step t=0.4
+Direct Newton iteration succeeded in finding operating point.
+
+.step t=0.5
+Direct Newton iteration succeeded in finding operating point.
+
+.step t=0.6
+Direct Newton iteration succeeded in finding operating point.
+
+.step t=0.7
+Direct Newton iteration succeeded in finding operating point.
+
+.step t=0.8
+Direct Newton iteration succeeded in finding operating point.
+
+.step t=0.9
+Direct Newton iteration succeeded in finding operating point.
+
+.step t=1
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 1.228 seconds.
+
+Files loaded:
+C:\users\mathias\Documents\Mathias Schule_Studium\FH\ELITE-Semester\EIT_4\Sensorik und Messchaltungen\Projekt\LT-Spice\Draft1.net
+C:\users\mathias\AppData\Local\LTspice\lib\cmp\standard.dio
+C:\users\mathias\AppData\Local\LTspice\lib\cmp\standard.mos
+
+
+Measurement: v_avg
+  step	AVG(V(n002) )	FROM	TO
+     1	22.2526968973	0	8e-05
+     2	19.8125818873	0	8e-05
+     3	17.352430891	0	8e-05
+     4	14.8884807367	0	8e-05
+     5	12.4251282085	0	8e-05
+     6	9.94804334419	0	8e-05
+     7	7.47241222213	0	8e-05
+     8	4.99568239671	0	8e-05
+     9	2.51666438709	0	8e-05
+    10	0.0421250806563	0	8e-05
+
+Measurement: i_avg
+  step	AVG(I(L1) )	FROM	TO
+     1	0.0409050428174	0	8e-05
+     2	0.0925994272896	0	8e-05
+     3	0.14298905831	0	8e-05
+     4	0.191477004096	0	8e-05
+     5	0.237688269756	0	8e-05
+     6	0.281405896374	0	8e-05
+     7	0.321946167147	0	8e-05
+     8	0.358806105839	0	8e-05
+     9	0.391363723724	0	8e-05
+    10	0.419233504622	0	8e-05
