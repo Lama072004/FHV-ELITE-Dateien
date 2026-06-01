@@ -18,3 +18,65 @@ Block Digital Intro:
 . multiplexer und demultiplexer Schaltung uninteressant aber was sie machen und ausgänge
 . addierer bestehen aus kominatorik
 . in Computer wird nur addiert
+
+
+Vorlesung 2:
+Schmitt trigger
+Barkhausen Criterion (schwingbedingung)
+Multivibrator nicht relevant
+NE555 nicht relevant
+Quartz Oscillator pierce wichtig
+PLL wichtig (woraus besteht, was macht)
+PLL Ppplication (Idee dahinter)
+
+Charge Pump Details (wie es funktioniert, Schematic)
+Bypassing - Decoupling
+Bypassing a digital IC
+Modern Bypassing
+Multilayer Bypassing
+
+Vorlesung 3:
+Simple latch prüfungsrelevant
+RS Latch with Clock nicht (wofür Clock wichtig)
+Funktion maser slave Flipflop
+JK Flipflop kein Schaltplan aber wahrheitstabelle
+latch vs Flipflop
+typen von Flipflop sollte wissen
+shift Register wichtig (oben)
+binärzähler (sollte wissen wie zählen)
+binär zähler asynchron und synchron aufbau
+spezieller zähler könnte kommen (z.B. auf 13 oder so zählen)
+
+Vorlesung 4:
+Speicherbausteine:
+- Wissne Relevanz SRam und Dram aber keine Skizze
+- Unterschied E2Prom und Flash (flash nur blöcke löschen)
+- Singel Level und multilevel cells wissen aber nicht zeichnen
+- funcitonal principle of a Memory ( wie man mit ihm redet und wie er aufgebaut ist)
+- a simple Memory Access ja (folie 8)
+
+Programmalbe Logic:
+- Asics und typen nein
+- wissen wie eine Simpel progglammable device funktioniert aber keien Skizze
+- CPLD structure ohne Zeichnung (programmierbare Matrix und zellen rundherum)
+- FPGA aufbau ohne Zeichnung (logikblöcke und kanäle)
+
+Analog Stuff:
+- Isolation Problem und warum anwende (unterschiedliche masse potentiale
+- typen von Isolation und was für vor und Nachteile diese jeweils haben
+- Problem von langen Leitungen
+- Reflexion von Leitung und wie diese aussieht
+- kein lattice Diagramm
+
+Vorlesung 5:
+Sequential lgoic wissen was ist
+Elemente Zusandsautomat kennen
+Mealy und Moore unterschied wissen ohne Skizze
+traffic light Control Beispiel könnte kommen oder Garagentor Beispiel
+
+kopplungsmechanismen keine grafik
+coupling by radioation 
+emv 
+Magnetfeld 
+gemeinsamer Strom auf der masse 
+elektrisches Feld
