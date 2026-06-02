@@ -22,7 +22,7 @@
 \contentsline {section}{\numberline {6}Aufgabe 3: Verifikation des Frequenzgangs (LTSpice)}{8}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Analytischer Amplitudengang}{8}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Erwartetes Bode-Diagramm (Bode-Asymptoten)}{9}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}LTSpice: AC-Analyse}{9}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.3}LTSpice: AC-Analyse in Radiant}{9}{subsection.6.3}%
 \contentsline {section}{\numberline {7}Aufgabe 4: Sprungantwort (LTSpice)}{11}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Laplace-Analyse der Sprungantwort}{11}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Zeitkonstanten und stationärer Endwert}{11}{subsection.7.2}%
