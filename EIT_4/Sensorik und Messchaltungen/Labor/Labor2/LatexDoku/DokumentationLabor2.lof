@@ -1,0 +1,14 @@
+\babel@toc {ngerman}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces MATLAB-Plot des PT100-Widerstandsverlaufs ueber der Temperatur.}}{4}{figure.caption.4}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Fotografie des realen Steckbrettaufbaus der ersten Messschaltung.}}{5}{figure.caption.5}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces LTSpice-Schaltplan der Grundschaltung mit PT100 und Vorwiderstand.}}{6}{figure.caption.6}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces DC-Sweep der Spannung ueber dem PT100 im definierten Temperaturbereich.}}{6}{figure.caption.7}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Transiente Simulation der Sensorspannung bei konstanter Temperatur.}}{7}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces LTSpice-Schaltplan der Brueckenschaltung mit Subtraktionsverstaerker.}}{8}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces DC-Sweep am Ausgang des Subtrahierers zur Darstellung der Signalverstaerkung.}}{8}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Transiente Analyse der verstaerkten Brueckenspannung.}}{9}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces LTSpice-Schaltplan des astabilen Multivibrators mit dem PT100.}}{9}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Simulierter Signalverlauf der Kondensatorspannung und Ausgangsspannung.}}{10}{figure.caption.13}%
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Simulationsergebnis des Rechteck-Ausgangssignals zur Frequenzverifikation.}}{10}{figure.caption.14}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

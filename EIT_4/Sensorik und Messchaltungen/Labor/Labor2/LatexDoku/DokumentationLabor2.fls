@@ -1,0 +1,277 @@
+PWD /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/LatexDoku
+INPUT /usr/share/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/LatexDoku/DokumentationLabor2.tex
+OUTPUT DokumentationLabor2.log
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrreprt.cls
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrreprt.cls
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrkbase.sty
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrkbase.sty
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrbase.sty
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrbase.sty
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrlfile.sty
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrlfile.sty
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrlogo.sty
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrlogo.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/tocbasic.sty
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/tocbasic.sty
+INPUT /usr/share/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/typearea.sty
+INPUT /usr/share/texmf-dist/tex/latex/footmisc/footmisc.sty
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
+INPUT /usr/share/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/share/texmf-dist/tex/latex/koma-script/typearea.sty
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/share/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/share/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/share/texmf-dist/tex/latex/base/fontenc.sty
+INPUT /usr/share/texmf-dist/tex/latex/base/fontenc.sty
+INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm
+INPUT /usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/share/texmf-dist/tex/generic/babel/babel.sty
+INPUT /usr/share/texmf-dist/tex/generic/babel/babel.sty
+INPUT /usr/share/texmf-dist/tex/generic/babel/txtbabel.def
+INPUT /usr/share/texmf-dist/tex/generic/babel/locale/invalid/babel-ngerman.tex
+INPUT /usr/share/texmf-dist/tex/generic/babel/locale/invalid/babel-ngerman.tex
+INPUT /usr/share/texmf-dist/tex/generic/babel/locale/invalid/babel-ngerman.tex
+INPUT /usr/share/texmf-dist/tex/generic/babel/locale/de/babel-de.ini
+INPUT /usr/share/texmf-dist/tex/generic/babel-german/ngerman.ldf
+INPUT /usr/share/texmf-dist/tex/generic/babel-german/ngerman.ldf
+INPUT /usr/share/texmf-dist/tex/generic/babel-german/ngerman.ldf
+INPUT /usr/share/texmf-dist/tex/generic/babel-german/babel-german.def
+INPUT /usr/share/texmf-dist/tex/latex/csquotes/csquotes.sty
+INPUT /usr/share/texmf-dist/tex/latex/csquotes/csquotes.sty
+INPUT /usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/share/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT /usr/share/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT /usr/share/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT /usr/share/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT /usr/share/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT /usr/share/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT /usr/share/texmf-dist/tex/latex/acronym/acronym.sty
+INPUT /usr/share/texmf-dist/tex/latex/acronym/acronym.sty
+INPUT /usr/share/texmf-dist/tex/latex/bigfoot/suffix.sty
+INPUT /usr/share/texmf-dist/tex/latex/bigfoot/suffix.sty
+INPUT /usr/share/texmf-dist/tex/generic/xstring/xstring.sty
+INPUT /usr/share/texmf-dist/tex/generic/xstring/xstring.sty
+INPUT /usr/share/texmf-dist/tex/generic/xstring/xstring.tex
+INPUT /usr/share/texmf-dist/tex/latex/eurosym/eurosym.sty
+INPUT /usr/share/texmf-dist/tex/latex/eurosym/eurosym.sty
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+INPUT /usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+INPUT /usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT /usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT /usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+INPUT /usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+INPUT /usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+INPUT /usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+INPUT /usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT /usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT /usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
+INPUT /usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/share/texmf-dist/tex/latex/refcount/refcount.sty
+INPUT /usr/share/texmf-dist/tex/latex/refcount/refcount.sty
+INPUT /usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+INPUT /usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+INPUT /usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+INPUT /usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+INPUT /usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
+INPUT /usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
+INPUT /usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /usr/share/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/share/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/share/texmf-dist/tex/generic/bitset/bitset.sty
+INPUT /usr/share/texmf-dist/tex/generic/bitset/bitset.sty
+INPUT /usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+INPUT /usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT /usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT /usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/share/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/share/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/share/texmf-dist/tex/latex/mathtools/mathtools.sty
+INPUT /usr/share/texmf-dist/tex/latex/mathtools/mathtools.sty
+INPUT /usr/share/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/share/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
+INPUT /usr/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
+INPUT /usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/share/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/share/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
+INPUT /usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
+INPUT /usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
+INPUT /usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+INPUT ./DokumentationLabor2.aux
+INPUT ./DokumentationLabor2.aux
+INPUT DokumentationLabor2.aux
+OUTPUT DokumentationLabor2.aux
+INPUT /usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+OUTPUT DokumentationLabor2.pdf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecss1200.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecsx1200.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecsx1728.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecsx1440.tfm
+INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
+INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecsx2488.tfm
+INPUT ./DokumentationLabor2.toc
+INPUT ./DokumentationLabor2.toc
+INPUT DokumentationLabor2.toc
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+OUTPUT DokumentationLabor2.toc
+INPUT ./DokumentationLabor2.lof
+INPUT ./DokumentationLabor2.lof
+INPUT DokumentationLabor2.lof
+OUTPUT DokumentationLabor2.lof
+INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 1.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 1.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 1.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 1.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Messaufbau.jpeg
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Messaufbau.jpeg
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Messaufbau.jpeg
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Messaufbau.jpeg
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 3.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 3.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 3.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 3.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 4.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 4.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 4.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 4.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 5.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 5.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 5.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 5.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 6.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 6.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 6.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 6.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 7.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 7.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 7.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 7.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 8.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 8.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 8.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 8.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 10.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 10.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 10.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 10.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 10_2.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 10_2.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 10_2.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 10_2.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 11.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 11.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 11.png
+INPUT /home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/Aufgabe 11.png
+INPUT DokumentationLabor2.aux
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb
