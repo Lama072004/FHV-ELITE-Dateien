@@ -49,3 +49,5 @@ EIT_3/Projekt[[:space:]]Embedded[[:space:]]Systems/FlutterApp.zip filter=lfs dif
 /EIT_4/Sensorik[[:space:]]und[[:space:]]Messchaltungen/Labor/Labor1/Sensorik/Waveforms.zip filter=lfs diff=lfs merge=lfs -text
 /EIT_4/Sensorik[[:space:]]und[[:space:]]Messchaltungen/Sensorik[[:space:]]und[[:space:]]Messschaltungen/Labor/Waveforms.zip filter=lfs diff=lfs merge=lfs -text
 /EIT_4/Sensorik[[:space:]]und[[:space:]]Messchaltungen/ilias/Labor/Waveforms.zip filter=lfs diff=lfs merge=lfs -text
+/EIT_4/Signalverarbeitung/PrüfungZusammenfassung/Signalverarbeitung_Crashkurs.mp4 filter=lfs diff=lfs merge=lfs -text
+/EIT_4/Signalverarbeitung/PrüfungZusammenfassung/Wie_Technik_das_analoge_Chaos_zähmt.m4a filter=lfs diff=lfs merge=lfs -text
