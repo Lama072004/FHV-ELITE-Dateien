@@ -1,0 +1,450 @@
+\documentclass[a4paper, 9pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{geometry}
+\geometry{left=5mm, right=5mm, top=5mm, bottom=15mm}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, patterns}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{eurosym}
+
+% Harmonische Farbpalette für die Themengebiete
+\definecolor{combblue}{RGB}{30,80,150}       % Thema 1: Kombinatorik
+\definecolor{probgreen}{RGB}{35,115,70}     % Thema 2: Wahrscheinlichkeit
+\definecolor{varorange}{RGB}{190,85,20}     % Thema 3: Zufallsvariablen & Kennwerte
+\definecolor{distred}{RGB}{165,30,35}       % Thema 4: Spezielle Verteilungen
+\definecolor{markovviolet}{RGB}{100,45,140} % Thema 5-7: Markov-Ketten & Warteschlangen
+\definecolor{mathgray}{RGB}{85,90,95}       % Thema 8: Mathematische Hilfsmittel
+\definecolor{calcblack}{RGB}{40,40,45}      % Thema 9 & 10: Taschenrechner-Guide
+
+% Standard-Box-Einstellungen
+\tcbset{
+  boxrule=0.6pt, arc=1pt,
+  fonttitle=\bfseries\color{white}, coltitle=white,
+  top=2pt, bottom=2pt, left=3pt, right=3pt,
+  toptitle=1pt, bottomtitle=1pt
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3ex}
+\setlength{\columnsep}{4mm}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Large Enzyklopädisches Formelheft: Statistik \& Wahrscheinlichkeitsrechnung}\\[1pt]
+    \textit{Thematisch farbcodierter Vollausbau aller Übungsblatt-Szenarien, Theorie-Konzepte und Markov-Strukturen}
+\end{center}
+
+\begin{multicols*}{2}
+
+%=============================================================
+\section*{1. Kombinatorik \& Abzähltheorie}
+%=============================================================
+
+\begin{tcolorbox}[title={Theorie-Stichworte: Kombinatorik}, colframe=combblue, colback=combblue!5, colbacktitle=combblue]
+\begin{itemize}
+    \item \textbf{Permutation:} Anordnung von $n$ Elementen; Reihenfolge relevant; Unterscheidung zwischen unterscheidbaren und identischen Objekten.
+    \item \textbf{Variation:} Auswahl von $k$ aus $n$ Elementen mit expliziter Berücksichtigung der Reihenfolge.
+    \item \textbf{Kombination:} Auswahl von $k$ aus $n$ Elementen ohne Berücksichtigung der Reihenfolge (Teilmengenbildung).
+    \item \textbf{Mit Wiederholung:} Elemente können nach der Auswahl erneut selektiert werden (Ziehen mit Zurücklegen).
+    \item \textbf{Ohne Wiederholung:} Jedes Element kann maximal einmal in der Stichprobe vorkommen (Ziehen ohne Zurücklegen).
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Kombinatorische Formelmatrix}, colframe=combblue, colback=combblue!5, colbacktitle=combblue]
+\begin{tabularx}{\linewidth}{@{}lXX@{}}
+\toprule
+\textbf{Typ} & \textbf{Ohne Wiederholung} & \textbf{Mit Wiederholung} \\
+\midrule
+\textbf{Permutation} & $P(n) = n!$ & $P_{n}(n_1, \dots) = \frac{n!}{n_1! \cdot n_2! \cdots n_m!}$ \\
+\midrule
+\textbf{Variation} & $V(n,k) = \frac{n!}{(n-k)!}$ & $V_{w}(n,k) = n^k$ \\
+\midrule
+\textbf{Kombination} & $C(n,k) = \binom{n}{k}$ & $C_{w}(n,k) = \binom{n+k-1}{k}$ \\
+\bottomrule
+\end{tabularx}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Übungsblatt-Katalog: Kombinatorik}, colframe=combblue, colback=combblue!5, colbacktitle=combblue]
+\begin{itemize}
+    \item \textbf{Sitzordnung am Tisch (Blatt 1, A1):} 8 Personen auf 8 Plätzen $\rightarrow 8! = 40.320$ Tage ($\approx 110$ Jahre).
+    \item \textbf{Münz-Anordnungen (Blatt 1, A2):} 5 Münzen auf einer Linie.
+    \\-- Alle verschieden (10c, 20c, 50c, 1\euro, 2\euro): $5! = 120$.
+    \\-- Drei gleich (50c, 50c, 50c, 1\euro, 2\euro): $\frac{5!}{3!} = 20$.
+    \\-- Drei gleich, zwei gleich (50c, 50c, 50c, 1\euro, 1\euro): $\frac{5!}{3! \cdot 2!} = 10$.
+    \item \textbf{Münzwurf-Ergebnisse (Blatt 1, A3):} 10 Würfe einer Münze.
+    \\-- Genau 7x Kopf, 3x Zahl: $\binom{10}{7} = \frac{10!}{7! \cdot 3!} = 120$.
+    \\-- Mindestens 7x Kopf: $\sum_{k=7}^{10} \binom{10}{k} = 120 + 45 + 10 + 1 = 176$.
+    \item \textbf{Widerstands-Schaltungen:} 5 unterschiedliche Typen vorhanden, 3 benötigt.
+    \\-- Reihenfolge egal, max. 1x nutzen: $\binom{5}{3} = 10$.
+    \\-- Reihenfolge egal, Mehrfachnutzung: $\binom{5+3-1}{3} = \binom{7}{3} = 35$.
+    \\-- Reihenfolge wichtig, max. 1x nutzen: $\frac{5!}{(5-3)!} = 30$.
+    \\-- Reihenfolge wichtig, Mehrfachnutzung: $5^3 = 125$.
+    \item \textbf{Musikauswahl (Blatt 2, A1a):} 8 Songs gesamt, 3 auswählen.
+    \\-- Ohne Reihenfolge: $\binom{8}{3} = 56$.
+    \\-- Mit Reihenfolge: $\frac{8!}{(8-3)!} = 336$.
+    \item \textbf{Sensor-Prüfung (Blatt 2, A2a):} 6 Sensoren, 3 auswählen: $\binom{6}{3} = 20$.
+    \item \textbf{Sensor-Zustände (Blatt 2, A2c):} Statusübertragung im 4-Bit-Wort. Anzahl Zustände: $2^4 = 16$.
+\end{itemize}
+\end{tcolorbox}
+
+%=============================================================
+\section*{2. Grundlagen der Wahrscheinlichkeit}
+%=============================================================
+
+\begin{tcolorbox}[title={Theorie-Stichworte: Wahrscheinlichkeit}, colframe=probgreen, colback=probgreen!5, colbacktitle=probgreen]
+\begin{itemize}
+    \item \textbf{Zufallsexperiment:} Beliebig oft wiederholbarer Vorgang nach festgelegter Vorschrift mit ungewissem Ausgang.
+    \item \textbf{Ergebnis $\omega$:} Einzelausgang eines Zufallsexperiments.
+    \item \textbf{Ergebnisraum $\Omega$:} Menge aller denkbaren Ergebnisse $\omega$.
+    \item \textbf{Ereignis $A$:} Teilmenge des Ergebnisraums ($A \subseteq \Omega$).
+    \item \textbf{Elementarereignis:} Einpunktige Menge, die nur ein einziges Ergebnis enthält ($\{\omega\}$).
+    \item \textbf{Laplace-Experiment:} Diskreter Wahrscheinlichkeitsraum, in dem jedes Elementarereignis dieselbe Eintrittswahrscheinlichkeit besitzt.
+    \item \textbf{Bedingte Wahrscheinlichkeit:} Wahrscheinlichkeit für das Eintreten eines Ereignisses $A$ unter der Bedingung, dass das Ereignis $B$ bereits realisiert ist.
+    \item \textbf{Stochastische Unabhängigkeit:} Zwei Ereignisse sind unabhängig, wenn das Eintreten des einen Ereignisses die Wahrscheinlichkeit des anderen nicht beeinflusst.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Axiome, Rechenregeln \& Sätze}, colframe=probgreen, colback=probgreen!5, colbacktitle=probgreen]
+\textbf{Laplace-Formel:} $P(A) = \frac{|A|}{|\Omega|} = \frac{\text{Anzahl günstige Fälle}}{\text{Anzahl mögliche Fälle}}$
+\smallskip
+\textbf{Rechenregeln für Ereignisse:}
+\begin{itemize}
+    \item Komplementäres Ereignis: $P(\bar{A}) = 1 - P(A)$
+    \item Allgemeiner Additionssatz: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+    \item Bedingte Wahrscheinlichkeit: $P(A \mid B) = \frac{P(A \cap B)}{P(B)}$
+    \item Unabhängigkeits-Kriterium: $P(A \cap B) = P(A) \cdot P(B)$
+    \item Satz der totalen Wahrscheinlichkeit: $P(B) = \sum_{i} P(B \mid A_i) \cdot P(A_i)$
+    \item \textbf{Bayes'sche Formel:}
+    $$P(A_i \mid B) = \frac{P(B \mid A_i) \cdot P(A_i)}{\sum_{j} P(B \mid A_j) \cdot P(A_j)}$$
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Übungsblatt-Katalog: Wahrscheinlichkeit}, colframe=probgreen, colback=probgreen!5, colbacktitle=probgreen]
+\begin{itemize}
+    \item \textbf{Song-Kombinationen (Blatt 2, A1b,c):} 8 Songs (3 von Lieblingsband, 5 andere). 3 werden zufällig gewählt.
+    \\-- Genau 2 von Lieblingsband: $P = \frac{\binom{3}{2} \cdot \binom{5}{1}}{\binom{8}{3}} = \frac{3 \cdot 5}{56} = \frac{15}{56}$.
+    \\-- Mindestens 1 von Lieblingsband: $1 - P(\text{keiner}) = 1 - \frac{\binom{5}{3}}{56} = \frac{46}{56}$.
+    \item \textbf{Sensorsystem (Blatt 2, A2b):} 6 Sensoren, Ausfallrate $p=0.1$. System läuft, wenn mindestens 5 funktionieren ($B(6, 0.9)$).
+    \\-- $P(X \ge 5) = \binom{6}{5} 0.9^5 \cdot 0.1^1 + \binom{6}{6} 0.9^6 \cdot 0.1^0 = 0.8857$.
+    \item \textbf{Bedingte Sensoren (Blatt 2, A2d):} Sensor A defekt. System läuft nur, wenn alle verbleibenden 5 funktionieren: $P = 0.9^5 = 0.5905$.
+    \item \textbf{Texas Hold'em Poker (Blatt 1, A7):} 2 Herzkarten auf der Hand. 52 Karten gesamt, 13 Herz. Noch 50 Karten im Deck, 11 Herz.
+    \\-- Genau 2 Herz im Flop (3 Karten): $P = \frac{\binom{11}{2} \cdot \binom{39}{1}}{\binom{50}{3}} \approx 0.1094$.
+    \\-- Genau 3 Herz im Flop: $P = \frac{\binom{11}{3}}{\binom{50}{3}} \approx 0.0084$.
+    \\-- Turn ist Herz, wenn Flop genau 2 hatte: Noch 47 Karten im Deck, 9 Herz $\rightarrow P = \frac{9}{47} \approx 0.1915$.
+    \\-- River ist Herz, wenn Turn kein Herz war: Noch 46 Karten im Deck, 9 Herz $\rightarrow P = \frac{9}{46} \approx 0.1956$.
+    \item \textbf{Gacha-Ziehungen (Blatt 2, A5):} Basisrate $p=0.006$. 10er-Pull.
+    \\-- Mind. ein 5-Sterne-Charakter: $1 - (1-0.006)^{10} \approx 0.0584$.
+    \item \textbf{Klausurbeispiel Medizinischer Test:} 1\% der Population krank ($P(K)=0.01$). Test positiv bei Kranken zu 90\% ($P(+ \mid K)=0.90$). Positiv bei Gesunden zu 9\% ($P(+ \mid G)=0.09$).
+    \\-- Totale Wahrscheinlichkeit positiv: $P(+) = 0.90 \cdot 0.01 + 0.09 \cdot 0.99 = 0.099$.
+    \\-- Reale Erkrankung bei positivem Test: $P(K \mid +) = \frac{0.009}{0.099} = \frac{1}{11} \approx 0.0909$.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Geometrische Wahrscheinlichkeit}, colframe=probgreen, colback=probgreen!5, colbacktitle=probgreen]
+\textbf{Theorie:} Kontinuierliche Räume. Wahrscheinlichkeit ist proportional zur geometrischen Ausdehnung (Fläche, Länge, Volumen). $P(A) = \frac{\text{Maß}(A)}{\text{Maß}(\Omega)}$.
+\smallskip
+\textbf{Das Drahtgitter-Modell (Blatt 1, A8 / Blatt 2, A6):} Draht $d=3$\,mm, Maschenabstand $a=15$\,mm, $b=25$\,mm (Mitte-Mitte). Bohrer $D=8$\,mm.
+\\-- \textit{Ansatz:} Der Bohrermittelpunkt darf den Drähten nicht näher kommen als $\frac{D}{2} + \frac{d}{2} = \frac{8+3}{2} = 5.5$\,mm.
+\\-- Reduzierte freie Kanten lücke im Inneren einer Masche:
+\\$a' = a - d - D = 15 - 3 - 8 = 4$\,mm
+\\$b' = b - d - D = 25 - 3 - 8 = 14$\,mm
+\\-- $P(\text{kein Treffer}) = \frac{a' \cdot b'}{a \cdot b} = \frac{4 \cdot 14}{15 \cdot 25} = \frac{56}{375} \approx 0.1493$.
+\smallskip
+\textbf{Das Treffpunkt-Problem (Blatt 1, A9 / Blatt 2, A7):} Zeitraum von 60 Minuten. Ankunft $x, y \in [0,60]$ unabhängig. Wartezeit 15 Minuten.
+\\-- \textit{Bedingung:} $|x - y| \le 15$.
+\\-- Gesamtraumfläche: $\Omega = 60 \cdot 60 = 3600$.
+\\-- Nicht-Treffen-Fläche (zwei Dreiecke): $2 \cdot \frac{1}{2} \cdot (60-15)^2 = 45^2 = 2025$.
+\\-- $P(\text{Treffen}) = \frac{3600 - 2025}{3600} = \frac{1575}{3600} = \frac{7}{16} = 0.4375$.
+\end{tcolorbox}
+
+%=============================================================
+\section*{3. Zufallsvariablen \& Kennwerte}
+%=============================================================
+
+\begin{tcolorbox}[title={Theorie-Stichworte: Variablen \& Kennwerte}, colframe=varorange, colback=varorange!5, colbacktitle=varorange]
+\begin{itemize}
+    \item \textbf{Zufallsvariable:} Funktion, die den Ergebnissen eines Zufallsexperiments reelle Zahlen zuordnet.
+    \item \textbf{Diskret:} Eine Variable mit abzählbaren, isolierten Werten.
+    \item \textbf{Stetig:} Eine Variable mit überabzählbar vielen Werten in kontinuierlichen Intervallen.
+    \item \textbf{Wahrscheinlichkeitsfunktion:} Gibt für diskrete Variablen die exakte Wahrscheinlichkeit einzelner Werte an ($P(X=x_i)$).
+    \item \textbf{Dichtefunktion $f(x)$:} Beschreibt die relative Wahrscheinlichkeitsverteilung stetiger Variablen. Die Fläche unter $f(x)$ entspricht der Wahrscheinlichkeit.
+    \item \textbf{Verteilungsfunktion $F(x)$:} Kumulierte Wahrscheinlichkeit bis zu einem Wert $x$ ($P(X \le x)$).
+    \item \textbf{Erwartungswert $\mathbb{E}[X]$:} Theoretischer Mittelwert bei unendlich vielen Wiederholungen (Schwerpunkt).
+    \item \textbf{Varianz $Var(X)$:} Maß für die mittlere quadratische Abweichung der Werte um den Erwartungswert.
+    \item \textbf{Standardabweichung $\sigma_X$:} Quadratwurzel der Varianz; besitzt dieselbe Einheit wie die Zufallsvariable selbst.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Mathematische Kennwert-Formeln}, colframe=varorange, colback=varorange!5, colbacktitle=varorange]
+\textbf{Eigenschaft:} $P(a < X \le b) = F(b) - F(a)$.
+\smallskip
+\begin{tabularx}{\linewidth}{@{}lXX@{}}
+\toprule
+\textbf{Kennwert} & \textbf{Diskret} & \textbf{Stetig} \\
+\midrule
+\textbf{Dichte/Wkt.} & $p_i = P(X = x_i)$ & $f(x) = \frac{dF(x)}{dx}$ \\
+\textbf{Erwartungswert} & $\mathbb{E}[X] = \sum x_i p_i$ & $\mathbb{E}[X] = \int_{-\infty}^{\infty} x f(x) dx$ \\
+\textbf{Varianz} & $Var(X) = \sum (x_i - \mathbb{E}[X])^2 p_i$ & $Var(X) = \int_{-\infty}^{\infty} (x-\mathbb{E}[X])^2 f(x) dx$ \\
+\bottomrule
+\end{tabularx}
+\smallskip
+\textbf{Verschiebungssatz (Handrechen-Turbo):} $Var(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$
+\smallskip
+\textbf{Lineare Operatoren:} $\mathbb{E}[aX + b] = a\mathbb{E}[X] + b$,\quad $Var(aX + b) = a^2 Var(X)$,\quad $\sigma_{aX+b} = |a|\sigma_X$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Zweidimensionale Zufallsvariablen}, colframe=varorange, colback=varorange!5, colbacktitle=varorange]
+Gemeinsame Wahrscheinlichkeitsfunktion $f(x,y) = P(X=x, Y=y)$.
+\\\textbf{Randverteilungen durch Summation:}
+$$f_1(x_i) = \sum_{k} f(x_i, y_k) \quad \text{und} \quad f_2(y_k) = \sum_{i} f(x_i, y_k)$$
+\textbf{Unabhängigkeit:} Gilt für alle Paare exakt: $f(x_i, y_k) = f_1(x_i) \cdot f_2(y_k)$.
+\smallskip
+\textbf{Münzwurf-Beispiel (3 Würfe):} $X = \text{Ergebnis 1. Wurf } \{0,1\}$, $Y = \text{Gesamtzahl Kopf } \{0,1,2,3\}$.
+\\-- Elementarereignisse ($|\Omega|=8$): TTT, TTZ, TZT, ZTT, TZZ, ZTZ, ZZT, ZZZ.
+\\-- Tabelle zur gemeinsamen Verteilung:
+\begin{tabularx}{\linewidth}{@{}lXXXX|l@{}}
+\toprule
+$X \backslash Y$ & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{$f_1(x)$} \\
+\midrule
+\textbf{0} (Zahl) & $1/8$ & $2/8$ & $1/8$ & $0$ & $1/2$ \\
+\textbf{1} (Kopf) & $0$ & $1/8$ & $2/8$ & $1/8$ & $1/2$ \\
+\midrule
+\textbf{$f_2(y)$} & $1/8$ & $3/8$ & $3/8$ & $1/8$ & $1$ \\
+\bottomrule
+\end{tabularx}
+\end{tcolorbox}
+
+%=============================================================
+\section*{4. Spezielle Verteilungsmodelle}
+%=============================================================
+
+\begin{tcolorbox}[title={Diskrete Modelle: Binomial \& Poisson}, colframe=distred, colback=distred!5, colbacktitle=distred]
+\textbf{Binomialverteilung ($X \sim B(n,p)$):} Unabhängige Versuche mit konstanter Erfolgswahrscheinlichkeit.
+$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+$\mathbb{E}[X] = n \cdot p$,\quad $Var(X) = n \cdot p \cdot (1-p)$.
+\\-- \textbf{Glücksspiel-Automat (Blatt 4, A4):} $p = \frac{1}{100}$, $n = 100$.
+\\$P(X \ge 1) = 1 - P(X=0) = 1 - 0.99^{100} \approx 0.6340$.
+\\-- \textbf{Gewindeschrauben-Ausschuss:} $n=250$, $p=0.02$.
+\\$\mathbb{E}[X] = 250 \cdot 0.02 = 5$,\quad $Var(X) = 5 \cdot 0.98 = 4.9 \rightarrow \sigma \approx 2.214$.
+\smallskip
+\textbf{Poisson-Verteilung ($X \sim \text{Poi}(\lambda)$):} Approximation für seltene Ereignisse bei großem $n$ und kleinem $p$ ($\lambda = n \cdot p$).
+$$P(X = k) = \frac{\lambda^k}{k!} e^{-\lambda} \quad \text{mit} \quad \mathbb{E}[X] = Var(X) = \lambda$$
+\\-- \textbf{Rechenzentrum-Ausfälle:} $\lambda = 2$ Defekte/Stunde.
+\\Genau 5 Ausfälle in 1h: $P(X=5) = \frac{2^5}{5!} e^{-2} \approx 0.0361$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Stetige Modelle: Gleich, Exp, Erlang, Normal}, colframe=distred, colback=distred!5, colbacktitle=distred]
+\textbf{Stetige Gleichverteilung ($X \sim U(a,b)$):}
+$$f(x) = \frac{1}{b-a}, \quad \mathbb{E}[X] = \frac{a+b}{2}, \quad Var(X) = \frac{(b-a)^2}{12}$$
+\textbf{Exponentialverteilung ($T \sim \text{Exp}(\lambda)$):}
+$$f(t) = \lambda e^{-\lambda t}, \quad F(t) = 1 - e^{-\lambda t} \quad (t \ge 0)$$
+$\mathbb{E}[T] = \frac{1}{\lambda} = \mu$,\quad $Var(T) = \frac{1}{\lambda^2}$.
+\\-- \textbf{Gedächtnislosigkeit:} $P(T > t+s \mid T > s) = P(T > t) = e^{-\lambda t}$.
+\\-- \textbf{Wartung:} Mittlere Dauer $\mu=4$ Stunden $\rightarrow \lambda = 0.25$.
+\\$P(3 \le T \le 5) = F(5) - F(3) = e^{-0.75} - e^{-1.25}$.
+\smallskip
+\textbf{Erlang-Verteilung (Supermarkt, Stetig-Blatt, A8):}
+$$F(t) = 1 - e^{-\lambda t} \sum_{i=0}^{n-1} \frac{\left(\lambda t\right)^i}{i!}, \quad \mathbb{E}[X] = \frac{n}{\lambda}, \quad Var(X) = \frac{n}{\lambda^2}$$
+\\-- \textbf{Kundenankünfte:} 1 Kunde alle 5 Min $\rightarrow \lambda = 0.2$ Kunden/Min. Wahrscheinlichkeit, dass 3 Kunden innerhalb von 10 Min eintreffen ($n=3, t=10 \rightarrow \lambda t = 2$):
+\\$P(X \le 10) = 1 - e^{-2} \cdot \left(1 + 2 + \frac{2^2}{2}\right) = 1 - 5e^{-2} \approx 0.3233$.
+\smallskip
+\textbf{Normalverteilung ($X \sim N(\mu, \sigma^2)$):} Standardisierung auf $Z \sim N(0,1)$ über $Z = \frac{X-\mu}{\sigma} \rightarrow P(X \le x) = \Phi\left(\frac{x-\mu}{\sigma}\right)$.
+\end{tcolorbox}
+
+%=============================================================
+\section*{5. Diskrete Markov-Ketten (DTMC) -- Vollausbau}
+%=============================================================
+
+\begin{tcolorbox}[title={Theorie-Stichworte: Markov-Ketten}, colframe=markovviolet, colback=markovviolet!5, colbacktitle=markovviolet]
+\begin{itemize}
+    \item \textbf{Markov-Eigenschaft:} Die Übergangswahrscheinlichkeit in den Folgezustand hängt ausschließlich vom aktuellen Zustand ab. Die Vorgeschichte liefert keine Zusatzinformationen.
+    \item \textbf{Zustandsraum $S$:} Menge aller gültigen und unterscheidbaren Systemzustände.
+    \item \textbf{Übergangsmatrix $\underline{\underline{P}}$:} Quadratische Matrix, deren Elemente $p_{ij}$ die Wahrscheinlichkeit eines direkten Übergangs von Zustand $i$ nach $j$ angeben.
+    \item \textbf{Zeilensumme:} Jede Zeile einer Übergangsmatrix addiert sich zwingend zu 1, da das System in einen Zustand des Raums übergehen muss.
+    \item \textbf{Erreichbarkeit ($i \rightarrow j$):} Ein Zustand $j$ ist von $i$ aus erreichbar, wenn es einen Pfad mit einer Schrittanzahl $n \ge 0$ gibt, für den $p_{ij}^{(n)} > 0$ gilt.
+    \item \textbf{Kommunikation ($i \leftrightarrow j$):} Zwei Zustände kommunizieren miteinander, wenn sie wechselseitig erreichbar sind.
+    \item \textbf{Klasseneinteilung:} Die Kommunikationsbeziehung zerlegt den Zustandsraum in disjunkte Äquivalenzklassen.
+    \item \textbf{Transienter Zustand:} Ein Zustand heißt transient, wenn die Wahrscheinlichkeit einer Rückkehr nach dem Verlassen strikt kleiner als 1 ist.
+    \item \textbf{Rekurrenter Zustand:} Ein Zustand heißt rekurrent, wenn das System nach dem Verlassen mit Wahrscheinlichkeit 1 irgendwann wieder in diesen Zustand zurückkehrt.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Theorie: Das Kriterium der Irreduzibilität}, colframe=markovviolet, colback=markovviolet!5, colbacktitle=markovviolet]
+Eine Markov-Kette heißt **irreduzibel**, wenn der gesamte Zustandsraum aus einer einzigen kommunizierenden Klasse besteht. Das bedeutet: **Jeder Zustand ist von jedem beliebigen anderen Zustand aus über endlich viele Schritte erreichbar.**
+\smallskip
+\textbf{Klausur-Prüfungsalgorithmus:}
+\begin{enumerate}
+    \item Skizziere den Übergangsgraphen basierend auf den positiven Einträgen in $\underline{\underline{P}}$.
+    \item Verifiziere, ob von jedem Knoten ein durchgehender Pfeilpfad zu jedem anderen Knoten führt.
+    \item \textbf{Ausschlusskriterium:} Findest du eine Sackgasse (einen absorbierenden Zustand mit $p_{ii} = 1$) oder zwei getrennte Kreisläufe, ist die Kette **nicht irreduzibel**.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Theorie: Das Kriterium der Aperiodizität}, colframe=markovviolet, colback=markovviolet!5, colbacktitle=markovviolet]
+Die Periode $d(i)$ eines Zustands $i$ gibt den größten gemeinsamen Teiler (ggT) aller Schrittzahlen $n > 0$ an, bei denen eine Rückkehr möglich ist:
+$$d(i) = \text{ggT} \{ n > 0 \mid p_{ii}^{(n)} > 0 \}$$
+Wenn $d(i) = 1$ für alle Zustände gilt, bezeichnet man die Kette als **aperiodisch**.
+\smallskip
+\textbf{Klausur-Prüfungsalgorithmus:}
+\begin{enumerate}
+    \item Bestimme für einen ausgewählten Zustand alle möglichen Pfadlängen, die zu ihm zurückführen.
+    \item Berechne den ggT dieser Pfadlängen.
+    \item \textbf{Schleifenregel (Direct-Entscheidung):} Besitzt eine irreduzible Kette an mindestens einem Zustand einen Eigenübergang ($p_{ii} > 0$, d. h. ein Diagonalelement der Übergangsmatrix ist ungleich Null), besitzt dieser Pfad die Länge 1. Damit ist die Kette **sofort aperiodisch**.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Leitfaden: Übergangswahrscheinlichkeiten ermitteln}, colframe=markovviolet, colback=markovviolet!5, colbacktitle=markovviolet]
+Übergangswahrscheinlichkeiten $p_{ij} = P(X_{n+1} = j \mid X_n = i)$ beschreiben die zeitliche Dynamik.
+\smallskip
+\textbf{Systematik für Textaufgaben:}
+\begin{enumerate}
+    \item Definiere die Zeile $i$ als den **Ist-Zustand** des Systems im aktuellen Zeitschritt $n$.
+    \item Definiere die Spalte $j$ als den **Soll-Zustand** im direkt darauffolgenden Schritt $n+1$.
+    \item Analysiere die stochastischen Einflussgrößen, die den Übergang von $i$ nach $j$ bewirken (z. B. Kombination aus Zu- und Abgängen).
+    \item Multipliziere unabhängige Ereignisse, die gleichzeitig eintreffen müssen; addiere exklusive Verzweigungsoptionen.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Das vereinfachte Eigenwert-Prinzip (Handrechnung)}, colframe=markovviolet, colback=markovviolet!5, colbacktitle=markovviolet]
+Die stationäre Verteilung $\vec{\pi}$ entspricht dem normierten linken Eigenvektor der Übergangsmatrix $\underline{\underline{P}}$ zum Eigenwert $\lambda = 1$. Es gilt die Fixpunktbeziehung: $\vec{\pi} \cdot \underline{\underline{P}} = 1 \cdot \vec{\pi}$.
+\smallskip
+\textbf{3-Schritte-Algorithmus zur algebraischen Reduktion:}
+\\Anstatt das charakteristische Polynom aufzustellen:
+\begin{enumerate}
+    \item Subtrahiere auf der Hauptdiagonale von $\underline{\underline{P}}$ überall den Wert 1. Dadurch erhältst du das homogene System: $\vec{\pi} \cdot (\underline{\underline{P}} - \underline{\underline{I}}) = \vec{0}$.
+    \item Da dieses System wegen der stochastischen Eigenschaft linear abhängig ist, streiche eine beliebige Spaltengleichung.
+    \item Ersetze diese gestrichene Spalte durch die Normierungsbedingung $\sum \pi_i = 1$. Löse das verbleibende System durch schrittweise Einsetzung.
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Klausuraufgabe 1: Handrechnung}, colframe=markovviolet, colback=markovviolet!5, colbacktitle=markovviolet]
+Gegeben:
+$$\underline{\underline{P}} = \begin{pmatrix} 0.7 & 0.0 & 0.3 \\ 0.4 & 0.0 & 0.6 \\ 0.2 & 0.3 & 0.5 \end{pmatrix}$$
+Strukturanalyse: Kette ist **irreduzibel** (Pfad $1 \rightarrow 3 \rightarrow 2 \rightarrow 1$ schließt alle ein) und **aperiodisch** ($p_{11} = 0.7 > 0 \rightarrow$ Schleifenregel).
+\smallskip
+Anwendung des Eigenwert-Prinzips ($\vec{\pi}(\underline{\underline{P}} - \underline{\underline{I}}) = \vec{0}$):
+$$\begin{pmatrix} \pi_1 & \pi_2 & \pi_3 \end{pmatrix} \begin{pmatrix} -0.3 & 0.0 & 0.3 \\ 0.4 & -1.0 & 0.6 \\ 0.2 & 0.3 & -0.5 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 0 \end{pmatrix}$$
+Gleichungen zeilenweise multipliziert:
+\\1) $-0.3\pi_1 + 0.4\pi_2 + 0.2\pi_3 = 0$
+\\2) $0.0\pi_1 - 1.0\pi_2 + 0.3\pi_3 = 0 \;\Rightarrow\; \bm{\pi_2 = 0.3\pi_3}$
+\\3) Normierung: $\pi_1 + \pi_2 + \pi_3 = 1$
+\smallskip
+Setze (2) in (1) ein:
+$$-0.3\pi_1 + 0.4(0.3\pi_3) + 0.2\pi_3 = 0 \;\Rightarrow\; \bm{\pi_1 = \frac{32}{30}\pi_3}$$
+Einsetzen in die Normierung (3):
+$$\left(\frac{32}{30} + \frac{9}{30} + \frac{30}{30}\right)\pi_3 = 1 \;\Rightarrow\; \frac{71}{30}\pi_3 = 1 \;\Rightarrow\; \bm{\pi_3 = \frac{30}{71} \approx 0.4225}$$
+Exakte Ergebnisse der Kurzlösung:
+$$\pi_1 = \frac{32}{71} \approx 0.4507, \quad \pi_2 = \frac{9}{71} \approx 0.1268, \quad \pi_3 = \frac{30}{71} \approx 0.4225$$
+\end{tcolorbox}
+
+%=============================================================
+\section*{6. Stetige Markov-Ketten (CTMC)}
+%=============================================================
+
+\begin{tcolorbox}[title={Theorie-Stichworte: Stetige Zeit}, colframe=markovviolet, colback=markovviolet!5, colbacktitle=markovviolet]
+\begin{itemize}
+    \item \textbf{Übergangsrate:} Intensität des Übergangs pro infinitesimaler Zeiteinheit $dt$.
+    \item \textbf{Generator-Matrix $\underline{\underline{Q}}$:} Mathematische Abbildung der Raten. Die Hauptdiagonalelemente kompensieren den Gesamtabfluss der jeweiligen Zeile: $q_{ii} = -\sum_{j \neq i} q_{ij}$. Die Zeilensumme ist somit immer exakt 0.
+    \item \textbf{Fließgleichgewicht:} Der Gesamtzustand verändert sich im zeitlichen Mittel nicht mehr: $\vec{\pi} \cdot \underline{\underline{Q}} = \vec{0}$.
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Geburts- und Todesprozesse (Schnittmethode)}, colframe=markovviolet, colback=markovviolet!5, colbacktitle=markovviolet]
+Spezialstruktur mit Übergängen ausschließlich in direkt benachbarte Zustände (Zuwachsrate $\lambda_i$, Abgangsrate $\mu_i$).
+\smallskip
+\textbf{Schnittprinzip (Lokale Balance):} Lege einen virtuellen Schnitt zwischen zwei benachbarte Zustände. Im Gleichgewichtszustand muss der Fluss von links nach rechts exakt dem Gegenfluss von rechts nach links entsprechen.
+$$\pi_i \cdot \lambda_i = \pi_{i+1} \cdot \mu_{i+1} \quad \Rightarrow \quad \pi_{i+1} = \pi_i \cdot \frac{\lambda_i}{\mu_{i+1}}$$
+\end{tcolorbox}
+
+%=============================================================
+\section*{7. Analyse komplexer Klausur-Modelle}
+%=============================================================
+
+\begin{tcolorbox}[title={IT-Helpdesk Warteschlange (Aufgabe 4)}, colframe=markovviolet, colback=markovviolet!5, colbacktitle=markovviolet]
+\textbf{Modellstruktur:} Unendliche Warteschlange. Ticket-Abarbeitung mit Wahrscheinlichkeit $q$ (tagsüber). Ticket-Eingang mit Wahrscheinlichkeit $p$ (nachts).
+\smallskip
+\textbf{Herleitung der Übergangswahrscheinlichkeiten:}
+\\-- \textit{Sonderfall Zustand 0 (Leeres System):} Da sich kein Ticket im System befindet, kann tagsüber keines gelöst werden. Die Abgangswahrscheinlichkeit ist Null. Der Übergang wird rein durch den nächtlichen Prozess bestimmt:
+\\$p_{01} = P(\text{Ticket kommt}) = p$.
+\\$p_{00} = P(\text{Kein Ticket kommt}) = 1-p$.
+\\-- \textit{Zustände $i > 0$:} Kombination der beiden unabhängigen Tagesprozesse:
+\\1. Übergang nach unten ($i \rightarrow i-1$): Ein Ticket wird gelöst UND kein neues Ticket kommt hinzu. Aufgrund stochastischer Unabhängigkeit gilt:
+\\$p_{i,i-1} = q \cdot (1-p)$.
+\\2. Übergang nach oben ($i \rightarrow i+1$): Es wird kein Ticket gelöst UND ein neues Ticket kommt hinzu:
+\\$p_{i,i+1} = (1-q) \cdot p$.
+\\3. System verbleibt im Zustand ($i \rightarrow i$): Beide Ereignisse treten ein ODER keines von beiden realisiert sich:
+\\$p_{ii} = q \cdot p + (1-q) \cdot (1-p)$.
+\smallskip
+\textbf{Stationäre Verteilung:}
+Anwendung des lokalen Balanceprinzips auf die ermittelten Raten:
+$$\pi_i \cdot p(1-q) = \pi_{i+1} \cdot q(1-p)$$
+$$\pi_{i+1} = \pi_i \cdot \frac{p(1-q)}{q(1-p)} = \pi_i \cdot \rho \quad \Rightarrow \quad \bm{\pi_i = (1-\rho)\rho^i}$$
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Der unendliche Sesselift (Aufgabe 5)}, colframe=markovviolet, colback=markovviolet!5, colbacktitle=markovviolet]
+\textbf{Modellstruktur:} Sessel-Taktzeit beträgt exakt 1 Minute. Maximale Kapazität pro Sessel: 1 Person. Ankommende Fahrgäste $Y_n$ pro Minute sind geometrisch verteilt: $a_i = P(Y_n = i) = (1-r)r^i$. Die Länge der Warteschlange $X_n$ wird am Ende des Intervalls erfasst (nach der Ankunft von $Y_n$, vor der Abfahrt des Sessels).
+\smallskip
+\textbf{Systemgleichung:} $X_{n+1} = \max(0, X_n - 1) + Y_{n+1}$.
+\smallskip
+\textbf{Herleitung der Übergangsmatrix:}
+\\-- \textit{Zeile $i = 0$:} Die Warteschlange ist leer. Es findet kein Abtransport statt. Der Zustand am Ende der Folgeminute entspricht exakt den Neuzugängen $Y_{n+1}$:
+\\$p_{0j} = P(Y_{n+1} = j) = a_j$.
+\\-- \textit{Zeile $i > 0$:} Mindestens eine Person wartet. Genau 1 Fahrgast fährt ab, $i-1$ Personen verbleiben im Warteraum. Um den Zielzustand $j$ zu erreichen, müssen in diesem Zeitintervall folglich exakt $j - (i-1)$ Personen neu eintreffen:
+\\$p_{ij} = P(Y_{n+1} = j - i + 1) = a_{j-i+1}$ (erfordert logischerweise $j \ge i-1$).
+\smallskip
+$$\underline{\underline{P}} = \begin{pmatrix} a_0 & a_1 & a_2 & a_3 & \dots \\ a_0 & a_1 & a_2 & a_3 & \dots \\ 0 & a_0 & a_1 & a_2 & \dots \\ 0 & 0 & a_0 & a_1 & \dots \\ \vdots & \vdots & \vdots & \vdots & \ddots \end{pmatrix}$$
+\textbf{Analyse der Matrix-Eigenschaften:}
+Die Kette ist **irreduzibel**, da $a_0 = 1-r > 0$ und $a_1 = (1-r)r > 0$. Jeder Zustand ist schrittweise vor- und zurückerreichbar. Sie ist **aperiodisch**, da Diagonalelemente ungleich Null sind ($p_{00} = a_0 > 0 \rightarrow$ Schleifenregel).
+\smallskip
+\textbf{Stabilitätsbedingung über Z-Transformation:}
+Erzeugendenfunktion der Ankünfte: $A(z) = \frac{1-r}{1-rz}$. Die Transformation der Kette ergibt die funktionale Beziehung: $\Pi(z) = \frac{\pi_0 (1-z) A(z)}{A(z) - z}$.
+\\Ein stabiles Gleichgewicht existiert nur, wenn der Grenzwert für $z \to 1$ definiert ist. Mittels der Regel von L'Hospital ergibt sich: $\pi_0 = 1 - A'(1) = 1 - \mathbb{E}[Y]$.
+\\Mit dem Erwartungswert $\mathbb{E}[Y] = \frac{r}{1-r}$ folgt: $\pi_0 = 1 - \frac{r}{1-r} = \frac{1-2r}{1-r}$.
+\\Damit $\pi_0 > 0$ erfüllt ist, gilt als strikte Stabilitätsbedingung: \bm{$r < 0.5$}.
+\end{tcolorbox}
+
+%=============================================================
+\section*{8. Mathematische Hilfsmittel \& Reihen}
+%=============================================================
+
+\begin{tcolorbox}[title={Reihenentwicklungen für unendliche Räume}, colframe=mathgray, colback=mathgray!5, colbacktitle=mathgray]
+\textbf{Geometrische Reihe:} $\sum_{k=0}^{\infty} q^k = \frac{1}{1-q} \quad (\text{für } |q| < 1)$\\
+\textbf{Erwartungswert-Reihe:} $\sum_{k=1}^{\infty} k \cdot q^k = \frac{q}{(1-q)^2}$\\
+\textbf{Varianz-Reihe:} $\sum_{k=1}^{\infty} k^2 \cdot q^k = \frac{q(1+q)}{(1-q)^3}$
+\end{tcolorbox}
+
+%=============================================================
+\section*{9. TI-30X Pro Rechner-Blueprint}
+%=============================================================
+
+\begin{tcolorbox}[title={Klausur-Abkürzungen mit dem TI-30X Pro}, colframe=calcblack, colback=calcblack!5, colbacktitle=calcblack]
+\textbf{1. Kombinatorik ($n!$, nPr, nCr):}
+\\-- Gib $n$ ein. Drücke die Taste \textbf{[!] [nCr] [nPr]} (mittlere Reihe).
+\\-- Drücke die Taste einmal für \textbf{nCr} (Kombination), zweimal für \textbf{nPr} (Variation) oder dreimal für \textbf{!} (Fakultät).
+\\-- Tippe $k$ ein (falls erforderlich) und bestätige mit \textbf{[enter]}.
+\smallskip
+\textbf{2. Diskrete Verteilungen direkt (Binomial / Poisson):}
+\\-- Öffne das Menü über \textbf{[2nd]} $\rightarrow$ \textbf{[stat-reg/distr]} (mittlere Spalte, zweite Reihe von oben).
+\\-- Navigiere mit der Pfeiltaste nach rechts zum Reiter \textbf{DISTR}.
+\\-- \textbf{Binomialpdf/cdf:} Wähle \textbf{4: Binomialpdf} für Punktwahrscheinlichkeiten oder \textbf{5: Binomialcdf} für kumulierte Werte. Gib $n$, $p$ und $x$ ($k$) ein und drücke auf \textbf{CALC}.
+\\-- \textbf{Poissonpdf/cdf:} Wähle analog \textbf{6: Poissonpdf} oder \textbf{7: Poissoncdf} für stochastische Ratenberechnungen.
+\smallskip
+\textbf{3. Standardnormalverteilung $\Phi(z)$:}
+\\-- Menü \textbf{[2nd]} $\rightarrow$ \textbf{[stat-reg/distr]} $\rightarrow$ \textbf{DISTR}. Wähle \textbf{2: Normalcdf}.
+\\-- Setze \textbf{1st-bound:} $-1\cdot 10^{99}$ (über die \textbf{[EE]}-Taste), \textbf{2nd-bound:} $z$, $\mu = 0$, $\sigma = 1$. Drücke auf \textbf{CALC}.
+\smallskip
+\textbf{4. Lineare Gleichungssysteme lösen (3x3 Markov-Ketten):}
+\\-- Drücke direkt die Taste \textbf{[sys-solv]} (untere Tastenreihe, links neben [enter]).
+\\-- Wähle \textbf{2: 3x3 linear eqn} und gib die Matrixkoeffizienten des umgeformten, um die Normierung erweiterten Systems ein. Drücke auf \textbf{SOLVE}.
+\end{tcolorbox}
+
+\end{multicols*}
+\end{document}

@@ -1,0 +1,195 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{geometry}
+
+\geometry{a4paper, left=25mm, right=25mm, top=25mm, bottom=25mm}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+% PRÜFUNGSANGABE (Zeitrahmen: 95 Minuten, exakter Stil der Übungsblätter)
+%----------------------------------------------------------------------------------------
+
+\textsf{Statistik \& Wahrscheinlichkeitstheorie Übungsblatt 1} \hfill \textsf{SS 2026} \\
+\textsf{Grundlagen -- Modifizierte Prüfungsversion} \hfill \textsf{Tutor: Dr.-Ing. Paul Schwenteck} \\
+
+\hrule
+\vspace{0.4cm}
+\begin{center}
+    \LARGE \textbf{Probeprüfung: Statistik \& Wahrscheinlichkeitstheorie}
+\end{center}
+\vspace{0.1cm}
+\hrule
+\vspace{0.6cm}
+
+\textbf{Aufgabe 1: Kombination II} \\
+Für ein neues Messsystem stehen in einem Labor insgesamt 6 verschiedene funktionale Sensormodule zur Verfügung. Für eine dreistufige Kaskade wählen Sie 3 Module aus. Wie viele verschiedene Verschaltungsmöglichkeiten gibt es, wenn jedes der 6 Module
+\begin{enumerate}
+    \item[a)] höchstens einmal verwendet werden darf (ohne Berücksichtigung der Reihenfolge)?
+    \item[b)] mehrmals verwendet werden darf, d. h. hier bis zu dreimal in der Kaskade verbaut werden darf (ohne Berücksichtigung der Reihenfolge)?
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{Aufgabe 2: Ausfallwahrscheinlichkeit I} \\
+Ein Kommunikationslink besteht aus zwei parallelen Übertragungskanälen $K_1$ und $K_2$. Die Kanäle besitzen die individuellen Ausfallwahrscheinlichkeiten $p_1 = 0.25$ und $p_2 = 0.12$. Der Link ist unterbrochen, wenn beide Kanäle gleichzeitig ausfallen.
+\begin{enumerate}
+    \item[a)] Wie groß ist die Wahrscheinlichkeit, dass die gesamte Verbindung unterbrochen wird?
+    \item[b)] Angenommen, das System meldet eine Unterbrechung der Verbindung. Mit welcher Wahrscheinlichkeit ist in diesem Fall Kanal $K_1$ ausgefallen?
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{Aufgabe 3: Gleichverteilung II} \\
+Zwei faire, sechsseitige Würfel werden einmal geworfen. Die Zufallsvariable $X$ definiert das Maximum der beiden Augenzahlen.
+\begin{enumerate}
+    \item[a)] Bestimmen Sie die Wahrscheinlichkeitsfunktion $P(X=x)$ von $X$ für alle Werte $x \in \{1, 2, 3, 4, 5, 6\}$.
+    \item[b)] Berechnen Sie den Erwartungswert von $X$.
+    \item[c)] Berechnen Sie die Varianz von $X$.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{Aufgabe 4: Exponentialverteilung \& Verteilungstheorie} \\
+\begin{enumerate}
+    \item[a)] Die fehlerfreie Betriebszeit $T$ eines Netzknotens folgt einer Exponentialverteilung. Die mittlere Betriebsdauer bis zu einem Fehler beträgt $E(T) = \mu = 4000$ Stunden. Berechnen Sie die Wahrscheinlichkeit, dass der Knoten mindestens 6000 Stunden fehlerfrei läuft.
+    \item[b)] Beantworten Sie folgende theoretische Fragen zu speziellen Verteilungen kurz und präzise:
+    \begin{enumerate}
+        \item[1.] Wann nutzen Sie in der Modellierungspraxis eine Erlangverteilung anstelle einer einfachen Exponentialverteilung? Nennen Sie ein typisches technisches Beispiel.
+        \item[2.] Welche diskrete Verteilung beschreibt die Anzahl von Ereignissen in einem festen Zeitintervall bei gedächtnislosen Zwischenankunftszeiten? Welche Bedeutung besitzen der Erwartungswert und die Varianz bei dieser Verteilung?
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\textbf{Aufgabe 5: Paket-Sortierstation} \\
+Ihr betreibt die Eingangsschleuse einer automatisierten Paket-Sortierstation. In dem Sortierkanal können pro Takt maximal zwei Pakete gleichzeitig verarbeitet und weitergeleitet werden. Der Abfahrtsabstand zwischen zwei Takten beträgt genau 1 Minute. Die Zufallsgröße $Y_n$ beschreibt die Anzahl an ankommenden Pakete in der $n$-ten Minute. Die Ankünfte seien voneinander unabhängig. Es bildet sich eine Warteschlange (mit unendlicher Kapazität) vor der Sortierstation.
+\[
+P[Y_n = i] = (1-r)r^i = a_i \quad \text{für } i \ge 0 \text{ und } 0 < r < 0.5
+\]
+Die Zufallsgröße $X_n$ beschreibt die Warteschlangenlänge am Ende des $n$-ten Intervalls (nach Ankunft von $Y_n$ Paketen, aber vor der Abfahrt des Sortierkanals im $n$-ten Takt).
+
+Bearbeiten Sie die folgenden Aufgaben:
+\begin{enumerate}
+    \item[a)] Bestimmen Sie die Verteilungsfunktion des Ankunftsstroms.
+    \item[b)] Bestimmen Sie den Erwartungswert der Ankünfte in einer Minute.
+    \item[c)] Stellen Sie die Warteschlangenlänge $X_n$ am Ende des $n$-ten Intervalls dar.
+    \item[d)] Modellieren Sie die Werte von $X$ als Markov-Kette.
+    \item[e)] Was sind die Übergangswahrscheinlichkeiten $P_{ij}$ der Markov-Kette für die Zustände $i=0$, $i=1$ und $i=2$?
+    \item[f)] Ist die Markov-Kette irreduzibel? Ist sie aperiodisch?
+    \item[g)] Berechnen Sie die stationäre Verteilung der Markov-Kette unter Verwendung von $a_i$.
+    \item[h)] Welche Stabilitätsbedingung muss für den Parameter $r$ gelten, damit die mittlere Warteschlangenlänge langfristig nicht unendlich anwächst?
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{Aufgabe 6: Markov-Ketten mit stetiger Zeit} \\
+Ein IT-Helpdesk arbeitet als Warteschlangenmodell. Der Übergang zwischen Zustand 0 (Keine Tickets) und Zustand 1 (Ein Ticket in Bearbeitung) erfolgt zeitkontinuierlich mit der Ticket-Ankunftsrate $\lambda = 0.05 \, \text{min}^{-1}$ und der Bearbeitungsrate $\mu = 0.20 \, \text{min}^{-1}$ gemäß der Ratenmatrix:
+\[
+\underline{\underline{Q}} = \begin{pmatrix} -\lambda & \lambda \\ \mu & -\mu \end{pmatrix}
+\]
+\begin{enumerate}
+    \item[a)] Stellen Sie die globale Gleichgewichtsbedingung für dieses Zustandssystem auf.
+    \item[b)] Berechnen Sie die stationäre Verteilung. Wie groß ist die langfristige Auslastung des Helpdesks?
+\end{enumerate}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+% LÖSUNGSWEG UND LÖSUNGEN (Kurzlösungsstil aus den originalen PDFs)
+%----------------------------------------------------------------------------------------
+
+\begin{center}
+    \LARGE \textbf{Kurzlösungen mit Lösungsweg}
+\end{center}
+\hrule
+\vspace{0.6cm}
+
+\textbf{Kurzlösung Aufgabe 1:}
+\begin{enumerate}
+    \item[a)] Kombination ohne Wiederholung, da die Reihenfolge egal ist: \\
+    $\binom{6}{3} = \frac{6!}{3! \cdot (6-3)!} = \frac{6 \cdot 5 \cdot 4}{3 \cdot 2 \cdot 1} = 20 \text{ Möglichkeiten.}$
+    \item[b)] Kombination mit Wiederholung: \\
+    $\binom{6+3-1}{3} = \binom{8}{3} = \frac{8 \cdot 7 \cdot 6}{3 \cdot 2 \cdot 1} = 56 \text{ Möglichkeiten.}$
+\end{enumerate}
+
+\hrule
+\vspace{0.4cm}
+
+\textbf{Kurzlösung Aufgabe 2:}
+\begin{enumerate}
+    \item[a)] Eine Unterbrechung der Parallelschaltung tritt auf, wenn beide Kanäle ausfallen: \\
+    $P(\text{Unterbrechung}) = p_1 \cdot p_2 = 0.25 \cdot 0.12 = 0.03 \text{ (bzw. 3\%)}.$
+    \item[b)] Bedingte Wahrscheinlichkeit nach Bayes. Da Kanal $K_1$ bei einer totalen Unterbrechung sicher ausgefallen ist, entspricht die Schnittmenge der totalen Ausfallwahrscheinlichkeit: \\
+    $P(K_1 \text{ ausgefallen} \mid \text{Unterbrechung}) = \frac{P(K_1 \cap \text{Unterbrechung})}{P(\text{Unterbrechung})} = \frac{0.03}{0.03} = 1.0 \text{ (bzw. 100\%)}.$
+\end{enumerate}
+
+\hrule
+\vspace{0.4cm}
+
+\textbf{Kurzlösung Aufgabe 3:}
+\begin{enumerate}
+    \item[a)] Die Anzahl aller Kombinationen beträgt $6 \cdot 6 = 36$. \\
+    Die Wahrscheinlichkeitsfunktion lautet: $P(X=x) = \frac{2x-1}{36}$ für $x \in \{1, 2, 3, 4, 5, 6\}$. \\
+    Werte: $P(1)=\frac{1}{36}, P(2)=\frac{3}{36}, P(3)=\frac{5}{36}, P(4)=\frac{7}{36}, P(5)=\frac{9}{36}, P(6)=\frac{11}{36}.$
+    \item[b)] Erwartungswert $E[X] = \sum x_i \cdot p_i$: \\
+    $E[X] = \frac{1\cdot1 + 2\cdot3 + 3\cdot5 + 4\cdot7 + 5\cdot9 + 6\cdot11}{36} = \frac{1 + 6 + 15 + 28 + 45 + 66}{36} = \frac{161}{36} \approx 4.472$.
+    \item[c)] $E[X^2] = \frac{1^2\cdot1 + 2^2\cdot3 + 3^2\cdot5 + 4^2\cdot7 + 5^2\cdot9 + 6^2\cdot11}{36} = \frac{1 + 12 + 45 + 112 + 225 + 396}{36} = \frac{791}{36} \approx 21.972.$ \\
+    $Var(X) = E[X^2] - (E[X])^2 = \frac{791}{36} - \left(\frac{161}{36}\right)^2 = \frac{2845}{1296} \approx 1.995.$
+\end{enumerate}
+
+\newpage
+
+\textbf{Kurzlösung Aufgabe 4:}
+\begin{enumerate}
+    \item[a)] Verteilungsfunktion $F(t) = 1 - e^{-\lambda t}$ mit $\lambda = \frac{1}{4000} = 0.00025 \, \text{h}^{-1}$. \\
+    $P(T \ge 6000) = 1 - F(6000) = e^{-0.00025 \cdot 6000} = e^{-1.5} \approx 0.2231.$
+    \item[b)] \textbf{Theorie:}
+    \begin{enumerate}
+        \item[1.] Die Exponentialverteilung gilt bis zum ersten Ereignis. Die Erlangverteilung beschreibt die Summe von n unabhängigen, identischen exponentialverteilten Phasen (z.B. Ausfallzeit eines Systems mit Hot-Standby-Servern).
+        \item[2.] Es handelt sich um die Poissonverteilung. Bei dieser Verteilung entspricht der Parameter $\lambda$ sowohl dem Erwartungswert als auch der Varianz der Ereignisanzahl pro Intervall.
+    \end{enumerate}
+\end{enumerate}
+
+\hrule
+\vspace{0.4cm}
+
+\textbf{Kurzlösung Aufgabe 5:}
+\begin{enumerate}
+    \item[a)] Geometrische Reihe liefert die Verteilungsfunktion $F(y) = \sum_{k=0}^y (1-r)r^k = 1 - r^{y+1}$ für $y \ge 0$.
+    \item[b)] Ableitung über die geometrische Reihe: $E[Y] = \sum_{i=0}^{\infty} i(1-r)r^i = \frac{r}{1-r}$.
+    \item[c)] Da der Sortierkanal pro Takt maximal 2 Einheiten entfernt, gilt die Bilanzgleichung: \\
+    $X_n = \max(0, X_{n-1} - 2) + Y_n$.
+    \item[d)] Die Zustände kommunizieren über zeitschrittdiskrete Übergänge, die nur vom Zustand $X_{n-1}$ abhängen (Markov-Eigenschaft).
+    \item[e)] Einsetzen des Vorzustands $X_{n-1} = i$ in die Bilanzgleichung liefert:
+    \begin{itemize}
+        \item Für $i=0$: $X_n = 0 + Y_n \implies P_{0j} = a_j$.
+        \item Für $i=1$: $X_n = 0 + Y_n \implies P_{1j} = a_j$.
+        \item Für $i=2$: $X_n = 0 + Y_n \implies P_{2j} = a_j$.
+    \end{itemize}
+    \item[f)] \textbf{Irreduzibel:} Ja, da $a_0 = 1-r > 0$, lässt sich Zustand 0 aus jedem Zustand in endlichen Schritten anlaufen. \\
+    \textbf{Aperiodizität:} Ja, durch die Selbstschleife im Zustand 0 ($P_{00} = a_0 > 0$) ist der GGT aller Rückkehrschritte gleich 1.
+    \item[g)] Die Übergangsmatrix besitzt wegen $P_{0j}=P_{1j}=P_{2j}=a_j$ eine homogene Zeilenstruktur in den ersten drei Stufen.
+    \item[h)] Das System bleibt stabil, wenn die mittlere Ankunftsrate kleiner als die maximale Dienstrate ist: \\
+    $E[Y] < 2 \implies \frac{r}{1-r} < 2 \implies r < \frac{2}{3}$.
+\end{enumerate}
+
+\hrule
+\vspace{0.4cm}
+
+\textbf{Kurzlösung Aufgabe 6:}
+\begin{enumerate}
+    \item[a)] Flussbalance-Gleichung im stetigen Gleichgewicht: $\pi_0 \cdot \lambda = \pi_1 \cdot \mu$.
+    \item[b)] Unter Einbezug der Normierungsbedingung $\pi_0 + \pi_1 = 1$ ergibt sich: \\
+    $\pi_0 = \frac{\mu}{\lambda + \mu} = \frac{0.20}{0.05 + 0.20} = \frac{0.20}{0.25} = 0.80.$ \\
+    $\pi_1 = \frac{\lambda}{\lambda + \mu} = \frac{0.05}{0.05 + 0.20} = \frac{0.05}{0.25} = 0.20.$ \\
+    Die langfristige Auslastung (Wahrscheinlichkeit für Zustand 1) beträgt $\pi_1 = 0.20$ (bzw. 20\%).
+\end{enumerate}
+
+\end{document}
