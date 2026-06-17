@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.9)  1 JUN 2026 17:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.2)  12 JUN 2026 17:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -341,133 +341,53 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./ZusammenfassungPrüfung.toc
-Overfull \hbox (51.03029pt too wide) in paragraph at lines 27--27
- [] [][]\OT1/cmr/bx/n/10.95 Vorlesung 3: Se-quen-ti-el-le Schal-tun-gen (Re-fe-renz-da-tei: Lec[]02[]Sequential-Circuits.pdf)[] []  
- []
-
-
-Overfull \hbox (64.97797pt too wide) in paragraph at lines 31--31
- [] [][]\OT1/cmr/bx/n/10.95 Vorlesung 4: Spei-cher & Pro-gram-mier-ba-re Lo-gik (Re-fe-renz-da-tei-en: Lec[]02[]Memories.pdf, 
- []
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+) (./ZusammenfassungPrüfung.toc)
 \tf@toc=\write4
 \openout4 = `ZusammenfassungPrüfung.toc'.
 
- [2]
-Overfull \hbox (10.44276pt too wide) in paragraph at lines 25--26
-\OT1/cmr/m/n/10.95 Information be-sitzt ei-ne Ma^^Y-ein-heit, das Bit[cite: 1]. Ein Bit re-pr[]asentiert die Zust[]ande True/False,
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (10.78423pt too wide) in paragraph at lines 39--40
+[]\OT1/cmr/bx/n/10.95 Pegel und St[]orabstand: \OT1/cmr/m/n/10.95 Die ge-nau-en Span-nungs-pe-gel sind nicht re-le-vant. Der St[]orabstand
  []
 
-[3{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [4] [5]
-Overfull \hbox (30.15154pt too wide) in paragraph at lines 218--219
-\OT1/cmr/m/n/10.95 Signallaufzeiten ben[]otigen Zeit[cite: 1]. Das Do-ku-ment de-fi-niert die Pa-ra-me-ter f[]ur die Verz[]ogerung[cite:
+[2{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [3]
+Overfull \hbox (1.79037pt too wide) in paragraph at lines 74--75
+[]\OT1/cmr/bx/n/10.95 Multilayer By-pas-sing: \OT1/cmr/m/n/10.95 Nutzt die ka-pa-zi-ti-ve Ei-gen-schaft eng bei-ein-an-der-lie-gen-der Power-
+ []
+
+[4] [5]
+Overfull \hbox (7.39175pt too wide) in paragraph at lines 106--107
+[]\OT1/cmr/bx/n/10.95 EEPROM vs Flash: \OT1/cmr/m/n/10.95 EE-PROM er-laubt ge-ziel-tes bit-wei-ses L[]oschen. Flash-Speicher l[]oschen
  []
 
 [6]
-Overfull \hbox (21.38219pt too wide) in paragraph at lines 238--239
-[]\OT1/cmr/bx/n/10.95 Multiplexer (MUX): \OT1/cmr/m/n/10.95 Be-sitzt Da-ten-eing[]ange ($\OML/cmm/m/it/10.95 d[]; d[]; d[]; d[]$\OT1/cmr/m/n/10.95 ) und Adres-slei-tun-gen ($\OML/cmm/m/it/10.95 a[]; a[]$\OT1/cmr/m/n/10.95 )[cite:
+Overfull \hbox (9.73782pt too wide) in paragraph at lines 140--141
+[]\OT1/cmr/bx/n/10.95 Elemente Zu-stands-au-to-mat: \OT1/cmr/m/n/10.95 Ein Sy-stem ben[]otigt Zust[]ande (States), Zu-stands[]uberg[]ange
  []
 
-
-Overfull \hbox (24.74187pt too wide) in paragraph at lines 239--240
-[]\OT1/cmr/bx/n/10.95 Demultiplexer (DE-MUX): \OT1/cmr/m/n/10.95 Be-sitzt einen Da-ten-ein-gang ($\OML/cmm/m/it/10.95 d$\OT1/cmr/m/n/10.95 ) und Adres-slei-tun-gen ($\OML/cmm/m/it/10.95 a[]; a[]$\OT1/cmr/m/n/10.95 )[cite:
- []
-
-[7]
-Overfull \hbox (5.28833pt too wide) in paragraph at lines 277--278
-[]\OT1/cmr/bx/n/10.95 Multilayer By-pas-sing: \OT1/cmr/m/n/10.95 Nutzt die in-te-grier-te Ka-pa-zit[]at von []ubereinanderliegenden Power-
- []
-
-[8] [9]
-Overfull \hbox (80.84619pt too wide) in paragraph at lines 282--282
-[]\OT1/cmr/bx/n/14.4 Vorlesung 3: Se-quen-ti-el-le Schal-tun-gen (Re-fe-renz-da-tei: Lec[]02[]Sequential-
- []
-
-
-Overfull \hbox (48.1504pt too wide) in paragraph at lines 286--287
-[]\OT1/cmr/bx/n/10.95 Simple Latch: \OT1/cmr/m/n/10.95 Ein []uber NAND-Gatter kreuz-ge-kop-pel-tes RS-Speicherglied ist pr[]ufungsrelevant[cite:
- []
-
-
-Overfull \hbox (20.29315pt too wide) in paragraph at lines 288--289
-[]\OT1/cmr/bx/n/10.95 Master-Slave Flip-flop: \OT1/cmr/m/n/10.95 Be-steht aus zwei ge-kop-pel-ten Lat-ches[cite: 6]. Der Ma-ster []ubernimmt
- []
-
-
-Overfull \hbox (9.12697pt too wide) in paragraph at lines 290--291
-[]\OT1/cmr/bx/n/10.95 Typen von Flip-flops: \OT1/cmr/m/n/10.95 Das D-Flipflop spei-chert Da-ten verz[]ogert (Ein-satz in Re-gi-stern)[cite:
- []
-
-[10]
-Overfull \hbox (20.10672pt too wide) in paragraph at lines 317--317
-\OT1/cmr/bx/n/14.4 da-tei-en: Lec[]02[]Memories.pdf, Lec[]03[]Programmable-Logic.pdf,
- []
-
-
-Overfull \hbox (6.32437pt too wide) in paragraph at lines 329--330
-\OT1/cmr/m/n/10.95 mit fe-sten oder pro-gram-mier-ba-ren ODER-Verkn[]upfungen so-wie Ausgangs-Makrozellen[cite:
- []
-
-[11]
-Overfull \hbox (93.81958pt too wide) in paragraph at lines 345--345
-[]\OT1/cmr/bx/n/14.4 Vorlesung 5: FSM & In-ter-fe-renz (Re-fe-renz-da-tei-en: Lec[]04[]Interference.pdf,
- []
-
-
-Overfull \hbox (10.11363pt too wide) in paragraph at lines 348--349
-\OT1/cmr/m/n/10.95 Ein se-quen-ti-el-les Sy-stem be-sitzt ein Ged[]achtnis; die Ausg[]ange h[]angen von den ak-tu-el-len Eing[]angen
- []
-
-
-Overfull \hbox (2.61357pt too wide) in paragraph at lines 354--355
-[]\OT1/cmr/m/n/10.95 Zustands[]uberg[]ange (Tran-si-ti-ons) und []Ubergangsbedingungen (Tran-si-ti-on Con-di-ti-ons)[cite:
- []
-
-
-Overfull \hbox (8.029pt too wide) in paragraph at lines 356--357
-[]\OT1/cmr/m/n/10.95 Zustandsregister (Me-mo-ry), []Ubergangslogik (Tran-si-ent Func-ti-ons) und Aus-gangs-lo-gik (Out-
- []
-
-
-Overfull \hbox (10.53539pt too wide) in paragraph at lines 361--362
-[]\OT1/cmr/bx/n/10.95 Moore-Automat: \OT1/cmr/m/n/10.95 Die Ausg[]ange h[]angen \OT1/cmr/bx/n/10.95 aus-schlie^^Y-lich vom ak-tu-el-len Zu-stand \OT1/cmr/m/n/10.95 ab[cite:
- []
-
-
-Overfull \hbox (0.96582pt too wide) in paragraph at lines 374--375
-[]\OT1/cmr/bx/n/10.95 Elektrisches Feld (Ka-pa-zi-ti-ve Kopp-lung): \OT1/cmr/m/n/10.95 Wird durch Span-nungs[]anderungen ($\OML/cmm/m/it/10.95 dv=dt$\OT1/cmr/m/n/10.95 )
- []
-
-
-Overfull \hbox (17.30054pt too wide) in paragraph at lines 374--375
-\OT1/cmr/m/n/10.95 her-vor-ge-ru-fen[cite: 10]. Ge-gen-ma^^Y-nah-men sind die Ver-rin-ge-rung par-al-le-ler Lei-tungsf[]uhrungen,
- []
-
-[12] [13] (./ZusammenfassungPrüfung.aux)
+[7] (./ZusammenfassungPrüfung.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `ZusammenfassungPrüfung.out' has not changed.
-(rerunfilecheck)             Checksum: BCFDE17F4C87D4E7FC630531A71CA091;10112.
+(rerunfilecheck)             Checksum: 0D9CAB9350AF7D2972B969695BB857A4;4536.
  ) 
 Here is how much of TeX's memory you used:
- 10744 strings out of 469462
- 165944 string characters out of 5468615
- 604878 words of memory out of 5000000
- 39247 multiletter control sequences out of 15000+600000
+ 10694 strings out of 469462
+ 165174 string characters out of 5468615
+ 596868 words of memory out of 5000000
+ 39227 multiletter control sequences out of 15000+600000
  635774 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,8n,79p,969b,627s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on ZusammenfassungPrüfung.pdf (13 pages, 198762 bytes).
+ 75i,6n,79p,540b,539s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on ZusammenfassungPrüfung.pdf (7 pages, 158928 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 305 compressed objects within 4 object streams
- 61 named destinations out of 1000 (max. 500000)
- 313 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 214 PDF objects out of 1000 (max. 8388607)
+ 181 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 177 words of extra memory for PDF output out of 10000 (max. 10000000)
 
