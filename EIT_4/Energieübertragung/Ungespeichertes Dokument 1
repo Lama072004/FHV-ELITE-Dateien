@@ -1,0 +1,27 @@
+energieübertragung klausur info:
+taschenrechner und 2 seiten formelsammlung (formeln und skizzen erlaubt, keine komplettbeispiele und keine zusammenfassung von allen theorie konzepten)
+komplex rechnen sollte man können
+ca. hälfte theorie, hälfte rechnung, mischung von felix und ruben teil
+von felix teil kommt schutzsysteme und wireless energieübetragung nur oberflächig (bei schutzsysteme sind mögliche fragen am ende der folien)
+
+
+Prüfungsstoff-Übertragung:
+
+Admitanzmatrix aufstellen
+
+How the power flow equations are determined
+Knotentypen in einem Netzwerk:
+- Slack node (V , angle are known) auch als Referenz Knotenpunkt bekannt
+- PV node (P, V are known)
+- PQ node (P,Q are known)
+
+How to solve power flow equations using Gauss-Seidel
+
+
+
+
+
+
+Prüfungsstoff Speichersysteme:
+Prüfung sind offene Fragen (gibt 100 Punkte, ca 20 oder 30 Fragen)
+von jedem Thema etwas und nach verständniss wird gefragt
