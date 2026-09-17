@@ -1,0 +1,1793 @@
+WEBVTT
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/4-0
+00:00:03.224 --> 00:00:05.544
+<v Parantainen Antti>So let's dive into this.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/6-0
+00:00:06.704 --> 00:00:14.633
+<v Parantainen Antti>Hardware engineering part and let's
+continue with this Velma DNS stations</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/6-1
+00:00:14.633 --> 00:00:21.384
+<v Parantainen Antti>last notes and naming principles.
+That is our topic for today.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/7-0
+00:00:21.744 --> 00:00:27.775
+<v Parantainen Antti>Last time we were checking the roles of
+these different servers in development</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/7-1
+00:00:27.775 --> 00:00:31.363
+<v Parantainen Antti>DNA.
+We were checking the process based on the</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/7-2
+00:00:31.363 --> 00:00:36.326
+<v Parantainen Antti>PCs, roles and features,
+a little bit about the hardware options</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/7-3
+00:00:36.326 --> 00:00:36.784
+<v Parantainen Antti>there.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/8-0
+00:00:37.504 --> 00:00:45.267
+<v Parantainen Antti>Then we check the role of the backup
+station and hardware here there as well.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/8-1
+00:00:45.267 --> 00:00:50.144
+<v Parantainen Antti>Same thing for alarm station slash alarm
+server.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/9-0
+00:00:52.144 --> 00:01:00.104
+<v Parantainen Antti>And the engineering activity server and
+there we stopped that last time.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/10-0
+00:01:01.184 --> 00:01:04.466
+<v Parantainen Antti>And we were discussing that in
+development DNA,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/10-1
+00:01:04.466 --> 00:01:08.980
+<v Parantainen Antti>the system is very flexible,
+so we can combine different stations</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/10-2
+00:01:08.980 --> 00:01:12.399
+<v Parantainen Antti>together like the ARM station and backup
+station.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/10-3
+00:01:12.399 --> 00:01:17.528
+<v Parantainen Antti>Those can be combined in the same
+hardware or distributed in the different</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/10-4
+00:01:17.528 --> 00:01:18.144
+<v Parantainen Antti>hardware.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/11-0
+00:01:18.744 --> 00:01:22.326
+<v Parantainen Antti>Depending on the solution,
+is it a big or small system?</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/11-1
+00:01:22.326 --> 00:01:26.548
+<v Parantainen Antti>Is it the industrial or this kind of like
+a learning environment?</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/11-2
+00:01:26.548 --> 00:01:30.641
+<v Parantainen Antti>We can create a different kind of like
+combination of stations,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/11-3
+00:01:30.641 --> 00:01:33.264
+<v Parantainen Antti>what kind of functions they are handling.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/12-0
+00:01:35.024 --> 00:01:40.751
+<v Parantainen Antti>Today we are going a little bit deeper
+how we can combine different features</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/12-1
+00:01:40.751 --> 00:01:45.660
+<v Parantainen Antti>into the one one like a station or
+hardware and how it is done in</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/12-2
+00:01:45.660 --> 00:01:49.304
+<v Parantainen Antti>development DMA and what is like the
+background.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/13-0
+00:01:50.744 --> 00:01:52.504
+<v Parantainen Antti>Why we are doing this way?</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/14-0
+00:01:53.424 --> 00:01:57.953
+<v Parantainen Antti>I'm simultaneously opening the other
+material of the element DNA.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/14-1
+00:01:57.953 --> 00:02:02.344
+<v Parantainen Antti>This is the general section.
+We are referring that one as well.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/15-0
+00:02:05.424 --> 00:02:10.001
+<v Parantainen Antti>So here are some background information
+from that.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/15-1
+00:02:10.001 --> 00:02:14.489
+<v Parantainen Antti>That's how it was done in the Volumet DNA
+system.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/15-2
+00:02:14.489 --> 00:02:21.579
+<v Parantainen Antti>This slot feature we are referring it.
+So here's a picture of that Volumet DNA</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/15-3
+00:02:21.579 --> 00:02:23.464
+<v Parantainen Antti>XD era or Damatic XD.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/16-0
+00:02:23.824 --> 00:02:32.696
+<v Parantainen Antti>Like it was introduced here back into 88,
+one was introduced this automatic XD</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/16-1
+00:02:32.696 --> 00:02:38.424
+<v Parantainen Antti>automation system and back in the days in
+the 80s.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/17-0
+00:02:39.664 --> 00:02:44.052
+<v Parantainen Antti>Those different features are combined in
+the one station.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/17-1
+00:02:44.052 --> 00:02:49.349
+<v Parantainen Antti>These kind of physical slots,
+if you remember from the last time when</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/17-2
+00:02:49.349 --> 00:02:54.419
+<v Parantainen Antti>we were there at the lab,
+you saw those IO cards in the top of the</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/17-3
+00:02:54.419 --> 00:02:55.024
+<v Parantainen Antti>cabinet.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/18-0
+00:02:55.104 --> 00:03:02.019
+<v Parantainen Antti>There are those kind of brass kind of IO
+cards there in the upper part of the</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/18-1
+00:03:02.019 --> 00:03:04.944
+<v Parantainen Antti>cabinet. Those were the IO cards.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/19-0
+00:03:06.624 --> 00:03:11.503
+<v Parantainen Antti>In that era,
+also the stations were that kind of cars,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/19-1
+00:03:11.503 --> 00:03:17.447
+<v Parantainen Antti>but just in a bigger format.
+Those are like a 1U size of the cars.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/19-2
+00:03:17.447 --> 00:03:24.544
+<v Parantainen Antti>Those are about this height of cars,
+but the station cars were bigger, like 3U.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/20-0
+00:03:25.504 --> 00:03:32.296
+<v Parantainen Antti>Three times longer cars and those were
+stacked just like the IO cards are there</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/20-1
+00:03:32.296 --> 00:03:33.824
+<v Parantainen Antti>in the laboratory.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/21-0
+00:03:35.744 --> 00:03:42.022
+<v Parantainen Antti>So back in the day,
+store physical cars in rack and we could</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/21-1
+00:03:42.022 --> 00:03:46.344
+<v Parantainen Antti>combine different features to one station.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/22-0
+00:03:47.504 --> 00:03:52.438
+<v Parantainen Antti>For example,
+like a process lesson like this,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/22-1
+00:03:52.438 --> 00:04:00.053
+<v Parantainen Antti>we could add their CPUs, NCUs,
+which are like a network control units,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/22-2
+00:04:00.053 --> 00:04:04.344
+<v Parantainen Antti>NCU, just like here. Here is 1 NCU unit.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/23-0
+00:04:04.784 --> 00:04:12.096
+<v Parantainen Antti>Like a car there installed in the rack,
+there is CPU and CU and there is no label</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/23-1
+00:04:12.096 --> 00:04:17.536
+<v Parantainen Antti>in the middle one,
+but that is the FBC feed boost controller</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/23-2
+00:04:17.536 --> 00:04:19.944
+<v Parantainen Antti>that Miller bot over there.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/24-0
+00:04:21.824 --> 00:04:27.144
+<v Parantainen Antti>And there could be backup station.
+Different kind of feature can be there</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/24-1
+00:04:27.144 --> 00:04:32.104
+<v Parantainen Antti>installed in the rack and combine
+different features in one station.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/25-0
+00:04:34.784 --> 00:04:41.904
+<v Parantainen Antti>But the FPC is referred here in the
+process station part. This is that.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/26-0
+00:04:42.864 --> 00:04:47.823
+<v Parantainen Antti>Field bus pass controller which handles
+for example the IO cards.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/26-1
+00:04:47.823 --> 00:04:51.504
+<v Parantainen Antti>Back in the days it was only the
+centralized IO,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/26-2
+00:04:51.504 --> 00:04:57.064
+<v Parantainen Antti>the rack IO which is available there in
+the lab in the upper part of the.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/27-0
+00:04:57.984 --> 00:05:01.746
+<v Parantainen Antti>IO cabinet.
+It could be also Profibus or something</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/27-1
+00:05:01.746 --> 00:05:03.664
+<v Parantainen Antti>like that it was handling.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/28-0
+00:05:07.744 --> 00:05:12.554
+<v Parantainen Antti>But also because this system need to be
+backward compatible,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/28-1
+00:05:12.554 --> 00:05:18.467
+<v Parantainen Antti>this kind of feature needs to be
+implemented also in this violent DNA era.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/28-2
+00:05:18.467 --> 00:05:24.617
+<v Parantainen Antti>It was introduced in 2000 or something
+like that when we were starting to use</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/28-3
+00:05:24.617 --> 00:05:26.904
+<v Parantainen Antti>those industrial pieces like.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/29-0
+00:05:27.464 --> 00:05:32.355
+<v Parantainen Antti>AC and RT or something like this.
+So maybe we have that kind of feature</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/29-1
+00:05:32.355 --> 00:05:35.344
+<v Parantainen Antti>there as well without those physical
+slots.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/30-0
+00:05:38.304 --> 00:05:45.117
+<v Parantainen Antti>So that's one of those things that the
+systems need to be backward compatible,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/30-1
+00:05:45.117 --> 00:05:51.844
+<v Parantainen Antti>so that those old style dramatic XD era
+process stations could be implemented</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/30-2
+00:05:51.844 --> 00:05:53.224
+<v Parantainen Antti>with this newer.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/31-0
+00:05:53.824 --> 00:06:02.224
+<v Parantainen Antti>Industrial PC type of controllers with
+the Linux Linux system and so on.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/32-0
+00:06:02.944 --> 00:06:08.734
+<v Parantainen Antti>That's why we need,
+we need to have another solution and the</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/32-1
+00:06:08.734 --> 00:06:15.188
+<v Parantainen Antti>solution we are virtualizing those slots
+in operating system level.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/32-2
+00:06:15.188 --> 00:06:19.744
+<v Parantainen Antti>That's why we are still having that slot
+thing.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/33-0
+00:06:20.224 --> 00:06:26.833
+<v Parantainen Antti>It is well met DNA which was physical
+team in a a dramatic XD era,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/33-1
+00:06:26.833 --> 00:06:31.864
+<v Parantainen Antti>but nowadays it is like virtual
+virtualized slots.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/34-0
+00:06:33.424 --> 00:06:39.281
+<v Parantainen Antti>In a Valment DNA and we are using this
+slot controller or X slot to handle that</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/34-1
+00:06:39.281 --> 00:06:44.113
+<v Parantainen Antti>function in a Valment DNA.
+Let's check first this process station</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/34-2
+00:06:44.113 --> 00:06:49.384
+<v Parantainen Antti>which is running the Linux system.
+There is this kind of program there.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/35-0
+00:06:49.824 --> 00:06:56.488
+<v Parantainen Antti>Inside that Linux which handled the
+virtualized slots which were physical</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/35-1
+00:06:56.488 --> 00:07:02.342
+<v Parantainen Antti>thing in the dynamic XD era.
+But now those are here virtualized.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/35-2
+00:07:02.342 --> 00:07:05.944
+<v Parantainen Antti>We can see in the third block the first.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/36-0
+00:07:07.264 --> 00:07:13.452
+<v Parantainen Antti>Column tells the slot number.
+There is a PCS which means the post</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/36-1
+00:07:13.452 --> 00:07:19.734
+<v Parantainen Antti>process controller functionality and the
+name of that one is GP01.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/36-2
+00:07:19.734 --> 00:07:21.984
+<v Parantainen Antti>That is like a CPU part.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/37-0
+00:07:22.464 --> 00:07:28.968
+<v Parantainen Antti>The PCs of the process station,
+just like it was in a rack version,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/37-1
+00:07:28.968 --> 00:07:34.228
+<v Parantainen Antti>the automatic XD,
+there is a CPU slot reserved for our</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/37-2
+00:07:34.228 --> 00:07:39.584
+<v Parantainen Antti>process station,
+but as we can see for example the NCU.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/38-0
+00:07:40.224 --> 00:07:45.269
+<v Parantainen Antti>The network controller unit,
+we are having the same thing running here</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/38-1
+00:07:45.269 --> 00:07:49.319
+<v Parantainen Antti>in the slot 16,
+which is handling the communication from</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/38-2
+00:07:49.319 --> 00:07:53.084
+<v Parantainen Antti>that process station to other stations in
+a network.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/38-3
+00:07:53.084 --> 00:07:56.424
+<v Parantainen Antti>So the NCU handles that kind of
+functionality.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/39-0
+00:07:56.864 --> 00:08:04.294
+<v Parantainen Antti>It is preserving slot #16 as we can see.
+What about the other things here?</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/39-1
+00:08:04.294 --> 00:08:12.318
+<v Parantainen Antti>We can see a couple of FBCS which are the
+field bus controllers in our solution.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/39-2
+00:08:12.318 --> 00:08:15.984
+<v Parantainen Antti>This is this screenshot is from that.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/40-0
+00:08:16.344 --> 00:08:21.944
+<v Parantainen Antti>Process station in the DP66 lab,
+the GP 01.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/40-1
+00:08:21.944 --> 00:08:31.744
+<v Parantainen Antti>There's a couple of FPC's running inside
+of the Linux and there's GP 01M2M5.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/41-0
+00:08:32.304 --> 00:08:37.971
+<v Parantainen Antti>M6 and then there is M9.
+Those are the important things you need</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/41-1
+00:08:37.971 --> 00:08:41.982
+<v Parantainen Antti>to understand.
+If we refer this slot feature,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/41-2
+00:08:41.982 --> 00:08:46.864
+<v Parantainen Antti>we are checking the same thing from that
+system layout.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/42-0
+00:08:48.584 --> 00:08:53.624
+<v Parantainen Antti>We can see that there is this AC and Mr.
+which is running the Linux.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/43-0
+00:08:55.504 --> 00:08:59.824
+<v Parantainen Antti>And inside of there there is a software
+slots reserved for the feed bus</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/43-1
+00:08:59.824 --> 00:09:00.544
+<v Parantainen Antti>controllers.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/44-0
+00:09:02.944 --> 00:09:09.685
+<v Parantainen Antti>As we can see in the picture,
+the AC and I/O is reserving one of those</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/44-1
+00:09:09.685 --> 00:09:15.571
+<v Parantainen Antti>FB CS and the slot number for this one is
+always the FBC two,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/44-2
+00:09:15.571 --> 00:09:19.464
+<v Parantainen Antti>which means it is running in the slot #2.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/45-0
+00:09:21.104 --> 00:09:26.829
+<v Parantainen Antti>That is reserved for this AC and IO,
+those black IO cards nearby to Mr.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/45-1
+00:09:26.829 --> 00:09:27.704
+<v Parantainen Antti>controller.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/46-0
+00:09:29.104 --> 00:09:33.384
+<v Parantainen Antti>There is also configured M5 and M6.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/47-0
+00:09:34.984 --> 00:09:38.424
+<v Parantainen Antti>And if we are checking those from the
+layout,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/47-1
+00:09:38.424 --> 00:09:44.033
+<v Parantainen Antti>the M5 and M6 can be found here in the
+system layout and those are for the</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/47-2
+00:09:44.033 --> 00:09:45.304
+<v Parantainen Antti>Profibus devices.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/48-0
+00:09:47.304 --> 00:09:53.668
+<v Parantainen Antti>So there's this virtualized slots M5 and
+M6 and we can use that slot to</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/48-1
+00:09:53.668 --> 00:10:00.386
+<v Parantainen Antti>communicate with the Profibus devices and
+there is also reservation for M4,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/48-2
+00:10:00.386 --> 00:10:05.424
+<v Parantainen Antti>but that is not configured there.
+The slot #4 that is M.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/49-0
+00:10:06.424 --> 00:10:08.904
+<v Parantainen Antti>So that is like like a reserve.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/50-0
+00:10:09.624 --> 00:10:14.915
+<v Parantainen Antti>Tropy bus network available there,
+but that is not configured there,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/50-1
+00:10:14.915 --> 00:10:18.903
+<v Parantainen Antti>that's empty there.
+So we could take that into use.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/50-2
+00:10:18.903 --> 00:10:25.344
+<v Parantainen Antti>If we are adding some process or devices
+to our lab, we could implement that there.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/51-0
+00:10:26.824 --> 00:10:30.869
+<v Parantainen Antti>And it's very easy to add new features to
+the CPU.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/51-1
+00:10:30.869 --> 00:10:35.707
+<v Parantainen Antti>We can just configure their additional
+slots to handle that,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/51-2
+00:10:35.707 --> 00:10:40.624
+<v Parantainen Antti>for example new new like a field bus
+controllers for example.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/52-0
+00:10:42.984 --> 00:10:46.934
+<v Parantainen Antti>This IBC is related to also the list.
+Let's don't,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/52-1
+00:10:46.934 --> 00:10:52.899
+<v Parantainen Antti>let's don't focus on that one because
+that information is not needed in this</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/52-2
+00:10:52.899 --> 00:10:56.539
+<v Parantainen Antti>course.
+So let's leave that little bit like we</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/52-3
+00:10:56.539 --> 00:10:57.624
+<v Parantainen Antti>don't need it.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/54-0
+00:10:58.424 --> 00:11:02.413
+<v Parantainen Antti>And there's also this kind of things like
+DP Mon,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/54-1
+00:11:02.413 --> 00:11:08.876
+<v Parantainen Antti>which is Profibus DP monitoring software
+and same thing for Profinet monitoring.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/54-2
+00:11:08.876 --> 00:11:13.344
+<v Parantainen Antti>That is for the diagnostic purposes of
+the field buses.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/55-0
+00:11:13.704 --> 00:11:19.738
+<v Parantainen Antti>You will see that those are really nice.
+If we compare for example Siemens system,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/55-1
+00:11:19.738 --> 00:11:24.173
+<v Parantainen Antti>we don't have that kind of like a loop to
+the field devices.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/55-2
+00:11:24.173 --> 00:11:29.989
+<v Parantainen Antti>What kind of devices are is connected to
+our station with those DPMON and PMMON</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/55-3
+00:11:29.989 --> 00:11:33.624
+<v Parantainen Antti>softwares,
+we can have a nice visual overview of.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/56-0
+00:11:33.664 --> 00:11:38.006
+<v Parantainen Antti>Different like devices which are
+connected to our station.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/56-1
+00:11:38.006 --> 00:11:43.085
+<v Parantainen Antti>We will check it later on,
+but these kind of features are quite nice</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/56-2
+00:11:43.085 --> 00:11:44.704
+<v Parantainen Antti>here in the Velma DNA.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/57-0
+00:11:46.104 --> 00:11:54.940
+<v Parantainen Antti>So I want you to like look around this
+picture and compare this configuration of</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/57-1
+00:11:54.940 --> 00:12:00.504
+<v Parantainen Antti>slots and same thing here in this process
+station.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/58-0
+00:12:01.104 --> 00:12:08.332
+<v Parantainen Antti>System layout view and think about the
+look around different features which have</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/58-1
+00:12:08.332 --> 00:12:10.384
+<v Parantainen Antti>been implemented there.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/59-0
+00:12:11.624 --> 00:12:14.864
+<v Parantainen Antti>But this example was the process test and
+running Linux system.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/60-0
+00:12:15.944 --> 00:12:21.823
+<v Parantainen Antti>But the same thing applies also to those
+Windows servers as well.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/60-1
+00:12:21.823 --> 00:12:29.304
+<v Parantainen Antti>We are having the slot controller for one
+station and as we can see there are still</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/60-2
+00:12:29.304 --> 00:12:31.264
+<v Parantainen Antti>the slot numbers here.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/61-0
+00:12:31.704 --> 00:12:38.496
+<v Parantainen Antti>From slot one to slot 16 and the same
+view from the system layout for the same</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/61-1
+00:12:38.496 --> 00:12:39.184
+<v Parantainen Antti>station.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/62-0
+00:12:40.824 --> 00:12:46.225
+<v Parantainen Antti>We can see that this one PC which is the
+name of that one is G109.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/62-1
+00:12:46.225 --> 00:12:52.755
+<v Parantainen Antti>We will come later on this naming policy,
+but this is like the operating station</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/62-2
+00:12:52.755 --> 00:12:56.544
+<v Parantainen Antti>which also covers the functionality of
+backup.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/63-0
+00:12:57.904 --> 00:13:03.424
+<v Parantainen Antti>GB01 and also the alarm station G1A1.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/64-0
+00:13:05.144 --> 00:13:09.295
+<v Parantainen Antti>And that is done with exactly the same
+principle.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/64-1
+00:13:09.295 --> 00:13:16.019
+<v Parantainen Antti>We are having that of virtualized slots
+and the first slot number one is running</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/64-2
+00:13:16.019 --> 00:13:22.744
+<v Parantainen Antti>GB 01. This is the backup station code.
+As you can see it is Windows executable.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/65-0
+00:13:23.544 --> 00:13:29.664
+<v Parantainen Antti>Just the one executable there which is
+running the backup station functionality.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/66-0
+00:13:30.984 --> 00:13:37.966
+<v Parantainen Antti>And the slot #3 is handling CDMGR,
+which is the same as the operate,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/66-1
+00:13:37.966 --> 00:13:46.264
+<v Parantainen Antti>which is the user interface in a valve
+DNA. G 109 is actually to operate the HMI.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/67-0
+00:13:46.304 --> 00:13:53.915
+<v Parantainen Antti>Slash the operator interface over here
+and the G1A1 is the alarm station.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/67-1
+00:13:53.915 --> 00:14:00.704
+<v Parantainen Antti>It is running the alarm station
+executable there and so that way.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/69-0
+00:14:01.584 --> 00:14:07.184
+<v Parantainen Antti>We can combine different features,
+features to one station.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/69-1
+00:14:07.184 --> 00:14:14.931
+<v Parantainen Antti>We are calling this node or slots here in
+development DNA slot is coming from here</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/69-2
+00:14:14.931 --> 00:14:17.824
+<v Parantainen Antti>and the node name is over here.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/70-0
+00:14:18.224 --> 00:14:23.224
+<v Parantainen Antti>That's how we can combine different
+features to one station.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/71-0
+00:14:29.624 --> 00:14:34.424
+<v Parantainen Antti>How we are doing that? We are not.
+We are not using this.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/72-0
+00:14:35.624 --> 00:14:37.304
+<v Parantainen Antti>System configurator.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/73-0
+00:14:38.544 --> 00:14:44.874
+<v Parantainen Antti>In our like like how do I call it in our
+exercises in this course,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/73-1
+00:14:44.874 --> 00:14:49.409
+<v Parantainen Antti>but just how it is done in the
+environment DNA.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/73-2
+00:14:49.409 --> 00:14:53.944
+<v Parantainen Antti>Here we can see for example this open
+dialogue.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/74-0
+00:14:54.384 --> 00:14:59.532
+<v Parantainen Antti>This is from GB01 and it is ACNMR
+generation 2 hardware.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/74-1
+00:14:59.532 --> 00:15:06.126
+<v Parantainen Antti>We are first tracking here correct
+hardware we are using and then we are</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/74-2
+00:15:06.126 --> 00:15:10.732
+<v Parantainen Antti>just tracking and dropping here different
+feature,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/74-3
+00:15:10.732 --> 00:15:13.984
+<v Parantainen Antti>different features for that process.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/75-0
+00:15:14.304 --> 00:15:20.739
+<v Parantainen Antti>And we are adding here the IP addresses,
+the name and so on and we can build the</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/75-1
+00:15:20.739 --> 00:15:26.538
+<v Parantainen Antti>structure over here and this is the way
+that hardware is gone bigger and</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/75-2
+00:15:26.538 --> 00:15:31.384
+<v Parantainen Antti>maintained if we need to do something
+like a addition there.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/76-0
+00:15:31.664 --> 00:15:37.414
+<v Parantainen Antti>We are tracking and dropping feature and
+then downloading the software to that</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/76-1
+00:15:37.414 --> 00:15:41.417
+<v Parantainen Antti>process station. Actually,
+as we were talking earlier,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/76-2
+00:15:41.417 --> 00:15:45.784
+<v Parantainen Antti>we are downloading the configuration to
+the backup station.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/77-0
+00:15:47.264 --> 00:15:52.897
+<v Parantainen Antti>This is the part if we are doing that
+kind of configuration changes in that</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/77-1
+00:15:52.897 --> 00:15:56.752
+<v Parantainen Antti>hardware,
+you are downloading the software first to</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/77-2
+00:15:56.752 --> 00:16:02.904
+<v Parantainen Antti>the backup station and it is hosting all
+the configuration for different stations.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/78-0
+00:16:05.024 --> 00:16:11.561
+<v Parantainen Antti>Here we first download and then the into
+the backup station and then we if we</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/78-1
+00:16:11.561 --> 00:16:17.428
+<v Parantainen Antti>reboot that process station,
+those configurations are taking into use</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/78-2
+00:16:17.428 --> 00:16:20.864
+<v Parantainen Antti>when that process station is starting up.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/79-0
+00:16:20.944 --> 00:16:27.615
+<v Parantainen Antti>That's the way download procedure
+functions here in development DNA.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/79-1
+00:16:27.615 --> 00:16:32.546
+<v Parantainen Antti>Also for this kind of system
+configurating things.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/79-2
+00:16:32.546 --> 00:16:39.797
+<v Parantainen Antti>Also back in the days this system
+configurator is quite new to environment</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/79-3
+00:16:39.797 --> 00:16:40.184
+<v Parantainen Antti>DNA.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/80-0
+00:16:41.464 --> 00:16:45.856
+<v Parantainen Antti>This is actually just a user interface to
+text based files.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/80-1
+00:16:45.856 --> 00:16:49.955
+<v Parantainen Antti>This is creating text based files.
+This user interface.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/80-2
+00:16:49.955 --> 00:16:54.785
+<v Parantainen Antti>Back in the days when I was starting the
+Vomit DNA configuration,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/80-3
+00:16:54.785 --> 00:16:59.104
+<v Parantainen Antti>all those things need to be done manually
+in a text files.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/81-0
+00:16:59.744 --> 00:17:06.068
+<v Parantainen Antti>Row by row it was very time consuming and
+we couldn't have this kind of nice</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/81-1
+00:17:06.068 --> 00:17:11.324
+<v Parantainen Antti>overview of our system.
+All those configurations were just text</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/81-2
+00:17:11.324 --> 00:17:15.184
+<v Parantainen Antti>files, fails, text fails,
+text files in those.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/82-0
+00:17:16.304 --> 00:17:20.272
+<v Parantainen Antti>In that backup space and all the
+configuration was there,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/82-1
+00:17:20.272 --> 00:17:24.103
+<v Parantainen Antti>but now we are having this kind of system
+configurator.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/82-2
+00:17:24.103 --> 00:17:27.524
+<v Parantainen Antti>We are checking the futures features of
+this one,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/82-3
+00:17:27.524 --> 00:17:31.560
+<v Parantainen Antti>but you don't need to use this tool in
+our course courses,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/82-4
+00:17:31.560 --> 00:17:33.544
+<v Parantainen Antti>but just for the information.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/83-0
+00:17:33.904 --> 00:17:34.984
+<v Parantainen Antti>How it is done?</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/84-0
+00:17:38.104 --> 00:17:40.744
+<v Parantainen Antti>That was basically the slot thing.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/85-0
+00:17:42.464 --> 00:17:48.184
+<v Parantainen Antti>Any questions of this slot feature here
+in Valor PMA?</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/86-0
+00:17:51.664 --> 00:17:53.687
+<v Parantainen Antti>In the next exercise we are using the
+slot names,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/86-1
+00:17:53.687 --> 00:17:55.224
+<v Parantainen Antti>so you need to know what does it mean.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/87-0
+00:17:59.784 --> 00:18:03.525
+<v Parantainen Antti>But everything is once again happening
+under the bonnet.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/87-1
+00:18:03.525 --> 00:18:07.529
+<v Parantainen Antti>You need to just know the principles in
+the environment DNA,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/87-2
+00:18:07.529 --> 00:18:12.649
+<v Parantainen Antti>but everything's happened happening under
+the bonnet when we are creating the</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/87-3
+00:18:12.649 --> 00:18:15.537
+<v Parantainen Antti>software.
+This is just kind of nice to know</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/87-4
+00:18:15.537 --> 00:18:16.784
+<v Parantainen Antti>information to you.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/88-0
+00:18:19.104 --> 00:18:23.821
+<v Parantainen Antti>OK, if there's no any questions,
+let's continue with the naming,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/88-1
+00:18:23.821 --> 00:18:26.144
+<v Parantainen Antti>naming principle and Valent DNA.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/89-0
+00:18:28.144 --> 00:18:39.304
+<v Parantainen Antti>And how those are used here to categorize
+different parts and so on so.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/90-0
+00:18:40.544 --> 00:18:45.956
+<v Parantainen Antti>We need to have this kind of naming
+principle which applies to all Valmet</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/90-1
+00:18:45.956 --> 00:18:49.832
+<v Parantainen Antti>systems and we are having here some
+examples to you.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/90-2
+00:18:49.832 --> 00:18:55.024
+<v Parantainen Antti>We have been talking about the process
+station GB01 backup station GB.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/91-0
+00:18:57.224 --> 00:19:02.501
+<v Parantainen Antti>011 for example,
+let's let's go a little bit deeper into</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/91-1
+00:19:02.501 --> 00:19:07.130
+<v Parantainen Antti>that naming policy.
+As we were talking last time,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/91-2
+00:19:07.130 --> 00:19:11.944
+<v Parantainen Antti>development DNA system is done with the
+subsystems.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/92-0
+00:19:13.574 --> 00:19:20.599
+<v Parantainen Antti>So if we can like divide a big system to
+smaller parts with the subsystem feature,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/92-1
+00:19:20.599 --> 00:19:26.694
+<v Parantainen Antti>for example here in our campus we are
+having the Z system and E system.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/93-0
+00:19:28.704 --> 00:19:37.551
+<v Parantainen Antti>So the G subsystem is for automation lab
+things in the next room and the E system</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/93-1
+00:19:37.551 --> 00:19:45.104
+<v Parantainen Antti>is for the energy technology in the lab
+DP39. That way we can divide.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/94-0
+00:19:45.104 --> 00:19:46.464
+<v Parantainen Antti>Those two systems.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/95-0
+00:19:47.744 --> 00:19:54.436
+<v Parantainen Antti>We are having two different processes.
+One is this basically this water process</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/95-1
+00:19:54.436 --> 00:20:01.129
+<v Parantainen Antti>over here which is using this G subsystem
+and E subsystem is reserved for those</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/95-2
+00:20:01.129 --> 00:20:03.304
+<v Parantainen Antti>energy technology devices.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/96-0
+00:20:03.504 --> 00:20:08.329
+<v Parantainen Antti>In a lab DP39.
+That's why we are having two different</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/96-1
+00:20:08.329 --> 00:20:13.064
+<v Parantainen Antti>subsystems.
+We are dividing two different processes.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/97-0
+00:20:15.184 --> 00:20:22.030
+<v Parantainen Antti>Here in campus that also helps like a
+maintain of the system in a like if if</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/97-1
+00:20:22.030 --> 00:20:28.876
+<v Parantainen Antti>you're using a power plant plant for
+example like some of the processes like</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/97-2
+00:20:28.876 --> 00:20:32.344
+<v Parantainen Antti>the boiler can be in the one subsystem.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/98-0
+00:20:32.944 --> 00:20:36.144
+<v Parantainen Antti>And some features like um.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/99-0
+00:20:37.104 --> 00:20:38.664
+<v Parantainen Antti>For example, they.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/100-0
+00:20:39.904 --> 00:20:43.184
+<v Parantainen Antti>Material handling. They're all like that.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/101-0
+00:20:44.144 --> 00:20:50.160
+<v Parantainen Antti>If we are, for example,
+burning coal or that like conveyors and</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/101-1
+00:20:50.160 --> 00:20:57.492
+<v Parantainen Antti>so on can be in a different subsystem,
+we can do a maintenance for the energy</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/101-2
+00:20:57.492 --> 00:20:59.184
+<v Parantainen Antti>feed for the coal.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/102-0
+00:20:59.504 --> 00:21:04.849
+<v Parantainen Antti>Cold feeding system without disturbing
+the main boiler and we cannot shut it</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/102-1
+00:21:04.849 --> 00:21:09.986
+<v Parantainen Antti>down just like that, but like the feeding,
+we can shut shut it down for a</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/102-2
+00:21:09.986 --> 00:21:14.984
+<v Parantainen Antti>momentarily if we need to do some
+maintenance there to that sub system.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/103-0
+00:21:15.704 --> 00:21:18.904
+<v Parantainen Antti>That's why those are divided into
+different subsystems.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/104-0
+00:21:21.384 --> 00:21:26.781
+<v Parantainen Antti>And from there we can have a different
+control rules for one subsystem.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/104-1
+00:21:26.781 --> 00:21:29.704
+<v Parantainen Antti>For example, those are labeled like G1.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/105-0
+00:21:31.264 --> 00:21:36.824
+<v Parantainen Antti>G2 E 1E2 as we can see for example here.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/106-0
+00:21:39.464 --> 00:21:46.918
+<v Parantainen Antti>Our alarm station and the operate station,
+those are G1 something.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/106-1
+00:21:46.918 --> 00:21:54.039
+<v Parantainen Antti>That means they are using the G1 control
+room in our subsystem.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/106-2
+00:21:54.039 --> 00:21:56.264
+<v Parantainen Antti>G means that is a G.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/107-0
+00:21:56.464 --> 00:22:02.224
+<v Parantainen Antti>Subsystem and E means that is part of the
+energy technology system.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/108-0
+00:22:03.664 --> 00:22:09.225
+<v Parantainen Antti>Actually we are having here just one
+control room per subsystem.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/108-1
+00:22:09.225 --> 00:22:15.984
+<v Parantainen Antti>So we are actually in our system having
+only G1 and E1 control room available.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/109-0
+00:22:16.864 --> 00:22:23.915
+<v Parantainen Antti>That is one of those naming principles
+and there's also this station type code</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/109-1
+00:22:23.915 --> 00:22:30.965
+<v Parantainen Antti>if we are looking for example this GP01
+which we were looking earlier there in</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/109-2
+00:22:30.965 --> 00:22:32.304
+<v Parantainen Antti>the laboratory.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/110-0
+00:22:33.584 --> 00:22:39.544
+<v Parantainen Antti>It means that G is the subsystem and the
+P means it is a process controller.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/111-0
+00:22:41.104 --> 00:22:45.434
+<v Parantainen Antti>There's different features we are
+labeling here.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/111-1
+00:22:45.434 --> 00:22:52.326
+<v Parantainen Antti>Key means it is a process controller and
+for the alarm station it is AB means</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/111-2
+00:22:52.326 --> 00:22:56.744
+<v Parantainen Antti>backup station,
+E is engineering activity server.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/112-0
+00:22:57.064 --> 00:23:03.624
+<v Parantainen Antti>O means operator station and D is a
+diagnostic station for example.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/113-0
+00:23:06.184 --> 00:23:12.789
+<v Parantainen Antti>As we can see,
+for example here our backup station,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/113-1
+00:23:12.789 --> 00:23:20.664
+<v Parantainen Antti>there is a backup station GP01G10.
+It is a G1 operating room.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/114-0
+00:23:21.184 --> 00:23:28.143
+<v Parantainen Antti>O means it's operating station and there
+is a 9 which is like a rolling rolling</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/114-1
+00:23:28.143 --> 00:23:31.710
+<v Parantainen Antti>number.
+We can add a couple of different</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/114-2
+00:23:31.710 --> 00:23:37.104
+<v Parantainen Antti>operating station and so on.
+G1A1 mean it means that it is a.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/115-0
+00:23:37.104 --> 00:23:44.352
+<v Parantainen Antti>Control rule G1 part of the G subsystem A.
+In this case it means it's alarm station</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/115-1
+00:23:44.352 --> 00:23:49.184
+<v Parantainen Antti>and it is the first alarm station in that
+control rule.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/116-0
+00:23:51.264 --> 00:23:58.468
+<v Parantainen Antti>That's how we are naming our different
+stations and development DNA and we</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/116-1
+00:23:58.468 --> 00:24:05.192
+<v Parantainen Antti>already know from the name,
+for example GP01 that it is part of the G</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/116-2
+00:24:05.192 --> 00:24:05.864
+<v Parantainen Antti>system.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/117-0
+00:24:07.184 --> 00:24:14.864
+<v Parantainen Antti>So it is controlling those devices in
+this next laboratory.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/117-1
+00:24:14.864 --> 00:24:18.704
+<v Parantainen Antti>It it would be like EP01 like.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/118-0
+00:24:19.664 --> 00:24:20.944
+<v Parantainen Antti>Probably here.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/119-0
+00:24:22.624 --> 00:24:25.784
+<v Parantainen Antti>If we are locking those stations in that.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/121-0
+00:24:26.944 --> 00:24:34.570
+<v Parantainen Antti>Energy Technology Lab there's EP01EP02.
+That means that there's two process</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/121-1
+00:24:34.570 --> 00:24:41.895
+<v Parantainen Antti>stations and those are part of the E
+subsystem Energy Technology P means</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/121-2
+00:24:41.895 --> 00:24:44.504
+<v Parantainen Antti>process station and 01/02.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/122-0
+00:24:45.104 --> 00:24:48.984
+<v Parantainen Antti>It divides those two stations from each
+other.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/123-0
+00:24:51.944 --> 00:25:01.040
+<v Parantainen Antti>And the same thing applies to all Volumet
+system if you go to for example the power</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/123-1
+00:25:01.040 --> 00:25:02.664
+<v Parantainen Antti>plant there in.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/124-0
+00:25:03.784 --> 00:25:08.104
+<v Parantainen Antti>All of up, for example,
+there is a subsystem for.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/125-0
+00:25:09.544 --> 00:25:16.412
+<v Parantainen Antti>For different like power plants,
+for example the Keliolati power plant is</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/125-1
+00:25:16.412 --> 00:25:24.209
+<v Parantainen Antti>having is it the E system and Bravahalati
+power plant is having A system and so on.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/125-2
+00:25:24.209 --> 00:25:26.344
+<v Parantainen Antti>I don't remember those.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/126-0
+00:25:26.704 --> 00:25:34.042
+<v Parantainen Antti>For subsystem names from at the moment,
+but that is like the principle in a</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/126-1
+00:25:34.042 --> 00:25:37.904
+<v Parantainen Antti>actual meals and power plants and so on.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/127-0
+00:25:38.864 --> 00:25:46.085
+<v Parantainen Antti>Here's a couple of examples how that
+naming principle works.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/127-1
+00:25:46.085 --> 00:25:54.963
+<v Parantainen Antti>GP 01 is subsystem G backup station and
+it's number one and same thing for</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/127-2
+00:25:54.963 --> 00:25:56.384
+<v Parantainen Antti>subsystem E.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/128-0
+00:25:56.464 --> 00:26:00.744
+<v Parantainen Antti>EB01 is the backup station for E
+subsystem.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/129-0
+00:26:02.104 --> 00:26:04.424
+<v Parantainen Antti>That's like the principle here.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/130-0
+00:26:05.824 --> 00:26:11.867
+<v Parantainen Antti>And the things you need to cover in this
+course is this power process, controller,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/130-1
+00:26:11.867 --> 00:26:15.652
+<v Parantainen Antti>alarm station,
+backup station and operator station.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/130-2
+00:26:15.652 --> 00:26:19.584
+<v Parantainen Antti>That is basically the things you need in
+this course.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/131-0
+00:26:20.784 --> 00:26:27.235
+<v Parantainen Antti>So you need to divide those by its name.
+When I'm talking for example GB 01,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/131-1
+00:26:27.235 --> 00:26:33.937
+<v Parantainen Antti>you need to understand that it is the IT
+is the subsystem G process controller.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/131-2
+00:26:33.937 --> 00:26:35.864
+<v Parantainen Antti>That is the main thing.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/132-0
+00:26:39.024 --> 00:26:39.144
+<v Parantainen Antti>OK.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/133-0
+00:26:40.624 --> 00:26:44.531
+<v Parantainen Antti>Yeah.
+Any questions about this name in policy?</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/133-1
+00:26:44.531 --> 00:26:44.864
+<v Parantainen Antti>Yep.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/134-0
+00:26:46.304 --> 00:26:46.824
+<v Parantainen Antti>Yeah.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/137-0
+00:26:58.904 --> 00:27:00.904
+<v Parantainen Antti>Do we have any examples here?</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/138-0
+00:27:04.344 --> 00:27:05.464
+<v Parantainen Antti>Over.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/139-0
+00:27:09.544 --> 00:27:16.744
+<v Parantainen Antti>Down Profibus. OK,
+this is this is named for just that if</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/139-1
+00:27:16.744 --> 00:27:23.944
+<v Parantainen Antti>you are looking at the system layout here
+in the GB01-PB.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/140-0
+00:27:24.544 --> 00:27:31.710
+<v Parantainen Antti>This is just a label for this Profibus
+control. This is Profibus transformer.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/140-1
+00:27:31.710 --> 00:27:38.967
+<v Parantainen Antti>I don't know how to call this device,
+but this is the device under the process</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/140-2
+00:27:38.967 --> 00:27:41.264
+<v Parantainen Antti>that is physically there.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/141-0
+00:27:41.584 --> 00:27:50.778
+<v Parantainen Antti>We are having the network connector here
+and that is changing the RJ 45 connection</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/141-1
+00:27:50.778 --> 00:27:53.104
+<v Parantainen Antti>to this Profibus the.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/142-0
+00:27:53.824 --> 00:27:58.704
+<v Parantainen Antti>9 connectors,
+so that is just name for this prophy bus.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/143-0
+00:27:59.984 --> 00:28:04.252
+<v Parantainen Antti>Converter.
+If we check out a label from this device,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/143-1
+00:28:04.252 --> 00:28:09.727
+<v Parantainen Antti>there should be a label there.
+It is a GP01 which means the process</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/143-2
+00:28:09.727 --> 00:28:12.304
+<v Parantainen Antti>station and there the Bravi bus.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/144-0
+00:28:13.624 --> 00:28:14.664
+<v Parantainen Antti>Uh, profit boost.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/145-0
+00:28:16.384 --> 00:28:22.722
+<v Parantainen Antti>Yeah, that is like a hub.
+Basically we can connect with that device</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/145-1
+00:28:22.722 --> 00:28:25.984
+<v Parantainen Antti>3 Profibus networks to one station.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/146-0
+00:28:30.504 --> 00:28:37.144
+<v Parantainen Antti>Excuse me, SW. Yeah, that is a switch.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/147-0
+00:28:38.304 --> 00:28:45.615
+<v Parantainen Antti>That also means that GB 01 means the
+process station and this is actually the</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/147-1
+00:28:45.615 --> 00:28:50.583
+<v Parantainen Antti>FBC number,
+the slot where the FBC for this profinet</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/147-2
+00:28:50.583 --> 00:28:53.864
+<v Parantainen Antti>is configured and there's a switch.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/148-0
+00:28:54.144 --> 00:29:00.270
+<v Parantainen Antti>Then there's only one switch.
+I don't know what is the label SV10,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/148-1
+00:29:00.270 --> 00:29:05.024
+<v Parantainen Antti>it's probably better naming policy would
+be S SW01,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/148-2
+00:29:05.024 --> 00:29:08.864
+<v Parantainen Antti>but that is how it is done in this system.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/149-0
+00:29:09.264 --> 00:29:14.517
+<v Parantainen Antti>Yeah, IP address here and there.
+Are they like fixed? For example,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/149-1
+00:29:14.517 --> 00:29:19.848
+<v Parantainen Antti>the IP address is on the.
+Is it like something fixed or we can just</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/149-2
+00:29:19.848 --> 00:29:24.944
+<v Parantainen Antti>enter anything you want?
+There is a policy for the IP addresses.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/150-0
+00:29:25.824 --> 00:29:28.464
+<v Parantainen Antti>How those are used in the different
+subsystems?</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/151-0
+00:29:30.584 --> 00:29:37.666
+<v Parantainen Antti>Basically there's one like AC class
+network reserved for one subsystem.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/151-1
+00:29:37.666 --> 00:29:44.944
+<v Parantainen Antti>If we are looking for example here in the
+system layout, we can see that.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/152-0
+00:29:45.904 --> 00:29:49.704
+<v Parantainen Antti>Actually it is not applying here,
+but usually.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/153-0
+00:29:51.184 --> 00:29:56.219
+<v Parantainen Antti>Isn't that a good example?
+Because our GP and EP process bases,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/153-1
+00:29:56.219 --> 00:30:02.827
+<v Parantainen Antti>those are the in the different subsystem,
+but usually those are also in a different</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/153-2
+00:30:02.827 --> 00:30:06.996
+<v Parantainen Antti>sub networks.
+That is like the way it is done in the</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/153-3
+00:30:06.996 --> 00:30:07.704
+<v Parantainen Antti>industry.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/154-0
+00:30:07.984 --> 00:30:12.784
+<v Parantainen Antti>But those are also in a different IP
+address area,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/154-1
+00:30:12.784 --> 00:30:19.090
+<v Parantainen Antti>so it is easier easier also in the
+network configuration to divide</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/154-2
+00:30:19.090 --> 00:30:26.713
+<v Parantainen Antti>communication between the subsystems when
+those are in the different networks as</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/154-3
+00:30:26.713 --> 00:30:27.184
+<v Parantainen Antti>well.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/156-0
+00:30:33.704 --> 00:30:34.504
+<v Parantainen Antti>Any other questions?</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/157-0
+00:30:41.664 --> 00:30:46.987
+<v Parantainen Antti>If not,
+let's do one thing before we are having a</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/157-1
+00:30:46.987 --> 00:30:48.584
+<v Parantainen Antti>break, that is.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/158-0
+00:30:49.984 --> 00:31:00.737
+<v Parantainen Antti>Here in our our schedule for today and
+The thing is we are getting the remote</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/158-1
+00:31:00.737 --> 00:31:05.424
+<v Parantainen Antti>access to Valmet DNA and there is.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/159-0
+00:31:05.904 --> 00:31:11.418
+<v Parantainen Antti>One document here in this next section in
+the IO application engineering and</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/159-1
+00:31:11.418 --> 00:31:17.003
+<v Parantainen Antti>there's this vomit DNA remote access.
+So we are looking at this document over</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/159-2
+00:31:17.003 --> 00:31:21.944
+<v Parantainen Antti>here and for the beginning before you do
+anything this is basically.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/160-0
+00:31:22.224 --> 00:31:27.069
+<v Parantainen Antti>If you are using development DNA for
+example from your home,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/160-1
+00:31:27.069 --> 00:31:32.946
+<v Parantainen Antti>then you are using this remote dot yonk
+dot FI address and you can access</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/160-2
+00:31:32.946 --> 00:31:38.744
+<v Parantainen Antti>development DNA where wherever you are
+just with that remote connection.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/161-0
+00:31:39.184 --> 00:31:42.544
+<v Parantainen Antti>And you can get the access to the EIS
+wherever.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/162-0
+00:31:44.144 --> 00:31:50.866
+<v Parantainen Antti>If you are using that,
+you are following these steps over here,</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/162-1
+00:31:50.866 --> 00:31:59.059
+<v Parantainen Antti>but in this classroom we are actually
+taking a direct like the remote desktop</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/162-2
+00:31:59.059 --> 00:31:59.584
+<v Parantainen Antti>from.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/163-0
+00:32:00.784 --> 00:32:03.624
+<v Parantainen Antti>From here and you are doing it this way.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/164-0
+00:32:05.424 --> 00:32:07.304
+<v Parantainen Antti>You are typing here.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/165-0
+00:32:08.424 --> 00:32:11.144
+<v Parantainen Antti>Remote desktop connection.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/166-0
+00:32:12.504 --> 00:32:12.544
+<v Parantainen Antti>Oh.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/167-0
+00:32:13.824 --> 00:32:19.941
+<v Parantainen Antti>Or look it up from the start menu,
+just open the remote desktop connection</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/167-1
+00:32:19.941 --> 00:32:24.264
+<v Parantainen Antti>and from there you are having this kind
+of dialogue.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/168-0
+00:32:25.744 --> 00:32:29.384
+<v Parantainen Antti>You are typing here EAS-G.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/171-0
+00:32:39.584 --> 00:32:45.990
+<v Parantainen Antti>That means we are taking a remote
+connection to our engineering activity</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/171-1
+00:32:45.990 --> 00:32:48.184
+<v Parantainen Antti>server in a GE subsystem.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/172-0
+00:32:49.264 --> 00:32:54.384
+<v Parantainen Antti>When you press connect,
+if it is giving a dialogue that you can</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/172-1
+00:32:54.384 --> 00:33:00.624
+<v Parantainen Antti>enter the like the passcode, skip it.
+You need to have this kind of dialogue.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/172-2
+00:33:00.624 --> 00:33:05.264
+<v Parantainen Antti>You can enter your username which is your
+e-mail address.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/173-0
+00:33:05.864 --> 00:33:11.689
+<v Parantainen Antti>And from there just use the regular
+password you are using in our systems.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/173-1
+00:33:11.689 --> 00:33:15.727
+<v Parantainen Antti>This is in the AD.
+It can connect you into that PC.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/173-2
+00:33:15.727 --> 00:33:16.504
+<v Parantainen Antti>Just type.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/174-0
+00:33:21.584 --> 00:33:27.123
+<v Parantainen Antti>Your password there and it is asking this
+dialogue.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/174-1
+00:33:27.123 --> 00:33:31.384
+<v Parantainen Antti>Just click yes and you should have your.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/175-0
+00:33:33.184 --> 00:33:36.984
+<v Parantainen Antti>EASG remote connection opening there.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/176-0
+00:33:38.144 --> 00:33:42.584
+<v Parantainen Antti>And in the end you should have there some
+kind of window.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/177-0
+00:33:44.904 --> 00:33:49.427
+<v Parantainen Antti>Desktop open there and if you get this
+open this is correct.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/177-1
+00:33:49.427 --> 00:33:54.914
+<v Parantainen Antti>It is probably taking some time now in
+the first time because everyone is</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/177-2
+00:33:54.914 --> 00:34:00.104
+<v Parantainen Antti>opening at the same time and you are
+logging in here logging in here.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/178-0
+00:34:00.784 --> 00:34:07.627
+<v Parantainen Antti>First time it is building those in your
+user like configuration to the server and</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/178-1
+00:34:07.627 --> 00:34:13.885
+<v Parantainen Antti>that's kind of things. That's why.
+Let's open this in this point and let's</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/178-2
+00:34:13.885 --> 00:34:15.304
+<v Parantainen Antti>have a break now.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/179-0
+00:34:15.384 --> 00:34:21.149
+<v Parantainen Antti>So that we can give the server some time
+to recover from that huge load because</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/179-1
+00:34:21.149 --> 00:34:24.104
+<v Parantainen Antti>everyone is logging there the first time.</v>
+
+f404ceab-a734-401c-b4c0-5ecd85df59e7/180-0
+00:34:25.704 --> 00:34:32.744
+<v Parantainen Antti>Did you get this open? This kind of view?
+Nice. Let's have a break then.</v>

@@ -1,0 +1,125 @@
+
+Parantainen Antti
+0 minuuttia 6 sekuntia0:06
+Parantainen Antti 0 minuuttia 6 sekuntia
+OK, so our next topic here is that we are going to check out the basic application engineering in the function block CAD and we are also also already starting probably this assignment to.
+Parantainen Antti 0 minuuttia 25 sekuntia
+Which is the IO application engineering part here in the model?
+Parantainen Antti 0 minuuttia 31 sekuntia
+That's why we are checking the IO allocation here, because we are training the basics of the application engineering together with this assignment to which is the IO application engineering.
+Parantainen Antti 0 minuuttia 47 sekuntia
+So let's have a look what we are about to do in this exercise.
+Parantainen Antti 0 minuuttia 54 sekuntia
+So this is not your bird like a.
+Parantainen Antti 0 minuuttia 59 sekuntia
+Your first experience with this malmet DNA software tool which is the function block cat and we are creating here small like a hello world software with malmet DNA.
+Parantainen Antti 1 minuutti 15 sekuntia
+Function block cat and we are practicing how this tool is used. What are the best principles?
+Parantainen Antti 1 minuutti 25 sekuntia
+And what I mean by best principles, how do how do we use this tool? Those are actually like the rules that you need to follow when you are doing this kind of application work and then these like rules.
+Parantainen Antti 1 minuutti 41 sekuntia
+We are going to to going through today will apply the rest of this course and also the DCS system tool course. So this is quite important things that you'll follow the instructions we are about to go today.
+Parantainen Antti 1 minuutti 57 sekuntia
+So basically this application is done completely like in a guided way. So I'm guiding you how to create this kind of application.
+Parantainen Antti 2 minuuttia 11 sekuntia
+And I'm also in the same time giving you all the best practices and also the rules you need to follow to get the functioning software. Those are quite important things that you follow the rules I'm giving you today.
+Parantainen Antti 1 tunti 7 minuuttia 23 sekuntia
+Last version, so we are selecting that one.
+Parantainen Antti 1 tunti 7 minuuttia 27 sekuntia
+When I click OK, I can then place my object here and I'm already thinking about the wires what I'm about to draw here. So always try to do with straight wires. I'm calling the wires to connection.
+Parantainen Antti 1 tunti 7 minuuttia 43 sekuntia
+You know we are about to draw next. I'm calling them wires or connecting wires or something like that, but I'm already checking out that I'm placing this line because I want to connect the IO block.
+Parantainen Antti 1 tunti 8 minuuttia
+So this AM clock AV member.
+Parantainen Antti 1 tunti 8 minuuttia 6 sekuntia
+So I want to place them level AV is analog value, I think so. So I'm clicking here so it is now in the correct place.
+Parantainen Antti 1 tunti 8 minuuttia 21 sekuntia
+And the parameters inside the AM block, we need to define the execution order, but in our example the execution of order of the AM is 1.
+Parantainen Antti 1 tunti 8 minuuttia 37 sekuntia
+So we can leave it as it is. Let's talk about that when we are adding the next block, but we are leaving the execution order to one. But for the tag name we are typing just like in the example your initials dash TT dash 100.
+Parantainen Antti 1 tunti 8 minuuttia 55 sekuntia
+Without any dot F or dot dot I or something like that like it is in a index example for example and that's why.
+Parantainen Antti 1 tunti 9 minuuttia 7 sekuntia
+These are different names because there is this dot I. It means it is the input card for this analog method and PR initial dash TG dash 100 is different than this one over here because there is no that.
+Parantainen Antti 1 tunti 9 minuuttia 24 sekuntia
+dot dot I or something like that and that is one of the reasons I here modify this one.
+Parantainen Antti 1 tunti 9 minuuttia 32 sekuntia
+So I remember there is this PR that need to be there and in this like the initial value there is no dot something, so there's no dot something in my tag name as well.
+Parantainen Antti 1 tunti 9 minuuttia 47 sekuntia
+OK.
+Parantainen Antti 1 tunti 9 minuuttia 52 sekuntia
+TT100 just like this and OK.
+Parantainen Antti 1 tunti 9 minuuttia 59 sekuntia
+Well, I am having here an analog measurement handling function block. This is the actual first function block we created. These are also function block, but these are called IO cards or IO symbols or something like this. All those things we are placing here.
+Parantainen Antti 1 tunti 10 minuuttia 17 sekuntia
+Are uh punks and blocks?
+Parantainen Antti 1 tunti 10 minuuttia 20 sekuntia
+Then we need to connect this together. There is couple of options. Let's try like the basic one first.
+Parantainen Antti 1 tunti 10 minuuttia 30 sekuntia
+As you can see, the color of the dots are green both here and here.
+Parantainen Antti 1 tunti 10 minuuttia 38 sekuntia
+And that is already time for us. What's the data type of that measurement?
+Parantainen Antti 1 tunti 10 minuuttia 45 sekuntia
+And there is one document here in the model which is the.
+Parantainen Antti 1 tunti 10 minuuttia 56 sekuntia
+Um, where is it?
+Parantainen Antti 1 tunti 11 minuuttia 1 sekunti
+Let's try one thing. Go to the main page and go to the this calendar and try to the signal types document. Is it opening for you?
+Parantainen Antti 1 tunti 11 minuuttia 17 sekuntia
+It should open this kind of document. Is the link functioning? Yeah. Over here we can see we are going to the second page and here are a couple of those data types available. Basically all you need in this course.
+Parantainen Antti 1 tunti 11 minuuttia 34 sekuntia
+We can see them here.
+Parantainen Antti 1 tunti 11 minuuttia 36 sekuntia
+So as we can see, we are seeing the same green color color over there. It means that we are using the analog type of data. So these types are DNA specific data types.
+Parantainen Antti 1 tunti 11 minuuttia 54 sekuntia
+And those are available there in the function block cat and here you can see the color which is assigned to that data type. So all the analog values are using this ana type of signal.
+Parantainen Antti 1 tunti 12 minuuttia 11 sekuntia
+And actually the binary is missing. The binary is black, but let's talk about that then. Yeah, yellow that is missing there as well. But that is that is an integer value. Let's oh, actually float value.
+Parantainen Antti 1 tunti 12 minuuttia 30 sekuntia
+Let's check it probably next time, but let's now consider in that other type of signal.
+Parantainen Antti 1 tunti 12 minuuttia 37 sekuntia
+That can be found from here in the draw menu and the scalar wires and on a green. That is the wire we are needing in this example when you go here in the.
+Parantainen Antti 1 tunti 12 minuuttia 54 sekuntia
+Draw color wires and honor. Nothing happens but here.
+Parantainen Antti 1 tunti 13 minuuttia 3 sekuntia
+It is requesting the first point actually. Yeah, over here it is asking the first point of wire. So we need to click here where we want to connect that wire and I'm clicking here into IO block. It is not very easy to see.
+Parantainen Antti 1 tunti 13 minuuttia 22 sekuntia
+But my pointer is exactly there at this point and I'm clicking there.
+Parantainen Antti 1 tunti 13 minuuttia 30 sekuntia
+And then you can hardly see, but there's why you're that's it, why you're calling it this AAB and I'm clicking there again.
+Parantainen Antti 1 tunti 13 minuuttia 41 sekuntia
+And then I'm right clicking which ends the function.
+Parantainen Antti 1 tunti 13 minuuttia 47 sekuntia
+There after the right click it is point giving the pointer that there is this has ended here. This is quite important and it probably needs some practice, but it should look like this.
+Parantainen Antti 1 tunti 14 minuuttia 3 sekuntia
+Instead of the right click, you can use enter as well. It is ending the wire. If you mess it up so you are having some like a funny stuff, it is looking.
+Parantainen Antti 1 tunti 14 minuuttia 16 sekuntia
+Something like this for example, you can just select those wires and when I'm selecting from left to right, right to left, just like this, I have now selected only those wires.
+Parantainen Antti 1 tunti 14 minuuttia 31 sekuntia
+And here you can use the basic cat functions like erase. I'm typing E and enter so you can delete it and create it again if you make some failure.
+Parantainen Antti 1 tunti 14 minuuttia 46 sekuntia
+I will draw it again.
+Parantainen Antti 1 tunti 14 minuuttia 51 sekuntia
+Draw scalar values on a green just like this.
+Parantainen Antti 1 tunti 14 minuuttia 57 sekuntia
+So one more thing. Those are not aligning perfectly, but don't ever, ever, never, ever, ever, ever touch this button. This take out the snap or Oracle function or something like this. Don't touch ever, never, ever these buttons over here.
+Parantainen Antti 1 tunti 15 minuuttia 15 sekuntia
+This is one of those rules, not a good practice. That is a rule. I don't even know what those are available there, but it only messes up your software. It is probably looking OK or even better in some some points if you use those functions.
+Parantainen Antti 1 tunti 15 minuuttia 33 sekuntia
+But you will be ****** *** later on when you are trying to move those bonds. If you are losing this now then.
+Parantainen Antti 1 tunti 15 minuuttia 44 sekuntia
+There would be very bad things happening. Please don't touch here. That is one of those.
+Parantainen Antti 1 tunti 15 minuuttia 50 sekuntia
+Things I need to tell you today, and you really need to listen if I find that you have used those functions.
+Parantainen Antti 1 tunti 15 minuuttia 59 sekuntia
+I don't know what happens, but please don't use those.
+Parantainen Antti 1 tunti 16 minuuttia 5 sekuntia
+And now once again, it is good time to save our software.
+Parantainen Antti 1 tunti 16 minuuttia 11 sekuntia
+File and save as everything should be OK when I click OK that is now saved once again into our database.
+Parantainen Antti 1 tunti 16 minuuttia 23 sekuntia
+And here it is. You can check that modify modification time time has changed here that can that way you can verify that everything is OK. If you are getting some error dialogues here, we can check them together.
+Parantainen Antti 1 tunti 16 minuuttia 39 sekuntia
+Probably there is some like overlap with the names or something else. If you couldn't say that those were here, let's check it out. But I will now close the recording.
+Parantainen Antti 1 tunti 17 minuuttia 5 sekuntia
+Just like that.
