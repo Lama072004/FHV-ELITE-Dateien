@@ -1,0 +1,22 @@
+Passwort Arduino Wlan: vZDjRViuq9lsJ
+
+wir haben ein Lieblingsraum
+Wir haben vier Knöpfe (/\ , Menü/Übersicht , \/ , Jetzt buchen)
+als start-bild wird der der oberste Lieblingsraum an und rechts daneben der Status (entweder frei oder besetzt)
+darunter kommt ein langer Balken über den ganzen bildschirm
+darunter kommt ob der Raum frei bzw besetzt ist bis wann im Format hh:mm
+darunter bis wann der Raum gebucht wird (wird mit /\ und \/ +-10 min geändert) und angezeigt wird die Zeit bis wann im Format hh:mm
+wenn Menü/Übersicht gedrückt wird, wird eine liste mit allen Räumen (zuerst Lieblingsräume, dann alle anderen Räume in Alphabetischer reihenfolge)
+mit /\ und \/ kann dann ein raum gewählt werden. Die Auswahl welcher raum ausgewählt wird soll negiert werden also anstatt dass nur die schrift leuchtet soll alles andere außer der schrift angezeigt werden.
+
+wenn ein Raum ausgewählt wurde wird das gleiche wie am anfang angezeigt nur mit dem ausgewählten Raum
+
+wenn jetzt buchen gedrückt wird, wird gefragt ob man den Raum wirklich buchen möchte (als zurück kann menü gedrückt werden, und wenn jetzt buchen gedrückt wird der Raum tatsächlich gebucht werden)
+
+beim Lieblingsraum soll ein Herz davor stehen
+der Lieblingsraum kann gewählt werden in dem man lang auf Menü drückt (1 - 2 Sekunden)
+
+KI-Text:
+(
+Das Projekt ist ein auf dem Arduino Uno R4 mit Sensor Kit basierendes Raumbuchungssystem mit grafischer Benutzeroberfläche und vier Tasten zur Navigation und Steuerung. Nutzer können über die Tasten (Hoch /\, Runter \/, Menü/Übersicht, Jetzt buchen) einen Raum auswählen und Buchungen vornehmen. Beim Start wird der bevorzugte ("Lieblings-") Raum angezeigt, inklusive Belegungsstatus und geplanter Buchungszeit. Ein Menü erlaubt die Auswahl aller Räume (Favoriten zuerst, dann alphabetisch sortiert). Die Auswahl wird visuell durch eine Negativdarstellung hervorgehoben. Mit den Tasten kann die Buchungsdauer in 10-Minuten-Schritten angepasst werden. Durch kurzes oder langes Drücken der Menütaste können Nutzer Räume wechseln oder einen neuen Lieblingsraum festlegen. Beim Buchen erfolgt eine Sicherheitsabfrage zur Bestätigung. Das System nutzt das Display zur strukturierten Darstellung aller Informationen.
+)

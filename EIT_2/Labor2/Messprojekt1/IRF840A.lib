@@ -1,0 +1,7 @@
+.model IRF840A NMOS (
++ Level=3
++ Vto=3.000
++ Kp=3.700
++ Rs=0.05 Rd=0.05 Rg=2.0
++ Rds=0.85
+)

@@ -1,0 +1,7 @@
+.model PHP79NQ08LT NMOS (
++ Level=3
++ Vto=1.500
++ Kp=50.000
++ Rs=0.05 Rd=0.05 Rg=1.0
++ Rds=0.014
+)

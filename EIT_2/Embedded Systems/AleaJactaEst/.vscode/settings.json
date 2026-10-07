@@ -1,0 +1,21 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.espIdfPathWin": "c:\\idf\\.espressif\\v5.4.1\\esp-idf",
+  "idf.pythonInstallPath": "/usr/bin/python",
+  "idf.openOcdConfigs": [
+    "board/esp32s3-builtin.cfg"
+  ],
+  "idf.portWin": "COM5",
+  "idf.toolsPathWin": "d:\\esp",
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32s3"
+  },
+  "idf.flashType": "UART",
+  "idf.port": "/dev/ttyACM0",
+  "clangd.path": "/home/mathias/.espressif/tools/tools/esp-clang/esp-20.1.1_20250829/esp-clang/bin/clangd",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=**",
+    "--compile-commands-dir=/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_2/Embedded Systems/AleaJactaEst/build"
+  ]
+}

@@ -1,0 +1,23 @@
+Dokument bis nächste Woche:
+
+Pulsoxymetrie mit GY-MAX30102
+
+mobiles gerät mit kleinem esp32 (Arian hat bestellt)
+
+batterie betrieben
+
+Bluetooth Übertragung an Handy
+
+app mit flutter
+
+
+
+Im Rahmen des Moduls Embedded Systems wird ein Pulsoxymeter auf Basis des GY-MAX30102-Sensors und eines ESP32-C3 Mikrocontrollers entwickelt. Der Fokus liegt auf der Erfassung, Verarbeitung und drahtlosen Übertragung von Puls- und Sauerstoffsättigungswerten (SpO₂) mittels Bluetooth Low Energy (BLE). Die Implementierung erfolgt in C unter Verwendung geeigneter Embedded-Treiber und Signalverarbeitungsalgorithmen.
+
+Zur Visualisierung der Messdaten ist optional die Entwicklung einer einfachen Flutter-App vorgesehen, sofern der Projektzeitrahmen dies zulässt. Ein besonderer Schwerpunkt liegt auf der zuverlässigen Kommunikation zwischen Sensor, Mikrocontroller und Endgerät.
+
+Zur Validierung der Messgenauigkeit soll das entwickelte System – bei entsprechender zeitlicher Verfügbarkeit – mit einem professionellen SpO₂-Messgerät (z. B. einem Corpuls-System) verglichen werden.
+
+Erweiterungen wie die Erkennung von Pulsarrhythmien sowie Tachykardie und Bradykardie sind geplant, abhängig vom Verlauf des Projekts. Bei einer erkannten Anomalie könnte das System, sofern eine BLE-Verbindung besteht, eine Push- oder Toast-Benachrichtigung an den Nutzer senden.
+
+angeblich sehr aufwendig

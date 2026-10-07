@@ -1,0 +1,172 @@
+================================================================================
+                        FORMELSAMMLUNG LINEARE ALGEBRA                        
+================================================================================
+Basierend auf Übungen FH Vorarlberg und dem LA-Kurs von Klaus Rheinberger
+[pages.labs.fhv.at/~kr/lehre/la/]
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+1. VEKTOREN UND MATRIZEN
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+● Vektoroperationen:
+  - Addition:       [a₁] + [b₁] = [a₁+b₁]
+                   [a₂]   [b₂]   [a₂+b₂]
+  - Skalarprodukt:  a·b = a₁b₁ + a₂b₂ + ... + aₙbₙ
+  - Kreuzprod. (ℝ³):a×b = [a₂b₃-a₃b₂, a₃b₁-a₁b₃, a₁b₂-a₂b₁]
+
+● Matrizen:
+  - Multiplikation: (AB)ᵢⱼ = Σ Aᵢₖ·Bₖⱼ
+  - Transponierte:  (Aᵀ)ᵢⱼ = Aⱼᵢ
+  - Spur:          tr(A) = Σ Aᵢᵢ (Diagonalsumme)
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+2. LINEARE GLEICHUNGSSYSTEME (LGS)
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+● Lösbarkeit:
+  ┌───────────────┬───────────────────────────────────────┐
+  │ Rang(A) = Rang(A|b) = n │ Eindeutige Lösung          │
+  │ Rang(A) = Rang(A|b) < n │ Unendlich viele Lösungen   │
+  │ Rang(A) < Rang(A|b)     │ Keine Lösung               │
+  └───────────────┴───────────────────────────────────────┘
+
+● Gauß-Elimination:
+  - Ziel: Zeilenstufenform (REF)
+  - Pivot-Elemente: Erste Nicht-Null-Elemente pro Zeile
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+3. DETERMINANTE & INVERSE
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+● 2×2-Matrix:
+  det(A) = ad - bc      A⁻¹ = 1/det(A)·[d -b]
+                                        [-c a]
+
+● 3×3-Matrix (Sarrus):
+  det(A) = aei + bfg + cdh - ceg - bdi - afh
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+4. EIGENWERTE & EIGENVEKTOREN
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+● Char. Gleichung: det(A - λI) = 0
+● Eigenvektoren:   (A - λI)v = 0
+● Diagonalisierung: A = PDP⁻¹ (D = Diagonalmatrix)
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+5. ORTHOGONALITÄT & PROJEKTION
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+● Projektion von b auf a:
+  projₐb = (a·b / a·a)·a
+
+● Orthogonale Matrix:
+  QᵀQ = I (Spalten orthonormal)
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+6. LINEARE REGRESSION
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+● Methode der kleinsten Quadrate:
+  x = (AᵀA)⁻¹Aᵀb
+
+● Exponentieller Fit:
+  y = ceᵃᵗ → ln(y) = ln(c) + at
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+7. PYTHON-BEFEHLE
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+┌──────────────────────┬───────────────────────────────────────┐
+│ np.linalg.solve(A,b) │ Löst Ax = b                          │
+│ np.linalg.inv(A)     │ Inverse von A                        │
+│ np.linalg.eig(A)     │ Eigenwerte/-vektoren                 │
+│ np.polyfit(x,y,deg)  │ Polynomfit (Grad deg)                │
+└──────────────────────┴───────────────────────────────────────┘
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+8. ANWENDUNGEN (AUS ÜBUNGEN)
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+● Ill-Conditioned Systems:
+  Kleine Änderungen in b → große Änderungen in x
+
+● Adjazenzmatrizen:
+  Cᵢⱼ = 1 (wenn Kante i→j existiert)
+
+● Leontief-Modell:
+  p = (I - A)⁻¹d (Produktionsplanung)
+
+
+
+================================================================================
+                        NUMPY BEFEHLE FÜR LINEARE ALGEBRA                      
+================================================================================
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+1. MATRIXOPERATIONEN
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+np.array([[1,2],[3,4]])          # Matrix erstellen
+A.T                              # Transponierte
+np.linalg.inv(A)                 # Inverse (für quadratische Matrizen)
+np.linalg.det(A)                 # Determinante
+np.trace(A)                      # Spur (Summe der Diagonalelemente)
+np.eye(n)                        # Einheitsmatrix (n×n)
+np.diag([a,b,c])                 # Diagonalmatrix erstellen
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+2. LINEARE GLEICHUNGSSYSTEME
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+np.linalg.solve(A, b)            # Löse Ax = b (für quadratische A)
+np.linalg.lstsq(A, b, rcond=None)# Least-Squares-Lösung (für nicht-quadratische A)
+np.linalg.matrix_rank(A)         # Rang der Matrix
+np.linalg.pinv(A)                # Pseudoinverse (Moore-Penrose-Inverse)
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+3. EIGENWERTE & ZERLEGUNGEN
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+np.linalg.eig(A)                 # Eigenwerte und -vektoren
+np.linalg.eigvals(A)             # Nur Eigenwerte
+np.linalg.qr(A)                  # QR-Zerlegung
+np.linalg.svd(A)                 # Singulärwertzerlegung (SVD)
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+4. VEKTOROPERATIONEN
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+np.dot(a, b)                     # Skalarprodukt (a·b)
+np.cross(a, b)                   # Kreuzprodukt (nur ℝ³)
+np.linalg.norm(a)                # Norm (Länge) des Vektors
+np.angle(v)                      # Winkel komplexer Vektoren
+np.outer(a, b)                   # Äußeres Produkt (a⊗b)
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+5. SPEZIELLE MATRIZEN
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+np.zeros((m,n))                  # Nullmatrix
+np.ones((m,n))                   # Einsen-Matrix
+np.random.rand(m,n)              # Zufallsmatrix (Gleichverteilung)
+np.random.randn(m,n)             # Zufallsmatrix (Normalverteilung)
+np.triu(A)                       # Oberes Dreieck
+np.tril(A)                       # Unteres Dreieck
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+6. PRAKTISCHE ANWENDUNGEN (AUS ÜBUNGEN)
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+# Adjazenzmatrix-Analyse (Übung 4.5)
+C @ C                           # Matrixpotenz (C² für 1 Umstieg)
+np.linalg.matrix_power(C, k)    # Allgemeine Matrixpotenz
+
+# Dynamische Systeme (Übung 7.1)
+np.linalg.matrix_power(M, 50)   # Langzeitverhalten nach 50 Schritten
+
+# Lineare Regression (Übung 8.1)
+np.polyfit(t, np.log(y), 1)     # Exponentieller Fit (y = ce^{αt})
+np.polyval(coeffs, t_new)       # Auswertung des Polynoms
+
+================================================================================

@@ -1,0 +1,40 @@
+Halbleitertechnik Labor von Lampert Mathias, Bitschnau Philipp, Stampfl Andreas, Rupp Arian Andreas 
+
+3.1 Spannungsregelung
+
+3.1.1 Ungeregelter Spannungsversorgung
+
+Bei allen Messungen: Sinuswelle mit einer Amplitude von 15V und 50Hz.
+In der Mitte von jeder Halbwelle gibt es einen kleinen Hückel beim Strom über den Eingang, welcher den Kondensator ladet.
+In der gleichgerichteten Spannung an der Last, ist ein leichter Rippel zu erkennen.
+
+Erster Messaufbau fehlgeschlagen
+Zweiter Messaufbau ergibt sich eine Spannung von 15.4V mit einem nicht erkennbaren Rippel und sehr kleinem Ladestrom.
+bei Änderung auf 12kOhm ergibt sich eine Spannung von 15.7V mit einem leicht erkennbaren Rippel und einem besser erkennbaren Ladestrom.
+bei Änderung auf 1200kOhm ergibt sich eine Spannung von 15.9V kein Rippel erkennbar und kein Ladestromerkennbar.
+Probleme: Schmelzsicherung hat ausgelöst -> hat zu Messproblemen geführt
+
+Versuch mit verdoppelter Kapazität:
+Messung eins, normale Kapazität: Spannung am Verbraucher sind 14.91V, mit einem gut erkennbarem Rippel zwischen 15.64V und 14.36V.
+Messung zwei, mit doppelter Kapazität: Spannung am Verbraucher 15.00V, mit einem reduzierten Rippel von 15.34 bis 14.76V
+
+3.1.2 Zener-Stabilisierung
+
+Spannung über die Last ist 6.23V
+Spannungs-Amplitude am Kondensator ist im Bereich 15.7V bis 13.72V
+Strom über die Zener ist 15mA
+
+Erhöhung der Last führt über weniger Strom über die Last, aber die Zener-Spannung bleibt gleich, daher bleibt die Spannung über die Last gleich.
+
+Erhöhung der Last führt zu mehr Strom über die Last, bis keine Strom mehr über die Zener fließt und diese bei ca.100Ohm zusammenbricht.
+
+3.1.3 Emitterschaltung als Spannungsregler
+
+Spannung über die Last ist 5.83V
+Spannungs-Amplitude am Kondensator ist im Bereich 15.7V bis 13.72V
+Strom über die Zener ist 30.8mA
+
+Erhöhung der Last führt über weniger Strom über die Last, aber die Zener-Spannung bleibt gleich, daher bleibt die Spannung über die Last gleich.
+
+Erhöhung der Last führt zu mehr Strom über die Last, bis keine Strom mehr über die Zener fließt und diese bei ca.10Ohm zusammenbricht.
+
