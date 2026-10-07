@@ -1,0 +1,184 @@
+﻿# ===== OS / Editor =====
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.idea/
+*.iml
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+!.vscode/c_cpp_properties.json
+
+# ===== Secrets / lokal =====
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.jks
+*.keystore
+key.properties
+secrets.*
+*.local
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+.python-version
+*.egg-info/
+.eggs/
+dist/
+build/
+wheels/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# ===== ESP-IDF =====
+build/
+sdkconfig.old
+managed_components/
+.espressif/
+.cache/
+.clangd
+compile_commands.json
+# dependencies.lock und sdkconfig.defaults bewusst committen
+
+# ===== Flutter / Dart =====
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+.fvm/
+pubspec_overrides.yaml
+coverage/
+# pubspec.lock: bei Apps committen, bei Packages ignorieren
+
+# Flutter Android
+**/android/.gradle/
+**/android/captures/
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.java
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+
+# Flutter iOS / macOS
+**/ios/**/*.mode1v3
+**/ios/**/*.mode2v3
+**/ios/**/*.moved-aside
+**/ios/**/*.pbxuser
+**/ios/**/*.perspectivev3
+**/ios/**/xcuserdata/
+**/ios/**/DerivedData/
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/ephemeral/
+**/ios/Flutter/flutter_assets/
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+**/macos/Pods/
+**/macos/Flutter/ephemeral/
+**/macos/Flutter/GeneratedPluginRegistrant.swift
+
+# Flutter Linux / Windows / Web
+**/linux/flutter/ephemeral/
+**/windows/flutter/ephemeral/
+**/linux/flutter/generated_plugin_registrant.*
+**/windows/flutter/generated_plugin_registrant.*
+**/linux/flutter/generated_plugins.cmake
+**/windows/flutter/generated_plugins.cmake
+
+# ===== LTspice / ngspice / SPICE =====
+# .asc, .asy, .sub, .lib, .cir, .net-Eingaben bewusst committen
+*.raw
+*.op.raw
+*.log
+*.out
+*.fail
+*.fft
+*.plt
+*.tran
+*.asc.bak
+*.asc.autosave
+*.bak
+*.backup
+*.net
+*.cir.out
+*.sp.out
+*.ac
+*.dc
+*.noise
+*.wav.tmp
+Draft*.raw
+
+# ===== KiCad =====
+*-backups/
+*.kicad_prl
+fp-info-cache
+_autosave-*
+*.lck
+*-rescue.lib
+*-rescue.dcm
+*-rescue.kicad_sym
+*.kicad_pcb-bak
+*.sch-bak
+*.net.bak
+*.bak
+*.rpt
+*.drl.bak
+# Fertigungsdaten (gerber/, *.zip) nach Bedarf committen -> *.zip lÃ¤uft Ã¼ber LFS
+
+# ===== Logs / Temp =====
+*.log
+*.tmp
+*.bak
+tmp/
+# Visual Studio / C++
+.vs/
+x64/
+x86/
+Debug/
+Release/
+*.obj
+*.pdb
+*.ilk
+*.idb
+*.ipch
+*.tlog
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+
+
+# Grosse Dateien: nicht ins Repo, extern sichern
+VID_*.mp4
+DCS 1 Hardware*.mp4
+Exercise*.mp4
+waage.zip
+FlutterApp.zip
+Tetris_Lampert_Rupp.zip
+Waveforms.exe
+Waveforms.zip
+
+*.sync-conflict-*

@@ -1,0 +1,51 @@
+# ===== Zeilenenden =====
+* text=auto
+*.sh   text eol=lf
+*.bat  text eol=crlf
+*.ps1  text eol=crlf
+*.asc  text eol=crlf
+*.asy  text eol=crlf
+*.sln  text eol=crlf
+*.vcxproj text eol=crlf
+*.vcxproj.filters text eol=crlf
+
+# ===== Git LFS (gezielt) =====
+# GitHub Free: 1 GB LFS-Speicher + 1 GB Bandbreite pro Monat, max. 2 GB pro Datei.
+# Praesentationen
+Betreuungsbesuch.pptx filter=lfs diff=lfs merge=lfs -text
+Abschlie*_neu.pptx filter=lfs diff=lfs merge=lfs -text
+EinfeuhrungWS24.pptx filter=lfs diff=lfs merge=lfs -text
+# Datensaetze / Messwerte
+*N3000000.txt filter=lfs diff=lfs merge=lfs -text
+C2Infineon.txt filter=lfs diff=lfs merge=lfs -text
+C2Nexperia.txt filter=lfs diff=lfs merge=lfs -text
+# Audio / Archive
+Wie_Technik*.m4a filter=lfs diff=lfs merge=lfs -text
+*WidMessUndAntriebsEL.zip filter=lfs diff=lfs merge=lfs -text
+Labor3-MathiasLampert.zip filter=lfs diff=lfs merge=lfs -text
+
+# ===== SPICE / KiCad (Text) =====
+*.cir  text
+*.sp   text
+*.spice text
+*.sub  text
+*.lib  text
+*.mod  text
+*.kicad_sch text
+*.kicad_pcb text
+*.kicad_sym text
+*.kicad_mod text
+*.kicad_pro text
+*.kicad_dru text
+
+# ===== Binaer (kein Diff) =====
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.webp binary
+*.ttf  binary
+*.otf  binary
+*.woff binary
+*.woff2 binary
