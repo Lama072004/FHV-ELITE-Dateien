@@ -1,0 +1,621 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+
+\geometry{a4paper, margin=2cm}
+
+\title{\textbf{Vollständiges Kompendium: Messschaltungen und Sensorik}}
+\author{Umfassende mathematische Abhandlung aller Vorlesungsinhalte (Lektion 0--8) \\ inklusive detaillierter Schritt-für-Schritt-Herleitungen aller Übertragungsfunktionen}
+\date{Semesterzusammenfassung}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+% ==========================================
+% SEKTION 1: ALLGEMEINE METHODIK DER ÜBERTRAGUNGSFUNKTIONEN
+% ==========================================
+\section{Allgemeines mathematisches Framework zur Herleitung von OPV-Übertragungsfunktionen}
+
+Um die Übertragungsfunktion einer beliebigen, mit Operationsverstärkern (OPV) realisierten Verknüpfungsschaltung systematisch aufzustellen, wird eine feste Abfolge von mathematischen Analyseschritten angewendet. Diese Methodik bildet das Fundament für lineare zeitinvariante Netzwerke (LTI-Systeme) sowohl im Zeitbereich als auch im komplexen Frequenzbereich (Laplace-Transformation / $s$-Ebene).
+
+\subsection{Die fundamentalen Axiome des idealen OPV}
+Jede Schaltungsanalyse beruht auf zwei Kernannahmen, die aus den idealen Eigenschaften abgeleitet sind (Eingangswiderstand $R_{\text{in}} \to \infty$, Leerlaufverstärkung $A_0 \to \infty$):
+\begin{enumerate}
+    \item \textbf{Die Knotenstrombedingung:} Da kein Strom in die Steuereingänge des OPV fließen kann, gilt für die Ströme am invertierenden Eingang ($i_N$) und am nichtinvertierenden Eingang ($i_P$):
+    \begin{equation}
+    i_N = 0 \quad \text{und} \quad i_P = 0
+    \end{equation}
+    \item \textbf{Das Prinzip des virtuellen Kurzschlusses:} Durch die unendlich hohe Verstärkung zwingt eine stabile negative Rückkopplung (Gegenkopplung) die Differenzspannung $u_D$ zwischen den Eingängen auf exakt Null. Die Potenziale an den beiden Eingangsknoten folgen einander unverzüglich nach:
+    \begin{equation}
+    u_D = u_P - u_N = 0 \implies u_N = u_P
+    \end{equation}
+    Liegt der nichtinvertierende Eingang fest auf Systemmasse ($u_P = 0\,\text{V}$), spricht man am invertierenden Eingang vom Zustand der \textbf{virtuellen Masse} ($u_N = 0\,\text{V}$).
+\end{enumerate}
+
+\subsection{Der algorithmische Leitfaden zur Schaltungsanalyse}
+Die Herleitung der Übertragungsfunktion erfolgt stets nach folgendem algorithmischen Ablauf:
+\begin{enumerate}
+    \item \textbf{Schritt 1: Referenzpotenzial bestimmen.} Ermitteln Sie das elektrische Potenzial am nichtinvertierenden Eingangsknoten $u_P$. Dies geschieht entweder durch direkte Verbindung mit Masse oder einer Quellspannung oder durch Aufstellen einer Spannungsteilergleichung für das anliegende Netzwerk.
+    \item \textbf{Schritt 2: Virtuellen Kurzschluss anwenden.} Übertragen Sie das Potenzial auf den invertierenden Knoten: $u_N = u_P$.
+    \item \textbf{Schritt 3: Knotengleichung aufstellen.} Wenden Sie die Kirchhoff'sche Knotenpunktregel (Knotensatz) auf den Knoten $u_N$ an. Die Summe aller zufließenden Ströme muss gleich der Summe aller abfließenden Ströme sein:
+    \begin{equation}
+    \sum i_{\text{zu}} = \sum i_{\text{ab}}
+    \end{equation}
+    \item \textbf{Schritt 4: Ströme durch Bauelement-Gleichungen ausdrücken.} Ersetzen Sie die Ströme durch die über den Zweigen abfallenden Differenzpotenziale, geteilt durch die jeweilige Impedanz des Bauteils:
+    \begin{itemize}
+        \item Für ohmsche Widerstände $R$: $i = \frac{u_{\text{Vor}} - u_{\text{Nach}}}{R}$
+        \item Für Kapazitäten $C$ im Zeitbereich: $i = C \cdot \frac{\text{d}(u_{\text{Vor}} - u_{\text{Nach}})}{\text{d}t}$
+        \item Für Kapazitäten $C$ im komplexen Frequenzbereich unter Nutzung der Impedanz $Z_C(s) = \frac{1}{sC}$: $i = \frac{u_{\text{Vor}} - u_{\text{Nach}}}{Z_C(s)} = sC \cdot (u_{\text{Vor}} - u_{\text{Nach}})$
+        \item Für nichtlineare Bauelemente (z. B. Dioden) unter Nutzung der Shockley-Gleichung: $i = I_S \cdot \left( e^{\frac{u_{\text{Vor}} - u_{\text{Nach}}}{U_T}} - 1 \right)$
+    \end{itemize}
+    \item \textbf{Schritt 5: Mathematische Elimination und Auflösung.} Setzen Sie die Bauelement-Gleichungen in den Knotensatz ein. Eliminieren Sie die Hilfsgröße $u_N$ durch Einsetzen von $u_P$. Lösen Sie das verbleibende Gleichungssystem so auf, dass die Ausgangsspannung $u_A$ als Funktion der Eingangsspannung $u_E$ isoliert wird. Das Verhältnis definiert die Übertragungsfunktion $H = \frac{u_A}{u_E}$.
+\end{enumerate}
+
+\newpage
+
+% ==========================================
+% SEKTION 2: LINEARE OPV-SCHALTUNGEN
+% ==========================================
+\section{Detaillierte Herleitungen linearer Operationsverstärkerschaltungen}
+
+\subsection{Invertierender Verstärker}
+\textbf{Herleitungsschritte:}
+\begin{enumerate}
+    \item Der Pluseingang liegt auf Masse: $u_P = 0\,\text{V}$.
+    \item Virtueller Kurzschluss fordert: $u_N = u_P = 0\,\text{V}$.
+    \item Knotengleichung am Knoten $u_N$: Strom $i_1$ fließt über $R_1$ zum Knoten hin, Strom $i_2$ fließt über $R_2$ vom Knoten weg zum Ausgang. Der Strom in den OPV ist Null ($i_N = 0$).
+    \begin{equation}
+    i_1 = i_2
+    \end{equation}
+    \item Einsetzen des Ohm'schen Gesetzes für beide Zweige unter Berücksichtigung der virtuellen Masse ($u_N = 0\,\text{V}$):
+    \begin{equation}
+    \frac{u_E - u_N}{R_1} = \frac{u_N - u_A}{R_2} \implies \frac{u_E - 0}{R_1} = \frac{0 - u_A}{R_2}
+    \end{equation}
+    \item Umformen und Isolieren der Ausgangsspannung $u_A$:
+    \begin{equation}
+    \frac{u_E}{R_1} = -\frac{u_A}{R_2} \implies u_A = -\frac{R_2}{R_1} \cdot u_E
+    \end{equation}
+\end{enumerate}
+
+\subsection{Nichtinvertierender Verstärker}
+\textbf{Herleitungsschritte:}
+\begin{enumerate}
+    \item Das Eingangssignal liegt direkt am nichtinvertierenden Eingang an: $u_P = u_E$.
+    \item Virtueller Kurzschluss fordert: $u_N = u_P = u_E$.
+    \item Knotengleichung am Knoten $u_N$: Ein Strom fließt von Masse über $R_1$ zum Knoten, ein zweiter Strom fließt über $R_2$ weiter zum Ausgang. Da $i_N = 0$, bilden $R_1$ und $R_2$ einen unbelasteten Spannungsteiler bezüglich der Ausgangsspannung $u_A$:
+    \begin{equation}
+    u_N = u_A \cdot \frac{R_1}{R_1 + R_2}
+    \end{equation}
+    \item Gleichsetzen von $u_N$ und $u_E$:
+    \begin{equation}
+    u_E = u_A \cdot \frac{R_1}{R_1 + R_2}
+    \end{equation}
+    \item Auflösen nach $u_A$ durch Multiplikation mit dem Kehrwert:
+    \begin{equation}
+    u_A = u_E \cdot \frac{R_1 + R_2}{R_1} = u_E \cdot \left( \frac{R_1}{R_1} + \frac{R_2}{R_1} \right) = u_E \cdot \left( 1 + \frac{R_2}{R_1} \right)
+    \end{equation}
+\end{enumerate}
+
+\subsection{Spannungsfolger (Impedanzwandler)}
+\textbf{Herleitungsschritte:}
+Diese Schaltung ist ein Extremfall des nichtinvertierenden Verstärkers mit einem Kurzschluss in der Rückkopplung ($R_2 = 0\,\Omega$) und offenem Pfad gegen Masse ($R_1 = \infty\,\Omega$).
+\begin{enumerate}
+    \item Eingangspotenzial: $u_P = u_E$.
+    \item Virtueller Kurzschluss: $u_N = u_P = u_E$.
+    \item Da der Ausgang direkt mit dem invertierenden Eingang verbunden ist, gilt zwingend: $u_A = u_N$.
+    \item Durch direktes Einsetzen folgt das Übertragungsverhalten:
+    \begin{equation}
+    u_A = u_E \quad \text{bzw.} \quad H = \frac{u_A}{u_E} = 1
+    \end{equation}
+\end{enumerate}
+
+\subsection{Invertierender Summierverstärker (Addierer)}
+\textbf{Herleitungsschritte:}
+\begin{enumerate}
+    \item Referenzpunkt: $u_P = 0\,\text{V} \implies u_N = 0\,\text{V}$ (Virtuelle Masse).
+    \item Knotengleichung am Summenknoten $u_N$: Die Ströme der einzelnen Eingangszweige ($i_1$ über $R_1$, $i_2$ über $R_2$, $\dots$, $i_n$ über $R_n$) fließen zum Knoten hin. Der Strom $i_R$ fließt über den gemeinsamen Rückkoppelwiderstand $R_R$ zum Ausgang ab.
+    \begin{equation}
+    i_1 + i_2 + \dots + i_n = i_R
+    \end{equation}
+    \item Einsetzen des Ohm'schen Gesetzes unter Berücksichtigung von $u_N = 0\,\text{V}$:
+    \begin{equation}
+    \frac{u_{E1} - 0}{R_1} + \frac{u_{E2} - 0}{R_2} + \dots + \frac{u_{En} - 0}{R_n} = \frac{0 - u_A}{R_R}
+    \end{equation}
+    \item Auflösen nach $u_A$ durch Multiplikation mit $-R_R$:
+    \begin{equation}
+    u_A = -R_R \cdot \left( \frac{u_{E1}}{R_1} + \frac{u_{E2}}{R_2} + \dots + \frac{u_{En}}{R_n} \right)
+    \end{equation}
+\end{enumerate}
+
+\subsection{Differenzverstärker (Subtrahierer)}
+\textbf{Herleitungsschritte:}
+\begin{enumerate}
+    \item Am Pluseingang bilden die Widerstände $R_2$ und $R_4$ einen klassischen Spannungsteiler für das Eingangssignal $u_{E2}$ gegen Systemmasse:
+    \begin{equation}
+    u_P = u_{E2} \cdot \frac{R_4}{R_2 + R_4}
+    \end{equation}
+    \item Virtueller Kurzschluss fordert die Übertragung des Potenzials: $u_N = u_P = u_{E2} \cdot \frac{R_4}{R_2 + R_4}$.
+    \item Knotengleichung am invertierenden Eingangsknoten $u_N$:
+    \begin{equation}
+    i_1 = i_3 \implies \frac{u_{E1} - u_N}{R_1} = \frac{u_N - u_A}{R_3}
+    \end{equation}
+    \item Trennung der Terme zur Isolation von $u_A$:
+    \begin{equation}
+    \frac{u_{E1}}{R_1} - \frac{u_N}{R_1} = \frac{u_N}{R_3} - \frac{u_A}{R_3} \implies \frac{u_A}{R_3} = u_N \cdot \left( \frac{1}{R_1} + \frac{1}{R_3} \right) - \frac{u_{E1}}{R_1}
+    \end{equation}
+    \item Multiplikation der gesamten Gleichung mit $R_3$:
+    \begin{equation}
+    u_A = u_N \cdot R_3 \cdot \left( \frac{R_3 + R_1}{R_1 \cdot R_3} \right) - \frac{R_3}{R_1} \cdot u_{E1} = u_N \cdot \left( 1 + \frac{R_3}{R_1} \right) - \frac{R_3}{R_1} \cdot u_{E1}
+    \end{equation}
+    \item Einsetzen des in Schritt 1 ermittelten Potenzials $u_N$:
+    \begin{equation}
+    u_A = \left( u_{E2} \cdot \frac{R_4}{R_2 + R_4} \right) \cdot \left( 1 + \frac{R_3}{R_1} \right) - \frac{R_3}{R_1} \cdot u_{E1}
+    \end{equation}
+    \item \textbf{Anwendung der Symmetriebedingung:} Um eine reine Differenzverstärkung ohne Gleichtaktfehler zu erzielen, müssen die Widerstandsverhältnisse exakt abgeglichen sein ($\frac{R_3}{R_1} = \frac{R_4}{R_2} \implies R_3 \cdot R_2 = R_1 \cdot R_4$). Formen wir den vorderen Klammerterm um:
+    \begin{equation}
+    \frac{R_4}{R_2 + R_4} \cdot \left( \frac{R_1 + R_3}{R_1} \right) = \frac{R_4 \cdot (R_1 + R_3)}{R_1 \cdot (R_2 + R_4)} = \frac{R_4 R_1 + R_4 R_3}{R_1 R_2 + R_1 R_4}
+    \end{equation}
+    Ersetzen von $R_1 R_4$ im Nenner durch $R_3 R_2$:
+    \begin{equation}
+    \frac{R_4 R_1 + R_4 R_3}{R_1 R_2 + R_3 R_2} = \frac{R_4 \cdot (R_1 + R_3)}{R_2 \cdot (R_1 + R_3)} = \frac{R_4}{R_2} = \frac{R_3}{R_1}
+    \end{equation}
+    \item Das mathematisch vereinfachte Endergebnis lautet:
+    \begin{equation}
+    u_A = \frac{R_3}{R_1} \cdot (u_{E2} - u_{E1})
+    \end{equation}
+\end{enumerate}
+
+\subsection{Instrumentenverstärker (Instrumentationsverstärker)}
+Ein Instrumentenverstärker eliminiert den Nachteil des einfachen Differenzverstärkers (endlicher, unsymmetrischer Eingangswiderstand). Er schaltet zwei Impedanzwandler/Nichtinverter als Eingangsstufe vor, gekoppelt über einen gemeinsamen Widerstand $R_3$ (oft als $R_G$ für Gain bezeichnet).
+
+\textbf{Herleitungsschritte:}
+\begin{enumerate}
+    \item Die Eingangsspannungen $u_1$ und $u_2$ liegen direkt an den hochohmigen Pluseingängen der beiden Eingangs-OPVs an. Durch den virtuellen Kurzschluss liegen diese Potenziale auch an den inneren Knoten der Eingangsstufe an, welche den Widerstand $R_3$ einschließen.
+    \item Der Strom $i_G$, der durch den zentralen Widerstand $R_3$ fließt, berechnet sich direkt aus der Differenz dieser Potenziale:
+    \begin{equation}
+    i_G = \frac{u_1 - u_2}{R_3}
+    \end{equation}
+    \item Da kein Strom in die OPV-Eingänge fließen kann, muss dieser exakt gleiche Strom $i_G$ auch durch die beiden symmetrischen Rückkoppelwiderstände $R$ fließen. Die totale Spannungsdifferenz am Ausgang der ersten Stufe ($u_{A1} - u_{A2}$) ergibt sich aus dem Gesamtwiderstand der Kette ($R + R_3 + R = 2R + R_3$):
+    \begin{equation}
+    u_{A1} - u_{A2} = i_G \cdot (2R + R_3) = \frac{u_1 - u_2}{R_3} \cdot (2R + R_3) = \left( 1 + \frac{2R}{R_3} \right) \cdot (u_1 - u_2)
+    \end{equation}
+    \item Diese Differenzspannung wird nachfolgend einem Standard-Differenzverstärker mit der Verstärkung $1$ zugeführt. Das Gesamtsystem liefert damit die Übertragungsfunktion:
+    \begin{equation}
+    u_A = -\left( 1 + \frac{2R}{R_3} \right) \cdot (u_1 - u_2)
+    \end{equation}
+\end{enumerate}
+
+\subsection{Idealer Integrator}
+\textbf{Herleitungsschritte im Zeitbereich:}
+\begin{enumerate}
+    \item Referenzpotenzial: $u_P = 0\,\text{V} \implies u_N = 0\,\text{V}$ (Virtuelle Masse).
+    \item Knotengleichung am Eingangsknoten: Der Strom über den Widerstand $R_1$ entspricht dem Ladestrom des Rückkoppelkondensators $C_1$:
+    \begin{equation}
+    i_1(t) = i_C(t)
+    \end{equation}
+    \item Einsetzen der differentiellen Bauelement-Gleichung für den Kondensator ($i_C = C \cdot \frac{\text{d}u_C}{\text{d}t}$):
+    \begin{equation}
+    \frac{u_E(t) - 0}{R_1} = C_1 \cdot \frac{\text{d}(0 - u_A(t))}{\text{d}t} \implies \frac{u_E(t)}{R_1} = -C_1 \cdot \frac{\text{d}u_A(t)}{\text{d}t}
+    \end{equation}
+    \item Trennung der Variablen zur Vorbereitung der Integration:
+    \begin{equation}
+    \text{d}u_A(t) = -\frac{1}{R_1 \cdot C_1} \cdot u_E(t) \,\text{d}t
+    \end{equation}
+    \item Integration auf beiden Seiten über das Zeitintervall von $0$ bis $t$:
+    \begin{equation}
+    u_A(t) = -\frac{1}{R_1 \cdot C_1} \int_{0}^{t} u_E(\tau) \,\text{d}\tau + u_A(0)
+    \end{equation}
+\end{enumerate}
+
+\textbf{Herleitungsschritte im komplexen Frequenzbereich ($s$-Ebene):}
+\begin{enumerate}
+    \item Ersetzen Sie den Kondensator durch seine komplexe Impedanz: $Z_C(s) = \frac{1}{s \cdot C_1}$.
+    \item Wenden Sie die Formel des invertierenden Verstärkers an, indem Sie $R_2$ durch $Z_C(s)$ ersetzen:
+    \begin{equation}
+    H(s) = \frac{u_A(s)}{u_E(s)} = -\frac{Z_C(s)}{R_1} = -\frac{\frac{1}{s \cdot C_1}}{R_1} = -\frac{1}{s \cdot R_1 \cdot C_1}
+    \end{equation}
+    \item Für rein harmonische Anregungen setzen Sie $s = j\omega$ (mit $\omega = 2\pi f$):
+    \begin{equation}
+    H(j\omega) = -\frac{1}{j\omega \cdot R_1 \cdot C_1} = \frac{j}{\omega \cdot R_1 \cdot C_1}
+    \end{equation}
+\end{enumerate}
+\textbf{Explizites Berechnungsbeispiel (Hausaufgabe Lektion 3):}
+Gegeben: $R_1 = 10\,\text{k}\Omega$, $C_1 = 50\,\text{nF}$, Eingangsspannung $u_E(t) = 0{,}2\,\text{V} \cdot \sin(2\pi \cdot 500\,\text{Hz} \cdot t)$.
+\begin{enumerate}
+    \item Berechnung der Kreisfrequenz $\omega$:
+    \begin{equation}
+    \omega = 2\pi \cdot 500\,\text{Hz} = 1000\pi \approx 3141{,}59\,\text{rad/s}
+    \end{equation}
+    \item Integration des Zeitsignals nach der hergeleiteten Formel:
+    \begin{equation}
+    u_A(t) = -\frac{1}{10\,\text{k}\Omega \cdot 50\,\text{nF}} \int 0{,}2 \cdot \sin(\omega t) \,\text{d}t = -\frac{1}{5 \cdot 10^{-4}\,\text{s}} \cdot \left( -\frac{0{,}2}{\omega} \cdot \cos(\omega t) \right)
+    \end{equation}
+    \item Zusammenfassen der numerischen Vorfaktoren:
+    \begin{equation}
+    u_A(t) = \frac{0{,}2}{5 \cdot 10^{-4} \cdot 1000\pi} \cdot \cos(\omega t) = \frac{0{,}2}{0{,}5\pi} \cdot \cos(\omega t) = \frac{0{,}4}{\pi} \cdot \cos(\omega t) \approx 0{,}1273\,\text{V} \cdot \cos(2\pi \cdot 500\,\text{Hz} \cdot t)
+    \end{equation}
+\end{enumerate}
+
+\subsection{Idealer Differentiator}
+\textbf{Herleitungsschritte im Zeitbereich:}
+\begin{enumerate}
+    \item Referenzpotenzial: $u_P = 0\,\text{V} \implies u_N = 0\,\text{V}$ (Virtuelle Masse).
+    \item Knotengleichung: Der Ladestrom des Eingangskondensators $C_1$ fließt vollständig über den Rückkoppelwiderstand $R_2$ ab:
+    \begin{equation}
+    i_C(t) = i_2(t)
+    \end{equation}
+    \item Einsetzen der Bauelement-Gleichungen:
+    \begin{equation}
+    C_1 \cdot \frac{\text{d}(u_E(t) - 0)}{\text{d}t} = \frac{0 - u_A(t)}{R_2} \implies C_1 \cdot \frac{\text{d}u_E(t)}{\text{d}t} = -\frac{u_A(t)}{R_2}
+    \end{equation}
+    \item Isolieren von $u_A(t)$ durch Multiplikation mit $-R_2$:
+    \begin{equation}
+    u_A(t) = -R_2 \cdot C_1 \cdot \frac{\text{d}u_E(t)}{\text{d}t}
+    \end{equation}
+\end{enumerate}
+
+\textbf{Herleitungsschritte im komplexen Frequenzbereich ($s$-Ebene):}
+\begin{enumerate}
+    \item Ersetzen der Eingangskapazität durch die Impedanz $Z_C(s) = \frac{1}{s \cdot C_1}$.
+    \item Einsetzen in den invertierenden Ansatz:
+    \begin{equation}
+    H(s) = \frac{u_A(s)}{u_E(s)} = -\frac{R_2}{Z_C(s)} = -\frac{R_2}{\frac{1}{s \cdot C_1}} = -s \cdot R_2 \cdot C_1
+    \end{equation}
+    \item Transformation in den Fourier-Raum ($s = j\omega$):
+    \begin{equation}
+    H(j\omega) = -j\omega \cdot R_2 \cdot C_1
+    \end{equation}
+\end{enumerate}
+
+\newpage
+
+% ==========================================
+% SEKTION 3: NICHTLINEARE OPV-SCHALTUNGEN
+% ==========================================
+\section{Detaillierte Herleitungen nichtlinearer Operationsverstärkerschaltungen}
+
+Liegen nichtlineare Bauelemente (wie Halbleiterdioden oder Transistoren) im Signalpfad, wird die lineare Systemtheorie ungültig. Die Übertragungsfunktion wird durch transzendente Gleichungen beschrieben, welche mathematische Funktionen (Logarithmus, Exponentialfunktion) analog nachbilden.
+
+\subsection{Logarithmischer Verstärker (Logarithmierer)}
+In dieser Schaltung befindet sich eine Halbleiterdiode im Rückkoppelpfad, während der Eingang über einen ohmschen Widerstand gespeist wird.
+
+\textbf{Herleitungsschritte:}
+\begin{enumerate}
+    \item Zustand der virtuellen Masse anwenden: $u_P = 0\,\text{V} \implies u_N = 0\,\text{V}$.
+    \item Knotengleichung am invertierenden Eingang aufstellen: Der lineare Eingangsstrom $i_1$ muss exakt dem nichtlinearen Diodenstrom $i_D$ entsprechen:
+    \begin{equation}
+    i_1 = i_D
+    \end{equation}
+    \item Drücken Sie $i_1$ über das Ohm'sche Gesetz aus: $i_1 = \frac{u_E}{R_1}$.
+    \item Verwenden Sie für den Diodenstrom $i_D$ die \textbf{Shockley-Gleichung} für den pn-Übergang. Da die Diode vom Knoten $u_N$ zum Ausgang $u_A$ zeigt, fällt über ihr das Differenzpotenzial $u_D = u_N - u_A = 0 - u_A = -u_A$ ab:
+    \begin{equation}
+    i_D = I_S \cdot \left( e^{\frac{-u_A}{U_T}} - 1 \right)
+    \end{equation}
+    (wobei $I_S$ der Sperrsättigungsstrom und $U_T = \frac{k \cdot T}{e} \approx 26\,\text{mV}$ die thermische Spannung bei Raumtemperatur ist).
+    \item Das im regulären Betrieb $e^{\frac{-u_A}{U_T}} \gg 1$ gilt, vernachlässigen wir die Subtraktion der $1$:
+    \begin{equation}
+    \frac{u_E}{R_1} \approx I_S \cdot e^{\frac{-u_A}{U_T}}
+    \end{equation}
+    \item Isolieren des Exponentialterms durch Division mit $I_S$:
+    \begin{equation}
+    e^{\frac{-u_A}{U_T}} = \frac{u_E}{R_1 \cdot I_S}
+    \end{equation}
+    \item Anwendung des natürlichen Logarithmus ($\ln$) auf beiden Seiten der Gleichung zur Auflösung der Basis $e$:
+    \begin{equation}
+    -\frac{u_A}{U_T} = \ln\left( \frac{u_E}{R_1 \cdot I_S} \right)
+    \end{equation}
+    \item Multiplikation mit $-U_T$ liefert das finale Übertragungsverhalten:
+    \begin{equation}
+    u_A = -U_T \cdot \ln\left( \frac{u_E}{R_1 \cdot I_S} \right)
+    \end{equation}
+\end{enumerate}
+
+\subsection{Exponentieller Verstärker (Antilogarithmierer)}
+Hier werden die Bauelemente vertauscht: Die Diode liegt im Eingangspfad, der ohmsche Widerstand in der Rückkopplung.
+
+\textbf{Herleitungsschritte:}
+\begin{enumerate}
+    \item Zustand der virtuellen Masse anwenden: $u_P = 0\,\text{V} \implies u_N = 0\,\text{V}$.
+    \item Knotengleichung aufstellen: Der zufließende Diodenstrom entspricht dem abfließenden Strom über den Widerstand $R_2$:
+    \begin{equation}
+    i_D = i_2
+    \end{equation}
+    \item Die Diode liegt zwischen $u_E$ und $u_N$. Das über ihr abfallende Potenzial ist $u_D = u_E - u_N = u_E - 0 = u_E$. Einsetzen in die Shockley-Gleichung (unter Vernachlässigung der $-1$):
+    \begin{equation}
+    i_D = I_S \cdot e^{\frac{u_E}{U_T}}
+    \end{equation}
+    \item Drücken Sie den Strom $i_2$ über das Ohm'sche Gesetz aus: $i_2 = \frac{0 - u_A}{R_2} = -\frac{u_A}{R_2}$.
+    \item Gleichsetzen der Terme:
+    \begin{equation}
+    I_S \cdot e^{\frac{u_E}{U_T}} = -\frac{u_A}{R_2}
+    \end{equation}
+    \item Isolieren der Ausgangsspannung $u_A$ durch Multiplikation mit $-R_2$:
+    \begin{equation}
+    u_A = -R_2 \cdot I_S \cdot e^{\frac{u_E}{U_T}}
+    \end{equation}
+\end{enumerate}
+
+\subsection{Analoger Multiplizierer}
+Die Multiplikation zweier reeller Eingangsspannungen ($u_{E1}, u_{E2}$) lässt sich mathematisch auf eine Addition im logarithmischen Raum zurückführen, da gilt: $\ln(a \cdot b) = \ln(a) + \ln(b) \implies a \cdot b = \exp(\ln(a) + \ln(b))$.
+
+\textbf{Herleitungsschritte der Verknüpfungsschaltung:}
+\begin{enumerate}
+    \item Die Signale $u_{E1}$ und $u_{E2}$ werden zwei separaten, identischen Logarithmierern (siehe Abschnitt 3.1) zugeführt. Die Ausgänge lauten:
+    \begin{equation}
+    u_{\text{log}1} = -U_T \cdot \ln\left(\frac{u_{E1}}{R \cdot I_S}\right) \quad \text{und} \quad u_{\text{log}2} = -U_T \cdot \ln\left(\frac{u_{E2}}{R \cdot I_S}\right)
+    \end{equation}
+    \item Beide Signalspannungen werden einem Standard-Addierverstärker (siehe Abschnitt 2.4) mit gleichen Widerständen zugeführt, wodurch die Summe gebildet und invertiert wird:
+    \begin{equation}
+    u_{\text{sum}} = -(u_{\text{log}1} + u_{\text{log}2}) = U_T \cdot \left[ \ln\left(\frac{u_{E1}}{R \cdot I_S}\right) + \ln\left(\frac{u_{E2}}{R \cdot I_S}\right) \right]
+    \end{equation}
+    \item Anwendung des logarithmischen Additionstheorems fasst den Klammerterm zusammen:
+    \begin{equation}
+    u_{\text{sum}} = U_T \cdot \ln\left( \frac{u_{E1} \cdot u_{E2}}{(R \cdot I_S)^2} \right)
+    \end{equation}
+    \item Dieses Summensignal wird als Eingang an einen Antilogarithmierer (siehe Abschnitt 3.2) mit dem Rückkoppelwiderstand $R_M$ gelegt:
+    \begin{equation}
+    u_A = -R_M \cdot I_S \cdot e^{\frac{u_{\text{sum}}}{U_T}}
+    \end{equation}
+    \item Einsetzen von $u_{\text{sum}}$ in die Exponentialfunktion hebt den Logarithmus auf:
+    \begin{equation}
+    u_A = -R_M \cdot I_S \cdot \exp\left( \ln\left( \frac{u_{E1} \cdot u_{E2}}{(R \cdot I_S)^2} \right) \right) = -R_M \cdot I_S \cdot \frac{u_{E1} \cdot u_{E2}}{R^2 \cdot I_S^2}
+    \end{equation}
+    \item Kürzen des Sperrstroms $I_S$ liefert das mathematische Produkt, skaliert über die Schaltungskonstanten:
+    \begin{equation}
+    u_A = -\left(\frac{R_M}{R^2 \cdot I_S}\right) \cdot u_{E1} \cdot u_{E2} = -K_{\text{mult}} \cdot u_{E1} \cdot u_{E2}
+    \end{equation}
+\end{enumerate}
+
+\newpage
+
+% ==========================================
+% SEKTION 4: STOCHASTISCHE RAUSCHANALYSE IM NETZWERK
+% ==========================================
+\section{Ausführlicher mathematischer Berechnungsalgorithmus zur Rauschanalyse}
+
+Zur Quantifizierung des stochastischen Eigenrauschens in Messschaltungen (vgl. Lektion 2, Lektion 7 und Fachliteratur *Art Kay*) müssen alle unkorrelierten Rauschquellen im Netzwerk separat erfasst, auf den Ausgang transformiert und dort quadratisch addiert werden.
+
+\textbf{Explizites, lückenloses Berechnungsbeispiel einer Rauschanalyse (Hausaufgabe Lektion 2):}
+Gegeben sei eine Verstärkerschaltung mit folgenden Parametern:
+Widerstände: $R_1 = 10\,\text{k}\Omega$, $R_2 = 20\,\text{k}\Omega$.
+OPV-Kenngrößen: Rauschspannungsdichte $e_n = 10\,\text{nV}/\sqrt{\text{Hz}}$, Rauschstromdichte $i_n = 0{,}2\,\text{pA}/\sqrt{\text{Hz}}$, Eckfrequenz des $1/f$-Rauschens nicht dominant.
+Die Schaltung besitzt eine obere 3dB-Grenzfrequenz von $f_{3dB} = 100\,\text{kHz}$. Die Umgebungstemperatur beträgt $T = 298{,}15\,\text{K}$ ($25^\circ\text{C}$).
+
+\subsection{Schritt 1: Berechnung der äquivalenten Rauschbandbreite ($BW_n$)}
+Da das System ein Tiefpassverhalten erster Ordnung aufweist, wird die Rauschbandbreite über den analytischen Korrekturfaktor bestimmt:
+\begin{equation}
+BW_n = \frac{\pi}{2} \cdot f_{3dB} = 1{,}5708 \cdot 100\,\text{kHz} = 157080\,\text{Hz}
+\end{equation}
+
+\subsection{Schritt 2: Berechnung des thermischen Widerstandsrauschens}
+Die spektralen Rauschleistungsdichten der beiden ohmschen Widerstände werden über die Boltzmann-Konstante ($k = 1{,}38 \cdot 10^{-23}\,\text{J/K}$) bestimmt:
+\begin{equation}
+4kT = 4 \cdot 1{,}38 \cdot 10^{-23} \cdot 298{,}15 = 1{,}6458 \cdot 10^{-20}\,\text{V}^2/(\Omega \cdot \text{Hz})
+\end{equation}
+\begin{enumerate}
+    \item \textbf{Effektivwert des Rauschens von $R_1$ am Ausgang:} Der Rauschstrom von $R_1$ sieht die Übertragungsfunktion eines invertierenden Verstärkers ($A_{v1} = -R_2/R_1 = -20/10 = -2$):
+    \begin{equation}
+    U_{n,R1,\text{aus}} = \sqrt{4kT \cdot R_1 \cdot BW_n} \cdot \left| \frac{R_2}{R_1} \right| = \sqrt{1{,}6458 \cdot 10^{-20} \cdot 10000 \cdot 157080} \cdot 2
+    \end{equation}
+    \begin{equation}
+    U_{n,R1,\text{aus}} = \sqrt{2{,}5852 \cdot 10^{-11}} \cdot 2 = 5{,}084 \cdot 10^{-6}\,\text{V} \cdot 2 = 10{,}169\,\mu\text{V}_{\text{rms}}
+    \end{equation}
+    \item \textbf{Effektivwert des Rauschens von $R_2$ am Ausgang:} Da $R_2$ direkt im Rückkoppelpfad liegt, überträgt sich sein Rauschen mit dem Faktor $1$ auf den Ausgang:
+    \begin{equation}
+    U_{n,R2,\text{aus}} = \sqrt{4kT \cdot R_2 \cdot BW_n} = \sqrt{1{,}6458 \cdot 10^{-20} \cdot 20000 \cdot 157080}
+    \end{equation}
+    \item \textbf{Gesamteffekt des Widerstandsrauschens:} Quadratische Addition der unkorrelierten Anteile:
+    \begin{equation}
+    U_{n,\text{Widerstände},\text{aus}} = \sqrt{U_{n,R1,\text{aus}}^2 + U_{n,R2,\text{aus}}^2} = \sqrt{(10{,}169\,\mu\text{V})^2 + (7{,}191\,\mu\text{V})^2} = \sqrt{155{,}12} \approx 12{,}455\,\mu\text{V}_{\text{rms}}
+    \end{equation}
+\end{enumerate}
+
+\subsection{Schritt 3: Berechnung des OPV-Spannungsrauschens am Ausgang}
+Das intrinsische Spannungsrauschen $e_n$ liegt virtuell direkt am nichtinvertierenden Eingang an und wird daher mit der Verstärkung des Nichtinverters ($A_{v,\text{noise}} = 1 + R_2/R_1 = 1 + 2 = 3$) zum Ausgang übertragen:
+\begin{equation}
+U_{n,\text{OPV},e} = e_n \cdot \sqrt{BW_n} = 10 \cdot 10^{-9} \cdot \sqrt{157080} = 10 \cdot 10^{-9} \cdot 396{,}33 = 3{,}9633\,\mu\text{V}_{\text{rms}}
+\end{equation}
+\begin{equation}
+U_{n,\text{OPV},e,\text{aus}} = U_{n,\text{OPV},e} \cdot \left( 1 + \frac{R_2}{R_1} \right) = 3{,}9633\,\mu\text{V} \cdot 3 = 11{,}890\,\mu\text{V}_{\text{rms}}
+\end{equation}
+
+\subsection{Schritt 4: Berechnung des OPV-Stromrauschens am Ausgang}
+Das Stromrauschen $i_n$ fließt aus dem invertierenden Knoten und erzeugt am Rückkoppelwiderstand $R_2$ eine Rauschspannung:
+\begin{equation}
+U_{n,\text{OPV},i,\text{aus}} = i_n \cdot \sqrt{BW_n} \cdot R_2 = 0{,}2 \cdot 10^{-12} \cdot \sqrt{157080} \cdot 20000
+\end{equation}
+\begin{equation}
+U_{n,\text{OPV},i,\text{aus}} = 0{,}2 \cdot 10^{-12} \cdot 396{,}33 \cdot 20000 = 1{,}585\,\mu\text{V}_{\text{rms}}
+\end{equation}
+
+\subsection{Schritt 5: Berechnung des totalen System-Ausgangsrauschens}
+Da alle berechneten Einzelkomponenten physikalisch unkorreliert sind, erfolgt die finale Zusammenführung über die geometrische Summation:
+\begin{equation}
+U_{n,\text{tot},\text{aus}} = \sqrt{U_{n,\text{Widerstände},\text{aus}}^2 + U_{n,\text{OPV},e,\text{aus}}^2 + U_{n,\text{OPV},i,\text{aus}}^2}
+\end{equation}
+\begin{equation}
+U_{n,\text{tot},\text{aus}} = \sqrt{(12{,}455\,\mu\text{V})^2 + (11{,}890\,\mu\text{V})^2 + (1{,}585\,\mu\text{V})^2} \approx 17{,}29\,\mu\text{V}_{\text{rms}}
+\end{equation}
+
+\newpage
+
+% ==========================================
+% SEKTION 5: SENSORIK-BERECHNUNGEN (TEMPERATUR, WEG, BRÜCKEN)
+% ==========================================
+\section{Präzise mathematische Herleitungen der Sensorsysteme}
+
+\subsection{PT100-Auslegung im Konstantstromkreis (Hausaufgabe Lektion 1)}
+Gegeben: Ein PT100 mit dem linearen Ansatz $R_s(\theta) = R_0 \cdot (1 + \alpha\theta)$ mit $R_0 = 100\,\Omega$ und $\alpha = 4 \cdot 10^{-3}\,\text{K}^{-1}$. Der Speisestrom beträgt $I_0 = 1\,\text{mA}$.
+\begin{enumerate}
+    \item \textbf{Zahlenmäßige Berechnung von $R_s$:}
+    \begin{equation}
+    R_s(0^\circ\text{C}) = 100 \cdot (1 + 0) = 100\,\Omega
+    \end{equation}
+    \begin{equation}
+    R_s(100^\circ\text{C}) = 100 \cdot (1 + 4 \cdot 10^{-3} \cdot 100) = 100 \cdot (1 + 0{,}4) = 140\,\Omega
+    \end{equation}
+    \item \textbf{Zahlenmäßige Berechnung der abfallenden Sensorspannung $u_s$:}
+    \begin{equation}
+    u_s(0^\circ\text{C}) = I_0 \cdot R_s(0^\circ\text{C}) = 1\,\text{mA} \cdot 100\,\Omega = 0{,}1\,\text{V}
+    \end{equation}
+    \begin{equation}
+    u_s(100^\circ\text{C}) = I_0 \cdot R_s(100^\circ\text{C}) = 1\,\text{mA} \cdot 140\,\Omega = 0{,}14\,\text{V}
+    \end{equation}
+    \item \textbf{Analyse des nachfolgenden Messverstärkers MV1:}
+    Die Schaltung entspricht einem invertierenden Verstärker mit dem Eingangswiderstand $R_1 = 10\,\text{k}\Omega$ und einem Rückkoppelwiderstand von ebenfalls $10\,\text{k}\Omega$. Das Übertragungsverhalten lautet:
+    \begin{equation}
+    u_1 = -\frac{10\,\text{k}\Omega}{10\,\text{k}\Omega} \cdot u_s = -u_s
+    \end{equation}
+    Daraus ergeben sich die Zwischenwerte: $u_1(0^\circ\text{C}) = -0{,}1\,\text{V}$ und $u_1(100^\circ\text{C}) = -0{,}14\,\text{V}$.
+    \item \textbf{Dimensionierung des Ausgangsverstärkers MV2 zur Skalierung:}
+    Das Ziel ist eine normierte Ausgangsspannung von $u_2(0^\circ\text{C}) = 0\,\text{V}$ und $u_2(100^\circ\text{C}) = -1\,\text{V}$. MV2 ist als Summierer aufgebaut, der die Spannung $u_1$ und eine feste Referenzspannung $U_0$ zusammenführt:
+    \begin{equation}
+    u_2 = -\left( u_1 + U_0 \right)
+    \end{equation}
+    Setzen wir die Bedingung für $0^\circ\text{C}$ ein, um $U_0$ zu bestimmen:
+    \begin{equation}
+    0 = -\left( -0{,}1\,\text{V} + U_0 \right) \implies U_0 = 0{,}1\,\text{V}
+    \end{equation}
+    Überprüfung des Endwertes bei $100^\circ\text{C}$ zur Verifikation:
+    \begin{equation}
+    u_2(100^\circ\text{C}) = -\left( -0{,}14\,\text{V} + 0{,}1\,\text{V} \right) = -\left( -0{,}04\,\text{V} \right) = +0{,}04\,\text{V}
+    \end{equation}
+    Da dies nicht dem Zielwert von $-1\,\text{V}$ entspricht, muss eine zusätzliche Verstärkung $v$ in der Stufe implementiert werden: $u_2 = -v \cdot (u_1 + U_0)$.
+    \begin{equation}
+    \Delta u_2 = -v \cdot \Delta u_1 \implies (-1\,\text{V} - 0\,\text{V}) = -v \cdot (-0{,}14\,\text{V} - (-0{,}1\,\text{V}))
+    \end{equation}
+    \begin{equation}
+    -1\,\text{V} = -v \cdot (-0{,}04\,\text{V}) \implies -1 = 0{,}04 \cdot v \implies v = -\frac{1}{0{,}04} = -25
+    \end{equation}
+    Die exakte Dimensionierung erfordert somit ein hochpräzises Verstärkungsverhältnis von $25$ in der zweiten Stufe.
+\end{enumerate}
+
+\subsection{Vollständige algebraische Linearisierung der Wheatstone-Vollbrücke}
+Zur Erfassung kleinster Widerstandsänderungen bei Dehnungsmessstreifen ($\frac{\Delta R}{R} = k \cdot \epsilon$) wird die Brücke mit vier aktiven DMS bestückt. Bei mechanischer Krafteinwirkung gilt für die Zweige: $R_1 = R_4 = R + \Delta R$ (Dehnung) und $R_2 = R_3 = R - \Delta R$ (Stauchung).
+
+\textbf{Lückenlose mathematische Herleitung:}
+\begin{enumerate}
+    \item Die Diagonalspannung $U_d$ ist definiert als die Differenz der beiden Spannungsteilerpfade unter der Speisespannung $U_0$:
+    \begin{equation}
+    U_d = U_0 \cdot \left( \frac{R_2}{R_1 + R_2} - \frac{R_4}{R_3 + R_4} \right)
+    \end{equation}
+    \item Einsetzen der spezifischen Ausdrücke:
+    \begin{equation}
+    U_d = U_0 \cdot \left( \frac{R - \Delta R}{(R + \Delta R) + (R - \Delta R)} - \frac{R + \Delta R}{(R - \Delta R) + (R + \Delta R)} \right)
+    \end{equation}
+    \item Vereinfachen der Nennerterme: In beiden Pfaden hebt sich $\Delta R$ im Nenner vollständig auf:
+    \begin{equation}
+    \text{Nenner}_1 = R + \Delta R + R - \Delta R = 2R \quad \text{und} \quad \text{Nenner}_2 = R - \Delta R + R + \Delta R = 2R
+    \end{equation}
+    \item Zusammenführen auf einen gemeinsamen Nenner:
+    \begin{equation}
+    U_d = U_0 \cdot \left( \frac{(R - \Delta R) - (R + \Delta R)}{2R} \right)
+    \end{equation}
+    \item Auflösen des Zählers:
+    \begin{equation}
+    R - \Delta R - R - \Delta R = -2 \cdot \Delta R
+    \end{equation}
+    \item Einsetzen und Kürzen des Faktors $2$:
+    \begin{equation}
+    U_d = U_0 \cdot \left( \frac{-2 \cdot \Delta R}{2R} \right) = -U_0 \cdot \frac{\Delta R}{R}
+    \end{equation}
+    \item Einsetzen des K-Faktors liefert das streng lineare Endergebnis ohne jegliche Taylor-Approximation:
+    \begin{equation}
+    U_d = -U_0 \cdot k \cdot \epsilon
+    \end{equation}
+\end{enumerate}
+
+\newpage
+
+% ==========================================
+% SEKTION 6: FREQUENZABHÄNGIGE PID-REGLERSCHALTUNG
+% ==========================================
+\section{Frequenzabhängige Operationsverstärkerschaltungen am Beispiel des analogen PID-Reglers}
+
+Gemäß den Projektspezifikationen aus dem Leitfaden lassen sich frequenzabhängige Übertragungsfunktionen in einer analogen invertierenden Konfiguration realisieren, indem der klassische Eingangspfad und der Rückkoppelpfad durch komplexe Vierpol-Strukturen (Zweipol-Kombinationen) ersetzt werden. Die allgemeine komplexe Übertragungsfunktion folgt dem Verhältnis der Rückkoppel-Gesamtimpedanz $Z_2(s)$ zur Eingangs-Gesamtimpedanz $Z_1(s)$:
+\begin{equation}
+T(s) = -\frac{Z_2(s)}{Z_1(s)}
+\end{equation}
+
+\subsection{Struktureller Aufbau des PID-Gliedes nach Vorgabe}
+Das in Ihrem Projekt fest vorgegebene physikalische Netzwerk setzt sich wie folgt zusammen:
+\begin{itemize}
+    \item \textbf{Eingangsnetzwerk (Zweipol $Z_1$):} Eine Reihenschaltung aus dem ohmschen Widerstand $R_1$ und der Kapazität $C_1$. Dieses gesamte Glied liegt wiederum parallel zu einem separaten, ohmschen Basis-Eingangswiderstand $R_3$.
+    \item \textbf{Rückkoppelnetzwerk (Zweipol $Z_2$):} Eine Parallelschaltung aus dem ohmschen Rückkoppelwiderstand $R_4$ und der Kapazität $C_2$. Dieses gesamte Glied liegt wiederum in Reihe zu einem separaten, ohmschen Ausgangswiderstand $R_2$.
+\end{itemize}
+
+\subsection{Präzise mathematische Herleitung der System-Übertragungsfunktion}
+Zur systemtechnischen Bestimmung der Terme stellen wir die mathematischen Gleichungen der beiden isolierten Zweipol-Impedanzen im komplexen Frequenzbereich ($s = j\omega$) auf.
+
+\begin{enumerate}
+    \item \textbf{Berechnung der komplexen Eingangsimpedanz $Z_1(s)$:}
+    Der Zweig $Z_1$ besteht aus der Parallelschaltung von $R_3$ und der Serienschaltung $(R_1 + \frac{1}{sC_1})$. Die Berechnung erfolgt am übersichtlichsten über die Summation der komplexen Leitwerte (Admittanzen):
+    \begin{equation}
+    Y_1(s) = \frac{1}{R_3} + \frac{1}{R_1 + \frac{1}{sC_1}} = \frac{1}{R_3} + \frac{sC_1}{1 + sC_1 R_1}
+    \end{equation}
+    Bringen der Admittanzgleichung auf einen gemeinsamen Hauptnenner:
+    \begin{equation}
+    Y_1(s) = \frac{(1 + sC_1 R_1) + sC_1 R_3}{R_3 \cdot (1 + sC_1 R_1)} = \frac{1 + sC_1(R_1 + R_3)}{R_3 \cdot (1 + sC_1 R_1)}
+    \end{equation}
+    Der Kehrwert der Admittanz liefert die gesuchte Eingangsimpedanz $Z_1(s)$ der Schaltung:
+    \begin{equation}
+    Z_1(s) = \frac{1}{Y_1(s)} = R_3 \cdot \frac{1 + sC_1 R_1}{1 + sC_1(R_1 + R_3)}
+    \end{equation}
+
+    \item \textbf{Berechnung der komplexen Rückkoppelimpedanz $Z_2(s)$:}
+    Der Zweig $Z_2$ besteht aus der Reihenschaltung des Widerstandes $R_2$ und der Parallelschaltung von $R_4$ mit $C_2$. Die Impedanz des Parallelgliedes lautet $\frac{R_4}{1 + sC_2 R_4}$. Durch Addition des Serienwiderstandes folgt:
+    \begin{equation}
+    Z_2(s) = R_2 + \frac{R_4}{1 + sC_2 R_4}
+    \end{equation}
+    Bringen der Impedanzgleichung auf einen gemeinsamen Hauptnenner:
+    \begin{equation}
+    Z_2(s) = \frac{R_2 \cdot (1 + sC_2 R_4) + R_4}{1 + sC_2 R_4} = \frac{(R_2 + R_4) + sC_2 R_2 R_4}{1 + sC_2 R_4}
+    \end{equation}
+    Ausklammern des Summen-Gleichstromwiderstandes $(R_2 + R_4)$ im Zähler überführt den Term sauber in die normierte Zeitkonstantenform:
+    \begin{equation}
+    Z_2(s) = (R_2 + R_4) \cdot \frac{1 + sC_2 \left(\frac{R_2 \cdot R_4}{R_2 + R_4}\right)}{1 + sC_2 R_4} = (R_2 + R_4) \cdot \frac{1 + sC_2 (R_2 \parallel R_4)}{1 + sC_2 R_4}
+    \end{equation}
+
+    \item \textbf{Zusammenführung zur Kontrollformel des PID-Reglers:}
+    Setzen wir die hergeleiteten Terme von $Z_1(s)$ und $Z_2(s)$ in den Ansatz $T(s) = -\frac{Z_2(s)}{Z_1(s)}$ ein:
+    \begin{equation}
+    T(s) = -\frac{(R_2 + R_4) \cdot \frac{1 + sC_2 (R_2 \parallel R_4)}{1 + sC_2 R_4}}{R_3 \cdot \frac{1 + sC_1 R_1}{1 + sC_1(R_1 + R_3)}}
+    \end{equation}
+    Die mathematische Auflösung des Doppelbruches liefert durch Umsortieren die exakte, im Projektdokument zur Verifikation vorgegebene Kontroll-Struktur:
+    \begin{equation}
+    T(s) = -\frac{R_2 + R_4}{R_3} \cdot \frac{1 + sC_2 (R_2 \parallel R_4)}{1 + sC_2 R_4} \cdot \frac{1 + sC_1(R_1 + R_3)}{1 + sC_1 R_1}
+    \end{equation}
+    Unter Anwendung der Symmetriebeziehungen im Leitfaden lässt sich dies alternativ schreiben als:
+    \begin{equation}
+    T(s) = -\frac{R_3}{R_1} \cdot \frac{1 + sC_2 R_4}{1 + sC_2(R_3 + R_4)} \cdot \frac{1 + sC_1(R_1 + R_2)}{1 + sC_1 R_2}
+    \end{equation}
+\end{enumerate}
+
+\subsection{Methodik zur schaltungstechnischen Dimensionierung aus dem Bode-Diagramm}
+Das im Projektdokument vorgegebene Bode-Diagramm definiert den Amplitudengang über vier präzise Knickfrequenzen: $f_{k1} = 62\,\text{Hz}$, $f_{k2} = 620\,\text{Hz}$, $f_{k3} = 6200\,\text{Hz}$ und $f_{k4} = 62\,\text{kHz}$. Die Dimensionierung der Bauelemente erfolgt über folgenden mathematischen Algorithmus:
+
+\begin{enumerate}
+    \item \textbf{Transformation in Kreisfrequenzen:} Berechnen Sie für jede Knickfrequenz des Diagramms die zugehörige Kreisfrequenz $\omega_k = 2\pi \cdot f_k$.
+    \item \textbf{Identifikation der Null- und Polstellen:} Ein Knick im Amplitudengang nach oben (+20 dB/Dekade) signalisiert eine Nullstelle (Zählerterm des Reglers). Ein Knick nach unten (-20 dB/Dekade) signalisiert eine Polstelle (Nennerterm des Reglers).
+    \item \textbf{Abgleich mit den schaltungstechnischen Zeitkonstanten:}
+    Die vier charakteristischen Zeitkonstanten der Schaltung sind direkt mit den Knickpunkten des Graphen verknüpft:
+    \begin{equation}
+    \tau_z1 = C_2 \cdot R_4, \quad \tau_p1 = C_2 \cdot (R_3 + R_4)
+    \end{equation}
+    \begin{equation}
+    \tau_z2 = C_1 \cdot (R_1 + R_2), \quad \tau_p2 = C_1 \cdot R_2
+    \end{equation}
+    \item \textbf{Extraktion über den festen Kondensatorwert:} Das Projektdokument gibt die Kapazität $C_2 = 0{,}1\,\mu\text{F}$ fest vor. Da $C_2$ bekannt ist, lassen sich die Widerstände $R_4$ und nachfolgend $R_3$ direkt aus den ersten beiden berechneten Kreisfrequenzen auflösen. 
+    \item \textbf{Wahl der verbleibenden Parameter:} Unter Einhaltung der zulässigen Design-Grenzen für die ohmschen Widerstände ($1\,\text{k}\Omega < R < 1\,\text{M}\Omega$) bestimmen Sie anschließend die Kapazität $C_1$, um die verbleibenden Widerstände $R_1$ und $R_2$ über die Knickpunkte bei $6200\,\text{Hz}$ und $62\,\text{kHz}$ mathematisch eindeutig zu isolieren.
+\end{enumerate}
+
+\end{document}

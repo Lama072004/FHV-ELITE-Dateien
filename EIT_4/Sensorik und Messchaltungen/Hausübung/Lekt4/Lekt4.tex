@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Hausaufgaben Lösungen}
+\lhead{Messschaltungen und Sensorik}
+\cfoot{\thepage}
+
+\begin{document}
+
+\section*{Hausaufgabe I: Thermoelement}
+
+\textbf{Beschreibung:} Untersuchung eines Eisen-Konstanten-Thermoelements mit Ausgleichsleitungen.
+
+\textbf{1. Messspannung $U_M$ als Summe:}
+Die Messspannung ergibt sich aus der Differenz der Kontaktspannungen an der Messstelle ($T_1$) und der Vergleichsstelle ($T_3$):
+\[ U_M = k_{A,Cu} \cdot T_3 - k_{B,Cu} \cdot T_3 + k_{B,A} \cdot T_1 \]
+Vereinfacht durch die Temperaturempfindlichkeit $k_{AB}$ des Paares:
+\[ U_M = k_{AB} \cdot (T_1 - T_3) \]
+
+\textbf{2. Zusammenhang $U_M = f(\vartheta_1, \vartheta_3)$:}
+\[ U_M = k_{AB} \cdot (\vartheta_1 - \vartheta_3) \]
+
+\textbf{3. Vertauschte Ausgleichsleitungen:}
+Bei Vertauschen der Leitungen $A'$ und $B'$ an der Stelle $\vartheta_2$ entstehen parasitäre Thermospannungen. Die Korrekturwirkung der Ausgleichsleitung kehrt sich um. Die Messspannung $U_M$ wird massiv verfälscht, da die Thermospannung zwischen $\vartheta_2$ und $\vartheta_3$ nun subtrahiert statt addiert wird (oder umgekehrt).
+
+\textbf{4. Berechnungen (Fe-Konst):}
+Gegeben: $k_{Fe,Pt} = 1.9\,\text{mV}/100\text{K}$, $k_{Konst,Pt} = -3.1\,\text{mV}/100\text{K}$.
+\[ k_{Fe,Konst} = k_{Fe,Pt} - k_{Konst,Pt} = 1.9 - (-3.1) = 5.0\,\text{mV}/100\text{K} = 50\,\mu\text{V}/\text{K} \]
+\begin{itemize}
+    \item $U_M$ bei $20^\circ\text{C}$ ($\vartheta_1 = \vartheta_3$): $U_M = 0\,\text{mV}$.
+    \item $U_M$ bei $100^\circ\text{C}$ ($\vartheta_3 = 20^\circ\text{C}$): $U_M = 50\,\mu\text{V}/\text{K} \cdot (100 - 20)\,\text{K} = 4.0\,\text{mV}$.
+\end{itemize}
+
+\section*{Hausaufgabe II: Allgemeine Fragen}
+
+\begin{enumerate}
+    \item \textbf{4 Sensoren:} Pt100/Pt1000, NTC (Heißleiter), PTC (Kaltleiter), Thermoelement.
+    \item \textbf{PTC Einsatz:} Überlastschutz (Selbstrückstellende Sicherung), Motorschutz, Füllstandssensoren.
+    \item \textbf{Schaltungsmöglichkeiten:} Wheatstone-Brücke, einfacher Spannungsteiler, Konstantstromquelle.
+    \item \textbf{Temperaturbereich:} Je nach Typ von $-200^\circ\text{C}$ bis ca. $+1800^\circ\text{C}$.
+    \item \textbf{Bimetall-Streifen:} Zwei Metalle mit unterschiedlichen Ausdehnungskoeffizienten sind fest verbunden. Bei Erwärmung dehnt sich ein Metall stärker aus, der Streifen verbiegt sich. Funktion: Mechanischer Schalter/Temperaturregler.
+    \item \textbf{Infrarotkamera:} Erfasst Infrarotstrahlung eines Körpers. Ein Detektor (z.B. Mikrobolometer) wandelt die Strahlungsleistung in elektrische Signale um, die als Wärmebild dargestellt werden.
+    \item \textbf{Pt1000:} Platin-Dünnschichtsensor. $R = 1000\,\Omega$ bei $0^\circ\text{C}$. Kennzeichen: Hohe Langzeitstabilität und Linearität.
+    \item \textbf{Dimensionierung Brücke:} Beachtung des Eigenerwärmungsfehlers durch den Messstrom; Wahl der Brückenspeisespannung für optimale Empfindlichkeit.
+    \item \textbf{Digitale Sensoren:} Vorteile: Einfache Einbindung in Mikrocontroller (I2C/SPI), keine Kalibrierung nötig. Nachteile: Begrenzter Temperaturbereich, langsame Abtastrate.
+    \item \textbf{Funktion Thermoelement:} Basiert auf dem Seebeck-Effekt. An der Kontaktstelle zweier unterschiedlicher Metalle entsteht bei Temperaturdifferenz eine elektrische Spannung.
+    \item \textbf{Referenzmessstelle:} Thermoelemente messen nur Differenzen. Die Referenzstelle stellt ein bekanntes Potenzial bereit, um auf die Absolttemperatur schließen zu können.
+\end{enumerate}
+
+\section*{Hausaufgabe III: NTC-Widerstand}
+
+\textbf{1. Empfindlichkeit:}
+$R(T) = R_0 \cdot \exp(b \cdot (\frac{1}{T} - \frac{1}{T_0}))$.
+\[ E = \frac{dR}{dT} = R(T) \cdot \left(-\frac{b}{T^2}\right) \quad [\Omega/\text{K}] \]
+\[ \alpha = \frac{E}{R} = -\frac{b}{T^2} \quad [1/\text{K}] \]
+
+\textbf{2. Fehlerrechnung:}
+Systematischer Fehler $\Delta R$ über das totale Differential:
+\[ \frac{\Delta R}{R} = \left| \frac{\Delta R_0}{R_0} \right| + \left| \left( \frac{1}{T} - \frac{1}{T_0} \right) \Delta b \right| \]
+Werte: $\Delta R_0/R_0 = 2\%$, $\Delta b/b = -1\% \Rightarrow \Delta b = -37.6\,\text{K}$.
+\begin{itemize}
+    \item Bei $25^\circ\text{C}$ ($T=T_0$): Relativer Fehler = $2\%$.
+    \item Bei anderen Temperaturen steigt oder sinkt der Fehler durch den $b$-Term.
+\end{itemize}
+
+\textbf{3. Skizze:}
+\begin{center}
+\begin{tikzpicture}
+\draw[->] (0,0) -- (4,0) node[right] {$\vartheta$};
+\draw[->] (0,0) -- (0,3) node[above] {$R$};
+\draw[domain=0.2:3.5, smooth, variable=\x, red] plot ({\x}, {2.8*exp(-\x)});
+\node at (2,1.5) {NTC Kurve};
+\end{tikzpicture}
+\end{center}
+
+\end{document}

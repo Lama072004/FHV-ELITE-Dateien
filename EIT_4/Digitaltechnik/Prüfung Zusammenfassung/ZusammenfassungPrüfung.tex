@@ -1,0 +1,154 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{a4paper, margin=1in}
+
+\title{Ausführliche Zusammenfassung: Digitaltechnik \& State Machines}
+\author{Studiengang EIT \& MEC Bachelor}
+\date{2026}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Block: Digital Intro}
+
+\subsection{Operationen der Booleschen Algebra}
+Die Boolesche Algebra operiert mit definierten Verknüpfungen. Die Konjunktion bildet die logische UND-Verknüpfung. Die Disjunktion bildet die ODER-Verknüpfung. Die Negation invertiert den Zustand. Die speziellen Rechengesetze der Booleschen Algebra sind ausdrücklich nicht prüfungsrelevant.
+
+\subsection{Basic Functions und Arbitrary Functions}
+Die grundlegenden logischen Funktionen NAND, NOR und XOR sind wichtig für die Prüfung. Aus einer Wahrheitstabelle lässt sich jede beliebige Funktion aufbauen. Man sucht alle Zeilen mit einem aktiven Ausgang, verknüpft die entsprechenden Eingänge mit einem UND-Gatter und verbindet alle Ergebnisse mit einem ODER-Gatter zur Disjunktiven Normalform.
+
+\subsection{Open Collector und High Impedance}
+Der Open-Collector-Ausgang verbindet mehrere Gatter-Ausgänge auf eine gemeinsame Leitung, ohne dass sich die Bausteine gegenseitig zerstören. Der dritte Logikzustand heißt High Impedance (Tri-State). In diesem Zustand sperren beide Ausgangstransistoren, weshalb der Ausgang hochohmig ist und die Leitung nicht beeinflusst.
+
+\subsection{CMOS Technologie}
+\begin{itemize}
+    \item \textbf{Schaltplan Inverter:} Der Inverter besteht aus einem p-Kanal Transistor an der Versorgungsspannung und einem n-Kanal Transistor an der Masse.
+    \item \textbf{Transitions Graph und Gate:} Diese Aspekte sind ausdrücklich nicht prüfungsrelevant.
+    \item \textbf{Power Consumption:} Die Formel für die Leistungsaufnahme lautet $P_{V} = C_{PV} \cdot V_{DD}^2 \cdot f$. Die zugehörige Grafik ist nicht relevant.
+    \item \textbf{Eingangsbeschaltung (Folie 15):} Eingänge besitzen Vorwiderstände zur Strombegrenzung und Dioden zum Schutz. Die Dioden leiten Überspannungen sicher gegen Versorgungsspannung oder Masse ab.
+    \item \textbf{Pegel und Störabstand:} Die genauen Spannungspegel sind nicht relevant. Der Störabstand ist elementar wichtig. CMOS-Bausteine besitzen deutlich größere Störabstände als TTL-Bausteine.
+\end{itemize}
+
+\subsection{Zeitschaltverhalten und Datenblatt}
+Logikgatter erfordern definierte Umschaltzeiten. Die Ausbreitungsverzögerungen $t_{pHL}$ und $t_{pLH}$ sind wichtig. Im Datenblatt zählen Ruhestrom, maximaler Eingangsstrom und die Fan-out-Treiberfähigkeit zu den relevanten Spezifikationen.
+
+\subsection{Kombinatorik: Decoder, Multiplexer und Addierer}
+\begin{itemize}
+    \item \textbf{Decoder:} Die interne Schaltung ist unwichtig. Ein Decoder schaltet immer exakt einen von mehreren Ausgängen aktiv, abhängig von der anliegenden Adresse.
+    \item \textbf{Multiplexer und Demultiplexer:} Die Schaltungen sind unwichtig. Ein Multiplexer schaltet viele Eingänge auf exakt einen Ausgang durch. Ein Demultiplexer leitet einen Eingang auf viele Ausgänge.
+    \item \textbf{Addierer:} Addierer bestehen ausschließlich aus Kombinatorik. Ein Computer nutzt intern nur die Addition. Subtraktionen erfolgen durch die Addition des Zweierkomplements.
+\end{itemize}
+
+\newpage
+
+\section{Vorlesung 2: Analoge Konzepte}
+
+\subsection{Schmitt Trigger und Oszillatoren}
+\begin{itemize}
+    \item \textbf{Schmitt Trigger:} Erzeugt saubere Rechtecksignale über eine definierte Einschaltschwelle, Ausschaltschwelle und Hysterese.
+    \item \textbf{Barkhausen Criterion:} Definiert die notwendige Schwingbedingung für Oszillatoren. Die Schleifenverstärkung muss exakt 1 betragen und die gesamte Phasendrehung muss ein Vielfaches von $360^\circ$ sein.
+    \item \textbf{Quartz Oscillator Pierce:} Wichtig für die Prüfung. Der Inverter dreht die Phase um $180^\circ$ und das Quarznetzwerk dreht die Phase um weitere $180^\circ$. Ein Widerstand zwingt den Inverter in den linearen Arbeitspunkt.
+    \item \textbf{Nicht relevant:} Multivibrator und NE555.
+\end{itemize}
+
+\subsection{PLL (Phase Locked Loop)}
+Die PLL synchronisiert einen Oszillator phasengleich mit einem Referenzsignal. Sie besteht aus einem Phasenfrequenzdetektor, einem Schleifenfilter und einem spannungsgesteuerten Oszillator (VCO). Die PLL Application funktioniert als Frequenzsynthesizer. Die Teiler M und N erzeugen aus einer festen Quarzfrequenz frei wählbare Ausgangsfrequenzen.
+
+\subsection{Charge Pump Details}
+Die Charge Pump verarbeitet das Signal des Phasendetektors. Ein Kondensator $C_1$ lädt sich in der ersten Phase an der Spannung $V_1$ auf. In der zweiten Phase entlädt sich $C_1$ an $V_2$, während Kondensator $C_2$ die Ausgangsspannung glättet.
+
+\subsection{Bypassing und Decoupling}
+\begin{itemize}
+    \item \textbf{Bypassing a digital IC:} Lange Zuleitungen induzieren parasitäre Effekte. Bypassing kompensiert dies durch lokale Kondensatoren direkt am IC.
+    \item \textbf{Modern Bypassing:} Nutzt die Parallelschaltung verschiedener Kondensatorwerte für eine breitbandige Entstörung über das gesamte Frequenzspektrum.
+    \item \textbf{Multilayer Bypassing:} Nutzt die kapazitive Eigenschaft eng beieinanderliegender Power-Planes der Leiterplatte als schnellste Ladungsquelle.
+\end{itemize}
+
+\newpage
+
+\section{Vorlesung 3: Sequentielle Schaltungen}
+
+\subsection{Latches und Flipflops}
+\begin{itemize}
+    \item \textbf{Simple Latch:} Das einfache RS-Latch speichert ein Bit und ist prüfungsrelevant. Es reagiert sofort auf Eingangssignale.
+    \item \textbf{RS Latch mit Clock:} Der reine Schaltplan ist nicht prüfungsrelevant. Die Clock ist als Enable-Signal elementar wichtig für die Synchronisation der Datenübernahme.
+    \item \textbf{Master Slave Flipflop:} Verhindert Transparenz vom Eingang zum Ausgang durch zwei gegenphasig getaktete Stufen. Der Master übernimmt den Wert bei aktivem Takt. Der Slave übergibt den Wert erst bei inaktivem Takt an den Ausgang.
+    \item \textbf{JK Flipflop:} Schaltplan ist nicht relevant, die Wahrheitstabelle jedoch wichtig. Bei anliegenden Einsen an den Eingängen J und K invertiert das Flipflop seinen aktuellen Zustand (Toggle).
+    \item \textbf{Latch vs Flipflop:} Ein Latch arbeitet zustandsgesteuert und transparent. Ein Flipflop arbeitet flankengesteuert.
+    \item \textbf{Typen von Flipflops:} Das D-Flipflop verzögert Daten und wird in Registern eingesetzt. Das T-Flipflop schaltet den Zustand um und wird in Zählern eingesetzt.
+\end{itemize}
+
+\subsection{Schieberegister und Binärzähler}
+\begin{itemize}
+    \item \textbf{Shift Register:} Mehrere D-Flipflops liegen in einer Kette. Jeder Takt schiebt die Datenbitfolge eine Stufe weiter.
+    \item \textbf{Binärzähler Asynchron vs Synchron:} Der asynchrone Zähler leitet den Takt für die Folgestufe aus dem Ausgang der vorherigen Stufe ab, was Gatterlaufzeiten aufsummiert. Der synchrone Zähler versorgt alle Flipflops parallel mit demselben Takt und berechnet das Kippen über eine vorgeschaltete Logik.
+    \item \textbf{Spezieller Zähler:} Zählt auf einen ungeraden Maximalwert (z.B. 13). Hierbei erkennen Logikgatter den Zielwert und triggern sofort einen asynchronen Reset aller Flipflops.
+\end{itemize}
+
+\newpage
+
+\section{Vorlesung 4: Speicher \& Programmierbare Logik}
+
+\subsection{Speicherbausteine}
+Skizzen und Zeichnungen sind für diesen Bereich nicht prüfungsrelevant.
+\begin{itemize}
+    \item \textbf{SRAM vs DRAM:} SRAM behält seinen gespeicherten Zustand permanent ohne Auffrischung stabil. DRAM verliert kapazitive Ladung und erfordert zwingend einen zyklischen Refresh.
+    \item \textbf{EEPROM vs Flash:} EEPROM erlaubt gezieltes bitweises Löschen. Flash-Speicher löschen Daten ausschließlich in großen Blöcken.
+    \item \textbf{Single Level und Multilevel Cells:} SLC speichert ein einzelnes Bit über zwei Spannungspegel. MLC speichert mehrere Bits in einer einzigen Zelle über fein gestufte Spannungspegel.
+    \item \textbf{Functional Principle of a Memory:} Eingehende Adressen trennen sich in Zeilen- und Spaltenkoordinaten auf. Decoder aktivieren die passenden Leitungen, um über Auswahlschalter präzise auf eine bestimmte Zelle zuzugreifen.
+    \item \textbf{Simple Memory Access:} Der Bus legt eine gültige Adresse an. Ein aktives Chip Select Signal (CS) wählt den Speicher aus. Ein aktives Read Signal (RD) bewirkt die Ausgabe der validen Daten.
+\end{itemize}
+
+\subsection{Programmable Logic}
+\begin{itemize}
+    \item \textbf{ASICs:} ASICs und deren spezifische Typen sind nicht relevant.
+    \item \textbf{Simple Programmable Device:} Ohne Skizze. Signale passieren eine programmierbare Verschaltungsmatrix. UND-Gatter erzeugen Produktterme, welche ODER-Gatter verknüpfen. Das Ergebnis landet in konfigurierbaren Registern.
+    \item \textbf{CPLD Structure:} Ohne Skizze. CPLDs besitzen um eine zentrale, programmierbare Verbindungsmatrix herum angeordnete Logikblöcke (LABs).
+    \item \textbf{FPGA Aufbau:} Ohne Skizze. FPGAs verwenden ein Gitter aus extrem feinkörnigen Logikblöcken (CLBs). Diese Blöcke vernetzen sich über komplett verteilte Routing-Kanäle.
+\end{itemize}
+
+\subsection{Analog Stuff}
+\begin{itemize}
+    \item \textbf{Isolation Problem:} Große Distanzen führen zu unterschiedlichen Massepotentialen. Dies bewirkt schädliche Ausgleichsströme in Masseschleifen, welche das Nutzsignal verfälschen. Eine galvanische Trennung durchbricht diese Schleifen.
+    \item \textbf{Typen von Isolation:}
+    \begin{itemize}
+        \item Optisch: Kostengünstig und hohe Isolation, jedoch langsame Übertragungsrate.
+        \item Kapazitiv: Hohe Geschwindigkeit, jedoch anfällig für elektrisches Rauschen.
+        \item Induktiv: Hohe Geschwindigkeit und geringer Leistungsbedarf, jedoch empfindlich gegen magnetisches Rauschen.
+    \end{itemize}
+    \item \textbf{Lange Leitungen und Reflexionen:} Leitungen verursachen Probleme durch Reflexionen, sobald die Länge signifikant wird. Dies geschieht typischerweise ab einem Zehntel der Wellenlänge. Ein größerer Abschlusswiderstand ($Z_2 > Z_0$) generiert eine positive Reflexion. Ein kleinerer Abschlusswiderstand ($Z_2 < Z_0$) generiert eine negative Reflexion.
+    \item \textbf{Lattice Diagramm:} Nicht prüfungsrelevant.
+\end{itemize}
+
+\newpage
+
+\section{Vorlesung 5: Zustandsautomaten und EMV}
+
+\subsection{Sequential Logic und State Machines}
+Sequentielle Logik verarbeitet nicht nur aktuelle Eingänge, sondern berücksichtigt das gespeicherte Gedächtnis früherer Zustände.
+\begin{itemize}
+    \item \textbf{Elemente Zustandsautomat:} Ein System benötigt Zustände (States), Zustandsübergänge (Transitions), Übergangsbedingungen und Aktionen.
+    \item \textbf{Mealy und Moore Unterschied:} Skizzen sind nicht relevant. Beim Moore-Automaten hängen die Ausgänge ausschließlich vom aktuellen Zustand ab. Beim Mealy-Automaten hängen die Ausgänge vom Zustand und von den Eingängen ab, wodurch er schneller reagiert.
+    \item \textbf{Beispiele:} Traffic Light Control und Garage Door Control demonstrieren das Definieren von Übergangstabellen und Ausgangslogik anhand alltagsnaher Szenarien.
+\end{itemize}
+
+\subsection{Kopplungsmechanismen (EMV)}
+Für die vier grundlegenden Störmechanismen entfallen grafische Darstellungen.
+\begin{itemize}
+    \item \textbf{Coupling by Radiation:} Elektromagnetische Wellen breiten sich im Raum aus und induzieren Störungen in ungeschirmte Schaltungsteile. Abschirmung durch Metallgehäuse dämmt diesen Effekt ein.
+    \item \textbf{Magnetfeld (Induktiv):} Schnelle Stromänderungen erzeugen Magnetfelder, die benachbarte Leiterschleifen durchdringen. Minimierte Schleifenflächen reduzieren die induktive Kopplung.
+    \item \textbf{Gemeinsamer Strom auf der Masse (Galvanisch):} Spannungsabfälle über eine gemeinsam genutzte Impedanz verschieben Bezugspotentiale und stören benachbarte Module.
+    \item \textbf{Elektrisches Feld (Kapazitiv):} Schnelle Spannungsänderungen treiben hochfrequente Störströme durch parasitäre Kapazitäten in anliegende Leitungen.
+\end{itemize}
+
+\end{document}

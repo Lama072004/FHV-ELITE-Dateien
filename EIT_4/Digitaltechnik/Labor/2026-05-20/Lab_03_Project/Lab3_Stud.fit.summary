@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon May 18 16:15:50 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Revision Name : Lab3_Stud
+Top-level Entity Name : Lab3_Stud
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 40 / 22,320 ( < 1 % )
+    Total combinational functions : 33 / 22,320 ( < 1 % )
+    Dedicated logic registers : 40 / 22,320 ( < 1 % )
+Total registers : 40
+Total pins : 17 / 154 ( 11 % )
+Total virtual pins : 0
+Total memory bits : 0 / 608,256 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

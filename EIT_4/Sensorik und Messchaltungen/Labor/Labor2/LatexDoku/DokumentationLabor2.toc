@@ -1,0 +1,10 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {chapter}{Abbildungsverzeichnis}{3}{section*.2}%
+\contentsline {chapter}{\numberline {1}Laboruebungen und Analysen}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Aufgabe 1: MATLAB-Kennlinie des PT100}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Aufgabe 2 \& 3: Vorwiderstand und Messaufbau}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Aufgabe 4 \& 5: Simulation der Grundschaltung}{6}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Aufgabe 6 \& 7: Brueckenschaltung mit Subtrahierer}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Aufgabe 8: Transiente Simulation der Bruecke}{8}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Aufgabe 9, 10 \& 11: Multivibratorschaltung}{9}{section.1.6}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

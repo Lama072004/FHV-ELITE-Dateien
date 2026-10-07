@@ -1,0 +1,194 @@
+\documentclass[a4paper,12pt,twoside]{scrreprt}
+% Autor der Vorlage: Klaus Rheinberger, FH Vorarlberg
+% Modifiziert fuer die Laboruebung Temperaturmessung mittels PT100
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}    
+\usepackage{graphicx}       
+\usepackage[ngerman]{babel} 
+\usepackage{csquotes}       
+\usepackage{acronym}  
+\usepackage{eurosym}  
+\usepackage[linktocpage=true]{hyperref} 
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=5mm,footskip=0.8cm]{geometry} % Seitenraender verkleinert fuer kompaktes Layout
+\usepackage{caption} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{float} 
+
+\captionsetup{format=hang, justification=raggedright}
+
+% Grafikpfad fuer die lokalen Bilddateien definieren
+\graphicspath{{/home/mathias/Dokumente/Mathias Schule_Studium/FH/ELITE-Semester/EIT_4/Sensorik und Messchaltungen/Labor/Labor2/OneDrive_1_3.6.2026/}}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}   
+
+% Kompaktere Abstaende bei den Formeln und Verzeichnissen
+\setlength{\textfloatsep}{10pt plus 2pt minus 4pt}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+
+\begin{document}
+
+\begin{titlepage}
+  \begin{flushleft}
+  \vspace{0.5cm}
+  \section*{Laboruebung: Temperaturmessung mittels PT100}
+  \subsection*{Messschaltungen und Sensorik}
+  \vspace{1cm}
+
+  Laborprotokoll\\
+  Studiengang Elektronik und Informationstechnologie Dual
+  \vspace{1.5cm}
+
+  Fachhochschule Vorarlberg
+
+  \vspace{2cm}
+
+  Vorgelegt von\\
+  Fabian Tibolla, Martin Feurstein, Arian Rupp, Mathias Lampert\\
+  Dornbirn, Juni 2026
+  
+  \vspace{3cm}
+  
+  Betreut von\\
+  Stefan Bonerz
+  
+  \end{flushleft}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+\listoffigures
+\newpage
+
+\chapter{Laboruebungen und Analysen}
+
+\section{Aufgabe 1: MATLAB-Kennlinie des PT100}
+Ziel ist die Darstellung des PT100-Widerstandsverlaufs ueber der Temperatur. Ein PT100 ist ein Kaltleiter-Temperatursensor (RTD) aus Platin mit einem Nominalwiderstand von $100\,\Omega$ bei $0\,^{\circ}\text{C}$. Das sensorische Verhalten folgt fuer Temperaturen $T \ge 0\,^{\circ}\text{C}$ der Norm DIN EN 60751 und wird durch die Callendar-Van-Dusen-Gleichung beschrieben:
+\begin{equation}
+R(T) = R_{0} \cdot (1 + a \cdot T + b \cdot T^2)
+\end{equation}
+Hierbei gelten die Koeffizienten $a = 3,9083 \cdot 10^{-3}\,^{\circ}\text{C}^{-1}$ und $b = -5,775 \cdot 10^{-7}\,^{\circ}\text{C}^{-2}$. Der quadratische Term bewirkt eine minimale Abweichung von der idealen Linearität bei hoeheren Temperaturen. Abbildung~\ref{fig:aufgabe1} zeigt den resultierenden Kennlinienverlauf im Bereich von $-50\,^{\circ}\text{C}$ bis $+150\,^{\circ}\text{C}$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10.5cm]{Aufgabe 1}
+  \caption{MATLAB-Plot des PT100-Widerstandsverlaufs ueber der Temperatur.}
+  \label{fig:aufgabe1}
+\end{figure}
+
+\section{Aufgabe 2 \& 3: Vorwiderstand und Messaufbau}
+Fuer einen maximalen Messstrom von $1,5\text{ mA} $ bei $5\text{ V}$ Spannungsversorgung wird ein Vorwiderstand $R$ benoetigt. Die Strombegrenzung ist zwingend erforderlich, um den Eigenerwaermungskoeffizienten des Sensors zu minimieren. Ein zu hoher Messstrom wuerde durch die Verlustleistung $P = I^2 \cdot R$ zu einer thermischen Verfaelschung des Messergebnisses fuehren. Bei einem Nennwiderstand $R_{0} = 100\,\Omega$ ergibt sich der minimale Vorwiderstand im unguenstigsten Fall ($T = 0\,^{\circ}\text{C}$) zu:
+\begin{equation}
+R = \frac{U}{I} - R_{0} = \frac{5\text{ V}}{1,5\text{ mA}} - 100\,\Omega \approx 3233\,\Omega \rightarrow 3,3\text{ k}\Omega
+\end{equation}
+
+Abbildung~\ref{fig:messaufbau} zeigt den physischen Aufbau auf dem Steckbrett mit dem Digilent Analog Discovery Messsystem. Abbildung~\ref{fig:aufgabe3} zeigt die zugehoerige Simulationsumgebung in LTSpice.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=9.5cm]{Messaufbau.jpeg}
+  \caption{Fotografie des realen Steckbrettaufbaus der ersten Messschaltung.}
+  \label{fig:messaufbau}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10.5cm]{Aufgabe 3}
+  \caption{LTSpice-Schaltplan der Grundschaltung mit PT100 und Vorwiderstand.}
+  \label{fig:aufgabe3}
+\end{figure}
+
+\section{Aufgabe 4 \& 5: Simulation der Grundschaltung}
+Abbildung~\ref{fig:aufgabe4} zeigt die DC-Sweep-Simulation der Grundschaltung. Die abgreifbare Spannung am Sensor verhaelt sich proportional zur Widerstandsaenderung, weist jedoch aufgrund des Spannungsteilereffekts mit dem Vorwiderstand eine inhärente Nichtlinearitaet auf. Abbildung~\ref{fig:aufgabe5} stellt die transiente Analyse dar, welche den konstanten Gleichspannungspegel bei Raumtemperatur verifiziert.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10.5cm]{Aufgabe 4}
+  \caption{DC-Sweep der Spannung ueber dem PT100 im definierten Temperaturbereich.}
+  \label{fig:aufgabe4}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10.5cm]{Aufgabe 5}
+  \caption{Transiente Simulation der Sensorspannung bei konstanter Temperatur.}
+  \label{fig:aufgabe5}
+\end{figure}
+
+\section{Aufgabe 6 \& 7: Brueckenschaltung mit Subtrahierer}
+Zur Erhoehung der Empfindlichkeit und zur Eliminierung der Gleichspannungsanteile (Offset) wird eine Brueckenschaltung eingesetzt. Die Bruecke vergleicht das Potential des PT100-Zweigs mit einem Referenzzweig, der auf den Nullpunkt des Sensors ($100\,\Omega$) abgestimmt ist. Die Differenzspannung wird ueber einen nachgeschalteten Subtraktionsverstaerker aufbereitet. Die Dimensionierung nutzt $330\text{ k}\Omega$ und $4,7\text{ k}\Omega$ Widerstaende. Die Verstaerkung $A$ des Operationsverstaerkers betraegt:
+\begin{equation}
+A = \frac{330\text{ k}\Omega}{4,7\text{ k}\Omega} \approx 70,21
+\end{equation}
+Die Ausgangsspannung folgt der Funktion $U_{\text{out}} = 70,21 \cdot (U_1 - U_2)$. Abbildung~\ref{fig:aufgabe6} zeigt die Schaltung in LTSpice. Abbildung~\ref{fig:aufgabe7} zeigt den zugehoerigen DC-Sweep. Durch die Verstärkung wird die geringe Signalhub-Aenderung der Bruecke in den optimalen Aussteuerbereich des Operationsverstaerkers transformiert.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10.5cm]{Aufgabe 6}
+  \caption{LTSpice-Schaltplan der Brueckenschaltung mit Subtraktionsverstaerker.}
+  \label{fig:aufgabe6}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10.5cm]{Aufgabe 7}
+  \caption{DC-Sweep am Ausgang des Subtrahierers zur Darstellung der Signalverstaerkung.}
+  \label{fig:aufgabe7}
+\end{figure}
+
+\section{Aufgabe 8: Transiente Simulation der Bruecke}
+Abbildung~\ref{fig:aufgabe8} verifiziert das dynamische Verhalten der Brueckenschaltung im Zeitbereich. Das transiente Signal verbleibt stabil auf dem berechneten Arbeitspunkt und bestaetigt ein einschwingfreies Verhalten der Operationsverstaerkerschaltung.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10.5cm]{Aufgabe 8}
+  \caption{Transiente Analyse der verstaerkten Brueckenspannung.}
+  \label{fig:aufgabe8}
+\end{figure}
+
+\section{Aufgabe 9, 10 \& 11: Multivibratorschaltung}
+In vielen industriellen Anwendungen werden analoge Sensorsignale in eine Frequenz transformiert. Dies schützt das Signal vor breitbandigen Amplitudenstoerungen und ermoeglicht die direkte digitale Weiterverarbeitung in Mikrocontrollern ohne dedizierten Analog-Digital-Wandler. Der astabile Multivibrator nutzt den PT100 im Rueckkoppelzweig als zeitbestimmendes Glied, wodurch die Schaltfrequenz direkt vom temperaturabhaengigen Widerstand gesteuert wird. Bei Raumtemperatur ($R_{\text{PT100}} = 110\,\Omega$), einem Kondensator $C = 4,7\,\mu\text{F}$ und $R_1 = R_2 = R_3 = 100\text{ k}\Omega$ gilt fuer die Periodendauer $T$:
+\begin{equation}
+T = 2 \cdot R_{\text{PT100}} \cdot C \cdot \ln\left(1 + \frac{2 \cdot R_3}{R_2}\right)
+\end{equation}
+\begin{equation}
+T = 2 \cdot 110\,\Omega \cdot 4,7\,\mu\text{F} \cdot \ln(3) \approx 0,001136\text{ s}
+\end{equation}
+\begin{equation}
+f = \frac{1}{T} \approx 880,31\text{ Hz}
+\end{equation}
+
+Abbildung~\ref{fig:aufgabe10} zeigt den Schaltplan in LTSpice. Abbildung~\ref{fig:aufgabe10_2} stellt die oszillierenden Spannungen am Kondensator (Lade- und Entladekurve) und am Ausgang dar. Abbildung~\ref{fig:aufgabe11} zeigt das simulierte Ausgangssignal.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10.5cm]{Aufgabe 10}
+  \caption{LTSpice-Schaltplan des astabilen Multivibrators mit dem PT100.}
+  \label{fig:aufgabe10}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10.5cm]{Aufgabe 10_2}
+  \caption{Simulierter Signalverlauf der Kondensatorspannung und Ausgangsspannung.}
+  \label{fig:aufgabe10_2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10.5cm]{Aufgabe 11}
+  \caption{Simulationsergebnis des Rechteck-Ausgangssignals zur Frequenzverifikation.}
+  \label{fig:aufgabe11}
+\end{figure}
+
+Beim praktischen Aufbau auf dem Testboard zeigte die physikalische Schaltung (Multivibrator) im realen Versuch kein Schwingverhalten. Das zugrundeliegende Problem fuer das Ausbleiben der Oszillation konnte messtechnisch nicht geloest werden. Aus diesem Grund war eine Durchfuehrung und Verifikation der letzten Teilaufgabe zur Digitalisierung des Signals mittels Komparator nicht moeglich.
+
+\end{document}

@@ -1,0 +1,705 @@
+\documentclass[12pt, a4paper]{article}
+
+% ─── Packages ────────────────────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{microtype}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\sisetup{per-mode=symbol, detect-weight=true}
+
+% ─── Placeholder commands ────────────────────────────────────────────────────
+\newcommand{\val}[1]{\textcolor{blue}{\textbf{??\,\si{#1}}}}
+\newcommand{\valx}{\textcolor{blue}{\textbf{??}}}
+\newcommand{\enter}[1]{\textcolor{blue}{\textit{[#1]}}}
+
+\tcbuselibrary{skins}
+\newcommand{\hint}[1]{%
+  \begin{tcolorbox}[
+    enhanced,
+    colback  = gray!7,
+    colframe = gray!35,
+    fontupper= \small,
+    left=6pt, right=6pt, top=4pt, bottom=4pt,
+    title    = \textbf{\small Hints for this section},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=gray!35, colframe=gray!35,
+                       fontupper=\small\bfseries, left=3pt, right=3pt}
+  ]
+  #1
+  \end{tcolorbox}}
+
+\hypersetup{colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue,
+            pdftitle={Lab Report - Switching Circuits},
+            pdfauthor={Rupp Arian, Lampert Mathias}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small EIT \& MEC -- Digi Lab 1: Switching Circuits}
+\rhead{\small Fachhochschule Vorarlberg}
+\cfoot{\small Page \thepage}
+\lfoot{\small Rev.\,1.1 \quad 21/22.04.2026}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% ═════════════════════════════════════════════════════════════════════════════
+\begin{document}
+% ═════════════════════════════════════════════════════════════════════════════
+
+% ─── Title page ──────────────────────────────────────────────────────────────
+\begin{titlepage}
+  \centering
+  \vspace*{3cm}
+  {\LARGE\bfseries Laboratory Report\par}
+  \vspace{0.5cm}
+  {\large\bfseries EIT \& MEC -- Digi Lab 1: Switching Circuits\par}
+  \vspace{0.3cm}
+  {\large Fachhochschule Vorarlberg GmbH\par}
+  \vspace{2cm}
+  \begin{tabular}{ll}
+    \textbf{Students:}          & Rupp Arian, Lampert Mathias \\[4pt]
+    \textbf{Study programme:}   & Elektronik und Informationstechnologie Dual \\[4pt]
+    \textbf{Date of experiment:}& 21/22.04.2026 \\[4pt]
+    \textbf{Supervisor:}        & Horatiu O.\,Pilsan \\[4pt]
+    \textbf{Report guide:}      & C.\,Thorrold, \textit{Guide for Writing Lab Reports}, v1.0 \\
+  \end{tabular}
+  \vfill
+  {\small Submitted: \today}
+\end{titlepage}
+
+% ─── Abstract ────────────────────────────────────────────────────────────────
+\begin{abstract}
+This report documents the experimental investigation of monostable and astable
+multivibrators, conducted in Digi Lab~1 at Fachhochschule Vorarlberg on
+21/22~April~2026.
+Three circuits were assembled and analysed: a monostable multivibrator based on the
+NE555 timer IC, an astable multivibrator also using the NE555, and an astable
+oscillator built from two CMOS inverters (74C00).
+Calculated values for pulse duration and oscillation period were compared against
+oscilloscope measurements. The monostable circuit showed a deviation of 7.3\%, 
+increasing to 8.2\% with a second IC. Direct BNC measurements proved that 
+low-impedance connections disrupt the circuit, preventing the output from returning 
+to low. The astable NE555 circuit oscillated at 495.8\,Hz, deviating 3.1\% from 
+theory. Results confirmed that component tolerances and probe loading are the 
+primary causes of error. Observations also showed that bypass capacitors are 
+essential for stable switching edges. All circuits performed according to 
+theoretical models within acceptable margins.
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Introduction}
+% ─────────────────────────────────────────────────────────────────────────────
+
+Switching circuits are fundamental building blocks in digital and mixed-signal
+electronics. This laboratory exercise focuses on two important classes of such
+circuits: multivibrators, which generate or shape rectangular pulse signals, and
+oscillators built from logic gates.
+
+A \textbf{monostable multivibrator} (one-shot) produces a single output pulse of
+defined duration in response to a trigger event. An \textbf{astable multivibrator}
+oscillates continuously between two states without any external trigger, generating
+a periodic square wave. Both types can be realised with the NE555 timer IC, whose
+internal structure consists of two comparators, a flip-flop, a discharge transistor,
+and an output stage.
+
+The \textbf{NE555} is a versatile and widely used timer IC. In monostable mode, the
+output pulse width is determined solely by an external RC network according to
+$t_H = 1.1\,R\,C$. In astable mode, the frequency and duty cycle depend on two
+resistors and one capacitor.
+
+As a complementary approach, an astable oscillator can also be constructed from two
+cascaded CMOS inverter gates with a feedback RC network.
+
+The objectives of this laboratory are:
+\begin{itemize}[leftmargin=1.5em]
+  \item To understand and verify the operating principle of monostable and astable
+        multivibrators using the NE555 IC.
+  \item To compare calculated and measured values for pulse duration and oscillation
+        period, and to quantify and explain deviations.
+  \item To investigate the influence of the measurement setup (oscilloscope probes
+        vs.\ BNC cables) on the circuit behaviour.
+  \item To analyse the astable multivibrator realised with two CMOS inverters.
+\end{itemize}
+
+The theoretical background was reviewed according to~\cite{Floyd2006}
+and~\cite{TietzeSchenk1999}.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Equipment and Materials}
+% ─────────────────────────────────────────────────────────────────────────────
+
+All circuits were assembled on a standard experimentation (breadboard) system.
+Signals were observed and recorded with a digital storage oscilloscope.
+Table~\ref{tab:equipment} lists the equipment used.
+
+\begin{table}[H]
+  \centering
+  \caption{Equipment and components used in this experiment.}
+  \label{tab:equipment}
+  \begin{tabular}{llc}
+    \toprule
+    Item & Specification / Part No.\\
+    \midrule
+    Digital oscilloscope        & Teledyne LeCroy HD 4096\\
+    Oscilloscope probe (10:1)   & ---\\
+    BNC cable                   & ---\\
+    DC power supply             & \SI{10}{\volt}\\
+    Experimentation board       & ---\\
+    NE555 timer IC              & NE555\\
+    CMOS NAND IC                & 74C00\\
+    Resistors                   & see individual tasks\\
+    Capacitors                  & see individual tasks\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Theoretical Background}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{NE555 Internal Structure}
+
+The NE555 contains three equal resistors forming a voltage divider that sets the
+reference levels at $\tfrac{1}{3}V_{CC}$ and $\tfrac{2}{3}V_{CC}$, two comparators,
+an SR flip-flop, an npn discharge transistor (pin~7), and a push-pull output stage
+(pin~3).
+
+\subsection{Monostable Mode}
+
+In monostable mode, the capacitor $C$ charges through $R_1$ after a falling trigger
+edge at pin~2 pulls the output high. The output returns low once $V_C$ reaches
+$\tfrac{2}{3}V_{CC}$, which gives the pulse duration:
+\begin{equation}
+  t_H = 1.1 \cdot R_1 \cdot C
+  \label{eq:mono_theory}
+\end{equation}
+
+\subsection{Astable Mode}
+
+In astable mode, $C$ charges through $R_1 + R_2$ and discharges through $R_2$ alone.
+The resulting high and low times are:
+\begin{align}
+  t_H &= 0.693\,(R_1 + R_2)\,C \label{eq:astable_th_theory}\\
+  t_L &= 0.693\,R_2\,C         \label{eq:astable_tl_theory}\\
+  T   &= 0.693\,(R_1 + 2R_2)\,C \label{eq:astable_T_theory}
+\end{align}
+
+\subsection{RC Oscillator with CMOS Inverters}
+
+Two cascaded inverters with a series resistor $R$ and capacitor $C$ in the feedback
+path form a relaxation oscillator. The threshold voltages of the CMOS gates determine
+the switching points, giving an oscillation frequency of approximately:
+\begin{equation}
+  f \approx \frac{1}{2.2\,R\,C}
+  \label{eq:inv_osc_theory}
+\end{equation}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Procedures}
+% ─────────────────────────────────────────────────────────────────────────────
+
+All experiments were carried out according to the laboratory instruction sheet
+\textit{Lab\_01\_SwitchingCircuits}, Rev.\,1.1, dated 21/22.04.2026. Circuits were
+assembled on the experimentation board. A supply voltage of \SI{10}{\volt} was used
+for all tasks.
+
+Oscilloscope measurements were performed in two configurations where applicable:
+\begin{enumerate}[leftmargin=1.5em]
+  \item Using 10:1 oscilloscope probes (input impedance \SI{10}{\mega\ohm}).
+  \item Using direct BNC cables (\SI{1}{\mega\ohm} input impedance, task~3.1.4 only).
+\end{enumerate}
+
+Screenshots were saved for each relevant waveform. Component values were verified
+with a multimeter before assembly where possible.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Results and Discussion}
+% ─────────────────────────────────────────────────────────────────────────────
+
+% ════════════════════════════════════════════════════════════════════
+\subsection{Task 3.1 -- Monostable Multivibrator (NE555)}
+% ════════════════════════════════════════════════════════════════════
+
+\textbf{Component values used:}
+$C = \SI{1}{\micro\farad}$,\quad
+$R_1 = \SI{1}{\mega\ohm}$,\quad
+$V_{CC} = \SI{10}{\volt}$.
+
+% ── 3.1.1 ────────────────────────────────────────────────────────────
+\subsubsection{Task 3.1.1 -- Calculation of Pulse Duration}
+
+Applying equation~\eqref{eq:mono_theory}:
+\begin{align*}
+  t_{H,\text{calc}} &= 1.1 \times \SI{1}{\mega\ohm} \times \SI{1}{\micro\farad} \\
+                    &= \SI{1.1}{\second}
+\end{align*}
+\[
+  \boxed{t_{H,\text{calc}} = \SI{1.1}{\second}}
+\]
+
+% ── 3.1.2 ────────────────────────────────────────────────────────────
+\subsubsection{Task 3.1.2 -- Measurement with Oscilloscope Probes (10:1)}
+
+Both the output signal $y$ (pin~3) and the capacitor voltage $V_C$ were measured
+simultaneously using 10:1 oscilloscope probes.
+The measurement was carried out on two different NE555 ICs under identical conditions.
+
+\begin{table}[H]
+  \centering
+  \caption{Measured values -- monostable multivibrator, 10:1 oscilloscope probes.}
+  \label{tab:mono_probe}
+  \begin{tabular}{lccc}
+    \toprule
+    Quantity & Symbol & Calculated & Measured \\
+    \midrule
+    Pulse duration (NE555 \#1)  & $t_H$        & \SI{1.1}{\second}  & \SI{1.18}{\second} \\
+    Pulse duration (NE555 \#2)  & $t_H$        & \SI{1.1}{\second}  & \SI{1.19}{\second} \\
+    Peak capacitor voltage      & $V_{C,\max}$ & \SI{6.67}{\volt}   & \SI{6.8}{\volt}    \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Messaufbau Schaltung Task 3.1.2.jpeg}
+  \caption{Measuring setup}
+  \label{fig:MeasuringSetup}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.1.2(1).png}
+  \caption{Output $y$ (C2 - red trace) and capacitor voltage $V_C$ (C1 - yellow trace)
+           measured with 10:1 probes -- monostable multivibrator - Erster NE555}
+  \label{fig:mono_probe_first_NE555}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.1.2(2).png}
+  \caption{Output $y$ (C2 - red trace) and capacitor voltage $V_C$ (C1 - yellow trace)
+           measured with 10:1 probes -- monostable multivibrator - Zweiter NE555}
+  \label{fig:mono_probe_second_NE555}
+\end{figure}
+
+% ── 3.1.3 ────────────────────────────────────────────────────────────
+\subsubsection{Task 3.1.3 -- Explanation of Differences}
+
+The measured pulse durations of \SI{1.18}{\second} and \SI{1.19}{\second} deviate
+from the calculated value of \SI{1.1}{\second} by approximately \SI{7.3}{\percent}
+and \SI{8.2}{\percent} respectively.
+The measured capacitor peak voltage of \SI{6.8}{\volt} is slightly above the
+theoretical threshold of $\tfrac{2}{3} \cdot \SI{10}{\volt} = \SI{6.67}{\volt}$.
+
+The primary cause of the deviation is the \textbf{capacitor tolerance of $\pm20\,\%$},
+which alone is sufficient to explain the observed discrepancy.
+Additionally, the 10:1 probe introduces a parasitic capacitance of approximately
+\SI{10}{\pico\farad} in parallel with the timing capacitor, which slightly increases
+the effective capacitance and therefore the pulse duration.
+The NE555 internal comparator threshold also deviates slightly from the ideal
+$\tfrac{2}{3}V_{CC}$, contributing a small systematic offset.
+
+% ── 3.1.4 ────────────────────────────────────────────────────────────
+\subsubsection{Task 3.1.4 -- Measurement with BNC Cables}
+
+The measurement from task~3.1.2 was repeated, replacing the 10:1 oscilloscope probes
+with direct BNC cables.
+
+A BNC cable connected to the oscilloscope presents an input impedance of
+\SI{1}{\mega\ohm}, which is placed \textbf{in parallel with the timing capacitor}.
+Together with the series resistance $R_1 = \SI{1}{\mega\ohm}$ of the circuit, this
+forms a voltage divider with a ratio of:
+\[
+  \frac{R_{\text{BNC}}}{R_1 + R_{\text{BNC}}}
+  = \frac{\SI{1}{\mega\ohm}}{\SI{1}{\mega\ohm} + \SI{1}{\mega\ohm}} = 0.5
+\]
+
+As a result, the maximum voltage across the capacitor is limited to approximately
+$0.5 \times \SI{10}{\volt} = \SI{5}{\volt}$, which never reaches the NE555 threshold
+of $\tfrac{2}{3}V_{CC} = \SI{6.67}{\volt}$.
+Consequently, the comparator is never triggered and the output \textbf{never returns
+to low} -- the monostable behaviour is completely disrupted.
+
+In contrast, the 10:1 probe provides \SI{10}{\mega\ohm} input impedance, which is
+negligible compared to $R_1 = \SI{1}{\mega\ohm}$ and does not significantly alter
+the circuit behaviour.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Messaufbau Schaltung Task 3.1.4.jpeg}
+  \caption{Measuring setup}
+  \label{fig:MeasuringSetup}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.1.4.png}
+  \caption{Output $y$ (C2 - red trace) and $V_C$ (C1 - yellow trace) measured via BNC cable -- monostable multivibrator.
+           The output does not return to low due to voltage divider loading.}
+  \label{fig:mono_bnc}
+\end{figure}
+
+% ── 3.1.5 ────────────────────────────────────────────────────────────
+\subsubsection{Task 3.1.5 -- Output-Only Measurement (No Capacitor Probing)}
+
+The output signal $y$ at pin~3 was measured alone, without a probe connected to the
+capacitor node.
+
+\begin{table}[H]
+  \centering
+  \caption{Output pulse duration with and without simultaneous capacitor probing.}
+  \label{tab:mono_outputonly}
+  \begin{tabular}{lcc}
+    \toprule
+    Quantity & With $V_C$ probed & Without $V_C$ probed \\
+    \midrule
+    Pulse duration $t_H$ & \SI{1.18}{\second} & \SI{1.08}{\second} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.1.5.png}
+  \caption{Output $y$ (C1 - yellow trace) only -- monostable multivibrator, no capacitor probing.}
+  \label{fig:mono_outputonly}
+\end{figure}
+
+When the probe is connected to the capacitor node, a small current flows through the
+probe's input resistance (\SI{10}{\mega\ohm}) in parallel with the capacitor.
+This additional current path \textbf{partially discharges the capacitor}, meaning the
+capacitor must charge for a longer time to reach the NE555 threshold voltage.
+Therefore, the pulse duration is longer when the capacitor is probed (\SI{1.18}{\second})
+compared to unprobed (\SI{1.08}{\second}).
+The difference of \SI{0.1}{\second} ($\approx 8.5\,\%$) confirms the measurable but
+not destructive loading effect of the 10:1 probe on a high-impedance node.
+
+% ════════════════════════════════════════════════════════════════════
+\subsection{Task 3.2 -- Astable Multivibrator (NE555)}
+% ════════════════════════════════════════════════════════════════════
+
+\textbf{Component values used:}
+$R_1 = \SI{10}{\kilo\ohm}$,\quad
+$R_2 = \SI{10}{\kilo\ohm}$,\quad
+$C = \SI{100}{\nano\farad}$,\quad
+$V_{CC} = \SI{10}{\volt}$.
+
+% ── 3.2.1 ────────────────────────────────────────────────────────────
+\subsubsection{Task 3.2.1 -- Calculation of Oscillation Period}
+
+Applying equations~\eqref{eq:astable_th_theory}--\eqref{eq:astable_T_theory}:
+\begin{align*}
+  t_H &= 0.693 \times (\SI{10}{\kilo\ohm} + \SI{10}{\kilo\ohm}) \times \SI{100}{\nano\farad}
+       = \SI{1.386}{\milli\second} \\
+  t_L &= 0.693 \times \SI{10}{\kilo\ohm} \times \SI{100}{\nano\farad}
+       = \SI{0.693}{\milli\second} \\
+  T   &= t_H + t_L = \SI{2.079}{\milli\second} \\
+  f   &= \frac{1}{T} = \SI{481.0}{\hertz} \\
+  D   &= \frac{t_H}{T} = \frac{R_1+R_2}{R_1+2R_2} = \SI{66.7}{\percent}
+\end{align*}
+\[
+  \boxed{T_{\text{calc}} = \SI{2.079}{\milli\second}, \quad
+         f_{\text{calc}} = \SI{481}{\hertz}, \quad
+         D_{\text{calc}} = \SI{66.7}{\percent}}
+\]
+
+% ── 3.2.2 ────────────────────────────────────────────────────────────
+\subsubsection{Task 3.2.2 -- Measurement}
+
+\begin{table}[H]
+  \centering
+  \caption{Measured values -- astable multivibrator (NE555).}
+  \label{tab:astable_ne555}
+  \begin{tabular}{lccc}
+    \toprule
+    Quantity & Symbol & Calculated & Measured \\
+    \midrule
+    High time    & $t_H$ & \SI{1.386}{\milli\second} & \SI{1.340}{\milli\second} \\
+    Low time     & $t_L$ & \SI{0.693}{\milli\second} & \SI{0.663}{\milli\second} \\
+    Period       & $T$   & \SI{2.079}{\milli\second} & \SI{2.017}{\milli\second} \\
+    Frequency    & $f$   & \SI{481.0}{\hertz}        & \SI{495.8}{\hertz}        \\
+    Duty cycle   & $D$   & \SI{66.7}{\percent}       & \SI{66.4}{\percent}       \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Messaufbau Schaltung Task 3.2.2.jpeg}
+  \caption{Measuring setup}
+  \label{fig:MeasuringSetup}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.2.2.png}
+  \caption{Output $y$ (C2 - red trace) and $V_C$ (C1 - yellow trace) -- astable multivibrator, NE555.}
+  \label{fig:astable_ne555}
+\end{figure}
+
+% ── 3.2.3 ────────────────────────────────────────────────────────────
+\subsubsection{Task 3.2.3 -- Explanation of Differences}
+
+The measured period of \SI{2.017}{\milli\second} deviates from the calculated
+\SI{2.079}{\milli\second} by approximately \SI{3.0}{\percent}.
+This deviation is well within the expected component tolerances of $\pm5\,\%$ for
+resistors and $\pm20\,\%$ for capacitors and can therefore be attributed primarily to
+\textbf{component tolerances}.
+
+Compared to task~3.1, the influence of the oscilloscope probe on the measurement is
+significantly smaller.
+The probe's \SI{10}{\mega\ohm} input impedance is negligible relative to the circuit
+resistances of only \SI{10}{\kilo\ohm}, whereas in task~3.1 the probe impedance was
+of the same order of magnitude as $R_1 = \SI{1}{\mega\ohm}$.
+Consequently, probe loading has a much smaller effect here.
+
+% ── 3.2.4 ────────────────────────────────────────────────────────────
+\subsubsection{Task 3.2.4 -- Rising Edge Zoom}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Messaufbau Schaltung Task 3.2.4.jpeg}
+  \caption{Measuring setup}
+  \label{fig:MeasuringSetup}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.2.4.png}
+  \caption{Zoomed rising edge of the NE555 astable output signal without a bypass (decoupling) capacitor.}
+  \label{fig:astable_edge_without_bypass_Cap}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.2.4 (2).png}
+  \caption{Zoomed rising edge of the NE555 astable output signal with a bypass (decoupling) capacitor.}
+  \label{fig:astable_edge_with_bypass_Cap}
+\end{figure}
+
+The rising edge of the NE555 output does not exhibit a perfectly steep transition.
+This is caused by the output stage of the NE555, which consists of a
+\textbf{BJT totem-pole structure}. When the output transistor switches from saturation
+to cut-off, carrier storage time and the capacitive load at pin~3 (wiring, probe)
+slow down the transition.
+
+Furthermore, a \textbf{bypass (decoupling) capacitor} must be placed between $V_{CC}$
+and GND as close as possible to the IC supply pins.
+When the NE555 output switches, the IC momentarily draws a large transient current.
+Without a bypass capacitor, this current must be supplied from the power supply through
+the full inductance of the supply wires, causing a voltage dip at $V_{CC}$ and
+potential instability of the switching threshold.
+The bypass capacitor acts as a local energy reservoir that immediately provides the
+required transient current, ensuring stable and reliable switching behaviour.
+
+% ════════════════════════════════════════════════════════════════════
+\subsection{Task 3.3 -- Astable Multivibrator Using Two Inverters (74C00)}
+% ════════════════════════════════════════════════════════════════════
+
+\textbf{Component values used:}
+$R_S = \SI{1}{\kilo\ohm}$,\quad
+$R = \SI{10}{\kilo\ohm}$,\quad
+$C = \SI{1}{\nano\farad}$,\quad
+$V_{CC} = \SI{10}{\volt}$.
+
+\textbf{Expected frequency} from equation~\eqref{eq:inv_osc_theory}:
+\[
+  f_{\text{calc}} \approx \frac{1}{2.2 \times \SI{10}{\kilo\ohm} \times \SI{1}{\nano\farad}}
+  = \SI{45.5}{\kilo\hertz}
+\]
+
+% ── 3.3.1 ────────────────────────────────────────────────────────────
+\subsubsection{Task 1.1 -- Circuit Function}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Messaufbau Schaltung Task 3.3.1.jpeg}
+  \caption{Measuring setup}
+  \label{fig:MeasuringSetup}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.3.1.png}
+  \caption{Voltage at node P (C2 - red trace) and output $U_{\text{OUT}}$ (C1 - yellow trace)
+           -- two-inverter oscillator.}
+  \label{fig:inv_function}
+\end{figure}
+
+The circuit operates as a relaxation oscillator. The first inverter output feeds back
+through the RC network ($R$ and $C$) to its own input at node~S.
+When $U_{\text{OUT}}$ switches to a high level, the capacitor $C$ begins charging
+through $R$, causing the voltage at node~S to rise exponentially.
+Once $V_S$ crosses the CMOS switching threshold (approximately $\tfrac{1}{2}V_{CC}$),
+the first inverter switches its output low, which in turn causes $U_{\text{OUT}}$ to
+go high via the second inverter.
+The capacitor then discharges in the opposite direction, and the cycle repeats,
+producing a continuous square wave at the output.
+
+% ── 3.3.2 ────────────────────────────────────────────────────────────
+\subsubsection{Task 1.2 -- Measurement at S and P}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Messaufbau Schaltung Task 3.3.2.jpeg}
+  \caption{Measuring setup}
+  \label{fig:MeasuringSetup}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Task3.3.2.png}
+  \caption{Voltage at node P (C2 - red trace) and output $U_{\text{OUT}}$ (C1 - yellow trace) and at node S (C3 - blue trace)
+           -- two-inverter oscillator.}
+  \label{fig:inv_SP}
+\end{figure}
+
+At node~S, a square wave switching between \SI{0}{\volt} and $V_{CC}$ is observed.
+At node~P, an exponential charging and discharging waveform is visible.
+Due to the RC feedback, the voltage at P swings beyond the supply rails during each
+transition; it is clamped to approximately $-0.7$\,V and $V_{CC} + 0.7$\,V by the
+internal ESD protection diodes of the CMOS input.
+This clipping is clearly visible in the oscilloscope trace.
+
+% ── 3.3.3 ────────────────────────────────────────────────────────────
+\subsubsection{Task 1.3 -- Purpose of $R_S$}
+
+Without $R_S$, the voltage at node~P would exceed the supply rails at every switching
+event. The resulting current would flow directly through the CMOS input protection
+diodes without any current limitation, potentially \textbf{destroying the IC}.
+
+Additionally, $R_S$ forms part of the total series resistance in the RC network and
+therefore has a small influence on the oscillation frequency.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Conclusions}
+% ─────────────────────────────────────────────────────────────────────────────
+
+The following table provides a concise overview of calculated vs.\ measured values
+for all tasks:
+
+\begin{table}[H]
+  \centering
+  \caption{Summary: calculated vs.\ measured values for all tasks.}
+  \label{tab:summary}
+  \begin{tabular}{llccc}
+    \toprule
+    Task & Quantity & Calculated & Measured & Rel.\ error \\
+    \midrule
+    3.1 & $t_H$ (monostable, \#1) & \SI{1.100}{\second}       & \SI{1.18}{\second}        & \SI{7.3}{\percent}  \\
+    3.1 & $t_H$ (monostable, \#2) & \SI{1.100}{\second}       & \SI{1.19}{\second}        & \SI{8.2}{\percent}  \\
+    3.2 & $T$ (astable NE555)     & \SI{2.079}{\milli\second} & \SI{2.017}{\milli\second} & \SI{3.0}{\percent}  \\
+    3.2 & $f$ (astable NE555)     & \SI{481}{\hertz}          & \SI{495.8}{\hertz}        & \SI{3.1}{\percent}  \\
+    3.3 & $f$ (inverter osc.)     & \SI{45.5}{\kilo\hertz}    & \SI{48.81}{\kilo\hertz}   & \SI{7.27}{\percent} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+All measurements are in good agreement with the theoretical calculations, with
+deviations well within the expected component tolerances.
+The largest relative error occurred in task~3.1, where the high impedance of the
+circuit made it particularly susceptible to probe loading effects.
+In task~3.2, the probe loading was negligible due to the much lower circuit impedance.
+The BNC cable measurement in task~3.1.4 demonstrated clearly that a low-impedance
+measurement connection can fundamentally alter circuit behaviour by acting as a load.
+The necessity of the bypass capacitor in task~3.2.4 was confirmed by the observed
+instability in the rising edge without it.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Summary}
+% ─────────────────────────────────────────────────────────────────────────────
+
+This laboratory exercise verified the timing characteristics of NE555 and CMOS-based switching circuits. 
+Measurements of the monostable multivibrator yielded a pulse duration of 1.18\,s, while the astable configuration produced a frequency of 495.8\,Hz. 
+These results deviate from theoretical predictions by 7.3\% and 3.1\%, respectively, primarily due to capacitor tolerances and probe loading. 
+The experiments demonstrated that high-impedance nodes require 10:1 probes to maintain circuit functionality. 
+Ultimately, the data confirms that RC timing models accurately predict behavior when considering practical measurement effects and proper decoupling.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Outlook}
+% ─────────────────────────────────────────────────────────────────────────────
+
+Future experiments could investigate methods to achieve a 50\% duty cycle in the NE555 astable mode by placing a signal diode in parallel with $R_2$. 
+This modification allows the capacitor to charge only through $R_1$, enabling independent control of high and low times. 
+Another relevant study involves testing the temperature dependence of the RC-based oscillators to quantify frequency drift under thermal stress. 
+Additionally, varying the bypass capacitor values would help determine the minimum capacitance required to maintain switching stability across different frequency ranges.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{thebibliography}{9}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\bibitem{Floyd2006}
+T.\,Floyd,
+\textit{Digital Fundamentals}, 9th~ed.
+Pearson Prentice Hall, 2006, ch.~7-6.
+
+\bibitem{TietzeSchenk1999}
+U.\,Tietze and C.\,Schenk,
+\textit{Halbleiterschaltungstechnik}, 11.~Auflage.
+Springer, 1999, Kap.~6.5.
+
+\bibitem{ReportGuide}
+C.\,Thorrold,
+\textit{Guide for Writing Lab Reports}, Version~1.0.
+
+\bibitem{NE555_DS}
+Texas Instruments,
+\textit{NE555 Precision Timers -- Datasheet},
+\url{https://www.ti.com/lit/ds/symlink/ne555.pdf}, accessed April 2026.
+
+\bibitem{74C00_DS}
+Texas Instruments,
+\textit{CD74C00 Quad 2-Input NAND Gate -- Datasheet},
+\url{https://www.ti.com/lit/ds/symlink/cd74hc00.pdf}, accessed April 2026.
+
+\end{thebibliography}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\appendix
+\section{Appendix B -- Actual Component Values}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\begin{table}[H]
+  \centering
+  \caption{Component values measured with multimeter before assembly.}
+  \label{tab:components}
+  \begin{tabular}{lcccc}
+    \toprule
+    Component & Nominal & Measured & Tolerance & Task \\
+    \midrule
+    $R_1$ (monostable)  & \SI{1}{\mega\ohm}     & \SI{0.983}{\mega\ohm}   & $\pm5\,\%$  & 3.1 \\
+    $C$  (monostable)   & \SI{1}{\micro\farad}  & \SI{1.074}{\micro\farad}& $\pm20\,\%$ & 3.1 \\
+    $R_1$ (astable)     & \SI{10}{\kilo\ohm}    & \SI{9.87}{\kilo\ohm}    & $\pm5\,\%$  & 3.2 \\
+    $R_2$ (astable)     & \SI{10}{\kilo\ohm}    & \SI{10.12}{\kilo\ohm}   & $\pm5\,\%$  & 3.2 \\
+    $C$  (astable)      & \SI{100}{\nano\farad} & \SI{96.3}{\nano\farad}  & $\pm20\,\%$ & 3.2 \\
+    $R_S$ (inverter)    & \SI{1}{\kilo\ohm}     & \SI{0.991}{\kilo\ohm}   & $\pm5\,\%$  & 3.3 \\
+    $R$  (inverter)     & \SI{10}{\kilo\ohm}    & \SI{10.08}{\kilo\ohm}   & $\pm5\,\%$  & 3.3 \\
+    $C$  (inverter)     & \SI{1}{\nano\farad}   & \SI{0.963}{\nano\farad} & $\pm20\,\%$ & 3.3 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\end{document}

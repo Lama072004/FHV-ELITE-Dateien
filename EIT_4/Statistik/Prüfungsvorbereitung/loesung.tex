@@ -1,0 +1,306 @@
+\documentclass[landscape,a4paper,8pt]{article}
+\usepackage[margin=0.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{parskip}
+
+\setlength{\columnsep}{0.5cm}
+\setlength{\columnseprule}{0.3pt}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+
+\newcommand{\aufgabe}[1]{\vspace{1pt}\textbf{\underline{#1}}\par}
+\newcommand{\blatt}[1]{\smallskip\begin{center}\textbf{\normalsize\underline{#1}}\end{center}\par}
+\newcommand{\teil}[1]{\textbf{#1}\;}
+\newcommand{\erkl}[1]{{\small\textit{#1}}\par}
+\newcommand{\erg}[1]{\underline{\underline{#1}}}
+
+\begin{document}
+\begin{multicols*}{4}
+
+%% ══════════════════════════════════════
+\blatt{Übungsblatt 1}
+%% ══════════════════════════════════════
+
+\aufgabe{Aufg. 1: Permutation}
+\erkl{\textbf{Geg:} 8 Personen auf 8 Stühlen.\\\textbf{Ges:} Anzahl möglicher Sitzordnungen.}
+$8! = 40320$\\
+$40320 \div 365 \approx \erg{110{,}46 \text{ Jahre}}$
+
+\aufgabe{Aufg. 2: Münzen ($n=5$)}
+\erkl{\textbf{Geg:} 5 Münzen. a) 5 versch., b) 3 gleiche, c) 3 gleiche \& 2 gleiche.\\\textbf{Ges:} Anzahl möglicher Anordnungen.}
+\teil{a} $5! = \erg{120}$\\
+\teil{b} $\dfrac{5!}{3!} = \erg{20}$\\
+\teil{c} $\dfrac{5!}{3!\,2!} = \erg{10}$
+
+\aufgabe{Aufg. 3: Münzwurf ($n=10$)}
+\erkl{\textbf{Geg:} 10 Münzwürfe.\\\textbf{Ges:} Möglichkeiten für a) genau 7$\times$ Kopf, b) mind. 7$\times$ Kopf.}
+\teil{a} $\binom{10}{7}=\dfrac{10!}{7!\,3!}=\erg{120}$\\[2pt]
+\teil{b} $\displaystyle\sum_{k=7}^{10}\binom{10}{k}=120+45+10+1=\erg{176}$
+
+\aufgabe{Aufg. 4: Parallelsch. (Komb.)}
+\erkl{\textbf{Geg:} 3 parallele Widerstände, 5 zur Auswahl.\\\textbf{Ges:} Schaltmögl. (Reihenfolge egal) bei a) max. 1-maliger, b) mehrmaliger Verwendung.}
+\teil{a} $\binom{5}{3}=\erg{10}$\\
+\teil{b} $\binom{n+k-1}{k}=\binom{7}{3}=\erg{35}$
+
+\aufgabe{Aufg. 5: Reihenschalt. (Var.)}
+\erkl{\textbf{Geg:} 3 Widerstände in gemischter Schaltung (Reihenfolge wichtig), 5 zur Auswahl.\\\textbf{Ges:} Schaltmögl. bei a) max. 1-maliger, b) mehrmaliger Verwendung.}
+\teil{a} $\dfrac{5!}{(5-3)!}\cdot\dfrac{1}{2!}=\dfrac{120}{2\cdot2}=\erg{30}$\\
+\erkl{(2 Plätze gleichwertig $\Rightarrow \div 2!$)}
+\teil{b} $5^3-5^2=125-25=\erg{100}$
+
+\aufgabe{Aufg. 6: Ausfallwahrsch.}
+\erkl{\textbf{Geg:} Schaltung: R1 in Reihe zu (R2$\|$R3), $p_1{=}0{,}3,\;p_2{=}0{,}2,\;p_3{=}0{,}4$.\\\textbf{Ges:} a) Whk. für Stromkreisunterbrechung, b) optimalste Anordnung.}
+\teil{a} $P=p_1+p_2 p_3-p_1 p_2 p_3$\\
+$=0{,}3+0{,}08-0{,}024=\erg{0{,}356}$\\
+\teil{b} \erkl{R2 in Reihe mit Parallelzweig R1$\|$R3:}
+$P=p_2+p_1 p_3-p_2 p_1 p_3$\\
+$=0{,}2+0{,}12-0{,}024=\erg{0{,}296}$
+
+\aufgabe{Aufg. 7: Texas Hold'em}
+\erkl{\textbf{Geg:} 52 Karten, man hält 2 Herzkarten.\\\textbf{Ges:} Whk. für a) 2 od. 3 Herz im Flop, b) Herz im Turn, c) Herz im River.}
+\teil{a} \erkl{Flop = 3 Karten aus 50}
+$P(\text{genau 2 Herz})=\dfrac{\binom{11}{2}\binom{39}{1}}{\binom{50}{3}}\approx\erg{0{,}109}$\\
+$P(\text{genau 3 Herz})=\dfrac{\binom{11}{3}}{\binom{50}{3}}\approx\erg{0{,}0084}$\\
+\teil{b} \erkl{Bei genau 2 Herz im Flop: 9 Herz übrig in 47:}
+$P=\dfrac{9}{47}\approx\erg{0{,}191}$\\
+\teil{c} \erkl{Flop: 2 Herz, Turn: kein Herz $\Rightarrow$ 9 Herz in 46:}
+$P=\dfrac{9}{46}\approx\erg{0{,}196}$
+
+\aufgabe{Aufg. 8: Geom. Whk. I}
+\erkl{\textbf{Geg:} Drahtgeflecht (15$\times$25mm, 3mm dick), Bohrer ($\varnothing$8mm).\\\textbf{Ges:} Whk., dass Bohrer das Geflecht nicht trifft.}
+Freie Fläche: $(15-2\cdot5{,}5)\times(25-2\cdot5{,}5)=4\times14=56$\\
+$P=\dfrac{56}{15\cdot25}=\dfrac{56}{375}\approx\erg{0{,}149}$
+
+\aufgabe{Aufg. 9: Geom. Whk. II}
+\erkl{\textbf{Geg:} 2 Personen, Ankunft zw. 18–19 Uhr, Wartezeit 15 min.\\\textbf{Ges:} Whk., dass sie sich treffen.}
+$P=1-\left(\dfrac{45}{60}\right)^2=1-\dfrac{9}{16}=\erg{\dfrac{7}{16}\approx0{,}4375}$
+
+
+%% ══════════════════════════════════════
+\blatt{Übungsblatt 2}
+%% ══════════════════════════════════════
+
+\aufgabe{Aufg. 1: Musikauswahl}
+\erkl{\textbf{Geg:} 8 Songs (davon 3 Lieblingslieder), Playlist aus 3 Songs.\\\textbf{Ges:} a) Auswahlmögl., Whk. für b) genau 2, c) mind. 1 Lieblingslied.}
+\teil{a} Ohne Reihenfolge: $\binom{8}{3}=\erg{56}$\\
+Mit Reihenfolge: $\dfrac{8!}{5!}=\erg{336}$\\
+\teil{b} $P=\dfrac{\binom{3}{2}\binom{5}{1}}{\binom{8}{3}}=\dfrac{15}{56}\approx\erg{0{,}268}$\\
+\teil{c} $P=1-\dfrac{\binom{5}{3}}{\binom{8}{3}}=1-\dfrac{10}{56}=\dfrac{46}{56}\approx\erg{0{,}821}$
+
+\aufgabe{Aufg. 2: Sensorsystem}
+\erkl{\textbf{Geg:} 6 Sensoren, Ausfall $p=0{,}1$, System braucht mind. 5.\\\textbf{Ges:} a) Auswahlmögl., b) Whk. dass System läuft, c) Zustände 4-Bit, d) Ausfall-Whk.}
+\teil{a} $\binom{6}{3}=\erg{20}$\\
+\teil{b} $=\binom{6}{5}(0{,}9)^5(0{,}1)+(0{,}9)^6$\\
+$=6\cdot0{,}0590+0{,}5314\approx\erg{0{,}886}$\\
+\teil{c} $2^4=\erg{16}$ Zustände\\
+\teil{d} $P(\text{Ausfall})=1-(0{,}9)^5\approx\erg{0{,}4095}$
+
+\aufgabe{Aufg. 3: Spieleabend}
+\erkl{\textbf{Geg:} 5 Personen, 8 Spiele, zufällige Wahl.\\\textbf{Ges:} Whk. für a) 5 versch. Spiele, b) mind. 2 gleiches, c) mind. 3 gewählt.}
+\teil{a} $P=\dfrac{8\cdot7\cdot6\cdot5\cdot4}{8^5}=\dfrac{6720}{32768}\approx\erg{0{,}205}$\\
+\teil{b} $P=1-0{,}205\approx\erg{0{,}795}$\\
+\teil{c} $P\approx\erg{0{,}974}$\\
+\teil{d} $\binom{8}{3}=\erg{56}$\quad\teil{e} $\frac{8!}{5!}=\erg{336}$
+
+\aufgabe{Aufg. 4: Bitübertragung}
+\erkl{\textbf{Geg:} 8-Bit-Wort, Bitfehler-Whk $p=0{,}01$.\\\textbf{Ges:} a) Anzahl Bitmuster, Whk. für b) 0 Fehler, c) mind. 1 Fehler.}
+\teil{a} $2^8=\erg{256}$\\
+\teil{b} $P=(0{,}99)^8\approx\erg{0{,}923}$\\
+\teil{c} $P=1-(0{,}99)^8\approx\erg{0{,}077}$
+
+\aufgabe{Aufg. 5: Gacha-Spiel}
+\erkl{\textbf{Geg:} Basis-Whk $p=0{,}006$, 50\% für Aktionschar., 10 Ziehungen.\\\textbf{Ges:} Whk. auf a/c) 5-Sterne, b/d) Aktionscharakter.}
+\teil{a} $P=1-(0{,}994)^{10}\approx\erg{0{,}058}$\\
+\teil{b} $P\approx0{,}058\cdot0{,}5\approx\erg{0{,}030}$\\
+\teil{c} \erkl{Pity: $p_k=0{,}006\cdot k$}
+$P=1-\prod_{k=1}^{10}(1-0{,}006k)\approx\erg{0{,}286}$
+
+\aufgabe{Aufg. 6: Geom. Whk. I}
+\erkl{\textbf{Geg/Ges:} Entspricht Ü-Blatt 1 Aufg. 8}
+$P\approx\erg{0{,}149}$
+
+\aufgabe{Aufg. 7: Geom. Whk. II}
+\erkl{\textbf{Geg/Ges:} Entspricht Ü-Blatt 1 Aufg. 9}
+$P=\dfrac{7}{16}\approx\erg{0{,}4375}$
+
+\columnbreak
+%% ══════════════════════════════════════
+\blatt{Stetige Vert. (Ü-Blatt 3)}
+%% ══════════════════════════════════════
+
+\aufgabe{Aufg. 1: Gleichvert. — Summe}
+\erkl{\textbf{Geg:} 2 Würfel, $X = \text{Summe}$.\\\textbf{Ges:} $P(X{=}x), F(x), E[X], \mathrm{Var}(X), \sigma$.}
+\teil{a} $P(X{=}x)=\frac{n_x}{36}$, z.\,B. $P(7)=\frac{6}{36}$\\
+\teil{c} $E[X]=\erg{7}$\\
+\teil{d} $\mathrm{Var}(X)=\frac{35}{6}\approx\erg{5{,}83}$\\
+\teil{e} $\sigma\approx\erg{2{,}415}$
+
+\aufgabe{Aufg. 2: Gleichvert. — Maximum}
+\erkl{\textbf{Geg:} 2 Würfel, $X = \text{Maximum}$.\\\textbf{Ges:} $P(X{=}x), F(x), E[X], \mathrm{Var}(X), \sigma$.}
+\teil{a} $P(X{=}x)=\dfrac{2x-1}{36}$\\
+\teil{b} $F(x)=\dfrac{x^2}{36}$\\
+\teil{c} $E[X]=\dfrac{161}{36}\approx\erg{4{,}47}$\\
+\teil{d} $\mathrm{Var}(X)\approx\erg{1{,}99}$\quad\teil{e} $\sigma\approx\erg{1{,}41}$
+
+\aufgabe{Aufg. 3: Binomialvert.}
+\erkl{\textbf{Geg:} Münze, $n=10, p=0{,}5$.\\\textbf{Ges:} Whk. für a) 0, b) 2, c) mind. 4 mal Zahl.}
+\teil{a} $P(X{=}0)=\binom{10}{0}\!\left(\tfrac{1}{2}\right)^{10}=\dfrac{1}{1024}\approx\erg{0{,}001}$\\
+\teil{b} $P(X{=}2)=\binom{10}{2}\!\left(\tfrac{1}{2}\right)^{10}=\dfrac{45}{1024}\approx\erg{0{,}044}$\\
+\teil{c} \erkl{Gegenereignis:}
+$P(X\geq4)=1-\bigl[P(0)+P(1)+P(2)+P(3)\bigr]$\\
+$=1-\dfrac{1+10+45+120}{1024}=\dfrac{848}{1024}\approx\erg{0{,}828}$
+
+\aufgabe{Aufg. 4: Binomialvert. II}
+\erkl{\textbf{Geg:} Schrauben, $n=250$, Ausschuss $p=0{,}02$.\\\textbf{Ges:} $E[X], \sigma^2, \sigma$.}
+$E[X]=np=250\cdot0{,}02=\erg{5}$\\
+$\sigma^2=np(1-p)=250\cdot0{,}02\cdot0{,}98=\erg{4{,}9}$\\
+$\sigma=\sqrt{4{,}9}\approx\erg{2{,}214}$
+
+\aufgabe{Aufg. 5: Binomialvert. III}
+\erkl{\textbf{Geg:} Schütze, Treffer-Whk $p=1/3, n=5$.\\\textbf{Ges:} Whk. für a) 0, b) 3, c) mind. 3 Treffer.}
+\teil{a} $P(X{=}0)=\binom{5}{0}\!\left(\tfrac{1}{3}\right)^0\!\left(\tfrac{2}{3}\right)^5=\dfrac{32}{243}\approx\erg{0{,}132}$\\
+\teil{b} $P(X{=}3)=\binom{5}{3}\!\left(\tfrac{1}{3}\right)^3\!\left(\tfrac{2}{3}\right)^2=\dfrac{80}{729}\approx\erg{0{,}110}$\\
+\teil{c} $P(X\geq3)=\dfrac{80}{729}+\dfrac{10}{243}+\dfrac{1}{243}$\\
+$=\dfrac{80+30+3}{729}=\dfrac{113}{729}\approx\erg{0{,}155}$
+
+\columnbreak
+
+\aufgabe{Aufg. 6: Exponentialvert.}
+\erkl{\textbf{Geg:} Wartungsdauer $T \sim Exp$, $\mu=4$h.\\\textbf{Ges:} Whk. für a) $T \leq 2$, b) $T > 4$, c) $3 \leq T \leq 5$.}
+\teil{a} $P(T\leq2)=1-e^{-1/2}\approx\erg{0{,}393}$\\
+\teil{b} $P(T>4)=e^{-1}\approx\erg{0{,}368}$\\
+\teil{c} $P(3\leq T\leq5)=e^{-3/4}-e^{-5/4}\approx\erg{0{,}186}$
+
+\aufgabe{Aufg. 7: Exponentialvert. II}
+\erkl{\textbf{Geg:} Lampe $T \sim Exp$, $\mu=10000$h.\\\textbf{Ges:} Ausfall-Whk. für a) $\leq 500$, b) $1000 - 30000$, c) $>12000$.}
+\teil{a} $P(T\leq500)=1-e^{-0{,}05}\approx\erg{0{,}049}$\\
+\teil{b} $P(1000\leq T\leq30000)=e^{-0{,}1}-e^{-3}\approx\erg{0{,}855}$\\
+\teil{c} $P(T>12000)=e^{-1{,}2}\approx\erg{0{,}301}$
+
+\aufgabe{Aufg. 8: Erlangverteilung}
+\erkl{\textbf{Geg:} Poisson, $\lambda=1/5$ pro min.\\\textbf{Ges:} Whk. für 3 Kunden in a) 10, b) 15, c) 20 min.}
+\teil{a} $t=10$: $P\approx\erg{0{,}323}$\\
+\teil{b} $t=15$: $P\approx\erg{0{,}577}$\\
+\teil{c} $t=20$: $P\approx\erg{0{,}762}$
+
+\aufgabe{Aufg. 9: Poissonverteilung}
+\erkl{\textbf{Geg:} Poisson, $\lambda=3$ pro h.\\\textbf{Ges:} Whk. für a) 0, b) 2, c) $>4$, d) $1 - 3$ Anrufe.}
+\teil{a} $P(0)=e^{-3}\approx\erg{0{,}050}$\\
+\teil{b} $P(2)=\frac{9}{2}e^{-3}\approx\erg{0{,}224}$\\
+\teil{c} $P(X>4)=1-\sum_{k=0}^{4}P(k)\approx\erg{0{,}185}$\\
+\teil{d} $P(1\leq X\leq3)=e^{-3}(3+\frac{9}{2}+\frac{9}{2})\approx\erg{0{,}596}$
+
+
+%% ══════════════════════════════════════
+\blatt{Übungsblatt 4}
+%% ══════════════════════════════════════
+
+\aufgabe{Aufg. 1: Binomialvert.}
+\erkl{\textbf{Geg:} 100 Würfe, $p=0{,}5$.\\\textbf{Ges:} Whk. für 60, Erwartungswert, Glockenkurve.}
+\teil{b} $P(X{=}60)\approx\erg{1{,}084\cdot10^{-2}}$\\
+\teil{c} $E[X]=np=100\cdot0{,}5=\erg{50}$\\
+\teil{d} Glockenkurve, Zentrum bei 50
+
+\aufgabe{Aufg. 2: Spiel (Erwartungswert)}
+\erkl{\textbf{Geg:} Kopf $\times 1{,}1$, Zahl $\times 0{,}9$, $p=0{,}5$.\\\textbf{Ges:} Erwartungswert nach 1 Wurf / 100 Würfen.}
+$E(\text{1 Wurf})=0{,}5\cdot1{,}1+0{,}5\cdot0{,}9=\erg{1}$\\
+$E(G)=1\text{€}\cdot[E]^{100}=\erg{1\text{€}}$\\
+\erkl{(Fairer Multiplikator, Erwartungswert bleibt 1€)}
+
+\aufgabe{Aufg. 3: Spiel III — St.\,Petersburg}
+\erkl{\textbf{Geg:} Start 1€, Einsatz verdoppelt sich, endet bei Zahl.\\\textbf{Ges:} Erwartungswert $E[G]$.}
+$E[G]=\displaystyle\sum_{k=1}^{\infty}2^k\cdot\frac{1}{2^k}=\sum_{k=1}^{\infty}1=\erg{\infty}$\\
+\erkl{Theoretisch sollte man beliebig viel zahlen, jedoch spielt die Risikoaversion eine Rolle}
+
+\aufgabe{Aufg. 4: Spiel IV — Automat}
+\erkl{\textbf{Geg:} $p=1/100$, Gewinn 10000€, Einsatz 100€.\\\textbf{Ges:} Gew.-Whk, nötige Spiele für Gew., Erwartungswert.}
+\teil{1} \erkl{Mind. 1$\times$ in 100 Spielen:}
+$P=1-(1-\tfrac{1}{100})^{100}=1-(0{,}99)^{100}\approx\erg{0{,}634}$\\
+\teil{2} \erkl{Mind. 1 Gewinn mit Whk. $p^*$: $n=\frac{\ln(1-p^*)}{\ln(0{,}99)}$}
+50\%: $n\approx\erg{69}$\quad 90\%: $n\approx\erg{230}$\quad 99\%: $n\approx\erg{459}$\\
+\teil{3} $E(n\text{ Spiele})=n\cdot p\cdot10000-n\cdot100=\erg{n\cdot0}=n$\\
+\erkl{(Netto-Erwartungswert = 0€ pro Spiel, brutto = $n$€)}
+
+\aufgabe{Aufg. 5: Spiel V — Coupon Collector}
+\erkl{\textbf{Geg:} Würfeln bis alle Zahlen 1–6 kamen.\\\textbf{Ges:} Erwartungswert der Würfe.}
+$=6\!\left(1+\tfrac{1}{2}+\tfrac{1}{3}+\tfrac{1}{4}+\tfrac{1}{5}+\tfrac{1}{6}\right)$\\
+$=6\cdot\tfrac{49}{20}=\erg{14{,}7\text{ Würfe}}$\\
+\erkl{Bereit zu zahlen: höchstens $E[X]\cdot 1\text{€}=14{,}70\text{€}$}
+
+
+%% ══════════════════════════════════════
+\blatt{Markov-Ketten (Ü-Blatt 5)}
+%% ══════════════════════════════════════
+
+\aufgabe{Aufg. 1: Übergangsmatrix}
+\erkl{\textbf{Geg:} 3 Zustände, Übergangswahrscheinlichkeiten.\\\textbf{Ges:} Matrix $P$, Irreduzibilität, $P^3_{11}$, Stationäre Vert. $\pi$.}
+\teil{a}
+$P=\begin{pmatrix}0{,}7 & 0{,}0 & 0{,}3\\0{,}4 & 0{,}0 & 0{,}6\\0{,}2 & 0{,}3 & 0{,}5\end{pmatrix}$
+
+\teil{b} \textbf{irreduzibel \& aperiodisch}
+
+\teil{c} $P^3_{1\to1}=\erg{0{,}365}$
+
+\teil{d} \erkl{Stationäre Verteilung: $\pi=\pi P$, $\sum\pi_i=1$}
+$\pi_1=0{,}7\pi_1+0{,}4\pi_2+0{,}2\pi_3$\\
+$\pi_2=\phantom{0{,}7\pi_1+{}}0{,}3\pi_2$\\
+$\pi_3=0{,}3\pi_1+0{,}6\pi_2+0{,}5\pi_3$\\
+Lösung: $\erg{\pi=(0{,}451;\;0{,}127;\;0{,}422)^T}$
+
+\aufgabe{Aufg. 2: Irreduzibilität}
+\erkl{\textbf{Geg:} 3 Übergangsgraphen.\\\textbf{Ges:} Prüfung auf Irreduzibilität und Aperiodizität.}
+a) irreduzibel, periodisch (Periode 2)\\
+b) irreduzibel, aperiodisch\\
+c) nicht irreduzibel, periodisch
+
+\aufgabe{Aufg. 3: Wettervorhersage}
+\erkl{\textbf{Geg:} Wetter (S, B, R) mit Übergangswhk.\\\textbf{Ges:} $P^n$, Regen-Whk in 2-5 Tagen, stationäre Vert. $\pi$.}
+$P=\begin{pmatrix}0{,}5 & 0{,}3 & 0{,}2\\0{,}2 & 0{,}6 & 0{,}2\\0{,}3 & 0{,}3 & 0{,}4\end{pmatrix}$
+
+\teil{c} \erkl{$\pi_0=(1,0,0)^T$, $P^n_{S\to R}$:}
+$n{=}2$: 0,220\quad $n{=}3$: 0,241\\
+$n{=}4$: 0,248\quad $n{=}5$: 0,250\\
+\teil{d} \erkl{$\pi_0=(0,0,1)^T$, $P^n_{R\to R}$:}
+$n{=}2$: 0,300\quad $n{=}3$: 0,268\\
+$n{=}4$: 0,254\quad $n{=}5$: 0,251\\
+\teil{e} $\erg{\pi=\left(\tfrac{9}{28},\,\tfrac{3}{7},\,\tfrac{1}{4}\right)^T\approx(0{,}321;\,0{,}429;\,0{,}250)^T}$
+
+\aufgabe{Aufg. 4: IT-Helpdesk I}
+\erkl{\textbf{Geg:} IT-Queue, max 2 Tickets, $p$ (neu), $q$ (lösen).\\\textbf{Ges:} Matrix, $\pi$, Whk. für Leerlauf / Abweisung.}
+Übergänge ($q$=lösen, $p$=neues Ticket):\\
+$P_{00}=1-p,\quad P_{01}=p$\\
+$P_{10}=q(1-p),\quad P_{12}=(1-q)p$\\
+$P_{11}=qp+(1-q)(1-p)$\\
+$P_{21}=q,\quad P_{22}=1-q$\\[2pt]
+\erkl{Stationäre Vert. aus $\pi P=\pi$:}
+$\pi_0=\frac{q^2(1-p)}{D},\;\pi_1=\frac{q p+(1-q)p\cdot q}{D},\;\pi_2=\frac{p^2}{D}$\\
+\erkl{wobei $D=\pi_0+\pi_1+\pi_2=1$ (normiert)}
+\teil{d} $P(\text{nichts zu tun})=\pi_0$\\
+\teil{e} $P(\text{Ticket abgewiesen})=\pi_2\cdot p$
+
+\aufgabe{Aufg. 5: IT-Helpdesk II}
+\erkl{\textbf{Geg:} IT-Queue unendlich, $p$ (neu), $q$ (lösen).\\\textbf{Ges:} $\pi_i$, Stabilitätsbedingung, Mittlere Anzahl $E[X]$.}
+\erkl{Lokale Gleichgewichtsbedingung:}
+$\Pi_i\cdot p(1-q)=\Pi_{i+1}\cdot q(1-p)$\\
+$\Rightarrow\Pi_{i+1}=\rho\cdot\Pi_i\Rightarrow\Pi_i=\rho^i\cdot\Pi_0$\\
+Normierung: $\Pi_0\cdot\dfrac{1}{1-\rho}=1\Rightarrow\Pi_0=1-\rho$\\[2pt]
+$\erg{\Pi_i=(1-\rho)\cdot\rho^i}$\quad mit $\rho=\dfrac{p(1-q)}{q(1-p)}$\\[2pt]
+\erkl{Stabil wenn $\rho<1$, d.\,h. $p<q$. Mittlere Anzahl:}
+$E[X]=\dfrac{\rho}{1-\rho}$
+
+\aufgabe{Aufg. 6: Sessellift}
+\erkl{\textbf{Geg:} $P[Y_n{=}i]=(1-r)r^i$, Kapazität 1/min.\\\textbf{Ges:} Verteilungsfunktion, $E[Y_n]$, Modellierung $X_n$, $P_{ij}$, Auslastung.}
+\teil{a} $F(k) = \sum_{i=0}^k a_i = \erg{1 - r^{k+1}}$\\
+\teil{b} $E[Y_n] = \erg{\frac{r}{1-r}}$\\
+\teil{c} $X_{n+1} = \erg{\max(X_n - 1,\, 0) + Y_{n+1}}$\\
+\teil{d} Zustandsraum: $\erg{S = \{0, 1, 2, \ldots\}}$\\
+\teil{e} $P_{0j} = a_j$, \quad $P_{ij} = a_{j-i+1}$ (für $j \ge i-1$)\\
+\teil{f} $\erg{\text{irreduzibel \& aperiodisch}}$ ($P_{00}=a_0>0$)\\
+\teil{g} $\pi_0 = 1 - E[Y_n] = \erg{\frac{1-2r}{1-r}}$\\
+\teil{i} Auslastung $\rho = 1-\pi_0 = E[Y_n] = \erg{\frac{r}{1-r}}$
+
+\end{multicols*}
+\end{document}

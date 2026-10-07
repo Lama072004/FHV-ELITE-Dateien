@@ -1,0 +1,323 @@
+\documentclass[8pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.3cm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Ausführliche Zusammenfassung - Elektronische Systeme},
+    pdfpagemode=FullScreen,
+}
+
+\title{\textbf{Umfassende theoretische Zusammenfassung}\\ \large Ausgewählte Kapitel der Elektronik: Energy Harvesting, RFID-Transponder \& Radarsysteme}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Lektion 2: Energy Harvester -- Systeme und physikalische Wandlerprinzipien}
+
+\subsection{Systemarchitektur und Herausforderungen}
+Energy Harvesting (Energieeinfangung) bezeichnet die Wandlung von in der Systemumgebung inherent vorhandener Freiraumenergie (Kinetik, Thermik, Strahlung, elektromagnetische Felder) in elektrische Energie, um primär batterielose, autarke Mikrosysteme oder Sensornetzwerkknoten (Wireless Sensor Nodes, WSN) dauerhaft zu betreiben. 
+
+Ein vollständiges Energy-Harvesting-System setzt sich prinzipiell aus folgenden diskreten Funktionsblöcken zusammen:
+\begin{enumerate}
+    \item \textbf{Umgebungsenergiequelle:} Unkontrollierte, zeitvariant fluktuierende Energiepräsenz.
+    \item \textbf{Wandlerelement (Transducer):} Schnittstelle zur physikalischen Domänenwandlung (z.\,B. piezoelektrischer Kristall, thermoelektrischer Generator).
+    \item \textbf{Konditionierungsschaltung / Powermanagement (PMIC):} Impedanzanpassung (Maximum Power Point Tracking, MPPT), Gleichrichtung, Spannungsstabilisierung und Hoch-/Tiefsetzstellung.
+    \item \textbf{Energiespeicher:} Temporäre Pufferung mittels Superkondensatoren (Supercaps) oder Dünnschichtbatterien zur Überbrückung von Quellen-Ausfallzeiten.
+    \item \textbf{Elektronische Last:} Applikationsspezifische Ultra-Low-Power-Sensorik, Signalverarbeitung (Mikrocontroller) und HF-Transceiver.
+\end{enumerate}
+
+\subsection{Mathematisch-Physikalische Wandlerkonzepte}
+
+\subsubsection{Photovoltaisches Harvesting}
+Basiert auf dem \textit{inneren Photoeffekt} in Halbleiter-p-n-Übergängen. Photonen mit einer Energie größer als die Bandlückenenergie $E_g$ generieren Elektron-Loch-Paare, die durch das eingebaute elektrische Feld der Raumladungszone getrennt werden.
+\begin{equation}
+    E_{Photon} = h \cdot f = h \cdot \frac{c}{\lambda} \ge E_g
+\end{equation}
+Hierbei ist $h$ das Plancksche Wirkungsquantum, $f$ die Frequenz, $c$ die Lichtgeschwindigkeit und $\lambda$ die Wellenlänge. Für Innenraumanwendungen (Kunstlicht) verschiebt sich das optimale Absorptionsspektrum im Vergleich zu Solaranwendungen im Außenbereich drastisch, weshalb amorphes Silizium (a-Si) hier oft höhere Wirkungsgrade erzielt als kristallines Silizium (c-Si).
+
+\subsubsection{Thermoelektrisches Harvesting (TEG)}
+Nutzt den \textit{Seebeck-Effekt}. Ein Temperaturgradient $\Delta T = T_{hot} - T_{cold}$ über einem thermoelektrischen Generator (bestehend aus seriell elektrisch und parallel thermisch verschalteten p- und n-dotierten Halbleiterschenkeln) induziert eine Thermospannung $U_{th}$:
+\begin{equation}
+    U_{th} = \alpha \cdot \Delta T = (S_p - S_n) \cdot (T_{hot} - T_{cold})
+\end{equation}
+wobei $\alpha$ bzw. $S$ den Seebeck-Koeffizienten repräsentiert. Die Effizienz eines TEG-Materials wird maßgeblich durch die dimensionslose Gütezahl (Figure of Merit) $zT$ bestimmt:
+\begin{equation}
+    zT = \frac{S^2 \cdot \sigma}{\kappa} \cdot T
+\end{equation}
+Mit der elektrischen Leitfähigkeit $\sigma$, der thermischen Leitfähigkeit $\kappa$ und der absoluten Temperatur $T$. Die größte Herausforderung im Design liegt im extrem niedrigen Innenwiderstand der TEGs, was PMIC-Eingangsspannungen im Millivoltbereich ($10-50$\,mV) erfordert.
+
+\subsubsection{Piezoelektrisches Harvesting}
+Nutzt die Verschiebung von Ladungsschwerpunkten in nicht-zentrosymmetrischen Kristallgittern (z.\,B. Blei-Zirkonat-Titanat, PZT) bei mechanischer Deformation. Der direkte piezoelektrische Effekt koppelt die mechanische Spannung $\sigma_{mech}$ mit der dielektrischen Verschiebung $D$:
+\begin{equation}
+    D = d_{ij} \cdot \sigma_{mech} + \varepsilon^X \cdot E
+\end{equation}
+Hierbei stellt $d_{ij}$ den piezoelektrischen Koeffizienten (Ladungskonstante) in der jeweiligen Belastungs- und Polarisationsrichtung dar. Typische mechanische Setups nutzen Biegebalken (Cantilever) mit einer seismischen Masse zur Ausnutzung von Resonanzphänomenen bei Umgebungsvibrationen. Die generierte Leerlaufspannung verhält sich proportional zur mechanischen Auslenkung:
+\begin{equation}
+    U_{oc} \approx \frac{d_{ij} \cdot F}{C_{piezo}}
+\end{equation}
+
+\subsubsection{Elektrostatische und Elektromagnetische Wandler}
+\begin{itemize}
+    \item \textbf{Elektrostatisch:} Basiert auf der mechanischen Abstands- oder Flächenänderung eines geladenen Plattenkondensators. Es wird entweder im \textit{ladungskonstanten Mode} ($Q=const.$, Erhöhung der Spannung bei Abstandsvergrößerung) oder im \textit{spannungskonstanten Mode} ($U=const.$, Ladungsverschiebung bei Kapazitätsänderung) gearbeitet:
+    \begin{equation}
+        C(t) = \varepsilon_0 \varepsilon_r \frac{A(t)}{d(t)} \implies W = \frac{1}{2} \frac{Q^2}{C(t)} \quad \text{bzw.} \quad W = \frac{1}{2} C(t) U^2
+    \end{equation}
+    \item \textbf{Elektromagnetisch:} Basiert auf dem Faradayschen Induktionsgesetz. Die Relativbewegung zwischen einem Permanentmagneten und einer Spulenanordnung induziert eine Spannung proportional zur zeitlichen Änderung des magnetischen Flusses $\Phi$:
+    \begin{equation}
+        u_{ind}(t) = -N \cdot \frac{d\Phi(t)}{dt} = -N \cdot \frac{d}{dt} \iint \vec{B} \cdot d\vec{A}
+    \end{equation}
+\end{itemize}
+
+\subsubsection{HF-/RF-Harvesting}
+Einfangen elektromagnetischer Strahlung aus dedizierten Quellen oder dem Umgebungsspektrum (GSM, UMTS, LTE, WLAN, 5G). Das System benötigt eine Impedanzangepasste Antenne und eine hocheffiziente Gleichrichterschaltung (meist Schottky-Dioden-Kaskaden oder MOS-Gleichrichter), bekannt als \textbf{Rectenna}. Die im Freiraum verfügbare Leistungsdichte sinkt quadratisch mit der Entfernung $R$ gemäß der Friis-Übertragungsgleichung:
+\begin{equation}
+    P_r = P_t \cdot G_t \cdot G_r \cdot \left( \frac{\lambda}{4\pi R} \right)^2
+\end{equation}
+
+\subsection{Low-Power Design und Verlustleistungsmechanismen}
+Da Energy Harvester oft mittlere Leistungen im Mikrowattbereich ($\mu$W) bereitstellen, muss die nachgeschaltete Mikroelektronik extrem restriktiv designt werden. Der mittlere Leistungsverbrauch $P_{avg}$ berechnet sich über das Integral:
+\begin{equation}
+    P_{avg} = \frac{1}{T} \int_{0}^{T} u_{supply}(t) \cdot i_{supply}(t) \, dt
+\end{equation}
+Zur Minimierung von $P_{avg}$ implementieren moderne Mikrocontroller dedizierte, tiefgestufte Schlafmodi:
+\begin{itemize}
+    \item \textbf{RUN-Mode:} Voller Systemtakt, CPU und alle Peripherieeinheiten aktiv. Maximale Leistungsaufnahme (statisch und dynamisch).
+    \item \textbf{IDLE-Mode:} Die CPU wird über das Clock-Gating angehalten. Peripherieeinheiten (z.\,B. DMA, Timer, ADC) bleiben aktiv und warten auf ein Interrupt-Ereignis zur schnellen Reaktivierung.
+    \item \textbf{SLEEP / Deep Sleep:} Sämtliche internen Oszillatoren werden deaktiviert. Nur minimale Haltestrukturen (Retention-Register, Power-On Reset, Wake-Up-Inputs) bleiben versorgt. Stromaufnahme sinkt in den Nanoampere-Bereich (nA).
+\end{itemize}
+Mit fortschreitender Strukturverkleinerung in CMOS-Prozessen (skaliert über die \textit{Drawn Gate Length}) dominieren zunehmend die parasitären Leckströme (\textbf{Leakage}) die Verlustleistungsbilanz gegenüber der dynamischen Schaltverlustleistung ($P_{dyn} = C \cdot f \cdot U^2$):
+\begin{enumerate}
+    \item \textbf{Sub-threshold Leakage:} Stromfluss zwischen Source und Drain trotz einer Gate-Spannung unterhalb der Schwellenspannung ($U_{GS} < U_{th}$).
+    \item \textbf{Gate-Oxide Leakage:} Quantenmechanischer Tunnelstrom durch das extrem dünne Isolations-Gateoxid.
+    \item \textbf{Junction Leakage:} Kriechströme über die invers betriebenen p-n-Übergänge der Source-/Drain-Gebiete zum Substrat.
+\end{enumerate}
+
+\newpage
+
+\section{Lektion 1: Einführung in die Transpondertechnologie (RFID)}
+
+\subsection{Klassifikation nach Energie- und Kopplungsarten}
+RFID-Systeme (Radio Frequency Identification) bestehen komponentenbasiert aus einem Lesegerät (Reader/Interrogator) und einem oder mehreren Transpondern (Tags). Die technologische Klassifikation erfolgt primär über die Energieversorgung des Tags:
+
+\begin{table}[h!]
+\centering
+\caption{Systemvergleich der RFID-Transponderarchitekturen}
+\begin{tabular}{llll}
+\toprule
+\textbf{Merkmal} & \textbf{Passiv} & \textbf{Semi-Passiv} & \textbf{Aktiv} \\
+\midrule
+\textbf{Energiequelle Tag} & Aus dem Readerfeld & Lokale Batterie/Harvester & Lokale Batterie \\
+\textbf{HF-Sendeleistung} & Rückstreuung / Lastmod. & Rückstreuung / Lastmod. & Eigener HF-Sender \\
+\textbf{Reichweite} & Gering ($< 1-2$\,m) & Mittel ($< 5-10$\,m) & Hoch ($> 100$\,m) \\
+\textbf{Lebensdauer} & Nahezu unbegrenzt & Limitiert durch Batterie & Limitiert durch Batterie \\
+\textbf{Sensorik} & Kaum/Kurzzeitmessung & Kontinuierlich möglich & Kontinuierlich aktiv \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Elektromagnetische Feldtheorie und Feldstärkeberechnung}
+Die Kopplungsart ist streng frequenzabhängig. Im Nahfeld (LF/HF) dominiert die \textbf{induktive (magnetische) Kopplung}, im Fernfeld (UHF/Mikrowelle) die \textbf{wellenbasierte Strahlungskopplung}.
+
+\subsubsection{Magnetfeldberechnung (Biot-Savart)}
+Für den Entwurf von Reader-Antennenspulen ist die Kenntnis der Feldstärkeverteilung elementar. Das Gesetz von Biot-Savart beschreibt die magnetische Flussdichte $d\vec{B}$ eines strombegossenen Leiterelements $d\vec{s}$:
+\begin{equation}
+    d\vec{B} = \frac{\mu_0 \cdot I}{4\pi} \cdot \frac{d\vec{s} \times \vec{r}}{r^3}
+\end{equation}
+Für eine kreisrunde Leiterschleife mit dem Radius $R$ und der Windungszahl $N$ ergibt sich die magnetische Feldstärke $H(x)$ auf der zentralen Symmetrieachse im Abstand $x$ zu:
+\begin{equation}
+    H(x) = \frac{I \cdot N \cdot R^2}{2 \cdot \sqrt{(R^2 + x^2)^3}}
+\end{equation}
+
+\subsubsection{Gegeninduktivität und Kopplungsfaktor}
+Der magnetische Fluss $\Phi_{12}$, den die Readerspule (Spule 1) in der Transponderspule (Spule 2) induziert, definiert die Gegeninduktivität $M$:
+\begin{equation}
+    \Phi_{12} = M \cdot I_1 \quad \text{mit} \quad M = k \cdot \sqrt{L_1 \cdot L_2}
+\end{equation}
+Der Kopplungsfaktor $k$ liegt bei realen, beabstandeten Systemen in einer Größenordnung von $0{,}01 \le k \le 0{,}1$. Das Faradaysche Induktionsgesetz bestimmt die in der Transponderspule induzierte Leerlaufspannung $U_i$:
+\begin{equation}
+    U_i = - \frac{d\Phi_{12}}{dt} = - M \cdot \frac{dI_1}{dt} = -j\omega M \cdot I_1
+\end{equation}
+
+\subsection{Resonanzverhalten von RLC-Schwingkreisen}
+Um maximale Spannungsübertragungen zu erzielen, werden sowohl Reader- als auch Transponder-Frontends als Resonanzkreise dimensioniert. Die Resonanzfrequenz berechnet sich nach der Thomsonschen Schwingungsformel:
+\begin{equation}
+    f_0 = \frac{1}{2\pi \sqrt{L \cdot C}}
+\end{equation}
+
+\begin{itemize}
+    \item \textbf{Serienresonanz (Spannungsresonanz):} Die Gesamtimpedanz $Z_s$ wird minimal und rein ohmsch:
+    \begin{equation}
+        Z_s(\omega) = R_s + j\omega L + \frac{1}{j\omega C} \implies Z_s(\omega_0) = R_s
+    \end{equation}
+    An Spule und Kondensator treten Spannungen auf, die um den Gütefaktor $Q$ höher sind als die Speisespannung.
+    \item \textbf{Parallelresonanz (Stromresonanz):} Die Gesamtimpedanz $Z_p$ wird im Resonanzfall maximal. Dies ist die typische Topologie des passiven Transponders, um maximale Spannung am Chip abzugreifen:
+    \begin{equation}
+        Z_p(\omega_0) \approx \frac{L}{C \cdot R_s} = Q \cdot \omega_0 L = R_p
+    \end{equation}
+\end{itemize}
+Die Schwingkreisgüte $Q$ ist definiert als das Verhältnis von gespeicherter Energie zu Verlustleistung pro Periode und bestimmt die Systembandbreite $B$:
+\begin{equation}
+    Q = \frac{\omega_0 L}{R_s} = \frac{R_p}{\omega_0 L} \implies B = \frac{f_0}{Q}
+\end{equation}
+Eine zu hohe Güte $Q$ führt zu extrem schmalbändigen Systemen, was die modulierten Datenbänder dämpft und zu Signalverzerrungen führt.
+
+\subsection{Datenübertragung und Antikollisionsverfahren}
+Die Energieübertragung erfolgt kontinuierlich über das Trägersignal. Die Datenübertragung vom Transponder zum Reader erfolgt primär über \textbf{Lastmodulation}. Durch Zu- und Abschalten eines Lastwiderstandes ($R_m$) oder einer Zusatzkapazität im Transponder-Frontend ändert sich die Impedanz des Transponders, was sich über die magnetische Kopplung als Amplituden- oder Phasenänderung an der Readerspule rückwirkend detektieren lässt.
+
+Befinden sich mehrere Transponder zeitgleich im Erfassungsbereich, kommt es zu Signalkollisionen. Zur Vereinzelung werden Antikollisionsmechanismen (Kanalzugriffsverfahren) angewendet:
+\begin{itemize}
+    \item \textbf{SDMA (Space Division Multiple Access):} Räumliche Trennung durch stark gerichtete Gruppenantennen oder Leistungsreduktion.
+    \item \textbf{FDMA (Frequency Division Multiple Access):} Nutzung unterschiedlicher Trägerfrequenzen oder Hilfsträger für die Rückstreuung.
+    \item \textbf{TDMA (Time Division Multiple Access):} Zeitliche Aufteilung. Standard in RFID-Systemen. Implementiert als stochastische Verfahren (z.\,B. \textit{Slotted ALOHA}) oder deterministische Verfahren (z.\,B. \textit{Binary Tree / Binärer Suchbaum Algorithm}).
+\end{itemize}
+
+\subsection{Oberflächenwellensensoren (SAW -- Surface Acoustic Wave)}
+SAW-Transponder stellen eine Sonderform komplett elektronikfreier, passiver Funksensoren dar. Sie bestehen aus einem piezoelektrischen Substrat (z.\,B. Lithiumniobat) mit aufgebrachten metallischen Interdigitalwandlern (IDT) und Reflektorstrukturen.
+Anlaufender Prozess:
+\begin{enumerate}
+    \item Das Hochfrequenz-Abfragesignal des Readers wird von der Sensorantenne empfangen.
+    \item Der IDT wandelt das elektrische Signal mittels inversen Piezoeffekts in eine akustische Oberflächenwelle (Rayleigh-Welle), die sich mit ca. $3000-4000$\,m/s auf der Substratoberfläche ausbreitet.
+    \item Die Welle läuft über teilreflektierende Streifen (Reflektoren) und wird modifiziert zurückgeworfen.
+    \item Der IDT wandelt das akustische Echosignal zurück in ein elektrisches Signal, welches re-emittiert wird.
+\end{enumerate}
+Da physikalische Größen wie Temperatur, Druck oder Dehnung das Substrat mechanisch dehnen oder die Ausbreitungsgeschwindigkeit verändern, lässt sich aus der Laufzeitverschiebung $\Delta \tau$ oder Phasendifferenz $\Delta \phi$ des Echos die Messgröße drahtlos und ohne Energiequelle bestimmen.
+
+\newpage
+
+\section{Radar-Grundlagen und Anwendungen}
+
+\subsection{Systemdefinition und Messgrößen}
+Das RADAR-Prinzip (\textit{Radio Detection and Ranging}) basiert auf der Aussendung gebündelter elektromagnetischer Wellen im Mikrowellenbereich (typischerweise im GHz- bis THz-Spektrum) und der nachfolgenden informationstechnischen Auswertung der von Objekten reflektierten Echosignale. Als aktives Sensorsystem zeichnet es sich durch extreme Robustheit gegenüber widrigen Umweltbedingungen (Dunkelheit, Nebel, Regen, Staub, Blendlicht) aus.
+
+Das System extrahiert drei primäre physikalische Zielgrößen:
+\begin{itemize}
+    \item \textbf{Entfernung ($R$):} Bestimmung über die Signallaufzeit.
+    \item \textbf{Relativgeschwindigkeit ($v_r$):} Bestimmung über den Dopplereffekt.
+    \item \textbf{Winkel ($\theta, \phi$):} Bestimmung über die räumliche Phasenbeziehung an Empfänger-Antennenarrays (Angle of Arrival, AoA).
+\end{itemize}
+
+\subsection{Modulationsverfahren und mathematische Funktionsprinzipien}
+
+\subsubsection{Pulsradar}
+Ein Pulsradar emittiert periodisch kurze, hochenergetische HF-Impulse der Dauer $\tau$ und verbleibt in der restlichen Periodenzeit $T_{PRI}$ (Pulse Repetition Interval) im Empfangsmodus. Die radiale Distanz $R$ zum Zielobjekt berechnet sich direkt aus der gemessenen Signallaufzeit $t_{down}$:
+\begin{equation}
+    R = \frac{c_0 \cdot t_{down}}{2}
+\end{equation}
+Die minimale Detektionsreichweite $R_{min}$ ist durch die Pulsdauer $\tau$ beschränkt (da während des Sendens nicht empfangen werden kann): $R_{min} = \frac{c_0 \cdot \tau}{2}$. Die maximale eindeutige Reichweite beträgt:
+\begin{equation}
+    R_{max, eindeutig} = \frac{c_0 \cdot T_{PRI}}{2}
+\end{equation}
+
+\subsubsection{Doppler-Radar (CW-Radar)}
+Ein Continuous-Wave-Radar sendet eine konstante, unmodulierte Frequenz $f_{Tx}$ aus. Bei Reflexion an einem relativ zum Radar bewegten Objekt erfährt das Signal eine Frequenzverschiebung, die Dopplerfrequenz $f_d$:
+\begin{equation}
+    f_d = \frac{2 \cdot v_r}{\lambda} = \frac{2 \cdot v \cdot f_{Tx}}{c_0} \cdot \cos(\alpha)
+\end{equation}
+Hierbei ist $\alpha$ der Aspektwinkel zur Bewegungsachse. Um das Vorzeichen der Geschwindigkeit (Annäherung vs. Entfernung) aufzulösen, nutzt der Empfänger einen \textbf{I/Q-Mischer} (In-Phase und Quadraturkomponente), der zwei um $90^\circ$ phasenverschobene Basisbandsignale ausgibt:
+\begin{equation}
+    I(t) = A \cdot \cos(2\pi f_d t + \phi_0), \quad Q(t) = A \cdot \cos(2\pi f_d t + \phi_0 - \frac{\pi}{2})
+\end{equation}
+Anhand des Vorzeichens der Phasenverschiebung zwischen $I$ und $Q$ wird die Bewegungsrichtung determiniert.
+
+\subsubsection{FMCW-Radar (Frequency Modulated Continuous Wave)}
+Zur gleichzeitigen Messung von Distanz und Geschwindigkeit bei kontinuierlicher Abstrahlung wird die Sendefrequenz zeitlich linear moduliert (Sägezahn- oder Dreiecksrampen, sogenannte \textit{Chirps}). 
+
+\begin{itemize}
+    \item \textbf{Frequenzverlauf:} Die Frequenz wird innerhalb der Rampenzeit $T_c$ um die Bandbreite $B$ linear variiert.
+    \item \textbf{Signalmischung:} Das empfangene, laufzeitverzögerte Echo wird mit dem aktuellen Sendesignal gemischt. Es entsteht ein niederfrequentes Differenzsignal im Basisband, die sogenannte \textbf{Beat-Frequenz} $f_b$ (oder Zwischenfrequenz $f_{IF}$).
+\end{itemize}
+Für ein statisches Ziel im Abstand $R$ gilt der lineare Zusammenhang:
+\begin{equation}
+    f_b = \frac{2 \cdot R \cdot B}{c_0 \cdot T_c} \implies R = f_b \cdot \frac{c_0 \cdot T_c}{2 \cdot B}
+\end{equation}
+Die physikalische Entfernungsauflösung $\Delta R$ (Fähigkeit, eng benachbarte Objekte zu trennen) hängt ausschließlich von der emittierten Bandbreite $B$ ab:
+\begin{equation}
+    \Delta R = \frac{c_0}{2 \cdot B}
+\end{equation}
+Moderne Automobilradare im $77$\,GHz-Band erreichen mit $B = 4$\,GHz eine Auflösung von $\Delta R = 3{,}75$\,cm.
+
+\subsubsection{PN-Radar (Pseudo-Noise)}
+Ein Ultrabreitband-Verfahren (UWB), welches anstelle von Frequenzrampen eine schnelle, deterministische, aber rauschähnlich codierte Binärsequenz (PRBS) aussendet. Die Distanzbestimmung erfolgt im Digitalen über die Berechnung der Kreuzkorrelationsfunktion zwischen Sende- und Empfangssignal.
+
+\subsection{Die Radargleichung (Leistungsbilanz)}
+Die fundamentale Radargleichung beschreibt das Verhältnis von empfangener Leistung $P_r$ zur Sendeleistung $P_t$ in Abhängigkeit der System- und Zielparameter:
+\begin{equation}
+    P_r = \frac{P_t \cdot G_t \cdot G_r \cdot \lambda^2 \cdot \sigma}{(4\pi)^3 \cdot R^4 \cdot L}
+\end{equation}
+\begin{tabbing}
+    \hspace*{2cm} \= \hspace*{10cm} \kill
+    $G_t, G_r$ \> Antennengewinn von Sende- und Empfangsantenne \\
+    $\lambda$ \> Wellenlänge des HF-Trägers ($\lambda = c_0 / f_{Tx}$) \\
+    $\sigma$ \> Radar-Querschnittsfläche (Radar Cross Section, RCS) des Zielobjekts in $m^2$ \\
+    $R$ \> Radiale Distanz zum Objekt \\
+    $L$ \> Gesamtheitliche System- und Atmosphärenverluste ($L \ge 1$)
+\end{tabbing}
+Wegen des Rückgangs der Leistungsdichte mit $R^4$ (äußerst steiler Abfall) erfordert eine Verdopplung der Reichweite die 16-fache Sendeleistung.
+
+\subsection{Digitale Signalverarbeitungskette}
+
+\subsubsection{2D-Range-Doppler-Verarbeitung}
+In modernen FMCW-Systemen werden mehrere Chirps sequentiell in einem \textit{Frame} ausgesendet. Die Analog-Digital-Wandlung erfolgt pro Chirp. Die Daten werden in einer zweidimensionalen Matrix angeordnet:
+\begin{enumerate}
+    \item \textbf{Fast-Time FFT (Range-FFT):} Wird über die einzelnen Abtastwerte innerhalb eines Chirps gerechnet. Die Peak-Positionen korrespondieren mit der Distanz der Ziele.
+    \item \textbf{Slow-Time FFT (Doppler-FFT):} Wird spaltenweise über die aufeinanderfolgenden Chirps hinweg ausgeführt. Sie wertet die Phasenänderung von Chirp zu Chirp aus, was die Dopplerfrequenz und damit die Relativgeschwindigkeit liefert.
+\end{enumerate}
+Das Ergebnis ist ein zweidimensionales \textbf{Range-Doppler-Spektrum (Heatmap)}.
+
+\subsubsection{CFAR-Algorithmus (Constant False Alarm Rate)}
+Zur automatisierten Zielextraktion aus dem verrauschten Range-Doppler-Spektrum werden adaptive Schwellenwertverfahren eingesetzt, um eine konstante Falschalarmrate zu garantieren. Der Detektionsbereich gliedert sich in ein Fenster:
+\begin{itemize}
+    \item \textbf{CUT (Cell Under Test):} Die aktuell auf ein Ziel hin zu prüfende Zelle.
+    \item \textbf{Guard-Zellen:} Unmittelbar an die CUT grenzende Zellen. Sie werden ignoriert, um ein "Auslaufen" der Zielenergie (Leakage) in die Referenzstatistik zu verhindern.
+    \item \textbf{Referenzzellen:} Umgebende Zellen, die zur Schätzung des lokalen Rauschpegels herangezogen werden.
+\end{itemize}
+
+\begin{figure}[h!]
+\centering
+\setlength{\unitlength}{1cm}
+\begin{picture}(13,2)
+    \multiput(0,0)(1,0){13}{\framebox(1,1){}}
+    \put(0.3,0.3){Ref} \put(1.3,0.3){Ref} \put(2.3,0.3){Ref} \put(3.3,0.3){Ref}
+    \put(4.3,0.3){Grd} \put(5.3,0.3){Grd} 
+    \put(6.05,0.3){\textbf{CUT}}
+    \put(7.3,0.3){Grd} \put(8.3,0.3){Grd}
+    \put(9.3,0.3){Ref} \put(10.3,0.3){Ref} \put(11.3,0.3){Ref} \put(12.3,0.3){Ref}
+\end{picture}
+\caption{Schematische 1D-CFAR-Fensteranordnung}
+\end{figure}
+
+Die mathematische Schwellenwertbildung unterscheidet sich je nach CFAR-Variante:
+\begin{itemize}
+    \item \textbf{CA-CFAR (Cell Averaging):} Arithmetischer Mittelwert aller Referenzzellen. Optimal bei homogenem Rauschen.
+    \item \textbf{GO-CFAR (Greatest Of):} Nutzt das Maximum aus dem linken und rechten Referenzfenster. Verhindert Falschalarme an Clutter-Kanten.
+    \item \textbf{SO-CFAR (Smallest Of):} Nutzt das Minimum der beiden Fenster. Verhindert das Maskieren von schwachen Zielen neben dominanten Zielen.
+    \item \textbf{OS-CFAR (Ordered Statistics):} Sortiert die Referenzwerte der Größe nach und wählt einen bestimmten Perzentilwert (z.\,B. das $75\%$-Quantil). Sehr robust in Multi-Ziel-Szenarien.
+\end{itemize}
+
+\subsubsection{Winkelschätzung (AoA) und MIMO-Radar}
+Verfügt das Radar über ein Empfänger-Array (mehrere parallele RX-Antennen im Abstand $d$), so trifft die reflektierte Welle unter einem Azimutwinkel $\theta$ zeitversetzt ein. Dies erzeugt eine messbare Phasendifferenz $\Delta \phi$ zwischen benachbarten Kanälen:
+\begin{equation}
+    \Delta \phi = \frac{2\pi \cdot d \cdot \sin(\theta)}{\lambda} \implies \theta = \arcsin\left( \frac{\Delta \phi \cdot \lambda}{2\pi \cdot d} \right)
+\end{equation}
+Um die Winkelauflösung ohne signifikante Hardwarekosten (viele teure Empfänger-ICs) zu steigern, nutzen moderne Systeme das \textbf{MIMO-Prinzip} (Multiple Input Multiple Output). Durch das orthogonale Senden von $N_{Tx}$ Sendern und Empfangen mit $N_{Rx}$ Empfängern kann rechnerisch ein \textbf{virtuelles Antennenarray} mit $N_{Tx} \times N_{Rx}$ Elementen erzeugt werden. Dies vergrößert die synthetische Apertur drastisch und führt zu einer hochpräzisen Winkeltrennfähigkeit.
+
+\end{document}

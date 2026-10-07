@@ -1,0 +1,331 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\geometry{a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.2ex}
+\setstretch{.8}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Zusammenfassung Energieübertragung}
+\fancyhead[R]{\thepage}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{4cm}
+    {\Huge \textbf{Zusammenfassung Energieübertragung}}\\[1cm]
+    {\LARGE \textbf{Vollständiges Klausurskript}}\\[2cm]
+    {\large \textbf{Inhaltsübersicht:}}\\[0.5cm]
+    \textit{Teil 1: Felix Feustel} \\
+    Leitungstechnik, Kurzschlüsse, Beeinflussung, Schutzsysteme \& Wireless Transmission\\[0.5cm]
+    \textit{Teil 2: Ruben Lliuyacc Blas} \\
+    Netzstrukturen, Per-Unit-Systeme, Transformatormodelle \& Power Flow
+    \vfill
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ==============================================================================
+% TEIL 1: FELIX FEUSTEL
+% ==============================================================================
+\part*{Teil 1: Felix Feustel}
+\addcontentsline{toc}{part}{Teil 1: Felix Feustel}
+\hrule
+\vspace{1cm}
+
+\section{Übertragungsarten und Materialien}
+
+Es gibt prinzipiell zwei Übertragungsarten:
+\begin{itemize}
+    \item \textbf{Über Boden-Übertragung (Freileitungen / Overhead Lines):} Wird bei hoher Spannung bevorzugt.
+    \item \textbf{Im Boden-Übertragung (Erdkabel / Underground Cables):} Wird bei niedriger Spannung bevorzugt.
+\end{itemize}
+
+\subsection{Vor- und Nachteile}
+\textbf{Erdkabel (Underground Cables):}
+\begin{itemize}
+    \item \textit{Vorteile:} Hohe Zuverlässigkeit (Reliability), ideal für städtische Gebiete (fit for urban areas), geringerer Wartungsaufwand (less maintenance).
+    \item \textit{Nachteile:} Hohe Kosten (ca. 8,2 mal teurer als Freileitungen).
+    \item \textit{Lebensdauer (Durability):} 30 - 40 Jahre.
+\end{itemize}
+
+\textbf{Freileitungen (Overhead Lines):}
+\begin{itemize}
+    \item Argumente gelten genau umgekehrt (Arguments apply in reverse).
+    \item \textit{Vorteile:} Niedrige Kosten.
+    \item \textit{Nachteile:} Weniger zuverlässig (Witterungseinflüsse), ungeeignet für städtische Gebiete, höherer Wartungsaufwand.
+\end{itemize}
+
+\subsection{Kupfer vs. Aluminium (Materialvergleich)}
+\begin{itemize}
+    \item \textbf{Kupfer:} Ist schwerer und hat einen etwas niedrigeren elektrischen Widerstand.
+    \item \textbf{Aluminium:} Wiegt weniger und hat einen leicht höheren Widerstand, der aber in der Praxis vernachlässigt bzw. durch dickere Leitungen kompensiert werden kann.
+\end{itemize}
+Für Freileitungen wird Aluminium bevorzugt, jedoch hat reines Aluminium eine zu niedrige Zugfestigkeit (tensile strength). Deshalb wird ein \textbf{Stahlkern} verwendet (Al/St-Seile). Aufgrund des \textbf{Skin-Effekts} fügt der Stahlkern dem Leiter keinen zusätzlichen elektrischen Widerstand hinzu, da der Wechselstrom ohnehin in die äußeren Aluminiumschichten verdrängt wird.
+
+\subsection{Formeln für resistive Verluste und Leitungsbeläge}
+\begin{itemize}
+    \item \textbf{Eindringtiefe (Skin-Effekt):} $\delta = \sqrt{\frac{2}{\omega \mu \sigma}}$ (Der Strom wird an die Oberfläche verdrängt).
+    \item \textbf{Widerstand pro Meter (Resistance per meter):} $R_{DC}' = \frac{\rho}{A}$. Durch den Skin-Effekt steigt der AC-Widerstand: $R_{AC}' = R_{DC}'(1 + k_s)$.
+    \item \textbf{Induktivität pro Meter (Inductance per meter):} $L' = \frac{\mu_0}{2\pi} \ln\left(\frac{D}{r}\right)$ (wobei $D$ der Leiterabstand und $r$ der Radius ist).
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+\section{Freileitungen (Overhead Lines)}
+Die umgebende Luft dient als Isolation (surrounding air serves as insulation).
+
+\subsection{Masten und Turm-Spezifikationen}
+\textbf{Bestimmung der Turmhöhe (what determines tower height):}
+\begin{enumerate}
+    \item Minimum clearance from ground (Mindestbodenfreiheit, abhängig von der Spannung).
+    \item Sag of conductors (Durchhang der Leiter).
+    \item Span distance between towers (Spannweite zwischen den Masten).
+\end{enumerate}
+
+\textbf{Pole Types (Mast-Funktionen):}
+\begin{itemize}
+    \item \textbf{Supporting post:} Tragmast. Das Kabel wird einfach an einem Ast des Masten aufgehängt.
+    \item \textbf{Anchor pylon:} Abspannmast. Das Kabel wird an zwei Punkten (mit Zugisolatoren) an einem aushängenden Ast aufgehängt.
+    \item \textbf{Deviation tower:} Winkelabspannmast. Kabel wird von zwei Isolationen an einem Punkt direkt am Mast aufgehängt (für Richtungswechsel).
+    \item \textbf{Termination pylon:} Endmast. Ab hier werden die Leitungen in den Boden geführt.
+\end{itemize}
+
+\textbf{Construction Types for Masts (Bauformen):}
+\begin{itemize}
+    \item \textit{Wooden} (LV): Holz, on top or side connected lines.
+    \item \textit{Concrete} (MV): Beton, lines hang from top bar.
+    \item \textit{HV Types:} Donau type, single level type, British type, bundle conductor type, portal type, Y type.
+\end{itemize}
+
+\subsection{Bundle Conductors (Bündelleiter) \& Corona Losses}
+\textbf{Bundle Conductors:}
+Werden typischerweise bei Spannungen $> 230\,\text{kV}$ eingesetzt. Leitungen desselben Potentials werden durch Abstandshalter (spacers) in regelmäßigen Intervallen getrennt. Dies vergrößert den effektiven Radius und dient zur Vermeidung von Korona-Verlusten.
+
+\textbf{Corona Losses:}
+Das extrem hohe E-Feld kann die Luft an der Leiteroberfläche ionisieren.
+\begin{itemize}
+    \item Führt zu Teilentladungen von Energie (Wirkverluste).
+    \item Kann Systemkomponenten zerstören.
+    \item Führt zu Radiostörungen (Radio noise).
+\end{itemize}
+
+\textbf{Einflussfaktoren (Factors influencing corona losses):}
+Wet/humid conditions (Nässe), voltage of line, diameter of conductors, location of conductors in relation to each other, elevation above sea level, condition of conductors (Verschmutzung), local weather conditions. \textit{Wichtig: Not dependent on load flow!}
+
+\textbf{Corona Loss Formel (Peek'sche Näherung):}
+\begin{equation}
+    P_c \propto (f + 25) \cdot \sqrt{\frac{r}{D}} \cdot (V_{phase} - V_{critical})^2
+\end{equation}
+
+\subsection{Isolatoren, Erdseile und Transposition}
+\textbf{Insulators (Isolatoren):}
+Bestehen aus Keramik- oder Glasscheiben. Sie weisen Kapazitäten von den Scheiben zum Turm und zum Leiter auf, und jede Disc hat eine Eigenkapazität. Zudem gibt es einen (gewollten, sehr hochohmigen) Leckwiderstand (leakage resistance) vom Leiter zum Turm.
+
+\textbf{Earth wires (Erdseile):}
+Schützen Freileitungen gegen Blitzeinschläge und führen oft zusätzlich Glasfaserkabel für die Telekommunikation.
+
+\textbf{Transposition (Verdrillung):}
+Das Vertauschen von Leitern an bestimmten Masten, um E-Felder zu verringern und Symmetrie herzustellen, welche durch die Leiterlänge, Distanz zur Erde (GND) und zum Earth wire gestört wird.
+
+\subsection{Sag und Galloping}
+\textbf{Powerline Sag (Durchhang):}
+Hängt ab von Temperatur, Spannung (Tension) und der Zeit (Alterung). Vegetationsmanagement ist hierbei extrem wichtig. Der Stromfluss (Load flow) kann basierend auf der Temperatur optimiert/limitiert werden.
+
+\textbf{Galloping lines:}
+Niederfrequente Schwingung (low frequency oscillation) der Freileitungen durch Wind (typische Frequenz ca. 1\,Hz). Gefahren: Flashover (Spannungsüberschlag) und extremer mechanischer Stress auf Isolatoren und Masten.
+
+% ------------------------------------------------------------------------------
+\section{Hochspannungskabel (High Voltage Cables)}
+\begin{itemize}
+    \item Die Leitkonstruktion (conductor construction) besteht aus mehreren Strängen (strands), um Flexibilität zu gewährleisten.
+    \item Verwendet Plastikisolierung (plastic insulation), welche zwingend frei von Hohlräumen (cavities) und Einschlüssen (inclusions) sein muss.
+    \item Muss gegen Wasser abgedichtet (sealed) sein.
+    \item Kupferdrähte in der äußeren Schicht dienen als Panzerung/Schirm (armour).
+\end{itemize}
+
+\textbf{Paper oil insulations:}
+Papier-Masse-Kabel verwenden ölimprägniertes Papier. Das Öl wird in Reservoirs entlang des Kabels gespeichert. Heutzutage wird dies hauptsächlich für hohe und höchstspannende Level (HV und UHV) eingesetzt.
+
+\textbf{Formel für Kabel-Kapazität (Zylinder-Kondensator):}
+\begin{equation}
+    C' = \frac{2 \pi \varepsilon_0 \varepsilon_r}{\ln\left(\frac{R_{aussen}}{R_{innen}}\right)} \quad \left[ \frac{\text{F}}{\text{m}} \right]
+\end{equation}
+
+\begin{tcolorbox}[colback=blue!5, title=\textbf{Beispiel: Ladestrom und kritische Kabellänge}]
+Ein Kabel hat einen maximal zulässigen Strom $I_{max}$ und eine Kapazität $C'$.
+\begin{itemize}
+    \item \textbf{Ladestrom berechnen (Charging current):} $I_c = \omega \cdot C' \cdot \frac{U_n}{\sqrt{3}} \cdot l$
+    \item \textbf{Kritische Länge (Critical length):} Die Distanz $l_{crit}$, bei der der Ladestrom $I_c$ am Anfang des Kabels genauso groß ist wie $I_{max}$. Ab hier kann keine Nutzleistung mehr übertragen werden: $l_{crit} = \frac{I_{max}}{\omega \cdot C' \cdot U_n/\sqrt{3}}$
+\end{itemize}
+\end{tcolorbox}
+
+% ------------------------------------------------------------------------------
+\section{Kurzschlüsse (Short Circuits)}
+A short-circuit is an accidental connection between conductors by a zero impedance (solid short-circuit: busbar or wire) or non-zero impedance (impedant short-circuit: animals, insulation damages).
+Short-circuit current is the over-current resulting from this condition. Es ist typischerweise ca. 20x höher als der reguläre Laststrom.
+
+\textbf{Fehlerarten:}
+\begin{itemize}
+    \item Kurzschluss zwischen allen 3 Phasen $\rightarrow$ 3-phase short circuit (Multi-phase).
+    \item Kurzschluss zwischen 2 Phasen $\rightarrow$ 2-phase line to line short circuit (Multi-phase).
+    \item Kurzschluss zwischen Phase und Neutral + PE $\rightarrow$ 1-phase line to combined neutral protective short circuit.
+    \item Kurzschluss zwischen Phase und Neutral $\rightarrow$ 1-phase line to neutral short circuit.
+    \item Kurzschluss zwischen Phase und PE $\rightarrow$ 1-phase line to protective short circuit.
+\end{itemize}
+
+\textbf{Eigenschaften des Stroms (Decay-Verhalten):}
+\begin{itemize}
+    \item \textbf{Nahe Generatoren und rotierenden Maschinen:} Die Amplitude baut sich stark ab (transiente/subtransiente Reaktanzen steigen).
+    \item \textbf{Weit weg von Generatoren:} Die Amplitude baut sich nur leicht ab bzw. fällt gar nicht ab (no decay), da der Netz-Widerstand dominiert.
+\end{itemize}
+
+\textbf{Arc Flash (Lichtbogen):}
+Ionisierte Luft erschafft einen Strompfad mit Widerstand ungleich null. Der Lichtbogenstrom hängt vom Lichtbogenwiderstand ab und beträgt oft nur ca. 60\% des soliden (bolted) Kurzschlussstroms. Begleiterscheinungen: Bright light, loud noise, pressure shock, high heat, vaporized metal.
+
+\subsection{Kurzschlussberechnung \& Ersatzschaltbilder}
+Um Kurzschlüsse zu berechnen, werden alle Betriebsmittel auf eine Spannungsebene bezogen und als Reaktanzen im Ersatzschaltbild abgebildet.
+\begin{itemize}
+    \item \textbf{Trafo:} $Z_T = \frac{u_k}{100} \frac{U_n^2}{S_n}$
+    \item \textbf{Generator:} $Z_G \approx X_d''$ (Subtransiente Reaktanz).
+    \item \textbf{Leitungen:} $Z_L = (R' + jX') \cdot l$
+\end{itemize}
+Der Kurzschlussstrom berechnet sich dann über $I_k'' = \frac{c \cdot U_n}{\sqrt{3} \cdot Z_{ges}}$.
+
+\begin{tcolorbox}[colback=yellow!5, title=\textbf{Übungsbeispiel (aus Short-circuits.pdf S. 85, 86)}]
+\textbf{Exercise: Equivalent circuits of network components}\\
+Gegeben sind Netzkomponenten (Kabel, Motoren, Transformatoren).
+1. Transformator-Kurzschlussimpedanz $Z_T$ auf Unterspannungsseite berechnen. \\
+2. Niederohmige Motoren-Gruppen ($0.4\,\text{kV}$) speisen kurzzeitig ein: $Z_M, X_M, R_M$ aus Anlaufstrom und $S_{rM}$ berechnen.\\
+3. Kabelimpedanzen aus Datenblättern ($R'$ und $X'$ für AMCMK-Kabel) mit der Länge multiplizieren. Alles auf eine gemeinsame Nennspannung umrechnen, um das vollständige $Z_{ges}$ zu ermitteln.
+\end{tcolorbox}
+
+% ------------------------------------------------------------------------------
+\section{System Influences \& Symmetrical Components}
+
+\subsection{System Influences}
+Hochspannungsleitungen koppeln elektromagnetisch auf benachbarte Infrastruktur (Zäune, Pipelines) über.
+\begin{tcolorbox}[colback=yellow!5, title=\textbf{Übungsbeispiel (aus Power System Influences S. 18, 19)}]
+\textbf{Exercise: Railway transmission line and pasture fence}\\
+1. \textbf{Capacitive coupling matrix:} Aufstellen der Potenzialmatrix über Bildladungen (Abstand zum Zaun und zur gespiegelten Phase im Boden). \\
+2. \textbf{Touch voltage:} Berechnung der kapazitiv eingekoppelten Berührungsspannung am Weidezaun. \\
+3. \textbf{Touch current:} Berechnung des Berührungsstroms beim Anfassen. \\
+4. \textbf{Max length:} Wie lang darf der parallel verlaufende Zaun maximal sein, damit der Strom von $2\,\text{mA}$ nicht überschritten wird?
+\end{tcolorbox}
+
+\subsection{Symmetrical Components (Symmetrische Komponenten)}
+Unsymmetrische Netze (bei Fehlern) werden in 3 symmetrische Drehsysteme zerlegt: Mitsystem ($1$), Gegensystem ($2$) und Nullsystem ($0$). Operator $a = e^{j120^\circ} = -0.5 + j\frac{\sqrt{3}}{2}$.
+\begin{equation}
+    \begin{pmatrix} \underline{I}_0 \\ \underline{I}_1 \\ \underline{I}_2 \end{pmatrix} = \frac{1}{3} \begin{pmatrix} 1 & 1 & 1 \\ 1 & a & a^2 \\ 1 & a^2 & a \end{pmatrix} \begin{pmatrix} \underline{I}_a \\ \underline{I}_b \\ \underline{I}_c \end{pmatrix}
+\end{equation}
+
+\begin{tcolorbox}[colback=yellow!5, title=\textbf{Übungsbeispiel (aus Symmetrical Components S. 24-28)}]
+\textbf{Exercise: Double line-to-earth fault on parallel line}\\
+Gegeben sind zwei Generatoren und parallele Leitungen mit Werten für das Mit-, Gegen- und Nullsystem ($X_1, X_2, X_0$).
+Es entsteht ein 2-poliger Erdschluss.
+Zur Berechnung müssen die Ersatzschaltbilder (Sequence networks) für Mit-, Gegen- und Nullsystem aufgestellt und \textit{parallel} miteinander verschaltet werden.
+\end{tcolorbox}
+
+% ------------------------------------------------------------------------------
+\section{Wireless Transmission \& Schutzsysteme}
+
+\subsection{Wireless Transmission}
+Grundlegende Theorie: Energie wird kontaktlos via induktiver Kopplung (Nahfeld, Spulen), kapazitiver Kopplung (E-Feld) oder resonanter Kopplung (mittlere Distanz, z.B. EV-Charging) übertragen. Fernfelder nutzen Mikrowellen oder Laser (benötigen Line-of-Sight).
+
+\subsection{Schutzsysteme - Mögliche Fragen}
+Die drei Dateien der Kompakt-Schutztechnik beantworten folgende Prüfungsfragen:
+\begin{itemize}
+    \item \textbf{Wandlersättigung:} Was passiert, wenn der Stromwandler in die Sättigung gerät? Der gemessene Sekundärstrom bricht ein (ist zu klein). Folge: UMZ-Schutz löst zu spät/gar nicht aus. Distanzschutz misst fälschlicherweise eine zu hohe Impedanz und stuft den Fehler fälschlich als weiter entfernt ein.
+    \item \textbf{Schutzkriterien:} Welche Kriterien gibt es? (UMZ, Differentialschutz, Distanzschutz).
+    \item \textbf{Redundanz:} Was ist der Unterschied zwischen ortsnahem und ortsfernem Reserveschutz? (Gestaffelte Zeiten vs. redundante Relais vor Ort).
+\end{itemize}
+
+% ==============================================================================
+% TEIL 2: RUBEN LLIUYACC BLAS
+% ==============================================================================
+\part*{Teil 2: Ruben Lliuyacc Blas}
+\addcontentsline{toc}{part}{Teil 2: Ruben Lliuyacc Blas}
+\hrule
+\vspace{1cm}
+
+\section{Netzstrukturen und Generierung}
+Das elektrische Netz besteht aus verschiedenen Ebenen: Höchstspannung (Extra High Voltage), Hochspannung (High Voltage), Mittelspannung (Medium Voltage) und Niederspannung (Low Voltage).
+\begin{itemize}
+    \item \textbf{Generierung:} Speist meist direkt in die Höchstspannung ein.
+    \item \textbf{Höchst- und Hochspannung:} Werden zur Energieverteilung zwischen Bundesländern, Ländern und ganzen Kontinenten genutzt.
+    \item \textbf{Mittelspannung:} Zur Verteilung in großen Städten.
+    \item \textbf{Niederspannung:} Verteilung in lokalen Nachbarschaften zu den Endverbrauchern.
+\end{itemize}
+
+\textbf{Generierung in Österreich (AT):}
+Der Strom in Österreich wird hauptsächlich über Wasserkraft (Hydro) erzeugt. Ein weiterer sehr großer Teil wird über Photovoltaik (PV) bereitgestellt.
+
+\textbf{Types of generation (Arten der Erzeugung):}
+\begin{itemize}
+    \item \textbf{Synchronous machine} (z.B. Wasser, Gas): Controlled (steuerbar), predictable (vorhersagbar), has natural inertia (hat natürliche Rotationsträgheit, stabilisiert das Netz).
+    \item \textbf{Electronic based} (z.B. Solar, Wind): Variable, uncertain (ungewiss), zero inertia (besitzen keine natürliche Trägheit).
+\end{itemize}
+
+\textbf{Statistiken zum Übertragungsnetz:}
+\begin{itemize}
+    \item Die meisten verbauten Leitungskilometer entfallen auf die Niederspannungsleitungen.
+    \item Das gesamte Übertragungsnetz basiert auf \textbf{AC (Wechselstrom)}.
+    \item Wie viel ist sichtbar? Fernleitungen machen ca. 22\% aus, während Erdkabel (Kabelleitungen) ca. 77\% des Netzes ausmachen.
+    \item \textbf{Trafos:} Um die verschiedenen Spannungsebenen zu erzeugen, gibt es Trafos unterschiedlicher Größe. Von Hoch- zu Mittel/Niederspannung gibt es ca. 1000 Trafos (über 220kV gibt es nur ca. 100). Von Mittelspannung zu Niederspannung gibt es rund 85.000 Trafos.
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+\section{Modellierung des Dreiphasensystems}
+Das Dreiphasensystem weist folgende Eigenschaften auf:
+\begin{itemize}
+    \item Es ist im Normalbetrieb \textbf{balanced} (symmetrisch).
+    \item \textbf{Steady state conditions:} Werden immer nach dem Abklingen von Transienten oder Fehlern erreicht.
+    \item \textbf{Equivalent single phase system:} Für die mathematische Analyse kann das 3-Phasen-System komplett in ein äquivalentes Einphasensystem umgewandelt werden, da sich die Sternpunkte in symmetrischen Systemen auf demselben Potenzial (Null) befinden.
+    \item \textbf{Generation = Demands:} Die erzeugte Wirkleistung muss stets der geforderten Leistung entsprechen, nur so bleibt die Frequenz (50 Hz) konstant.
+\end{itemize}
+
+\subsection{Ersatzschaltbilder und Per-Unit}
+Model of a generator, transformer and transmission line:
+\begin{itemize}
+    \item \textbf{How does a single phase equivalent circuit look?} Transformatoren werden durch Längs- und Querimpedanzen (Kupfer- und Eisenverluste) modelliert, Generatoren durch eine Spannungsquelle mit in Reihe geschalteter subtransienter/transienter Reaktanz, Leitungen durch Pi-Ersatzschaltbilder (Längs-L und Quer-C).
+    \item \textbf{How is the per unit equivalent circuit of it?} Im Per-Unit-System (p.u.) werden alle Spannungen und Leistungen auf Basiswerte ($V_{base}, S_{base}$) normiert. Dadurch "verschwinden" die idealen Transformatoren (Übersetzungsverhältnisse) aus dem Ersatzschaltbild. Man sieht nur noch die prozentualen Kurzschlussreaktanzen der Trafos.
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+\section{Power Flow (Leistungsflussberechnung)}
+
+\textbf{Linear vs. Non-linear flow motivation:}
+\begin{itemize}
+    \item \textbf{Linear:} In klassischen, einfachen Schaltungen ist die Last als Impedanz ($R, L, C$) bekannt. Das System kann linear nach Strömen und Spannungen aufgelöst werden.
+    \item \textbf{Non-linear:} Im echten Netz wird die Last nicht als konstanter Widerstand, sondern als Leistungsaufnahme $P$ und $Q$ (Wirk- und Blindleistung) angegeben. Da die Leistung quadratisch/multiplikativ von Strom und Spannung abhängt ($S = V \cdot I^*$), entsteht ein nicht-lineares Problem.
+\end{itemize}
+
+\subsection{Lösung der Power Flow Gleichungen}
+Um das nicht-lineare System zu lösen, wird die Knotenadmittanzmatrix (Y-Matrix) aufgestellt.
+Es werden Knotentypen definiert:
+\begin{itemize}
+    \item \textbf{Slack Node:} Referenzknoten ($|V|$ und $\theta$ sind fest vorgegeben).
+    \item \textbf{PV Node:} Generatorknoten ($P$ und $|V|$ sind vorgegeben).
+    \item \textbf{PQ Node:} Lastknoten ($P$ und $Q$ sind vorgegeben).
+\end{itemize}
+
+\textbf{Verfahren (aus 20260601\_power\_flow.pdf):}
+Die Lösung erfolgt iterativ.
+\begin{enumerate}
+    \item \textbf{Gauss-Seidel-Verfahren:} Kontinuierliches Einsetzen der Spannungen aus dem vorherigen Iterationsschritt in die Knotengleichungen. Einfach zu programmieren, aber langsame (lineare) Konvergenz.
+    \item \textbf{Newton-Raphson-Verfahren:} Basiert auf der Taylor-Reihenentwicklung (Linearisierung). Hierfür wird in jedem Iterationsschritt die \textbf{Jacobimatrix (Jacobian Matrix)} aufgestellt. Diese enthält die partiellen Ableitungen der Wirk- und Blindleistung nach den Spannungsbeträgen und Phasenwinkeln ($\frac{\partial P}{\partial \theta}, \frac{\partial Q}{\partial V}$ etc.). Das Verfahren konvergiert quadratisch und damit extrem schnell für große Netze.
+\end{enumerate}
+
+\end{document}

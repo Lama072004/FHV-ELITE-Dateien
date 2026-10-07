@@ -1,0 +1,126 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{geometry}
+\geometry{a4paper, left=25mm, right=25mm, top=30mm, bottom=30mm}
+
+\title{Hausaufgabe: Messschaltungen und Sensorik\\Lektion 5: Messung von Weg, Abstand und Winkel}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Frage 1: Realisierung von absolut und inkrementell messenden Systemen mit digitalem Zählwerk}
+
+\begin{itemize}
+    \item \textbf{Inkrementelles System:} Es wird ein Maßstab verwendet, der sich abwechselnde Bereiche aufweist (z.~B. optisch durchlässig/undurchlässig bei Glasträgern oder magnetisch leitfähig/nicht leitfähig bei einer Ni-Bedampfung). Ein Sensor tastet diese Segmente bei Bewegung ab und erzeugt elektrische Impulse. Ein digitales Zählwerk erfasst den aktuellen Zählerstand $z$. Der zurückgelegte Weg $x$ berechnet sich diskretisiert über die bekannte Schrittweite $\Delta x$ nach der Formel:
+    \begin{equation}
+        x = z \cdot \Delta x
+    \end{equation}
+    \item \textbf{Absolutes System:} Ein absolut digitales System erfordert eine permanente Kodierung auf dem Maßstab (z.~B. über mehrere parallele Spuren oder einen Gray-Code). Das digitale Zählwerk zählt hierbei nicht fortlaufend Impulse, sondern liest an jeder Position ein eindeutiges Bitmuster aus. Dadurch ist der Messwert sofort nach dem Einschalten ohne vorherige Referenzfahrt bekannt.
+\end{itemize}
+
+\subsection*{Frage 2: Realisierung eines analogen, absoluten Weg-/Winkelmesssystems}
+
+Ein analoges Absolutsystem wandelt die geometrische Position direkt in ein kontinuierliches, eindeutiges elektrisches Signal um. 
+
+Ein klassisches Beispiel ist das \textbf{ohmsche Potentiometer}. Schaltet man die Widerstandsbahn des Gebers als Spannungsteiler an eine Speisespannung $U$, ändert sich der elektrische Widerstand relativ zur Stellung des beweglichen Schleifers. Dadurch erhält man eine sich linear ändernde Ausgangsspannung $U_a$. Unter der Bedingung, dass der Belastungswiderstand $R_B$ sehr viel größer als der Sensorwiderstand ist, gilt der proportionale Zusammenhang:
+\begin{equation}
+    U_a \approx U \cdot \frac{R_x}{R}
+\end{equation}
+Durch Kalibrierung wird jeder gemessenen Spannung eine feste, absolute Lage zugeordnet. Weitere analoge Absolutwertgeber sind differentielle induktive Sensoren (LVDT) oder Resolver.
+
+\subsection*{Frage 3: Funktionsweise eines induktiven Wegmesssystems mit Tauchankerspule und Target}
+
+Dieses System basiert auf der Änderung des magnetischen Widerstandes innerhalb einer Zylinderspule. Ein ferromagnetischer Tauchanker (das Target) wird mechanisch in den Spulenkörper hineinbewegt. Da Eisen eine wesentlich höhere relative Permeabilitätszahl ($\mu_r \approx 1000$) als die verdrängte Luft besitzt, verringert das Eindringen des Ankers den magnetischen Gesamtwiderstand $R_m$ des magnetischen Kreises. Infolgedessen steigt die Induktivität $L$ der Spulenanordnung an. Diese Induktivitätsänderung wird über eine nachgeschaltete Elektronik (z.~B. durch die Frequenzänderung eines LC-Oszillators) ausgewertet und in ein wegproportionales Signal umgewandelt.
+
+\subsection*{Frage 4: Nachteil eines nichtlinearen Kennlinienverlaufs über die Eindringtiefe}
+
+Die Induktivität einer Tauchankerspule verhält sich umgekehrt proportional zum Weg $s$ der Feldlinien im Luftraum ($L \sim \frac{1}{s}$), was zu einer hyperbelähnlichen Funktion führt. 
+
+Der wesentliche Nachteil dieser Nichtlinearität ist die \textbf{stark variierende Messempfindlichkeit} über den Messbereich hinweg:
+\begin{itemize}
+    \item Bei geringer Eindringtiefe führt eine kleine Positionsänderung zu einer sehr großen Induktivitätsänderung (hohe Empfindlichkeit).
+    \item Bei tieferem Eintauchen flacht die Kennlinie stark ab (geringe Empfindlichkeit).
+\end{itemize}
+Dies erschwert die Signalauflösung im oberen Messbereich, limitiert den nutzbaren linearen Arbeitsbereich und erhöht den algorithmischen Aufwand bei der Kalibrierung und Messwertkorrektur.
+
+\subsection*{Frage 5: Linearisierung des Kennlinienverlaufs bei einer Tauchankerspule}
+
+Die Linearisierung erfolgt mathematisch und schaltungstechnisch durch den Einsatz zweier Spulen in einer \textbf{Differentialanordnung} (Differentialgeber). 
+
+Der Tauchanker wird so bewegt, dass er sich gleichzeitig aus der ersten Spule heraus- und in die zweite Spule hineinbewegt. Die induktiven Wechselstromwiderstände verhalten sich gegensinnig:
+\begin{equation}
+    X_1 = \frac{\omega \cdot k}{s_0 - \Delta s} \quad \text{und} \quad X_2 = \frac{\omega \cdot k}{s_0 + \Delta s}
+\end{equation}
+Schaltet man diese Spulen als Brückenschaltung auf, subtrahieren sich die Signale im Zähler, während sie sich im Nenner addieren. Über die Differenzspannung $U_d$ heben sich die hyperbelähnlichen Nichtlinearitäten im Arbeitsbereich auf:
+\begin{equation}
+    U_d = \frac{U_0}{2} \cdot \frac{X_2 - X_1}{X_2 + X_1} = -\frac{U_0}{2} \cdot \frac{\Delta s}{s_0}
+\end{equation}
+Das Ergebnis ist eine streng proportionale und lineare Kennlinie relativ zur Auslenkung $\Delta s$.
+
+\subsection*{Frage 6: Realisierung eines induktiven Abstandssensors mittels E-Kern}
+
+Ein E-Kern aus ferritischem Material bildet zusammen mit einer Spule ein offenes Magnetsystem. Der magnetische Fluss wird durch die Schenkel des E-Kerns geführt. Bringt man ein ferromagnetisches Messobjekt (den Anker) vor die Stirnseite des Kerns, wird der magnetische Kreis geschlossen. 
+
+Die Induktivität dieser Anordnung hängt vom Luftspalt $x$ ab und folgt der Beziehung:
+\begin{equation}
+    L(x) = \mu_0 \cdot \frac{N^2 \cdot A}{\frac{l_e}{\mu_e} + 2x}
+\end{equation}
+Verringert sich der Abstand $x$ zum Messobjekt, sinkt der magnetische Widerstand im Luftspalt, wodurch die Spuleninduktivität $L$ progressiv ansteigt. Diese Änderung wird über eine Brückenschaltung oder die Resonanzfrequenz eines Schwingkreises gemessen. Der typische Messbereich liegt hierbei unter $1\,\text{mm}$.
+
+\subsection*{Frage 7: Nachteil induktiver Wegsensoren bezüglich der Werkstoffeigenschaften}
+
+Induktive Sensoren reagieren extrem sensitiv auf die \textbf{relative Permeabilität ($\mu_{\text{Object}}$)} und die elektrische Leitfähigkeit des Zielmaterials. 
+
+\begin{itemize}
+    \item \textbf{Werkstoffabhängigkeit:} Materialien mit hoher Permeabilität (z.~B. ferromagnetischer Stahl mit $\mu_{\text{Object}} = 10000$) erzeugen bei gleichem Abstand eine signifikant höhere Induktivitätsänderung als Legierungen mit geringerem $\mu_{\text{Object}}$. 
+    \item \textbf{Skin-Effekt:} Bei hochfrequenten Oszillatorsignalen schränken Wirbelströme an der Oberfläche die magnetische Eindringtiefe ein. Nichteisenmetalle wie Aluminium oder Kupfer verhalten sich aufgrund dieser Effekte völlig anders als Stahl.
+\end{itemize}
+Ein Sensor muss daher für unterschiedliche Messobjekte individuell kalibriert werden, da Materialwechsel massive Messfehler verursachen.
+
+\subsection*{Frage 8: Funktionsweise von LVDT-Sensoren}
+
+Ein \textbf{LVDT} (Linear Variable Differential Transformer) ist ein induktiver Differentialtransformator. Er besteht aus einer Primärspule und zwei identischen Sekundärspulen (A und B). 
+
+\begin{enumerate}
+    \item Die Primärspule wird mit einer sinusförmigen Wechselspannung gespeist.
+    \item Ein beweglicher ferromagnetischer Tauchanker (Target) koppelt den magnetischen Fluss auf die Sekundärspulen.
+    \item Die beiden Sekundärspulen sind \textbf{gegenphasig in Reihe} geschaltet, sodass sich ihre induzierten Spannungen subtrahieren ($U_d = U_A - U_B$).
+\end{enumerate}
+Befindet sich der Tauchanker exakt in der Symmetriemitte, sind die induzierten Spannungen gleich groß und die resultierende Ausgangsspannung ist Null. Verschiebt sich der Anker aus der Mitte, erhöht sich die Kopplung zu einer Spule, während sie zur anderen sinkt. Die Amplitude der Ausgangsspannung zeigt den Betrag der Asymmetrie (den Weg), während die Phasenlage relativ zur Primärspannung die Richtung der Auslenkung bestimmt.
+
+\subsection*{Frage 9: Optische Durchmesserbestimmung eines Messobjektes auf einem Förderband}
+
+Hierzu nutzt man das \textbf{Lichtstrahl- bzw. Abschattungsverfahren}. Es lassen sich zwei Prinzipien umsetzen:
+\begin{itemize}
+    \item \textbf{Dioden-Array-Verfahren (statisch):} Eine Lichtquelle beleuchtet das Messobjekt (den Prüfling) flächig. Auf der gegenüberliegenden Seite befindet sich ein zeilenförmiger Pixel-Detektor. Das Objekt schattet einen Teil der Pixel ab. Über die Anzahl $n$ der abgedunkelten Pixel, die Gesamtlänge $L$ und den Abbildungsmaßstab berechnet sich der Durchmesser geometrisch zu:
+    \begin{equation}
+        D = n \cdot \frac{L}{l}
+    \end{equation}
+    \item \textbf{Scanner-Verfahren (dynamisch):} Ein Laserstrahl wird über einen rotierenden Spiegel periodisch abgelenkt und quétcht das Band. Ein einzelner Photodetektor misst die Intensität über die Zeit $t$. Der Durchmesser $D$ verhält sich proportional zur zeitlichen Dauer $\Delta t$ der Strahlunterbrechung:
+    \begin{equation}
+        D = k \cdot \Delta t
+    \end{equation}
+\end{itemize}
+
+\subsection*{Frage 10: Beschreibe die Funktionsweise eines Resolvers!}
+
+Ein \textbf{Resolver} ist ein berührungsloser, rotierender Transformator zur absoluten Winkelmessung innerhalb einer Umdrehung. 
+
+Er besteht aus einer Rotorwicklung und zwei stationären Statorwicklungen, die geometrisch um $90^{\circ}$ versetzt angeordnet sind (Sinus- und Cosinus-Spule). Die Rotorwicklung (R1--R2) wird mit einer sinusförmigen Wechselspannung $I_1(t) = I_0 \cdot \sin(\omega \cdot t)$ gespeist. 
+
+Dreht sich der Rotor um den Winkel $\Theta$, verändert sich der Kopplungsfaktor durch den kosinusförmigen Verlauf der Feldlinienausrichtung. In den Statorspulen werden Spannungen induziert, deren Amplituden vom mechanischen Winkel $\Theta$ moduliert sind:
+\begin{align}
+    U_{\text{cos}} &= K \cdot \sin(\omega \cdot t) \cdot \cos(\Theta) \\
+    U_{\text{sin}} &= K \cdot \sin(\omega \cdot t) \cdot \sin(\Theta)
+\end{align}
+Eine Auswerteschaltung (häufig unter Verwendung eines RDC --- Resolver-to-Digital Converter wie dem AD2S1210) führt eine Demodulation durch und berechnet über den Arkustangens des Amplitudenverhältnisses präzise den absoluten Winkel $\Theta$.
+
+\end{document}

@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{circuitikz}
+
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Hausaufgaben Lösungen}
+\lhead{Messschaltungen und Sensorik - Lektüre 3}
+\cfoot{\thepage}
+
+\begin{document}
+
+\section*{Hausaufgabe I: Integrierer mit Parallelwiderstand}
+\textbf{Beschreibung:} Invertierender Miller-Integrator mit einem Parallelwiderstand $R_2$. Dieser begrenzt die Verstärkung bei niedrigen Frequenzen und stabilisiert die Schaltung gegen Sättigung.
+
+\textbf{1. Komplexe Übertragungsfunktion:}
+Die Rückkopplung besteht aus der Parallelschaltung von $R_2$ und $C$. Die Übertragungsfunktion lautet:
+\[ H(j\omega) = \frac{\underline{u}_{a}}{\underline{u}_{e}} = -\frac{R_2}{R_1} \cdot \frac{1}{1 + j\omega R_2 C} \]
+Mit den gegebenen Werten $R_1 = 10\,k\Omega$, $R_2 = 200\,k\Omega$ und $C = 50\,nF$.
+
+\textbf{2. Zeitsignal am Ausgang:}
+Eingangssignal: $u_e(t) = 0.2V \cdot \sin(2\pi \cdot 500Hz \cdot t)$.
+Berechnung der Kreisfrequenz: $\omega = 2\pi \cdot 500 \approx 3141.6\,\text{rad/s}$.
+\begin{itemize}
+    \item Betrag $|H| = \frac{200k}{10k} \cdot \frac{1}{\sqrt{1 + (3141.6 \cdot 200k \cdot 50n)^2}} \approx 20 \cdot \frac{1}{31.43} \approx 0.636$.
+    \item Phase $\phi = 180^\circ - \arctan(\omega R_2 C) \approx 180^\circ - 88.18^\circ = 91.82^\circ$.
+    \item Ausgangssignal: $u_a(t) \approx 0.127V \cdot \sin(2\pi \cdot 500Hz \cdot t + 91.82^\circ)$.
+\end{itemize}
+
+\section*{Hausaufgabe II: Offsetgrößen}
+\textbf{Beschreibung:} Berechnung der gesamten Ausgangs-Offsetspannung eines invertierenden Verstärkers durch reale OP-Parameter.
+
+\textbf{Berechnung:}
+\begin{itemize}
+    \item Verstärkung für den Spannungs-Offset: $v_{offset} = 1 + \frac{40k\Omega}{2k\Omega} = 21$.
+    \item Anteil durch $u_{offset} = 3\,mV$: $u_{a,u} = 21 \cdot 3\,mV = 63\,mV$.
+    \item Anteil durch $i_{offset} = 100\,nA$: $u_{a,i} = 100\,nA \cdot 40\,k\Omega = 4\,mV$.
+    \item Gesamte Offsetspannung am Ausgang: $u_{a,total} = 63\,mV + 4\,mV = 67\,mV$.
+\end{itemize}
+
+\section*{Hausaufgabe III: Gesamtverstärkung}
+\textbf{Beschreibung:} Berechnung der logarithmischen Gesamtverstärkung einer zweistufigen Verstärkerkette.
+
+\textbf{Berechnung:}
+\begin{itemize}
+    \item Verstärkung Stufe 1 (invertierend): $v_1 = -\frac{10k\Omega}{1k\Omega} = -10$.
+    \item Verstärkung Stufe 2 (invertierend): $v_2 = -\frac{20k\Omega}{4k\Omega} = -5$.
+    \item Gesamtverstärkung linear: $V_{tot} = v_1 \cdot v_2 = (-10) \cdot (-5) = 50$.
+    \item Gesamtverstärkung in Dezibel: $V_{dB} = 20 \cdot \log_{10}(50) \approx 33.98\,dB$.
+\end{itemize}
+
+\section*{Hausaufgabe IV: Messverstärker}
+\textbf{Beschreibung:} Analyse eines nicht-invertierenden Verstärkers.
+
+\textbf{Lösungen:}
+\begin{itemize}
+    \item \textbf{Spannungsverstärkung:} $v = 1 + \frac{R_2}{R_1} = 1 + \frac{10k\Omega}{2k\Omega} = 6$.
+    \item \textbf{Eingangswiderstand:} Durch den Parallelwiderstand $R_p = 33\,k\Omega$ am Eingang beträgt $r_{in} = 33\,k\Omega$.
+    \item \textbf{Ausgangsspannung:} $u_a = v \cdot u_{in} = 6 \cdot 150\,mV = 900\,mV$.
+    \item \textbf{3dB-Grenzfrequenz:} $f_{3dB} = \frac{f_{unity}}{v} = \frac{2\,MHz}{6} \approx 333.33\,kHz$.
+\end{itemize}
+
+\end{document}

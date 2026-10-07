@@ -1,0 +1,27 @@
+% Parameter Definition
+U0 = 10;            % Quellspannung in V
+R1 = 100;           % Widerstand R1 in Ohm
+R2 = 1000;          % Widerstand R2 in Ohm
+R3 = 1000;          % Widerstand R3 in Ohm
+Rm = 10000;         % Voltmeterinnenwiderstand in Ohm (10kOhm)
+
+% Temperaturbereich definieren
+T_celsius = 0:0.1:50;           % 0 bis 50 Grad Celsius
+T_kelvin = T_celsius + 273.15;  % Umrechnung in Kelvin
+
+% Berechnung des Thermistor-Widerstands Ru
+Ru = 1000 * exp(3675 * (1./T_kelvin - 0.003354));
+
+% Berechnung der Brückenausgangsspannung Ud (modifizierte Formel)
+Zaehler = U0 * Rm * (Ru .* R2 - R1 * R3);
+Nenner = R1*R2*(Ru + R3) + Ru*R3*(R1 + R2) + Rm*(R1 + R2)*(Ru + R3);
+Ud = Zaehler ./ Nenner;
+
+% Darstellung im Diagramm
+figure;
+plot(T_celsius, Ud, 'LineWidth', 2);
+grid on;
+title('Brückenausgangsspannung U_d über Temperatur');
+xlabel('Temperatur [°C]');
+ylabel('Ausgangsspannung U_d [V]');
+legend('U_d(T) mit Berücksichtigung von R_m');

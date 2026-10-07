@@ -1,0 +1,77 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage[most]{tcolorbox}
+\usepackage{geometry}
+\usepackage[autostyle]{csquotes}
+
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+
+\newtcolorbox{aufgabebox}[1]{
+    colback=white,
+    colframe=gray!30,
+    fonttitle=\bfseries\large,
+    coltitle=black,
+    colbacktitle=gray!10,
+    enhanced,
+    attach boxed title to top left={yshift=-3mm, xshift=2mm},
+    boxed title style={sharp corners=south, size=small, colframe=gray!30},
+    title={#1},
+    arc=5pt,
+    outer arc=5pt
+}
+
+\newtcolorbox{loesungsbox}{
+    colback=gray!10,
+    colframe=gray!30,
+    sharp corners,
+    boxrule=0.5pt,
+    top=2pt, bottom=2pt, left=5pt, right=5pt,
+    fontupper=\small,
+    title=Kurzlösung,
+    colbacktitle=gray!20,
+    coltitle=black,
+    detach title,
+    before upper={\textbf{Kurzlösung}\\[2pt]}
+}
+
+\begin{document}
+
+\begin{aufgabebox}{Spieleabend -- Schere, Stein, Papier, Echse, Spock}
+    In einer Gruppe von 6 Freunden wird die erweiterte Version von \textit{Schere, Stein, Papier, Echse, Spock} (insgesamt 5 Symbole) gespielt.
+
+    \begin{enumerate}
+        \item[a)] Wie viele verschiedene Ausgänge gibt es bei einer Runde zwischen zwei Spielern, wenn die Reihenfolge beachtet wird?
+        \item[b)] Jeder der 6 Freunde spielt gegen jeden anderen genau einmal. Wie viele Spiele finden insgesamt statt?
+        \item[c)] Wie hoch ist die Wahrscheinlichkeit eines Unentschiedens in einer Runde zwischen zwei Spielern?
+    \end{enumerate}
+
+    \begin{loesungsbox}
+        a) $5^2 = 25$ \quad
+        b) $\binom{6}{2} = 15$ \quad
+        c) $\frac{5}{25} = 20\%$
+    \end{loesungsbox}
+\end{aufgabebox}
+
+\begin{aufgabebox}{Gruppenbildung im Seminar}
+    In einem Seminar gibt es 12 Studierende. Für ein Projekt sollen 4er-Gruppen gebildet werden.
+    
+    \begin{enumerate}
+        \item[a)] Wie viele verschiedene 4er-Gruppen können aus den 12 Studierenden gebildet werden?
+        \item[b)] In wie vielen dieser Gruppen befindet sich eine bestimmte Person, z.\,B. \enquote{Lara}? Wie groß ist die Wahrscheinlichkeit, dass \enquote{Lara} in einer zufälligen Gruppe ist?
+        \item[c)] Wie viele Gruppen enthalten weder \enquote{Lara} noch \enquote{Peter}?
+        \item[d)] Wie groß ist die Wahrscheinlichkeit, dass eine zufällige Gruppe mindestens aus \enquote{Lara} oder \enquote{Peter} besteht?
+    \end{enumerate}
+
+    \begin{loesungsbox}
+        \makebox[0.45\textwidth][l]{a) $\binom{12}{4} = 495$} 
+        \makebox[0.45\textwidth][l]{b) $\binom{11}{3} = 165$; $P = 33,3\%$} \\[2pt]
+        \makebox[0.45\textwidth][l]{c) $\binom{10}{4} = 210$} 
+        \makebox[0.45\textwidth][l]{d) $P = 1 - \frac{210}{495} \approx 57,58\%$}
+    \end{loesungsbox}
+\end{aufgabebox}
+
+\end{document}

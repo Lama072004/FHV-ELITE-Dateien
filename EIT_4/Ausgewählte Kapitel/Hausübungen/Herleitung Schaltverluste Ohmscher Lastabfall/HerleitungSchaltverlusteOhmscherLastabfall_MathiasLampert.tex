@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{fancyhdr} % Paket für Kopf- und Fußzeilen
+\geometry{a4paper, margin=1in}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Lampert Mathias}
+\lhead{Ausgewähle Kapitel der Elektronik}
+\cfoot{\thepage}
+
+\begin{document}
+
+\section*{Detaillierte Herleitung der Schaltverlustenergie bei ohmscher Last}
+
+\subsection*{1. Definition der Verlustleistung}
+Die momentane Verlustleistung $p(t)$ an einem Halbleiterschalter (z. B. MOSFET) während des Schaltvorgangs ist definiert als das Produkt aus der über dem Bauteil abfallenden Spannung $u_{DS}(t)$ und dem hindurchfließenden Drainstrom $i_D(t)$:
+\begin{equation}
+p(t) = u_{DS}(t) \cdot i_D(t)
+\end{equation}
+
+\subsection*{2. Modellierung des Schaltvorgangs}
+Für eine rein ohmsche Last wird angenommen, dass der Strom und die Spannung während der Schaltzeit $t_s$ linear verlaufen. Wir betrachten den Einschaltvorgang im Zeitintervall $t \in [0, t_s]$:
+
+\begin{itemize}
+    \item \textbf{Linearer Stromanstieg}: Der Strom steigt von $0$ auf den Maximalwert $I_D$ an:
+    \begin{equation}
+    i_D(t) = I_D \cdot \frac{t}{t_s}
+    \end{equation}
+    
+    \item \textbf{Linearer Spannungsabfall}: Die Spannung sinkt von der Versorgungsspannung $U_b$ auf $0$ ab:
+    \begin{equation}
+    u_{DS}(t) = U_b \cdot \left( 1 - \frac{t}{t_s} \right)
+    \end{equation}
+\end{itemize}
+
+
+
+\subsection*{3. Aufstellen des Integrals}
+Die gesamte während eines Schaltvorgangs in Wärme umgesetzte Energie $W_v$ berechnet sich durch Integration der Momentanleistung über die Zeitdauer $t_s$:
+\begin{equation}
+W_v = \int_{0}^{t_s} p(t) \, dt = \int_{0}^{t_s} \left[ U_b \cdot \left( 1 - \frac{t}{t_s} \right) \right] \cdot \left[ I_D \cdot \frac{t}{t_s} \right] \, dt
+\end{equation}
+
+\begin{equation}
+W_v = U_b \cdot I_D \int_{0}^{t_s} \left( 1 - \frac{t}{t_s} \right) \cdot \frac{t}{t_s} \, dt
+\end{equation}
+
+\begin{equation}
+W_v = U_b \cdot I_D \int_{0}^{t_s} \left( \frac{t}{t_s} - \frac{t^2}{t_s^2} \right) \, dt
+\end{equation}
+
+\subsection*{4. Integration und Auswertung}
+Wir bestimmen die Stammfunktion bezüglich der Variablen $t$:
+\begin{equation}
+W_v = U_b \cdot I_D \cdot \left[ \frac{1}{t_s} \cdot \frac{t^2}{2} - \frac{1}{t_s^2} \cdot \frac{t^3}{3} \right]_{0}^{t_s}
+\end{equation}
+
+\begin{equation}
+W_v = U_b \cdot I_D \cdot \left( \frac{t_s^2}{2 t_s} - \frac{t_s^3}{3 t_s^2} \right)
+\end{equation}
+
+\begin{equation}
+W_v = U_b \cdot I_D \cdot \left( \frac{t_s}{2} - \frac{t_s}{3} \right)
+\end{equation}
+
+\begin{equation}
+W_v = U_b \cdot I_D \cdot \left( \frac{3 t_s}{6} - \frac{2 t_s}{6} \right) = U_b \cdot I_D \cdot \frac{t_s}{6}
+\end{equation}
+
+\subsection*{5. Endergebnis}
+Die Energie pro Schaltvorgang bei ohmscher Last beträgt:
+\begin{equation}
+W_v = \frac{1}{6} \cdot U_b \cdot I_D \cdot t_s
+\end{equation}
+
+Die mittlere Schaltverlustleistung $P_v$ bei einer Schaltfrequenz $f$ ergibt sich schließlich zu:
+\begin{equation}
+P_{v, Schalten} = W_v \cdot f = \frac{U_b \cdot I_D \cdot t_s \cdot f}{6}
+\end{equation}
+
+\end{document}
