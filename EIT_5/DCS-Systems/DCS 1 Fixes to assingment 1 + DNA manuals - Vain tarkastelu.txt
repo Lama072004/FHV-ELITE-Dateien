@@ -1,0 +1,105 @@
+OK, here we are at our workspace. I will start from scratch so there is no any disturbances here. So I have now selected our workspace here.
+Parantainen Antti 0 minuuttia 19 sekuntia
+As you can see, there is not so many works that's left here anymore. I have done some clean up here, so if you find any like a missing loop that your your loop isn't there, please inform me if you cannot find.
+Parantainen Antti 0 minuuttia 35 sekuntia
+Your software here in our workspace.
+Parantainen Antti 0 minuuttia 40 sekuntia
+And.
+Parantainen Antti 0 minuuttia 45 sekuntia
+I hope everyone can find your software what you have created last time or according to video.
+Parantainen Antti 0 minuuttia 52 sekuntia
+I'm usually checking out the stitch situation here in our workspace, but what is what is done there and can I see some like abnormalities there and I can see some here. This is like the beauty of this.
+Parantainen Antti 1 minuutti 8 sekuntia
+Common, common like a environment for all of us, which means that I can see what you are on over there. For example, all of these are more or less OK.
+Parantainen Antti 1 minuutti 24 sekuntia
+As far as I can see, there is one mistake over there. It is missing some features, but the rest of those.
+Parantainen Antti 1 minuutti 33 sekuntia
+Are not OK so.
+Parantainen Antti 1 minuutti 38 sekuntia
+I'm also checking checking out like the who who has created this software or is there like any like a yeah. So for example here there's only one file created by his user.
+Parantainen Antti 1 minuutti 54 sekuntia
+So this is probably the only one only software created by that that that person. So there is some issues with the naming policy we went through last time and also around here it is missing some like a some some things from the naming policy.
+Parantainen Antti 2 minuuttia 14 sekuntia
+So let's figure out that you are following the naming policy correctly because that is causing issues in the download phase if you are doing like your own solutions or it is also affecting the saving to the database.
+Parantainen Antti 2 minuuttia 30 sekuntia
+If you are not following some rules.
+Parantainen Antti 2 minuuttia 36 sekuntia
+So here I can see that it's missing some features. If I'm opening this file I can see that this is just like a blank blank documentation. There is no those feature we went last last time through.
+Parantainen Antti 2 minuuttia 52 sekuntia
+Adding those temperature measurement and the analog measurement part. So these students need to start from the beginning like what we did last time.
+Parantainen Antti 3 minuuttia 4 sekuntia
+It makes things a little bit harder to catch now.
+Parantainen Antti 3 minuuttia 8 sekuntia
+And.
+Parantainen Antti 3 minuuttia 10 sekuntia
+Around about this standard here. Let's check out this one. You are missing the AC and IO. It is correctly almost here, but you should use your standard number instead here.
+Parantainen Antti 3 minuuttia 27 sekuntia
+So please use the edit and values with this.
+Parantainen Antti 3 minuuttia 32 sekuntia
+I can do a demo here for you. I think this is your role. Yeah, if it's OK, I will do one demo here. What is happening there when I'm modifying this as there should be. Let's talk about the features, how this is functioning there in the DNA Explorer.
+Parantainen Antti 3 minuuttia 50 sekuntia
+As you can see, there is a couple of mistakes in this loop. There is a wrong name over here and wrong name over here. Let's modify those as there should be. I will take the edit and values.
+Parantainen Antti 4 minuuttia 6 sekuntia
+And modify the inner brain first.
+Parantainen Antti 4 minuuttia 11 sekuntia
+And I think here should be something like this. In this inner frame there should be your standard number AE82.
+Parantainen Antti 4 minuuttia 24 sekuntia
+37 Oh, I miss it. Let's try again.
+Parantainen Antti 4 minuuttia 31 sekuntia
+H237 something like this and I'm already copy pasting this because I need to replace that. I'm using a lot of copy paste here Control C Control V to avoid the spelling mistakes.
+Parantainen Antti 4 minuuttia 47 sekuntia
+These are sometimes a little bit cryptic, so I am taking the edit values in the outer frame and I'm modifying the name here as it should be. I'm copy pasting it there.
+Parantainen Antti 5 minuuttia 6 sekuntia
+Yeah, now this is quite somehow OK, the naming according to naming policy. I will give you now one demo when I'm saving this file.
+Parantainen Antti 5 minuuttia 19 sekuntia
+Let's have a look what happens. It is giving me an error here that it is having this AC and IO in our workspace and it couldn't save that file because there is already.
+Parantainen Antti 5 minuuttia 34 sekuntia
+This kind of tag name reserved in our database. So there's NTT 100 dot I and as we can see it is this IO module over there.
+Parantainen Antti 5 minuuttia 49 sekuntia
+As we were as we were speaking last time, this is a name based system, so all those values needs to be unique.
+Parantainen Antti 5 minuuttia 59 sekuntia
+So now I have saved this with another name.
+Parantainen Antti 6 minuuttia 4 sekuntia
+Like this, but there is already module in our workspace containing that tag, so we need to modify that all of those are unique in our database.
+Parantainen Antti 6 minuuttia 17 sekuntia
+As we can see, we have modified here in this function block cat, but if we take a look here in the DNA Explorer, we can see this module here. The name of that one is not changed. We haven't saved that yet.
+Parantainen Antti 6 minuuttia 32 sekuntia
+And if I am opening this tree, we can see it is consisting this kind of modules inside of our function block. There is this IO module and also this dot F function.
+Parantainen Antti 6 minuuttia 48 sekuntia
+Those are separate like a functions inside of our FP gap module. So now this one is overlapping in our saving, so we need to modify that one.
+Parantainen Antti 7 minuuttia 1 sekunti
+And I'm taking here edit and values and modifying to IOIO name. I'm replacing this one with your status number.
+Parantainen Antti 7 minuuttia 16 sekuntia
+Is it correct now? I was clicking OK and I'm saving it. Let's have a look what happens.
+Parantainen Antti 7 minuuttia 28 sekuntia
+Now everything went correctly. Let's have a look our DNA Explorer then.
+Parantainen Antti 7 minuuttia 36 sekuntia
+I will update my view and as you can see it created another one here in our database. So now we are having two modules. This is one of the functionality of DNA.
+Parantainen Antti 7 minuuttia 52 sekuntia
+When you are saving something with a new new name and in this point the name is this tag code over here. This has now been changed so it is creating a new instance in the database.
+Parantainen Antti 8 minuuttia 8 sekuntia
+As you can see, one of those is modified last week when we are having our classes and another one is modified just now, just now when I say it.
+Parantainen Antti 8 minuuttia 20 sekuntia
+As you can see, in this case you are having duplicate and now we know that this last save which we created today is the correct one and this one is the faulty one. So you could now delete this function.
+Parantainen Antti 8 minuuttia 37 sekuntia
+Let's try. I'm I'm showing you example, but if you are, if you're seeing it there, you can do the do that over there. You can see what happens.
+Parantainen Antti 27 minuuttia 2 sekuntia
+How about Chen? Is it still loading this DNA Explorer? Yeah, I tried to snap on it. OK, one testing thing would be if you take this.
+Parantainen Antti 27 minuuttia 18 sekuntia
+Mm.
+Parantainen Antti 27 minuuttia 20 sekuntia
+If you go here using this remoter jump dot FI and let's see is there any progress if you're using that?
+Parantainen Antti 27 minuuttia 35 sekuntia
+That would be good information if you go to test this remote dot junk.
+Parantainen Antti 27 minuuttia 41 sekuntia
+OK, one more thing we could check out.
+Parantainen Antti 27 minuuttia 57 sekuntia
+Or probably we are having a break now because let's go to the copying block, function block after the break. Let's keep a 10 minutes break and come here at 55 or something like that.
+Parantainen Antti 28 minuuttia 25 sekuntia
+Yeah, OK.
+Parantainen Antti 28 minuuttia 29 sekuntia
+I can't. I can't. I can't. I can't.
+Parantainen Antti 29 minuuttia 8 sekuntia
+OK.
+Parantainen Antti 29 minuuttia 36 sekuntia
+Yeah, yeah, that is like the most effective.

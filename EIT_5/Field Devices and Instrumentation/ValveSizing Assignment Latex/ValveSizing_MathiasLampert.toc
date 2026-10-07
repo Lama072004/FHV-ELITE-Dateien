@@ -1,0 +1,28 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}Process Application Description}{2}{section.2}%
+\contentsline {section}{\numberline {3}Calculations and Sizing Methodology}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Input Data and Assumptions}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Pump Curve Analysis}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Pressure Loss Between Pump and Valve}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Pressure Drop Across the Valve and $DP_m$}{7}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Required Flow Coefficient}{8}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Sizing Results (Nelprof)}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Alternative 1: RE-Series Segmented Ball Valve}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Alternative 2: M1-Series Standard Ball Valve}{9}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Graphical Analysis (Nelprof Charts)}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Inherent Flow Characteristics}{10}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Installed Flow Characteristics}{11}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Installed Gain}{13}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Installed Pressure Level}{15}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Installed Noise}{17}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Influence of the Real Process Pressure Ratio}{18}{subsection.5.6}%
+\contentsline {section}{\numberline {6}Comparative Evaluation and Conclusions}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Valve Performance Comparison}{18}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Product Documentation of the Selected Valve}{19}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Actuator}{19}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Final Verdict}{20}{subsection.6.4}%
+\contentsline {section}{Declaration on the Use of Artificial Intelligence}{20}{subsection.6.4}%
+\contentsline {section}{References}{21}{subsection.6.4}%
+\contentsline {section}{Appendices}{22}{subsection.6.4}%
+\contentsline {subsection}{Appendix 1. Nelprof Setup and Results}{22}{section*.14}%

@@ -1,0 +1,1236 @@
+WEBVTT
+
+53e79d11-77ac-4f71-a099-677358694f62/4-0
+00:00:03.231 --> 00:00:07.411
+<v Parantainen Antti>OK,
+so in this video I'm going to demonstrate</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/4-1
+00:00:07.411 --> 00:00:13.862
+<v Parantainen Antti>you how to download and test your IO
+application engineering exercise.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/4-2
+00:00:13.862 --> 00:00:17.951
+<v Parantainen Antti>So what we are about to do,
+we are focusing.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/5-0
+00:00:17.991 --> 00:00:24.972
+<v Parantainen Antti>In this section in the Moodle,
+how to download the software and also how</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/5-1
+00:00:24.972 --> 00:00:32.431
+<v Parantainen Antti>to test your function with the function
+test tool. So I will head now to the.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/6-0
+00:00:33.831 --> 00:00:40.791
+<v Parantainen Antti>EASG and for the beginning you should be
+familiar with this manual.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/8-0
+00:00:43.831 --> 00:00:51.577
+<v Parantainen Antti>Manual about the function test tool which
+you are about to use in this exercise.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/8-1
+00:00:51.577 --> 00:00:58.271
+<v Parantainen Antti>So check out this manual before you start
+your test your application.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/9-0
+00:00:58.911 --> 00:01:07.041
+<v Parantainen Antti>Go to the testing and maintenance section
+here in the manual and from this manual</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/9-1
+00:01:07.041 --> 00:01:10.511
+<v Parantainen Antti>check out the first three chapters.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/10-0
+00:01:12.831 --> 00:01:15.311
+<v Parantainen Antti>Basically this one, this one, this one.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/11-0
+00:01:16.991 --> 00:01:24.318
+<v Parantainen Antti>And this one and also how to enter a new
+value with this tool.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/11-1
+00:01:24.318 --> 00:01:30.831
+<v Parantainen Antti>So check out this entering a new value
+section as well.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/12-0
+00:01:32.391 --> 00:01:39.503
+<v Parantainen Antti>Please be be familiar with this manual.
+Practice the manual manual usage usage as</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/12-1
+00:01:39.503 --> 00:01:42.711
+<v Parantainen Antti>well before to execute this exercise.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/13-0
+00:01:44.951 --> 00:01:48.447
+<v Parantainen Antti>OK,
+so let's head out to the actual</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/13-1
+00:01:48.447 --> 00:01:56.021
+<v Parantainen Antti>downloading procedure and here we are
+having the view of our workspace and as</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/13-2
+00:01:56.021 --> 00:01:57.671
+<v Parantainen Antti>we were speaking.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/14-0
+00:01:59.511 --> 00:02:05.656
+<v Parantainen Antti>We should find our own software here and
+you can drag this identifier column.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/14-1
+00:02:05.656 --> 00:02:09.595
+<v Parantainen Antti>Just check out your software there.
+Mine is here.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/14-2
+00:02:09.595 --> 00:02:15.031
+<v Parantainen Antti>I'm usually using this search feature.
+I am typing my initials here.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/15-0
+00:02:16.751 --> 00:02:19.591
+<v Parantainen Antti>That's ACN dash.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/16-0
+00:02:20.831 --> 00:02:20.911
+<v Parantainen Antti>Uh.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/17-0
+00:02:23.071 --> 00:02:29.311
+<v Parantainen Antti>Dash IO just like this so I can just
+focus on this actual.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/18-0
+00:02:30.631 --> 00:02:35.350
+<v Parantainen Antti>Actual like a module I'm I'm handling in
+this case.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/18-1
+00:02:35.350 --> 00:02:42.974
+<v Parantainen Antti>So when you are downloading your software
+like this case in this ACN IO application</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/18-2
+00:02:42.974 --> 00:02:47.511
+<v Parantainen Antti>engineering if you are having here this
+real iOS.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/19-0
+00:02:49.071 --> 00:02:54.738
+<v Parantainen Antti>Which means that you are communicating
+with real field devices just like this</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/19-1
+00:02:54.738 --> 00:03:00.623
+<v Parantainen Antti>with this temperature measurement or you
+are using the field switch for example,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/19-2
+00:03:00.623 --> 00:03:03.311
+<v Parantainen Antti>so you cannot download your software.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/20-0
+00:03:03.751 --> 00:03:10.354
+<v Parantainen Antti>In this case, from the workspace,
+you need to move it to the repository</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/20-1
+00:03:10.354 --> 00:03:11.271
+<v Parantainen Antti>workspace.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/21-0
+00:03:14.711 --> 00:03:20.389
+<v Parantainen Antti>All all the cases you are handling that
+kind of IO functions you need to do this</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/21-1
+00:03:20.389 --> 00:03:24.805
+<v Parantainen Antti>following procedure.
+You need to right click your software and</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/21-2
+00:03:24.805 --> 00:03:29.431
+<v Parantainen Antti>select move the data storage and select
+the repository workspace.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/22-0
+00:03:31.311 --> 00:03:32.471
+<v Parantainen Antti>Just like this.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/23-0
+00:03:33.831 --> 00:03:40.289
+<v Parantainen Antti>And I will move it over there and then I
+will change my workspace to repository</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/23-1
+00:03:40.289 --> 00:03:46.747
+<v Parantainen Antti>and I can see my software over there.
+Now I am able to download my software and</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/23-2
+00:03:46.747 --> 00:03:51.751
+<v Parantainen Antti>always when you are using that IO
+functions like profitables.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/24-0
+00:03:52.071 --> 00:03:58.032
+<v Parantainen Antti>Or AC and I/O like we are having here.
+You need to select here that it is the</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/24-1
+00:03:58.032 --> 00:04:03.764
+<v Parantainen Antti>real real selection over here when you
+are downloading with this those I/O</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/24-2
+00:04:03.764 --> 00:04:05.751
+<v Parantainen Antti>modules like in this case.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/25-0
+00:04:06.751 --> 00:04:10.128
+<v Parantainen Antti>So now we are ready to download our
+software,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/25-1
+00:04:10.128 --> 00:04:16.147
+<v Parantainen Antti>but first we need to check our function
+and we are doing it here in DNA Explorer.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/25-2
+00:04:16.147 --> 00:04:20.991
+<v Parantainen Antti>I'm right clicking my software and
+selecting here check function.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/26-0
+00:04:21.751 --> 00:04:26.474
+<v Parantainen Antti>And I'm leaving as it is.
+I'm doing the IO address to check here.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/26-1
+00:04:26.474 --> 00:04:30.623
+<v Parantainen Antti>This is like the most important thing
+here at the moment.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/26-2
+00:04:30.623 --> 00:04:36.276
+<v Parantainen Antti>I need to check that there is no over
+overlapping addresses in this repository</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/26-3
+00:04:36.276 --> 00:04:36.991
+<v Parantainen Antti>workspace.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/27-0
+00:04:37.951 --> 00:04:42.949
+<v Parantainen Antti>When I click OK,
+it did the check and the check results</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/27-1
+00:04:42.949 --> 00:04:48.571
+<v Parantainen Antti>can be seen here in the log menu and
+check log menu over here.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/27-2
+00:04:48.571 --> 00:04:54.819
+<v Parantainen Antti>If you are having some issues,
+those are coming here in the last rows</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/27-3
+00:04:54.819 --> 00:04:56.871
+<v Parantainen Antti>with your own initials.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/28-0
+00:04:57.111 --> 00:05:02.271
+<v Parantainen Antti>And there is something red here in this
+menu if there is some issues.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/29-0
+00:05:03.191 --> 00:05:06.145
+<v Parantainen Antti>With the download,
+if you are having some errors,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/29-1
+00:05:06.145 --> 00:05:10.812
+<v Parantainen Antti>you can ask me ask me about those errors.
+So let's figure out what is wrong if</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/29-2
+00:05:10.812 --> 00:05:12.111
+<v Parantainen Antti>there are some errors.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/30-0
+00:05:15.271 --> 00:05:19.431
+<v Parantainen Antti>If everything's green here,
+you are ready to proceed your download.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/31-0
+00:05:20.671 --> 00:05:24.872
+<v Parantainen Antti>Let's check a little bit about the
+previous material,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/31-1
+00:05:24.872 --> 00:05:28.451
+<v Parantainen Antti>about the hardware section of our Valmet
+DNA.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/31-2
+00:05:28.451 --> 00:05:31.951
+<v Parantainen Antti>What is happening in this following
+section?</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/32-0
+00:05:33.031 --> 00:05:39.977
+<v Parantainen Antti>So here in this one DNA station slash
+node and naming principles documentation</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/32-1
+00:05:39.977 --> 00:05:42.351
+<v Parantainen Antti>we were talking about that.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/33-0
+00:05:43.631 --> 00:05:49.550
+<v Parantainen Antti>Process controllers, process stations,
+PCs and also the backup features.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/33-1
+00:05:49.550 --> 00:05:53.361
+<v Parantainen Antti>And now when we are downloading some
+software,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/33-2
+00:05:53.361 --> 00:05:58.631
+<v Parantainen Antti>this backup station is actually handling
+the download procedure.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/34-0
+00:05:59.271 --> 00:06:05.702
+<v Parantainen Antti>So we are downloading our software first
+to the backup station and then the backup</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/34-1
+00:06:05.702 --> 00:06:11.591
+<v Parantainen Antti>station is handling the application so
+that it will end up into the correct</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/34-2
+00:06:11.591 --> 00:06:15.852
+<v Parantainen Antti>process station.
+And also if we are having some like a</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/34-3
+00:06:15.852 --> 00:06:18.951
+<v Parantainen Antti>user interface in our software, it will.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/35-0
+00:06:19.111 --> 00:06:24.895
+<v Parantainen Antti>Our software to all the necessary stages.
+You don't need to care about this,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/35-1
+00:06:24.895 --> 00:06:30.228
+<v Parantainen Antti>but you just need to understand the
+principle what is happening in the</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/35-2
+00:06:30.228 --> 00:06:33.608
+<v Parantainen Antti>download.
+That's why there is some things to</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/35-3
+00:06:33.608 --> 00:06:38.791
+<v Parantainen Antti>remember when you are doing the download
+that the backup station is.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/36-0
+00:06:38.791 --> 00:06:43.793
+<v Parantainen Antti>Also involved in this back in this
+download procedures.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/36-1
+00:06:43.793 --> 00:06:50.135
+<v Parantainen Antti>So if we check this from the attachment
+section and the system layout,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/36-2
+00:06:50.135 --> 00:06:54.511
+<v Parantainen Antti>let's try to figure out there what is
+happening.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/37-0
+00:06:55.031 --> 00:06:56.831
+<v Parantainen Antti>When we are doing the download.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/38-0
+00:06:58.151 --> 00:07:04.852
+<v Parantainen Antti>So we are actually operating here in this
+EASG at the moment and when we are</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/38-1
+00:07:04.852 --> 00:07:10.421
+<v Parantainen Antti>proceeding to download,
+the download would go eventually to the</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/38-2
+00:07:10.421 --> 00:07:15.468
+<v Parantainen Antti>GB01 process station,
+but the backup station over here is</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/38-3
+00:07:15.468 --> 00:07:17.991
+<v Parantainen Antti>actually responsible of that.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/39-0
+00:07:17.991 --> 00:07:22.321
+<v Parantainen Antti>Functionality.
+So when we are doing the download,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/39-1
+00:07:22.321 --> 00:07:29.334
+<v Parantainen Antti>we are downloading here from the EASG to
+the GB 01 backup station and from there</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/39-2
+00:07:29.334 --> 00:07:32.711
+<v Parantainen Antti>our application is going automatically.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/40-0
+00:07:33.351 --> 00:07:39.449
+<v Parantainen Antti>To the GB01 process station,
+which is the station there in the DB66</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/40-1
+00:07:39.449 --> 00:07:41.511
+<v Parantainen Antti>lab here in the campus.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/41-0
+00:07:44.711 --> 00:07:48.141
+<v Parantainen Antti>That is what is happening there behind
+the scenes,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/41-1
+00:07:48.141 --> 00:07:53.186
+<v Parantainen Antti>like under the bonnet automatically.
+Let's go there and execute the actual</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/41-2
+00:07:53.186 --> 00:07:53.791
+<v Parantainen Antti>download.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/42-0
+00:07:55.431 --> 00:07:58.431
+<v Parantainen Antti>When I right click my software here in
+the repository.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/43-0
+00:07:59.671 --> 00:08:02.431
+<v Parantainen Antti>I will go to the Downloads tool menu.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/44-0
+00:08:03.431 --> 00:08:08.697
+<v Parantainen Antti>And we are having this kind of dialogue.
+You don't need to select anything by this</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/44-1
+00:08:08.697 --> 00:08:14.091
+<v Parantainen Antti>point. When we are downloading the system,
+it is just showing that it is downloading</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/44-2
+00:08:14.091 --> 00:08:18.151
+<v Parantainen Antti>this kind of modules which we which we
+created in the software.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/45-0
+00:08:19.791 --> 00:08:25.983
+<v Parantainen Antti>And those are going to the GB 01 package,
+which means the process station when I</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/45-1
+00:08:25.983 --> 00:08:26.671
+<v Parantainen Antti>click OK.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/46-0
+00:08:29.231 --> 00:08:35.672
+<v Parantainen Antti>It is very fast operation and my software
+there is now that they're downloaded to</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/46-1
+00:08:35.672 --> 00:08:40.385
+<v Parantainen Antti>the process station.
+How can we verify that if you open the</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/46-2
+00:08:40.385 --> 00:08:42.191
+<v Parantainen Antti>you open your software?</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/47-0
+00:08:43.951 --> 00:08:45.351
+<v Parantainen Antti>You can now.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/48-0
+00:08:46.791 --> 00:08:49.431
+<v Parantainen Antti>Use your knowledge from the function test
+tool.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/49-0
+00:08:51.271 --> 00:08:55.899
+<v Parantainen Antti>And let's do some like testing functions
+here in the software.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/49-1
+00:08:55.899 --> 00:09:01.628
+<v Parantainen Antti>I will go here in the file menu and
+select the test from here which will open</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/49-2
+00:09:01.628 --> 00:09:03.831
+<v Parantainen Antti>the function test tool for us.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/50-0
+00:09:05.911 --> 00:09:10.522
+<v Parantainen Antti>When I'm doing my testing,
+I'm actually always in this kind of</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/50-1
+00:09:10.522 --> 00:09:15.644
+<v Parantainen Antti>application selecting this insert all
+test point to the current page,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/50-2
+00:09:15.644 --> 00:09:21.133
+<v Parantainen Antti>which will activate the testing points
+for all our connections here in the</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/50-3
+00:09:21.133 --> 00:09:21.791
+<v Parantainen Antti>software.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/51-0
+00:09:23.351 --> 00:09:26.802
+<v Parantainen Antti>As you can see what we can see in our
+software,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/51-1
+00:09:26.802 --> 00:09:32.194
+<v Parantainen Antti>for example this temperature measurement,
+it is reading its value from the</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/51-2
+00:09:32.194 --> 00:09:37.658
+<v Parantainen Antti>temperature measurement and if you
+remember the scaling thing which we were</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/51-3
+00:09:37.658 --> 00:09:39.671
+<v Parantainen Antti>talking earlier, we can see.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/52-0
+00:09:39.831 --> 00:09:44.090
+<v Parantainen Antti>That the temperature scaling is
+functioning automatically,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/52-1
+00:09:44.090 --> 00:09:49.793
+<v Parantainen Antti>just without any like additional scaling.
+We can see the temperature here as a</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/52-2
+00:09:49.793 --> 00:09:52.031
+<v Parantainen Antti>decrease already in a software.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/53-0
+00:09:53.511 --> 00:09:58.546
+<v Parantainen Antti>And here we are having the AM,
+the analog measurement block and here we</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/53-1
+00:09:58.546 --> 00:10:03.511
+<v Parantainen Antti>can see the HH value and H value which
+are the alarm limits over here.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/54-0
+00:10:04.671 --> 00:10:10.745
+<v Parantainen Antti>Let's take a look how this temperature
+measurement thing is functioning.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/54-1
+00:10:10.745 --> 00:10:17.236
+<v Parantainen Antti>I have the temperature sensor here which
+is labels PT100 just like it is in a</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/54-2
+00:10:17.236 --> 00:10:21.396
+<v Parantainen Antti>software.
+And when I start to heat up this sensor</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/54-3
+00:10:21.396 --> 00:10:22.311
+<v Parantainen Antti>we can see.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/55-0
+00:10:22.791 --> 00:10:22.911
+<v Parantainen Antti>That.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/56-0
+00:10:24.831 --> 00:10:27.071
+<v Parantainen Antti>The temperature starts to rise.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/58-0
+00:10:28.511 --> 00:10:33.490
+<v Parantainen Antti>We can see that there is some delay,
+but now we can see the temperature is</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/58-1
+00:10:33.490 --> 00:10:37.871
+<v Parantainen Antti>rising and take a look that we are having
+this temperature alarm.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/59-0
+00:10:39.511 --> 00:10:47.421
+<v Parantainen Antti>22 degrees and when I'm heating this you
+can see that HA activated now when I was</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/59-1
+00:10:47.421 --> 00:10:53.112
+<v Parantainen Antti>heating this sensor.
+That means that now our high alarm is</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/59-2
+00:10:53.112 --> 00:10:56.391
+<v Parantainen Antti>active because the HAHA is active.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/60-0
+00:10:57.911 --> 00:11:01.815
+<v Parantainen Antti>And as you can see,
+the HH alarm is not active.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/60-1
+00:11:01.815 --> 00:11:08.566
+<v Parantainen Antti>I need to leave it a little bit more that
+we achieve 20 ticks degrees and then the</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/60-2
+00:11:08.566 --> 00:11:12.551
+<v Parantainen Antti>HHA became active and what is happening
+as well.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/61-0
+00:11:12.951 --> 00:11:16.671
+<v Parantainen Antti>You can see the red light is activating.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/62-0
+00:11:19.391 --> 00:11:23.628
+<v Parantainen Antti>Wow, what?
+What does it mean in our software?</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/62-1
+00:11:23.628 --> 00:11:28.233
+<v Parantainen Antti>Now our temperature is greater than the
+HH limit.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/62-2
+00:11:28.233 --> 00:11:34.311
+<v Parantainen Antti>It activated this or function which has
+now activated this GX100.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/63-0
+00:11:34.911 --> 00:11:42.333
+<v Parantainen Antti>And there you can see the same thing.
+There is this GX100 red lamp activated</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/63-1
+00:11:42.333 --> 00:11:45.031
+<v Parantainen Antti>there in nearby the cabinet.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/64-0
+00:11:46.631 --> 00:11:51.430
+<v Parantainen Antti>So this is one like the first thing which
+is the successful test here in our</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/64-1
+00:11:51.430 --> 00:11:51.991
+<v Parantainen Antti>software.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/65-0
+00:11:53.791 --> 00:11:59.070
+<v Parantainen Antti>And then we need to do some modification
+to the software like this is called the</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/65-1
+00:11:59.070 --> 00:12:03.111
+<v Parantainen Antti>debugging in the volumet DNA.
+We are chasing the values here.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/66-0
+00:12:05.591 --> 00:12:11.826
+<v Parantainen Antti>Let's change this higher high limit a
+little bit bigger so we can deactivate</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/66-1
+00:12:11.826 --> 00:12:15.631
+<v Parantainen Antti>this red lab.
+I will select here this en tool.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/67-0
+00:12:16.831 --> 00:12:22.440
+<v Parantainen Antti>And then I will click this high high
+alarm value, this float value.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/67-1
+00:12:22.440 --> 00:12:27.471
+<v Parantainen Antti>I will click it and I will put here a new
+value for example.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/68-0
+00:12:29.231 --> 00:12:38.425
+<v Parantainen Antti>30 degrees for example and I will apply,
+you will see that the limit goes off and</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/68-1
+00:12:38.425 --> 00:12:44.591
+<v Parantainen Antti>also our land turned off there in the
+cabinet as well.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/69-0
+00:12:46.231 --> 00:12:50.311
+<v Parantainen Antti>What else should we do here?
+Let's for example use this.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/70-0
+00:12:51.991 --> 00:12:56.807
+<v Parantainen Antti>Software button here.
+This is like the button in a screen in</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/70-1
+00:12:56.807 --> 00:13:01.149
+<v Parantainen Antti>our material.
+This is this just like we are using this</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/70-2
+00:13:01.149 --> 00:13:06.911
+<v Parantainen Antti>just like as an initial value of our
+software, but we can activate this.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/71-0
+00:13:07.151 --> 00:13:11.608
+<v Parantainen Antti>With this function test tool for the
+binary values,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/71-1
+00:13:11.608 --> 00:13:18.466
+<v Parantainen Antti>we can use this inversion button which
+it's called invert binary values here in</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/71-2
+00:13:18.466 --> 00:13:24.723
+<v Parantainen Antti>the tool menu. If I select that one,
+I can invert binary signals just by</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/71-3
+00:13:24.723 --> 00:13:25.751
+<v Parantainen Antti>clicking it.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/72-0
+00:13:26.111 --> 00:13:32.623
+<v Parantainen Antti>And we are once again having this red
+lamp active when I activate this another</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/72-1
+00:13:32.623 --> 00:13:39.135
+<v Parantainen Antti>button how we how we have call that in
+our software and you can invert it back</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/72-2
+00:13:39.135 --> 00:13:41.031
+<v Parantainen Antti>just like the same way.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/73-0
+00:13:42.111 --> 00:13:48.933
+<v Parantainen Antti>And there is also this third option which
+is switched in the field box and it is</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/73-1
+00:13:48.933 --> 00:13:55.081
+<v Parantainen Antti>HS100 to tag name of that one.
+And let's see if that is functioning with</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/73-2
+00:13:55.081 --> 00:13:58.871
+<v Parantainen Antti>the same manner.
+The HS100 can be seen here.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/74-0
+00:13:59.511 --> 00:14:03.864
+<v Parantainen Antti>When I activate it,
+you can see it activates the lamp and</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/74-1
+00:14:03.864 --> 00:14:06.791
+<v Parantainen Antti>same thing I see there in the software.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/75-0
+00:14:09.831 --> 00:14:10.511
+<v Parantainen Antti>Just like that.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/76-0
+00:14:12.951 --> 00:14:19.677
+<v Parantainen Antti>And there's also this first button which
+will activate the yellow lamp.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/76-1
+00:14:19.677 --> 00:14:23.881
+<v Parantainen Antti>Let's try that one with this inversion
+tool.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/76-2
+00:14:23.881 --> 00:14:27.711
+<v Parantainen Antti>I will click inversion and the GX100 one.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/77-0
+00:14:28.431 --> 00:14:32.751
+<v Parantainen Antti>Is activated in a software and also there
+in a cabinet.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/78-0
+00:14:34.671 --> 00:14:38.457
+<v Parantainen Antti>Just like this,
+when you are doing your return,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/78-1
+00:14:38.457 --> 00:14:44.845
+<v Parantainen Antti>this is like the functioning software.
+All the functionalities has been now been</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/78-2
+00:14:44.845 --> 00:14:48.709
+<v Parantainen Antti>tested.
+So now you can report your thing here in</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/78-3
+00:14:48.709 --> 00:14:51.311
+<v Parantainen Antti>this like a function test format.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/79-0
+00:14:52.231 --> 00:14:53.231
+<v Parantainen Antti>You can have these.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/80-0
+00:14:54.831 --> 00:15:01.551
+<v Parantainen Antti>Values modified which we try it here just
+like this and use the F function test</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/80-1
+00:15:01.551 --> 00:15:08.271
+<v Parantainen Antti>tool and modify for example this HH limit
+and put the both of these buttons on.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/81-0
+00:15:10.431 --> 00:15:15.707
+<v Parantainen Antti>Here in the software and take a
+screenshot in this case so that your</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/81-1
+00:15:15.707 --> 00:15:21.441
+<v Parantainen Antti>software can be seen completely and also
+that you have used this function,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/81-2
+00:15:21.441 --> 00:15:25.111
+<v Parantainen Antti>this tool to modify the values in the
+software.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/82-0
+00:15:27.551 --> 00:15:32.253
+<v Parantainen Antti>This would be the scene I would like to
+see in in the return.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/82-1
+00:15:32.253 --> 00:15:38.093
+<v Parantainen Antti>Just take a screenshot from this part
+over here that your whole software can</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/82-2
+00:15:38.093 --> 00:15:43.705
+<v Parantainen Antti>you see your standard number in a
+software and those modified values here</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/82-3
+00:15:43.705 --> 00:15:44.311
+<v Parantainen Antti>as well.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/83-0
+00:15:45.871 --> 00:15:47.191
+<v Parantainen Antti>That's about to return.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/84-0
+00:15:48.991 --> 00:15:52.815
+<v Parantainen Antti>And now when we are you have completed
+your testing,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/84-1
+00:15:52.815 --> 00:15:58.443
+<v Parantainen Antti>you will exit this tool with this exit
+button and it will return your to this</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/84-2
+00:15:58.443 --> 00:16:00.391
+<v Parantainen Antti>function DNA Explorer tool.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/85-0
+00:16:01.791 --> 00:16:05.929
+<v Parantainen Antti>OK, this is important thing.
+What is about to do what?</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/85-1
+00:16:05.929 --> 00:16:10.745
+<v Parantainen Antti>What will happen next?
+Because we need to we need to delete the</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/85-2
+00:16:10.745 --> 00:16:15.861
+<v Parantainen Antti>software from the backup station and also
+from the process station.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/85-3
+00:16:15.861 --> 00:16:17.591
+<v Parantainen Antti>This is very important.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/86-0
+00:16:17.871 --> 00:16:23.346
+<v Parantainen Antti>Because this is a name based system,
+but we are still using those real IO</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/86-1
+00:16:23.346 --> 00:16:28.007
+<v Parantainen Antti>channels in a cabinet.
+So you really need to do this following</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/86-2
+00:16:28.007 --> 00:16:31.632
+<v Parantainen Antti>steps.
+This is very important because if you are</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/86-3
+00:16:31.632 --> 00:16:33.111
+<v Parantainen Antti>skipping this phase.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/87-0
+00:16:33.951 --> 00:16:39.275
+<v Parantainen Antti>The next next student who is about to do
+the test is not able to perform the test,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/87-1
+00:16:39.275 --> 00:16:43.957
+<v Parantainen Antti>so you are disturbing other students work
+if you are not following these</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/87-2
+00:16:43.957 --> 00:16:44.791
+<v Parantainen Antti>instructions.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/88-0
+00:16:46.191 --> 00:16:52.651
+<v Parantainen Antti>So first you need to delete software from
+the process station that is happening</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/88-1
+00:16:52.651 --> 00:16:57.496
+<v Parantainen Antti>from the same menu.
+You right click your software and go to</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/88-2
+00:16:57.496 --> 00:16:59.191
+<v Parantainen Antti>the download to menu.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/89-0
+00:17:00.671 --> 00:17:05.180
+<v Parantainen Antti>But from here we are selecting this
+delete feature.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/89-1
+00:17:05.180 --> 00:17:12.464
+<v Parantainen Antti>With this option we are actually deleting
+the software from backup station and also</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/89-2
+00:17:12.464 --> 00:17:14.631
+<v Parantainen Antti>from the process station.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/90-0
+00:17:16.031 --> 00:17:22.267
+<v Parantainen Antti>So then then there will be no software
+related to this like application and what</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/90-1
+00:17:22.267 --> 00:17:23.191
+<v Parantainen Antti>will happen?</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/91-0
+00:17:24.511 --> 00:17:29.535
+<v Parantainen Antti>You will see that actually there is both
+of those lamps were active and when you</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/91-1
+00:17:29.535 --> 00:17:33.815
+<v Parantainen Antti>are downloading the software like it was
+in this in our application,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/91-2
+00:17:33.815 --> 00:17:35.551
+<v Parantainen Antti>let's see what is happening.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/92-0
+00:17:37.071 --> 00:17:41.111
+<v Parantainen Antti>Now the software is deleted from the.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/93-0
+00:17:42.631 --> 00:17:42.671
+<v Parantainen Antti>Uh.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/94-0
+00:17:45.551 --> 00:17:51.962
+<v Parantainen Antti>Process station and backup station and
+now actually this is not functioning</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/94-1
+00:17:51.962 --> 00:17:55.926
+<v Parantainen Antti>anymore.
+If we will activate or deactivate the</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/94-2
+00:17:55.926 --> 00:18:00.312
+<v Parantainen Antti>software,
+it is not doing the action in a software.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/94-3
+00:18:00.312 --> 00:18:04.951
+<v Parantainen Antti>It would be better like new if I would
+turn those off.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/95-0
+00:18:05.391 --> 00:18:07.071
+<v Parantainen Antti>Before the.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/96-0
+00:18:08.031 --> 00:18:14.330
+<v Parantainen Antti>Actually removing of the software.
+It will be more like informative,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/96-1
+00:18:14.330 --> 00:18:20.356
+<v Parantainen Antti>but let's just trust that it is not there
+in the station anymore.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/96-2
+00:18:20.356 --> 00:18:27.111
+<v Parantainen Antti>But the next step you need to perform is
+your need to move your software.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/97-0
+00:18:27.791 --> 00:18:34.269
+<v Parantainen Antti>Back to our workspace of our group that
+this will also reserve the iOS for the</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/97-1
+00:18:34.269 --> 00:18:41.075
+<v Parantainen Antti>next next student who is about to do the
+testing when I have moved moved this into</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/97-2
+00:18:41.075 --> 00:18:42.551
+<v Parantainen Antti>the our workspace.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/98-0
+00:18:43.791 --> 00:18:50.132
+<v Parantainen Antti>It will disappear here from the
+repository and it can be seen there in</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/98-1
+00:18:50.132 --> 00:18:55.222
+<v Parantainen Antti>our workspace.
+So this is like the procedure you need to</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/98-2
+00:18:55.222 --> 00:19:01.741
+<v Parantainen Antti>follow and do it precisely as I did to
+avoid any issues with the testing</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/98-3
+00:19:01.741 --> 00:19:02.991
+<v Parantainen Antti>procedure and.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/99-0
+00:19:05.351 --> 00:19:09.423
+<v Parantainen Antti>Basically that's all you need to do,
+but I will still demonstrate one more</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/99-1
+00:19:09.423 --> 00:19:11.812
+<v Parantainen Antti>thing.
+Just if we are doing this little bit</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/99-2
+00:19:11.812 --> 00:19:14.744
+<v Parantainen Antti>differently,
+I will move this back to the repository.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/99-3
+00:19:14.744 --> 00:19:17.948
+<v Parantainen Antti>You don't need to do this when you are
+doing your testing.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/99-4
+00:19:17.948 --> 00:19:20.391
+<v Parantainen Antti>This is just for the demonstrating
+purposes.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/100-0
+00:19:20.591 --> 00:19:24.065
+<v Parantainen Antti>I will download this.
+I cannot download it here.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/100-1
+00:19:24.065 --> 00:19:29.452
+<v Parantainen Antti>This is I'm trying to download in the
+virtual mode here because I am at the</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/100-2
+00:19:29.452 --> 00:19:32.713
+<v Parantainen Antti>workspace.
+You can see the yellow color which</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/100-3
+00:19:32.713 --> 00:19:38.384
+<v Parantainen Antti>indicates that this is in virtual mode
+and it is not downloading the actual I/O</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/100-4
+00:19:38.384 --> 00:19:38.951
+<v Parantainen Antti>modules.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/101-0
+00:19:39.471 --> 00:19:42.751
+<v Parantainen Antti>So I need to move this back to the
+repository.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/102-0
+00:19:44.831 --> 00:19:50.106
+<v Parantainen Antti>And when I go to the repository,
+I will download my software again and</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/102-1
+00:19:50.106 --> 00:19:55.751
+<v Parantainen Antti>take a look of those lams there in the
+camera. I will download my software.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/103-0
+00:19:57.471 --> 00:20:03.592
+<v Parantainen Antti>And select the replace and all the values
+are going into initial value values and</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/103-1
+00:20:03.592 --> 00:20:08.145
+<v Parantainen Antti>it is chatting the labs.
+Now I will show you probably I will</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/103-2
+00:20:08.145 --> 00:20:12.027
+<v Parantainen Antti>download.
+I will open the software here and see the</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/103-3
+00:20:12.027 --> 00:20:14.191
+<v Parantainen Antti>same thing what is happening.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/104-0
+00:20:14.231 --> 00:20:16.271
+<v Parantainen Antti>Just that you can see.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/105-0
+00:20:17.991 --> 00:20:20.071
+<v Parantainen Antti>What I'm about to demonstrate here.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/107-0
+00:20:22.351 --> 00:20:27.257
+<v Parantainen Antti>When you are doing your testing,
+it is probably better to do it this way.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/107-1
+00:20:27.257 --> 00:20:32.229
+<v Parantainen Antti>Now we can see that our software function.
+We can test it with our speech,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/107-2
+00:20:32.229 --> 00:20:36.671
+<v Parantainen Antti>which the lab is activating.
+So we are now sure that our software.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/108-0
+00:20:37.031 --> 00:20:43.255
+<v Parantainen Antti>Is running there in the process.
+When you are doing your actual deletion,</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/108-1
+00:20:43.255 --> 00:20:49.479
+<v Parantainen Antti>you want to verify that your software is
+not running there in the system.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/108-2
+00:20:49.479 --> 00:20:52.591
+<v Parantainen Antti>Leave those lamps off just like this.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/109-0
+00:20:53.991 --> 00:20:55.671
+<v Parantainen Antti>Let's do the download now.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/110-0
+00:20:59.511 --> 00:21:04.591
+<v Parantainen Antti>When I download and delete this function,
+download and select the delete.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/111-0
+00:21:05.991 --> 00:21:09.831
+<v Parantainen Antti>Just like this and now when I activate
+the switch.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/112-0
+00:21:11.271 --> 00:21:17.045
+<v Parantainen Antti>I can verify the lab is not churning on,
+so my my software is not there in the</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/112-1
+00:21:17.045 --> 00:21:22.015
+<v Parantainen Antti>process. That is very easy,
+easy way to check that your software is</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/112-2
+00:21:22.015 --> 00:21:25.888
+<v Parantainen Antti>not there.
+Now I will once again move my software to</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/112-3
+00:21:25.888 --> 00:21:26.911
+<v Parantainen Antti>our workspace.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/113-0
+00:21:28.751 --> 00:21:36.551
+<v Parantainen Antti>Just like this and now the testing is
+completed and so is this video as well.</v>
+
+53e79d11-77ac-4f71-a099-677358694f62/114-0
+00:21:39.791 --> 00:21:40.111
+<v Parantainen Antti>Thank you.</v>

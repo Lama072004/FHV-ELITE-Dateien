@@ -1,0 +1,155 @@
+
+Parantainen Antti
+0 minuuttia 4 sekuntia0:04
+Parantainen Antti 0 minuuttia 4 sekuntia
+OK, it seems that everything should be ready and out of them. Next phase and let's try now continue the software where we left last time. So we are probably adding next here this a lot on limits.
+Parantainen Antti 0 minuuttia 21 sekuntia
+And then we are running this or function and this first of these buttons. These are in Finnish, so let's learn a little bit Finnish here as well. So we are also adding those comments text here. Here it's it means another button, another button.
+Parantainen Antti 0 minuuttia 41 sekuntia
+Yeah, and we are adding also this connecting lines, this wires, we are connecting blocks with each other. So that is our next task in this application.
+Parantainen Antti 0 minuuttia 56 sekuntia
+OK, let's go to our software. This is mine now and we are adding here the alarm limits to this analog measurement blocks. We can find find find there here in this draw and.
+Parantainen Antti 1 minuutti 16 sekuntia
+Probably here in the common menu and here are in the constants left. Already there was that kind of arrow arrow symbol, so we are using this constant left to add the local values there.
+Parantainen Antti 1 minuutti 33 sekuntia
+From this menu.
+Parantainen Antti 1 minuutti 36 sekuntia
+We are placing those here. As you can see those are yellow colored. That is the data type for that data. It means that we need to use this float type of value.
+Parantainen Antti 1 minuutti 52 sekuntia
+Which is also yellow that is easy to check by eye. Check out the data type here in development DNA. So select the float type and it is giving you this arrow symbol and I am used to zoom in.
+Parantainen Antti 2 minuuttia 8 sekuntia
+With my mouse to place it correctly there in this HH value, which is the higher high limit for the measurement and I'm clicking here and then you can add your.
+Parantainen Antti 2 minuuttia 24 sekuntia
+Uh, alarm limit value there and let's check it out from that. Um example of what is the limit value and for the high or high limit it is 26.
+Parantainen Antti 2 minuuttia 38 sekuntia
+And the higher limit it is 22. We will add those now.
+Parantainen Antti 35 minuuttia 15 sekuntia
+A copying block. As you can see this is correct. Our edge of the arrow is not lined with the copying block. There was a couple of ways to correct this.
+Parantainen Antti 35 minuuttia 30 sekuntia
+Please don't leave it. If you are doing this kind of mistakes, please don't leave it. This is once again making it making it harder to read this code. If those are not lining correctly, there is a couple of ways of fix it.
+Parantainen Antti 35 minuuttia 44 sekuntia
+Usually I'm deleting this line and drawing it again correctly. That is the usual way. But then let's use one like another way to solve this and I'm moving this copying block. That is another way.
+Parantainen Antti 36 minuuttia
+And now we can use the basic cat feature like move. So if you just type M and press enter it means move function block and when I press M and enter.
+Parantainen Antti 36 minuuttia 15 sekuntia
+Then I can select this copying block and as you can see I've selected from left to right. It is only selecting the blocks which are inside of the selection. I have selected only this one entity.
+Parantainen Antti 36 minuuttia 33 sekuntia
+And when I click enter it is asking the base point. I'm clicking this input and then as you can see I am aligning incorrectly to the end of the arrow and pressing again and now those are aligning perfectly.
+Parantainen Antti 36 minuuttia 50 sekuntia
+But once again, if you zoom this close enough, you can see sometimes that these are not lining exactly perfectly pinpoint there. Don't you ever never still touch this snap function?
+Parantainen Antti 37 minuuttia 5 sekuntia
+Or the auto function. Just for the reminder, you're going to difficulties when you are moving those again if you are losing the snap or auto. So never ever touch these features here.
+Parantainen Antti 37 minuuttia 21 sekuntia
+When this snap function is on, sometimes it is just like this. Not pinpoint perfect, but this is perfect like this. It is OK. Don't be too too like a.
+Parantainen Antti 37 minuuttia 35 sekuntia
+Take it, do those like it is looking nicely, but still don't go too close here when zooming and try to get those close enough where the snap is getting it. It is just correct.
+Parantainen Antti 37 minuuttia 52 sekuntia
+And repeat for the actions I'm doing little bit in different order. I'm having this.
+Parantainen Antti 37 minuuttia 59 sekuntia
+Black wire here ready. I'm drawing here already this connection and then I am adding this common menu and it is the external no no no it is the interface out.
+Parantainen Antti 38 minuuttia 17 sekuntia
+And binary from there.
+Parantainen Antti 38 minuuttia 20 sekuntia
+And then I am placing the shot over here in the end of the arrow.
+Parantainen Antti 38 minuuttia 31 sekuntia
+And then that is labeled out then in our example.
+Parantainen Antti 38 minuuttia 40 sekuntia
+And OK, there we are having the upper parts done.
+Parantainen Antti 38 minuuttia 46 sekuntia
+OK.
+Parantainen Antti 38 minuuttia 50 sekuntia
+Probably we should add this.
+Parantainen Antti 38 minuuttia 54 sekuntia
+Switch. This is good. In Finnish it means that it's a switch in a field box. So that is like the binary input. There is a switch in a field field box and we are adding there.
+Parantainen Antti 39 minuuttia 9 sekuntia
+Functionality that we are reading the status of the input switch. Is it one or zero? That is a digital input channel. Let's create this remaining function to our software and before we are doing that, let's practice this this check function.
+Parantainen Antti 39 minuuttia 30 sekuntia
+I'm checking it, everything is correct and then it's actually always saving it again. It is asking me to save the function. Everything was correct and when I click OK this is saved. If you are having some errors we can check those out.
+Parantainen Antti 39 minuuttia 47 sekuntia
+After we have done this last part here, so there are one like this.
+Parantainen Antti 39 minuuttia 55 sekuntia
+Interface port and we are practicing how to add this dot here, how to connect two wires together. That is our like the main thing with what we are learning in this last thing here in this software.
+Parantainen Antti 40 minuuttia 11 sekuntia
+Basically everything else is just repeating the the things we have done so far. I'm creating first this IO block.
+Parantainen Antti 40 minuuttia 22 sekuntia
+Which is here in the ACNIOM 80 menu digital input DIA and the type is being binary. There was this black wire used. It tells me already that this type is binary.
+Parantainen Antti 40 minuuttia 41 sekuntia
+I am placing it somewhere here. Click in there. I'm adding the tag name.
+Parantainen Antti 40 minuuttia 52 sekuntia
+It should be something like your initials.
+Parantainen Antti 40 minuuttia 58 sekuntia
+Dash HS.
+Parantainen Antti 41 minuuttia 3 sekuntia
+Capital letters 100 dot I.
+Parantainen Antti 41 minuuttia 9 sekuntia
+And to actually that.
+Parantainen Antti 41 minuuttia 12 sekuntia
+By default we are using the first card, first IBC which is the rack and 1st card and 1st card. So it's actually that channel number is already correct. We are adding their justice comment and this is a switch.
+Parantainen Antti 41 minuuttia 34 sekuntia
+In field books.
+Parantainen Antti 41 minuuttia 41 sekuntia
+Sweets in a big box or something like that.
+Parantainen Antti 41 minuuttia 45 sekuntia
+Just for information that that actual physical switch when we are using this I/O and that is located in in this build box which is connected with a trunk cable to the cabinet.
+Parantainen Antti 42 minuuttia 3 sekuntia
+And let's create that same interface port there, which is the external interface out.
+Parantainen Antti 42 minuuttia 15 sekuntia
+And type is binary.
+Parantainen Antti 42 minuuttia 20 sekuntia
+And I'm already lining it with this IO function there with the cursor and clicking there and this is labeled out one which is the default value and I can just click OK.
+Parantainen Antti 42 minuuttia 39 sekuntia
+And now let's draw those wires and now I'm selecting this binary wire. You can take it from the menu, draw scalar wires from here or from the menu and I'm connecting this.
+Parantainen Antti 42 minuuttia 55 sekuntia
+So.
+Parantainen Antti 42 minuuttia 57 sekuntia
+Digital input channel for this interface port and when I'm here creating the connection to this org function, I'm right clicking. I can get that same command again. You can select it from the menu or just right click to get the same drawing.
+Parantainen Antti 43 minuuttia 15 sekuntia
+And now I am connecting to this or function and probably you think now this is OK.
+Parantainen Antti 43 minuuttia 24 sekuntia
+But if you try to check this function, you can see that file and check.
+Parantainen Antti 43 minuuttia 32 sekuntia
+It is giving me a error that symbol is not connecting in point something.
+Parantainen Antti 43 minuuttia 39 sekuntia
+It is something still and it is pointing there and by default those wires are not connected together by default. I will delete this error message here. I can delete it start directly from here.
+Parantainen Antti 43 minuuttia 58 sekuntia
+Or I can go here in the view menu and errors on off which will disable this error message. Let's pick this thing and how to connect these two wires together.
+Parantainen Antti 44 minuuttia 13 sekuntia
+As you can see, if I go over this wire, you can see that those are not the same wire. Those are just like I draw those there and there is no connection.
+Parantainen Antti 44 minuuttia 27 sekuntia
+We need to add their dot to this point to connect these three lines together.
+Parantainen Antti 44 minuuttia 34 sekuntia
+It can be found here in the draw menu and insert dot.
+Parantainen Antti 44 minuuttia 41 sekuntia
+This is the connection point which connect those wires together. When we click there and place it there, you can see that now those are independent wires, but this dot connects them together.
+Parantainen Antti 44 minuuttia 58 sekuntia
+And those are now in like in the same potential. They are having the same value. Now those three wires are connected to each other and now if we check this function.
+Parantainen Antti 45 minuuttia 13 sekuntia
+It is fine and now those are commented and I can save it to our database.
+Parantainen Antti 45 minuuttia 24 sekuntia
+I think this is probably.
+Parantainen Antti 45 minuuttia 29 sekuntia
+All the functions are there. If we now compare, can you see any differences here?
+Parantainen Antti 45 minuuttia 36 sekuntia
+There is this one comment missing from the temperature measurement that is lampetila meters in finish. Lampetila means temperature meters means measurement. So we add their temperature measurement to the comment edit and value.
+Parantainen Antti 45 minuuttia 55 sekuntia
+I use.
+Parantainen Antti 45 minuuttia 57 sekuntia
+From the IO block and here is the comment field somewhere there.
+Parantainen Antti 46 minuuttia 6 sekuntia
+Let's type there.
+Parantainen Antti 46 minuuttia 10 sekuntia
+Damn.
+Parantainen Antti 46 minuuttia 14 sekuntia
+Big ****.
+Parantainen Antti 46 minuuttia 21 sekuntia
+Temperature measurement. So we know that this is temperature measurement.
+Parantainen Antti 46 minuuttia 29 sekuntia
+And let's save.
+Parantainen Antti 46 minuuttia 35 sekuntia
+OK.
+Parantainen Antti 46 minuuttia 37 sekuntia
+I think this is our first software is now done and if there was no any errors check it will be probably fine, but if you're having some issues in the saving or.
+Parantainen Antti 46 minuuttia 52 sekuntia
+In the check function, please let me know. I will help you out to figure out what is wrong there.
+Parantainen Antti 47 minuuttia 3 sekuntia
+And let's have a break now and let's continue after the break.

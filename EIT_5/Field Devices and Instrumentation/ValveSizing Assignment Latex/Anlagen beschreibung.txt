@@ -1,0 +1,1 @@
+LAA01AA06 -> LAA01AA101 -> LAA01AA007 -> Pump -> LAA01AA009 -> CF202, CP202,CF202 (sensoren) -> LAA01AA202 (meine Valve) -> Tank

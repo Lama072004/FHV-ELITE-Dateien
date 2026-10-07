@@ -1,0 +1,4 @@
+prüfe ob irgendwelche libraries verwendet werden welche eine licence  brauchen wenn ich das public mache auf github. zusätzlich schau ob bezüglich ui und sonstigem (vom gesamten programm) mit irgend einem anderen programm probleme bekommen könnte bzw firma probleme bekommen könnte.
+
+zusätzlich soll das gesamte projekt public auf github kommen mit MIT licence und bereite alles perfekt vor also readme file usw. für github
+AI4623	LAA01AA202	0,85 l/s	Water	25	RE segment valve	PN40	Selvitä	Circulation from the pressure tank(Painesäiliö) back to the pressure tank by pump
