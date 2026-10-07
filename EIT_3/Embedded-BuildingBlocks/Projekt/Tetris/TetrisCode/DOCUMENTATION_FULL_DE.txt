@@ -1,0 +1,143 @@
+Projekt: Tetris (ESP32 + 16x24 WS2812B Matrix + SSD1306 OLED)
+Datum: 2025-11-14
+
+Zweck dieser Datei
+-------------------
+Diese Datei fasst das gesamte Projekt zusammen: welche Teile es gibt, was jede Komponente macht
+und warum bestimmte Entwurfsentscheidungen getroffen wurden. Ziel ist, dass du schnell verstehst,
+wie das Programm funktioniert, wie du Änderungen vornimmst und worauf bei Tests/Builds zu achten ist.
+
+Kurzübersicht
+-------------
+- Ziel: Ein Tetris-Spiel auf einer 16×24 WS2812B-LED-Matrix gesteuert von einem ESP32-S3.
+- Zusätzlich: OLED-Display (SSD1306) über I2C mit LVGL für HUD (Score/Highscore/Game Over).
+- Wichtige Features: ISR-basierte Tastensteuerung, persistenter Highscore (NVS),
+  dynamische Fallgeschwindigkeit (SpeedManager), optimiertes Rendering (statische vs dynamische Pixel),
+  Mehrfachzeilen-Löschen mit Blink-Animation, Splash-Screen mit festen 2×-Blöcken.
+
+Projektstruktur (Kurz)
+---------------------
+- main/hdr/        -> Header (Globals.h, Controls.h, Splash.h, DisplayInit.h, ...)
+- main/src/        -> C-Quellcode (Aufgeteilt in Unterordner: GameLoop, PlayingField, Controls, Score, Speed, init, ...)
+- main/CMakeLists.txt -> Component-Definition für ESP-IDF
+
+Wesentliche Module und ihre Aufgaben
+------------------------------------
+1) Globals.h
+   - Zentrale Konfiguration: LED-Größe, Timing-Parameter, Helligkeits-Skalen, Grid-Abmessungen.
+   - Deklariert zentrale Datentypen (MATRIX) und globale Variablen (ledMatrix, led_strip).
+   - Hier wurden NUM_BLOCKS, BRIGHTNESSDIV und die zentrale Farb-Tabelle (`block_colors`) eingefügt,
+     damit Farben an einer Stelle gepflegt werden.
+
+Warum: Global zentrale Konstanten vereinfachen Abstimmung und verhindern Duplikate.
+
+2) LedMatrixInit / MatrixNummer
+   - Initialisierung der LED-Index-Matrix `ledMatrix.LED_Number[y][x]`, die physikalische LED-IDs
+     anhand der Verkabelung der 6×8-Matrizen abbildet.
+
+Warum: Mapping erlaubt, logisch (x,y) auf physikalische Pixel zu übersetzen; vereinfacht Rendering.
+
+3) Controls (ISR-basiert)
+   - GPIOs für vier Tasten sind als Eingänge mit Pull-up konfiguriert.
+   - GPIO-Interrupts (falling edge) enqueuen das gpio_num in eine FreeRTOS-Queue.
+   - Task-Kontext liest Queue, führt Entprellung (Debounce) durch und liefert Events per API:
+     controls_get_event / controls_wait_event / check_button_pressed (Kompatibilität).
+
+Warum: ISR -> Queue macht Eingaben responsiv und entkoppelt Hardware-Interrupts von Debounce-Logik
+     (keine langen Aktionen in ISR). Queue ermöglicht priorisierte, threadsafe Verarbeitung.
+
+4) GameLoop
+   - Haupt-Task, steuert Spiel-Logik: Bewegung, Rotation, automatischer Fall, Kollisionsprüfung.
+   - Render-Strategie: Trennung in statische (fixierte) und dynamische (aktuelle fallende) Pixel.
+     Vor jedem Frame werden die zuvor gezeichneten dynamischen Pixel wiederhergestellt, dann
+     das aktuelle aktive Block-Shape gezeichnet und das Gerät aktualisiert.
+   - On Game Over: blinkende Animation, Warte-Schleife für Knopfdrück, Reset von Grid/Score/Speed,
+     Anzeige des Splash-Screens und Neustart des Spiels.
+
+Warum: Separates Rendern reduziert Flicker und vermeidet teure Full-Buffer-Writes; GameLoop als Task
+     hält Logik, Timing und Rendering zusammen.
+
+5) PlayingField / Grid
+   - Repräsentiert das Grid (grid[y][x]) mit Indizes auf Blocktypen.
+   - Funktionen: grid_check_collision, grid_fix_block, grid_clear_full_rows.
+   - Row-clear: sammelt alle vollen Reihen gleichzeitig, blinkt diese gemeinsam (2× weiß),
+     komprimiert die Spalten, animiert das Fallverhalten in Schritten, aktualisiert Punktestand.
+
+Warum: Gleichzeitiges Löschen und Animation ergibt die gewünschte Optik; Spaltenkompression
+     stellt robustes Verhalten beim Mehrfachzeilenlöschen sicher.
+
+6) Blocks
+   - Definitionen aller Blockformen (4 Rotationen / Block) in 4×4 Matrizen.
+   - Farben werden mit `get_block_rgb()` aus der zentralen Farb-Tabelle geliefert.
+
+Warum: Konstantenblock-Definitionen erleichtern Rotation/Spawn.
+
+7) Score
+   - Verfolgt aktuellen Punktestand, Gesamt-Linien, lädt/speichert Highscore in NVS (Non-Volatile Storage).
+   - API: score_init, score_add_lines, score_get, score_load_highscore, score_update_highscore.
+
+Warum: NVS gewährleistet Highscore-Persistenz über Reboots; Modul kapselt Speicher-Impl.
+
+8) SpeedManager
+   - Verwaltet dynamische Fallintervalle basierend auf (insgesamt) geräumten Linien / Score.
+   - API: speed_manager_init, speed_manager_get_fall_interval, speed_manager_update_score, speed_manager_reset.
+
+Warum: Trennung der Geschwindigkeitslogik vereinfacht Balancing und Tests.
+
+9) Display (SSD1306 + LVGL)
+   - I2C-Initialisierung (SDA=21, SCL=20) und LVGL-Port, HUD mit Score / Highscore / Game Over.
+   - `display_reset_and_show_hud(highscore)` baut das HUD neu auf, um Überlappungen nach GameOver zu verhindern.
+
+Warum: LVGL vereinfacht UI-Elemente; Reset verhindert, dass alte Labels nach Screen-Wechsel sichtbar bleiben.
+
+10) Splash
+    - Extrahiertes Modul mit `splash_show(duration_ms)`.
+    - Zeigt feste 2× große Blöcke (T, L) oben und horizontal zentrierten scrollenden Text „TETRIS".
+    - Wird sowohl beim Boot als auch beim Neustart per Button gezeigt.
+
+Warum: Trennung in Modul erhöht Wiederverwendbarkeit; doppelte Blöcke stören Text nicht und sorgen für Markenlook.
+
+Build & Run (kurz)
+-------------------
+Voraussetzungen: ESP-IDF v5.5.1 installiert und Umgebung geladen (PowerShell mit idf-export).
+
+In ESP-IDF PowerShell im Projektordner:
+
+    idf.py build
+    idf.py -p <PORT> flash monitor
+
+Hinweis: In dieser Workspace-Session ist `idf.py` nicht im PATH; starte die ESP-IDF PowerShell Konsole
+oder liefere den kompletten Pfad zu `idf.py` beim Aufruf.
+
+Wichtig bei Tests
+------------------
+- Buttons: Prüfe Hardware-Pullups; ISR feuert bei fallender Flanke (aktive LOW). Debounce ist im Task.
+- NVS: Beim ersten Lauf nach Flash muss `score_load_highscore()` erfolgreich sein; log-Ausgaben prüfen.
+- LED-Matrix-Mapping: `LedMatrixInit()` muss die physikalische Verkabelung korrekt reflektieren.
+
+Änderungspunkte (schnell)
+-------------------------
+- Farben: `main/src/Globals/Colors.c` -> Einfache Änderung der RGB-Tripel oder BRIGHTNESSDIV in `Globals.h`.
+- Splash: `main/src/init/Splash.c` anpassen (andere Blöcke, andere Positionen oder schneller Scroll).
+- Geschwindigkeit: `main/src/Speed/SpeedManager.c` Tabellen anpassen.
+
+Bekannte Einschränkungen / ToDos
+--------------------------------
+- Build- und Runtime-Tests auf realer Hardware sind noch ausstehend (einige Builds wurden lokal abgebrochen).
+- Prüfe ISR-/Queue-Limits bei hoher Tastenaktivität (Queue-Größe aktuell 8 Events).
+- Sicherstellen, dass `led_strip_refresh()` nie in ISR aufgerufen wird (ist nicht der Fall).
+
+Debugging-Hinweise
+-------------------
+- Verwende `ESP_LOGI(...)` in betroffenen Modulen (Controls, Score, Grid) um Reihenfolge und Werte zu prüfen.
+- Überwache NVS-Operationen (nvs_open / nvs_get_u32 / nvs_set_u32) auf Fehler.
+- Beim Rendering: nutze `led_strip_clear()` und Schritt-für-Schritt-Tests einzelner Pixel-Set-Operationen.
+
+Abschluss
+----------
+Dieses Dokument bildet den Überblick über Design und Implementierung. Wenn du möchtest, kann ich
+- eine kompakte API-Referenzdatei erzeugen (Funktionen + Parameter),
+- Unit Tests oder Simulationshilfen (z.B. LED-Matrix-Visualizer), oder
+- die Build- und Flash-Befehle automatisch hier in der Session ausführen (wenn du das erlaubst).
+
+Ende der Dokumentation

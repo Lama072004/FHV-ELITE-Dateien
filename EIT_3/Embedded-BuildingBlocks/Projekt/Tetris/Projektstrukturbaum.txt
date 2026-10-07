@@ -1,0 +1,36 @@
+CMakeLists.txt
+│
+├─ src
+│  ├─ main.c
+│  │
+│  ├─ init
+│  │  ├─ LedMatrixInit.c
+│  │  ├─ DisplayInit.c
+│  │  ├─ I2CInit.c
+│  │  └─ ButtonInit.c
+│  │
+│  ├─ GameLoop
+│  │  ├─ GameLoop.c
+│  │
+│  │
+│  ├─ PlayingField
+│  │  ├─ MatrixNummer.c
+│  │  ├─ Blocks.c
+│  │  └─ Grid.c
+│  │
+│  ├─ controls
+│  │  └─ controls.c
+│  └─ score
+│     └─ score.c
+│
+└─ hdr
+   ├─ LedMatrixInit.h
+   ├─ DisplayInit.h
+   ├─ I2CInit.h
+   ├─ ButtonInit.h
+   ├─ MatrixNummer.h
+   ├─ Blocks.h
+   ├─ Controls.h
+   ├─ Grid.h
+   ├─ GameLoop.h
+   └─ Score.h

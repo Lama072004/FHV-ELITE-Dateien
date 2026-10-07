@@ -182,3 +182,6 @@ Waveforms.exe
 Waveforms.zip
 
 *.sync-conflict-*
+
+.git_alt/
+.directory
