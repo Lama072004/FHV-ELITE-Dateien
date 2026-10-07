@@ -1,0 +1,24 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.espIdfPathWin": "d:\\Esp-IDF\\IDF\\v5.5.1\\esp-idf",
+  "idf.pythonInstallPath": "d:\\Esp-IDF\\.espressif\\tools\\idf-python\\3.11.2\\python.exe",
+  "idf.openOcdConfigs": [
+    "board/esp32s3-builtin.cfg"
+  ],
+  "idf.portWin": "COM12",
+  "idf.toolsPathWin": "d:\\Esp-IDF\\.espressif",
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32s3"
+  },
+  "clangd.path": "d:\\Esp-IDF\\.espressif\\tools\\esp-clang\\esp-19.1.2_20250312\\esp-clang\\bin\\clangd.exe",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=d:\\Esp-IDF\\.espressif\\tools\\xtensa-esp-elf\\esp-14.2.0_20241119\\xtensa-esp-elf\\bin\\xtensa-esp32s3-elf-gcc.exe",
+    "--compile-commands-dir=d:\\Mathias Lampert\\Mathias Schule_Studium\\FH\\ELITE-Semester\\EIT_3\\Systemprogrammierung\\Uebung\\Uebung2-Aufgabe6\\build"
+  ],
+  "files.associations": {
+    "stdio.h": "c",
+    "freertos.h": "c"
+  },
+  "idf.flashType": "UART"
+}

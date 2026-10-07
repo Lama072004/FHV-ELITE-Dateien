@@ -1,0 +1,10 @@
+ChannelNumber;ChannelName;Phase;Circuit;Units;Prio
+1;Strom I1;L1;;A;1
+2;Strom I2;L2;;A;1
+3;Strom I3;L3;;A;1
+4;Strom IE;N;;A;1
+5;Spannung U1E;L1;;V;1
+6;Spannung U2E;L2;;V;1
+7;Spannung U3E;L3;;V;1
+8;Spannung UNE;N;;V;1
+210;Spannung Uref; ;;V;1

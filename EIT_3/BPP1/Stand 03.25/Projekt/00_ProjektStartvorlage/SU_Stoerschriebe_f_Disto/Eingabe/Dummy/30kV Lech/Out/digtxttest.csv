@@ -1,0 +1,892 @@
+FuncType;InfNum;Name;Prio
+130;162;GRUND: Hand-Ein EXT;1
+128;38;GRUND: Autom.fall U EXT;1
+131;29;AUSG : S.h. rückgestellt;1
+131;197;AUSG : Ausg.r. blockiert;1
+130;170;GRUND: LS Ein 3p EXT;1
+130;176;ST_ME: Triggern EXT;1
+132;2;P<>  : Blockieren tQ> EXT;1
+132;3;P<>  : Blockieren tQ>> EXT;1
+130;221;GRUND: Parallel Aus EXT;1
+130;148;GRUND: Man. Aus K. EXT;1
+131;215;U<>  : Block. tUNE>2 EXT;1
+131;216;U<>  : Block. tUmit>1 EXT;1
+131;178;GRUND: Sperre 1p Aus EXT;1
+131;182;ZUKS : Par. AWE läuft EXT;1
+131;187;GRUND: Freig. man.Ein K.EXT;1
+131;211;U<>  : Blockieren tU>2 EXT;1
+131;212;U<>  : Blockieren tU<1 EXT;1
+131;213;U<>  : Blockieren tU<2 EXT;1
+131;214;U<>  : Block. tUNE>1 EXT;1
+130;223;GRUND: Autom.fall Uref EXT;1
+130;72;LSV  : Anregeauslösung EXT;1
+130;163;DIST : Meßbereich erw. EXT;1
+132;202;P<>  : Blockieren tP<  EXT;1
+132;203;P<>  : Blockieren tP<<  EXT;1
+132;207;P<>  : Blockieren tQ<  EXT;1
+132;208;P<>  : Blockieren tQ<<  EXT;1
+132;212;LSV  : LS Störung EXT;1
+132;214;LSV  : Blockade EXT;1
+132;192;LSV  : Start 3p EXT;1
+132;170;LSV  : Freigabe Start EXT;1
+133;29;U<>  : Block. tUref<2 EXT;1
+132;99;DIST : Blockieren Z1 EXT;1
+132;91;DIST : Blockieren Z1.Ü EXT;1
+132;92;DIST : Blockieren Z2 EXT;1
+132;93;DIST : Blockieren Z3 EXT;1
+132;94;DIST : Blockieren Z4 EXT;1
+132;95;DIST : Blockieren Z5 EXT;1
+132;96;DIST : Blockieren Z6 EXT;1
+132;97;DIST : Blockieren Z9 EXT;1
+132;98;DIST : Blockieren Z10 EXT;1
+132;133;GRUND: Aus Mitnahme EXT;1
+133;26;U<>  : Block. tUref>1 EXT;1
+131;208;GRUND: Blockieren 1 EXT;1
+131;209;GRUND: Blockieren 2 EXT;1
+131;217;U<>  : Block. tUmit>2 EXT;1
+131;218;U<>  : Block. tUmit<1 EXT;1
+131;219;U<>  : Block. tUmit<2 EXT;1
+131;220;U<>  : Block. tUgegen>1 EXT;1
+131;221;U<>  : Block. tUgegen>2 EXT;1
+131;210;U<>  : Blockieren tU>1 EXT;1
+128;21;GRUND: Prüf-Modus;1
+133;1;ST_AZ: Ereign.trig. angespr;1
+133;115;ZUKS : Ltg. spannungslos;1
+128;84;GRUND: Generalanregung;1
+132;127;GRUND: Gen. Aus Meldung;1
+131;44;ES_AZ: Ereignis läuft;1
+130;22;ÜL_AZ: Ereignis läuft;1
+130;220;ST_AZ: Ereignis läuft;1
+128;27;LOGIK: Eingang 01 EXT;1
+128;28;LOGIK: Eingang 02 EXT;1
+128;29;LOGIK: Eingang 03 EXT;1
+128;30;LOGIK: Eingang 04 EXT;1
+131;95;LOGIK: Eingang 05 EXT;1
+131;96;LOGIK: Eingang 06 EXT;1
+131;97;LOGIK: Eingang 07 EXT;1
+131;98;LOGIK: Eingang 08 EXT;1
+131;99;LOGIK: Eingang 09 EXT;1
+131;100;LOGIK: Eingang 10 EXT;1
+131;101;LOGIK: Eingang 11 EXT;1
+131;102;LOGIK: Eingang 12 EXT;1
+131;103;LOGIK: Eingang 13 EXT;1
+131;104;LOGIK: Eingang 14 EXT;1
+131;105;LOGIK: Eingang 15 EXT;1
+131;106;LOGIK: Eingang 16 EXT;1
+133;117;LOGIK: Eingang 17 EXT;1
+133;118;LOGIK: Eingang 18 EXT;1
+133;119;LOGIK: Eingang 19 EXT;1
+133;120;LOGIK: Eingang 20 EXT;1
+133;121;LOGIK: Eingang 21 EXT;1
+133;122;LOGIK: Eingang 22 EXT;1
+133;123;LOGIK: Eingang 23 EXT;1
+133;124;LOGIK: Eingang 24 EXT;1
+133;125;LOGIK: Eingang 25 EXT;1
+133;126;LOGIK: Eingang 26 EXT;1
+133;127;LOGIK: Eingang 27 EXT;1
+133;128;LOGIK: Eingang 28 EXT;1
+133;129;LOGIK: Eingang 29 EXT;1
+133;130;LOGIK: Eingang 30 EXT;1
+133;131;LOGIK: Eingang 31 EXT;1
+133;132;LOGIK: Eingang 32 EXT;1
+133;133;LOGIK: Eingang 33 EXT;1
+133;134;LOGIK: Eingang 34 EXT;1
+133;135;LOGIK: Eingang 35 EXT;1
+133;136;LOGIK: Eingang 36 EXT;1
+133;137;LOGIK: Eingang 37 EXT;1
+133;138;LOGIK: Eingang 38 EXT;1
+133;139;LOGIK: Eingang 39 EXT;1
+133;140;LOGIK: Eingang 40 EXT;1
+133;73;GRUND: LS Ein L3 EXT;1
+130;166;GRUND: Parallel Aus L1 EXT;1
+130;167;GRUND: Parallel Aus L2 EXT;1
+130;168;GRUND: Parallel Aus L3 EXT;1
+132;134;GRUND: Aus Mitnahme L1 EXT;1
+132;135;GRUND: Aus Mitnahme L2 EXT;1
+132;136;GRUND: Aus Mitnahme L3 EXT;1
+133;18;MKÜ  : Blockade FF. U EXT;1
+131;204;MKÜ  : Ugegen> angesprochen;1
+128;35;MKÜ  : Phasenfolge U gest.;1
+133;23;GRUND: LS Aus >=1p;1
+133;74;GRUND: LS Aus L1;1
+133;75;GRUND: LS Aus L2;1
+133;76;GRUND: LS Aus L3;1
+133;19;GRUND: LS Ein >=1p;1
+131;34;GRUND: Man. Aus Meldung;1
+133;2;GRUND: LS Aus 3p;1
+133;17;GRUND: Aus Meldung 1. 3p;1
+128;69;GRUND: Aus Kommando 1. L1;1
+128;70;GRUND: Aus Kommando 1. L2;1
+128;71;GRUND: Aus Kommando 1. L3;1
+128;47;GRUND: Blockade/Störung;1
+130;206;GRUND: Gerät nicht bereit;1
+130;43;DIST : Meßbereich erw. KU;1
+130;205;MKÜ  : Meßkreise U.I gest.;1
+130;191;GRUND: Aus K. blockiert;1
+130;181;MKÜ  : Unterspannung;1
+130;198;ZUKS : Aus Meldung;1
+132;255;GRUND: Senden Aus Mitnahme;1
+130;185;DIST : Meßbereich erweitert;1
+128;37;NOT  : wirksam;1
+128;85;LSV  : LS-Versager;1
+130;226;DIST : Aus Meldung;1
+133;116;NOT  : Anregung IE>/>>/>>>;1
+131;80;U<>  : Anregung U>1;1
+131;81;U<>  : Anreg. U>x L1(-L2);1
+131;82;U<>  : Anregung U>x L2(-L3);1
+131;83;U<>  : Anregung U>x L3(-L1);1
+131;84;U<>  : tU>1 abgelaufen;1
+131;85;U<>  : tU>2 abgelaufen;1
+131;86;U<>  : Anregung U<1;1
+131;87;U<>  : Anregung U<x L1(-L2);1
+131;88;U<>  : Anregung U<x L2(-L3);1
+131;89;U<>  : Anregung U<x L3(-L1);1
+131;90;U<>  : tU<1 abgelaufen;1
+131;91;U<>  : tU<2 abgelaufen;1
+131;92;U<>  : Anregung UNE>1;1
+131;93;U<>  : tUNE>1 abgelaufen;1
+131;94;U<>  : tUNE>2 abgelaufen;1
+131;222;U<>  : Anregung U>2;1
+131;5;ZUKS : Z1 erweitert;1
+131;6;DIST : t1.Ü abgelaufen;1
+131;13;DIST : tUSpeicher läuft;1
+131;14;DIST : Anreg. umgesch. LE;1
+130;50;DIST : Aus Meldung Zone 2;1
+130;16;DIST : Aus Meldung Zone 3;1
+130;17;DIST : Aus Meldung Zone 4;1
+130;18;DIST : Aus Meldung Zone 5;1
+130;19;DIST : Aus Meldung Zone 6;1
+131;1;DIST : Aus Meldung Zone 1;1
+131;3;DIST : Aus Meldung Zone 1.Ü;1
+131;2;DIST : Aus Meldung Zone2-10;1
+131;238;U<>  : Anregung Ugegen>1;1
+131;239;U<>  : Anregung Ugegen>2;1
+131;240;U<>  : tUgegen>1 abgelaufen;1
+131;241;U<>  : tUgegen>2 abgelaufen;1
+131;242;U<>  : tU<1 abgel. Wisch;1
+131;244;U<>  : tU<1 3p abgel. Wisch;1
+131;245;U<>  : tU<2 abgel. Wisch;1
+131;246;U<>  : tUmit<1 abgel. Wisch;1
+131;248;U<>  : tUmit<2 abgel. Wisch;1
+130;248;U<>  : nicht bereit;1
+131;201;THERM: Aus Meldung;1
+135;240;U<>  : Anregung U<1 1p;1
+130;119;ST_AZ: Zeitmarke falsch;1
+130;51;DIST : eingeschaltet;1
+130;158;DIST : tIE> läuft;1
+131;30;GRUND: Rushst. L1 angespr.;1
+131;31;GRUND: Rushst. L2 angespr.;1
+131;32;GRUND: Rushst. L3 angespr.;1
+130;231;MKÜ  : Meßkr. U. Uref gest.;1
+131;8;U<>  : Störfall U<1;1
+131;9;U<>  : Störfall U<1 3p;1
+131;10;U<>  : Störfall U<2;1
+131;11;U<>  : Störfall Umit<1;1
+131;12;U<>  : Störfall Umit<2;1
+131;7;MKÜ  : FF. U angesprochen;1
+131;243;MKÜ  : FF.Uref angesprochen;1
+131;15;GRUND: Definitives Aus;1
+128;23;PSU  : PS 1 eingeschaltet;1
+128;24;PSU  : PS 2 eingeschaltet;1
+128;25;PSU  : PS 3 eingeschaltet;1
+128;26;PSU  : PS 4 eingeschaltet;1
+135;242;U<>  : Anregung U<3 1p;1
+131;185;LSV  : eingeschaltet;1
+131;190;NOT  : eingeschaltet;1
+131;191;MKÜ  : eingeschaltet;1
+131;193;ZUKS : eingeschaltet;1
+130;186;ZUKS : tHand-Ein läuft;1
+130;63;MKÜ  : Peripheriestörung;1
+135;241;U<>  : Anregung U<2 1p;1
+130;194;LOGIK: eingeschaltet;1
+131;73;U<>  : eingeschaltet;1
+131;223;U<>  : Anregung U>1 3p;1
+131;224;U<>  : tU>1 3p abgelaufen;1
+131;225;U<>  : Anregung U<2;1
+131;226;U<>  : Anregung U<1 3p;1
+131;227;U<>  : tU<1 3p abgelaufen;1
+131;228;U<>  : tU<x abgel. Wisch;1
+131;229;U<>  : Anregung UNE>2;1
+131;230;U<>  : Anregung Umit>1;1
+131;231;U<>  : Anregung Umit>2;1
+131;247;U<>  : tUmit>1 abgelaufen;1
+131;232;U<>  : tUmit>2 abgelaufen;1
+131;233;U<>  : Anregung Umit<1;1
+131;234;U<>  : Anregung Umit<2;1
+131;235;U<>  : tUmit<1 abgelaufen;1
+131;236;U<>  : tUmit<2 abgelaufen;1
+131;237;U<>  : tUmit<x abgel. Wisch;1
+131;107;LOGIK: Ausgang 01;1
+131;108;LOGIK: Ausgang 01 (t);1
+131;109;LOGIK: Ausgang 02;1
+131;110;LOGIK: Ausgang 02 (t);1
+131;111;LOGIK: Ausgang 03;1
+131;112;LOGIK: Ausgang 03 (t);1
+131;113;LOGIK: Ausgang 04;1
+131;114;LOGIK: Ausgang 04 (t);1
+131;115;LOGIK: Ausgang 05;1
+131;116;LOGIK: Ausgang 05 (t);1
+131;117;LOGIK: Ausgang 06;1
+131;118;LOGIK: Ausgang 06 (t);1
+131;119;LOGIK: Ausgang 07;1
+131;120;LOGIK: Ausgang 07 (t);1
+131;121;LOGIK: Ausgang 08;1
+131;122;LOGIK: Ausgang 08 (t);1
+131;123;LOGIK: Ausgang 09;1
+131;124;LOGIK: Ausgang 09 (t);1
+131;125;LOGIK: Ausgang 10;1
+131;126;LOGIK: Ausgang 10 (t);1
+131;127;LOGIK: Ausgang 11;1
+131;128;LOGIK: Ausgang 11 (t);1
+131;129;LOGIK: Ausgang 12;1
+131;130;LOGIK: Ausgang 12 (t);1
+131;131;LOGIK: Ausgang 13;1
+131;132;LOGIK: Ausgang 13 (t);1
+131;133;LOGIK: Ausgang 14;1
+131;134;LOGIK: Ausgang 14 (t);1
+131;135;LOGIK: Ausgang 15;1
+131;136;LOGIK: Ausgang 15 (t);1
+131;137;LOGIK: Ausgang 16;1
+131;138;LOGIK: Ausgang 16 (t);1
+131;139;LOGIK: Ausgang 17;1
+131;140;LOGIK: Ausgang 17 (t);1
+131;141;LOGIK: Ausgang 18;1
+131;142;LOGIK: Ausgang 18 (t);1
+131;143;LOGIK: Ausgang 19;1
+131;144;LOGIK: Ausgang 19 (t);1
+131;145;LOGIK: Ausgang 20;1
+131;146;LOGIK: Ausgang 20 (t);1
+131;147;LOGIK: Ausgang 21;1
+131;148;LOGIK: Ausgang 21 (t);1
+131;149;LOGIK: Ausgang 22;1
+131;150;LOGIK: Ausgang 22 (t);1
+131;151;LOGIK: Ausgang 23;1
+131;152;LOGIK: Ausgang 23 (t);1
+131;153;LOGIK: Ausgang 24;1
+131;154;LOGIK: Ausgang 24 (t);1
+131;155;LOGIK: Ausgang 25;1
+131;156;LOGIK: Ausgang 25 (t);1
+131;157;LOGIK: Ausgang 26;1
+131;158;LOGIK: Ausgang 26 (t);1
+131;159;LOGIK: Ausgang 27;1
+131;160;LOGIK: Ausgang 27 (t);1
+131;161;LOGIK: Ausgang 28;1
+131;162;LOGIK: Ausgang 28 (t);1
+131;163;LOGIK: Ausgang 29;1
+131;164;LOGIK: Ausgang 29 (t);1
+131;165;LOGIK: Ausgang 30;1
+131;166;LOGIK: Ausgang 30 (t);1
+131;167;LOGIK: Ausgang 31;1
+131;168;LOGIK: Ausgang 31 (t);1
+131;169;LOGIK: Ausgang 32;1
+131;170;LOGIK: Ausgang 32 (t);1
+130;100;LOGIK: Setzen 01 BED;1
+130;101;LOGIK: Setzen 02 BED;1
+130;102;LOGIK: Setzen 03 BED;1
+130;103;LOGIK: Setzen 04 BED;1
+130;104;LOGIK: Setzen 05 BED;1
+130;105;LOGIK: Setzen 06 BED;1
+130;106;LOGIK: Setzen 07 BED;1
+130;107;LOGIK: Setzen 08 BED;1
+130;108;LOGIK: Triggern 1;1
+130;109;LOGIK: Triggern 2;1
+130;110;LOGIK: Triggern 3;1
+130;111;LOGIK: Triggern 4;1
+130;112;LOGIK: Triggern 5;1
+130;113;LOGIK: Triggern 6;1
+130;114;LOGIK: Triggern 7;1
+130;115;LOGIK: Triggern 8;1
+130;188;DIST : UNE>> angesprochen;1
+130;203;DIST : tUNE>> abgelaufen;1
+130;65;DIST : Meßbereich erw. LU;1
+128;33;MKÜ  : Meßkreise U gestört;1
+131;179;MKÜ  : Erdanregung angespr.;1
+128;72;NOT  : Aus Meldung;1
+133;109;ZUKS : Anregung IE>;1
+133;110;ZUKS : tIE> abgelaufen;1
+133;112;ZUKS : Anregung I>;1
+133;113;ZUKS : tI> abgelaufen;1
+133;114;ZUKS : aktiv;1
+130;243;GRUND: Ein Kommando;1
+128;32;MKÜ  : Meßkreise I gestört;1
+130;10;DIST : vorw. ohne Messung;1
+130;11;DIST : Richtg. mit UMeß;1
+130;12;DIST : Richtg. mit USpeich.;1
+131;175;GRUND: Gen. Aus Kommando 2;1
+244;2;BM01 : Schaltgerät Aus;1
+244;3;BM01 : Schaltgerät Ein;1
+244;4;BM01 : Schaltg. läuft/Stör;1
+244;6;BM02 : Schaltgerät Aus;1
+244;7;BM02 : Schaltgerät Ein;1
+244;8;BM02 : Schaltg. läuft/Stör;1
+244;10;BM03 : Schaltgerät Aus;1
+244;11;BM03 : Schaltgerät Ein;1
+244;12;BM03 : Schaltg. läuft/Stör;1
+244;14;BM04 : Schaltgerät Aus;1
+244;15;BM04 : Schaltgerät Ein;1
+244;16;BM04 : Schaltg. läuft/Stör;1
+132;213;LSV  : bereit;1
+132;191;LSV  : Anregung;1
+132;171;LSV  : LS Abb. unplausibel;1
+132;172;LSV  : Anwurf 3p;1
+132;176;LSV  : Aus Meldung t1;1
+132;215;LSV  : Aus Meldung t2;1
+132;181;LSV  : Aus Kommando t1;1
+132;185;LSV  : Aus Kommando t2;1
+132;186;LSV  : Endfehler;1
+132;187;LSV  : Aus Meldung LS GLÜ;1
+132;161;LSV  : Stromfluß L1;1
+132;162;LSV  : Stromfluß L2;1
+132;163;LSV  : Stromfluß L3;1
+132;164;LSV  : Stromfluß Lx;1
+132;160;LSV  : nicht bereit;1
+131;198;LSV  : Aus Meldung;1
+244;81;GRUND: AV eingeschaltet;1
+244;82;GRUND: FV eingeschaltet;1
+248;114;VOB  : Ortsteuersp. angespr;1
+244;84;GRUND: Steuerg. freigegeben;1
+248;115;VOB  : Fernsteuersp. angesp;1
+132;80;DIST : t9 abgelaufen;1
+132;81;DIST : t10 abgelaufen;1
+132;82;DIST : Aus Meldung Zone 9;1
+132;83;DIST : Aus Meldung Zone 10;1
+132;58;DIST : Impedanz in Zone 6;1
+132;238;GRUND: Man. Ein K. freigeg.;1
+133;104;GRUND: Erdkurzschluß L1;1
+133;105;GRUND: Erdkurzschluß L2;1
+133;106;GRUND: Erdkurzschluß L3;1
+249;1;MEL_1: Meldung M001.logisch;1
+249;2;MEL_1: Meldung M002.logisch;1
+249;3;MEL_1: Meldung M003.logisch;1
+249;4;MEL_1: Meldung M004.logisch;1
+249;5;MEL_1: Meldung M005.logisch;1
+249;6;MEL_1: Meldung M006.logisch;1
+133;244;GRUND: Schalterfall;1
+248;123;GRUND: DS Fehl. Absteuer.;1
+248;124;GRUND: DS Fehl. Ansteuer.;1
+248;125;GRUND: BM-Laufz. überschr.;1
+248;126;GRUND: StartBefLz.überschr.;1
+248;147;GRUND: Flatterunt. angespr.;1
+131;194;GRUND: Erdschluß;1
+128;51;GRUND: Erdschluß vorw./LS;1
+128;52;GRUND: Erdschluß rückw./SS;1
+128;48;GRUND: Erdschluß L1;1
+128;49;GRUND: Erdschluß L2;1
+128;50;GRUND: Erdschluß L3;1
+134;98;KURI : P blockiert;1
+133;166;U<>  : tU<3 3p abgel. Wisch;1
+128;254;KURI : Fehler L vorwärts;1
+128;255;KURI : Fehler L rückwärts;1
+134;101;KURI : Leit.vorw. ohne Mess;1
+134;102;KURI : Leit.Richt. mit UMeß;1
+134;103;KURI : Leit.Richt. mit USPS;1
+248;122;GRUND: Verrieg.bed. n. erf.;1
+132;165;P<>  : tQ< abgel. Wischer;1
+132;201;P<>  : Störfall Q<<;1
+132;204;P<>  : Anregung Q<<;1
+132;205;P<>  : Meld. Q<< verzögert;1
+132;206;P<>  : tQ<< abgel. Wischer;1
+132;209;P<>  : Anregung P<;1
+132;210;P<>  : Meldung P< verzögert;1
+132;217;P<>  : tP< abgel. Wischer;1
+132;218;P<>  : Störfall P<;1
+132;219;P<>  : Anregung P<<;1
+132;220;P<>  : Störfall P<<;1
+132;221;P<>  : Aus Meldung P<<;1
+132;222;P<>  : Aus Meld. P<< Wisch;1
+132;223;P<>  : Anregung Q<;1
+132;224;P<>  : Meldung Q< verzögert;1
+132;225;P<>  : Störfall Q<;1
+132;226;P<>  : Aus Meldung Q<;1
+132;227;P<>  : Aus Meld. Q< Wischer;1
+132;228;P<>  : Aus Meldung Q<<;1
+132;229;P<>  : Aus Meld. Q<< Wisch;1
+132;230;P<>  : Richt. P vorwärts;1
+132;231;P<>  : Richt. P rückwärts;1
+132;232;P<>  : Richt. Q vorwärts;1
+132;233;P<>  : Richt. Q rückwärts;1
+132;234;P<>  : tP</tP<< abgel.Wisch;1
+132;235;P<>  : tQ</tQ<< abgel.Wisch;1
+133;165;GRUND: Stromfluß L3;1
+130;199;GRUND: Aus Meldung 1. L1;1
+130;200;GRUND: Aus Meldung 1. L2;1
+130;201;GRUND: Aus Meldung 1. L3;1
+133;180;U<>  : Anregung U>2 3p;1
+133;179;U<>  : tU>2 3p abgelaufen;1
+133;178;U<>  : Anregung U<2 3p;1
+133;177;U<>  : tU<2 3p abgelaufen;1
+133;176;U<>  : tU<2 3p abgel. Wisch;1
+133;175;U<>  : Anregung U>3;1
+133;174;U<>  : Anregung U>3 3p;1
+133;173;U<>  : tU>3 abgelaufen;1
+133;172;U<>  : tU>3 3p abgelaufen;1
+133;171;U<>  : Anregung U<3;1
+133;170;U<>  : Anregung U<3 3p;1
+133;169;U<>  : tU<3 abgelaufen;1
+133;168;U<>  : tU<3 abgel. Wisch;1
+130;171;LOGIK: 01 gesetzt;1
+130;172;LOGIK: 02 gesetzt;1
+130;173;LOGIK: 03 gesetzt;1
+130;174;LOGIK: 04 gesetzt;1
+130;175;LOGIK: 05 gesetzt;1
+130;178;LOGIK: 06 gesetzt;1
+130;133;LOGIK: 07 gesetzt;1
+130;134;LOGIK: 08 gesetzt;1
+130;135;LOGIK: 01 extern gesetzt;1
+130;136;LOGIK: 02 extern gesetzt;1
+130;137;LOGIK: 03 extern gesetzt;1
+130;143;LOGIK: 04 extern gesetzt;1
+130;152;LOGIK: 05 extern gesetzt;1
+131;76;LOGIK: 06 extern gesetzt;1
+131;78;LOGIK: 07 extern gesetzt;1
+131;79;LOGIK: 08 extern gesetzt;1
+133;164;GRUND: Stromfluß L2;1
+132;37;f<>  : eingeschaltet;1
+132;38;f<>  : bereit;1
+132;39;f<>  : blockiert durch U<;1
+132;44;f<>  : Anregung f1;1
+132;48;f<>  : Anregung f1/df1;1
+132;49;f<>  : Delta f1 angespr.;1
+132;50;f<>  : Delta t1 abgelaufen;1
+132;51;f<>  : Aus Meldung f1;1
+132;52;f<>  : Anregung f2;1
+132;53;f<>  : Anregung f2/df2;1
+132;54;f<>  : Delta f2 angespr.;1
+132;55;f<>  : Delta t2 abgelaufen;1
+132;56;f<>  : Aus Meldung f2;1
+132;57;f<>  : Anregung f3;1
+132;64;f<>  : Anregung f3/df3;1
+132;65;f<>  : Delta f3 angespr.;1
+132;67;f<>  : Delta t3 abgelaufen;1
+132;68;f<>  : Aus Meldung f3;1
+132;69;f<>  : Anregung f4;1
+132;70;f<>  : Anregung f4/df4;1
+132;71;f<>  : Delta f4 angespr.;1
+132;72;f<>  : Delta t4 abgelaufen;1
+132;73;f<>  : Aus Meldung f4;1
+132;74;f<>  : nicht bereit;1
+132;4;P<>  : Anregung P>;1
+132;5;P<>  : Meldung P> verzögert;1
+132;6;P<>  : Aus Meldung P>;1
+132;7;P<>  : Anregung P>>;1
+132;8;P<>  : Meldung P>>verzögert;1
+132;9;P<>  : Aus Meldung P>>;1
+132;10;P<>  : Anregung Q>;1
+132;11;P<>  : Meldung Q> verzögert;1
+132;12;P<>  : Aus Meldung Q>;1
+132;13;P<>  : Anregung Q>>;1
+132;14;P<>  : Meldung Q>>verzögert;1
+132;15;P<>  : Aus Meldung Q>>;1
+132;16;P<>  : eingeschaltet;1
+132;156;P<>  : Aus Meldung P<;1
+132;157;P<>  : Aus Meld. P< Wischer;1
+132;158;P<>  : Meld. P<< verzögert;1
+132;159;P<>  : tP<< abgel. Wischer;1
+130;20;DIST : Anregung I>> L1;1
+130;21;DIST : Anregung I>> L2;1
+131;21;DIST : Anregung I>> L3;1
+130;23;DIST : Anregung U< L1;1
+132;26;ST_AZ: Triggern;1
+130;25;DIST : Anregung U< L3;1
+130;26;DIST : Anregung Z< L1;1
+130;27;DIST : Anregung Z< L2;1
+130;28;DIST : Anregung Z< L3;1
+130;24;DIST : Anregung U< L2;1
+128;64;GRUND: Anregung L1;1
+128;65;GRUND: Anregung L2;1
+128;66;GRUND: Anregung L3;1
+128;67;GRUND: Anregung N;1
+133;8;DIST : Anregung Z<;1
+133;7;DIST : Generalanregung;1
+128;74;DIST : Fehler vorwärts / LS;1
+128;75;DIST : Fehler rückwärts/ SS;1
+128;78;DIST : t1 abgelaufen;1
+128;79;DIST : t2 abgelaufen;1
+128;80;DIST : t3 abgelaufen;1
+128;81;DIST : t4 abgelaufen;1
+128;82;DIST : t5 abgelaufen;1
+128;83;DIST : t6 abgelaufen;1
+132;59;GRUND: Gen. Aus Kommando;1
+133;167;U<>  : tU<3 3p abgelaufen;1
+131;177;GRUND: Gen. Aus Meldung 2;1
+130;209;DIST : Erdanregung;1
+128;68;GRUND: Gen. Aus Kommando 1;1
+130;190;GRUND: Gen. Aus Meldung 1;1
+133;30;U<>  : tUref>1 abgelaufen;1
+133;31;U<>  : tUref>2 abgelaufen;1
+133;32;U<>  : Anregung Uref>1;1
+133;33;U<>  : Anregung Uref>2;1
+133;34;U<>  : tUref<1 abgelaufen;1
+133;35;U<>  : tUref<2 abgelaufen;1
+133;36;U<>  : Anregung Uref<1;1
+133;37;U<>  : Anregung Uref<2;1
+133;38;U<>  : tUref<1 abgel. Wisch;1
+133;39;U<>  : tUref<2 abgel. Wisch;1
+133;40;U<>  : Störfall Uref<1;1
+133;41;U<>  : Störfall Uref<2;1
+133;42;U<>  : tUref<x abgel. Wisch;1
+133;147;GRUND: Man. Aus Meldung L1;1
+133;148;GRUND: Man. Aus Meldung L2;1
+133;149;GRUND: Man. Aus Meldung L3;1
+132;145;KURI : Fehler E vorwärts;1
+132;146;KURI : Fehler E rückwärts;1
+133;163;GRUND: Stromfluß L1;1
+133;153;GRUND: Man. def. Aus L1 EXT;1
+133;154;GRUND: Man. def. Aus L2 EXT;1
+133;155;GRUND: Man. def. Aus L3 EXT;1
+133;111;ZUKS : Trigger EXT;1
+133;185;U<>  : Blockieren tU>3 EXT;1
+133;186;U<>  : Blockieren tU<3 EXT;1
+133;187;U<>  : Block. tUref>3 EXT;1
+133;188;U<>  : Block. tUref<3 EXT;1
+132;40;f<>  : Blockieren f1 EXT;1
+132;41;f<>  : Blockieren f2 EXT;1
+132;42;f<>  : Blockieren f3 EXT;1
+132;43;f<>  : Blockieren f4 EXT;1
+132;0;P<>  : Blockieren tP> EXT;1
+132;1;P<>  : Blockieren tP>> EXT;1
+132;193;LSV  : Start L1 EXT;1
+132;194;LSV  : Start L2 EXT;1
+132;169;LSV  : Start L3 EXT;1
+133;27;U<>  : Block. tUref>2 EXT;1
+133;28;U<>  : Block. tUref<1 EXT;1
+132;216;GRUND: LS Aus 3p EXT;1
+132;252;GRUND: Rückst.S.h.Aus K.EXT;1
+133;21;GRUND: Autom.fall UNE EXT;1
+133;71;GRUND: LS Ein L1 EXT;1
+133;72;GRUND: LS Ein L2 EXT;1
+248;118;GRUND: LS1 gestört EXT;1
+248;119;GRUND: LS2 gestört EXT;1
+133;239;DIST : Freig.MBE b. 1pE EXT;1
+133;235;GRUND: Par. Aus (1p) EXT;1
+134;76;f<>  : Blockieren f5 EXT;1
+132;211;LSV  : ext./bed. eingesch.;1
+135;19;NOT  : Blockieren I> EXT;1
+135;20;NOT  : Blockieren IE> EXT;1
+130;0;MKÜ  : Blocking FF.Uref EXT;1
+135;228;DIST : Blockieren Z7 EXT;1
+135;227;DIST : Blockieren Z8 EXT;1
+136;240;U<>  : Block. tUNE>3 EXT;1
+136;42;NOT  : Blockieren I>> EXT;1
+136;43;NOT  : Blockieren I>>> EXT;1
+136;44;NOT  : Blockieren IE>> EXT;1
+136;45;NOT  : Blockieren IE>>> EXT;1
+135;59;U<>  : Blockieren tU>4 EXT;1
+135;60;U<>  : Blockieren tU<4 EXT;1
+136;46;f<>  : Blockieren f6 EXT;1
+136;52;f<>  : Blockieren f7 EXT;1
+135;254;DIST : Blockieren U< EXT;1
+133;90;GRUND: Ein n. man. Ein-Anf.;1
+133;78;GRUND: LS Ein L1;1
+133;79;GRUND: LS Ein L2;1
+133;82;GRUND: LS Ein L3;1
+133;3;GRUND: LS St.mldg. unplaus.;1
+133;4;GRUND: LS Ein 3p;1
+133;16;GRUND: Aus Meldung 1. 1p;1
+131;183;GRUND: Man. Ein Kommando;1
+132;239;GRUND: Senden Aus Mitn. L1;1
+132;240;GRUND: Senden Aus Mitn. L2;1
+132;241;GRUND: Senden Aus Mitn. L3;1
+133;91;ST_AZ: I> angesprochen;1
+131;43;ST_AZ: Netzstörung läuft;1
+133;15;MKÜ  : Meßkr. Uref gestört;1
+133;20;MKÜ  : Meßkr. UNE gestört;1
+130;187;NOT  : Anregung I>/>>/>>>;1
+133;191;U<>  : Störfall U<3;1
+133;189;U<>  : Störfall U<2 3p;1
+133;192;U<>  : Anregung Uref>3;1
+133;181;U<>  : tUref>3 abgelaufen;1
+133;182;U<>  : Anregung Uref<3;1
+133;183;U<>  : tUref<3 abgelaufen;1
+133;184;U<>  : tUref<3 abgel.Wisch;1
+133;193;U<>  : Störfall Uref<3;1
+132;173;LSV  : Anwurf L1;1
+132;174;LSV  : Anwurf L2;1
+132;175;LSV  : Anwurf L3;1
+132;177;LSV  : Aus Meldung t1. L1;1
+132;178;LSV  : Aus Meldung t1. L2;1
+132;179;LSV  : Aus Meldung t1. L3;1
+132;182;LSV  : Aus Kommando t1. L1;1
+132;183;LSV  : Aus Kommando t1. L2;1
+132;184;LSV  : Aus Kommando t1. L3;1
+132;188;LSV  : LS GLÜ L1 offen;1
+132;189;LSV  : LS GLÜ L2 offen;1
+132;190;LSV  : LS GLÜ L3 offen;1
+130;132;LSV  : Stromfluß E;1
+133;204;DIST : Anregung I>>;1
+248;133;BM01 : Warng.Schaltanzahl;1
+248;134;BM02 : Warng.Schaltanzahl;1
+248;135;BM03 : Warng.Schaltanzahl;1
+248;136;BM04 : Warng.Schaltanzahl;1
+134;1;LOGIK: Ausgang 33;1
+134;2;LOGIK: Ausgang 33 (t);1
+134;3;LOGIK: Ausgang 34;1
+134;4;LOGIK: Ausgang 34 (t);1
+134;5;LOGIK: Ausgang 35;1
+134;6;LOGIK: Ausgang 35 (t);1
+134;7;LOGIK: Ausgang 36;1
+134;8;LOGIK: Ausgang 36 (t);1
+134;9;LOGIK: Ausgang 37;1
+134;10;LOGIK: Ausgang 37 (t);1
+134;11;LOGIK: Ausgang 38;1
+134;12;LOGIK: Ausgang 38 (t);1
+134;13;LOGIK: Ausgang 39;1
+134;14;LOGIK: Ausgang 39 (t);1
+134;15;LOGIK: Ausgang 40;1
+134;16;LOGIK: Ausgang 40 (t);1
+134;17;LOGIK: Ausgang 41;1
+134;18;LOGIK: Ausgang 41 (t);1
+134;19;LOGIK: Ausgang 42;1
+134;20;LOGIK: Ausgang 42 (t);1
+134;21;LOGIK: Ausgang 43;1
+134;22;LOGIK: Ausgang 43 (t);1
+134;23;LOGIK: Ausgang 44;1
+134;24;LOGIK: Ausgang 44 (t);1
+134;25;LOGIK: Ausgang 45;1
+134;26;LOGIK: Ausgang 45 (t);1
+134;27;LOGIK: Ausgang 46;1
+134;28;LOGIK: Ausgang 46 (t);1
+134;29;LOGIK: Ausgang 47;1
+134;30;LOGIK: Ausgang 47 (t);1
+134;31;LOGIK: Ausgang 48;1
+134;32;LOGIK: Ausgang 48 (t);1
+134;33;LOGIK: Ausgang 49;1
+134;34;LOGIK: Ausgang 49 (t);1
+134;35;LOGIK: Ausgang 50;1
+134;36;LOGIK: Ausgang 50 (t);1
+134;37;LOGIK: Ausgang 51;1
+134;38;LOGIK: Ausgang 51 (t);1
+134;39;LOGIK: Ausgang 52;1
+134;40;LOGIK: Ausgang 52 (t);1
+134;41;LOGIK: Ausgang 53;1
+134;42;LOGIK: Ausgang 53 (t);1
+134;43;LOGIK: Ausgang 54;1
+134;44;LOGIK: Ausgang 54 (t);1
+134;45;LOGIK: Ausgang 55;1
+134;46;LOGIK: Ausgang 55 (t);1
+134;47;LOGIK: Ausgang 56;1
+134;48;LOGIK: Ausgang 56 (t);1
+134;49;LOGIK: Ausgang 57;1
+134;50;LOGIK: Ausgang 57 (t);1
+134;51;LOGIK: Ausgang 58;1
+134;52;LOGIK: Ausgang 58 (t);1
+134;53;LOGIK: Ausgang 59;1
+134;54;LOGIK: Ausgang 59 (t);1
+134;55;LOGIK: Ausgang 60;1
+134;56;LOGIK: Ausgang 60 (t);1
+134;57;LOGIK: Ausgang 61;1
+134;58;LOGIK: Ausgang 61 (t);1
+134;59;LOGIK: Ausgang 62;1
+134;60;LOGIK: Ausgang 62 (t);1
+134;61;LOGIK: Ausgang 63;1
+134;62;LOGIK: Ausgang 63 (t);1
+134;63;LOGIK: Ausgang 64;1
+134;64;LOGIK: Ausgang 64 (t);1
+134;152;LOGIK: Ausgang 65;1
+134;153;LOGIK: Ausgang 65 (t);1
+134;112;LOGIK: Ausgang 66;1
+134;113;LOGIK: Ausgang 66 (t);1
+134;114;LOGIK: Ausgang 67;1
+134;115;LOGIK: Ausgang 67 (t);1
+134;116;LOGIK: Ausgang 68;1
+134;117;LOGIK: Ausgang 68 (t);1
+134;118;LOGIK: Ausgang 69;1
+134;119;LOGIK: Ausgang 69 (t);1
+134;120;LOGIK: Ausgang 70;1
+134;121;LOGIK: Ausgang 70 (t);1
+134;122;LOGIK: Ausgang 71;1
+134;123;LOGIK: Ausgang 71 (t);1
+134;125;LOGIK: Ausgang 72;1
+134;126;LOGIK: Ausgang 72 (t);1
+134;127;LOGIK: Ausgang 73;1
+134;128;LOGIK: Ausgang 73 (t);1
+134;129;LOGIK: Ausgang 74;1
+134;130;LOGIK: Ausgang 74 (t);1
+134;131;LOGIK: Ausgang 75;1
+134;132;LOGIK: Ausgang 75 (t);1
+134;133;LOGIK: Ausgang 76;1
+134;134;LOGIK: Ausgang 76 (t);1
+134;135;LOGIK: Ausgang 77;1
+134;136;LOGIK: Ausgang 77 (t);1
+134;137;LOGIK: Ausgang 78;1
+134;138;LOGIK: Ausgang 78 (t);1
+134;139;LOGIK: Ausgang 79;1
+134;140;LOGIK: Ausgang 79 (t);1
+134;141;LOGIK: Ausgang 80;1
+134;142;LOGIK: Ausgang 80 (t);1
+134;143;LOGIK: Ausgang 81;1
+134;144;LOGIK: Ausgang 81 (t);1
+134;145;LOGIK: Ausgang 82;1
+134;146;LOGIK: Ausgang 82 (t);1
+134;147;LOGIK: Ausgang 83;1
+134;148;LOGIK: Ausgang 83 (t);1
+134;149;LOGIK: Ausgang 84;1
+134;150;LOGIK: Ausgang 84 (t);1
+134;151;LOGIK: Ausgang 85;1
+134;169;LOGIK: Ausgang 85 (t);1
+134;170;LOGIK: Ausgang 86;1
+134;171;LOGIK: Ausgang 86 (t);1
+134;172;LOGIK: Ausgang 87;1
+134;173;LOGIK: Ausgang 87 (t);1
+134;174;LOGIK: Ausgang 88;1
+134;175;LOGIK: Ausgang 88 (t);1
+134;176;LOGIK: Ausgang 89;1
+134;177;LOGIK: Ausgang 89 (t);1
+134;178;LOGIK: Ausgang 90;1
+134;179;LOGIK: Ausgang 90 (t);1
+134;180;LOGIK: Ausgang 91;1
+134;181;LOGIK: Ausgang 91 (t);1
+134;182;LOGIK: Ausgang 92;1
+134;183;LOGIK: Ausgang 92 (t);1
+134;184;LOGIK: Ausgang 93;1
+134;185;LOGIK: Ausgang 93 (t);1
+134;186;LOGIK: Ausgang 94;1
+134;187;LOGIK: Ausgang 94 (t);1
+134;188;LOGIK: Ausgang 95;1
+134;189;LOGIK: Ausgang 95 (t);1
+134;190;LOGIK: Ausgang 96;1
+134;191;LOGIK: Ausgang 96 (t);1
+134;192;LOGIK: Ausgang 97;1
+134;193;LOGIK: Ausgang 97 (t);1
+134;194;LOGIK: Ausgang 98;1
+134;195;LOGIK: Ausgang 98 (t);1
+134;196;LOGIK: Ausgang 99;1
+134;197;LOGIK: Ausgang 99 (t);1
+134;198;LOGIK: Ausgang100;1
+134;199;LOGIK: Ausgang100 (t);1
+134;200;LOGIK: Ausgang101;1
+134;201;LOGIK: Ausgang101 (t);1
+134;202;LOGIK: Ausgang102;1
+134;203;LOGIK: Ausgang102 (t);1
+134;204;LOGIK: Ausgang103;1
+134;205;LOGIK: Ausgang103 (t);1
+134;206;LOGIK: Ausgang104;1
+134;207;LOGIK: Ausgang104 (t);1
+134;208;LOGIK: Ausgang105;1
+134;209;LOGIK: Ausgang105 (t);1
+134;210;LOGIK: Ausgang106;1
+134;211;LOGIK: Ausgang106 (t);1
+134;212;LOGIK: Ausgang107;1
+134;213;LOGIK: Ausgang107 (t);1
+134;214;LOGIK: Ausgang108;1
+134;215;LOGIK: Ausgang108 (t);1
+134;216;LOGIK: Ausgang109;1
+134;217;LOGIK: Ausgang109 (t);1
+134;218;LOGIK: Ausgang110;1
+134;219;LOGIK: Ausgang110 (t);1
+134;220;LOGIK: Ausgang111;1
+134;221;LOGIK: Ausgang111 (t);1
+134;222;LOGIK: Ausgang112;1
+134;223;LOGIK: Ausgang112 (t);1
+134;224;LOGIK: Ausgang113;1
+134;225;LOGIK: Ausgang113 (t);1
+134;226;LOGIK: Ausgang114;1
+134;227;LOGIK: Ausgang114 (t);1
+134;228;LOGIK: Ausgang115;1
+134;229;LOGIK: Ausgang115 (t);1
+134;230;LOGIK: Ausgang116;1
+134;231;LOGIK: Ausgang116 (t);1
+134;232;LOGIK: Ausgang117;1
+134;233;LOGIK: Ausgang117 (t);1
+134;234;LOGIK: Ausgang118;1
+134;235;LOGIK: Ausgang118 (t);1
+134;236;LOGIK: Ausgang119;1
+134;237;LOGIK: Ausgang119 (t);1
+134;238;LOGIK: Ausgang120;1
+134;239;LOGIK: Ausgang120 (t);1
+134;240;LOGIK: Ausgang121;1
+134;241;LOGIK: Ausgang121 (t);1
+134;242;LOGIK: Ausgang122;1
+134;243;LOGIK: Ausgang122 (t);1
+134;244;LOGIK: Ausgang123;1
+134;245;LOGIK: Ausgang123 (t);1
+134;246;LOGIK: Ausgang124;1
+134;247;LOGIK: Ausgang124 (t);1
+134;248;LOGIK: Ausgang125;1
+134;249;LOGIK: Ausgang125 (t);1
+134;250;LOGIK: Ausgang126;1
+134;251;LOGIK: Ausgang126 (t);1
+134;252;LOGIK: Ausgang127;1
+134;253;LOGIK: Ausgang127 (t);1
+134;254;LOGIK: Ausgang128;1
+134;255;LOGIK: Ausgang128 (t);1
+134;77;f<>  : Anregung f5;1
+134;78;f<>  : Anregung f5/df5;1
+134;79;f<>  : Delta f5 angespr.;1
+134;80;f<>  : Delta t5 abgelaufen;1
+134;81;f<>  : Aus Meldung f5;1
+134;71;GRUND: xMZ Generalanregung;1
+134;72;GRUND: xMZ Anregung L1;1
+134;73;GRUND: xMZ Anregung L2;1
+134;74;GRUND: xMZ Anregung L3;1
+134;75;GRUND: xMZ Anregung N;1
+134;91;GRUND: xMZ Anregung Igegen;1
+133;232;DIST : Anregung Zone 1.Ü;1
+135;223;GRUND: Sammelmeldung 01;1
+135;222;GRUND: Sammelmeldung 02;1
+135;221;GRUND: Sammelmeldung 03;1
+136;241;U<>  : Anregung UNE>3;1
+135;243;GRUND: Gen. Aus Meldung 3;1
+135;244;GRUND: Gen. Aus Meldung 4;1
+135;245;GRUND: Gen. Aus Kommando 3;1
+135;246;GRUND: Gen. Aus Kommando 4;1
+135;43;DIST : Anregung U<;1
+135;44;DIST : Anregung I>;1
+135;220;GRUND: Sammelmeldung 04;1
+135;219;GRUND: Sammelmeldung 05;1
+135;218;GRUND: Sammelmeldung 06;1
+135;217;GRUND: Sammelmeldung 07;1
+135;216;GRUND: Sammelmeldung 08;1
+135;215;GRUND: Rushstab. angespr.;1
+135;226;DIST : t7 abgelaufen;1
+135;225;DIST : t8 abgelaufen;1
+135;224;DIST : Aus Meldung Zone 7;1
+135;214;DIST : Aus Meldung Zone 8;1
+136;242;U<>  : tUNE>3 abgelaufen;1
+136;32;NOT  : Anregung I>;1
+136;33;NOT  : Anregung I>>;1
+136;34;NOT  : Anregung I>>>;1
+136;35;NOT  : Aus Meldung tI/IE>;1
+136;36;NOT  : Aus Meldung tI/IE>>;1
+136;37;NOT  : Aus Meldung tI/IE>>>;1
+136;38;NOT  : Anregung IE>;1
+136;39;NOT  : Anregung IE>>;1
+136;40;NOT  : Anregung IE>>>;1
+135;61;U<>  : Anregung U>4;1
+135;62;U<>  : Anregung U>4 3p;1
+135;63;U<>  : tU>4 abgelaufen;1
+135;64;U<>  : tU>4 3p abgelaufen;1
+135;65;U<>  : Anregung U<4;1
+135;66;U<>  : Anregung U<4 3p;1
+135;67;U<>  : tU<4 abgelaufen;1
+135;68;U<>  : tU<4 abgel. Wisch;1
+135;69;U<>  : tU<4 3p abgelaufen;1
+135;70;U<>  : tU<4 3p abgel. Wisch;1
+135;71;U<>  : Störfall U<4 3p;1
+135;72;U<>  : Störfall U<4;1
+136;47;f<>  : Anregung f6;1
+136;48;f<>  : Anregung f6/df6;1
+136;49;f<>  : Delta f6 angespr.;1
+136;50;f<>  : Delta t6 abgelaufen;1
+136;51;f<>  : Aus Meldung f6;1
+136;53;f<>  : Anregung f7;1
+136;54;f<>  : Anregung f7/df7;1
+136;55;f<>  : Delta f7 angespr.;1
+136;56;f<>  : Delta t7 abgelaufen;1
+136;57;f<>  : Aus Meldung f7;1
+136;64;DIST : Z<1 bereit;1
+136;90;DIST : Z<2 bereit;1
+136;91;DIST : Z<3 bereit;1
+136;92;DIST : Z<4 bereit;1
+136;93;DIST : Z<5 bereit;1
+136;78;DIST : Z<6 bereit;1
+136;95;DIST : Z<7 bereit;1
+136;96;DIST : Z<8 bereit;1
+136;97;DIST : Z<9 bereit;1
+136;98;DIST : Z<10 bereit;1
+136;83;NOT  : I>1 bereit;1
+136;84;NOT  : I>2 bereit;1
+136;85;NOT  : I>3 bereit;1
+136;86;NOT  : IE>1 bereit;1
+136;87;NOT  : IE>2 bereit;1
+136;88;NOT  : IE>3 bereit;1

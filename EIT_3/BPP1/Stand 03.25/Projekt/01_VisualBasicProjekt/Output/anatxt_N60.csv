@@ -1,0 +1,13 @@
+ChannelNumber;ChannelName;Phase;Circuit;Units;Prio
+1;Strom I1;L1;;A;1
+2;Strom I2;L2;;A;1
+3;Strom I3;L3;;A;1
+4;Strom I4;L4;;A;1
+5;Strom I5;L5;;A;1
+6;Strom I6;L6;;A;1
+7;Strom I7;L7;;A;1
+8;Strom I8;L8;;A;1
+9;Strom I9;L9;;A;1
+10;Strom I10;L10;;A;1
+11;Strom I11;L11;;A;1
+12;Strom I12;L12;;A;1

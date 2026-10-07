@@ -1,0 +1,112 @@
+*$
+* INA155
+*****************************************************************************
+* (C) Copyright 2023 Texas Instruments Incorporated. All rights reserved.     
+*****************************************************************************
+** This model is designed as an aid for customers of Texas Instruments.      
+** TI and its licensors and suppliers make no warranties, either expressed   
+** or implied, with respect to this model, including the warranties of       
+** merchantability or fitness for a particular purpose. The model is        
+** provided solely on an "as is" basis. The entire risk as to its quality   
+** and performance is with the customer
+*****************************************************************************
+*
+* This model is subject to change without notice. Texas Instruments
+* Incorporated is not responsible for updating this model.
+*
+*****************************************************************************
+*
+** Released by: Online Design Tools, Texas Instruments Inc.
+* Part: INA155
+* Date: 10FEB2023
+* Model Type: ALL IN ONE
+* EVM Order Number: N/A 
+* EVM Users Guide:  N/A 
+* Datasheet: SBOS114
+*
+* Model Version: Final 1.1
+*
+*****************************************************************************
+*
+* Updates:
+*
+* Final 1.1
+* 1. Updated PSpice symbol.
+* 2. Updated Pin order.
+*
+* Final 1.0  
+* Release to Web
+*
+*****************************************************************************
+.SUBCKT INA155 IN+ IN- V+ V- OUTPUT REF RG1 RG8
+*****************************************************************************
+* Components
+R1 A2NEG OUTPUT 200K 
+R2 A1OUT A2NEG 22.222K 
+R3 REF A1NEG 200K 
+R4 A1NEG A1OUT 22.222K 
+RG1 A1NEG RG1 5K 
+RG8 A2NEG RG8 5K 
+ROPEN RG1 RG8 10000MEG 
+XA1 IN- A1NEG V+ V- A1OUT OPA_INA155
+XA2 IN+ A2NEG V+ V- OUTPUT OPA_INA155
+.ENDS INA155
+*****************************************************************************
+.SUBCKT OPA_INA155 + - V+ V- OUT
+*****************************************************************************
+* Models
+.MODEL DX D (RS=1 CJO=0.1P)
+.MODEL NIX NMOS (VTO=0.75 KP=205.5U RD=1 RS=1 RG=1 RB=1 CGBO=16.667E-9 CBS=2.34E-13 CBD=2.34E-13)
+.MODEL NOX NMOS (VTO=0.75 KP=195U RD=.5 RS=.5 RG=1 RB=1 CGBO=125E-9 CBS=2.34E-13 CBD=2.34E-13)
+.MODEL PIX PMOS (VTO=-0.75 KP=205.5U RD=1 RS=1 RG=1 RB=1 CGBO=16.667E-9 CBS=2.34E-13 CBD=2.34E-13)
+.MODEL POX PMOS (VTO=-0.75 KP=195U RD=.5 RS=.5 RG=1 RB=1 CGBO=125E-9 CBS=2.34E-13 CBD=2.34E-13)
+* Components
+C1 24 25 0.75P 
+C15 OUT 39 50P 
+C16 OUT 38 50P 
+CC 21 OUT 10.5P 
+D1 21 22 DX 
+D2 23 21 DX 
+D3 5 V+ DX 
+D4 V- 66 DX 
+D5 - V+ DX 
+D6 + V+ DX 
+D7 V- - DX 
+D8 V- + DX 
+ECM 24 98 POLY(2) + 98 - 98 0 0.5 0.5
+EN 38 V- POLY(1) 21 98 0.78925 1
+EOS 7 + POLY(1) 25 98 0 0
+EP V+ 39 POLY(1) 98 21 0.78925 1
+EREF 98 0 POLY(2) V+ 0 V- 0 0 0.5 0.5
+G1 98 21 POLY(2) 4 33 9 8 0 145U 145U
+GSY V+ V- POLY(1) V+ V- -3.334E-4 6.667E-5
+I1 V+ 5 150U
+IIN1 + 98 .2P
+IIN2 - 98 .2P
+IOS - + 0P
+ISY V+ V- 450.4U
+M1 33 - 66 V- NIX L=6U W=25U
+M2 4 7 66 V- NIX L=6U W=25U
+M3 8 - 5 5 PIX L=6U W=25U
+M4 9 7 5 5 PIX L=6U W=25U
+M7 550 VSWITCH 5 5 PIX L=6U W=25U M=4
+M8 550 550 V- V- NIX L=6U W=25U M=4
+M9 553A 550 V- V- NIX L=6U W=25U M=4
+M9C 66 NVSAT 553A V- NIX L=6U W=25U M=4
+M113 6H 39 V+ V+ POX L=1.5U W=1500U
+M114 6L 38 V- V- NOX L=1.5U W=1500U
+R1 V+ 33 4.833K 
+R2 V+ 4 4.833K 
+R3 8 V- 4.833K 
+R4 9 V- 4.833K 
+R5 24 25 1E6 
+R6 25 98 10K 
+RG 21 98 18.078E6 
+V1 V+ 22 1.37
+V2 23 V- 1.37
+VH OUT 6H DC 1E-2
+VL 6L OUT DC 1E-2
+VNVSAT NVSAT V- DC 1.37
+VPVSAT V+ VSWITCH DC 1.3
+.ENDS OPA_INA155
+*
