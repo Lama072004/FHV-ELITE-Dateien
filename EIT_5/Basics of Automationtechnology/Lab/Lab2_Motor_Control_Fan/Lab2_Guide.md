@@ -33,10 +33,10 @@ Additional tags to create (PLC tag table):
 
 | Tag | Address | Type | Purpose |
 |---|---|---|---|
-| `M_Run` | M0.0 | Bool | Motor-run latch |
-| `M_Fault` | M0.1 | Bool | Fault latch |
-| `M_StartPrev` | M0.2 | Bool | Edge memory Start (P_TRIG M_BIT) |
-| `M_AckPrev` | M0.3 | Bool | Edge memory Ack (P_TRIG M_BIT) |
+| `Run` | M0.0 | Bool | Motor-run latch |
+| `Fault` | M0.1 | Bool | Fault latch |
+| `Start_Mem` | M0.2 | Bool | Edge memory Start (P_TRIG M_BIT field) |
+| `Ack_Mem` | M0.3 | Bool | Edge memory Ack (P_TRIG M_BIT field) |
 | `StartPulse` | M1.0 | Bool | One-scan pulse on Start↑ |
 | `AckPulse` | M1.1 | Bool | One-scan pulse on Ack↑ |
 | `T_Monitor_Q` | M2.0 | Bool | 1 s start-up monitoring elapsed |
@@ -115,18 +115,18 @@ Notes:
 | `T_Welded` | `Feedback` AND NOT `Motor` | 1 s | feedback present though motor is off → **welded contact fault** (1 s gives the relay time to drop out normally) |
 | `T_Standstill` | NOT `Motor` AND NOT `Feedback` | 5 s | motor really at standstill → restart allowed |
 
-**c) Fault latch (`M_Fault`)**
-- **Set** when `T_Monitor.Q` OR `T_Welded.Q`.
+**c) Fault latch (`Fault`)**
+- **Set** when `T_Monitor_Q` OR `T_Welded_Q`.
 - **Reset** by `AckPulse` (only effective if the cause is gone – otherwise the timer sets it again at once).
-- `Alarm_Light` = `M_Fault`.
+- `Alarm_Light` = `Fault`.
 
-**d) Run latch (`M_Run`)**
-- **Set** when `StartPulse` AND `T_Standstill.Q` AND NOT `M_Fault`.
-- **Reset** (dominant) when `Stop` OR `M_Fault`.
-- `Motor` (Q0.0) = `M_Run`.
+**d) Run latch (`Run`)**
+- **Set** when `StartPulse` AND `Standstill_OK` AND NOT `Fault`.
+- **Reset** (dominant) when `Stop` OR `Fault`.
+- `Motor` (Q0.0) = `Run`.
 
 **e) Additional task**
-- The start counter (MW10) counts rising edges of `Motor`; the alarm counter (MW12) counts rising edges of `M_Fault`.
+- The start counter (MW10) counts rising edges of `Motor`; the alarm counter (MW12) counts rising edges of `Fault`.
 - Both reset by `Reset_Cnt` (I0.6).
 
 State summary:
@@ -204,8 +204,8 @@ Practical notes for TIA:
 | Relay never pulls | Coil not on Q0.0 / 0 V missing / 3L+ and 3M supply not connected |
 | Always feedback fault | Feedback wired to wrong input (must be **I1.0**, not I0.x) or relay contact pins mixed up (relay vs. base numbers) |
 | Alarm triggers immediately after Ack | Fault cause still present (welded contact / feedback wire) |
-| Motor never starts | 5 s standstill not reached, `M_Fault` still set, or Stop input logic inverted (Stop wired as NC → invert) |
-| Start works twice with one press | Edge detection missing / `M_StartPrev` not updated every scan |
+| Motor never starts | 5 s standstill not reached, `Fault` still set, or Stop input logic inverted (Stop wired as NC → invert) |
+| Start works twice with one press | Edge detection missing / `Start_Mem` not updated every scan |
 | Download fails | Wrong CPU type/order number, IP/subnet mismatch, plug not powered |
 
 If the Stop switch on your board is an NC type, use `NOT "Stop"` in the logic. Check it in monitoring mode first (Step 6.5).
